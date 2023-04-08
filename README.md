@@ -87,8 +87,8 @@ Create the spec file from the dashboad.
 describe('Mini-basket', () => {
   it('shows the number of products in basket', () => {
     cy.visit('/')
-    cy.get('[data-test-id=product-pod-add-button-209]').click()
-    cy.get('.basket-mini').contains('Basket (1)')
+    cy.get('[data-testid=product-pod-add-button-209]').click()
+    cy.get('.basket-mini .dropdown-toggle').should('contain.text', '(1)')
   })
 })
 ```
@@ -96,27 +96,61 @@ describe('Mini-basket', () => {
 Elaborate with negative case
 
 ```ts
-describe('Mini-basket', () => {
   beforeEach(() =>   cy.visit('/'))
   describe('when empty', () => {
     it('doesn\'t show the number of products in basket', () => {
-      cy.get('.basket-mini').contains(/Basket $/)
+      cy.get('.basket-mini .dropdown-toggle').should('not.contain.text', '(')
     })
   })
-  it('shows the number of products in basket', () => {
-    cy.get('[data-test-id=product-pod-add-button-209]').click()
-    cy.get('.basket-mini').contains('Basket (1)')
-  })
-})
 ```
-
 New:
   - Cypress runner with execution logs and chrome inspector
   - Mocha api (before, beforeEach, describe, it)
-  - Cypress api (visit, get, contains, click)
+  - Cypress api (visit, get, click, should)
   - CSS selectors based on class and data-test-id
   - Introduction to retryability (Timeout to find elements)
   - Introduction to test isolation (basket is automatically emptied betwin tests)
+
+### Fist tests in autonomy
+
+Exercice :
+- verify the mini-basket dropdown content :
+  - it contains basket entries
+  - it informs the user when the product is empty
+
+```typescript
+  it('informs the basket is empty', () => {
+    cy.get('.basket-mini .dropdown-toggle')
+      .click()
+    cy.get('.dropdown-menu.show').should('contain.text', 'Your basket is empty')
+  })
+  it('shows the basket entry details', () => {
+    cy.get('[data-testid=product-pod-add-button-209]').click()
+    cy.get('.basket-mini .dropdown-toggle')
+      .click()
+    cy.get('.dropdown-menu.show')
+      .then($miniBasket => {
+        expect($miniBasket.text()).to.contain('The shellcoder\'s handbook')
+        expect($miniBasket.text()).to.contain('Qty 1')
+        expect($miniBasket.text()).to.contain('€9.99')
+      })
+  })
+```
+
+New:
+  - User creates his first test in autonomy
+  - Cypress api: then, expect
+
+### Refactor with page object
+
+
+
+## Elaborate
+
+- not enough stock with intercept
+- add test on getting back my mini basket after logging
+- accelerate test with API
+- verify basket amount based on products (api only !)
 
 ### Test with Api
 
