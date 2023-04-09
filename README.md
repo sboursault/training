@@ -143,14 +143,48 @@ New:
 
 ### Refactor with page object
 
+Our test quickly becomes complex, and not so easy to read.
+Let's rewrite it with a page object.
 
+
+```typescript
+class CataloguePage {
+  addProductToBasket(productId: number) {
+    cy.get(`[data-testid=product-pod-add-button-${productId}]`).click()
+  }
+  getMiniBasket() {
+    return cy.get('.dropdown-menu.show')
+  }
+  displayMiniBasket() {
+    this.getMiniBasketDisplayToggle().click()
+  }
+  getMiniBasketDisplayToggle() {
+    return cy.get('.basket-mini .dropdown-toggle')
+  }
+}
+export default new CataloguePage()
+```
+
+New:
+  - Use page object to avoid code duplication and facilitate reading
+  - Create a typescript object
+  - Continuously polish your test code
+
+
+## Verify behavior by mocking server reponse
+
+https://www.google.com/search?channel=fs&client=ubuntu&q=cypress+mock+api
+
+page cypress pas si simple pour une première page de la doc cypress...
 
 ## Elaborate
 
 - not enough stock with intercept
 - add test on getting back my mini basket after logging
-- accelerate test with API
+- accelerate test with API (login)
 - verify basket amount based on products (api only !)
+- more on getting tests repeatable
+  - rewrite tests without initial data ?
 
 ### Test with Api
 
