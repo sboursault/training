@@ -71,6 +71,28 @@ export default defineConfig({
 New:
   - Configure a cypress project with typescript
 
+### Acceptance criterias
+
+**User story**
+  
+  > As a shopper,
+  > I want to see my basket content in the mini-basket,
+  > so that I quickly know the basket's content and amount.
+
+
+**Workshop:** What could be the acceptance criterias for these story ?
+
+The trainer takes the role of the Product Owner, the participants are the testers. The must suggest acceptance criterias to the PO.
+The PO can kindly reject some criterias if he thinks they are not required right now. Example : displaying discounts...
+
+Possible list:
+- The mini basket always show the number of products in basket
+- It contains basket entries (with prodcut name, quantity and price)
+- When empty, it doesn't show the number of products in basket
+- When empty, it informs the basket is empty
+
+**New:**
+  - Write acceptance tests for a user story
 
 ### First tests
 
@@ -85,7 +107,7 @@ Create the spec file from the dashboad.
 
 ```ts
 describe('Mini-basket', () => {
-  it('shows the number of products in basket', () => {
+  it('always shows the number of products in basket', () => {
     cy.visit('/')
     cy.get('[data-testid=product-pod-add-button-209]').click()
     cy.get('.basket-mini .dropdown-toggle').should('contain.text', '(1)')
@@ -103,7 +125,7 @@ Elaborate with negative case
     })
   })
 ```
-New:
+**New:**
   - Cypress runner with execution logs and chrome inspector
   - Mocha api (before, beforeEach, describe, it)
   - Cypress api (visit, get, click, should)
@@ -137,7 +159,7 @@ Exercice :
   })
 ```
 
-New:
+**New:**
   - User creates his first test in autonomy
   - Cypress api: then, expect
 
@@ -165,7 +187,7 @@ class CataloguePage {
 export default new CataloguePage()
 ```
 
-New:
+**New:**
   - Use page object to avoid code duplication and facilitate reading
   - Create a typescript object
   - Continuously polish your test code
@@ -176,9 +198,11 @@ New:
 https://www.google.com/search?channel=fs&client=ubuntu&q=cypress+mock+api
 
 page cypress pas si simple pour une première page de la doc cypress...
+Reprendre les étapes précédentes, il faut se référer plus souvent à la doc cypress !
 
 ## Elaborate
 
+- Check cypress doc more offten
 - not enough stock with intercept
 - add test on getting back my mini basket after logging
 - accelerate test with API (login)
@@ -186,7 +210,12 @@ page cypress pas si simple pour une première page de la doc cypress...
 - more on getting tests repeatable
   - rewrite tests without initial data ?
 
-### Test with Api
+- prévoir des exercices en plus
+  - change languages
+  - what if I'm french, or english ?
+  - ?
+
+## Test with Api
 
 - Verify basket amount with api
   - 1 product with qtty 1 and another with qtty 2

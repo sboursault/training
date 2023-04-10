@@ -16,7 +16,7 @@ describe('Mini-basket', () => {
     })
   })
   
-  it('shows the number of products in basket', () => {
+  it('always shows the number of products in basket', () => {
     cataloguePage.addProductToBasket(209)
     cataloguePage.getMiniBasketDisplayToggle().should('contain.text', '(1)')
   })
