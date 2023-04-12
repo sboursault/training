@@ -99,16 +99,10 @@ What if ?
 
 ### First tests
 
-- create the first test: mini-basket.cy.ts
+The trainer writes and explains the first test. The spec file can be created from the dashboad.
 
-Specifications:  
-  - mini basket shows the product
-  - basket amount is displayed
-  - number of produts in basket is displayed
-
-Create the spec file from the dashboad.
-
-```ts
+```typescript
+// mini-basket.cy.ts
 describe('Mini-basket', () => {
   it('always shows the number of products in basket', () => {
     cy.visit('/')
@@ -256,13 +250,13 @@ Je crois comprendre que l'api reste peut être utilisée avec la session utilisa
 https://github.com/django-oscar/django-oscar-api/issues/137
 
 
-## 2nd acceptance criterias workshop: getting back my basket
+## 2nd acceptance criterias workshop: basket recovery
 
 **User story**
   
   > As a shopper,
-  > I want to get back the basket from my previous session
-  > so that I can prepare my order and validate it later.
+  > I want to recover the basket from my previous session
+  > so that I can prepare my order and validate in several times.
 
 **Workshop:** What could be the acceptance criterias for these story ?
 
@@ -278,6 +272,35 @@ What if ?
 **Repetition:**
   - Write acceptance tests for a user story
   - Find edge cases
+
+## 2nd test in autonomy
+
+Exercice :
+- Automate the accetance critera verification, _by priority order_
+
+```typescript
+describe('Basket discovery', () => {
+    specify.skip('After login, the mini basket contains the items from my last session', () => {
+      // TODO (in 1st since it's the more important)
+    })
+    specify.skip('After login, the product also contain the items I added as an anonymous user', () => {
+      // TODO
+    })
+    specify.skip('After logout, the mini basket is empty', () => {
+      // TODO
+    })
+    specify.skip('After login, the mini basket contains both the items from my last session and those from my current basket', () => {
+      // TODO
+    })
+})
+
+```
+
+**New:**
+  - Automate by priority order
+  - 
+  - 
+
 
 ## Elaborate
 
