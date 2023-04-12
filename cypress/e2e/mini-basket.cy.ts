@@ -25,10 +25,8 @@ describe('Mini-basket', () => {
     cataloguePage.addProductToBasket(209)
     cataloguePage.displayMiniBasket()
     cataloguePage.getMiniBasket()
-      .then($miniBasket => {
-        expect($miniBasket.text()).to.contain('The shellcoder\'s handbook')
-        expect($miniBasket.text()).to.contain('Qty 1')
-        expect($miniBasket.text()).to.contain('€9.99')
-      })
+      .should('contain.text', "The shellcoder's handbook")
+      .and('contain.text', "Qty 1")
+      .and('contain.text', "€9.99")
   })
 })

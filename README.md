@@ -71,7 +71,7 @@ export default defineConfig({
 New:
   - Configure a cypress project with typescript
 
-### Acceptance criterias
+### First acceptance criterias' workshop: the mini-basket
 
 **User story**
   
@@ -88,15 +88,18 @@ The PO can kindly reject some criterias if he thinks they are not required right
 Possible list:
 - The mini basket always show the number of products in basket
 - It contains basket entries (with prodcut name, quantity and price)
+
+What if ?
 - When empty, it doesn't show the number of products in basket
 - When empty, it informs the basket is empty
 
 **New:**
   - Write acceptance tests for a user story
+  - Find edge cases
 
 ### First tests
 
-- create the first test : add-to-basket.cy.ts or mini-basket.cy
+- create the first test: mini-basket.cy.ts
 
 Specifications:  
   - mini basket shows the product
@@ -151,25 +154,28 @@ Exercice :
     cy.get('.basket-mini .dropdown-toggle')
       .click()
     cy.get('.dropdown-menu.show')
-      .then($miniBasket => {
-        expect($miniBasket.text()).to.contain('The shellcoder\'s handbook')
-        expect($miniBasket.text()).to.contain('Qty 1')
-        expect($miniBasket.text()).to.contain('€9.99')
-      })
+      .should('contain.text', "The shellcoder's handbook")
+      .and('contain.text', "Qty 1")
+      .and('contain.text', "€9.99")
   })
 ```
 
 **New:**
   - User creates his first test in autonomy
-  - Cypress api: then, expect
+
+**Repetition:**
+  - Cypress api: should, and
+  - Retryability
 
 ### Refactor with page object
 
 Our test quickly becomes complex, and not so easy to read.
 Let's rewrite it with a page object.
 
-
 ```typescript
+
+// catalogue.page.ts
+
 class CataloguePage {
   addProductToBasket(productId: number) {
     cy.get(`[data-testid=product-pod-add-button-${productId}]`).click()
@@ -185,6 +191,42 @@ class CataloguePage {
   }
 }
 export default new CataloguePage()
+
+// mini-basket.cy.ts
+
+import cataloguePage from "../support/pages/catalogue.page"
+
+describe('Mini-basket', () => {
+  
+  beforeEach(() =>   cy.visit('/'))
+  
+  describe('When empty', () => {
+  
+    it('doesn\'t show the number of products in basket', () => {
+      cataloguePage.getMiniBasketDisplayToggle().should('not.contain.text', '(')
+    })
+  
+    it('informs the basket is empty', () => {
+      cataloguePage.displayMiniBasket()
+      cataloguePage.getMiniBasket().should('contain.text', 'Your basket is empty')
+    })
+  })
+  
+  it('always shows the number of products in basket', () => {
+    cataloguePage.addProductToBasket(209)
+    cataloguePage.getMiniBasketDisplayToggle().should('contain.text', '(1)')
+  })
+  
+  it('shows the basket entry details', () => {
+    cataloguePage.addProductToBasket(209)
+    cataloguePage.displayMiniBasket()
+    cataloguePage.getMiniBasket()
+      .should('contain.text', "The shellcoder's handbook")
+      .and('contain.text', "Qty 1")
+      .and('contain.text', "€9.99")
+  })
+})
+
 ```
 
 **New:**
@@ -195,16 +237,55 @@ export default new CataloguePage()
 
 ## Verify behavior by mocking server reponse
 
-https://www.google.com/search?channel=fs&client=ubuntu&q=cypress+mock+api
+Ah bah non, ça ne marche pour l'ajout de produit sans stock.
+C'est un rechargement de page complet, l'erreur 'no stock available' arrive avec le contenu de la page.
 
+https://www.google.com/search?channel=fs&client=ubuntu&q=cypress+mock+api
 page cypress pas si simple pour une première page de la doc cypress...
 Reprendre les étapes précédentes, il faut se référer plus souvent à la doc cypress !
+
+Cette étape demande beaucoup de préparation.
+Elle est intéressante, mais dispensable.
+Je préparerai à la fin.
+
+On pourrait recoder le add product pour que l'opération soit en rest.
+si erreur, on affiche les messages
+si succès, on rafraichit la page ou bien juste le mini panier et les messages.
+(utiliser une sorte de toggle si c'est possible)
+Je crois comprendre que l'api reste peut être utilisée avec la session utilisateur
+https://github.com/django-oscar/django-oscar-api/issues/137
+
+
+## 2nd acceptance criterias workshop: getting back my basket
+
+**User story**
+  
+  > As a shopper,
+  > I want to get back the basket from my previous session
+  > so that I can prepare my order and validate it later.
+
+**Workshop:** What could be the acceptance criterias for these story ?
+
+Possible list:
+- After login, the mini basket contains the items from my last session
+- After logout, the mini basket is empty
+- After login, the product also contain the items I added as an anonymous user
+- After login, the mini basket contains both the items from my last session and those from my current basket
+
+What if ?
+- there is not enough stock for a product: products are added anyway
+
+**Repetition:**
+  - Write acceptance tests for a user story
+  - Find edge cases
 
 ## Elaborate
 
 - Check cypress doc more offten
 - not enough stock with intercept
 - add test on getting back my mini basket after logging
+  - can be based on an existing user
+  - how can we make this test repeatable ? (clear the basket before tests, create a new user...)
 - accelerate test with API (login)
 - verify basket amount based on products (api only !)
 - more on getting tests repeatable
@@ -215,8 +296,12 @@ Reprendre les étapes précédentes, il faut se référer plus souvent à la doc
   - what if I'm french, or english ?
   - ?
 
+- automation pitfalls
+  lister les points de Joe C. sous la forme d'une fiche à emporter.
+
 ## Test with Api
 
 - Verify basket amount with api
   - 1 product with qtty 1 and another with qtty 2
   - voucher ?
+- execution order, then and expect
