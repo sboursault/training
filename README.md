@@ -278,6 +278,8 @@ What if ?
 Exercice :
 - Automate the accetance critera verification, _by priority order_
 
+For now, we can create a new account manually (the email is not verified).
+
 ```typescript
 describe('Basket discovery', () => {
     specify.skip('After login, the mini basket contains the items from my last session', () => {
@@ -295,11 +297,57 @@ describe('Basket discovery', () => {
 })
 
 ```
+A first version (not repeatable)
+
+```typescript
+  specify('After login, the mini basket contains the items from my last session', () => {
+    // add product as a logged user
+    cy.visit('/accounts/login/')
+    cy.get('#id_login-username').type('mytest@test.com')
+    cy.get('#id_login-password').type('simplepassword')
+    cy.get('button').contains('Log In').click()
+    cataloguePage.addProductToBasket(208)
+    
+    // logout
+    cy.visit('/accounts/logout')
+
+    // when i log in again
+    cy.visit('/accounts/login/')
+    cy.get('#id_login-username').type('mytest@test.com')
+    cy.get('#id_login-password').type('simplepassword')
+    cy.get('button').contains('Log In').click()
+    
+    // then
+    cataloguePage.getMiniBasketDisplayToggle().should('contain.text', '(1)')
+  })
+```
+
+How to make this repeatable ?
+We want go back to a known state at the beginning of the test.
+- let's clear the basket at the beginning (simple, let's choose this option)
+- We could also create a new user for the test (better because we know more depend on an existing user)
 
 **New:**
   - Automate by priority order
-  - 
-  - 
+  - Introduction to test isolation (I'm logged out at the biginning of each test)
+  - Repatability: go back to a known state at the beginning of the test
+
+### Refactor with a custom command
+
+Let's polish our test with a login command.
+
+Can the user just do it alone with the help of the documentation?
+
+Optionaly, we can add a test to verify the login: `login / login with valid credentials`
+
+Optimize login with `cy.request()`
+
+**New:**
+- Cypress: custom command
+- Optimize tests with `cy.request()`
+- typescrypt: optional parameters (the password can be generic e.g 'simplepassword')
+
+
 
 
 ## Elaborate
