@@ -282,16 +282,16 @@ For now, we can create a new account manually (the email is not verified).
 
 ```typescript
 describe('Basket discovery', () => {
-    specify.skip('After login, the mini basket contains the items from my last session', () => {
+    specify.skip('After login, the basket contains the items from my last session', () => {
       // TODO (in 1st since it's the more important)
     })
-    specify.skip('After login, the product also contain the items I added as an anonymous user', () => {
+    specify.skip('After login, the basket also contain the items I added as an anonymous user', () => {
       // TODO
     })
-    specify.skip('After logout, the mini basket is empty', () => {
+    specify.skip('After logout, the basket is empty', () => {
       // TODO
     })
-    specify.skip('After login, the mini basket contains both the items from my last session and those from my current basket', () => {
+    specify.skip('After login, the basket contains both the items from my last session and those from my current basket', () => {
       // TODO
     })
 })
@@ -300,7 +300,7 @@ describe('Basket discovery', () => {
 A first version (not repeatable)
 
 ```typescript
-  specify('After login, the mini basket contains the items from my last session', () => {
+  specify('After login, the basket contains the items from my last session', () => {
     // add product as a logged user
     cy.visit('/accounts/login/')
     cy.get('#id_login-username').type('mytest@test.com')
@@ -324,8 +324,28 @@ A first version (not repeatable)
 
 How to make this repeatable ?
 We want go back to a known state at the beginning of the test.
-- let's clear the basket at the beginning (simple, let's choose this option)
+- let's clear the basket at the beginning (simpler, let's choose this option)
 - We could also create a new user for the test (better because we know more depend on an existing user)
+
+How can we clear the basket ?
+- we can go the basket page and delete each basket entries
+- or we can call the api to clear the basket
+
+```typescript
+  cy.request('/api/baskets')
+    .then(response => cy.getCookie('csrftoken')
+      .then(csrftoken => {
+        cy.request({
+          method: 'DELETE',
+          url: response.body[0].url,
+          headers: {
+            'X-CSRFToken': csrftoken.value
+          }
+        })
+      })
+    )
+```
+
 
 **New:**
   - Automate by priority order
@@ -340,7 +360,7 @@ Can the user just do it alone with the help of the documentation?
 
 Optionaly, we can add a test to verify the login: `login / login with valid credentials`
 
-Optimize login with `cy.request()`
+
 
 **New:**
 - Cypress: custom command
@@ -352,6 +372,7 @@ Optimize login with `cy.request()`
 
 ## Elaborate
 
+- Optimize login with `cy.request()`
 - Check cypress doc more offten
 - not enough stock with intercept
 - add test on getting back my mini basket after logging
@@ -361,6 +382,7 @@ Optimize login with `cy.request()`
 - verify basket amount based on products (api only !)
 - more on getting tests repeatable
   - rewrite tests without initial data ?
+- test a single page application
 
 - prévoir des exercices en plus
   - change languages
