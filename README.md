@@ -356,10 +356,43 @@ How can we clear the basket ?
 
 Let's polish our test with a login command.
 
+https://on.cypress.io/custom-commands
+https://docs.cypress.io/guides/tooling/typescript-support#Using-an-External-Typings-File
+
 Can the user just do it alone with the help of the documentation?
 
 Optionaly, we can add a test to verify the login: `login / login with valid credentials`
 
+```typescript
+// support/cypress.d.ts
+declare namespace Cypress {
+  interface Chainable {
+    /**
+     * Custom command to login with a user an password.
+     * @example cy.login('joe@test.com', 'secret')
+     */
+    login(username: string, password: string)
+
+    /**
+     * Custom command to logout
+     * @example cy.login('joe@test.com', 'secret')
+     */
+    logout()
+  }
+}
+
+// support/commands.ts
+Cypress.Commands.add('login', (username: string, password: string) => {
+  cy.visit('/accounts/login/')
+  cy.get('#id_login-username').type(username)
+  cy.get('#id_login-password').type(password)
+  cy.get('button').contains('Log In').click()
+})
+
+Cypress.Commands.add('logout', () => {
+  cy.visit('/accounts/logout')
+})
+```
 
 
 **New:**

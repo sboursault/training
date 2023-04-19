@@ -3,11 +3,7 @@ import cataloguePage from "../support/pages/catalogue.page"
 describe('Basket discovery', () => {
 
   beforeEach(() => {
-    // login
-    cy.visit('/accounts/login/')
-    cy.get('#id_login-username').type('mytest@test.com')
-    cy.get('#id_login-password').type('simplepassword')
-    cy.get('button').contains('Log In').click()
+    cy.login('mytest@test.com', 'simplepassword')
     // clear basket
     cy.request('/api/baskets')
       .then(response => cy.getCookie('csrftoken')
@@ -21,27 +17,19 @@ describe('Basket discovery', () => {
           })
         })
       )
-    // logout
-    cy.visit('/accounts/logout')
+    cy.logout()
   })
 
   specify('After login, the mini basket contains the items from my last session', () => {
     // add product as a logged user
-    cy.visit('/accounts/login/')
-    cy.get('#id_login-username').type('mytest@test.com')
-    cy.get('#id_login-password').type('simplepassword')
-    cy.get('button').contains('Log In').click()
-
+    cy.login('mytest@test.com', 'simplepassword')
     cataloguePage.addProductToBasket(208)
 
     // logout
-    cy.visit('/accounts/logout')
+    cy.logout()
 
     // when i log in again
-    cy.visit('/accounts/login/')
-    cy.get('#id_login-username').type('mytest@test.com')
-    cy.get('#id_login-password').type('simplepassword')
-    cy.get('button').contains('Log In').click()
+    cy.login('mytest@test.com', 'simplepassword')
 
     // then
     cataloguePage.getMiniBasketDisplayToggle().should('contain.text', '(1)')
@@ -52,10 +40,7 @@ describe('Basket discovery', () => {
     cataloguePage.addProductToBasket(208)
 
     // when i log in
-    cy.visit('/accounts/login/')
-    cy.get('#id_login-username').type('mytest@test.com')
-    cy.get('#id_login-password').type('simplepassword')
-    cy.get('button').contains('Log In').click()
+    cy.login('mytest@test.com', 'simplepassword')
 
     // then
     cataloguePage.getMiniBasketDisplayToggle().should('contain.text', '(1)')
@@ -63,15 +48,12 @@ describe('Basket discovery', () => {
 
   specify('After logout, the mini basket is empty', () => {
     // add product as a logged user
-    cy.visit('/accounts/login/')
-    cy.get('#id_login-username').type('mytest@test.com')
-    cy.get('#id_login-password').type('simplepassword')
-    cy.get('button').contains('Log In').click()
+    cy.login('mytest@test.com', 'simplepassword')
 
     cataloguePage.addProductToBasket(208)
 
     // logout
-    cy.visit('/accounts/logout')
+    cy.logout()
 
     // then
     cataloguePage.displayMiniBasket()
@@ -80,23 +62,14 @@ describe('Basket discovery', () => {
 
   specify('After login, the mini basket contains both the items from my last session and those from my current basket', () => {
     // add product as a logged user
-    cy.visit('/accounts/login/')
-    cy.get('#id_login-username').type('mytest@test.com')
-    cy.get('#id_login-password').type('simplepassword')
-    cy.get('button').contains('Log In').click()
-
+    cy.login('mytest@test.com', 'simplepassword')
     cataloguePage.addProductToBasket(208)
+    cy.logout()
 
-    // logout
-    cy.visit('/accounts/logout')
-
+    // add product as an anonymous user
     cataloguePage.addProductToBasket(206)
 
-    // login
-    cy.visit('/accounts/login/')
-    cy.get('#id_login-username').type('mytest@test.com')
-    cy.get('#id_login-password').type('simplepassword')
-    cy.get('button').contains('Log In').click()
+    cy.login('mytest@test.com', 'simplepassword')
 
     // then
     cataloguePage.getMiniBasketDisplayToggle().should('contain.text', '(2)')
