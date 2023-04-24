@@ -1,13 +1,19 @@
 # simple-commerce-e2e
+<br>
 
-## pre-requis
+## Prerequisites
 
-- install node
-- install vs code
+- install node (version ?)
+- install vscode (or webstorm)
+- git installed
+- compte github configuré avec clé ssh
 
-## steps
+Avant la formation, prendre connaissance des motivations de l'aprenant.
+Ses connaissances en git, html, css, js, typescript
 
-### Project setup
+<br>
+
+## Project setup
 
 - créer projet projet github 
 
@@ -68,10 +74,15 @@ export default defineConfig({
 })
 ```
 
-New:
-  - Configure a cypress project with typescript
+---
+👌 __WHAT WE'VE LEARNED__
 
-### First acceptance criterias' workshop: the mini-basket
+- Configure a cypress project with typescript
+---
+
+<br>  
+
+## First acceptance criterias' workshop: the mini-basket
 
 **User story**
   
@@ -82,22 +93,27 @@ New:
 
 **Workshop:** What could be the acceptance criterias for these story ?
 
-The trainer takes the role of the Product Owner, the participants are the testers. The must suggest acceptance criterias to the PO.
-The PO can kindly reject some criterias if he thinks they are not required right now. Example : displaying discounts...
+_The trainer takes the role of the Product Owner, the participants are the testers. The must suggest acceptance criterias to the PO._
+_The PO can kindly reject some criterias if he thinks they are not required right now. Example : displaying discounts..._
 
-Possible list:
-- The mini basket always show the number of products in basket
-- It contains basket entries (with prodcut name, quantity and price)
+_Possible list:_
+- _The mini basket always show the number of products in basket_
+- _It contains basket entries (with prodcut name, quantity and price)_
 
-What if ?
-- When empty, it doesn't show the number of products in basket
-- When empty, it informs the basket is empty
+_What if ?_
+- _When empty, it doesn't show the number of products in basket_
+- _When empty, it informs the basket is empty_
 
-**New:**
+---
+👌 __WHAT WE'VE LEARNED__
+
   - Write acceptance tests for a user story
-  - Find edge cases
+  - Find edge cases with **what if** questions
+---
 
-### First tests
+<br>
+
+## First tests
 
 The trainer writes and explains the first test. The spec file can be created from the dashboad.
 
@@ -122,15 +138,21 @@ Elaborate with negative case
     })
   })
 ```
-**New:**
+
+---
+👌 __WHAT WE'VE LEARNED__
+
   - Cypress runner with execution logs and chrome inspector
   - Mocha api (before, beforeEach, describe, it)
   - Cypress api (visit, get, click, should)
   - CSS selectors based on class and data-test-id
   - Introduction to retryability (Timeout to find elements)
   - Introduction to test isolation (basket is automatically emptied betwin tests)
+---
 
-### Fist tests in autonomy
+<br>
+
+## Fist tests in autonomy
 
 Exercice :
 - verify the mini-basket dropdown content :
@@ -154,14 +176,18 @@ Exercice :
   })
 ```
 
-**New:**
-  - User creates his first test in autonomy
+---
+👌 __WHAT WE'VE LEARNED__
+- User creates his first test in autonomy
+---
+👍 __WHAT WE PRACTICED__
+- Cypress api: should, and
+- Retryability
+---
 
-**Repetition:**
-  - Cypress api: should, and
-  - Retryability
+<br>
 
-### Refactor with page object
+## Refactor with page object
 
 Our test quickly becomes complex, and not so easy to read.
 Let's rewrite it with a page object.
@@ -223,11 +249,15 @@ describe('Mini-basket', () => {
 
 ```
 
-**New:**
+---
+👌 __WHAT WE'VE LEARNED__
+
   - Use page object to avoid code duplication and facilitate reading
   - Create a typescript object
   - Continuously polish your test code
+---
 
+<br>
 
 ## Verify behavior by mocking server reponse
 
@@ -249,6 +279,11 @@ si succès, on rafraichit la page ou bien juste le mini panier et les messages.
 Je crois comprendre que l'api reste peut être utilisée avec la session utilisateur
 https://github.com/django-oscar/django-oscar-api/issues/137
 
+Autre solution : présenter `intercept` uniquement en théorique
+ - intéressant pour les SPA pour simuler une réponse spécifique
+ - intéressant pour attendre le retour d'une requête
+
+<br>
 
 ## 2nd acceptance criterias workshop: basket recovery
 
@@ -269,9 +304,13 @@ Possible list:
 What if ?
 - there is not enough stock for a product: products are added anyway
 
-**Repetition:**
-  - Write acceptance tests for a user story
-  - Find edge cases
+---
+👍 __WHAT WE PRACTICED__
+- Write acceptance tests for a user story
+- Find edge cases
+---
+  
+<br>
 
 ## 2nd test in autonomy
 
@@ -331,6 +370,8 @@ How can we clear the basket ?
 - we can go the basket page and delete each basket entries
 - or we can call the api to clear the basket
 
+_The trainer shows how to use the `request` command._
+
 ```typescript
   cy.request('/api/baskets')
     .then(response => cy.getCookie('csrftoken')
@@ -346,22 +387,26 @@ How can we clear the basket ?
     )
 ```
 
+---
+👌 __WHAT WE'VE LEARNED__
 
-**New:**
   - Automate by priority order
   - Introduction to test isolation (I'm logged out at the biginning of each test)
   - Repatability: go back to a known state at the beginning of the test
+---
 
-### Refactor with a custom command
+<br>
+
+## Refactor with a custom command
+
+_The trainer shows how to create a `login` custom command, the learner repeats with `logout` and `clearBasket`._
 
 Let's polish our test with a login command.
 
 https://on.cypress.io/custom-commands
 https://docs.cypress.io/guides/tooling/typescript-support#Using-an-External-Typings-File
 
-Can the user just do it alone with the help of the documentation?
 
-Optionaly, we can add a test to verify the login: `login / login with valid credentials`
 
 ```typescript
 // support/cypress.d.ts
@@ -394,24 +439,31 @@ Cypress.Commands.add('logout', () => {
 })
 ```
 
+Exercice: create a clearBasket command
 
-**New:**
+
+---
+👌 __WHAT WE'VE LEARNED__
 - Cypress: custom command
 - Optimize tests with `cy.request()`
 - typescrypt: optional parameters (the password can be generic e.g 'simplepassword')
 
+---
+💪 __EXTRA__
+
+We can add a test to verify the login: 
+- login
+- login with valid credentials
+---
 
 
+<br>
 
 ## Elaborate
 
-- Optimize login with `cy.request()`
+- Optimize login with api calls `cy.request()` see https://groups.google.com/g/django-oscar/c/qxOXbmu54-U
 - Check cypress doc more offten
 - not enough stock with intercept
-- add test on getting back my mini basket after logging
-  - can be based on an existing user
-  - how can we make this test repeatable ? (clear the basket before tests, create a new user...)
-- accelerate test with API (login)
 - verify basket amount based on products (api only !)
 - more on getting tests repeatable
   - rewrite tests without initial data ?
@@ -424,6 +476,8 @@ Cypress.Commands.add('logout', () => {
 
 - automation pitfalls
   lister les points de Joe C. sous la forme d'une fiche à emporter.
+
+<br>
 
 ## Test with Api
 
