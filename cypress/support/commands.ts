@@ -25,12 +25,22 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', (username: string, password: string) => {
-  cy.visit('/accounts/login/')
-  cy.get('#id_login-username').type(username)
-  cy.get('#id_login-password').type(password)
-  cy.get('button').contains('Log In').click()
+  //cy.visit('/accounts/login/')
+  //cy.get('#id_login-username').type(username)
+  //cy.get('#id_login-password').type(password)
+  //cy.get('button').contains('Log In').click()
+  cy.request('POST', '/api/login/', { username: username, password: password })
 })
 
 Cypress.Commands.add('logout', () => {
-  cy.visit('/accounts/logout')
+  cy.getCookie('csrftoken')
+    .then(csrftoken => {
+      cy.request({
+        method: 'DELETE',
+        url: '/api/login/',
+        headers: {
+          'X-CSRFToken': csrftoken.value
+        }
+      })
+    })
 })

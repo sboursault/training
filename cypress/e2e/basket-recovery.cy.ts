@@ -23,6 +23,7 @@ describe('Basket discovery', () => {
   specify('After login, the mini basket contains the items from my last session', () => {
     // add product as a logged user
     cy.login('mytest@test.com', 'simplepassword')
+    cy.visit('/')
     cataloguePage.addProductToBasket(208)
 
     // logout
@@ -32,6 +33,7 @@ describe('Basket discovery', () => {
     cy.login('mytest@test.com', 'simplepassword')
 
     // then
+    cy.visit('/')
     cataloguePage.getMiniBasketDisplayToggle().should('contain.text', '(1)')
   })
 
@@ -41,7 +43,7 @@ describe('Basket discovery', () => {
 
     // when i log in
     cy.login('mytest@test.com', 'simplepassword')
-
+    cy.visit('/')
     // then
     cataloguePage.getMiniBasketDisplayToggle().should('contain.text', '(1)')
   })
@@ -49,13 +51,14 @@ describe('Basket discovery', () => {
   specify('After logout, the mini basket is empty', () => {
     // add product as a logged user
     cy.login('mytest@test.com', 'simplepassword')
-
+    cy.visit('/')
     cataloguePage.addProductToBasket(208)
 
     // logout
     cy.logout()
 
     // then
+    cy.visit('/')
     cataloguePage.displayMiniBasket()
     cataloguePage.getMiniBasket().should('contain.text', 'Your basket is empty')
   })
@@ -63,15 +66,18 @@ describe('Basket discovery', () => {
   specify('After login, the mini basket contains both the items from my last session and those from my current basket', () => {
     // add product as a logged user
     cy.login('mytest@test.com', 'simplepassword')
+    cy.visit('/')
     cataloguePage.addProductToBasket(208)
     cy.logout()
 
     // add product as an anonymous user
+    cy.visit('/')
     cataloguePage.addProductToBasket(206)
 
     cy.login('mytest@test.com', 'simplepassword')
 
     // then
+    cy.visit('/')
     cataloguePage.getMiniBasketDisplayToggle().should('contain.text', '(2)')
   })
 

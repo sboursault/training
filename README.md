@@ -397,7 +397,7 @@ _The trainer shows how to use the `request` command._
 
 <br>
 
-## Refactor with a custom command
+## Simplify test with custom commands
 
 _The trainer shows how to create a `login` custom command, the learner repeats with `logout` and `clearBasket`._
 
@@ -456,6 +456,55 @@ We can add a test to verify the login:
 - login with valid credentials
 ---
 
+<br>
+
+## Optimize test with api call
+
+Let's refacator the login command to use apis instead of the UI.
+
+_The trainer gives examples of api requests (using curl) to login and logout._
+
+```typescript
+Cypress.Commands.add('login', (username: string, password: string) => {
+  cy.request('POST', '/api/login/', { username: username, password: password })
+})
+// don't forget to add cy.visit('/') to reload the page after logging in
+```
+
+On my machine, from 24 seconds with ui login vs 11 seconds with api login.
+
+---
+👌 __WHAT WE'VE LEARNED__
+
+- A REFORMULER: More robust tests with api calls (apis are less prone to change)
+- A REFORMULER: les tests passent moins au rouge pour des raisons de changements d'UI autre que ce qui est testée
+- Faster tests with api call
+---
+👍 __WHAT WE PRACTICED__
+- Cypress api `request` behaves like if the browser made the request
+---
+💪 __EXTRA__
+
+Rewrite the `logout` command.
+
+```typescript
+Cypress.Commands.add('logout', () => {
+  cy.getCookie('csrftoken')
+    .then(csrftoken => {
+      cy.request({
+        method: 'DELETE',
+        url: '/api/login/',
+        headers: {
+          'X-CSRFToken': csrftoken.value
+        }
+      })
+    })
+})
+```
+chrono: 9 seconds on my machine
+
+---
+
 
 <br>
 
@@ -466,12 +515,20 @@ We can add a test to verify the login:
 - not enough stock with intercept
 - verify basket amount based on products (api only !)
 - more on getting tests repeatable
-  - rewrite tests without initial data ?
+  - create the user if it doesn't exist (using api)
+- test the user creation
 - test a single page application
+- run cypress in cicd
+  - env variables to change baseUrl or password
 
-- prévoir des exercices en plus
+- prévoir BEAUCOUP d'exercices en plus
   - change languages
   - what if I'm french, or english ?
+  - mobile tests - only if they are interested in the subject
+    - change dimensions and user agent
+    - page objects adaptation and dependency injection ?
+      - https://github.com/typestack/typedi
+    - mobile or desktop specific tests
   - ?
 
 - automation pitfalls
@@ -485,3 +542,9 @@ We can add a test to verify the login:
   - 1 product with qtty 1 and another with qtty 2
   - voucher ?
 - execution order, then and expect
+
+
+Déploiement : 
+- serverless containers sur scaleway
+- google cloud run
+- knative ovh cloud (paraît compliqué: commande kubectl)
