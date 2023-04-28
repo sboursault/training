@@ -1,6 +1,20 @@
 # simple-commerce-e2e
 <br>
 
+compléter avec
+- objectif
+- durée
+
+Add a word on flaky tests, bad practices, etc.
+
+## Who is this training for?
+
+Knowledge of git, and understanding a language programming will help
+This training is for you if you want to discover how E2E tests can fit in development workflow.
+
+You'll learn to how to write acceptance criterias, and how to verify these acceptance criterias with automized tests using Cypress.
+You'll also learn how to write a maintanable tests suite, how reduce flakyness (must be defined), and how to keep a fast test suite.
+
 ## Prerequisites
 
 - install node (version ?)
@@ -15,7 +29,13 @@ Ses connaissances en git, html, css, js, typescript
 
 ## Project setup
 
-- créer projet projet github 
+---
+🧩 __PRIMARY OBJECTIVE__
+
+- Know how to configure a cypress project with typescript
+---
+
+- create a github project 
 
 - create ssh key to connect to github (nécessaire pour récupérer un projet privé et pour pusher)
 
@@ -84,16 +104,14 @@ export default defineConfig({
 
 ## First acceptance criterias' workshop: the mini-basket
 
-**User story**
-  
-  > As a shopper,
-  > I want to see my basket content in the mini-basket,
-  > so that I quickly know the basket's content and amount.
+---
+🧩 __PRIMARY OBJECTIVE__
 
-
-**Workshop:** What could be the acceptance criterias for these story ?
+  - Know what acceptance criterias are, and how they fit in the development process
+---
 
 _The trainer takes the role of the Product Owner, the participants are the testers. The must suggest acceptance criterias to the PO._
+_The PO can show mockups or wireframes_
 _The PO can kindly reject some criterias if he thinks they are not required right now. Example : displaying discounts..._
 
 _Possible list:_
@@ -104,18 +122,32 @@ _What if ?_
 - _When empty, it doesn't show the number of products in basket_
 - _When empty, it informs the basket is empty_
 
----
-👌 __WHAT WE'VE LEARNED__
 
-  - Write acceptance tests for a user story
-  - Find edge cases with **what if** questions
----
+**User story**
+  
+  > As a shopper,
+  > I want to see my basket content in the mini-basket,
+  > so that I quickly know the basket's content and amount.
+
+
+**Workshop:** What could be the acceptance criterias for these story ?
 
 <br>
 
-## First tests
+## First automized tests
 
-The trainer writes and explains the first test. The spec file can be created from the dashboad.
+---
+🧩 __PRIMARY OBJECTIVE__
+
+  - Know how to automize tests with Cypress
+  - Know how to find info in the cypress doc
+---
+
+_The trainer writes and explains the tests for:_
+- _always shows the number of products in basket_
+- _doesn't show the number of products in basket_
+
+_The spec file can be created from the dashboad._
 
 ```typescript
 // mini-basket.cy.ts
@@ -128,36 +160,20 @@ describe('Mini-basket', () => {
 })
 ```
 
-Elaborate with negative case
+_Elaborate with negative case_
 
 ```ts
   beforeEach(() =>   cy.visit('/'))
   describe('when empty', () => {
-    it('doesn\'t show the number of products in basket', () => {
+    it("doesn't show the number of products in basket", () => {
       cy.get('.basket-mini .dropdown-toggle').should('not.contain.text', '(')
     })
   })
 ```
 
----
-👌 __WHAT WE'VE LEARNED__
-
-  - Cypress runner with execution logs and chrome inspector
-  - Mocha api (before, beforeEach, describe, it)
-  - Cypress api (visit, get, click, should)
-  - CSS selectors based on class and data-test-id
-  - Introduction to retryability (Timeout to find elements)
-  - Introduction to test isolation (basket is automatically emptied betwin tests)
----
-
-<br>
-
-## Fist tests in autonomy
-
-Exercice :
-- verify the mini-basket dropdown content :
-  - it contains basket entries
-  - it informs the user when the product is empty
+_Then the trainee writes the tests to verify the mini-basket dropdown content:_
+  - _it contains basket entries_
+  - _it informs the user when the product is empty_
 
 ```typescript
   it('informs the basket is empty', () => {
@@ -178,22 +194,29 @@ Exercice :
 
 ---
 👌 __WHAT WE'VE LEARNED__
-- User creates his first test in autonomy
----
-👍 __WHAT WE PRACTICED__
-- Cypress api: should, and
-- Retryability
+
+  - Cypress runner in action with execution logs and chrome inspector
+  - Mocha api (before, beforeEach, describe, it)
+  - Cypress api (visit, get, click, should, and)
+  - CSS selectors based on class and data-test-id
+  - Introduction to retryability (Timeout to find elements)
+  - Introduction to test isolation (basket is automatically emptied betwin tests)
 ---
 
 <br>
 
 ## Refactor with page object
 
-Our test quickly becomes complex, and not so easy to read.
-Let's rewrite it with a page object.
+---
+🧩 __PRIMARY OBJECTIVE__
+
+- Know how to improve maintanabitly with the Page Object pattern
+---
+
+_Our test quickly becomes complex, and not so easy to read._
+_Let's rewrite it with a page object._
 
 ```typescript
-
 // catalogue.page.ts
 
 class CataloguePage {
