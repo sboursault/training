@@ -6,8 +6,16 @@ compléter avec
 - durée
 
 Add a word on flaky tests, bad practices, etc.
+Ask for feedback all allong the training, and also at the end.
 
-## Who is this training for?
+see the retryable parts here, debug, and others...
+https://christianlydemann.com/the-most-common-cypress-mistakes/
+
+
+## About this training
+
+
+### Who is this training for?
 
 Knowledge of git, and understanding a language programming will help
 This training is for you if you want to discover how E2E tests can fit in development workflow.
@@ -15,7 +23,7 @@ This training is for you if you want to discover how E2E tests can fit in develo
 You'll learn to how to write acceptance criterias, and how to verify these acceptance criterias with automized tests using Cypress.
 You'll also learn how to write a maintanable tests suite, how reduce flakyness (must be defined), and how to keep a fast test suite.
 
-## Prerequisites
+### Prerequisites
 
 - install node (version ?)
 - install vscode (or webstorm)
@@ -102,12 +110,16 @@ export default defineConfig({
 
 <br>  
 
-## First acceptance criterias' workshop: the mini-basket
+## Verify a simple feature: Mini basket
+
+### Acceptance criterias workshop
 
 ---
 🧩 __PRIMARY OBJECTIVE__
-
-  - Know what acceptance criterias are, and how they fit in the development process
+- Know what acceptance criterias are, and how they fit in the development process
+- Know how to automize tests with Cypress
+- Know how to find info in the cypress doc
+- Know how to improve maintanabitly with the Page Object pattern
 ---
 
 _The trainer takes the role of the Product Owner, the participants are the testers. The must suggest acceptance criterias to the PO._
@@ -130,18 +142,11 @@ _What if ?_
   > so that I quickly know the basket's content and amount.
 
 
-**Workshop:** What could be the acceptance criterias for these story ?
+**Workshop:** What could be the acceptance criterias for this story ?
 
 <br>
 
-## First automized tests
-
----
-🧩 __PRIMARY OBJECTIVE__
-
-  - Know how to automize tests with Cypress
-  - Know how to find info in the cypress doc
----
+### Automize verification with cypress
 
 _The trainer writes and explains the tests for:_
 - _always shows the number of products in basket_
@@ -192,26 +197,10 @@ _Then the trainee writes the tests to verify the mini-basket dropdown content:_
   })
 ```
 
----
-👌 __WHAT WE'VE LEARNED__
-
-  - Cypress runner in action with execution logs and chrome inspector
-  - Mocha api (before, beforeEach, describe, it)
-  - Cypress api (visit, get, click, should, and)
-  - CSS selectors based on class and data-test-id
-  - Introduction to retryability (Timeout to find elements)
-  - Introduction to test isolation (basket is automatically emptied betwin tests)
----
-
 <br>
 
-## Refactor with page object
+### Refactor with page object
 
----
-🧩 __PRIMARY OBJECTIVE__
-
-- Know how to improve maintanabitly with the Page Object pattern
----
 
 _Our test quickly becomes complex, and not so easy to read._
 _Let's rewrite it with a page object._
@@ -272,9 +261,20 @@ describe('Mini-basket', () => {
 
 ```
 
+
+_How E2E tests fits in the dev process?_
+
+_User Story ➜ Acceptance criterias ➜ Automated tests ➜ Validates the new features ➜ Regression test suite AND living documentation_
+
 ---
 👌 __WHAT WE'VE LEARNED__
 
+  - Cypress runner in action with execution logs and chrome inspector
+  - Mocha api (before, beforeEach, describe, it)
+  - Cypress api (visit, get, click, should, and)
+  - CSS selectors based on class and data-test-id
+  - Introduction to retryability (Timeout to find elements)
+  - Introduction to test isolation (basket is automatically emptied betwin tests)
   - Use page object to avoid code duplication and facilitate reading
   - Create a typescript object
   - Continuously polish your test code
@@ -282,33 +282,21 @@ describe('Mini-basket', () => {
 
 <br>
 
-## Verify behavior by mocking server reponse
+## Verify a more complex feature: Basket recovery
 
-Ah bah non, ça ne marche pour l'ajout de produit sans stock.
-C'est un rechargement de page complet, l'erreur 'no stock available' arrive avec le contenu de la page.
+---
+🧩 __PRIMARY OBJECTIVE__
+- practice writing acceptance tests for a user story
+- Find edge cases
+- Write good acceptance tests: isolated (I'm logged out at the biginning of each test) and **repatable** (go back to a known state at the beginning of the test)
+- Know how to improve maintanabitly with Cypress custom commands
+- Know how to run test faster with api calls
+---
 
-https://www.google.com/search?channel=fs&client=ubuntu&q=cypress+mock+api
-page cypress pas si simple pour une première page de la doc cypress...
-Reprendre les étapes précédentes, il faut se référer plus souvent à la doc cypress !
 
-Cette étape demande beaucoup de préparation.
-Elle est intéressante, mais dispensable.
-Je préparerai à la fin.
+EXERICE : quelles sont les qualités d'un bon test auto ?
+- on peut faire l'exercice en début et et fin de module pour voir si tout a été trouvé
 
-On pourrait recoder le add product pour que l'opération soit en rest.
-si erreur, on affiche les messages
-si succès, on rafraichit la page ou bien juste le mini panier et les messages.
-(utiliser une sorte de toggle si c'est possible)
-Je crois comprendre que l'api reste peut être utilisée avec la session utilisateur
-https://github.com/django-oscar/django-oscar-api/issues/137
-
-Autre solution : présenter `intercept` uniquement en théorique
- - intéressant pour les SPA pour simuler une réponse spécifique
- - intéressant pour attendre le retour d'une requête
-
-<br>
-
-## 2nd acceptance criterias workshop: basket recovery
 
 **User story**
   
@@ -316,7 +304,7 @@ Autre solution : présenter `intercept` uniquement en théorique
   > I want to recover the basket from my previous session
   > so that I can prepare my order and validate in several times.
 
-**Workshop:** What could be the acceptance criterias for these story ?
+**Workshop:** What could be the acceptance criterias for this story ?
 
 Possible list:
 - After login, the mini basket contains the items from my last session
@@ -326,16 +314,6 @@ Possible list:
 
 What if ?
 - there is not enough stock for a product: products are added anyway
-
----
-👍 __WHAT WE PRACTICED__
-- Write acceptance tests for a user story
-- Find edge cases
----
-  
-<br>
-
-## 2nd test in autonomy
 
 Exercice :
 - Automate the accetance critera verification, _by priority order_
@@ -410,17 +388,11 @@ _The trainer shows how to use the `request` command._
     )
 ```
 
----
-👌 __WHAT WE'VE LEARNED__
-
-  - Automate by priority order
-  - Introduction to test isolation (I'm logged out at the biginning of each test)
-  - Repatability: go back to a known state at the beginning of the test
----
 
 <br>
 
-## Simplify test with custom commands
+### Simplify test with custom commands
+
 
 _The trainer shows how to create a `login` custom command, the learner repeats with `logout` and `clearBasket`._
 
@@ -465,23 +437,12 @@ Cypress.Commands.add('logout', () => {
 Exercice: create a clearBasket command
 
 
----
-👌 __WHAT WE'VE LEARNED__
-- Cypress: custom command
-- Optimize tests with `cy.request()`
-- typescrypt: optional parameters (the password can be generic e.g 'simplepassword')
 
----
-💪 __EXTRA__
-
-We can add a test to verify the login: 
-- login
-- login with valid credentials
----
 
 <br>
 
-## Optimize test with api call
+### Optimize with api call
+
 
 Let's refacator the login command to use apis instead of the UI.
 
@@ -497,19 +458,29 @@ Cypress.Commands.add('login', (username: string, password: string) => {
 On my machine, from 24 seconds with ui login vs 11 seconds with api login.
 
 ---
+👍 __WHAT WE PRACTICED__
+- Write acceptance tests for a user story
+- Find edge cases
+---
 👌 __WHAT WE'VE LEARNED__
 
+- Automate by priority order
+- Introduction to test isolation (I'm logged out at the biginning of each test)
+- Repatability: go back to a known state at the beginning of the test
+- Cypress: custom command
+- Optimize tests with `cy.request()`
+- typescrypt: optional parameters (the password can be generic e.g 'simplepassword')
+- Cypress api `request` behaves like if the browser made the request
 - A REFORMULER: More robust tests with api calls (apis are less prone to change)
 - A REFORMULER: les tests passent moins au rouge pour des raisons de changements d'UI autre que ce qui est testée
 - Faster tests with api call
 ---
-👍 __WHAT WE PRACTICED__
-- Cypress api `request` behaves like if the browser made the request
----
 💪 __EXTRA__
 
-Rewrite the `logout` command.
-
+We can add a test to verify the login: 
+- login
+- login with valid credentials
+- rewrite the `logout` command.
 ```typescript
 Cypress.Commands.add('logout', () => {
   cy.getCookie('csrftoken')
@@ -527,6 +498,109 @@ Cypress.Commands.add('logout', () => {
 chrono: 9 seconds on my machine
 
 ---
+
+
+## Api tests: Order amount
+
+---
+🧩 __PRIMARY OBJECTIVE__
+- Know how to write api tests with Cypress
+- Know how to add examples to explicit acceptance criterias
+---
+
+
+**Item**
+  
+  > Basket amount:
+  > The basket amount should take into account the price and quantity of each entries.
+  > Order amount:
+  > Over 30€, the 7€ for delivery fees are offered.
+
+**Workshop:** What could be the acceptance criterias for this item ?
+
+Possible list:
+- Basket amount equals the sum of `(product price x quantity)` of each basket entries
+  - examples:
+    - with 1 product A (23.99€) => 1 x 23.99 = 23.99€
+    - with 2 products A (23.99€) and 3 product B (12.99€) => 2 x 23.99 + 3 x 12.99€ = 86.95€
+- Over 30€, the 7€ delivery fees are offered
+  - examples:
+    - with 23.99€ => 23.99€ + 7 = 30.99€
+    - with 86.95€ => 23.99€ + 0 = 86.95€
+
+
+What if ?
+- the baskount amount is exactly 30€?
+
+```typescript
+// api/order-amount.api.cy.ts
+describe('Order amount', () => {
+
+  before(() => { })
+
+  beforeEach(() => { })
+
+  describe('Basket amount is the sum of (product price x quantity) of each basket entries', () => {
+
+    /**
+     * with 1 product A (23.99€) => 1 x 23.99 = 23.99€
+     */
+    specify('with 1 product A', () => { })
+
+    /**
+     * with 2 products A (23.99€) and 3 product B (12.99€) => 2 x 23.99 + 3 x 12.99€ = 86.95€
+     */
+    specify('with 2 products A and 3 product B', () => { })
+  })
+
+  describe('Over 30€, the 7€ delivery fees are offered', () => {
+
+    /**
+     * with 23.99€ => 23.99€ + 7 = 30.99€
+     */
+    specify('Basket amount bellow 30€', () => { })
+
+    /**
+     * with 86.95€ => 23.99€ + 0 = 86.95€
+     */
+    specify('Basket amount over 30€', () => { })
+  })
+
+})
+
+```
+
+_The trainer shows how to encapsulate the basket clearing in an api client_
+
+
+
+```typescript
+// support/api/basket.api.ts
+class BasketApi {
+  clearBasket() {
+    cy.request('/api/baskets')
+      .then(response => cy.getCookie('csrftoken')
+        .then(csrftoken => {
+          cy.request({
+            method: 'DELETE',
+            url: response.body[0].url,
+            headers: {
+              'X-CSRFToken': csrftoken.value
+            }
+          })
+        })
+      )
+  }
+}
+
+export default new BasketApi()
+
+```
+
+
+
+
+
 
 
 <br>
@@ -552,7 +626,7 @@ chrono: 9 seconds on my machine
     - page objects adaptation and dependency injection ?
       - https://github.com/typestack/typedi
     - mobile or desktop specific tests
-  - ?
+  - add csrf verfication on apis ?
 
 - automation pitfalls
   lister les points de Joe C. sous la forme d'une fiche à emporter.
@@ -571,3 +645,69 @@ Déploiement :
 - serverless containers sur scaleway
 - google cloud run
 - knative ovh cloud (paraît compliqué: commande kubectl)
+
+
+## How it fits in the dev process
+
+### Benefits of automation testing
+
+Some other benefits of automated testing are:
+- Free testers up to focus on more exploratory-type testing
+- Get fast feedback to your developer on failing checked in software
+- Improved product quality
+
+Warning: Don't underestimate the cost of maintaining automated test suites.
+
+## Automation pitfalls
+
+Not treating test code like production code ?
+
+- Expecting automation testing to replace manual testers
+- Underestimating the amount of time it takes to maintain your web app automation
+- Automating all UI end-to-end journeys. Scripts should be **atomic** so that when they fail, you know why.
+- Focusing on UI automation types of testing only
+- Not having a controlled test environment
+- Ignoring failing tests. If you notice a flaky test, refactor it to make it more reliable. Delete any tests that are not reliable and haven’t been fixed within a given time frame.
+- Developers not making their code automatable
+- Not using proper synchronization in your tests (handling waits)
+- Not writing isoloted tests: you should be able to run your tests in any order.
+- Not writing repeatable tests
+- Not treating your automated code just like your production code.
+  - tests should be simple (easy to read, and easy to modify)
+  - There should be a whole team’s collaborative automation efforts (collective code ownership)
+  - follow code best practices (KISS, DRY, Pair programming, code reviews)
+
+
+## What Test Cases Should be Automated?
+
+Test that focuses on the money areas of your application
+Test that focuses on the risk areas of your application
+Tests that need to run against different data sets
+Tests that are hard to test manually.
+Focus on critical paths of your application
+
+<br>
+
+## Verify behavior by mocking server reponse
+
+Ah bah non, ça ne marche pour l'ajout de produit sans stock.
+C'est un rechargement de page complet, l'erreur 'no stock available' arrive avec le contenu de la page.
+
+https://www.google.com/search?channel=fs&client=ubuntu&q=cypress+mock+api
+page cypress pas si simple pour une première page de la doc cypress...
+Reprendre les étapes précédentes, il faut se référer plus souvent à la doc cypress !
+
+Cette étape demande beaucoup de préparation.
+Elle est intéressante, mais dispensable.
+Je préparerai à la fin.
+
+On pourrait recoder le add product pour que l'opération soit en rest.
+si erreur, on affiche les messages
+si succès, on rafraichit la page ou bien juste le mini panier et les messages.
+(utiliser une sorte de toggle si c'est possible)
+Je crois comprendre que l'api reste peut être utilisée avec la session utilisateur
+https://github.com/django-oscar/django-oscar-api/issues/137
+
+Autre solution : présenter `intercept` uniquement en théorique
+ - intéressant pour les SPA pour simuler une réponse spécifique
+ - intéressant pour attendre le retour d'une requête

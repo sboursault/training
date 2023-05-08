@@ -1,22 +1,11 @@
+import basketApi from "../support/api/basket.api"
 import cataloguePage from "../support/pages/catalogue.page"
 
 describe('Basket discovery', () => {
 
   beforeEach(() => {
     cy.login('mytest@test.com', 'simplepassword')
-    // clear basket
-    cy.request('/api/baskets')
-      .then(response => cy.getCookie('csrftoken')
-        .then(csrftoken => {
-          cy.request({
-            method: 'DELETE',
-            url: response.body[0].url,
-            headers: {
-              'X-CSRFToken': csrftoken.value
-            }
-          })
-        })
-      )
+    basketApi.clearBasket()
     cy.logout()
   })
 
