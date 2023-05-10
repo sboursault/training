@@ -4,9 +4,7 @@ import cataloguePage from "../support/pages/catalogue.page"
 describe('Basket discovery', () => {
 
   beforeEach(() => {
-    cy.login('mytest@test.com', 'simplepassword')
-    basketApi.clearBasket()
-    cy.logout()
+    basketApi.clearBasket('mytest@test.com:simplepassword')
   })
 
   specify('After login, the mini basket contains the items from my last session', () => {

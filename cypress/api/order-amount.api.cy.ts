@@ -1,3 +1,4 @@
+import basketApi from "../support/api/basket.api"
 
 describe('Order amount', () => {
 
@@ -5,30 +6,34 @@ describe('Order amount', () => {
 
   beforeEach(() => { })
 
-  describe('Basket amount equals the sum of (product price x quantity) for each basket entries', () => {
+  specify(
+    "Basket amount equals the sum of (product price x quantity) for each basket entries", () => {
 
-    /**
-     * with 1 product A (23.99€) => 1 x 23.99 = 23.99€
-     */
-    specify('with 1 product A', () => { })
+      basketApi.addProduct(2, '/api/products/208/') // 23.99€
+      basketApi.addProduct(3, '/api/products/203/') // 12.99
 
-    /**
-     * with 2 products A (23.99€) and 3 product B (12.99€) => 2 x 23.99 + 3 x 12.99€ = 86.95€
-     */
-    specify('with 2 products A and 3 product B', () => { })
-  })
+      basketApi.getBasket().then(basket => {
+        expect(basket.total_incl_tax).to.equal("86.95")
+      })
 
-  describe('Over 30€, the 7€ for delivery fees are offered', () => {
+    })
 
-    /**
-     * with 23.99€ => 23.99€ + 7 = 30.99€
-     */
-    specify('Basket amount bellow 30€', () => { })
+  describe("Over 30€, the 7€ delivery fees are offered", () => {
+    specify("Basket amount bellow 30€", () => {
 
-    /**
-     * with 86.95€ => 23.99€ + 0 = 86.95€
-     */
-    specify('Basket amount over 30€', () => { })
-  })
+      basketApi.addProduct(1, '/api/products/208/') // 23.99€
+
+      basketApi.getShippingMethod().its('price.incl_tax').should('equal', '7.00')
+
+    });
+
+    specify("Basket amount over 30€", () => {
+
+      basketApi.addProduct(3, '/api/products/203/') // 12.99
+
+      basketApi.getShippingMethod().its('price.incl_tax').should('equal', '0.00')
+
+    });
+  });
 
 })
