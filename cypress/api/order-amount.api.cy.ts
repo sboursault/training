@@ -1,4 +1,5 @@
 import basketApi from "../support/api/basket.api"
+import productAminApi from "../support/api/product-amin.api"
 
 describe('Order amount', () => {
 
@@ -10,7 +11,7 @@ describe('Order amount', () => {
     "Basket amount equals the sum of (product price x quantity) for each basket entries", () => {
 
       basketApi.addProduct(2, '/api/products/208/') // 23.99€
-      basketApi.addProduct(3, '/api/products/203/') // 12.99
+      basketApi.addProduct(3, '/api/products/203/') // 12.99€
 
       basketApi.getBasket().then(basket => {
         expect(basket.total_incl_tax).to.equal("86.95")
@@ -29,10 +30,17 @@ describe('Order amount', () => {
 
     specify("Basket amount over 30€", () => {
 
-      basketApi.addProduct(3, '/api/products/203/') // 12.99
+      basketApi.addProduct(3, '/api/products/203/') // 12.99€
 
       basketApi.getShippingMethod().its('price.incl_tax').should('equal', '0.00')
 
+    });
+
+    specify("Basket amount equals 30€", () => {
+      productAminApi.createProduct('30.00').then(productUrl =>
+        basketApi.addProduct(1, productUrl)
+      )
+      basketApi.getShippingMethod().its('price.incl_tax').should('equal', '0.00')
     });
   });
 

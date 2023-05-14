@@ -10,10 +10,10 @@ compléter avec
 Add a word on flaky tests, bad practices, etc.
 Ask for feedback all allong the training, and also at the end.
 
-
-
 see the retryable parts here, debug, and others...
 https://christianlydemann.com/the-most-common-cypress-mistakes/
+
+
 
 ## About this training
 
@@ -34,6 +34,16 @@ You'll also learn how to write a maintanable tests suite, how reduce flakyness (
 
 Avant la formation, prendre connaissance des motivations de l'aprenant.
 Ses connaissances en git, html, css, js, typescript
+
+<br>
+
+## Notes for the trainer
+
+All along the training, repeat and repeat again the FIRST qualities
+
+Isolé, répétable, rapide, simple
+
+This is the one thing the learner should memorize.
 
 <br>
 
@@ -117,9 +127,23 @@ export default defineConfig({
 
 ---
 
+
 <br>
 
-## Verify a simple feature: Mini basket
+## Basic E2E test: Verify the Mini basket
+
+Qualities of an automize test test
+- Fast
+- Isolated
+- Repeatable
+- Simple and Self validating
+- Timely
+
+<br>
+
+## Basic E2E test: Verify the Mini basket
+
+<br>
 
 ### Acceptance criterias workshop
 
@@ -296,7 +320,7 @@ _User Story ➜ Acceptance criterias ➜ Automated tests ➜ Validates the new f
 
 <br>
 
-## Verify a more complex feature: Basket recovery
+## Advance E2E test: Verify the Basket recovery
 
 ---
 
@@ -408,12 +432,12 @@ _The trainer shows how to use the `request` command._
 
 ```typescript
 cy.request({
-  method: 'DELETE',
-  url: '/api/basket',
+  method: "DELETE",
+  url: "/api/basket",
   headers: {
-    'Authorization': 'Basic ' + btoa('mytest@test.com:simplepassword')
-  }
-})
+    Authorization: "Basic " + btoa("mytest@test.com:simplepassword"),
+  },
+});
 ```
 
 <br>
@@ -535,6 +559,7 @@ chrono: 9 seconds on my machine
 🧩 **PRIMARY OBJECTIVE**
 
 - Know how to write api tests with Cypress
+- Know how to use aliases
 - Know how to add examples to explicit acceptance criterias
 
 ---
@@ -551,13 +576,12 @@ chrono: 9 seconds on my machine
 Possible list:
 
 - Basket amount equals the sum of `(product price x quantity)` of each basket entries
-  - examples:
-    - with 1 product A (23.99€) => 1 x 23.99 = 23.99€
+  - example:
     - with 2 products A (23.99€) and 3 product B (12.99€) => 2 x 23.99 + 3 x 12.99€ = 86.95€
 - Over 30€, the 7€ delivery fees are offered
   - examples:
-    - with 23.99€ => 23.99€ + 7 = 30.99€
-    - with 86.95€ => 23.99€ + 0 = 86.95€
+    - with 23.99€ => shipping price is 7.00€
+    - with 86.95€ => shipping price is 0.00€
 
 What if ?
 
@@ -567,9 +591,9 @@ What if ?
 // cypress.config.ts
 export default defineConfig({
   e2e: {
-    specPattern: 'cypress/{api,e2e}/**/*.cy.{js,jsx,ts,tsx}',
+    specPattern: "cypress/{api,e2e}/**/*.cy.{js,jsx,ts,tsx}",
   },
-})
+});
 // api/order-amount.api.cy.ts
 describe("Order amount", () => {
   before(() => {});
@@ -602,93 +626,100 @@ _The trainer shows how to encapsulate the basket clearing in an api client_
 class BasketApi {
   clearBasket(credentials: string) {
     cy.request({
-      method: 'DELETE',
-      url: '/api/basket',
+      method: "DELETE",
+      url: "/api/basket",
       headers: {
-        'Authorization': 'Basic ' + btoa(credentials)
-      }
-    })
+        Authorization: "Basic " + btoa(credentials),
+      },
+    });
   }
 }
 
 export default new BasketApi();
 ```
 
-
 _The trainee writes the test_
 
 ```typescript
+describe("Order amount", () => {
+  before(() => {});
 
-describe('Order amount', () => {
-
-  before(() => { })
-
-  beforeEach(() => { })
+  beforeEach(() => {});
 
   specify(
-    "Basket amount equals the sum of (product price x quantity) for each basket entries", () => {
+    "Basket amount equals the sum of (product price x quantity) for each basket entries",
+    () => {
+      cy.request("POST", "/api/basket/add-product/", {
+        url: "/api/products/208/", // 23.99€
+        quantity: 2,
+      });
+      cy.request("POST", "/api/basket/add-product/", {
+        url: "/api/products/203/", // 12.99€
+        quantity: 3,
+      });
 
-      cy.request('POST', '/api/basket/add-product/',
-        {
-          url: "/api/products/208/", // 23.99€
-          quantity: 2
-        })
-      cy.request('POST', '/api/basket/add-product/',
-        {
-          url: "/api/products/203/", // 12.99€
-          quantity: 3
-        })
-
-      cy.request('GET', '/api/basket/').then(response => {
-        expect(response.body.total_incl_tax).to.equal("86.95")
-      })
-
-    })
+      cy.request("GET", "/api/basket/").then((response) => {
+        expect(response.body.total_incl_tax).to.equal("86.95");
+      });
+    }
+  );
 
   describe("Over 30€, the 7€ delivery fees are offered", () => {
     specify("Basket amount bellow 30€", () => {
-
-      cy.request('POST', '/api/basket/add-product/',
-      {
+      cy.request("POST", "/api/basket/add-product/", {
         url: "/api/products/208/", // 23.99€
-        quantity: 1
-      })
+        quantity: 1,
+      });
 
-      cy.request('GET', '/api/basket/shipping-methods/').then(response => {
-        expect(response.body[0].price.incl_tax).to.equal('7.00')
-      })
-
+      cy.request("GET", "/api/basket/shipping-methods/").then((response) => {
+        expect(response.body[0].price.incl_tax).to.equal("7.00");
+      });
     });
 
     specify("Basket amount over 30€", () => {
-
-      cy.request('POST', '/api/basket/add-product/',
-      {
+      cy.request("POST", "/api/basket/add-product/", {
         url: "/api/products/203/", // 12.99€
-        quantity: 3
-      })
+        quantity: 3,
+      });
 
-      cy.request('GET', '/api/basket/shipping-methods/').then(response => {
-        expect(response.body[0].price.incl_tax).to.equal('0.00')
-      })
+      cy.request("GET", "/api/basket/shipping-methods/").then((response) => {
+        expect(response.body[0].price.incl_tax).to.equal("0.00");
+      });
     });
   });
-
-})
-
+});
 ```
 
 _The trainer shows the benefits of api tests_
+
 - faster
   - allows to get feedback quicker
   - allows to run more test cases
 - apis tend to change less offten than UI, making api tests easier to maintain
 
+_The trainer explains the execution order and how to define variables_
+
+
+```typescript
+
+// not good
+let response = cy.request("GET", "/api/basket/shipping-methods/")
+expect(response.body[0].price.incl_tax).to.equal("0.00");
+
+// good
+cy.request("GET", "/api/basket/shipping-methods/").then((response) => {
+  expect(response.body[0].price.incl_tax).to.equal("0.00");
+});
+
+// good
+cy.request("GET", "/api/basket/shipping-methods/").as('response')
+cy.get('@response').its('body[0].price.incl_tax').should('eq', '0.00')
+
+```
+
 ---
 
 👍 **WHAT WE PRACTICED**
-
-
 
 ---
 
@@ -696,6 +727,7 @@ _The trainer shows the benefits of api tests_
 
 - How to write api tests
 - How to debug tests with console logs and `debbuger`
+- Cypress execution order
 
 ---
 
@@ -706,97 +738,164 @@ _The trainer shows the benefits of api tests_
 ```typescript
 // support/api/basket.api.ts
 class BasketApi {
-
   clearBasket() {
     // ...
   }
 
   getBasket(): Cypress.Chainable<BasketResource> {
-    return cy.request('GET', '/api/basket/').its('body')
+    return cy.request("GET", "/api/basket/").its("body");
   }
 
   addProduct(quantity: number, productUrl: string) {
-    cy.request('POST', '/api/basket/add-product/',
-      {
-        url: productUrl,
-        quantity
-      })
+    cy.request("POST", "/api/basket/add-product/", {
+      url: productUrl,
+      quantity,
+    });
   }
 
   getShippingMethods(): Cypress.Chainable<ShippingMethodResource[]> {
-    return cy.request('GET', '/api/basket/shipping-methods/').its('body')
+    return cy.request("GET", "/api/basket/shipping-methods/").its("body");
   }
 
   getShippingMethod(): Cypress.Chainable<ShippingMethodResource> {
     return cy
-      .request('GET', '/api/basket/shipping-methods/')
-      .its('body')
-      .should('have.length', 1)
-      .its(0)
+      .request("GET", "/api/basket/shipping-methods/")
+      .its("body")
+      .should("have.length", 1)
+      .its(0);
   }
 }
 
 class BasketResource {
-  total_incl_tax: string
+  total_incl_tax: string;
 }
 
 class ShippingMethodResource {
-  price: ShippingMethodPriceResource
+  price: ShippingMethodPriceResource;
 }
 
 class ShippingMethodPriceResource {
-  incl_tax: string
+  incl_tax: string;
 }
 
 // api/order-amount.api.cy.ts
-import basketApi from "../support/api/basket.api"
+import basketApi from "../support/api/basket.api";
 
-describe('Order amount', () => {
+describe("Order amount", () => {
+  before(() => {});
 
-  before(() => { })
-
-  beforeEach(() => { })
+  beforeEach(() => {});
 
   specify(
-    "Basket amount equals the sum of (product price x quantity) for each basket entries", () => {
+    "Basket amount equals the sum of (product price x quantity) for each basket entries",
+    () => {
+      basketApi.addProduct(2, "/api/products/208/"); // 23.99€
+      basketApi.addProduct(3, "/api/products/203/"); // 12.99
 
-      basketApi.addProduct(2, '/api/products/208/') // 23.99€
-      basketApi.addProduct(3, '/api/products/203/') // 12.99
-
-      basketApi.getBasket().then(basket => {
-        expect(basket.total_incl_tax).to.equal("86.95")
-      })
-
-    })
+      basketApi.getBasket().then((basket) => {
+        expect(basket.total_incl_tax).to.equal("86.95");
+      });
+    }
+  );
 
   describe("Over 30€, the 7€ delivery fees are offered", () => {
     specify("Basket amount bellow 30€", () => {
+      basketApi.addProduct(1, "/api/products/208/"); // 23.99€
 
-      basketApi.addProduct(1, '/api/products/208/') // 23.99€
-
-      basketApi.getShippingMethod().its('price.incl_tax').should('equal', '7.00')
-
+      basketApi
+        .getShippingMethod()
+        .its("price.incl_tax")
+        .should("equal", "7.00");
     });
 
     specify("Basket amount over 30€", () => {
+      basketApi.addProduct(3, "/api/products/203/"); // 12.99
 
-      basketApi.addProduct(3, '/api/products/203/') // 12.99
-
-      basketApi.getShippingMethod().its('price.incl_tax').should('equal', '0.00')
-
+      basketApi
+        .getShippingMethod()
+        .its("price.incl_tax")
+        .should("equal", "0.00");
     });
   });
-
-})
+});
 ```
 
-- Create a 30€ product to verify the behavior on the exact threshold
+- Create a 30€ product to verify the behavior on the exact threshold (niveau ++)
 
+```typescript
+
+// cypress/support/product-admin.api.ts
+
+class ProductAdminApi {
+
+  private adminCredentials = btoa('superuser@example.com:testing')
+
+  createProduct(price: string): Cypress.Chainable<string> {
+    return cy.request(
+      {
+        method: 'POST',
+        url: '/api/admin/products/',
+        headers: {
+          'Authorization': 'Basic ' + this.adminCredentials
+        },
+        body: {
+          slug: randomString(10),
+          product_class: 'book',
+          stockrecords: [
+            {
+              "partner_sku": randomString(10),
+              "price_currency": "EUR",
+              "price": price,
+              "num_in_stock": 100,
+              "partner": "http://localhost:8000/api/admin/partners/3/"
+            }
+          ],
+        }
+      }).its('headers.location').then(url => {
+        return '/api' + url.substring(url.indexOf("/products/"))
+      })
+  }
+}
+
+function randomString(length) {
+  let result = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const charactersLength = characters.length;
+  let counter = 0;
+  while (counter < length) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    counter += 1;
+  }
+  return result;
+}
+
+export default new ProductAdminApi()
+
+// cypress/api/order-amount.api.cy.ts
+
+specify("Basket amount equals 30€", () => {
+  productAminApi.createProduct('30.00').then(productUrl =>
+    basketApi.addProduct(1, productUrl)
+  )
+  basketApi.getShippingMethod().its('price.incl_tax').should('equal', '0.00')
+});
 ```
 
-chrono: 9 seconds on my machine
 
 ---
+
+<br>
+
+## Repeat: Create and update address
+
+The aim of this 
+
+If there is enough time, the trainee can use all what he learned to verify the address creation and update in the user settings.
+This involves:
+- creating a repeatable test by deleting and creating a user without address
+- creating the address (ui), verify it (ui)
+- creating and updating an address (creation with ui or api), verify it (ui)
+
 
 <br>
 
@@ -805,7 +904,6 @@ chrono: 9 seconds on my machine
 - Optimize login with api calls `cy.request()` see https://groups.google.com/g/django-oscar/c/qxOXbmu54-U
 - Check cypress doc more offten
 - not enough stock with intercept
-- verify basket amount based on products (api only !)
 - more on getting tests repeatable
   - create the user if it doesn't exist (using api)
 - test the user creation
@@ -827,15 +925,6 @@ chrono: 9 seconds on my machine
 
 - automation pitfalls
   lister les points de Joe C. sous la forme d'une fiche à emporter.
-
-<br>
-
-## Test with Api
-
-- Verify basket amount with api
-  - 1 product with qtty 1 and another with qtty 2
-  - voucher ?
-- execution order, then and expect
 
 Déploiement :
 
