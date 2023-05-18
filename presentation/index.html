@@ -1,0 +1,62 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="../node_modules/reveal.js/dist/reveal.css">
+  <!-- <link rel="stylesheet" href="../node_modules/reveal.js/dist/theme/dracula.css"> -->
+  <!-- police intéressante sur dracula-->
+  <link rel="stylesheet" href="css/white-overload.css">
+  <link rel="stylesheet" href="css/highlight/atom-one-light.css">
+  <script src="../node_modules/reveal.js/dist/reveal.js"></script>
+  <script src="../node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="../node_modules/reveal.js/plugin/notes/notes.js"></script>
+  <script src="../node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        
+        <h1>Reveal.js</h1>
+        <h3>The HTML Presentation Framework</h3>
+        <p>
+          <small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
+        </p>
+     
+      
+        <aside class="notes">
+          Presentation examples : https://github.com/dzello/revealjs-themes
+          https://revealjs-themes.dzello.com/robot-lung.html#/
+          https://revealjs-themes.dzello.com/sunblind.html#/
+        </aside>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Slide 1
+          A paragraph with some text and a [link](https://hakim.se).
+          ---
+          ## Slide 2
+          ---
+          ## Slide 3
+          ```js [1-2|3|4]
+          let a = 1;
+          let b = 2;
+          let c = x => 1 + 2 + x;
+          c(3);
+          ```
+        </textarea>
+      </section>
+
+    </div>
+  </div>
+  <script type="module">
+    Reveal.initialize({
+      hash: true, // Active la navigation par hash dans l'URL
+      plugins: [RevealMarkdown, RevealNotes, RevealHighlight]
+    });
+  </script>
+</body>
+
+</html>

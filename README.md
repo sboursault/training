@@ -13,9 +13,11 @@ Ask for feedback all allong the training, and also at the end.
 see the retryable parts here, debug, and others...
 https://christianlydemann.com/the-most-common-cypress-mistakes/
 
-
+<br>
 
 ## About this training
+
+<br>
 
 ### Who is this training for?
 
@@ -24,6 +26,19 @@ This training is for you if you want to discover how E2E tests can fit in develo
 
 You'll learn to how to write acceptance criterias, and how to verify these acceptance criterias with automized tests using Cypress.
 You'll also learn how to write a maintanable tests suite, how reduce flakyness (must be defined), and how to keep a fast test suite.
+
+<br>
+
+### What you'll learn
+
+<br>
+
+### Organization
+
+2 days of 6 hours.
+9:00 to 12:00 - 13:30 to 16:30
+
+<br>
 
 ### Prerequisites
 
@@ -37,7 +52,7 @@ Ses connaissances en git, html, css, js, typescript
 
 <br>
 
-## Notes for the trainer
+### Notes for the trainer
 
 All along the training, repeat and repeat again the FIRST qualities
 
@@ -130,18 +145,7 @@ export default defineConfig({
 
 <br>
 
-## Basic E2E test: Verify the Mini basket
-
-Qualities of an automize test test
-- Fast
-- Isolated
-- Repeatable
-- Simple and Self validating
-- Timely
-
-<br>
-
-## Basic E2E test: Verify the Mini basket
+## Simple tests: mini basket
 
 <br>
 
@@ -298,10 +302,6 @@ describe("Mini-basket", () => {
 });
 ```
 
-_How E2E tests fits in the dev process?_
-
-_User Story ➜ Acceptance criterias ➜ Automated tests ➜ Validates the new features ➜ Regression test suite AND living documentation_
-
 ---
 
 👌 **WHAT WE'VE LEARNED**
@@ -320,7 +320,55 @@ _User Story ➜ Acceptance criterias ➜ Automated tests ➜ Validates the new f
 
 <br>
 
-## Advance E2E test: Verify the Basket recovery
+
+## Test strategy
+
+### What Test Cases Should be Automated?
+
+Test that focuses on the money areas of your application
+Test that focuses on the risk areas of your application
+Tests that need to run against different data sets
+Tests that are hard to test manually.
+Focus on critical paths of your application
+
+### Automated tests in the dev process
+
+```plantuml
+@startuml
+'!theme blueprint
+'!theme crt-amber
+'!theme crt-green
+'!theme amiga
+'!theme toy
+!include https://raw.githubusercontent.com/patrik-csak/one-dark-plantuml-theme/v1.0.1/theme.puml
+skinparam componentStyle rectangle
+rectangle "Sprint" {
+  component " User\nstory" as US
+  component "Acceptance\n    criterias" as AC
+  component "Automated\n     tests" as AT
+  component "Validates the\n  new feature" as V
+  US -> AC
+  AC -> AT
+  AT -> V
+}
+rectangle "Future sprints" {
+  component "Living documentation" as Doc
+  component "Regression tests" as RT
+  AT --> Doc
+  AT --> RT 
+}
+@enduml
+```
+
+### Do I still need manual tests ?
+
+Yes !
+Automated tests free testers up to focus on more exploratory-type testing.
+
+
+<br>
+
+## Fast, repeatable and isolated tests: basket recovery
 
 ---
 
@@ -364,7 +412,7 @@ Exercice :
 For now, we can create a new account manually (the email is not verified).
 
 ```typescript
-describe("Basket discovery", () => {
+describe("Basket recovery", () => {
   specify.skip(
     "After login, the basket contains the items from my last session",
     () => {
@@ -452,7 +500,9 @@ https://on.cypress.io/custom-commands
 https://docs.cypress.io/guides/tooling/typescript-support#Using-an-External-Typings-File
 
 ```typescript
-// support/cypress.d.ts
+
+// cypress/support/cypress.d.ts
+
 declare namespace Cypress {
   interface Chainable {
     /**
@@ -469,7 +519,8 @@ declare namespace Cypress {
   }
 }
 
-// support/commands.ts
+// cypress/support/commands.ts
+
 Cypress.Commands.add("login", (username: string, password: string) => {
   cy.visit("/accounts/login/");
   cy.get("#id_login-username").type(username);
@@ -482,8 +533,6 @@ Cypress.Commands.add("logout", () => {
 });
 ```
 
-Exercice: create a clearBasket command
--> un peu null
 
 <br>
 
@@ -551,6 +600,19 @@ Cypress.Commands.add("logout", () => {
 chrono: 9 seconds on my machine
 
 ---
+
+<br>
+
+## Qualities of a good automated test
+
+- Fast
+- Isolated
+- Repeatable
+- Simple and Self validating
+- Timely
+
+<br>
+
 
 ## Api tests: Order amount
 
@@ -881,8 +943,47 @@ specify("Basket amount equals 30€", () => {
 });
 ```
 
+Now we get a new problem. The products we create come first on the homepage.
+If we create too many prodcuts, the test on the basket recovery may fail.
+This is an isolation problem.
+
+Possible solutions :
+- Adatp the basket recovery tests to add products from product detail pages
+- Adatp the basket recovery tests to add products from the 'books_2' category (simpler)
+
+```typescript
+
+// cypress/e2e/basket-recovery.cy.ts
+
+cy.visit('/catalogue/category/books_2/')
+```
+
 
 ---
+
+
+<br>
+
+## Automation pitfalls
+
+Not treating test code like production code ?
+
+- Expecting automation testing to replace manual testers
+- Underestimating the amount of time it takes to maintain your web app automation
+- Automating all UI end-to-end journeys. Scripts should be **atomic** so that when they fail, you know why.
+- Focusing on UI automation types of testing only
+- Not having a controlled test environment
+- Ignoring failing tests. If you notice a flaky test, refactor it to make it more reliable. Delete any tests that are not reliable and haven’t been fixed within a given time frame.
+- Developers not making their code automatable
+- Not using proper synchronization in your tests (handling waits)
+- Not writing isoloted tests: you should be able to run your tests in any order.
+- Not writing repeatable tests
+- Not treating your automated code just like your production code.
+  - tests should be simple (easy to read, and easy to modify)
+  - There should be a whole team’s collaborative automation efforts (collective code ownership)
+  - follow code best practices (KISS, DRY, Pair programming, code reviews)
+- Underestimating the cost of maintaining automated test suites.
+
 
 <br>
 
@@ -932,44 +1033,6 @@ Déploiement :
 - google cloud run
 - knative ovh cloud (paraît compliqué: commande kubectl)
 
-## How it fits in the dev process
-
-### Benefits of automation testing
-
-Some other benefits of automated testing are:
-
-- Free testers up to focus on more exploratory-type testing
-- Get fast feedback to your developer on failing checked in software
-- Improved product quality
-
-Warning: Don't underestimate the cost of maintaining automated test suites.
-
-## Automation pitfalls
-
-Not treating test code like production code ?
-
-- Expecting automation testing to replace manual testers
-- Underestimating the amount of time it takes to maintain your web app automation
-- Automating all UI end-to-end journeys. Scripts should be **atomic** so that when they fail, you know why.
-- Focusing on UI automation types of testing only
-- Not having a controlled test environment
-- Ignoring failing tests. If you notice a flaky test, refactor it to make it more reliable. Delete any tests that are not reliable and haven’t been fixed within a given time frame.
-- Developers not making their code automatable
-- Not using proper synchronization in your tests (handling waits)
-- Not writing isoloted tests: you should be able to run your tests in any order.
-- Not writing repeatable tests
-- Not treating your automated code just like your production code.
-  - tests should be simple (easy to read, and easy to modify)
-  - There should be a whole team’s collaborative automation efforts (collective code ownership)
-  - follow code best practices (KISS, DRY, Pair programming, code reviews)
-
-## What Test Cases Should be Automated?
-
-Test that focuses on the money areas of your application
-Test that focuses on the risk areas of your application
-Tests that need to run against different data sets
-Tests that are hard to test manually.
-Focus on critical paths of your application
 
 <br>
 
