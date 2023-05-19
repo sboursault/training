@@ -1,15 +1,15 @@
+<!DOCTYPE html>
 <html>
 
 <head>
   <link rel="stylesheet" href="../node_modules/reveal.js/dist/reveal.css">
-  <!-- <link rel="stylesheet" href="../node_modules/reveal.js/dist/theme/dracula.css"> -->
-  <!-- police intéressante sur dracula-->
-  <link rel="stylesheet" href="css/white-overload.css">
-  <link rel="stylesheet" href="css/highlight/atom-one-light.css">
+  <link rel="stylesheet" href="css/presentation.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
   <script src="../node_modules/reveal.js/dist/reveal.js"></script>
   <script src="../node_modules/reveal.js/plugin/markdown/markdown.js"></script>
   <script src="../node_modules/reveal.js/plugin/notes/notes.js"></script>
   <script src="../node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="../node_modules/leader-line/leader-line.min.js"></script>
 </head>
 
 <body>
@@ -17,45 +17,103 @@
     <div class="slides">
 
       <section>
-        
+
         <h1>Reveal.js</h1>
         <h3>The HTML Presentation Framework</h3>
+        <p>Here is a normal text</p>
         <p>
-          <small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
+          <small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a
+              href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
         </p>
-     
-      
+
+
         <aside class="notes">
           Presentation examples : https://github.com/dzello/revealjs-themes
           https://revealjs-themes.dzello.com/robot-lung.html#/
           https://revealjs-themes.dzello.com/sunblind.html#/
+
+          https://anseki.github.io/leader-line/ to draw arrows
         </aside>
       </section>
 
-      <section data-markdown>
-        <textarea data-template>
-          ## Slide 1
-          A paragraph with some text and a [link](https://hakim.se).
-          ---
-          ## Slide 2
-          ---
-          ## Slide 3
-          ```js [1-2|3|4]
-          let a = 1;
-          let b = 2;
-          let c = x => 1 + 2 + x;
-          c(3);
-          ```
-        </textarea>
+      <section data-markdown="presentation.md" data-separator="^---" data-separator-vertical="^\n\n\n"
+        data-separator-notes="^Note:" data-charset="UTF-8">
       </section>
+
+
 
     </div>
   </div>
   <script type="module">
+    function isVisible(el) {
+      return getComputedStyle(el).visibility !== 'hidden';
+    }
+    function drawArrow(elt1, elt2, options) {
+      if (isVisible(elt1) && isVisible(elt2))
+        new LeaderLine(elt1, elt2, { color: 'var(--r-link-color)', size: 7, ...options || {} });
+    }
+    function drawArrows() {
+      var box1 = document.getElementById('box-1'),
+        box2 = document.getElementById('box-2'),
+        box3 = document.getElementById('box-3'),
+        box4 = document.getElementById('box-4'),
+        box5 = document.getElementById('box-5'),
+        box6 = document.getElementById('box-6');
+      drawArrow(box1, box2, { startSocket: 'right', endSocket: 'left' });
+      drawArrow(box2, box3, { startSocket: 'right', endSocket: 'left' });
+      drawArrow(box3, box4, { startSocket: 'right', endSocket: 'left' });
+      drawArrow(box3, box5, { startSocket: 'bottom', endSocket: 'top' });
+      drawArrow(box3, box6, { startSocket: 'bottom', endSocket: 'top' });
+    }
+    function eraseArrows() {
+      const elts = document.getElementsByClassName('leader-line')
+      Array.from(elts).forEach(elt => elt.remove())
+    }
     Reveal.initialize({
-      hash: true, // Active la navigation par hash dans l'URL
+      width: '70%',
+
+      // Factor of the display size that should remain empty around
+      // the content
+      margin: 0.04,
+      hash: true, // adds # in urls to allow url navigation
       plugins: [RevealMarkdown, RevealNotes, RevealHighlight]
     });
+    Reveal.on('ready', event => {
+      setTimeout(
+        () => {
+          drawArrows()
+        }, 200 // without this timeout, the arrow is well positionned
+      )
+    });
+    Reveal.on('slidetransitionend', event => {
+      drawArrows()
+    });
+    /*Reveal.on('resize', event => {
+      if (event.indexh == 4) {
+        drawArrows()
+      }
+    });*/
+    Reveal.on('slidechanged', event => {
+      eraseArrows()
+    });
+    Reveal.on('fragmentshown', event => {
+      setTimeout(
+        () => {
+          eraseArrows()
+          drawArrows()
+        }, 300 // wait for the element to be visible
+      )
+    });
+    Reveal.on('fragmenthidden', event => {
+      setTimeout(
+        () => {
+          eraseArrows()
+          drawArrows()
+        }, 300 // wait for the element to be visible
+      )
+    });
+    Reveal.on('overviewshown', event => { eraseArrows() });
+    Reveal.on('overviewhidden', event => { drawArrows() });
   </script>
 </body>
 

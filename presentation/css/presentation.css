@@ -1,0 +1,68 @@
+:root {
+  --color-dark: #2a2a2a;
+  --color-white: #eeeff0;
+  --color-black: #2a2a2a;
+  --color-light-gray-4: #dddddd;
+  --color-light-gray-3: #cccccc;
+  --color-light-gray-2: #b2b2b2;
+  --color-light-gray-1: #999;
+  --color-gray: #808080;
+  --color-dark-gray-1: #666;
+  --color-dark-gray-2: #333;
+  --color-light-green-2: #77bc65;
+  --color-light-lemon-green-3: #e8f2a1;
+  --color-light-lemon-green-2: #d4ea6b;
+  --color-light-lemon-green-1: #bbe33d;
+  --color-dark-lemon-green-1: #5eb91e;
+  --color-dark-lemon-green-2: #468a1a;
+  --color-dark-lemon-green-3: #395511;
+}
+
+.small {
+  font-size: 0.6em;
+}
+
+.box + .box {
+  margin-top: 70px;
+}
+
+.box {
+  font-size: 0.8em;
+  text-align: center;
+  padding: 20px;
+  z-index: -1000;
+  margin: auto;
+  background-color: var(--diagram-background-color);
+  /*border-radius: 8px;
+  border: 1px dashed var(--color-white);*/
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border:dashed 5px var(--diagram-border-color);
+}
+
+.box .box__title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.7em;
+  text-align: center;
+  padding: 15px 20px;
+
+  margin: 25px 25px 0;
+  color: var(--color-black);
+  background: var(--color-light-lemon-green-3);
+  /* border-radius: 8px;
+  border: 3px solid var(--color-dark-lemon-green-2); */
+  
+  border-radius:50% 4% 50% 2% / 2% 50% 2% 50%;
+  border:solid 5px var(--color-dark-lemon-green-2);
+  
+}
+
+.leader-line {
+  z-index: 1000;
+}
+
+
