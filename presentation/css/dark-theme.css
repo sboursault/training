@@ -12,8 +12,8 @@
     --r-background-color: var(--color-black);
     --r-main-font: Source Sans Pro, Helvetica, sans-serif;
     --r-main-font-size: 42px;
-    --r-main-color: var(--color-white);
-    --r-block-margin: 20px;
+    --r-main-color: var(--color-light-gray-3);
+    --r-block-margin: 40px;
     --r-heading-margin: 0 0 60px 0;
     --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
     --r-heading-color: var(--color-light-green-2);

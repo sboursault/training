@@ -323,48 +323,6 @@ describe("Mini-basket", () => {
 
 ## Test strategy
 
-### What Test Cases Should be Automated?
-
-Test that focuses on the money areas of your application
-Test that focuses on the risk areas of your application
-Tests that need to run against different data sets
-Tests that are hard to test manually.
-Focus on critical paths of your application
-
-### Automated tests in the dev process
-
-```plantuml
-@startuml
-'!theme blueprint
-'!theme crt-amber
-'!theme crt-green
-'!theme amiga
-'!theme toy
-!include https://raw.githubusercontent.com/patrik-csak/one-dark-plantuml-theme/v1.0.1/theme.puml
-skinparam componentStyle rectangle
-rectangle "Sprint" {
-  component " User\nstory" as US
-  component "Acceptance\n    criterias" as AC
-  component "Automated\n     tests" as AT
-  component "Validates the\n  new feature" as V
-  US -> AC
-  AC -> AT
-  AT -> V
-}
-rectangle "Future sprints" {
-  component "Living documentation" as Doc
-  component "Regression tests" as RT
-  AT --> Doc
-  AT --> RT 
-}
-@enduml
-```
-
-### Do I still need manual tests ?
-
-Yes !
-Automated tests free testers up to focus on more exploratory-type testing.
-
 
 <br>
 
