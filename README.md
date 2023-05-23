@@ -942,6 +942,22 @@ Not treating test code like production code ?
   - follow code best practices (KISS, DRY, Pair programming, code reviews)
 - Underestimating the cost of maintaining automated test suites.
 
+- Not mocking out external dependencies ? (https://christianlydemann.com/the-most-common-cypress-mistakes/)
+
+## Cypress tips
+
+// use the debugger (https://christianlydemann.com/the-most-common-cypress-mistakes/)
+cy.debug() and cy.pause()
+// variables, execution order and retryability 
+  (https://christianlydemann.com/the-most-common-cypress-mistakes/)
+  (https://docs.cypress.io/guides/references/best-practices#Assigning-Return-Values)
+// use dedicated selectors
+  (https://christianlydemann.com/the-most-common-cypress-mistakes/)
+  (https://docs.cypress.io/guides/references/best-practices#Selecting-Elements)
+// test against a dedicated env (not one shared with manual tests)
+// write atomic tests ((https://testguild.com/atomic-tests/))
+
+
 
 <br>
 
@@ -1018,3 +1034,10 @@ Autre solution : présenter `intercept` uniquement en théorique
 
 - intéressant pour les SPA pour simuler une réponse spécifique
 - intéressant pour attendre le retour d'une requête
+
+## resources
+https://christianlydemann.com/the-most-common-cypress-mistakes/
+Joe C automation guide
+Agile testing book
+http://martinfowler.com/bliki/PageObject.html
+50 quick ideas to improve your tests

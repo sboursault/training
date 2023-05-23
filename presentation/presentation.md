@@ -77,7 +77,6 @@ Notes:
   </ul>
 </div>
 
-
 Notes:
 While a team can have automation experts, it doesn't limit particular tasks to particular team members
 Everyone should feel responsible for the automated tests
@@ -88,3 +87,63 @@ Without automated tests, we don't have a quality product
 **YES!** <!-- .element: class="fragment" -->
 
 Automated tests free testers up to focus on more exploratory-type testing <!-- .element: class="fragment" -->
+
+---
+
+# Cypress tips
+
+---
+
+## Page object pattern
+
+Page objects abstract away the DOM manipulation from the test code <!-- .element: class="fragment" -->
+
+```typescript
+cy.get(".basket-mini .dropdown-toggle").click();  // this is about HTML
+
+
+cataloguePage.displayMiniBasket();                // this is about the 
+                                                  // application
+```
+<!-- .element: class="fragment" -->
+
+<p class="apart fragment">Tests get <strong>easier to read</strong> and <strong>easier to maintain</strong>
+
+---
+
+## Wait for events, not time
+
+<p class="fragment">When can I verify the result of async operations?
+
+
+
+```typescript
+// bad
+cy.wait(2000)                  // wait for 2 seconds
+
+// Good
+cy.intercept('POST', '/api/basket/add-product')
+  .as('addProductToBasket')
+cy.wait('@addProductToBasket') // wait for a http response
+
+// Good
+cy.contains("Welcome")         // wait for the page to contain "welcome"
+
+```
+<!-- .element: class="fragment" -->
+
+<p class="fragment">Wait for events to avoid <strong>long</strong> and <strong>flaky</strong> tests</p>
+
+<small class="fragment">More on cypress implicit waits: <a href="https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting">https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</a></small>
+
+
+Note:
+Testing offten involves asynchronous behaviours.
+
+---
+
+Isolation:
+Properly isolated tests can be run in any sequence. 
+
+Repeatability
+you must have clear control over the environment in which they run, so you have a well-known state at the beginning of the test.

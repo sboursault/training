@@ -10,10 +10,7 @@
 :root {
     --r-background-color: #eee;
     --r-main-font: Source Sans Pro, Helvetica, sans-serif;
-    --r-main-font-size: 42px;
     --r-main-color: #444;
-    --r-block-margin: 20px;
-    --r-heading-margin: 0 0 20px 0;
     --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
     /*--r-heading-color: #069a2e;*/ /* dark green 1 */
     /*--r-heading-color: #127622;*/ /* dark green 2 */
@@ -38,6 +35,4 @@
 
     --diagram-background-color: var(--color-light-gray-4); /*var(--color-dark-gray-2)*/  
     --diagram-border-color: var(--color-light-gray-1); /*var(--color-light-gray-2)*/  
-  
-
   }
