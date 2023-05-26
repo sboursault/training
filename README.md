@@ -1041,3 +1041,4 @@ Joe C automation guide
 Agile testing book
 http://martinfowler.com/bliki/PageObject.html
 50 quick ideas to improve your tests
+https://docs.cypress.io/guides/references/best-practices

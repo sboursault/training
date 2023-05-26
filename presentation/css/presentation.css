@@ -8,6 +8,7 @@
   --color-light-gray-1: #999;
   --color-gray: #808080;
   --color-dark-gray-1: #666;
+  --color-dark-gray-1-5: #4c4c4c;
   --color-dark-gray-2: #333;
   --color-light-green-2: #77bc65;
   --color-light-lemon-green-3: #e8f2a1;
@@ -17,10 +18,14 @@
   --color-dark-lemon-green-2: #468a1a;
   --color-dark-lemon-green-3: #395511;
 
+  
+  --r-block-margin: 30px;
+  --r-heading-margin: 0 0 60px 0;
   --r-main-font-size: 42px;
-  --r-block-margin: 35px;
-  --r-heading-margin: 0 0 40px 0;
-
+  --r-heading1-size: 2.5em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.1em;
+  --r-heading4-size: 1em;
 }
 
 .reveal .small {
@@ -28,11 +33,15 @@
 }
 
 .reveal .level-2-text {
-  font-size: 2.25rem;
+  font-size: .85em;
+}
+
+.reveal .level-3-text {
+  font-size: .82em;
 }
 
 .reveal .apart {
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 .box + .box {
@@ -98,4 +107,21 @@ strong {
 
 pre code.hljs {
   padding-right: 0; /* this is to avoid the unnecessary scroll bar */
+}
+
+code:not(pre code) {
+  background-color: var(--color-dark-gray-2);
+  font-size: 75%;
+  border-radius: 5px;
+  padding: 5px 8px;
+  border: 2px solid var(--color-dark-gray-1-5);
+  margin: 0 5px;
+}
+
+.reveal h3 {
+  text-align: left;
+  color: var(--r-main-color);
+  display: list-item;
+  list-style-type: square;
+  margin: 60px 0 0 0;
 }
