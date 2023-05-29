@@ -56,7 +56,7 @@ Ses connaissances en git, html, css, js, typescript
 
 All along the training, repeat and repeat again the FIRST qualities
 
-Isolé, répétable, rapide, simple
+It can be a good idea to ask the trainee to list the qualities of a good test.
 
 This is the one thing the learner should memorize.
 
@@ -1034,11 +1034,3 @@ Autre solution : présenter `intercept` uniquement en théorique
 
 - intéressant pour les SPA pour simuler une réponse spécifique
 - intéressant pour attendre le retour d'une requête
-
-## resources
-https://christianlydemann.com/the-most-common-cypress-mistakes/
-Joe C automation guide
-Agile testing book
-http://martinfowler.com/bliki/PageObject.html
-50 quick ideas to improve your tests
-https://docs.cypress.io/guides/references/best-practices

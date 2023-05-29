@@ -28,8 +28,9 @@
   --r-heading4-size: 1em;
 }
 
-.reveal .small {
-  font-size: 0.6em;
+.reveal .slide-title h1 {
+  font-weight: 700;
+  line-height: 1.1em;
 }
 
 .reveal .level-2-text {
@@ -39,6 +40,11 @@
 .reveal .level-3-text {
   font-size: .82em;
 }
+
+.reveal .small {
+  font-size: 0.6em;
+}
+
 
 .reveal .apart {
   margin-top: 50px;
@@ -118,10 +124,20 @@ code:not(pre code) {
   margin: 0 5px;
 }
 
+
 .reveal h3 {
   text-align: left;
   color: var(--r-main-color);
   display: list-item;
   list-style-type: square;
+  margin: 0 0 0 0;
+}
+
+.reveal h3:not(:first-child){
   margin: 60px 0 0 0;
+}
+
+#toc li a {
+  color: inherit;
+  text-decoration: inherit;
 }
