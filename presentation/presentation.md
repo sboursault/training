@@ -28,7 +28,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 <ol>
   <li><a href="#/test-strategy">Test strategy</a>
   <li><a href="#/cypress-tips">Cypress tips</a>
-  <li><a href="#/good-tests">Qualities of a good automized test</a>
+  <li><a href="#/good-tests">Qualities of a good test</a>
 </ol>
 
 
@@ -37,7 +37,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 <!-- .slide: id="test-strategy" -->
 
 <div class="part-title">
-  <span class="level-3-text">Part 1</span>
+  <span class="text-level-3">Part 1</span>
   <h1>Test strategy</h1>
 </div>
 
@@ -78,12 +78,12 @@ Notes:
 
 ---
 
-## Who automizes the tests?
+## Who automates the tests?
 
 <h3 class="fragment">Favour a <strong>whole team approach</strong></h3>
 
 <p class="block-head fragment">Developers and testers work together to</p>
-<ul class="level-2-text">
+<ul class="text-level-2">
   <li class="fragment">Build and maintain the test infrastructure</li>
   <li class="fragment">Design testable code</li>
   <li class="fragment">Write and maintain the automated tests</li>
@@ -101,11 +101,11 @@ Without automated tests, we don't have a quality product
 
 <h3 class="fragment">Run automated tests on each release</h3>
 
-<p class="level-2-text fragment">as part of your CI/CD pipeline</p>
+<p class="text-level-2 fragment">as part of your CI/CD pipeline</p>
 
 <h3 class="fragment">Have a dedicated environment</h3>
 
-<p class="level-2-text fragment">A shared environment is not predictible</p>
+<p class="text-level-2 fragment">A shared environment is not predictible</p>
 
 Note:
 On a shared environment, tests can fail for external reasons.
@@ -124,11 +124,11 @@ you must have clear control over the environment in which the tests run.
 
 <!-- .element: class="fragment" -->
 
-<p class="level-2-text fragment">Selectors based on <code>data-testid</code> are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
+<p class="text-level-2 fragment">Selectors based on <code>data-testid</code> are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
 
 ### Make async APIs testable <!-- .element: class="fragment" -->
 
-<p class="level-2-text fragment">Ask "what happens instead?" to prove that something does not happen</p>
+<p class="text-level-2 fragment">Ask "what happens instead?" to prove that something does not happen</p>
 
 Note:
 The data-cy attribute will not change from CSS style or JS behavioral changes, meaning it's not coupled to the behavior or styling of an element.
@@ -149,7 +149,7 @@ Automated tests free testers up to focus on more exploratory-type testing <!-- .
 <!-- .slide: id="cypress-tips" -->
 
 <div class="part-title">
-  <span class="level-3-text">Part 2</span>
+  <span class="text-level-3">Part 2</span>
   <h1>Cypress tips</h1>
 </div>
 
@@ -169,7 +169,7 @@ cataloguePage.displayMiniBasket();               // this is about the
 
 <!-- .element: class="fragment" -->
 
-<p class="level-2-text apart fragment">Tests get <strong>easier to read</strong> and <strong>easier to maintain</strong>
+<p class="text-level-2 apart fragment">Tests get <strong>easier to read</strong> and <strong>easier to maintain</strong>
 
 ---
 
@@ -191,7 +191,7 @@ cy.contains("Welcome")  // wait for the page to contain "welcome"
 
 <!-- .element: class="fragment" -->
 
-<p class="level-2-text apart fragment">Wait for events to avoid <strong>long</strong> and <strong>flaky</strong> tests</p>
+<p class="text-level-2 apart fragment">Wait for events to avoid <strong>long</strong> and <strong>flaky</strong> tests</p>
 
 <small class="fragment">More on cypress implicit waits: <a href="https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting">https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</a></small>
 
@@ -215,13 +215,13 @@ and kill them if necessary
 <!-- .slide: id="good-tests" -->
 
 <div class="part-title">
-  <span class="level-3-text">Part 3</span>
-  <h1>Qualities of a good automized test</h1>
+  <span class="text-level-3">Part 3</span>
+  <h1>Qualities of a good test</h1>
 </div>
 
 ---
 
-## Automized tests are F.I.R.S.T
+## Good automated tests are F.I.R.S.T
 
 <div class="fragment">
 
@@ -269,9 +269,9 @@ Note: move the environment to a <strong>well-known state</strong> before they ru
 
 ### Timely
 
-<p class="fragment">Try to automize tests before development
+<p class="fragment">Try to automate tests before development
 
-<div class="apart level-2-text">
+<div class="apart text-level-2">
 <!--When written before development / Benefits -->
 <ul>
   <li class="fragment">Production code is crafted so it's <strong>testable</strong>
@@ -279,13 +279,13 @@ Note: move the environment to a <strong>well-known state</strong> before they ru
 </ul>
 </div>
 
-<p class="apart level-2-text fragment">Testing before development is more fun,<br> more beneficial, more productive, and less frustrating
+<p class="apart text-level-2 fragment">Testing before development is more fun,<br> more beneficial, more productive, and less frustrating
 
 ---
 
 ## Resources
 
-<div class="level-2-text">
+<div class="text-level-2">
 
 - https://christianlydemann.com/the-most-common-cypress-mistakes/
 - Joe C automation guide

@@ -33,11 +33,11 @@
   line-height: 1.1em;
 }
 /* rename text-level-2 */
-.reveal .level-2-text {
+.reveal .text-level-2 {
   font-size: .85em;
 }
 
-.reveal .level-3-text {
+.reveal .text-level-3 {
   font-size: .82em;
 }
 
