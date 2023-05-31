@@ -28,7 +28,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 <ol>
   <li><a href="#/test-strategy">Test strategy</a>
   <li><a href="#/cypress-tips">Cypress tips</a>
-  <li><a href="#/good-tips">Qualities of a good automized test</a>
+  <li><a href="#/good-tests">Qualities of a good automized test</a>
 </ol>
 
 
@@ -36,7 +36,10 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 <!-- .slide: id="test-strategy" -->
 
-# Test strategy
+<div class="part-title">
+  <span class="level-3-text">Part 1</span>
+  <h1>Test strategy</h1>
+</div>
 
 ---
 
@@ -145,7 +148,11 @@ Automated tests free testers up to focus on more exploratory-type testing <!-- .
 
 <!-- .slide: id="cypress-tips" -->
 
-# Cypress tips
+<div class="part-title">
+  <span class="level-3-text">Part 2</span>
+  <h1>Cypress tips</h1>
+</div>
+
 
 ---
 
@@ -193,6 +200,10 @@ Testing offten involves asynchronous behaviours.
 
 ---
 
+
+Develop this and check other bad patterns
+and rename css classes
+
 ## Don't let flaky tests attack your confidence
 
 Quarantine flaky tests
@@ -203,7 +214,10 @@ and kill them if necessary
 
 <!-- .slide: id="good-tests" -->
 
-# Qualities of a good automized test
+<div class="part-title">
+  <span class="level-3-text">Part 3</span>
+  <h1>Qualities of a good automized test</h1>
+</div>
 
 ---
 
