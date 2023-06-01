@@ -927,20 +927,14 @@ cy.visit('/catalogue/category/books_2/')
 Not treating test code like production code ?
 
 - Expecting automation testing to replace manual testers
-- Underestimating the amount of time it takes to maintain your web app automation
 - Automating all UI end-to-end journeys. Scripts should be **atomic** so that when they fail, you know why.
 - Focusing on UI automation types of testing only
 - Not having a controlled test environment
 - Ignoring failing tests. If you notice a flaky test, refactor it to make it more reliable. Delete any tests that are not reliable and haven’t been fixed within a given time frame.
-- Developers not making their code automatable
-- Not using proper synchronization in your tests (handling waits)
-- Not writing isoloted tests: you should be able to run your tests in any order.
-- Not writing repeatable tests
 - Not treating your automated code just like your production code.
   - tests should be simple (easy to read, and easy to modify)
   - There should be a whole team’s collaborative automation efforts (collective code ownership)
   - follow code best practices (KISS, DRY, Pair programming, code reviews)
-- Underestimating the cost of maintaining automated test suites.
 
 - Not mocking out external dependencies ? (https://christianlydemann.com/the-most-common-cypress-mistakes/)
 

@@ -201,8 +201,11 @@ Testing offten involves asynchronous behaviours.
 ---
 
 
+
+!!!!!!!!!!!!!!!!!!!
+
 Develop this and check other bad patterns
-and rename css classes
+
 
 ## Don't let flaky tests attack your confidence
 
@@ -264,6 +267,8 @@ Note: move the environment to a <strong>well-known state</strong> before they ru
 <p class="fragment">Test must be easy to read
 
 <p class="fragment">The purpose of a test should be obvious
+
+<p class="fragment">Apply clean code practices (DRY, KISS, Single responsibility, solid ?)
 
 ---
 
