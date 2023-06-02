@@ -930,7 +930,6 @@ Not treating test code like production code ?
 - Automating all UI end-to-end journeys. Scripts should be **atomic** so that when they fail, you know why.
 - Focusing on UI automation types of testing only
 - Not having a controlled test environment
-- Ignoring failing tests. If you notice a flaky test, refactor it to make it more reliable. Delete any tests that are not reliable and haven’t been fixed within a given time frame.
 - Not treating your automated code just like your production code.
   - tests should be simple (easy to read, and easy to modify)
   - There should be a whole team’s collaborative automation efforts (collective code ownership)
@@ -991,9 +990,6 @@ This involves:
       - https://github.com/typestack/typedi
     - mobile or desktop specific tests
   - add csrf verfication on apis ?
-
-- automation pitfalls
-  lister les points de Joe C. sous la forme d'une fiche à emporter.
 
 Déploiement :
 

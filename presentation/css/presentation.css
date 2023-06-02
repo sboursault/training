@@ -18,10 +18,14 @@
   --color-dark-lemon-green-2: #468a1a;
   --color-dark-lemon-green-3: #395511;
 
+  --text-size-level-1: 42px;
+  --text-size-level-2: .85em;
+  --text-size-level-3: .82em;
+
   
   --r-block-margin: 30px;
   --r-heading-margin: 0 0 60px 0;
-  --r-main-font-size: 42px;
+  --r-main-font-size: var(--text-size-level-1);
   --r-heading1-size: 2.5em;
   --r-heading2-size: 1.6em;
   --r-heading3-size: 1.1em;
@@ -34,11 +38,11 @@
 }
 
 .reveal .text-level-2 {
-  font-size: .85em;
+  font-size: var(--text-size-level-2);
 }
 
 .reveal .text-level-3 {
-  font-size: .82em;
+  font-size: var(--text-size-level-3);
 }
 
 .reveal .small {
@@ -147,4 +151,17 @@ code:not(pre code) {
   margin: -20px 0 0 0;
   text-align: left;
   max-width: 90%
+}
+
+.part-title h1 {
+  margin-top: -12px;
+}
+
+.tip-title span {
+  font-size: var(--text-size-level-2);
+}
+
+.tip-title h2 {
+  display:inline;
+  margin-left: 12px
 }

@@ -156,7 +156,11 @@ Automated tests free testers up to focus on more exploratory-type testing <!-- .
 
 ---
 
-## Page object pattern
+<div class="tip-title">
+  <span>tip 1:</span>
+  <h2>Page object pattern</h2>
+</div>
+
 
 Page objects abstract away the DOM manipulation from the test code <!-- .element: class="fragment" -->
 
@@ -173,7 +177,11 @@ cataloguePage.displayMiniBasket();               // this is about the
 
 ---
 
-## Wait for events, not time
+<div class="tip-title">
+  <span>tip 2:</span>
+  <h2>Wait for events, not time</h2>
+</div>
+
 
 <h3 class="fragment">When can I verify the result of async operations?</h3>
 
@@ -200,18 +208,16 @@ Testing offten involves asynchronous behaviours.
 
 ---
 
+<div class="tip-title">
+  <span>tip 3:</span>
+  <h2>Never ignore failing tests</h2>
+</div>
 
+<p class="fragment">Fix flaky tests as soon as possible
 
-!!!!!!!!!!!!!!!!!!!
+<p class="fragment">If not fixed within a given time frame,<br> <strong>delete</strong> or <strong>quarantine</strong> the flaky test
 
-Develop this and check other bad patterns
-
-
-## Don't let flaky tests attack your confidence
-
-Quarantine flaky tests
-Fix theme as soon as possible
-and kill them if necessary
+<p class="fragment">Don't let flaky tests attack your confidence!
 
 ---
 
