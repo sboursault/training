@@ -1,5 +1,5 @@
 
-<!-- .slide: class="slide-title" -->
+<!-- .slide: class="slide--presentation-title" -->
 
 <br>
 <br>
@@ -8,6 +8,7 @@
 
 <h1 style>End to End tests <br>with Cypress</h1>
 
+<br>
 <br>
 
 <p><small>Training course by Sébastien Boursault</small>
@@ -18,10 +19,11 @@ Presentation examples : https://github.com/dzello/revealjs-themes
 https://revealjs-themes.dzello.com/robot-lung.html#/
 https://revealjs-themes.dzello.com/sunblind.html#/
 
-
 ---
 
-<!-- .slide: id="toc" -->
+<!-- .slide: id="toc" class="slide--vcenter" -->
+
+<div>
 
 ## Table of content
 
@@ -31,10 +33,12 @@ https://revealjs-themes.dzello.com/sunblind.html#/
   <li><a href="#/good-tests">Qualities of a good test</a>
 </ol>
 
+</div>
 
 ---
 
-<!-- .slide: id="test-strategy" -->
+<!-- .slide: id="test-strategy" class="slide--vcenter" -->
+
 
 <div class="part-title">
   <span class="text-level-3">Part 1</span>
@@ -146,7 +150,13 @@ Automated tests free testers up to focus on more exploratory-type testing <!-- .
 
 ---
 
-<!-- .slide: id="cypress-tips" -->
+Use API tests to cover more cases
+- Focusing on UI automation types of testing only
+
+
+---
+
+<!-- .slide: id="cypress-tips" class="slide--vcenter" -->
 
 <div class="part-title">
   <span class="text-level-3">Part 2</span>
@@ -221,7 +231,7 @@ Testing offten involves asynchronous behaviours.
 
 ---
 
-<!-- .slide: id="good-tests" -->
+<!-- .slide: id="good-tests" class="slide--vcenter" -->
 
 <div class="part-title">
   <span class="text-level-3">Part 3</span>

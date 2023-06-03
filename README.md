@@ -926,9 +926,10 @@ cy.visit('/catalogue/category/books_2/')
 
 Not treating test code like production code ?
 
-- Expecting automation testing to replace manual testers
+
 - Automating all UI end-to-end journeys. Scripts should be **atomic** so that when they fail, you know why.
-- Focusing on UI automation types of testing only
+
+
 - Not having a controlled test environment
 - Not treating your automated code just like your production code.
   - tests should be simple (easy to read, and easy to modify)
@@ -938,6 +939,14 @@ Not treating test code like production code ?
 - Not mocking out external dependencies ? (https://christianlydemann.com/the-most-common-cypress-mistakes/)
 
 ## Cypress tips
+
+
+
+
+WHAT ELSE ??
+
+
+
 
 // use the debugger (https://christianlydemann.com/the-most-common-cypress-mistakes/)
 cy.debug() and cy.pause()
