@@ -27,6 +27,12 @@
     --r-selection-background-color: #98bdef;
     --r-selection-color: #fff;
 
+
+    --r-gray-text-color: var(--color-light-gray-1);
+    
     --diagram-background-color: var(--color-dark-gray-2);
     --diagram-border-color: var(--color-light-gray-1);
   }
+
+
+  

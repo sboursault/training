@@ -51,7 +51,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
   <h2>Automated tests in the dev process</h2>
 </div>
 
-<div class="box">
+<div class="box fragment">
   <p class="box__title">Sprint</p>
   <div class="badge" id="box-1">User story</div>
   <div class="badge fragment" id="box-2">Acceptance criterias</div>
@@ -66,7 +66,11 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 ---
 
-## You can't automate everything!
+<div class="slide-title">
+  <div class="slide-title__part">Test strategy / </div>
+  <h2>You can't automate everything!</h2>
+</div>
+
 
 <p class="fragment block-head">You should focus on</p>
 <ul>
@@ -84,7 +88,10 @@ Notes:
 
 ---
 
-## Who automates the tests?
+<div class="slide-title">
+  <div class="slide-title__part">Test strategy / </div>
+  <h2>Who automates the tests?</h2>
+</div>
 
 <h3 class="fragment">Favour a <strong>whole team approach</strong></h3>
 
@@ -103,7 +110,10 @@ Without automated tests, we don't have a quality product
 
 ---
 
-## Test infrastructure
+<div class="slide-title">
+  <div class="slide-title__part">Test strategy / </div>
+  <h2>Test infrastructure</h2>
+</div>
 
 <h3 class="fragment">Run automated tests on each release</h3>
 
@@ -119,7 +129,10 @@ you must have clear control over the environment in which the tests run.
 
 ---
 
-## Do I still need manual tests?
+<div class="slide-title">
+  <div class="slide-title__part">Test strategy / </div>
+  <h2>Do I still need manual tests?</h2>
+</div>
 
 **YES!** <!-- .element: class="fragment" -->
 

@@ -166,7 +166,7 @@ code:not(pre code) {
 }
 
 .slide-title__part {
-  /*margin-top: 0px;*/
+  color: var(--r-gray-text-color);
   text-align: left;
   font-size: var(--text-size-level-4);
 }
