@@ -46,11 +46,13 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 </div>
 
 ---
-
-## Automated tests in the dev process
+<div class="slide-title">
+  <div class="slide-title__part">Test strategy / </div>
+  <h2>Automated tests in the dev process</h2>
+</div>
 
 <div class="box">
-   <p class="box__title">Sprint</p>
+  <p class="box__title">Sprint</p>
   <div class="badge" id="box-1">User story</div>
   <div class="badge fragment" id="box-2">Acceptance criterias</div>
   <div class="badge fragment" id="box-3">Automated tests</div>
@@ -117,31 +119,6 @@ you must have clear control over the environment in which the tests run.
 
 ---
 
-## Design testable code
-
-<h3 class="fragment">Add <code>data-*</code> attributes to select html elements</h3>
-
-```html
-<input type="email" id="email" name="email"
-  class="form-control" data-testid="register-form__email-input"/>
-```
-
-<!-- .element: class="fragment" -->
-
-<p class="text-level-2 fragment">Selectors based on <code>data-testid</code> are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
-
-### Make async APIs testable <!-- .element: class="fragment" -->
-
-<p class="text-level-2 fragment">Ask "what happens instead?" to prove that something does not happen</p>
-
-Note:
-The data-cy attribute will not change from CSS style or JS behavioral changes, meaning it's not coupled to the behavior or styling of an element.
-Don't test it if it's not testable
-
-See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to an error topic...
-
----
-
 ## Do I still need manual tests?
 
 **YES!** <!-- .element: class="fragment" -->
@@ -149,6 +126,8 @@ See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to 
 Automated tests free testers up to focus on more exploratory-type testing <!-- .element: class="fragment" -->
 
 ---
+
+
 
 Use API tests to cover more cases
 - Focusing on UI automation types of testing only
@@ -228,6 +207,38 @@ Testing offten involves asynchronous behaviours.
 <p class="fragment">If not fixed within a given time frame,<br> <strong>delete</strong> or <strong>quarantine</strong> the flaky test
 
 <p class="fragment">Don't let flaky tests attack your confidence!
+
+---
+
+<div class="tip-title">
+  <span>tip 4:</span>
+  <h2>Design testable code</h2>
+</div>
+
+<h3 class="fragment">Add <code>data-*</code> attributes to select html elements</h3>
+
+```html
+<input type="email" id="email" name="email"
+  class="form-control" data-testid="register-form__email-input"/>
+```
+
+<!-- .element: class="fragment" -->
+
+<p class="text-level-2 fragment">Selectors based on <code>data-testid</code> are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
+
+
+Note:
+
+### Make async APIs testable <!-- .element: class="fragment" -->
+
+<p class="text-level-2 fragment">Ask "what happens instead?" to prove that something does not happen</p>
+
+
+The data-cy attribute will not change from CSS style or JS behavioral changes, meaning it's not coupled to the behavior or styling of an element.
+Don't test it if it's not testable
+
+See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to an error topic...
+
 
 ---
 

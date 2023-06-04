@@ -12,13 +12,13 @@
     --r-background-color: var(--color-black);
     --r-main-font: Source Sans Pro, Helvetica, sans-serif;
     --r-main-color: var(--color-light-gray-3);
-    --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
+    --r-heading-font: Lato, Source Sans Pro, Helvetica, sans-serif;
     --r-heading-color: var(--color-light-green-2);
     --r-heading-line-height: 1.2;
     --r-heading-letter-spacing: normal;
     --r-heading-text-transform: none;
     --r-heading-text-shadow: none;
-    --r-heading-font-weight: normal;
+    --r-heading-font-weight: 600;
     --r-heading1-text-shadow: none;
     --r-code-font: monospace;
     --r-link-color: #2a76dd;

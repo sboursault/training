@@ -21,6 +21,7 @@
   --text-size-level-1: 42px;
   --text-size-level-2: .85em;
   --text-size-level-3: .82em;
+  --text-size-level-4: .7em;
 
   
   --r-block-margin: 30px;
@@ -33,7 +34,6 @@
 }
 
 .reveal .slide--presentation-title h1 {
-  font-weight: 700;
   line-height: 1.1em;
 }
 
@@ -43,6 +43,10 @@
 
 .reveal .text-level-3 {
   font-size: var(--text-size-level-3);
+}
+
+.reveal .text-level-4 {
+  font-size: var(--text-size-level-4);
 }
 
 .reveal .small {
@@ -157,6 +161,16 @@ code:not(pre code) {
   margin-top: -12px;
 }
 
+.slide-title {
+  margin:var(--r-heading-margin);
+}
+
+.slide-title__part {
+  /*margin-top: 0px;*/
+  text-align: left;
+  font-size: var(--text-size-level-4);
+}
+
 .tip-title span {
   font-size: var(--text-size-level-2);
 }
@@ -167,7 +181,7 @@ code:not(pre code) {
 }
 
 .reveal .slide--vcenter {
-  height: 70vh;
+  height: 80vh;
   display: flex !important;
   justify-content: center;
   align-items: center;
