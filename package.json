@@ -1,9 +1,13 @@
 {
   "scripts": {
-    "start": "http-server -c-1 -p 8081 -o /"
+    "prestart-presentation": "mocha presentation/test/*.js",
+    "start-presentation": "http-server -c-1 -p 8081 -o /"
   },
+  "type": "module",
   "devDependencies": {
-    "cypress": "^12.9.0"
+    "cypress": "^12.9.0",
+    "jsdom": "^22.1.0",
+    "mocha": "^10.2.0"
   },
   "dependencies": {
     "http-server": "^14.1.1",

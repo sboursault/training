@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="../node_modules/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="css/dark-theme.css">
   <link rel="stylesheet" href="css/presentation.css">
+  <script type="module" src="js/presentation.js"></script>
   <script src="../node_modules/reveal.js/dist/reveal.js"></script>
   <script src="../node_modules/reveal.js/plugin/markdown/markdown.js"></script>
   <script src="../node_modules/reveal.js/plugin/notes/notes.js"></script>
@@ -15,15 +16,13 @@
 <body>
   <div class="reveal">
     <div class="slides">
-
-
       <section data-markdown="presentation.md">
       </section>
-
-
     </div>
   </div>
   <script type="module">
+    import { fillTocs } from './js/presentation.js';
+
     function isVisible(el) {
       return getComputedStyle(el).visibility !== 'hidden';
     }
@@ -60,6 +59,7 @@
       plugins: [RevealMarkdown, RevealNotes, RevealHighlight]
     });
     Reveal.on('ready', event => {
+      fillTocs()
       setTimeout(
         () => {
           drawArrows()

@@ -40,15 +40,26 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 <!-- .slide: id="test-strategy" class="slide--vcenter" -->
 
 
-<div class="part-title">
+<div style="display: flex; justify-content: space-around; align-items: center; width: 100%">
+
+<div class="part-title" style="flex-basis: 70%">
   <span class="text-level-3">Part 1</span>
   <h1>Test strategy</h1>
 </div>
 
+<div class="fragment box" style="flex-basis: 30%; text-align: left;">
+  <span style="text-decoration: underline; font-weight: bold;">Content:</span>
+  <ul style="margin: 0 .7em 0 .3em " data-toc-for="test-strategy">
+  </ul>
+</div>
+
+</div>
+
+
 ---
 <div class="slide-title">
   <div class="slide-title__part">Test strategy / </div>
-  <h2>Automated tests in the dev process</h2>
+  <h2 data-section-of="test-strategy">Automated tests in the dev process</h2>
 </div>
 
 <div class="box fragment">
@@ -68,7 +79,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 <div class="slide-title">
   <div class="slide-title__part">Test strategy / </div>
-  <h2>You can't automate everything!</h2>
+  <h2 data-section-of="test-strategy">You can't automate everything!</h2>
 </div>
 
 
@@ -90,7 +101,7 @@ Notes:
 
 <div class="slide-title">
   <div class="slide-title__part">Test strategy / </div>
-  <h2>Who automates the tests?</h2>
+  <h2 data-section-of="test-strategy">Who automates the tests?</h2>
 </div>
 
 <h3 class="fragment">Favour a <strong>whole team approach</strong></h3>
@@ -112,7 +123,7 @@ Without automated tests, we don't have a quality product
 
 <div class="slide-title">
   <div class="slide-title__part">Test strategy / </div>
-  <h2>Test infrastructure</h2>
+  <h2 data-section-of="test-strategy">Test infrastructure</h2>
 </div>
 
 <h3 class="fragment">Run automated tests on each release</h3>
@@ -131,7 +142,7 @@ you must have clear control over the environment in which the tests run.
 
 <div class="slide-title">
   <div class="slide-title__part">Test strategy / </div>
-  <h2>Do I still need manual tests?</h2>
+  <h2 data-section-of="test-strategy">Do I still need manual tests?</h2>
 </div>
 
 **YES!** <!-- .element: class="fragment" -->
