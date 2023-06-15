@@ -37,30 +37,23 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 ---
 
-<!-- .slide: id="test-strategy" class="slide--vcenter" -->
+<!-- .slide: id="test-strategy" class="slide--part-title slide--vcenter" -->
 
+<div class="flex-container-row">
 
-<div style="display: flex; justify-content: space-around; align-items: center; width: 100%">
-
-<div class="part-title" style="flex-basis: 70%">
-  <span class="text-level-3">Part 1</span>
-  <h1>Test strategy</h1>
-</div>
-
-<div class="fragment box" style="flex-basis: 30%; text-align: left;">
-  <span style="text-decoration: underline; font-weight: bold;">Content:</span>
-  <ul style="margin: 0 .7em 0 .3em " data-toc-for="test-strategy">
-  </ul>
-</div>
+  <div class="part-title">
+    <span class="text-level-3">Part 1</span>
+    <h1>Test strategy</h1>
+  </div>
+  
+  <div class="part-toc box fragment"></div>
 
 </div>
 
 
 ---
-<div class="slide-title">
-  <div class="slide-title__part">Test strategy / </div>
-  <h2 data-section-of="test-strategy">Automated tests in the dev process</h2>
-</div>
+
+<h2 class="slide-title">Automated tests in the dev process</h2>
 
 <div class="box fragment">
   <p class="box__title">Sprint</p>
@@ -77,36 +70,11 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 ---
 
-<div class="slide-title">
-  <div class="slide-title__part">Test strategy / </div>
-  <h2 data-section-of="test-strategy">You can't automate everything!</h2>
-</div>
+<h2 class="slide-title">Who automates the tests?</h2>
 
+<h3 class="mt-5 fragment">Favour a <strong>whole team approach</strong></h3>
 
-<p class="fragment block-head">You should focus on</p>
-<ul>
-<li class="fragment">Critical paths and risk areas of your application</li>
-<li class="fragment">Parts that are hard to test manually</li>
-</ul>
-
-Notes:
-
-- Risk areas include checkout, payemnts, etc.
-- Hard to test manually:
-  - complex setup (data, configuration...)
-  - tests on multiple device
-  - etc.
-
----
-
-<div class="slide-title">
-  <div class="slide-title__part">Test strategy / </div>
-  <h2 data-section-of="test-strategy">Who automates the tests?</h2>
-</div>
-
-<h3 class="fragment">Favour a <strong>whole team approach</strong></h3>
-
-<p class="block-head fragment">Developers and testers work together to</p>
+<p class="mb-none fragment">Developers and testers work together to</p>
 <ul class="text-level-2">
   <li class="fragment">Build and maintain the test infrastructure</li>
   <li class="fragment">Design testable code</li>
@@ -119,14 +87,32 @@ While a team can have automation experts, it doesn't limit particular tasks to p
 Everyone should feel responsible for the automated tests
 Without automated tests, we don't have a quality product
 
+
 ---
 
-<div class="slide-title">
-  <div class="slide-title__part">Test strategy / </div>
-  <h2 data-section-of="test-strategy">Test infrastructure</h2>
-</div>
+<h2 class="slide-title">You can't automate everything!</h2>
 
-<h3 class="fragment">Run automated tests on each release</h3>
+<p class="mt-6 fragment mb-none">Focus on:</p>
+<ul>
+  <li class="fragment">Critical paths and risk areas of your application</li>
+  <li class="fragment">Parts that are hard to test manually</li>
+</ul>
+
+
+Notes:
+
+- Risk areas include checkout, payemnts, etc.
+- Hard to test manually:
+  - complex setup (data, configuration...)
+  - tests on multiple device
+  - etc.
+
+
+---
+
+<h2 class="slide-title">CI/CD</h2>
+
+<h3 class="mt-4 fragment">Run automated tests on each release</h3>
 
 <p class="text-level-2 fragment">as part of your CI/CD pipeline</p>
 
@@ -140,42 +126,35 @@ you must have clear control over the environment in which the tests run.
 
 ---
 
-<div class="slide-title">
-  <div class="slide-title__part">Test strategy / </div>
-  <h2 data-section-of="test-strategy">Do I still need manual tests?</h2>
-</div>
+<h2 class="slide-title">Do I still need manual tests?</h2>
 
-**YES!** <!-- .element: class="fragment" -->
+<div class="mt-6 fragment"><strong>YES!</strong></div>
 
 Automated tests free testers up to focus on more exploratory-type testing <!-- .element: class="fragment" -->
 
 ---
 
+<!-- .slide: id="cypress-tips" class="slide--part-title slide--vcenter" -->
 
+<div class="flex-container-row">
 
-Use API tests to cover more cases
-- Focusing on UI automation types of testing only
+  <div class="part-title">
+    <span class="text-level-3">Part 2</span>
+    <h1>Cypress tips</h1>
+  </div>
+  
+  <div class="part-toc box fragment"></div>
 
-
----
-
-<!-- .slide: id="cypress-tips" class="slide--vcenter" -->
-
-<div class="part-title">
-  <span class="text-level-3">Part 2</span>
-  <h1>Cypress tips</h1>
 </div>
-
 
 ---
 
 <div class="tip-title">
   <span>tip 1:</span>
-  <h2>Page object pattern</h2>
+  <h2 class="slide-title">Page object pattern</h2>
 </div>
 
-
-Page objects abstract away the DOM manipulation from the test code <!-- .element: class="fragment" -->
+<p class="mt-4 fragment">Page objects abstract away the DOM manipulation from the test code</p>
 
 ```typescript
 cy.get(".basket-mini .dropdown-toggle").click(); // this is about HTML
@@ -191,8 +170,32 @@ cataloguePage.displayMiniBasket();               // this is about the
 ---
 
 <div class="tip-title">
+  <span>tip 4:</span>
+  <h2 class="slide-title">Design testable code</h2>
+</div>
+
+<p class="mt-5 fragment">Add <code>data-*</code> attributes to select html elements</p>
+
+```html
+<input type="email" id="email" name="email"
+  class="form-control" data-testid="register-form__email-input"/>
+```
+
+<!-- .element: class="fragment" -->
+
+<p class="text-level-2 apart fragment">Selectors based on <code>data-testid</code> are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
+
+
+Note:
+
+The data-cy attribute will not change from CSS style or JS behavioral changes, meaning it's not coupled to the behavior or styling of an element.
+Don't test it if it's not testable
+
+---
+
+<div class="tip-title">
   <span>tip 2:</span>
-  <h2>Wait for events, not time</h2>
+  <h2 class="slide-title">Wait for events, not time</h2>
 </div>
 
 
@@ -219,54 +222,24 @@ cy.contains("Welcome")  // wait for the page to contain "welcome"
 Note:
 Testing offten involves asynchronous behaviours.
 
----
 
-<div class="tip-title">
-  <span>tip 3:</span>
-  <h2>Never ignore failing tests</h2>
-</div>
 
-<p class="fragment">Fix flaky tests as soon as possible
-
-<p class="fragment">If not fixed within a given time frame,<br> <strong>delete</strong> or <strong>quarantine</strong> the flaky test
-
-<p class="fragment">Don't let flaky tests attack your confidence!
 
 ---
 
 <div class="tip-title">
   <span>tip 4:</span>
-  <h2>Design testable code</h2>
+  <h2 class="slide-title">Use Apis</h2>
 </div>
 
-<h3 class="fragment">Add <code>data-*</code> attributes to select html elements</h3>
-
-```html
-<input type="email" id="email" name="email"
-  class="form-control" data-testid="register-form__email-input"/>
-```
-
-<!-- .element: class="fragment" -->
-
-<p class="text-level-2 fragment">Selectors based on <code>data-testid</code> are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
+<p class="mt-6 fragment">Call apis to init data</p>
 
 
-Note:
-
-### Make async APIs testable <!-- .element: class="fragment" -->
-
-<p class="text-level-2 fragment">Ask "what happens instead?" to prove that something does not happen</p>
-
-
-The data-cy attribute will not change from CSS style or JS behavioral changes, meaning it's not coupled to the behavior or styling of an element.
-Don't test it if it's not testable
-
-See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to an error topic...
 
 
 ---
 
-<!-- .slide: id="good-tests" class="slide--vcenter" -->
+<!-- .slide: id="good-tests" class="slide--part-title slide--vcenter" -->
 
 <div class="part-title">
   <span class="text-level-3">Part 3</span>
@@ -277,7 +250,7 @@ See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to 
 
 ## Good automated tests are F.I.R.S.T
 
-<div class="fragment">
+<div class="mt-6 fragment">
 
 - Fast
 - Isolated
@@ -336,6 +309,49 @@ Note: move the environment to a <strong>well-known state</strong> before they ru
 </div>
 
 <p class="apart text-level-2 fragment">Testing before development is more fun,<br> more beneficial, more productive, and less frustrating
+
+---
+
+<!-- .slide: id="advance-test-strategy" class="slide--part-title slide--vcenter" -->
+
+<div class="part-title">
+  <span class="text-level-3">Part 4</span>
+  <h1>Advance test strategy</h1>
+</div>
+
+---
+
+test you apis
+
+---
+
+
+
+<!-- .slide: id="advance-cypress-tips" class="slide--part-title slide--vcenter" -->
+
+<div class="part-title">
+  <span class="text-level-3">Part 5</span>
+  <h1>Advance Cypress tips</h1>
+</div>
+
+---
+
+<h2 class="slide-title">Never ignore failing tests</h2>
+
+<p class="fragment">Fix flaky tests as soon as possible
+
+<p class="fragment">If not fixed within a given time frame,<br> <strong>delete</strong> or <strong>quarantine</strong> the flaky test
+
+<p class="fragment">Don't let flaky tests attack your confidence!
+
+---
+
+### Make async APIs testable
+
+<p class="text-level-2">Ask "what happens instead?" to prove that something does not happen</p>
+
+See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to an error topic...
+
 
 ---
 

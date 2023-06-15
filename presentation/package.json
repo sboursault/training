@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "test": "mocha test/*.js",
+    "start": "http-server -c-1 -p 8081 -o /",
+    "test-open": "http-server -c-1 -p 8082 -o /test"
+  },
+  "type": "module",
+  "devDependencies": {
+    "jsdom": "^22.1.0",
+    "mocha": "^10.2.0"
+  },
+  "dependencies": {
+    "chai": "^4.3.7",
+    "http-server": "^14.1.1",
+    "leader-line": "^1.0.7",
+    "reveal.js": "^4.5.0",
+    "typescript": "^5.0.3"
+  }
+}

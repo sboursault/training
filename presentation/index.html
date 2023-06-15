@@ -21,7 +21,7 @@
     </div>
   </div>
   <script type="module">
-    import { fillTocs } from './js/presentation.js';
+    import { fillTocs, addBreadcrumbs } from './js/presentation.js';
 
     function isVisible(el) {
       return getComputedStyle(el).visibility !== 'hidden';
@@ -60,20 +60,16 @@
     });
     Reveal.on('ready', event => {
       fillTocs()
+      addBreadcrumbs()
       setTimeout(
         () => {
           drawArrows()
-        }, 200 // without this timeout, the arrow is well positionned
+        }, 200 // without this timeout, the arrow isn't well positionned
       )
     });
     Reveal.on('slidetransitionend', event => {
       drawArrows()
     });
-    /*Reveal.on('resize', event => {
-      if (event.indexh == 4) {
-        drawArrows()
-      }
-    });*/
     Reveal.on('slidechanged', event => {
       eraseArrows()
     });
