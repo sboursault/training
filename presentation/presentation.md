@@ -68,6 +68,14 @@ https://revealjs-themes.dzello.com/sunblind.html#/
   <div class="badge fragment" id="box-6">Living documentation</div>
 </div>
 
+Notes:
+The Acceptance tests comes out of acceptance criterias.
+Thinking about tests before development is more efficient:
+ - the developer and the tester are aligned on the scope of the change
+ - the developer writes testable code
+When automating a test, one must have these 3 finalities in mind.
+We need to balance completeness, clarity and speed.
+
 ---
 
 <h2 class="slide-title">Who automates the tests?</h2>
@@ -82,10 +90,31 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 </ul>
 
 Notes:
+- Build and maintain the test infrastructure -> requires the dev ops help
+- Design testable code -> requires developers
+- Write and maintain the automated tests -> requires developers
 Any task might be completed by any team member
 While a team can have automation experts, it doesn't limit particular tasks to particular team members
 Everyone should feel responsible for the automated tests
-Without automated tests, we don't have a quality product
+**Without automated tests, we don't have a quality product.**
+
+
+---
+
+<h2 class="slide-title">Continuous Integration <br> / Continuous Delivery</h2>
+
+<h3 class="mt-4 fragment">Run automated tests on each release</h3>
+
+<p class="text-level-2 fragment">as part of your CI/CD pipeline</p>
+
+<h3 class="fragment">Have a dedicated environment</h3>
+
+<p class="text-level-2 fragment">A shared environment is not predictible</p>
+
+Note:
+On a shared environment, tests can fail for external reasons.
+you must have clear control over the environment in which the tests run.
+
 
 
 ---
@@ -110,21 +139,7 @@ Notes:
 
 ---
 
-<h2 class="slide-title">CI/CD</h2>
 
-<h3 class="mt-4 fragment">Run automated tests on each release</h3>
-
-<p class="text-level-2 fragment">as part of your CI/CD pipeline</p>
-
-<h3 class="fragment">Have a dedicated environment</h3>
-
-<p class="text-level-2 fragment">A shared environment is not predictible</p>
-
-Note:
-On a shared environment, tests can fail for external reasons.
-you must have clear control over the environment in which the tests run.
-
----
 
 <h2 class="slide-title">Do I still need manual tests?</h2>
 
@@ -149,10 +164,7 @@ Automated tests free testers up to focus on more exploratory-type testing <!-- .
 
 ---
 
-<div class="tip-title">
-  <span>tip 1:</span>
-  <h2 class="slide-title">Page object pattern</h2>
-</div>
+<h2 class="slide-title">Page object pattern</h2>
 
 <p class="mt-4 fragment">Page objects abstract away the DOM manipulation from the test code</p>
 
@@ -169,10 +181,7 @@ cataloguePage.displayMiniBasket();               // this is about the
 
 ---
 
-<div class="tip-title">
-  <span>tip 4:</span>
-  <h2 class="slide-title">Design testable code</h2>
-</div>
+<h2 class="slide-title">Dedicated selectors</h2>
 
 <p class="mt-5 fragment">Add <code>data-*</code> attributes to select html elements</p>
 
@@ -193,10 +202,7 @@ Don't test it if it's not testable
 
 ---
 
-<div class="tip-title">
-  <span>tip 2:</span>
-  <h2 class="slide-title">Wait for events, not time</h2>
-</div>
+<h2 class="slide-title">Wait for events, not time</h2>
 
 
 <h3 class="fragment">When can I verify the result of async operations?</h3>
@@ -227,10 +233,8 @@ Testing offten involves asynchronous behaviours.
 
 ---
 
-<div class="tip-title">
-  <span>tip 4:</span>
-  <h2 class="slide-title">Minimize UI interrections</h2>
-</div>
+<h2 class="slide-title">Minimize UI interrections</h2>
+
 
 <p class="mt-5 fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests <br> not dealing with <strong>UI-specific risks</strong>
 
@@ -261,12 +265,12 @@ Set-up and clean-up tasks serve to make tests reliable and repeatable, but they 
 
 ## Good automated tests are F.I.R.S.T
 
-<div class="mt-6 fragment">
+<div class="mt-5 fragment">
 
 - Fast
 - Isolated
 - Repeatable
-- Simple and Self-Verifying
+- Small <!-- or Simple and Self-Verifying -->
 - Timely
 
 </div>
@@ -297,13 +301,17 @@ Note: move the environment to a <strong>well-known state</strong> before they ru
 
 ---
 
-### Simple and Self-Verifying
+### Small
 
-<p class="fragment">Test must be easy to read
+Avoid automating all UI end-to-end journeys. 
 
-<p class="fragment">The purpose of a test should be obvious
+Write **atomic** scripts so that when they fail, you know why.
 
-<p class="fragment">Apply clean code practices (DRY, KISS, Single responsibility, solid ?)
+Note:
+originaly: Simple and Self-Verifying
+- Test must be easy to read
+- The purpose of a test should be obvious
+- Apply clean code practices (DRY, KISS, Single responsibility, solid ?)
 
 ---
 
@@ -323,27 +331,16 @@ Note: move the environment to a <strong>well-known state</strong> before they ru
 
 ---
 
-<!-- .slide: id="advance-test-strategy" class="slide--part-title slide--vcenter" -->
-
-<div class="part-title">
-  <span class="text-level-3">Part 4</span>
-  <h1>Advance test strategy</h1>
-</div>
-
----
-
-test you apis
-
----
-
-
-
-<!-- .slide: id="advance-cypress-tips" class="slide--part-title slide--vcenter" -->
+<!-- .slide: id="extra-tips" class="slide--part-title slide--vcenter" -->
 
 <div class="part-title">
   <span class="text-level-3">Part 5</span>
-  <h1>Advance Cypress tips</h1>
+  <h1>Extra tips</h1>
 </div>
+
+---
+
+<h2 class="slide-title">Test you apis</h2>
 
 ---
 
@@ -363,7 +360,6 @@ test you apis
 
 See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to an error topic...
 
-
 ---
 
 ## Resources
@@ -377,5 +373,6 @@ See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to 
 - Fifty Quick Ideas To Improve Your Tests (Gojko Adzic, David Evans and Tom Roden, 2015, Neuri Consulting Llp)
 - https://docs.cypress.io/guides/references/best-practices
 - https://medium.com/pragmatic-programmers/unit-tests-are-first-fast-isolated-repeatable-self-verifying-and-timely-a83e8070698e
+- [Why Automated Tests Should Be Atomic](https://testguild.com/atomic-tests/)
 
 </div>

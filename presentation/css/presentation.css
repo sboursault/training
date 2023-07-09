@@ -184,15 +184,6 @@ code:not(pre code) {
   margin-top: -12px;
 }
 
-.tip-title span {
-  font-size: var(--text-size-level-2);
-}
-
-.tip-title h2 {
-  display:inline;
-  margin-left: 12px
-}
-
 .reveal .slide--vcenter {
   height: 70vh;
   display: flex !important;
