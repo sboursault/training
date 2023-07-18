@@ -924,13 +924,7 @@ cy.visit('/catalogue/category/books_2/')
 
 ## Automation pitfalls
 
-Not treating test code like production code ?
 
-
-- Automating all UI end-to-end journeys. Scripts should be **atomic** so that when they fail, you know why.
-
-
-- Not having a controlled test environment
 - Not treating your automated code just like your production code.
   - tests should be simple (easy to read, and easy to modify)
   - There should be a whole team’s collaborative automation efforts (collective code ownership)

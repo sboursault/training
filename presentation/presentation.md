@@ -28,12 +28,163 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 ## Table of content
 
 <ol>
-  <li><a href="#/test-strategy">Test strategy</a>
+  <li><a href="#/test-strategy">Acceptance criterias</a>
   <li><a href="#/cypress-tips">Cypress tips</a>
+  <li><a href="#/test-strategy">Test strategy</a>
   <li><a href="#/good-tests">Qualities of a good test</a>
 </ol>
 
 </div>
+
+---
+
+<!-- .slide: id="cypress-tips" class="slide--part-title slide--vcenter" -->
+
+<div class="flex-container-row">
+
+  <div class="part-title">
+    <span class="text-level-3">Part 1</span>
+    <h1>Acceptance criterias</h1>
+  </div>
+  
+  <div class="part-toc box fragment"></div>
+
+</div>
+
+
+---
+
+<h2 class="slide-title">Automated tests in the dev process</h2>
+
+<div class="mt-3 box fragment">
+  <p class="box__title">Sprint</p>
+  <div class="badge" id="box-1">User story</div>
+  <div class="badge fragment" id="box-2">Acceptance criterias</div>
+  <div class="badge fragment" id="box-3">Automated tests</div>
+  <div class="badge fragment" id="box-4">Validates the new feature</div>
+</div>
+
+
+<p class="apart fragment">Acceptance tests comes out of acceptance criterias
+
+<div class="apart fragment">
+<p class="mb-none">Thinking about tests before development is more efficient:
+<ul>
+<li class="text-level-2 fragment">Everybody is aligned on the scope of the change</li>
+<li class="text-level-2 fragment">Developer writes more testable code</li>
+</ul>
+</div>
+ 
+---
+
+- Specification workshop: 3 amigos
+- criteria, but criteria...
+
+---
+
+<!-- .slide: id="cypress-tips" class="slide--part-title slide--vcenter" -->
+
+<div class="flex-container-row">
+
+  <div class="part-title">
+    <span class="text-level-3">Part 2</span>
+    <h1>Cypress tips</h1>
+  </div>
+  
+  <div class="part-toc box fragment"></div>
+
+</div>
+
+---
+
+<h2 class="slide-title">Page object pattern</h2>
+
+<p class="mt-4 fragment">Page objects abstract away the DOM manipulation from the test code</p>
+
+```typescript
+cy.get(".basket-mini .dropdown-toggle").click(); // this is about HTML
+
+cataloguePage.displayMiniBasket();               // this is about the
+                                                 // application
+```
+
+<!-- .element: class="fragment" -->
+
+<p class="text-level-2 apart fragment">Tests get <strong>easier to read</strong> and <strong>easier to maintain</strong>
+
+---
+
+<h2 class="slide-title">Dedicated selectors</h2>
+
+<p class="mt-5 fragment">Add <code>data-*</code> attributes to select html elements</p>
+
+```html
+<input type="email" id="email" name="email"
+  class="form-control" data-testid="register-form__email-input"/>
+```
+
+<!-- .element: class="fragment" -->
+
+<p class="text-level-2 apart fragment">Selectors based on <code>data-testid</code> are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
+
+
+Note:
+
+The data-cy attribute will not change from CSS style or JS behavioral changes, meaning it's not coupled to the behavior or styling of an element.
+Don't test it if it's not testable
+
+---
+
+<h2 class="slide-title">Wait for events, not time</h2>
+
+
+<h3 class="fragment">When can I verify the result of async operations?</h3>
+
+```typescript
+// bad
+cy.wait(2000)  // wait for 2 seconds
+
+// Good
+cy.intercept("POST", "/api/basket/add-product").as("addProductToBasket")
+cy.wait("@addProductToBasket")  // wait for a http response
+
+// Good
+cy.contains("Welcome")  // wait for the page to contain "welcome"
+```
+
+<!-- .element: class="fragment" -->
+
+<p class="text-level-2 apart fragment">Wait for events to avoid <strong>long</strong> and <strong>flaky</strong> tests</p>
+
+<small class="fragment">More on cypress implicit waits: <a href="https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting">https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</a></small>
+
+Note:
+Testing offten involves asynchronous behaviours.
+
+
+
+
+---
+
+<h2 class="slide-title">Minimize UI interrections</h2>
+
+
+<p class="mt-5 fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests <br> not dealing with <strong>UI-specific risks</strong>
+
+<p class="mt-2 fragment">Setup your tests through <strong>api</strong>, <strong>db access</strong>...
+
+<p class="mt-5 fragment">No UI set-up is <strong>faster</strong> and <strong>easier to maintain</strong>
+
+Note:
+
+From 50 quick ideas...
+By avoiding the UI layer where it is not actually relevant for the purpose of the test, teams can save a lot of troubleshooting time and speed up feedback, while still keeping the same level of risk coverage.
+
+Even when tests need to execute through the UI, minimise the part of the test that actually simulates user actions. Evaluate which parts of the tests are actually dealing with UI-specific risks, and try to automate everything else by avoiding the UI.
+
+Set-up and clean-up tasks serve to make tests reliable and repeatable, but they do not actually deal with the user interface risk (or, more precisely, they should not – if a set-up task is testing things, it should be broken into several tests).
+
+
 
 ---
 
@@ -147,109 +298,6 @@ Notes:
 
 Automated tests free testers up to focus on more exploratory-type testing <!-- .element: class="fragment" -->
 
----
-
-<!-- .slide: id="cypress-tips" class="slide--part-title slide--vcenter" -->
-
-<div class="flex-container-row">
-
-  <div class="part-title">
-    <span class="text-level-3">Part 2</span>
-    <h1>Cypress tips</h1>
-  </div>
-  
-  <div class="part-toc box fragment"></div>
-
-</div>
-
----
-
-<h2 class="slide-title">Page object pattern</h2>
-
-<p class="mt-4 fragment">Page objects abstract away the DOM manipulation from the test code</p>
-
-```typescript
-cy.get(".basket-mini .dropdown-toggle").click(); // this is about HTML
-
-cataloguePage.displayMiniBasket();               // this is about the
-                                                 // application
-```
-
-<!-- .element: class="fragment" -->
-
-<p class="text-level-2 apart fragment">Tests get <strong>easier to read</strong> and <strong>easier to maintain</strong>
-
----
-
-<h2 class="slide-title">Dedicated selectors</h2>
-
-<p class="mt-5 fragment">Add <code>data-*</code> attributes to select html elements</p>
-
-```html
-<input type="email" id="email" name="email"
-  class="form-control" data-testid="register-form__email-input"/>
-```
-
-<!-- .element: class="fragment" -->
-
-<p class="text-level-2 apart fragment">Selectors based on <code>data-testid</code> are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
-
-
-Note:
-
-The data-cy attribute will not change from CSS style or JS behavioral changes, meaning it's not coupled to the behavior or styling of an element.
-Don't test it if it's not testable
-
----
-
-<h2 class="slide-title">Wait for events, not time</h2>
-
-
-<h3 class="fragment">When can I verify the result of async operations?</h3>
-
-```typescript
-// bad
-cy.wait(2000)  // wait for 2 seconds
-
-// Good
-cy.intercept("POST", "/api/basket/add-product").as("addProductToBasket")
-cy.wait("@addProductToBasket")  // wait for a http response
-
-// Good
-cy.contains("Welcome")  // wait for the page to contain "welcome"
-```
-
-<!-- .element: class="fragment" -->
-
-<p class="text-level-2 apart fragment">Wait for events to avoid <strong>long</strong> and <strong>flaky</strong> tests</p>
-
-<small class="fragment">More on cypress implicit waits: <a href="https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting">https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</a></small>
-
-Note:
-Testing offten involves asynchronous behaviours.
-
-
-
-
----
-
-<h2 class="slide-title">Minimize UI interrections</h2>
-
-
-<p class="mt-5 fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests <br> not dealing with <strong>UI-specific risks</strong>
-
-<p class="mt-2 fragment">Setup your tests through <strong>api</strong>, <strong>db access</strong>...
-
-<p class="mt-5 fragment">No UI set-up is <strong>faster</strong> and <strong>easier to maintain</strong>
-
-Note:
-
-From 50 quick ideas...
-By avoiding the UI layer where it is not actually relevant for the purpose of the test, teams can save a lot of troubleshooting time and speed up feedback, while still keeping the same level of risk coverage.
-
-Even when tests need to execute through the UI, minimise the part of the test that actually simulates user actions. Evaluate which parts of the tests are actually dealing with UI-specific risks, and try to automate everything else by avoiding the UI.
-
-Set-up and clean-up tasks serve to make tests reliable and repeatable, but they do not actually deal with the user interface risk (or, more precisely, they should not – if a set-up task is testing things, it should be broken into several tests).
 
 
 ---
