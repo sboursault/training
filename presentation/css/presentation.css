@@ -22,6 +22,7 @@
   --text-size-level-2: .85em;
   --text-size-level-3: .82em;
   --text-size-level-4: .7em;
+  --text-size-level-5: .6em;
 
   --text-size-tiny: .5em;
   
@@ -32,6 +33,22 @@
   --r-heading2-size: 1.6em;
   --r-heading3-size: 1.1em;
   --r-heading4-size: 1em;
+}
+
+.reveal table td {
+  border: none;
+}
+
+.reveal table tr:not(.fragment) + tr:not(.fragment) td {
+  border-top: 1px solid;
+}
+
+.reveal table tr.fragment.visible + tr.fragment.visible td {
+  border-top: 1px solid;
+}
+
+.reveal table td {
+  padding: 0.5em 0.5em 0.5em 0.5em;
 }
 
 .reveal .slide--presentation-title h1 {
@@ -48,6 +65,14 @@
 
 .reveal .text-level-4 {
   font-size: var(--text-size-level-4);
+}
+
+.reveal .text-level-5 {
+  font-size: var(--text-size-level-5);
+}
+
+.reveal .text-tiny {
+  font-size: var(--text-size-tiny);
 }
 
 .reveal .small {

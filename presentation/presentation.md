@@ -71,16 +71,175 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 <p class="mb-none">Thinking about tests before development is more efficient:
 <ul>
 <li class="text-level-2 fragment">Everybody is aligned on the scope of the change</li>
-<li class="text-level-2 fragment">Developer writes more testable code</li>
+<li class="text-level-2 fragment">Developers write more testable code</li>
 </ul>
 </div>
- 
----
-
-- Specification workshop: 3 amigos
-- criteria, but criteria...
 
 ---
+
+<h2 class="slide-title">Specification workshop</h2>
+
+
+- Sometimes called Discovery Workshop or 3 amigos
+  - A diverse group having conversations to clarify and confirm the acceptance criteria of a user story
+  
+  <!--- Participants
+    - A programmer, who thinks about how to make things, says what is feasable, suggests simpler paths
+    - A tester, who thinks about how to break things, and come up with lots of scenarios, sometimes covering obscure edge cases, and sometimes covery very important ones 
+    - The product owner, who cares about scope
+    - Anybody relevant to the story being discussed (operations, UX designer...)-->
+
+  - Output:
+    - A set of concrete examples to illustrate each business rules, which will be automated
+
+  - Tips to make it work:
+    - Invite a programmer, a tester the product owner, and whoever is relevant to the story being discussed (operations, UX designer...)
+    - Write examples in natural language (avoid the the given/when/then structure)
+    - Keep Discovery Workshops short and frequent (every other day). 15 min. per story, as often as you can
+    - Don't make it a big ceremony, just ask for examples
+
+  - Effective way to get a shared understanding of what Done means for a story, to discover unknown unknowns, and find alternative paths.
+    
+
+
+https://cucumber.io/blog/bdd/aslaks-view-of-bdd/
+https://cucumber.io/blog/bdd/example-mapping-introduction/
+---
+
+
+
+# Writing acceptance criterias
+
+THIS WILL MORE CONCRETE IF WE CAN SPEAK FROM THE EXAMPLES WE JUST CRAFTED.
+
+
+## Illustrate user stories with key examples
+
+Key examples help to see the big picture
+
+it is far better to focus on illustrating user stories with key examples.
+
+Key examples are a small number of relatively simple scenarios that are easy to understand, evaluate for completeness and critique.
+
+If there are too many rules, break them down into several groups of smaller examples
+
+Several simple groups of key examples are much easier to understand and implement than a huge list of complex scenarios.
+
+Overly complex examples, or too many examples, are often a sign that some important business concepts are not explicitly described.
+
+
+## contrast key examples with counter-examples
+
+
+In general, we should use a set of counter-examples for each key example, where each counter-example highlights a different contributing factor or parameter that affects the rule.
+
+
+### How to make it work
+
+- Start with the simplest key example
+  - Always prefer actual values over generalisations unless the value is irrelevant to the rule.
+- Underline the parts of the example that are most relevant to the feature or rule. Make sure you distinguish between inputs and outputs.
+
+
+
+## describe what, not how
+
+## Use actual values instead Avoid mathematical formulas
+
+
+
+## one test, one topic
+
+Independent tests for different actions are much easier to maintain than one overall test that validates everything.
+Independent tests also allow faster feedback.
+
+# prefer smaller tables
+# look for hidden concepts
+
+
+Dans les tp, proposer des règles de gestion floues, qui pourront être affinées avec tests
+
+Rédiger en makdown sur typora ?
+
+
+## Cypress tip : Split data generators from tests
+
+
+
+
+
+---
+
+
+<h2 class="slide-title">Find alternative paths</h2>
+
+Use the ‘shaded figs’ to find alternative path to verify
+<br/><span class="text-level-5">from [50 quick ideas to improve your tests](https://leanpub.com/50quickideas-tests/read)</span>
+
+<table class="text-level-4 apart">
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Scary<br/>😱<td>
+<td>What would scare each stakeholder the most about this piece of functionality?</td>
+</tr>
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Happy<br/>🙂<td>
+<td>The key example, positive test, that describes the case</td>
+</tr>
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Angry<br/>😠<td>
+<td>Paths where the application may react badly: validation errors, bad inputs...</td>
+</tr>
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Delinquent<br/>👺<td>
+<td>Security risks: authentication, authorisation, permissions, data confidentiality...</td>
+</tr>
+</table>
+
+
+---
+
+
+
+<table class="mt-3 text-level-4">
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Embarrassing<br/>💩 🤦‍♂️<td>
+<td>Things that could cause huge embarrassment all round <!--They might have a significant impact on credibility, internally or externally --> </td>
+</tr>
+
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Desolate<br/>😶<td>
+<td>Try zeros, nulls, blanks or missing data, truncated data, incomplete input, file or event</td>
+</tr>
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Forgetful<br/>😯<td>
+<td>Fill up all the memory and CPU capacity so the application can't store anything
+</td>
+</tr>
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Indecisive<br/>🤷🏽‍♂️<td>
+<td>Simulate an indecisive user: turn things on and off, click back buttons on the browser, move between breadcrumb trails with half-entered data
+</td>
+</tr>
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Greedy<br/>😋<td>
+<td>Select everything, opt into every option, order lots of everything, load up the functionality with as much as it allows to see how it behaves</td>
+</tr>
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Stressful<br/>😓<td>
+<td>Find the breaking point of your components under stress</td>
+</tr>
+
+
+</table>
+
+---
+
 
 <!-- .slide: id="cypress-tips" class="slide--part-title slide--vcenter" -->
 
