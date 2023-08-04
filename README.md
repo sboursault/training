@@ -180,7 +180,7 @@ _What if ?_
 
 > As a shopper,
 > I want to see my basket content in the mini-basket,
-> so that I quickly know the basket's content and amount.
+> so that I always know the basket's content and amount.
 
 **Workshop:** What could be the acceptance criterias for this story ?
 

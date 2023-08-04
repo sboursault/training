@@ -168,75 +168,6 @@ Rédiger en makdown sur typora ?
 
 
 
----
-
-
-<h2 class="slide-title">Find alternative paths</h2>
-
-Use the ‘shaded figs’ to find alternative path to verify
-<br/><span class="text-level-5">from [50 quick ideas to improve your tests](https://leanpub.com/50quickideas-tests/read)</span>
-
-<table class="text-level-4 apart">
-<tr class="fragment">
-<td style="text-align: center; text-wrap: nowrap;">Scary<br/>😱<td>
-<td>What would scare each stakeholder the most about this piece of functionality?</td>
-</tr>
-<tr class="fragment">
-<td style="text-align: center; text-wrap: nowrap;">Happy<br/>🙂<td>
-<td>The key example, positive test, that describes the case</td>
-</tr>
-<tr class="fragment">
-<td style="text-align: center; text-wrap: nowrap;">Angry<br/>😠<td>
-<td>Paths where the application may react badly: validation errors, bad inputs...</td>
-</tr>
-<tr class="fragment">
-<td style="text-align: center; text-wrap: nowrap;">Delinquent<br/>👺<td>
-<td>Security risks: authentication, authorisation, permissions, data confidentiality...</td>
-</tr>
-</table>
-
-
----
-
-
-
-<table class="mt-3 text-level-4">
-
-<tr class="fragment">
-<td style="text-align: center; text-wrap: nowrap;">Embarrassing<br/>💩 🤦‍♂️<td>
-<td>Things that could cause huge embarrassment all round <!--They might have a significant impact on credibility, internally or externally --> </td>
-</tr>
-
-
-<tr class="fragment">
-<td style="text-align: center; text-wrap: nowrap;">Desolate<br/>😶<td>
-<td>Try zeros, nulls, blanks or missing data, truncated data, incomplete input, file or event</td>
-</tr>
-
-<tr class="fragment">
-<td style="text-align: center; text-wrap: nowrap;">Forgetful<br/>😯<td>
-<td>Fill up all the memory and CPU capacity so the application can't store anything
-</td>
-</tr>
-
-<tr class="fragment">
-<td style="text-align: center; text-wrap: nowrap;">Indecisive<br/>🤷🏽‍♂️<td>
-<td>Simulate an indecisive user: turn things on and off, click back buttons on the browser, move between breadcrumb trails with half-entered data
-</td>
-</tr>
-
-<tr class="fragment">
-<td style="text-align: center; text-wrap: nowrap;">Greedy<br/>😋<td>
-<td>Select everything, opt into every option, order lots of everything, load up the functionality with as much as it allows to see how it behaves</td>
-</tr>
-
-<tr class="fragment">
-<td style="text-align: center; text-wrap: nowrap;">Stressful<br/>😓<td>
-<td>Find the breaking point of your components under stress</td>
-</tr>
-
-
-</table>
 
 ---
 
@@ -566,6 +497,92 @@ originaly: Simple and Self-Verifying
 <p class="text-level-2">Ask "what happens instead?" to prove that something does not happen</p>
 
 See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to an error topic...
+
+
+---
+
+<!-- .slide: id="test-strategy" class="slide--part-title slide--vcenter" -->
+
+<div class="flex-container-row">
+
+  <div class="part-title">
+    <h1>Annex</h1>
+  </div>
+  
+  <div class="part-toc box fragment"></div>
+
+</div>
+
+
+
+---
+
+<h2 class="slide-title">Find alternative paths</h2>
+
+Use the ‘shaded figs’ to find alternative path to verify
+<br/><span class="text-level-5">from [50 quick ideas to improve your tests](https://leanpub.com/50quickideas-tests/read)</span>
+
+<table class="text-level-4">
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Scary<br/>😱<td>
+<td>What would scare each stakeholder the most about this piece of functionality?</td>
+</tr>
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Happy<br/>🙂<td>
+<td>The key example, positive test, that describes the case</td>
+</tr>
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Angry<br/>😠<td>
+<td>Paths where the application may react badly: validation errors, bad inputs...</td>
+</tr>
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Delinquent<br/>👺<td>
+<td>Security risks: authentication, authorisation, permissions, data confidentiality...</td>
+</tr>
+</table>
+
+
+---
+
+
+
+<table class="mt-3 text-level-4">
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Embarrassing<br/>💩 🤦‍♂️<td>
+<td>Things that could cause huge embarrassment all round <!--They might have a significant impact on credibility, internally or externally --> </td>
+</tr>
+
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Desolate<br/>😶<td>
+<td>Try zeros, nulls, blanks or missing data, truncated data, incomplete input, file or event</td>
+</tr>
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Forgetful<br/>😯<td>
+<td>Fill up all the memory and CPU capacity so the application can't store anything
+</td>
+</tr>
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Indecisive<br/>🤷🏽‍♂️<td>
+<td>Simulate an indecisive user: turn things on and off, click back buttons on the browser, move between breadcrumb trails with half-entered data
+</td>
+</tr>
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Greedy<br/>😋<td>
+<td>Select everything, opt into every option, order lots of everything, load up the functionality with as much as it allows to see how it behaves</td>
+</tr>
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Stressful<br/>😓<td>
+<td>Find the breaking point of your components under stress</td>
+</tr>
+
+
+</table>
 
 ---
 
