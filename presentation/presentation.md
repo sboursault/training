@@ -56,7 +56,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 <h2 class="slide-title">Automated tests in the dev process</h2>
 
-<div class="mt-3 box fragment">
+<div class="box fragment">
   <p class="box__title">Sprint</p>
   <div class="badge" id="box-1">User story</div>
   <div class="badge fragment" id="box-2">Acceptance criterias</div>
@@ -68,11 +68,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 <p class="apart fragment">Acceptance tests comes out of acceptance criterias
 
 <div class="apart fragment">
-<p class="mb-none">Thinking about tests before development is more efficient:
-<ul>
-<li class="text-level-2 fragment">Everybody is aligned on the scope of the change</li>
-<li class="text-level-2 fragment">Developers write more testable code</li>
-</ul>
+Thinking about tests before development is more efficient <br>  and favors a <strong>whole team approach</strong> on E2E testing
 </div>
 
 ---
@@ -80,93 +76,52 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 <h2 class="slide-title">Specification workshop</h2>
 
 
-- Sometimes called Discovery Workshop or 3 amigos
-  - A diverse group having conversations to clarify and confirm the acceptance criteria of a user story
-  
+<p class="mt-4 fragment">A programmer, a tester and the PO have a conversation <br> to clarify the acceptance criterias of a user story
+
+<p class="fragment">The acceptance criterias are illustrated with examples
+
+<p class="fragment text-level-2 apart mb-none fragment">Benfits:
+<ul>
+<li class="text-level-3 fragment">The team discover unknown unknowns earlier
+<li class="text-level-3 fragment">Everybody is aligned on the scope of the change <!-- To build a shared understanding of what Done means for a story -->
+<li class="text-level-3 fragment">We get the <strong>scenarios to automate</strong> from the process
+</ul>
+
   <!--- Participants
     - A programmer, who thinks about how to make things, says what is feasable, suggests simpler paths
     - A tester, who thinks about how to break things, and come up with lots of scenarios, sometimes covering obscure edge cases, and sometimes covery very important ones 
     - The product owner, who cares about scope
     - Anybody relevant to the story being discussed (operations, UX designer...)-->
 
-  - Output:
-    - A set of concrete examples to illustrate each business rules, which will be automated
+---
 
-  - Tips to make it work:
-    - Invite a programmer, a tester the product owner, and whoever is relevant to the story being discussed (operations, UX designer...)
-    - Write examples in natural language (avoid the the given/when/then structure)
-    - Keep Discovery Workshops short and frequent (every other day). 15 min. per story, as often as you can
-    - Don't make it a big ceremony, just ask for examples
+<h2 class="slide-title">Specification workshop</h2>
 
-  - Effective way to get a shared understanding of what Done means for a story, to discover unknown unknowns, and find alternative paths.
-    
+<p class="mt-6">Tips to make it work:
+<ul>
+<li class="text-level-2 fragment">Invite whoever is relevant (operations, UX designer...)
+<li class="text-level-2 fragment">Keep Discovery Workshops short and frequent (15 min. per story, every other day)
+<li class="text-level-2 fragment">Don't make it a big ceremony, just ask for examples
+</ul>
 
-
-https://cucumber.io/blog/bdd/aslaks-view-of-bdd/
-https://cucumber.io/blog/bdd/example-mapping-introduction/
 ---
 
 
 
-# Writing acceptance criterias
+<h2 class="slide-title">Acceptance criterias</h2>
 
-THIS WILL MORE CONCRETE IF WE CAN SPEAK FROM THE EXAMPLES WE JUST CRAFTED.
+<p class="fragment">Illustrate rules with <strong>key examples</strong> and <strong>counter examples</strong>
 
+<p class="text-level-2 apart mb-none fragment">Howto:
+<ul>
+<li class="text-level-2 fragment">Prefer actual values over generalisations (unless the value is irrelevant to the rule)
+<li class="text-level-2 fragment">Use natural language (the given/when/then structure can come later)
+<li class="text-level-2 fragment">Discover extra paths with the <a href="#/shaded-figs">shaded figs</a>
+<li class="text-level-2 fragment">Make a table when there are 3 or more examples
+<li class="text-level-2 fragment">Group rules when there are too many
+</ul>
 
-## Illustrate user stories with key examples
-
-Key examples help to see the big picture
-
-it is far better to focus on illustrating user stories with key examples.
-
-Key examples are a small number of relatively simple scenarios that are easy to understand, evaluate for completeness and critique.
-
-If there are too many rules, break them down into several groups of smaller examples
-
-Several simple groups of key examples are much easier to understand and implement than a huge list of complex scenarios.
-
-Overly complex examples, or too many examples, are often a sign that some important business concepts are not explicitly described.
-
-
-## contrast key examples with counter-examples
-
-
-In general, we should use a set of counter-examples for each key example, where each counter-example highlights a different contributing factor or parameter that affects the rule.
-
-
-### How to make it work
-
-- Start with the simplest key example
-  - Always prefer actual values over generalisations unless the value is irrelevant to the rule.
-- Underline the parts of the example that are most relevant to the feature or rule. Make sure you distinguish between inputs and outputs.
-
-
-
-## describe what, not how
-
-## Use actual values instead Avoid mathematical formulas
-
-
-
-## one test, one topic
-
-Independent tests for different actions are much easier to maintain than one overall test that validates everything.
-Independent tests also allow faster feedback.
-
-# prefer smaller tables
-# look for hidden concepts
-
-
-Dans les tp, proposer des règles de gestion floues, qui pourront être affinées avec tests
-
-Rédiger en makdown sur typora ?
-
-
-## Cypress tip : Split data generators from tests
-
-
-
-
+<p class="text-level-2 apart fragment">Too many examples for a rule (more than 5)? look for hidden concepts
 
 
 ---
@@ -326,7 +281,7 @@ We need to balance completeness, clarity and speed.
 <p class="mb-none fragment">Developers and testers work together to</p>
 <ul class="text-level-2">
   <li class="fragment">Build and maintain the test infrastructure</li>
-  <li class="fragment">Design testable code</li>
+  <li class="fragment">Design testable code</li> <!-- Developers write more testable code -->
   <li class="fragment">Write and maintain the automated tests</li>
 </ul>
 
@@ -516,6 +471,8 @@ See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to 
 
 
 ---
+<!-- .slide: id="shaded-figs" -->
+
 
 <h2 class="slide-title">Find alternative paths</h2>
 
@@ -598,5 +555,6 @@ Use the ‘shaded figs’ to find alternative path to verify
 - https://docs.cypress.io/guides/references/best-practices
 - https://medium.com/pragmatic-programmers/unit-tests-are-first-fast-isolated-repeatable-self-verifying-and-timely-a83e8070698e
 - [Why Automated Tests Should Be Atomic](https://testguild.com/atomic-tests/)
+- https://cucumber.io/blog/bdd/aslaks-view-of-bdd/
 
 </div>

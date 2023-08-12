@@ -7,8 +7,9 @@ export function fillTocs() {
       let sibling = getSiblingUnlessPartTileSlide(partTitleSlide)
       while (sibling != null) {
         const h2Element = sibling.querySelector('h2')
-        if (h2Element) 
-          tocContent += `<li>${h2Element.innerHTML}</li>`
+        const tocEntry = `<li>${h2Element.innerHTML}</li>`
+        if (h2Element && !tocContent.includes(tocEntry))  // keep only 1 entry when 2 slides have the same title
+          tocContent += tocEntry
         sibling = getSiblingUnlessPartTileSlide(sibling)
       }
       
