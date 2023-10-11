@@ -140,6 +140,10 @@ li + li {
     margin-bottom: 10px !important;
 }
 
+.reveal .mt-0 {
+  margin-top: .0em !important;
+}
+
 .reveal .mt-1 {
   margin-top: .5em !important;
 }
@@ -219,6 +223,7 @@ code:not(pre code) {
 .reveal .flex-container-row {
   display: flex;
   justify-content: space-around;
+  column-gap: 1em;
   align-items: center;
   width: 100%;
 }

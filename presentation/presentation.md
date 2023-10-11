@@ -56,7 +56,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 <h2 class="slide-title">Automated tests in the dev process</h2>
 
-<div class="box fragment">
+<div class="box mt-5 fragment">
   <p class="box__title">Sprint</p>
   <div class="badge" id="box-1">User story</div>
   <div class="badge fragment" id="box-2">Acceptance criterias</div>
@@ -238,13 +238,53 @@ Set-up and clean-up tasks serve to make tests reliable and repeatable, but they 
 <div class="flex-container-row">
 
   <div class="part-title">
-    <span class="text-level-3">Part 1</span>
+    <span class="text-level-3">Part 3</span>
     <h1>Test strategy</h1>
   </div>
   
   <div class="part-toc box fragment"></div>
 
 </div>
+
+
+
+---
+
+<h2 class="slide-title">Agile testing quandrants</h2>
+
+<div class="flex-container-row">
+
+  <img class="fragment" src="img/agile-testing-quandrands.jpg" style="max-width:50%" >
+
+  <div>
+    <div class="fragment">To succeed, you probably need tests from each quadrants!</div>
+    <div class="mt-3 fragment">You can't automate everything</div>
+    <div class="text-level-3">
+      <p class="fragment mt-1 mb-none">So, focus on:</p>
+      <ul>
+        <li class="fragment">Critical paths (eg. registration)</li>
+        <li class="fragment">Risk areas (eg. payment)</li>
+        <li class="fragment">Parts that are hard to test manually</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+Notes:
+What type of tests do you know?
+  put them on a board as people give them, organized like the quadrant
+Which ones are necessary to succeed?
+- What is diffcult to test manually should be automated
+- What is difficult to automate, could be verified manually
+- You can't automate everything
+- Automated tests free testers up to focus on more exploratory-type testing
+
+- Risk areas include checkout, payemnts, etc.
+- Hard to test manually:
+  - complex setup (data, configuration...)
+  - tests on multiple device
+  - etc.
 
 
 ---
@@ -310,38 +350,6 @@ Everyone should feel responsible for the automated tests
 Note:
 On a shared environment, tests can fail for external reasons.
 you must have clear control over the environment in which the tests run.
-
-
-
----
-
-<h2 class="slide-title">You can't automate everything!</h2>
-
-<p class="mt-6 fragment mb-none">Focus on:</p>
-<ul>
-  <li class="fragment">Critical paths and risk areas of your application</li>
-  <li class="fragment">Parts that are hard to test manually</li>
-</ul>
-
-
-Notes:
-
-- Risk areas include checkout, payemnts, etc.
-- Hard to test manually:
-  - complex setup (data, configuration...)
-  - tests on multiple device
-  - etc.
-
-
----
-
-
-
-<h2 class="slide-title">Do I still need manual tests?</h2>
-
-<div class="mt-6 fragment"><strong>YES!</strong></div>
-
-Automated tests free testers up to focus on more exploratory-type testing <!-- .element: class="fragment" -->
 
 
 
