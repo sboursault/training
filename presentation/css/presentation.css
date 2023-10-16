@@ -55,6 +55,10 @@
   line-height: 1.1em;
 }
 
+.reveal .text-size-heading-2 {
+  font-size: var(--r-heading2-size);
+}
+
 .reveal .text-level-2 {
   font-size: var(--text-size-level-2);
 }
@@ -81,47 +85,6 @@
 
 .reveal .apart {
   margin-top: 50px;
-}
-
-.box + .box {
-  margin-top: 70px;
-}
-
-.box {
-  font-size: 0.8em;
-  text-align: center;
-  padding: 20px;
-  z-index: -1000;
-  margin: auto;
-  background-color: var(--diagram-background-color);
-  /*border-radius: 8px;
-  border: 1px dashed var(--color-white);*/
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  border:dashed 5px var(--diagram-border-color);
-}
-
-.box .box__title {
-  margin: 0;
-  font-weight: 600;
-}
-
-.badge {
-  display: inline-block;
-  font-size: 0.7em;
-  text-align: center;
-  padding: 15px 20px;
-  margin-top: 20px;
-  color: var(--color-black);
-  background: var(--color-light-lemon-green-3);
-  /* border-radius: 8px;
-  border: 3px solid var(--color-dark-lemon-green-2); */
-  
-  border-radius:50% 4% 50% 2% / 2% 50% 2% 50%;
-  border:solid 5px var(--color-dark-lemon-green-2);
-}
-
-.badge + .badge {
-    margin-left: 50px;
 }
 
 .leader-line {
@@ -185,6 +148,10 @@ code:not(pre code) {
   margin: 0 5px;
 }
 
+.reveal h1 {
+  font-size: var(--r-heading1-size);
+}
+
 .reveal h3 {
   text-align: left;
   color: var(--r-main-color);
@@ -210,7 +177,7 @@ code:not(pre code) {
 }
 
 .part-title h1 {
-  margin-top: -12px;
+  line-height: 1em;
 }
 
 .reveal .slide--vcenter {
@@ -259,4 +226,52 @@ code:not(pre code) {
   text-align: left;
   font-size: var(--text-size-tiny);
   margin: 0 0 20px;
+}
+
+
+.box + .box {
+  margin-top: 70px;
+}
+
+.box {
+  font-size: 0.8em;
+  text-align: center;
+  padding: 20px;
+  z-index: -1000;
+  margin: auto;
+  background-color: var(--diagram-background-color);
+  /*border-radius: 8px;
+  border: 1px dashed var(--color-white);*/
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border:dashed 5px var(--diagram-border-color);
+}
+
+.box .box__title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.7em;
+  text-align: center;
+  padding: 15px 20px;
+  margin-top: 20px;
+  color: var(--color-black);
+  background: var(--color-light-lemon-green-3);
+  /* border-radius: 8px;
+  border: 3px solid var(--color-dark-lemon-green-2); */
+  
+  border-radius:50% 4% 50% 2% / 2% 50% 2% 50%;
+  border:solid 5px var(--color-dark-lemon-green-2);
+}
+
+.badge + .badge {
+    margin-left: 50px;
+}
+
+.block {
+  width: fit-content;
+  margin: auto;
+  text-align: left;
 }

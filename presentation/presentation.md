@@ -28,7 +28,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 ## Table of content
 
 <ol>
-  <li><a href="#/test-strategy">Acceptance criterias</a>
+  <li><a href="#/e2e-tests-dev-process">E2E tests in the dev process</a>
   <li><a href="#/cypress-tips">Cypress tips</a>
   <li><a href="#/test-strategy">Test strategy</a>
   <li><a href="#/good-tests">Qualities of a good test</a>
@@ -38,19 +38,42 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 ---
 
-<!-- .slide: id="cypress-tips" class="slide--part-title slide--vcenter" -->
+<!-- .slide: id="e2e-tests-dev-process" class="slide--part-title slide--vcenter" -->
 
 <div class="flex-container-row">
 
   <div class="part-title">
     <span class="text-level-3">Part 1</span>
-    <h1>Acceptance criterias</h1>
+    <h1 class="text-size-heading-2">E2E tests in the devevelopment process</h1>
   </div>
   
   <div class="part-toc box fragment"></div>
 
 </div>
 
+---
+
+<h2 class="slide-title">User story and acceptance criterias</h2>
+
+<div class="block fragment">
+  <i><strong>As a</strong> user,<br>
+  <strong>I want to</strong> use a search field to type a city, name, or street,<br>
+  <strong>so that</strong> I could find matching hotel options.</i>
+
+  <div class="fragment">
+  <p class="text-level-3 apart mb-none">Acceptance criterias:
+  <ul>
+    <li class="text-level-5">The search field is placed on the top bar
+    <li class="text-level-5">Search starts once the user clicks “Search”
+    <li class="text-level-5">The field contains a placeholder with a grey-colored text: “Where are you going?”
+    <li class="text-level-5">The placeholder disappears once the user starts typing
+    <li class="text-level-5">Search is performed if a user types in a city, hotel name, street, or all combined
+    <li class="text-level-5">...
+  </ul>
+  </div>
+</div>
+
+<small class="fragment">Source: https://www.altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices/</small>
 
 ---
 
@@ -246,18 +269,24 @@ Set-up and clean-up tasks serve to make tests reliable and repeatable, but they 
 
 </div>
 
+---
+<!-- .slide: data-auto-animate -->
+<h2 class="slide-title">Agile testing quandrants</h2>
 
+
+  <img class="mt-0 fragment" src="img/agile-testing-quandrands.jpg" style="max-width:60%" >
 
 ---
+<!-- .slide: data-auto-animate -->
 
 <h2 class="slide-title">Agile testing quandrants</h2>
 
 <div class="flex-container-row">
 
-  <img class="fragment" src="img/agile-testing-quandrands.jpg" style="max-width:50%" >
+  <img class="" src="img/agile-testing-quandrands.jpg" style="max-width:50%" >
 
   <div>
-    <div class="fragment">To succeed, you probably need tests from each quadrants!</div>
+    <div class="">To succeed, you probably need tests from each quadrants!</div>
     <div class="mt-3 fragment">You can't automate everything</div>
     <div class="text-level-3">
       <p class="fragment mt-1 mb-none">So, focus on:</p>
