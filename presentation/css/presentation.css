@@ -83,6 +83,10 @@
   font-size: 0.6em;
 }
 
+.reveal .tiny {
+  font-size: 0.4em;
+}
+
 .reveal .apart {
   margin-top: 50px;
 }
@@ -162,11 +166,6 @@ code:not(pre code) {
 
 .reveal h3:not(:first-child){
   margin-top: 60px;
-}
-
-#toc li a {
-  color: inherit;
-  text-decoration: inherit;
 }
 
 .part-title {
@@ -274,4 +273,19 @@ code:not(pre code) {
   width: fit-content;
   margin: auto;
   text-align: left;
+}
+
+.reveal .presentation-toc {
+  width: fit-content;
+  margin: auto;
+  text-align: left;
+}
+
+.reveal .presentation-toc li + li {
+  margin-top: .3em;
+}
+
+.reveal .presentation-toc li a {
+  color: inherit;
+  text-decoration: inherit;
 }

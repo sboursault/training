@@ -27,8 +27,8 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 ## Table of content
 
-<ol>
-  <li><a href="#/e2e-tests-dev-process">E2E tests in the dev process</a>
+<ol class="presentation-toc block">
+  <li><a href="#/e2e-tests-dev-process">End to end tests in the <br> development process</a>
   <li><a href="#/cypress-tips">Cypress tips</a>
   <li><a href="#/test-strategy">Test strategy</a>
   <li><a href="#/good-tests">Qualities of a good test</a>
@@ -44,7 +44,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
   <div class="part-title">
     <span class="text-level-3">Part 1</span>
-    <h1 class="text-size-heading-2">E2E tests in the devevelopment process</h1>
+    <h1 class="text-size-heading-2">End to end tests in the devevelopment process</h1>
   </div>
   
   <div class="part-toc box fragment"></div>
@@ -53,51 +53,122 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 ---
 
-<h2 class="slide-title">User story and acceptance criterias</h2>
+<h2 class="slide-title">Acceptance criterias</h2>
 
-<div class="block fragment">
-  <i><strong>As a</strong> user,<br>
-  <strong>I want to</strong> use a search field to type a city, name, or street,<br>
-  <strong>so that</strong> I could find matching hotel options.</i>
+A user story is composed of...
 
-  <div class="fragment">
-  <p class="text-level-3 apart mb-none">Acceptance criterias:
-  <ul>
-    <li class="text-level-5">The search field is placed on the top bar
-    <li class="text-level-5">Search starts once the user clicks “Search”
-    <li class="text-level-5">The field contains a placeholder with a grey-colored text: “Where are you going?”
-    <li class="text-level-5">The placeholder disappears once the user starts typing
-    <li class="text-level-5">Search is performed if a user types in a city, hotel name, street, or all combined
-    <li class="text-level-5">...
-  </ul>
+<div class="block">
+  
+  <div class="flex-container-row fragment">
+    <div class="box text-level-4" style="text-align:center; width:15%;">
+       a user story <br> template
+    </div>
+    <div class="text-level-3 fragment" style="width:80%">
+      <i><strong>As a</strong> user,<br>
+      <strong>I want to</strong> use a search field to type a city, name, or street,<br>
+      <strong>so that</strong> I could find matching hotel options.</i>
+    </div>
+  </div>
+
+  <div class="flex-container-row mt-4 fragment">
+    <div class="box text-level-4" style="text-align:center; width:15%;">
+       and its <br> acceptance criterias
+    </div>
+    <ul class="fragment" style="margin: 0; width:80%">
+      <li class="text-level-5">The search field is placed on the top bar
+      <li class="text-level-5">Search starts once the user clicks “Search”
+      <li class="text-level-5">The field contains a placeholder with a grey-colored text: “Where are you going?”
+      <li class="text-level-5">The placeholder disappears once the user starts typing
+      <li class="text-level-5">Search is performed if a user types in a city, hotel name, street, or all combined
+      <li class="text-level-5">...
+    </ul>
   </div>
 </div>
-
-<small class="fragment">Source: https://www.altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices/</small>
 
 ---
 
 <h2 class="slide-title">Automated tests in the dev process</h2>
 
-<div class="box mt-5 fragment">
-  <p class="box__title">Sprint</p>
-  <div class="badge" id="box-1">User story</div>
-  <div class="badge fragment" id="box-2">Acceptance criterias</div>
-  <div class="badge fragment" id="box-3">Automated tests</div>
-  <div class="badge fragment" id="box-4">Validates the new feature</div>
+<p class="apart fragment">When I started on my last project...
+
+<div class="box apart fragment">
+  <div class="badge" id="box-1">Specifications</div>
+  <div class="badge fragment" id="box-2">Development<br>(Developer)</div>
+  <div class="badge fragment" id="box-3">Manual tests<br>(Tester)</div>
+  <div class="badge fragment" id="box-4">Production deployment</div>
 </div>
+
+<p class="apart text-level-3 mb-none fragment">Frictions:
+<ul class="mt-0 text-level-4">
+  <li class="fragment">Different understanding of the problem or the solution
+  <li class="fragment">Regressions happen
+  <li class="fragment">Too many non regression tests to execute manually
+</ul>
+
+<p class="apart fragment">Not very satisfying
+
+---
+
+
+<h2 class="slide-title">Automated tests in the dev process</h2>
+
+<p class="apart fragment">Hey, let's automize end to end tests...
+
+<div class="box apart fragment">
+  <div class="badge" id="box-1">Specifications</div>
+  <div class="badge fragment" id="box-2">Development<br>(Developer)</div>
+  <div class="badge fragment" id="box-3">Test automation<br>(Tester & Developer)</div>
+  <div class="badge fragment" id="box-4">Production deployment</div>
+</div>
+
+<p class="text-level-3 mb-none fragment">Frictions:
+<ul class="mt-0 text-level-4">
+  <li class="fragment">- Different understanding of the problem or the solution
+  <li class="fragment">+ Fewer regressions (thanks to the non regression tests)
+  <li class="fragment">- Automation is painful, tests are difficult to write, and to maintain, they fail evenly (the program wasn't designed with (all the) tests in mind)
+</ul>
+
+<p class="fragment">Better quality, but not efficient, and we intruced new difficulties...
+
+
+---
+
+
+<h2 class="slide-title">Automated tests in the dev process</h2>
+
+<p class="apart fragment">Hey, let's automize end to end tests...
+
+<div class="box apart fragment">
+  <div class="badge" id="box-1">Specifications</div>
+  <div class="badge fragment" id="box-2">Development<br>(Developer)</div>
+  <div class="badge fragment" id="box-3">Test automation<br>(Tester & Developer)</div>
+  <div class="badge fragment" id="box-4">Production deployment</div>
+</div>
+
+<p class="apart text-level-3 mb-none fragment">Frictions:
+<ul class="mt-0 text-level-4">
+  <li class="fragment">- Different understanding of the problem or the solution
+  <li class="fragment">+ Fewer regressions (thanks to the non regression tests)
+  <li class="fragment">- Automation is painful, tests are difficult to write, and to maintain, they fail evenly (the program wasn't designed with (all the) tests in mind)
+</ul>
+
+<p class="apart fragment">Better quality, but not efficient, and frustrating for new reasons
 
 
 <p class="apart fragment">Acceptance tests comes out of acceptance criterias
 
 <div class="apart fragment">
-Thinking about tests before development is more efficient <br>  and favors a <strong>whole team approach</strong> on E2E testing
+<!--Thinking about tests before development is more efficient <br>  and favors a <strong>whole team approach</strong> on E2E testing-->
+Plutôt qu'une personne qui vérifie les critères d'acceptation
 </div>
 
 ---
 
 <h2 class="slide-title">Specification workshop</h2>
 
+
+Surtout expliquer qu'on se réunit avant de démarrer le développement pour comprendre le périmètre de la story,
+et comment la vérification sera automatisée
 
 <p class="mt-4 fragment">A programmer, a tester and the PO have a conversation <br> to clarify the acceptance criterias of a user story
 
@@ -593,5 +664,5 @@ Use the ‘shaded figs’ to find alternative path to verify
 - https://medium.com/pragmatic-programmers/unit-tests-are-first-fast-isolated-repeatable-self-verifying-and-timely-a83e8070698e
 - [Why Automated Tests Should Be Atomic](https://testguild.com/atomic-tests/)
 - https://cucumber.io/blog/bdd/aslaks-view-of-bdd/
-
+- https://www.altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices/
 </div>
