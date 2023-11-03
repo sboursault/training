@@ -40,7 +40,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 <!-- .slide: id="e2e-tests-dev-process" class="slide--part-title slide--vcenter" -->
 
-<div class="flex-container-row">
+<div class="flex-row">
 
   <div class="part-title">
     <span class="text-level-3">Part 1</span>
@@ -59,7 +59,7 @@ A user story is composed of...
 
 <div class="block">
   
-  <div class="flex-container-row fragment">
+  <div class="flex-row fragment">
     <div class="box text-level-4" style="text-align:center; width:15%;">
        a user story <br> template
     </div>
@@ -70,7 +70,7 @@ A user story is composed of...
     </div>
   </div>
 
-  <div class="flex-container-row mt-4 fragment">
+  <div class="flex-row mt-4 fragment">
     <div class="box text-level-4" style="text-align:center; width:15%;">
        and its <br> acceptance criterias
     </div>
@@ -91,69 +91,59 @@ A user story is composed of...
 
 <p class="apart fragment">When I started on my last project...
 
-<div class="box apart fragment">
+<div class="box flex-row apart fragment">
   <div class="badge" id="box-1">Specifications</div>
   <div class="badge fragment" id="box-2">Development<br>(Developer)</div>
   <div class="badge fragment" id="box-3">Manual tests<br>(Tester)</div>
-  <div class="badge fragment" id="box-4">Production deployment</div>
+  <div class="badge fragment" id="box-4">Production <br> deployment</div>
 </div>
 
-<p class="apart text-level-3 mb-none fragment">Frictions:
-<ul class="mt-0 text-level-4">
-  <li class="fragment">Different understanding of the problem or the solution
-  <li class="fragment">Regressions happen
-  <li class="fragment">Too many non regression tests to execute manually
-</ul>
+<div class="apart flex-row">
+  <ul class="mt-0 text-level-4 no-bullets" style="width: 60%">
+    <li class="fragment"><span class="emoji">❌</span> Different understanding
+    <li class="fragment"><span class="emoji">❌</span> Regressions happen
+    <li class="fragment"><span class="emoji">❌</span> Too many non regression tests to execute manually
+  </ul>
 
-<p class="apart fragment">Not very satisfying
+ <div class="sticky fragment">
+    Not very satisfying <br> :(
+  </div>
+</div>
 
 ---
 
-
 <h2 class="slide-title">Automated tests in the dev process</h2>
 
-<p class="apart fragment">Hey, let's automize end to end tests...
+<p class="apart fragment" data-fragment-index="1">Hey, let's automize end to end tests...
 
-<div class="box apart fragment">
+<div class="box flex-row apart fragment" data-fragment-index="2">
+
   <div class="badge" id="box-1">Specifications</div>
-  <div class="badge fragment" id="box-2">Development<br>(Developer)</div>
-  <div class="badge fragment" id="box-3">Test automation<br>(Tester & Developer)</div>
-  <div class="badge fragment" id="box-4">Production deployment</div>
+  <div class="badge fragment" data-fragment-index="3" id="box-2">Development<br>(Developer)</div>
+  <div class="badge overlay-anchor fragment" data-fragment-index="4" id="box-3">Test automation<br>(Tester & Developer)
+    <div class="overlay overlay--friction fragment" data-fragment-index="6">
+      🤬
+    </div>
+  </div>
+  <div class="badge fragment" data-fragment-index="5" id="box-4">Production <br> deployment</div>
+
 </div>
 
-<p class="text-level-3 mb-none fragment">Frictions:
-<ul class="mt-0 text-level-4">
-  <li class="fragment">- Different understanding of the problem or the solution
-  <li class="fragment">+ Fewer regressions (thanks to the non regression tests)
-  <li class="fragment">- Automation is painful, tests are difficult to write, and to maintain, they fail evenly (the program wasn't designed with (all the) tests in mind)
-</ul>
 
-<p class="fragment">Better quality, but not efficient, and we intruced new difficulties...
+<div class="apart flex-row">
+   
+  <ul class="mt-0 text-level-4 no-bullets" style="width: 60%">
+    <li class="fragment"><span class="emoji">❌</span> Different understanding
+    <li class="fragment"><span class="emoji">👍</span> Fewer regressions <br> (thanks to the non-regression tests)
+    <li class="fragment"><span class="emoji">❌</span> Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
+  </ul>
 
+ <div class="sticky fragment">
+    Better quality, but not efficient... <div class="fragment">and we intruced new difficulties :(</div>
+  </div>
+</div>
 
 ---
-
-
-<h2 class="slide-title">Automated tests in the dev process</h2>
-
-<p class="apart fragment">Hey, let's automize end to end tests...
-
-<div class="box apart fragment">
-  <div class="badge" id="box-1">Specifications</div>
-  <div class="badge fragment" id="box-2">Development<br>(Developer)</div>
-  <div class="badge fragment" id="box-3">Test automation<br>(Tester & Developer)</div>
-  <div class="badge fragment" id="box-4">Production deployment</div>
-</div>
-
-<p class="apart text-level-3 mb-none fragment">Frictions:
-<ul class="mt-0 text-level-4">
-  <li class="fragment">- Different understanding of the problem or the solution
-  <li class="fragment">+ Fewer regressions (thanks to the non regression tests)
-  <li class="fragment">- Automation is painful, tests are difficult to write, and to maintain, they fail evenly (the program wasn't designed with (all the) tests in mind)
-</ul>
-
-<p class="apart fragment">Better quality, but not efficient, and frustrating for new reasons
-
 
 <p class="apart fragment">Acceptance tests comes out of acceptance criterias
 
@@ -161,6 +151,28 @@ A user story is composed of...
 <!--Thinking about tests before development is more efficient <br>  and favors a <strong>whole team approach</strong> on E2E testing-->
 Plutôt qu'une personne qui vérifie les critères d'acceptation
 </div>
+
+it is far better to focus on illustrating user stories with key examples.
+
+Key examples are a small number of relatively simple scenarios that are easy to understand, evaluate for completeness and critique.
+
+If there are too many rules, break them down into several groups of smaller examples
+
+Several simple groups of key examples are much easier to understand and implement than a huge list of complex scenarios.
+
+Overly complex examples, or too many examples, are often a sign that some important business concepts are not explicitly described.
+
+
+
+### How to make it work
+
+- Start with the simplest key example 
+  - Always prefer actual values over generalisations
+- Underline the parts of the example that are most relevant to the feature or rule. Make sure you distinguish between inputs and outputs.
+- Using the values you have underlined, create a table with column names for each input and each output.
+
+Dans les tp, proposer des règles de gestion floues, qui pourront être affinées avec tests
+
 
 ---
 
@@ -223,7 +235,7 @@ et comment la vérification sera automatisée
 
 <!-- .slide: id="cypress-tips" class="slide--part-title slide--vcenter" -->
 
-<div class="flex-container-row">
+<div class="flex-row">
 
   <div class="part-title">
     <span class="text-level-3">Part 2</span>
@@ -329,7 +341,7 @@ Set-up and clean-up tasks serve to make tests reliable and repeatable, but they 
 
 <!-- .slide: id="test-strategy" class="slide--part-title slide--vcenter" -->
 
-<div class="flex-container-row">
+<div class="flex-row">
 
   <div class="part-title">
     <span class="text-level-3">Part 3</span>
@@ -352,7 +364,7 @@ Set-up and clean-up tasks serve to make tests reliable and repeatable, but they 
 
 <h2 class="slide-title">Agile testing quandrants</h2>
 
-<div class="flex-container-row">
+<div class="flex-row">
 
   <img class="" src="img/agile-testing-quandrands.jpg" style="max-width:50%" >
 
@@ -393,15 +405,19 @@ Which ones are necessary to succeed?
 
 <div class="box fragment">
   <p class="box__title">Sprint</p>
-  <div class="badge" id="box-1">User story</div>
-  <div class="badge fragment" id="box-2">Acceptance criterias</div>
-  <div class="badge fragment" id="box-3">Automated tests</div>
-  <div class="badge fragment" id="box-4">Validates the new feature</div>
+  <div class="flex-row">
+    <div class="badge" id="box-1">User story</div>
+    <div class="badge fragment" id="box-2">Acceptance criterias</div>
+    <div class="badge fragment" id="box-3">Automated tests</div>
+    <div class="badge fragment" id="box-4">Validates the <br> new feature</div>
+  </div>
 </div>
 <div class="box fragment">
   <p class="box__title">Future sprints</p>
-  <div class="badge" id="box-5">Regression tests</div>
-  <div class="badge fragment" id="box-6">Living documentation</div>
+  <div class="flex-row">
+    <div class="badge" id="box-5">Regression tests</div>
+    <div class="badge fragment" id="box-6">Living documentation</div>
+  </div>
 </div>
 
 Notes:
@@ -566,7 +582,7 @@ See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to 
 
 <!-- .slide: id="test-strategy" class="slide--part-title slide--vcenter" -->
 
-<div class="flex-container-row">
+<div class="flex-row">
 
   <div class="part-title">
     <h1>Annex</h1>
