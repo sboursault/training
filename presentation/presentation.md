@@ -87,61 +87,90 @@ A user story is composed of...
 
 ---
 
-<h2 class="slide-title">Automated tests in the dev process</h2>
+<h2 class="slide-title">Introduction to Behaviour Driven Development</h2></h2>
 
-<p class="apart fragment">When I started on my last project...
+<p class="apart fragment" data-fragment-index="1">When I started on my last project...
 
-<div class="box flex-row apart fragment">
-  <div class="badge" id="box-1">Specifications</div>
-  <div class="badge fragment" id="box-2">Development<br>(Developer)</div>
-  <div class="badge fragment" id="box-3">Manual tests<br>(Tester)</div>
-  <div class="badge fragment" id="box-4">Production <br> deployment</div>
+<div class="box flex-row apart fragment" style="padding:40px;" data-fragment-index="2">
+  <div class="badge" data-arrow="->task-dev">Specifications</div>
+  <div class="badge fragment" data-arrow="->task-test" id="task-dev" data-fragment-index="3">Development<br>(Developer)</div>
+  <div class="badge overlay-anchor fragment" data-arrow="->task-prod" id="task-test" data-fragment-index="4">Manual tests<br>(Tester)
+    <div class="overlay overlay--friction fragment">
+      🤬
+    </div>
+  </div>
+
+  <div class="badge fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
 </div>
 
-<div class="apart flex-row">
-  <ul class="mt-0 text-level-4 no-bullets" style="width: 60%">
+<div class="mt-3 flex-row">
+  <ul class="text-level-4 no-bullets">
     <li class="fragment"><span class="emoji">❌</span> Different understanding
     <li class="fragment"><span class="emoji">❌</span> Regressions happen
     <li class="fragment"><span class="emoji">❌</span> Too many non regression tests to execute manually
   </ul>
 
  <div class="sticky fragment">
-    Not very satisfying <br> :(
+    Not very satisfying &nbsp; :(
   </div>
+  
+  Hey, let's automize end to end tests...
+
 </div>
 
 ---
 
-<h2 class="slide-title">Automated tests in the dev process</h2>
+<p class="mt-3 fragment" data-fragment-index="1">Hey, let's automize end to end tests...
 
-<p class="apart fragment" data-fragment-index="1">Hey, let's automize end to end tests...
+<div class="box flex-row apart fragment" style="padding:40px;" data-fragment-index="2">
 
-<div class="box flex-row apart fragment" data-fragment-index="2">
-
-  <div class="badge" id="box-1">Specifications</div>
-  <div class="badge fragment" data-fragment-index="3" id="box-2">Development<br>(Developer)</div>
-  <div class="badge overlay-anchor fragment" data-fragment-index="4" id="box-3">Test automation<br>(Tester & Developer)
-    <div class="overlay overlay--friction fragment" data-fragment-index="6">
+  <div class="badge" data-arrow="->task-dev">Specifications</div>
+  <div class="badge fragment" id="task-dev" data-arrow="->task-test" data-fragment-index="3">Development<br>(Developer)</div>
+  <div class="badge overlay-anchor fragment" id="task-test" data-arrow="->task-prod" data-fragment-index="4">Test automation<br>(Tester & Developer)
+    <div class="overlay overlay--friction fragment">
       🤬
     </div>
   </div>
-  <div class="badge fragment" data-fragment-index="5" id="box-4">Production <br> deployment</div>
+  <div class="badge fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
 
 </div>
 
 
-<div class="apart flex-row">
+<div class="mt-3 flex-row">
    
-  <ul class="mt-0 text-level-4 no-bullets" style="width: 60%">
+  <ul class="mt-0 text-level-4 no-bullets">
     <li class="fragment"><span class="emoji">❌</span> Different understanding
     <li class="fragment"><span class="emoji">👍</span> Fewer regressions <br> (thanks to the non-regression tests)
     <li class="fragment"><span class="emoji">❌</span> Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
   </ul>
 
  <div class="sticky fragment">
-    Better quality, but not efficient... <div class="fragment">and we intruced new difficulties :(</div>
+    Better quality, but not efficient... <div class="fragment">and we intruced new difficulties&nbsp; :(</div>
   </div>
+
+  Maybe we need more collaboration
 </div>
+
+---
+
+<p class="mt-3 fragment">Ok we need more colloboration
+
+<div class="box flex-row apart fragment" style="padding:40px;">
+
+  <div class="badge" data-arrow="->task-example">Specifications</div>
+  <div class="badge fragment" id="task-example" data-arrow="->task-dev,->task-test">Example workshop</div>
+  <div class="flex-column">
+    <div class="badge fragment" id="task-dev" data-arrow="->task-prod">Development<br>(Developer)</div>
+    <div class="badge fragment" id="task-test">
+      Test automation<br>(Tester & Developer)
+      <span class="fragment" data-arrow="task-test->task-dev"></span>
+    </div>
+    
+  </div>
+  <div class="badge fragment" id="task-prod">Production <br> deployment</div>
+
+</div>
+
 
 ---
 

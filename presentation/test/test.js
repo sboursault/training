@@ -16,6 +16,7 @@ describe('fillTocs', function () {
              <div class="part-toc"></div>
            </section>
            <section id="s3"><h2>1.1</h2><p>hello</p></section>
+           <section>more content on 1.1</section>
            <section id="s4"><h2>1.2</h2><p>hello again</p></section>
            <section id="s6"><h2>1.2</h2><p>extra content</p></section>
            <section id="s6" class="slide--part-title">

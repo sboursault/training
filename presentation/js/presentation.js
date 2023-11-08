@@ -31,6 +31,12 @@ export function addBreadcrumbs() {
 
 function getSiblingUnlessPartTileSlide(element) {
   let sibling = element.nextElementSibling
+  if (sibling == null)
+    return null
+  while(sibling && sibling.querySelector('h1') == null && sibling.querySelector('h2') == null) {
+    console.log(sibling.innerHTML)
+    sibling = sibling.nextElementSibling
+  }
   if (sibling && sibling.classList && sibling.classList.contains('slide--part-title')) {
     sibling = null
   }

@@ -31,17 +31,19 @@
         new LeaderLine(elt1, elt2, { color: 'var(--r-link-color)', size: 7, ...options || {} });
     }
     function drawArrows() {
-      var box1 = document.querySelector('.present #box-1'),
-        box2 = document.querySelector('.present #box-2'),
-        box3 = document.querySelector('.present #box-3'),
-        box4 = document.querySelector('.present #box-4'),
-        box5 = document.querySelector('.present #box-5'),
-        box6 = document.querySelector('.present #box-6');
-      drawArrow(box1, box2, { startSocket: 'right', endSocket: 'left' });
-      drawArrow(box2, box3, { startSocket: 'right', endSocket: 'left' });
-      drawArrow(box3, box4, { startSocket: 'right', endSocket: 'left' });
-      drawArrow(box3, box5, { startSocket: 'bottom', endSocket: 'top' });
-      drawArrow(box3, box6, { startSocket: 'bottom', endSocket: 'top' });
+      var section = document.querySelector('section.present');
+      var elements = section.querySelectorAll('section.present [data-arrow]');
+      Array.from(elements)
+        .filter(elt => getComputedStyle(elt).visibility !== 'hidden')
+        .forEach(elt => {
+          const arrowDefs = elt.getAttribute("data-arrow").split(',')
+          Array.from(Array.from(arrowDefs)).forEach(arrowDef => {
+            const array = arrowDef.split('->');
+            const from = array[0] ? section.querySelector('#' + array[0]) : elt;
+            const to = array[1] ? section.querySelector('#' + array[1]) : elt;
+            drawArrow(from, to, { path: 'fluid' });
+          })  
+      })
     }
     function eraseArrows() {
       const elts = document.getElementsByClassName('leader-line')
@@ -60,7 +62,7 @@
     });
     Reveal.on('ready', event => {
       fillTocs()
-      addBreadcrumbs()
+      // addBreadcrumbs()
       setTimeout(
         () => {
           drawArrows()
