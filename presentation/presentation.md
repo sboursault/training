@@ -87,9 +87,9 @@ A user story is composed of...
 
 ---
 
-<h2 class="slide-title">Introduction to Behaviour Driven Development</h2></h2>
+<h2 class="slide-title">Intro to Behaviour Driven Development</h2>
 
-<p class="apart fragment" data-fragment-index="1">When I started on my last project...
+<p class="fragment" data-fragment-index="1">When I started on my last project...
 
 <div class="box flex-row apart fragment" style="padding:40px;" data-fragment-index="2">
   <div class="badge" data-arrow="->task-dev">Specifications</div>
@@ -99,28 +99,31 @@ A user story is composed of...
       🤬
     </div>
   </div>
-
   <div class="badge fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
 </div>
 
-<div class="mt-3 flex-row">
-  <ul class="text-level-4 no-bullets">
-    <li class="fragment"><span class="emoji">❌</span> Different understanding
-    <li class="fragment"><span class="emoji">❌</span> Regressions happen
-    <li class="fragment"><span class="emoji">❌</span> Too many non regression tests to execute manually
-  </ul>
-
- <div class="sticky fragment">
-    Not very satisfying &nbsp; :(
+<div class="mt-2 flex-row">
+  <div class="flex-column tiny-gap">
+    <ul class="text-level-4 no-bullets">
+      <li class="fragment"><span class="emoji">❌</span> Different understanding
+      <li class="fragment"><span class="emoji">❌</span> Regressions happen
+      <li class="fragment"><span class="emoji">❌</span> Too many non regression tests to execute manually
+    </ul>
+    <div class="sticky fragment">
+      Not very satisfying &nbsp; :(
+    </div>
   </div>
-  
-  Hey, let's automize end to end tests...
-
+  <div class="bubble bubble-bottom-left flex-row tiny-gap fragment">
+    <div class="icon">🤓</div>
+    <div>Maybe we should automize end to end tests...</div>
+  </div>
 </div>
+    
+
 
 ---
 
-<p class="mt-3 fragment" data-fragment-index="1">Hey, let's automize end to end tests...
+<p class="fragment " data-fragment-index="1">So, let's automize end to end tests...
 
 <div class="box flex-row apart fragment" style="padding:40px;" data-fragment-index="2">
 
@@ -132,30 +135,32 @@ A user story is composed of...
     </div>
   </div>
   <div class="badge fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
-
 </div>
 
 
-<div class="mt-3 flex-row">
-   
-  <ul class="mt-0 text-level-4 no-bullets">
-    <li class="fragment"><span class="emoji">❌</span> Different understanding
-    <li class="fragment"><span class="emoji">👍</span> Fewer regressions <br> (thanks to the non-regression tests)
-    <li class="fragment"><span class="emoji">❌</span> Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
-  </ul>
-
- <div class="sticky fragment">
-    Better quality, but not efficient... <div class="fragment">and we intruced new difficulties&nbsp; :(</div>
+<div class="mt-2 flex-row">
+  <div class="flex-column tiny-gap">
+    <ul class="text-level-4 no-bullets">
+      <li class="fragment"><span class="emoji">❌</span> Different understanding
+      <li class="fragment"><span class="emoji">👍</span> Fewer regressions <br> (thanks to the non-regression tests)
+      <li class="fragment"><span class="emoji">❌</span> Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
+    </ul>
+    <div class="sticky fragment">
+      Better quality, but not efficient... <div class="fragment">and we intruced new difficulties&nbsp; :(</div>
+    </div>
   </div>
-
-  Maybe we need more collaboration
+  <div class="bubble bubble-bottom-left flex-row tiny-gap fragment">
+    <div class="icon">🧐</div>
+    <div>So... What's the solution?</div>
+  </div>
 </div>
+
 
 ---
 
-<p class="mt-3 fragment">Ok we need more colloboration
+<p class="fragment">The <strong>Behaviour Driven Development</strong> approach
 
-<div class="box flex-row apart fragment" style="padding:40px;">
+<div class="box flex-row fragment" style="padding:30px;">
 
   <div class="badge" data-arrow="->task-example">Specifications</div>
   <div class="badge fragment" id="task-example" data-arrow="->task-dev,->task-test">Example workshop</div>
@@ -170,6 +175,14 @@ A user story is composed of...
   <div class="badge fragment" id="task-prod">Production <br> deployment</div>
 
 </div>
+
+<p class="apart text-level-3 fragment">For each story, we agree on a set of <strong>key examples</strong>
+
+<ul class="text-level-3 no-bullets fragment">
+  <li class="fragment"><span class="emoji">👍</span> The team discover unknown unknowns earlier
+  <li class="fragment"><span class="emoji">👍</span> Shared understanding
+  <li class="fragment"><span class="emoji">👍</span> We get the <strong>Scenarios to automate</strong> out of the process
+</ul>
 
 
 ---
