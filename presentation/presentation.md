@@ -51,39 +51,6 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 </div>
 
----
-
-<h2 class="slide-title">Acceptance criterias</h2>
-
-A user story is composed of...
-
-<div class="block">
-  
-  <div class="flex-row fragment">
-    <div class="box text-level-4" style="text-align:center; width:15%;">
-       a user story <br> template
-    </div>
-    <div class="text-level-3 fragment" style="width:80%">
-      <i><strong>As a</strong> user,<br>
-      <strong>I want to</strong> use a search field to type a city, name, or street,<br>
-      <strong>so that</strong> I could find matching hotel options.</i>
-    </div>
-  </div>
-
-  <div class="flex-row mt-4 fragment">
-    <div class="box text-level-4" style="text-align:center; width:15%;">
-       and its <br> acceptance criterias
-    </div>
-    <ul class="fragment" style="margin: 0; width:80%">
-      <li class="text-level-5">The search field is placed on the top bar
-      <li class="text-level-5">Search starts once the user clicks “Search”
-      <li class="text-level-5">The field contains a placeholder with a grey-colored text: “Where are you going?”
-      <li class="text-level-5">The placeholder disappears once the user starts typing
-      <li class="text-level-5">Search is performed if a user types in a city, hotel name, street, or all combined
-      <li class="text-level-5">...
-    </ul>
-  </div>
-</div>
 
 ---
 
@@ -105,9 +72,9 @@ A user story is composed of...
 <div class="mt-2 flex-row">
   <div class="flex-column tiny-gap">
     <ul class="text-level-4 no-bullets">
-      <li class="fragment"><span class="emoji">❌</span> Different understanding
-      <li class="fragment"><span class="emoji">❌</span> Regressions happen
-      <li class="fragment"><span class="emoji">❌</span> Too many non regression tests to execute manually
+      <li class="fragment"><span class="emoji">❌</span>Different understanding
+      <li class="fragment"><span class="emoji">❌</span>Regressions happen
+      <li class="fragment"><span class="emoji">❌</span>Too many non regression tests to execute manually
     </ul>
     <div class="sticky fragment">
       Not very satisfying &nbsp; :(
@@ -141,9 +108,9 @@ A user story is composed of...
 <div class="mt-2 flex-row">
   <div class="flex-column tiny-gap">
     <ul class="text-level-4 no-bullets">
-      <li class="fragment"><span class="emoji">❌</span> Different understanding
-      <li class="fragment"><span class="emoji">👍</span> Fewer regressions <br> (thanks to the non-regression tests)
-      <li class="fragment"><span class="emoji">❌</span> Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
+      <li class="fragment"><span class="emoji">❌</span>Different understanding
+      <li class="fragment"><span class="emoji">👍</span>Fewer regressions
+      <li class="fragment"><span class="emoji">❌</span>Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
     </ul>
     <div class="sticky fragment">
       Better quality, but not efficient... <div class="fragment">and we intruced new difficulties&nbsp; :(</div>
@@ -176,12 +143,12 @@ A user story is composed of...
 
 </div>
 
-<p class="apart text-level-3 fragment">For each story, we agree on a set of <strong>key examples</strong>
+<p class="apart text-level-3 fragment">For each story, we agree on a set of concrete <strong>key examples</strong>
 
 <ul class="text-level-3 no-bullets fragment">
-  <li class="fragment"><span class="emoji">👍</span> The team discover unknown unknowns earlier
-  <li class="fragment"><span class="emoji">👍</span> Shared understanding
-  <li class="fragment"><span class="emoji">👍</span> We get the <strong>Scenarios to automate</strong> out of the process
+  <li class="fragment"><span class="emoji">👍</span>The team discover unknown unknowns earlier
+  <li class="fragment"><span class="emoji">👍</span>Shared understanding
+  <li class="fragment"><span class="emoji">👍</span>We get the <strong>Scenarios to automate</strong> out of the process
 </ul>
 
 

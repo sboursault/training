@@ -325,6 +325,7 @@ code:not(pre code) {
 
 .emoji {
   font-size: 75%;
+  margin-right: 10px;
 }
 
 

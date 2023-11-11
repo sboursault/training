@@ -42,3 +42,80 @@ function getSiblingUnlessPartTileSlide(element) {
   }
   return sibling
 }
+
+function isVisible(el) {
+  return getComputedStyle(el).visibility !== 'hidden';
+}
+function drawArrow(elt1, elt2, options) {
+  if (isVisible(elt1) && isVisible(elt2))
+    new LeaderLine(elt1, elt2, { color: 'var(--r-link-color)', size: 7, ...options || {} });
+}
+
+function drawArrows() {
+  var section = document.querySelector('section.present');
+  var elements = section.querySelectorAll('section.present [data-arrow]');
+  Array.from(elements)
+    .filter(elt => getComputedStyle(elt).visibility !== 'hidden')
+    .forEach(elt => {
+      const arrowDefs = elt.getAttribute("data-arrow").split(',')
+      Array.from(Array.from(arrowDefs)).forEach(arrowDef => {
+        const array = arrowDef.split('->');
+        const from = array[0] ? section.querySelector('#' + array[0]) : elt;
+        const to = array[1] ? section.querySelector('#' + array[1]) : elt;
+        drawArrow(from, to, { path: 'fluid' });
+      })  
+  })
+}
+function eraseArrows() {
+  const elts = document.getElementsByClassName('leader-line')
+  Array.from(elts).forEach(elt => elt.remove())
+}
+
+
+export function init() {
+      
+  Reveal.initialize({
+    width: 1200,
+    height: 750,
+    slideNumber: true,
+    // Factor of the display size that should remain empty around
+    // the content
+    margin: 0.04,
+    center: false,
+    hash: true, // adds # in urls to allow url navigation
+    plugins: [RevealMarkdown, RevealNotes, RevealHighlight]
+  });
+  Reveal.on('ready', event => {
+    fillTocs()
+    // addBreadcrumbs()
+    setTimeout(
+      () => {
+        drawArrows()
+      }, 200 // without this timeout, the arrow isn't well positionned
+    )
+  });
+  Reveal.on('slidetransitionend', event => {
+    drawArrows()
+  });
+  Reveal.on('slidechanged', event => {
+    eraseArrows()
+  });
+  Reveal.on('fragmentshown', event => {
+    setTimeout(
+      () => {
+        eraseArrows()
+        drawArrows()
+      }, 300 // wait for the element to be visible
+    )
+  });
+  Reveal.on('fragmenthidden', event => {
+    setTimeout(
+      () => {
+        eraseArrows()
+        drawArrows()
+      }, 300 // wait for the element to be visible
+    )
+  });
+  Reveal.on('overviewshown', event => { eraseArrows() });
+  Reveal.on('overviewhidden', event => { drawArrows() });
+}
