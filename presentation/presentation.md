@@ -54,7 +54,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 ---
 
-<h2 class="slide-title">Intro to Behaviour Driven Development</h2>
+<h2 class="slide-title" style="font-size: 3vw">What is Behaviour Driven Development?</h2>
 
 <p class="fragment" data-fragment-index="1">When I started on my last project...
 
@@ -105,8 +105,8 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 </div>
 
 
-<div class="mt-2 flex-row">
-  <div class="flex-column tiny-gap">
+<div class="mt-3 flex-row">
+  <div class="flex-column gap-10">
     <ul class="text-level-4 no-bullets">
       <li class="fragment"><span class="emoji">❌</span>Different understanding
       <li class="fragment"><span class="emoji">👍</span>Fewer regressions
@@ -151,92 +151,6 @@ https://revealjs-themes.dzello.com/sunblind.html#/
   <li class="fragment"><span class="emoji">👍</span>We get the <strong>Scenarios to automate</strong> out of the process
 </ul>
 
-
----
-
-<p class="apart fragment">Acceptance tests comes out of acceptance criterias
-
-<div class="apart fragment">
-<!--Thinking about tests before development is more efficient <br>  and favors a <strong>whole team approach</strong> on E2E testing-->
-Plutôt qu'une personne qui vérifie les critères d'acceptation
-</div>
-
-it is far better to focus on illustrating user stories with key examples.
-
-Key examples are a small number of relatively simple scenarios that are easy to understand, evaluate for completeness and critique.
-
-If there are too many rules, break them down into several groups of smaller examples
-
-Several simple groups of key examples are much easier to understand and implement than a huge list of complex scenarios.
-
-Overly complex examples, or too many examples, are often a sign that some important business concepts are not explicitly described.
-
-
-
-### How to make it work
-
-- Start with the simplest key example 
-  - Always prefer actual values over generalisations
-- Underline the parts of the example that are most relevant to the feature or rule. Make sure you distinguish between inputs and outputs.
-- Using the values you have underlined, create a table with column names for each input and each output.
-
-Dans les tp, proposer des règles de gestion floues, qui pourront être affinées avec tests
-
-
----
-
-<h2 class="slide-title">Specification workshop</h2>
-
-
-Surtout expliquer qu'on se réunit avant de démarrer le développement pour comprendre le périmètre de la story,
-et comment la vérification sera automatisée
-
-<p class="mt-4 fragment">A programmer, a tester and the PO have a conversation <br> to clarify the acceptance criterias of a user story
-
-<p class="fragment">The acceptance criterias are illustrated with examples
-
-<p class="fragment text-level-2 apart mb-none fragment">Benfits:
-<ul>
-<li class="text-level-3 fragment">The team discover unknown unknowns earlier
-<li class="text-level-3 fragment">Everybody is aligned on the scope of the change <!-- To build a shared understanding of what Done means for a story -->
-<li class="text-level-3 fragment">We get the <strong>scenarios to automate</strong> from the process
-</ul>
-
-  <!--- Participants
-    - A programmer, who thinks about how to make things, says what is feasable, suggests simpler paths
-    - A tester, who thinks about how to break things, and come up with lots of scenarios, sometimes covering obscure edge cases, and sometimes covery very important ones 
-    - The product owner, who cares about scope
-    - Anybody relevant to the story being discussed (operations, UX designer...)-->
-
----
-
-<h2 class="slide-title">Specification workshop</h2>
-
-<p class="mt-6">Tips to make it work:
-<ul>
-<li class="text-level-2 fragment">Invite whoever is relevant (operations, UX designer...)
-<li class="text-level-2 fragment">Keep Discovery Workshops short and frequent (15 min. per story, every other day)
-<li class="text-level-2 fragment">Don't make it a big ceremony, just ask for examples
-</ul>
-
----
-
-
-
-<h2 class="slide-title">Acceptance criterias</h2>
-
-<p class="fragment">Illustrate rules with <strong>key examples</strong> and <strong>counter examples</strong>
-
-<p class="text-level-2 apart mb-none fragment">Howto:
-<ul>
-<li class="text-level-2 fragment">Prefer actual values over generalisations (unless the value is irrelevant to the rule)
-<li class="text-level-2 fragment">Use natural language (the given/when/then structure can come later)
-<li class="text-level-2 fragment">Discover extra paths with the <a href="#/shaded-figs">shaded figs</a>
-<li class="text-level-2 fragment">Make a table when there are 3 or more examples
-<li class="text-level-2 fragment">Group rules when there are too many
-</ul>
-
-<p class="text-level-2 apart fragment">Too many examples for a rule (more than 5)? look for hidden concepts
 
 
 ---
@@ -305,11 +219,11 @@ Don't test it if it's not testable
 cy.wait(2000)  // wait for 2 seconds
 
 // Good
-cy.intercept("POST", "/api/basket/add-product").as("addProductToBasket")
-cy.wait("@addProductToBasket")  // wait for a http response
+cy.contains("Welcome")  // wait for the page to contain "welcome"
 
 // Good
-cy.contains("Welcome")  // wait for the page to contain "welcome"
+cy.intercept("POST", "/api/basket/add-product").as("addProductToBasket")
+cy.wait("@addProductToBasket")  // wait for a http response
 ```
 
 <!-- .element: class="fragment" -->
@@ -410,40 +324,11 @@ Which ones are necessary to succeed?
 
 ---
 
-<h2 class="slide-title">Automated tests in the dev process</h2>
-
-<div class="box fragment">
-  <p class="box__title">Sprint</p>
-  <div class="flex-row">
-    <div class="badge" id="box-1">User story</div>
-    <div class="badge fragment" id="box-2">Acceptance criterias</div>
-    <div class="badge fragment" id="box-3">Automated tests</div>
-    <div class="badge fragment" id="box-4">Validates the <br> new feature</div>
-  </div>
-</div>
-<div class="box fragment">
-  <p class="box__title">Future sprints</p>
-  <div class="flex-row">
-    <div class="badge" id="box-5">Regression tests</div>
-    <div class="badge fragment" id="box-6">Living documentation</div>
-  </div>
-</div>
-
-Notes:
-The Acceptance tests comes out of acceptance criterias.
-Thinking about tests before development is more efficient:
- - the developer and the tester are aligned on the scope of the change
- - the developer writes testable code
-When automating a test, one must have these 3 finalities in mind.
-We need to balance completeness, clarity and speed.
-
----
-
 <h2 class="slide-title">Who automates the tests?</h2>
 
-<h3 class="mt-5 fragment">Favour a <strong>whole team approach</strong></h3>
+<p class="mt-5 fragment">Favour a <strong>whole team approach</strong></p>
 
-<p class="mb-none fragment">Developers and testers work together to</p>
+<p class="mb-none mt-3 text-level-2 fragment">Developers and testers work together to</p>
 <ul class="text-level-2">
   <li class="fragment">Build and maintain the test infrastructure</li>
   <li class="fragment">Design testable code</li> <!-- Developers write more testable code -->
@@ -477,6 +362,16 @@ On a shared environment, tests can fail for external reasons.
 you must have clear control over the environment in which the tests run.
 
 
+---
+
+<h2 class="slide-title">Never ignore failing tests</h2>
+
+<p class="fragment">Fix flaky tests as soon as possible
+
+<p class="fragment">If not fixed within a given time frame,<br> <strong>delete</strong> or <strong>quarantine</strong> the flaky test
+
+<p class="fragment">Don't let flaky tests attack your confidence!
+
 
 ---
 
@@ -503,35 +398,48 @@ you must have clear control over the environment in which the tests run.
 
 ---
 
-### Fast
+<!-- .slide: class="slide--vcenter" -->
 
-<p class="fragment">The faster the test suite, the more offten it can run
+<div>
+<h3>Fast</h3>
 
-<p class="fragment">Shortening the feedback loop accelerates the development process
+  <p class="fragment">The faster the test suite, the more offten it can run
 
+  <p class="fragment">Shortening the feedback loop accelerates the development process
+</div>
 <!-- cost of switching subject -->
 
 ---
 
-### Isolated
+<!-- .slide: class="slide--vcenter" -->
 
-<p class="fragment">Isolated tests can run in any order
+<div>
+  <h3>Isolated</h3>
 
-<h3 class="fragment">Repeatable</h3>
+  <p class="fragment">Isolated tests can run in any order
 
-<p class="fragment">Repeatable tests don't depend on the state of the environment in which they run
+  <h3 class="fragment">Repeatable</h3>
 
-<p class="fragment apart">Without isolation and repeatability, you often get false positive. The biggest risk is too <strong>loose confidence in your tests</strong>.
+  <p class="fragment">Repeatable tests don't depend on the state of the environment in which they run
+
+  <p class="fragment apart">Without isolation and repeatability, you often get false positive. The biggest risk is too <strong>loose confidence in your tests</strong>.
+
+</div>
 
 Note: move the environment to a <strong>well-known state</strong> before they run
 
 ---
 
-### Small
+<!-- .slide: class="slide--vcenter" -->
 
-Avoid automating all UI end-to-end journeys. 
+<div>
+  <h3>Small</h3>
 
-Write **atomic** scripts so that when they fail, you know why.
+  Avoid automating all UI end-to-end journeys. 
+
+  Write **atomic** scripts so that when they fail, you know why.
+
+</div>
 
 Note:
 originaly: Simple and Self-Verifying
@@ -541,19 +449,24 @@ originaly: Simple and Self-Verifying
 
 ---
 
-### Timely
+<!-- .slide: class="slide--vcenter" -->
 
-<p class="fragment">Try to automate tests before development
+<div>
+  <h3>Timely</h3>
 
-<div class="apart text-level-2">
-<!--When written before development / Benefits -->
-<ul>
-  <li class="fragment">Production code is crafted so it's <strong>testable</strong>
-  <li class="fragment">Tests are used to <strong>validate the changes</strong>
-</ul>
+  <p class="fragment">Try to automate tests before development
+
+  <div class="apart text-level-2">
+  <!--When written before development / Benefits -->
+  <ul>
+    <li class="fragment">Production code is crafted so it's <strong>testable</strong>
+    <li class="fragment">Tests are used to <strong>validate the changes</strong>
+  </ul>
+  </div>
+
+  <p class="apart text-level-2 fragment">Testing before development is more fun,<br> more beneficial, more productive, and less frustrating
+
 </div>
-
-<p class="apart text-level-2 fragment">Testing before development is more fun,<br> more beneficial, more productive, and less frustrating
 
 ---
 
@@ -567,16 +480,6 @@ originaly: Simple and Self-Verifying
 ---
 
 <h2 class="slide-title">Test you apis</h2>
-
----
-
-<h2 class="slide-title">Never ignore failing tests</h2>
-
-<p class="fragment">Fix flaky tests as soon as possible
-
-<p class="fragment">If not fixed within a given time frame,<br> <strong>delete</strong> or <strong>quarantine</strong> the flaky test
-
-<p class="fragment">Don't let flaky tests attack your confidence!
 
 ---
 

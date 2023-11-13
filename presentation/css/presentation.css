@@ -126,9 +126,6 @@ strong {
 }
 
 
-.reveal h1 {
-  font-size: var(--r-heading1-size);
-}
 
 .reveal h3 {
   text-align: left;
@@ -196,9 +193,15 @@ code:not(pre code) {
   gap: 1em;
 }
 
+
 .reveal .tiny-gap {
   gap: .5em;
 }
+
+.reveal .gap-10 {
+  gap: 1em;
+}
+
 
 .slide--part-title .flex-row .part-title {
   flex-basis: 65%
@@ -362,8 +365,17 @@ code:not(pre code) {
 }
 
 
+
+.reveal .text-size-heading-1 {
+  font-size: var(--r-heading1-size);
+}
+
 .reveal .text-size-heading-2 {
   font-size: var(--r-heading2-size);
+}
+
+.reveal .text-size-heading-3 {
+  font-size: var(--r-heading3-size);
 }
 
 .reveal .text-level-2 {
