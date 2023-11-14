@@ -8,7 +8,7 @@
 /* eeeff0 light gray */
 
 :root {
-    --r-background-color: #eee;
+    --r-background-color: white;
     --r-main-font: Source Sans Pro, Helvetica, sans-serif;
     --r-main-color: #444;
     --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
@@ -29,6 +29,11 @@
     --r-selection-background-color: #98bdef;
     --r-selection-color: #fff;
 
-    --diagram-background-color: var(--color-light-gray-4); /*var(--color-dark-gray-2)*/  
-    --diagram-border-color: var(--color-light-gray-1); /*var(--color-light-gray-2)*/  
+    --diagram-background-color: var(--color-light-gray-6);  
+    --diagram-border-color: var(--color-light-gray-1);
+
+    --bubble-background-color: #d0e9ff;
+
+    --code-border-color: var(--color-light-gray-4);
+    --code-background-color: #fafafa;
   }

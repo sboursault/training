@@ -481,13 +481,6 @@ originaly: Simple and Self-Verifying
 
 <h2 class="slide-title">Test you apis</h2>
 
----
-
-### Make async APIs testable
-
-<p class="text-level-2">Ask "what happens instead?" to prove that something does not happen</p>
-
-See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to an error topic...
 
 
 ---

@@ -2,6 +2,8 @@
   --color-dark: #2a2a2a;
   --color-white: #eeeff0;
   --color-black: #2a2a2a;
+  --color-light-gray-6: #f8f8f8;
+  --color-light-gray-5: #eee;
   --color-light-gray-4: #dddddd;
   --color-light-gray-3: #cccccc;
   --color-light-gray-2: #b2b2b2;
@@ -145,11 +147,11 @@ pre code.hljs {
 }
 
 code:not(pre code) {
-  background-color: var(--color-dark-gray-2);
+  background: var(--code-background-color);
+  border: 2px solid var(--code-border-color);
   font-size: 75%;
   border-radius: 5px;
   padding: 5px 8px;
-  border: 2px solid var(--color-dark-gray-1-5);
   margin: 0 5px;
 }
 
@@ -300,7 +302,6 @@ code:not(pre code) {
   font-style: italic;
   font-weight: bold;
   color: black;
-  /* width: 300px; */
   height: fit-content;
   background:rgb(255, 178, 91);
   z-index: 9;
@@ -339,7 +340,7 @@ code:not(pre code) {
   font-size: 18px;
   line-height: 24px;
   width: 300px;
-  background: lightyellow;
+  background: var(--bubble-background-color);
   border-radius: 40px;
   padding: 16px 24px;
   text-align: center;
@@ -352,9 +353,9 @@ code:not(pre code) {
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 24px solid lightyellow;
+  border-left: 24px solid var(--bubble-background-color);
   border-right: 12px solid transparent;
-  border-top: 12px solid lightyellow;
+  border-top: 12px solid var(--bubble-background-color);
   border-bottom: 20px solid transparent;
   left: 32px;
   bottom: -24px;

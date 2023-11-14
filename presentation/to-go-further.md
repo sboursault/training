@@ -172,3 +172,25 @@ Thinking about tests before development is more efficient:
  - the developer writes testable code
 When automating a test, one must have these 3 finalities in mind.
 We need to balance completeness, clarity and speed.
+
+
+---
+
+<!-- .slide: id="extra-tips" class="slide--part-title slide--vcenter" -->
+
+<div class="part-title">
+  <h1>Extra tips</h1>
+</div>
+
+---
+
+<h2 class="slide-title">Test you apis</h2>
+
+---
+
+### Make async APIs testable
+
+<p class="text-level-2">Ask "what happens instead?" to prove that something does not happen</p>
+
+See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to an error topic...
+

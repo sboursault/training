@@ -32,6 +32,11 @@
     
     --diagram-background-color: var(--color-dark-gray-2);
     --diagram-border-color: var(--color-light-gray-1);
+
+    --bubble-background-color: lightyellow;
+
+    --code-border-color: var(--color-dark-gray-1-5);
+    --code-background-color: var(--color-dark-gray-2);
   }
 
 
