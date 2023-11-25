@@ -1005,7 +1005,14 @@ Déploiement :
 
 
 
-<br>
+## Test a SPA
+
+prévoir un chapitre test d'une spa
+- idée : 
+  - envoi d'un email sur gmail à moi même, je le reçois bien.
+- ajout de wait dans le page object
+
+
 
 ## Verify behavior by mocking server reponse
 

@@ -219,11 +219,12 @@ Don't test it if it's not testable
 cy.wait(2000)  // wait for 2 seconds
 
 // Good
-cy.contains("Welcome")  // wait for the page to contain "welcome"
+cy.contains('Welcome')  // wait for the page to contain "welcome"
 
 // Good
-cy.intercept("POST", "/api/basket/add-product").as("addProductToBasket")
-cy.wait("@addProductToBasket")  // wait for a http response
+cy.intercept('POST', '/api/basket/add-product').as('addProductToBasket')
+cy.get('button').contains('Add to basket').click()
+cy.wait('@addProductToBasket')  // wait for a http response
 ```
 
 <!-- .element: class="fragment" -->
@@ -351,11 +352,11 @@ Everyone should feel responsible for the automated tests
 
 <h3 class="mt-4 fragment">Run automated tests on each release</h3>
 
-<p class="text-level-2 fragment">as part of your CI/CD pipeline</p>
+<p class="text-level-2 fragment">as part of your CI/CD pipeline
 
-<h3 class="fragment">Have a dedicated environment</h3>
-
-<p class="text-level-2 fragment">A shared environment is not predictible</p>
+<h3 class="fragment">Run E2E tests on a dedicated environment</h3>
+<p class="text-level-2 fragment">A shared environment is not predictible
+<p class="text-level-2 fragment">This environment is built as part of the CI/CD pipeline
 
 Note:
 On a shared environment, tests can fail for external reasons.
@@ -366,7 +367,7 @@ you must have clear control over the environment in which the tests run.
 
 <h2 class="slide-title">Never ignore failing tests</h2>
 
-<p class="fragment">Fix flaky tests as soon as possible
+<p class="mt-6 fragment">Fix flaky tests as soon as possible
 
 <p class="fragment">If not fixed within a given time frame,<br> <strong>delete</strong> or <strong>quarantine</strong> the flaky test
 
@@ -574,7 +575,7 @@ Use the ‘shaded figs’ to find alternative path to verify
 
 ## Resources
 
-<div class="text-level-2">
+<div class="text-level-5">
 
 - https://christianlydemann.com/the-most-common-cypress-mistakes/
 - Joe C automation guide
@@ -586,4 +587,5 @@ Use the ‘shaded figs’ to find alternative path to verify
 - [Why Automated Tests Should Be Atomic](https://testguild.com/atomic-tests/)
 - https://cucumber.io/blog/bdd/aslaks-view-of-bdd/
 - https://www.altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices/
+
 </div>

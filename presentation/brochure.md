@@ -4,50 +4,26 @@
 ## Description
 
 
-Cypress est le framework de test open source le plus populaire (https://www.perfecto.io/sites/default/files/pdfs/ebook-perfecto-state-test-automation-23.pdf).
+Cypress est l'outil de test open source le plus populaire. Il permet d'exécuter vos tests End-2-End (de bout en bout) en interragissant avec l'IHM de votre site web.
 
-Il permet d'exécuter vos tests End-2-End (de bout en bout) en interragissant avec l'IHM de votre site web.
+Si l'automatisation des premiers tests End-2-End peut sembler triviale, de nombreuses difficultés apparaîssent au fur et à mesure que la suite de tests prend de l'importance.
+Des tests commencent à passer en erreur sans qu'il y ait eu de changement sur le programme vérifié. L'analyse des retours est de plus en plus complexe et chronophage. À un certain point, on peut se demander si arriver à une perte de confiance dans la suite de test E2E et un rejet de l'équipe.
 
-Cette formation vous montrera comment automatiser vos tests avec Cypress. Découvrez aussi les bonnes pratiques pour construire une suite de tests maintenable et rapide.
+Cette formation vous montrera comment automatiser vos tests E22 avec Cypress. 
 
+Au travers de mises en pratique, vous découvrez les bonnes pratiques pour construire une suite de tests sûrs, maintenables et rapides, et ainsi éviter les pièges de cette discipline.
 
-Dire ce qui n'est pas simple, et qui sera abordé :
-
-
-Revoir intro de cucumber java ?
-
-Ce qu'il faut comprendre. 
-Ecrire de bons tests auto, ce n'est pas évident. Il y a plein de manière de se planter.
-- tests qui passent au rouge, perte de confiance de l'équipe
-- tests trop long
-- manque d'efficacité, rejet de l'équipe de dév
-C'est une discipline à part.
-C'est du code, mais avec pattern propres, des règles différentes du code de prod. (répétabilité des tests, page object...)
-Et en même temps il y a un fort lien avec le business.
-Ecrire des tests d'acceptation, c'est du code mais avec 
-
-
-on parlera donc d'organisation de l'équipe, de process de dév, de ci/cd
-
-!!!!! revoir 50 quick ideas pour organiser les critères d'acceptance
-ajouter une page 3 amigos pour impliquer tout le monde et avoir des meilleurs critères d'acc
-
-prévoir un chapitre test d'une spa
-- idée : 
-  - envoi d'un email sur gmail à moi même, je le reçois bien.
-- ajout de wait dans le page object
+on parlera aussi d'organisation de l'équipe, de process de dév, de ci/cd
 
 ## Objectifs pédagogiques
 
 À l’issue de cette formation, le participant sera en mesure de :
 
-être autonomoe sur l'automatisation de tests avec cypress
-Worflow de dév efficace
-Concevoir des tests automatisés (Web et API) avec Cypress
-Débugger
+Automatiser et maintenir des tests E2E avec cypress (connaissance de l'outil, de l'api)
+Mettre en oeuvre les bonnes pratiques pour construire une suite de test maintenable et rapide
+Proposer un workflow de développement efficace qui intègre les tests E2E (BDD), approche efficace et en équipe
 
-You'll learn to how to write acceptance criterias, and how to verify these acceptance criterias with automized tests using Cypress.
-You'll also learn how to write a maintanable tests suite, how reduce flakyness (must be defined), and how to keep a fast test suite.
+
 
 
 ## Public concerné/visé/cible
@@ -69,6 +45,9 @@ Knowledge of git, and understanding a language programming will help
 ## Programme de la formation
 
 un progromme trop riche : https://expandtesting.com/formations/tests-acceptation-cypress/
+https://www.humancoders.com/formations/django (belle intro)
+https://www.humancoders.com/formations/vue-js (avec une partie bonus)
+https://www.humancoders.com/formations/software-craftmanship-frontend-javascript#outline ("Mise ne pratique")
 
 &gt; Conception de cas de tests BDD en langage <strong>Gherkin</strong><br>
 &gt; Mise en place du <strong>framework de test Cypress</strong><br>
@@ -99,11 +78,15 @@ Formation synchrone incluant l’accès aux supports de cours.
 
 ## Plan de formation
 
+Concevoir des tests automatisés (Web et API) avec Cypress
+Débugger
+
+
 ### Jour 1
 
 Initialisation d'un projet Cypress avec Typescript
 Découverte de Cypress (Outils et Api)
-Ecriture de critères d'acceptation
+Atelier BDD et écriture de critères d'acceptation
 Automatisation des critères d'acceptation
 Bonnes pratiques pour l'écriture des tests
  - Page Object
@@ -116,15 +99,16 @@ Bonnes pratiques pour l'écriture des tests
 
 - Mise en place de tests d'acceptation dans une organisation agile
 - Optimisation du setup des tests en passant par les API
-- Tests d'api
+
 - Autres fonctionnalités importantes de Cypress
   - Logs
   - Debug
   - Retry-ability
   - Variables and Aliases
 
+### Bonus
 
-
+- Tests d'api
 
 
 objectifs
@@ -216,3 +200,9 @@ objectifs
 - How to debug tests with console logs and `debbuger`
 - Cypress execution order
 
+
+
+
+
+Cypress, outil le plus populaire, 1er du marché:
+ (https://www.perfecto.io/sites/default/files/pdfs/ebook-perfecto-state-test-automation-23.pdf)

@@ -46,7 +46,7 @@
 /* bases */
 
 .reveal p {
-  margin: 0 0 var(--r-block-margin);
+  margin: var(--r-block-margin) 0 0;
   line-height: 1.3;
 }
 
