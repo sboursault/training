@@ -6,12 +6,11 @@
 
 Cypress est l'outil de test open source le plus populaire en 2023. Il permet d'exécuter vos tests End-2-End (de bout en bout) en interragissant avec l'IHM de votre site web.
 
-Si l'automatisation des premiers tests End-2-End semble triviale, de nombreuses difficultés apparaîssent au fur et à mesure que la suite de tests prend de l'importance.
-Des tests commencent à passer en erreur sans qu'il y ait eu de changement sur le programme vérifié. L'analyse des retours est toujours plus complexe et prend de plus en plus de temps. Sans les bonnes clés, la situation empire, et la suite finie par être abandonnée.
+Si l'automatisation des premiers tests End-2-End semble triviale, de nombreuses difficultés apparaîssent au fur et à mesure que la suite de tests prend de l'importance. Des tests commencent à passer en erreur sans qu'il y ait eu de changement sur le programme vérifié. L'analyse des retours est toujours plus complexe et prend de plus en plus de temps. Sans les bonnes clés, la situation empire, et la suite finie par être abandonnée.
 
-Cette formation vous montrera comment automatiser vos tests E2E avec Cypress. Au travers de mises en pratique, vous découvrez les bonnes pratiques pour construire une suite de tests maintenable, rapide et capable de passer à l'échelle.
+Cette formation vous montre comment automatiser vos tests E2E avec Cypress. Au travers de mises en pratique, vous découvrez les bonnes pratiques pour construire une suite de tests maintenable, rapide et capable de passer à l'échelle.
 
-Le succès de la mise en place des tests End-to-end ne peut pas reposer que sur les épaules d'un automaticien. Whole team approach, vous verrez donc une organisation de l'équipe, de process de dév, de ci/cd efficace pour élaborer votre suite de test.
+Le succès de la mise en place des tests End-to-end ne peut pas repose sur un travail d'équipe. Nous verrons comment l'équipe de dév peut s'organiser pour intégrer les tests End to End dans le processus de développement.
 
 La formation s'adresse aussi bien aux développeurs qu'aux testeurs qui souhaitent se former à l'automatisation des tests avec cypress.
 
@@ -19,11 +18,9 @@ La formation s'adresse aussi bien aux développeurs qu'aux testeurs qui souhaite
 
 À l’issue de cette formation, le participant sera en mesure de :
 
-Automatiser et maintenir des tests E2E avec cypress (connaissance de l'outil, de l'api)
+Concevoir, écrire et maintenir des tests E2E avec cypress (connaissance de l'outil, de l'api)
 Mettre en oeuvre les bonnes pratiques pour construire une suite de test maintenable et rapide
-Proposer un workflow de développement efficace qui intègre les tests E2E (BDD), approche efficace et en équipe
-
-
+Proposer à son équipe un processus de développement efficace qui intègre les tests E2E
 
 
 ## Pré-requis
@@ -31,23 +28,37 @@ Proposer un workflow de développement efficace qui intègre les tests E2E (BDD)
 Connaissance de base en programmation.
 Une connaissance en JavaScript ou typescript est un plus.
 Une connaissance de base de git est un plus.
-
-Knowledge of git, and understanding a language programming will help
+Ordinateur portable à apporter
 
 
 ## Programme de la formation
 
-un progromme trop riche : https://expandtesting.com/formations/tests-acceptation-cypress/
-https://www.humancoders.com/formations/django (belle intro)
-https://www.humancoders.com/formations/vue-js (avec une partie bonus)
-https://www.humancoders.com/formations/software-craftmanship-frontend-javascript#outline ("Mise ne pratique")
+### Jour 1
 
-&gt; Conception de cas de tests BDD en langage <strong>Gherkin</strong><br>
-&gt; Mise en place du <strong>framework de test Cypress</strong><br>
-&gt; Prise en main des fonctionnalités de bases de Cypress (environnement, locators…)<br>
-&gt;<strong> Conception des scripts automatisés</strong><br>
-&gt; Exécution de tests (Test Runner, connexion de Cypress à d’autres outils et terminal CI)<br>
-&gt; Création de <strong>rapports de test</strong>
+- Initialisation d'un projet Cypress avec Typescript
+- Découverte de Cypress (Outils et Api)
+- Atelier d'écriture de critères d'acceptation
+- Automatisation des critères d'acceptation
+- Bonnes pratiques pour l'écriture des tests (Page Object, Sélecteurs dédiés...)
+ 
+
+### Jour 2
+
+- Optimisation des tests en passant par les API
+- Place des tests E2E dans la stratégie de test
+- Autres fonctionnalités importantes de Cypress (logs, debug, retry-ability, variables and aliases...)
+- Caractéristique d'un bons test automatisé (iisolé, répétable, rapide...)
+
+
+
+
+-----------
+
+# pre-requisites
+
+Knowledge of git, and understanding a language programming will help
+
+
 
 ## Modalités pédagogique et évaluation
 
@@ -66,44 +77,6 @@ Formation synchrone incluant l’accès aux supports de cours.
 
 2 days of 6 hours.
 9:00 to 12:00 - 13:30 to 16:30
-
-
-
-## Plan de formation
-
-Concevoir des tests automatisés (Web et API) avec Cypress
-Débugger
-
-
-### Jour 1
-
-Initialisation d'un projet Cypress avec Typescript
-Découverte de Cypress (Outils et Api)
-Atelier BDD et écriture de critères d'acceptation
-Automatisation des critères d'acceptation
-Bonnes pratiques pour l'écriture des tests
- - Page Object
- - Sélecteurs dédiés
- - Isolation
- - Répétabilité
-
-
-### Jour 2
-
-- Mise en place de tests d'acceptation dans une organisation agile
-- Optimisation du setup des tests en passant par les API
-
-- Autres fonctionnalités importantes de Cypress
-  - Logs
-  - Debug
-  - Retry-ability
-  - Variables and Aliases
-
-### Bonus
-
-- Tests d'api
-
-
 
 
 

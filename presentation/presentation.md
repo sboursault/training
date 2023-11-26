@@ -58,7 +58,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 <p class="fragment" data-fragment-index="1">When I started on my last project...
 
-<div class="box flex-row apart fragment" style="padding:40px;" data-fragment-index="2">
+<div class="box flex-row apart screen fragment" style="padding:40px;" data-fragment-index="2">
   <div class="badge" data-arrow="->task-dev">Specifications</div>
   <div class="badge fragment" data-arrow="->task-test" id="task-dev" data-fragment-index="3">Development<br>(Developer)</div>
   <div class="badge overlay-anchor fragment" data-arrow="->task-prod" id="task-test" data-fragment-index="4">Manual tests<br>(Tester)
@@ -68,6 +68,8 @@ https://revealjs-themes.dzello.com/sunblind.html#/
   </div>
   <div class="badge fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
 </div>
+
+<img src="img/print/bdd-1.png" class="print" style="border:0px"></img> 
 
 <div class="mt-2 flex-row">
   <div class="flex-column tiny-gap">
@@ -81,8 +83,8 @@ https://revealjs-themes.dzello.com/sunblind.html#/
     </div>
   </div>
   <div class="bubble bubble-bottom-left flex-row tiny-gap fragment">
-    <div class="icon">🤓</div>
-    <div>Maybe we should automize end to end tests...</div>
+    <span class="icon">🤓</span>
+    <span>Maybe we should automize end to end tests...</span>
   </div>
 </div>
     
@@ -117,8 +119,8 @@ https://revealjs-themes.dzello.com/sunblind.html#/
     </div>
   </div>
   <div class="bubble bubble-bottom-left flex-row tiny-gap fragment">
-    <div class="icon">🧐</div>
-    <div>So... What's the solution?</div>
+    <span class="icon">🧐</span>
+    <span>So... What's the solution?</span>
   </div>
 </div>
 
@@ -277,7 +279,7 @@ Set-up and clean-up tasks serve to make tests reliable and repeatable, but they 
 </div>
 
 ---
-<!-- .slide: data-auto-animate -->
+<!-- .slide: data-auto-animate class="screen" -->
 <h2 class="slide-title">Agile testing quandrants</h2>
 
 
