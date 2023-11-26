@@ -4,16 +4,16 @@
 ## Description
 
 
-Cypress est l'outil de test open source le plus populaire. Il permet d'exécuter vos tests End-2-End (de bout en bout) en interragissant avec l'IHM de votre site web.
+Cypress est l'outil de test open source le plus populaire en 2023. Il permet d'exécuter vos tests End-2-End (de bout en bout) en interragissant avec l'IHM de votre site web.
 
-Si l'automatisation des premiers tests End-2-End peut sembler triviale, de nombreuses difficultés apparaîssent au fur et à mesure que la suite de tests prend de l'importance.
-Des tests commencent à passer en erreur sans qu'il y ait eu de changement sur le programme vérifié. L'analyse des retours est de plus en plus complexe et chronophage. À un certain point, on peut se demander si arriver à une perte de confiance dans la suite de test E2E et un rejet de l'équipe.
+Si l'automatisation des premiers tests End-2-End semble triviale, de nombreuses difficultés apparaîssent au fur et à mesure que la suite de tests prend de l'importance.
+Des tests commencent à passer en erreur sans qu'il y ait eu de changement sur le programme vérifié. L'analyse des retours est toujours plus complexe et prend de plus en plus de temps. Sans les bonnes clés, la situation empire, et la suite finie par être abandonnée.
 
-Cette formation vous montrera comment automatiser vos tests E22 avec Cypress. 
+Cette formation vous montrera comment automatiser vos tests E2E avec Cypress. Au travers de mises en pratique, vous découvrez les bonnes pratiques pour construire une suite de tests maintenable, rapide et capable de passer à l'échelle.
 
-Au travers de mises en pratique, vous découvrez les bonnes pratiques pour construire une suite de tests sûrs, maintenables et rapides, et ainsi éviter les pièges de cette discipline.
+Le succès de la mise en place des tests End-to-end ne peut pas reposer que sur les épaules d'un automaticien. Whole team approach, vous verrez donc une organisation de l'équipe, de process de dév, de ci/cd efficace pour élaborer votre suite de test.
 
-on parlera aussi d'organisation de l'équipe, de process de dév, de ci/cd
+La formation s'adresse aussi bien aux développeurs qu'aux testeurs qui souhaitent se former à l'automatisation des tests avec cypress.
 
 ## Objectifs pédagogiques
 
@@ -26,14 +26,7 @@ Proposer un workflow de développement efficace qui intègre les tests E2E (BDD)
 
 
 
-## Public concerné/visé/cible
-
-Développeurs ou Testeurs qui souhaitent se former à l'automatisation des tests avec cypress.
-
-This training is for you if you want to discover how E2E tests can fit in development workflow.
-
-
-## Prérequis
+## Pré-requis
 
 Connaissance de base en programmation.
 Une connaissance en JavaScript ou typescript est un plus.
@@ -109,6 +102,17 @@ Bonnes pratiques pour l'écriture des tests
 ### Bonus
 
 - Tests d'api
+
+
+
+
+
+## Public concerné/visé/cible
+
+Développeurs ou Testeurs qui souhaitent se former à l'automatisation des tests avec cypress.
+
+This training is for you if you want to discover how E2E tests can fit in development workflow.
+
 
 
 objectifs
