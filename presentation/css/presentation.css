@@ -54,7 +54,7 @@
 
 @media print {
   img {
-    border: none;
+    border:0px !important;
   }
 
   .screen,

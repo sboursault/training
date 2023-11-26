@@ -69,7 +69,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
   <div class="badge fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
 </div>
 
-<img src="img/print/bdd-1.png" class="print" style="border:0px"></img> 
+<img src="img/print/bdd-1.png" class="print"></img>
 
 <div class="mt-2 flex-row">
   <div class="flex-column tiny-gap">
@@ -94,8 +94,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 <p class="fragment " data-fragment-index="1">So, let's automize end to end tests...
 
-<div class="box flex-row apart fragment" style="padding:40px;" data-fragment-index="2">
-
+<div class="box flex-row apart screen fragment" style="padding:40px;" data-fragment-index="2">
   <div class="badge" data-arrow="->task-dev">Specifications</div>
   <div class="badge fragment" id="task-dev" data-arrow="->task-test" data-fragment-index="3">Development<br>(Developer)</div>
   <div class="badge overlay-anchor fragment" id="task-test" data-arrow="->task-prod" data-fragment-index="4">Test automation<br>(Tester & Developer)
@@ -106,6 +105,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
   <div class="badge fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
 </div>
 
+<img src="img/print/bdd-2.png" class="print"></img>
 
 <div class="mt-3 flex-row">
   <div class="flex-column gap-10">
@@ -129,8 +129,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 <p class="fragment">The <strong>Behaviour Driven Development</strong> approach
 
-<div class="box flex-row fragment" style="padding:30px;">
-
+<div class="box flex-row screen fragment" style="padding:30px;">
   <div class="badge" data-arrow="->task-example">Specifications</div>
   <div class="badge fragment" id="task-example" data-arrow="->task-dev,->task-test">Example workshop</div>
   <div class="flex-column">
@@ -139,11 +138,11 @@ https://revealjs-themes.dzello.com/sunblind.html#/
       Test automation<br>(Tester & Developer)
       <span class="fragment" data-arrow="task-test->task-dev"></span>
     </div>
-    
   </div>
   <div class="badge fragment" id="task-prod">Production <br> deployment</div>
-
 </div>
+
+<img src="img/print/bdd-3.png" class="print"></img>
 
 <p class="apart text-level-3 fragment">For each story, we agree on a set of concrete <strong>key examples</strong>
 
@@ -282,8 +281,7 @@ Set-up and clean-up tasks serve to make tests reliable and repeatable, but they 
 <!-- .slide: data-auto-animate class="screen" -->
 <h2 class="slide-title">Agile testing quandrants</h2>
 
-
-  <img class="mt-0 fragment" src="img/agile-testing-quandrands.jpg" style="max-width:60%" >
+<img class="mt-0 fragment" src="img/agile-testing-quandrands.jpg" style="max-width:60%" >
 
 ---
 <!-- .slide: data-auto-animate -->
