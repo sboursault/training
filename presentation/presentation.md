@@ -278,7 +278,15 @@ Set-up and clean-up tasks serve to make tests reliable and repeatable, but they 
 </div>
 
 ---
-<!-- .slide: data-auto-animate class="screen" -->
+
+
+
+
+
+
+
+
+<!-- .slide: data-auto-animate -->
 <h2 class="slide-title">Agile testing quandrants</h2>
 
 <img class="mt-0 fragment" src="img/agile-testing-quandrands.jpg" style="max-width:60%" >
@@ -286,11 +294,11 @@ Set-up and clean-up tasks serve to make tests reliable and repeatable, but they 
 ---
 <!-- .slide: data-auto-animate -->
 
-<h2 class="slide-title">Agile testing quandrants</h2>
+<h2 class="slide-title screen">Agile testing quandrants</h2>
 
 <div class="flex-row">
 
-  <img class="" src="img/agile-testing-quandrands.jpg" style="max-width:50%" >
+  <img class="screen" src="img/agile-testing-quandrands.jpg" style="max-width:50%" >
 
   <div>
     <div class="">To succeed, you probably need tests from each quadrants!</div>

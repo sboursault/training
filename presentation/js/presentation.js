@@ -13,7 +13,7 @@ export function fillTocs() {
         sibling = getSiblingUnlessPartTileSlide(sibling)
       }
       
-      tocElement.innerHTML = '<span>Content:</span><ul>' + tocContent + '</ul>'
+      tocElement.innerHTML = '<h2>Content:</h2><ul>' + tocContent + '</ul>'
     }
   })
 }

@@ -242,13 +242,22 @@ code:not(pre code) {
   text-align: left;
 }
 
-.part-toc span {
+.part-toc h2 {
+  margin: auto;
+  font-size: inherit;
+  color: inherit;
   text-decoration: underline;
   font-weight: bold;
 }
 
 .part-toc ul {
-  margin: 0 .3em;
+  margin: .3em 0 0;
+}
+
+@media print {
+  .part-toc {
+    margin-top: 3em !important
+  }  
 }
 
 .slide-title {

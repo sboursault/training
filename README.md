@@ -162,7 +162,7 @@ export default defineConfig({
 
 ---
 
-_The trainer takes the role of the Product Owner, the participants are the testers. The must suggest acceptance criterias to the PO._
+_The trainer takes the role of the Product Owner, the participants are the testers. They must suggest acceptance criterias to the PO._
 _The PO can show mockups or wireframes_
 _The PO can kindly reject some criterias if he thinks they are not required right now. Example : displaying discounts..._
 
