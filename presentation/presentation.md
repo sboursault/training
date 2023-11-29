@@ -405,6 +405,12 @@ you must have clear control over the environment in which the tests run.
 
 </div>
 
+Note:
+
+Ask the trainee to list the qualities of a good test.
+This is the one thing the learner should memorize.
+
+
 ---
 
 <!-- .slide: class="slide--vcenter" -->
