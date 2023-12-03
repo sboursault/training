@@ -107,9 +107,16 @@ export default defineConfig({
 ```
 
 
+Show a first simplistic test: how to verify the page title with Cypress
 
-**TODO**: Show how to verify the page title with Cypress
-
+```ts
+describe('home', () => {
+    specify('the home page title is "Tous les produits"', () => {
+        cy.visit('/')
+        cy.title().should('equal', 'All products | Simple commerce')
+    })
+})
+```
 
 
 ---
