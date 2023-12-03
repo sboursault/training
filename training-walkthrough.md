@@ -5,7 +5,7 @@
 
 Before the training, it can help to have a call with each trainee to understand his motivations and his knowledge in tools like git, js or typescript. This will help to adapt the speech to the audience during the session.
 
-The trainnee should come with a laptop, with a few development tools installed:
+The trainnee should come with a laptop with installed development tools:
 - nodejs 18 or above
 - vscode (or webstorm)
 - git
@@ -24,9 +24,17 @@ All along the training, repeat and repeat again the FIRST qualities:
 
 This is the one thing the learner should memorize.
 
+
 <br>
 
-## Project setup
+## Module 1: Basics of E2E tests with Cypress
+
+Verifying the mini basket of an e-commerce website
+
+
+<br>
+
+### Project setup
 
 ---
 
@@ -98,6 +106,12 @@ export default defineConfig({
 });
 ```
 
+
+
+**TODO**: Show how to verify the page title with Cypress
+
+
+
 ---
 
 👌 **WHAT WE'VE LEARNED**
@@ -107,12 +121,12 @@ export default defineConfig({
 
 ---
 
+<br>
+
+### Theoretical part: End to end tests in the development process
 
 <br>
 
-## Simple tests: mini basket
-
-<br>
 
 ### Acceptance criterias workshop
 
@@ -286,12 +300,21 @@ describe("Mini-basket", () => {
 <br>
 
 
-## Test strategy
+
+
+
+## Second module: Improving practices with fast, repeatable and isolated tests
+
+Verifying the basket recovery on an e-commerce website
+
+<br>
+
+
+### Theoretical part: Qualities of good E2E tests
 
 
 <br>
 
-## Fast, repeatable and isolated tests: basket recovery
 
 ---
 
