@@ -15,7 +15,7 @@ The trainnee should come with a laptop with installed development tools:
 
 ## Notes for the trainer
 
-All along the training, repeat and repeat again the FIRST qualities:
+All along the training, repeat and repeat again the FIRST qualities of good tests:
 - Fast
 - Isolated
 - Repeatable
@@ -29,20 +29,27 @@ This is the one thing the learner should memorize.
 
 ## Module 1: Basics of E2E tests with Cypress
 
+
 Verifying the mini basket of an e-commerce website
 
-
 <br>
-
-### Project setup
 
 ---
 
 🧩 **PRIMARY OBJECTIVE**
 
 - Know how to configure a cypress project with typescript
+- Know what acceptance criterias are, and how they fit in the development process
+- Know how to write tests with Cypress
+- Know how to find info in the cypress doc
+- Know how to improve maintanabitly with the Page Object pattern
 
 ---
+
+
+
+### Project setup
+
 
 - create a github project
 
@@ -119,15 +126,6 @@ describe('home', () => {
 ```
 
 
----
-
-👌 **WHAT WE'VE LEARNED**
-
-- Configure a cypress project with typescript
-- Run a simplistic test with cypress
-
----
-
 <br>
 
 ### Theoretical part: End to end tests in the development process
@@ -137,20 +135,18 @@ describe('home', () => {
 
 ### Acceptance criterias workshop
 
----
-
-🧩 **PRIMARY OBJECTIVE**
-
-- Know what acceptance criterias are, and how they fit in the development process
-- Know how to automize tests with Cypress
-- Know how to find info in the cypress doc
-- Know how to improve maintanabitly with the Page Object pattern
-
----
-
 _The trainer takes the role of the Product Owner, the participants are the testers. They must suggest acceptance criterias to the PO._
 _The PO can show mockups or wireframes_
 _The PO can kindly reject some criterias if he thinks they are not required right now. Example : displaying discounts..._
+
+**User story**
+
+> As a shopper,
+> I want to see my basket content in the mini-basket,
+> so that I always know the basket's content and amount.
+
+**Workshop:** What could be the acceptance criterias for this story ?
+
 
 _Possible list:_
 
@@ -162,13 +158,6 @@ _What if ?_
 - _When empty, it doesn't show the number of products in basket_
 - _When empty, it informs the basket is empty_
 
-**User story**
-
-> As a shopper,
-> I want to see my basket content in the mini-basket,
-> so that I always know the basket's content and amount.
-
-**Workshop:** What could be the acceptance criterias for this story ?
 
 <br>
 
@@ -176,10 +165,10 @@ _What if ?_
 
 _The trainer writes and explains the tests for:_
 
-- _always shows the number of products in basket_
-- _doesn't show the number of products in basket_
+- _The mini-basket always shows the number of products in basket_
+- _When empty, it doesn't show the number of products in basket_
 
-_The spec file can be created from the dashboad._
+_The spec file can be created from the Cypress dashboard._
 
 ```typescript
 // mini-basket.cy.ts
@@ -196,7 +185,7 @@ _Elaborate with negative case_
 
 ```ts
 beforeEach(() => cy.visit("/"));
-describe("when empty", () => {
+context("when empty", () => {
   it("doesn't show the number of products in basket", () => {
     cy.get(".basket-mini .dropdown-toggle").should("not.contain.text", "(");
   });
@@ -231,8 +220,9 @@ _Our test quickly becomes complex, and not so easy to read._
 _Let's rewrite it with a page object._
 
 ```typescript
+//
 // catalogue.page.ts
-
+//
 class CataloguePage {
   addProductToBasket(productId: number) {
     cy.get(`[data-testid=product-pod-add-button-${productId}]`).click();
@@ -249,8 +239,9 @@ class CataloguePage {
 }
 export default new CataloguePage();
 
+//
 // mini-basket.cy.ts
-
+//
 import cataloguePage from "../support/pages/catalogue.page";
 
 describe("Mini-basket", () => {
@@ -287,19 +278,20 @@ describe("Mini-basket", () => {
   });
 });
 ```
+_Technical interactions are isolated in the page object layer.
+The result is much more readable and much more maintainable_
 
 ---
 
 👌 **WHAT WE'VE LEARNED**
 
+- Configure a cypress project with typescript
 - Cypress runner in action with execution logs and chrome inspector
 - Mocha api (before, beforeEach, describe, it)
 - Cypress api (visit, get, click, should, and)
-- CSS selectors based on class and data-test-id
-- Introduction to retryability (Timeout to find elements)
-- Introduction to test isolation (basket is automatically emptied betwin tests)
-- Use page object to avoid code duplication and facilitate reading
-- Create a typescript object
+- CSS selectors
+- Typescript basics (Create an object)
+- The page object pattern
 - Continuously polish your test code
 
 ---
@@ -307,27 +299,31 @@ describe("Mini-basket", () => {
 <br>
 
 
-
-
-
-## Second module: Improving practices with fast, repeatable and isolated tests
+## Module 2: Fast, repeatable and isolated tests
 
 Verifying the basket recovery on an e-commerce website
 
 <br>
 
+_As the test suite grows, we encounter new issues:_
+- _The test suite gets longer to run._
+- _Some tests become flaky (they fail from time to time, even if no code was changed).
 
-### Theoretical part: Qualities of good E2E tests
-
+_We can avoid most of them by improving practices._
 
 <br>
 
+### Theoretical part: Qualities of good E2E tests
+
+_To make this part more entertaining, we can start with a quick brainstorm on what makes a good test._
+
+<br>
 
 ---
 
 🧩 **PRIMARY OBJECTIVE**
 
-- practice writing acceptance tests for a user story
+- Practice writing acceptance tests for a user story
 - Find edge cases
 - Write good acceptance tests: isolated (I'm logged out at the biginning of each test) and **repatable** (go back to a known state at the beginning of the test)
 - Know how to improve maintanabitly with Cypress custom commands
@@ -335,9 +331,6 @@ Verifying the basket recovery on an e-commerce website
 
 ---
 
-EXERICE : quelles sont les qualités d'un bon test auto ?
-
-- on peut faire l'exercice en début et et fin de module pour voir si tout a été trouvé
 
 **User story**
 
@@ -550,19 +543,7 @@ Cypress.Commands.add("logout", () => {
 });
 ```
 
-chrono: 9 seconds on my machine
-
----
-
-<br>
-
-## Qualities of a good automated test
-
-- Fast
-- Isolated
-- Repeatable
-- Simple and Self validating
-- Timely
+_Chrono: 9 seconds on my machine_
 
 <br>
 

@@ -276,7 +276,7 @@ originaly: Simple and Self-Verifying
 
 <h2 class="slide-title">Page object pattern</h2>
 
-<p class="mt-4 fragment">Page objects abstract away the DOM manipulation from the test code</p>
+<p class="mt-4 fragment">Page objects abstract away the technical interactions from the decision code</p>
 
 ```typescript
 cy.get(".basket-mini .dropdown-toggle").click(); // this is about HTML
