@@ -484,7 +484,7 @@ Cypress.Commands.add("logout", () => {
 
 ### Optimize with api call
 
-Let's refacator the login command to use apis instead of the UI.
+Let's refactor the login command to use apis instead of the UI.
 
 _The trainer gives examples of api requests (using curl) to login and logout._
 
@@ -521,7 +521,13 @@ On my machine, from 24 seconds with ui login vs 11 seconds with api login.
 
 ---
 
-💪 **EXTRA**
+### Theoretical part: Cypress tips
+
+<br>
+
+### Extra exercise: Verify the login
+
+💪 This part be can added for the fastest trainees
 
 We can add a test to verify the login:
 
@@ -543,12 +549,14 @@ Cypress.Commands.add("logout", () => {
 });
 ```
 
-_Chrono: 9 seconds on my machine_
+_The test suite now take only 9 seconds_
 
 <br>
 
+## Module3: Api tests
 
-## Api tests: Order amount
+Verifying the order amount
+
 
 ---
 
@@ -896,121 +904,6 @@ cy.visit('/catalogue/category/books_2/')
 ---
 
 
-<br>
-
-## Automation pitfalls
-
-
-- Not treating your automated code just like your production code.
-  - tests should be simple (easy to read, and easy to modify)
-  - There should be a whole team’s collaborative automation efforts (collective code ownership)
-  - follow code best practices (KISS, DRY, Pair programming, code reviews)
-
-- Not mocking out external dependencies ? (https://christianlydemann.com/the-most-common-cypress-mistakes/)
-
-## Cypress tips
 
 
 
-
-WHAT ELSE ??
-
-
-
-
-// use the debugger (https://christianlydemann.com/the-most-common-cypress-mistakes/)
-cy.debug() and cy.pause()
-// variables, execution order and retryability 
-  (https://christianlydemann.com/the-most-common-cypress-mistakes/)
-  (https://docs.cypress.io/guides/references/best-practices#Assigning-Return-Values)
-// use dedicated selectors
-  (https://christianlydemann.com/the-most-common-cypress-mistakes/)
-  (https://docs.cypress.io/guides/references/best-practices#Selecting-Elements)
-// test against a dedicated env (not one shared with manual tests)
-// write atomic tests ((https://testguild.com/atomic-tests/))
-
-
-
-<br>
-
-## Repeat: Create and update address
-
-The aim of this 
-
-If there is enough time, the trainee can use all what he learned to verify the address creation and update in the user settings.
-This involves:
-- creating a repeatable test by deleting and creating a user without address
-- creating the address (ui), verify it (ui)
-- creating and updating an address (creation with ui or api), verify it (ui)
-
-
-<br>
-
-## Elaborate
-
-- Optimize login with api calls `cy.request()` see https://groups.google.com/g/django-oscar/c/qxOXbmu54-U
-- Check cypress doc more offten
-- not enough stock with intercept
-- more on getting tests repeatable
-  - create the user if it doesn't exist (using api)
-- test the user creation
-- test a single page application
-- run cypress in cicd
-
-  - env variables to change baseUrl or password
-
-- prévoir BEAUCOUP d'exercices en plus
-
-  - change languages
-  - what if I'm french, or english ?
-  - mobile tests - only if they are interested in the subject
-    - change dimensions and user agent
-    - page objects adaptation and dependency injection ?
-      - https://github.com/typestack/typedi
-    - mobile or desktop specific tests
-  - add csrf verfication on apis ?
-  - verify behaviours based on api calls (includes waiting for an api response)
-    - amazon quick search shows product that match with my request
-    - results are changed after a new search !! (this can one imply waiting for an api response)
-
-Déploiement :
-
-- serverless containers sur scaleway
-- google cloud run
-- knative ovh cloud (paraît compliqué: commande kubectl)
-
-
-
-## Test a SPA
-
-prévoir un chapitre test d'une spa
-- idée : 
-  - envoi d'un email sur gmail à moi même, je le reçois bien.
-- ajout de wait dans le page object
-
-
-
-## Verify behavior by mocking server reponse
-
-Ah bah non, ça ne marche pour l'ajout de produit sans stock.
-C'est un rechargement de page complet, l'erreur 'no stock available' arrive avec le contenu de la page.
-
-https://www.google.com/search?channel=fs&client=ubuntu&q=cypress+mock+api
-page cypress pas si simple pour une première page de la doc cypress...
-Reprendre les étapes précédentes, il faut se référer plus souvent à la doc cypress !
-
-Cette étape demande beaucoup de préparation.
-Elle est intéressante, mais dispensable.
-Je préparerai à la fin.
-
-On pourrait recoder le add product pour que l'opération soit en rest.
-si erreur, on affiche les messages
-si succès, on rafraichit la page ou bien juste le mini panier et les messages.
-(utiliser une sorte de toggle si c'est possible)
-Je crois comprendre que l'api reste peut être utilisée avec la session utilisateur
-https://github.com/django-oscar/django-oscar-api/issues/137
-
-Autre solution : présenter `intercept` uniquement en théorique
-
-- intéressant pour les SPA pour simuler une réponse spécifique
-- intéressant pour attendre le retour d'une requête
