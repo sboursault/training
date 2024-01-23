@@ -194,3 +194,126 @@ We need to balance completeness, clarity and speed.
 
 See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to an error topic...
 
+
+
+
+---
+
+<!-- .slide: id="extra-tips" class="slide--part-title slide--vcenter" -->
+
+<div class="part-title">
+  <span class="text-level-3">Part 5</span>
+  <h1>Extra tips</h1>
+</div>
+
+---
+
+<h2 class="slide-title">Test you apis</h2>
+
+
+
+---
+
+<!-- .slide: id="test-strategy" class="slide--part-title slide--vcenter" -->
+
+<div class="flex-row">
+
+  <div class="part-title">
+    <h1>Annex</h1>
+  </div>
+
+  <div class="part-toc box fragment"></div>
+
+</div>
+
+
+
+---
+<!-- .slide: id="shaded-figs" -->
+
+
+<h2 class="slide-title">Find alternative paths</h2>
+
+Use the ‘shaded figs’ to find alternative path to verify
+<br/><span class="text-level-5">from [50 quick ideas to improve your tests](https://leanpub.com/50quickideas-tests/read)</span>
+
+<table class="text-level-4">
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Scary<br/>😱<td>
+<td>What would scare each stakeholder the most about this piece of functionality?</td>
+</tr>
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Happy<br/>🙂<td>
+<td>The key example, positive test, that describes the case</td>
+</tr>
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Angry<br/>😠<td>
+<td>Paths where the application may react badly: validation errors, bad inputs...</td>
+</tr>
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Delinquent<br/>👺<td>
+<td>Security risks: authentication, authorisation, permissions, data confidentiality...</td>
+</tr>
+</table>
+
+
+---
+
+
+
+<table class="mt-3 text-level-4">
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Embarrassing<br/>💩 🤦‍♂️<td>
+<td>Things that could cause huge embarrassment all round <!--They might have a significant impact on credibility, internally or externally --> </td>
+</tr>
+
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Desolate<br/>😶<td>
+<td>Try zeros, nulls, blanks or missing data, truncated data, incomplete input, file or event</td>
+</tr>
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Forgetful<br/>😯<td>
+<td>Fill up all the memory and CPU capacity so the application can't store anything
+</td>
+</tr>
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Indecisive<br/>🤷🏽‍♂️<td>
+<td>Simulate an indecisive user: turn things on and off, click back buttons on the browser, move between breadcrumb trails with half-entered data
+</td>
+</tr>
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Greedy<br/>😋<td>
+<td>Select everything, opt into every option, order lots of everything, load up the functionality with as much as it allows to see how it behaves</td>
+</tr>
+
+<tr class="fragment">
+<td style="text-align: center; text-wrap: nowrap;">Stressful<br/>😓<td>
+<td>Find the breaking point of your components under stress</td>
+</tr>
+
+
+</table>
+
+---
+
+## Resources
+
+<div class="text-level-5">
+
+- https://christianlydemann.com/the-most-common-cypress-mistakes/
+- Joe C automation guide
+- Agile Testing: A Practical Guide for Testers and Agile Teams (Lisa Crispin and Janet Gregory, 2008, Addison-Wesley)
+- http://martinfowler.com/bliki/PageObject.html
+- Fifty Quick Ideas To Improve Your Tests (Gojko Adzic, David Evans and Tom Roden, 2015, Neuri Consulting Llp)
+- https://docs.cypress.io/guides/references/best-practices
+- https://medium.com/pragmatic-programmers/unit-tests-are-first-fast-isolated-repeatable-self-verifying-and-timely-a83e8070698e
+- [Why Automated Tests Should Be Atomic](https://testguild.com/atomic-tests/)
+- https://cucumber.io/blog/bdd/aslaks-view-of-bdd/
+- https://www.altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices/
+
+</div>
