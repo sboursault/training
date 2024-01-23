@@ -69,20 +69,43 @@ echo node_modules > .gitignore
 code .
 ```
 
-- install cypress
+#### Install cypress
 
-From https://docs.cypress.io/guides/getting-started/installing-cypress
-and https://docs.cypress.io/guides/getting-started/opening-the-app
+
+> 📘 Userful links
+> - https://docs.cypress.io/guides/getting-started/installing-cypress
+> - https://docs.cypress.io/guides/getting-started/opening-the-app
+
 
 ```shell
 npm install cypress --save-dev
 npx cypress open
 ```
 
-- install typescript
 
-From https://docs.cypress.io/guides/tooling/typescript-support
-and https://docs.cypress.io/guides/references/configuration
+Create a simplistic test: how to verify the page title with Cypress.
+
+```js
+// home-page.cy.js
+describe('home-page', () => {
+    specify('the home page title contains "All products"', () => {
+        cy.visit('/')
+        cy.title().should('contains', 'All products')
+    })
+})
+```
+
+_While writing this test, we can see there's no auto-completion._ 😢
+
+
+#### Install typescript
+
+<br>
+
+> 📘 Userful link
+> - https://docs.cypress.io/guides/tooling/typescript-support
+
+<br>
 
 ```shell
 npm install --save-dev typescript
@@ -101,7 +124,16 @@ Create `tsconfig.json` inside the `cypress` folder
 }
 ```
 
-Replace cypress config in `cypress.config.js` by `cypress.config.ts`
+#### Configure cypress
+
+<br>
+
+> 📘 Userful link
+> - https://docs.cypress.io/guides/references/configuration
+
+<br>
+
+Rename `cypress.config.js` to `cypress.config.ts`
 
 ```ts
 import { defineConfig } from "cypress";
@@ -114,7 +146,7 @@ export default defineConfig({
 ```
 
 
-Show a first simplistic test: how to verify the page title with Cypress
+First typescript test: how to verify the page title with Cypress
 
 ```ts
 describe('home', () => {
