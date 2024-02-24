@@ -24,6 +24,8 @@ All along the training, repeat and repeat again the FIRST qualities of good test
 
 This is the one thing the learner should memorize.
 
+Print the walkthrough before the training
+
 
 <br>
 
@@ -75,9 +77,11 @@ code .
 > 📘 Userful links
 > - https://docs.cypress.io/guides/getting-started/installing-cypress
 > - https://docs.cypress.io/guides/getting-started/opening-the-app
+> - https://docs.cypress.io/guides/guides/command-line
 
 
 ```shell
+npm init
 npm install cypress --save-dev
 npx cypress open
 ```
@@ -90,13 +94,21 @@ Create a simplistic test: how to verify the page title with Cypress.
 describe('home-page', () => {
     specify('the home page title contains "All products"', () => {
         cy.visit('/')
-        cy.title().should('contains', 'All products')
+        cy.title().should('equals', 'All products | Simple commerce')
     })
 })
 ```
 
 _While writing this test, we can see there's no auto-completion._ 😢
 
+
+Create a npm script in `package.json` for convenience
+
+````json
+  "scripts": {
+    "cy:open": "npx cypress open --e2e --browser electron"
+  },
+```
 
 #### Install typescript
 
@@ -144,7 +156,6 @@ export default defineConfig({
   },
 });
 ```
-
 
 First typescript test: how to verify the page title with Cypress
 
