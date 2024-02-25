@@ -227,17 +227,10 @@ describe("Mini-basket", () => {
     cy.get("[data-testid=product-pod-add-button-209]").click();
     cy.get(".basket-mini .dropdown-toggle").should("contain.text", "(1)");
   });
-});
-```
-
-_Elaborate with negative case_
-
-```ts
-beforeEach(() => cy.visit("/"));
-context("when empty", () => {
-  it("doesn't show the number of products in basket", () => {
-    cy.get(".basket-mini .dropdown-toggle").should("not.contain.text", "(");
-  });
+  it("when empty, it doesn't show the number of products in basket", () => {
+    cy.visit('/')
+    cy.get('.basket-mini .dropdown-toggle').should('not.contain.text', '(')
+  })
 });
 ```
 
