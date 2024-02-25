@@ -104,18 +104,22 @@ _While writing this test, we can see there's no auto-completion._ 😢
 
 Create a npm script in `package.json` for convenience
 
-````json
+```json
   "scripts": {
     "cy:open": "npx cypress open --e2e --browser electron"
   },
 ```
 
+
 #### Install typescript
+
 
 <br>
 
 > 📘 Userful link
 > - https://docs.cypress.io/guides/tooling/typescript-support
+
+
 
 <br>
 
@@ -193,11 +197,8 @@ _The PO can kindly reject some criterias if he thinks they are not required righ
 
 _Possible list:_
 
-- _The mini basket always show the number of products in basket_
+- _The mini basket always shows the number of products in basket_
 - _It contains basket entries (with prodcut name, quantity and price)_
-
-_What if ?_
-
 - _When empty, it doesn't show the number of products in basket_
 - _When empty, it informs the basket is empty_
 
@@ -212,6 +213,11 @@ _The trainer writes and explains the tests for:_
 - _When empty, it doesn't show the number of products in basket_
 
 _The spec file can be created from the Cypress dashboard._
+
+> 📘 Userful links
+> - https://cheatography.com/aiqbal/cheat-sheets/cypress-io/
+> - https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe
+
 
 ```typescript
 // mini-basket.cy.ts
