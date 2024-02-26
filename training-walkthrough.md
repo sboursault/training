@@ -222,11 +222,12 @@ _The spec file can be created from the Cypress dashboard._
 ```typescript
 // mini-basket.cy.ts
 describe("Mini-basket", () => {
-  it("always shows the number of products in basket", () => {
-    cy.visit("/");
-    cy.get("[data-testid=product-pod-add-button-209]").click();
-    cy.get(".basket-mini .dropdown-toggle").should("contain.text", "(1)");
-  });
+  it('always shows the number of products in basket', () => {
+    cy.visit('/')
+    cy.get('button').contains('Add to basket').click()
+    cy.get('.basket-mini .dropdown-toggle').should('contain.text', '(1)')
+  })
+
   it("when empty, it doesn't show the number of products in basket", () => {
     cy.visit('/')
     cy.get('.basket-mini .dropdown-toggle').should('not.contain.text', '(')
@@ -240,18 +241,24 @@ _Then the trainee writes the tests to verify the mini-basket dropdown content:_
 - _it informs the user when the product is empty_
 
 ```typescript
-it("informs the basket is empty", () => {
-  cy.get(".basket-mini .dropdown-toggle").click();
-  cy.get(".dropdown-menu.show").should("contain.text", "Your basket is empty");
-});
-it("shows the basket entry details", () => {
-  cy.get("[data-testid=product-pod-add-button-209]").click();
-  cy.get(".basket-mini .dropdown-toggle").click();
-  cy.get(".dropdown-menu.show")
-    .should("contain.text", "The shellcoder's handbook")
-    .and("contain.text", "Qty 1")
-    .and("contain.text", "€9.99");
-});
+
+describe('detail', () => {
+  it.only('contains basket entries (with product name, quantity and price)', () => {
+    cy.visit('/')
+    cy.get('[data-testid=product-pod-209] button').contains('Add to basket').click()
+    cy.get('.basket-mini .dropdown-toggle').click()
+    cy.get('.basket-mini .dropdown-menu')
+      .should('contain.text', 'The shellcoder\'s handbook')
+      .and('contain.text', 'Qty 1')
+      .and('contain.text', '€9.99')
+  })
+  it("indicates when the basket is empty", () => {
+    cy.visit('/')
+    cy.get('.basket-mini .dropdown-toggle').click()
+    cy.get('.basket-mini .dropdown-menu')
+      .should('contain.text', 'Your basket is empty')
+  })
+})
 ```
 
 <br>
@@ -265,63 +272,76 @@ _Let's rewrite it with a page object._
 //
 // catalogue.page.ts
 //
-class CataloguePage {
-  addProductToBasket(productId: number) {
-    cy.get(`[data-testid=product-pod-add-button-${productId}]`).click();
+class CatalogPage {
+  // getters
+  miniBasketLink() {
+    return cy.get('.basket-mini .dropdown-toggle')
   }
-  getMiniBasket() {
-    return cy.get(".dropdown-menu.show");
+  miniBasket() {
+    return cy.get('.basket-mini .dropdown-menu')
   }
-  displayMiniBasket() {
-    this.getMiniBasketDisplayToggle().click();
+  // behaviour
+  showMiniBasket() {
+    this.miniBasketLink().click()
   }
-  getMiniBasketDisplayToggle() {
-    return cy.get(".basket-mini .dropdown-toggle");
+  addProductToBasket(produtId: number) {
+    cy.get(`[data-testid=product-pod-${produtId}] button`).contains('Add to basket').click()
   }
 }
-export default new CataloguePage();
-
-//
-// mini-basket.cy.ts
-//
-import cataloguePage from "../support/pages/catalogue.page";
-
-describe("Mini-basket", () => {
-  beforeEach(() => cy.visit("/"));
-
-  describe("When empty", () => {
-    it("doesn't show the number of products in basket", () => {
-      cataloguePage
-        .getMiniBasketDisplayToggle()
-        .should("not.contain.text", "(");
-    });
-
-    it("informs the basket is empty", () => {
-      cataloguePage.displayMiniBasket();
-      cataloguePage
-        .getMiniBasket()
-        .should("contain.text", "Your basket is empty");
-    });
-  });
-
-  it("always shows the number of products in basket", () => {
-    cataloguePage.addProductToBasket(209);
-    cataloguePage.getMiniBasketDisplayToggle().should("contain.text", "(1)");
-  });
-
-  it("shows the basket entry details", () => {
-    cataloguePage.addProductToBasket(209);
-    cataloguePage.displayMiniBasket();
-    cataloguePage
-      .getMiniBasket()
-      .should("contain.text", "The shellcoder's handbook")
-      .and("contain.text", "Qty 1")
-      .and("contain.text", "€9.99");
-  });
-});
+export default new CatalogPage()
 ```
+
 _Technical interactions are isolated in the page object layer.
 The result is much more readable and much more maintainable_
+
+
+Same exercice with the login
+
+```typescript
+// login.spec.cy.ts
+import cataloguePage from "../support/page-object/catalogue.page"
+import loginPage from "../support/page-object/login.page"
+describe('login', () => {
+  beforeEach(() => {
+    cy.visit('/accounts/login/')
+  })
+  it('accepts valid credentials', () => {
+      loginPage.loginWith('tom@test.com', 'tom@test.com')
+      cataloguePage.topMenu()
+        .should('contain.text', 'tom@test.com')
+  })
+  it('shows an error on invalid password', () => {
+      loginPage.loginWith('tom@test.com', 'tom@test.co')
+      cataloguePage.topMenu()
+        .should('contain.text', 'Account')
+        .and('not.contain.text', 'tom@test.com')
+      loginPage.loginForm()
+        .should('contain.text', 'Oops! We found some errors')
+  })
+})
+// login.page.cy.ts
+class LoginPage {
+  // components
+  loginForm() {
+    return cy.get('#login_form')
+  }
+  // behaviours 
+  loginWith(username: string, password: string) {
+    this.fillUsername(username)
+      .fillPassword(password)
+    cy.get('#login_form button').click()
+  }
+  fillUsername(value : string) {
+    cy.get('#id_login-username').type(value)
+    return this;
+  }
+  fillPassword(value : string) {
+    cy.get('#id_login-password').type(value)
+    return this;
+  }
+}
+export default new LoginPage() 
+```
 
 ---
 
@@ -337,6 +357,8 @@ The result is much more readable and much more maintainable_
 - Continuously polish your test code
 
 ---
+
+
 
 <br>
 
