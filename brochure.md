@@ -44,3 +44,9 @@ Cette formation s'adresse aussi bien aux développeurs qu'aux testeurs qui souha
 - Place des tests E2E dans la stratégie de test
 - Autres fonctionnalités importantes de Cypress (logs, debug, retry-ability, variables and aliases...)
 - Caractéristique d'un bon test automatisé (isolé, répétable, rapide...)
+
+
+
+
+sources :
+https://www.perfecto.io/blog/cypress-testing#what-is-cypress-testing-automation

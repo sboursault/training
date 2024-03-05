@@ -1,37 +1,62 @@
-Plan de formation
-
-
-Conseils globaux                           
-- Versionner si possible votre projet / vos mises en pratique sur Github, avec une branche dédiée aux corrections des exercices
-- Ajouter l’installation / la configuration de la machine des stagiaires         
-- Eviter la répétition des termes, notamment  “formation” (remplacer par “apprentissage”, “enseignements”, …)
-
-
 # Tests End-to-End avec Cypress
 
 ## Description
 
-**Cypress**
-Cypress est aujourd'hui l'outil de test end-to-end open-source le plus populaire.
-~~Il est basé sur javascript et se distingue par son approche orignale : les tests sont exécutés au sein du navigateur, et lorsqu'un test est en erreur, il est possible de remonter à chaque étape du test pour inspecter l'état de la page à cet instant. Le debbuging est largement facilité~~
-
-Le debugging est largement facilité.
-
-Il est basé sur javascript et se se distingue par le soin apporté à l'expérience développeur.
-(Par exemple, lorsqu'un test est en erreur, il est possible de remonter à chaque étape du test pour inspecter l'état de la page à cet instant. Le debbuging est largement facilité.)
-
-**Prérequis**
+[Cypress](https://www.cypress.io/) est aujourd'hui l'outil open-source le plus populaire pour l'automatisation des test end-to-end. Il permet d'exécuter vos tests de bout en bout en interagissant avec les pages de votre site web. Il est basé sur javascript et se démarque gràce à son expérience développeur : contrairement aux outils basés sur Selenium, pas besoin de webdriver et le debugging est largement facilité.
 
 Cette formation s'adresse aussi bien aux développeurs qu'aux testeurs qui souhaitent se former à l'automatisation des tests avec Cypress.
 
-**Préciser les notions principales abordées lors de la formation**
+Si l'écriture des premiers tests E2E peut sembler triviale, de nombreuses difficultés apparaissent au fur et à mesure que la suite de tests grandit. L'analyse des retours prend de plus en plus de temps. Sans les bonnes pratiques, la suite n'est plus maintenable et finit par être abandonnée.
 
-Si l'automatisation des premiers tests E2E semble triviale, de nombreuses difficultés apparaîssent au fur et à mesure que la suite de tests prend de l'importance. Des tests commencent à passer en erreur sans qu'il y ait eu de changement sur le programme vérifié. L'analyse des retours est toujours plus complexe et prend de plus en plus de temps. Sans les bonnes pratiques, la situation empire, et la suite finit par être abandonnée.
+Avec cet apprentissage, vous acquerrez les clés pour démarrer votre suite de tests E2E sur des bases saines. L'essentiel de l'apprentissage sera basé sur la pratique. En automatisant la vérification d'un site e-commerce, vous découvrirez comment construire une suite extensible, maintenable et rapide.
 
-La majeure partie de l'apprentissage sera de la mises en pratique. En automatisant les tests d'un site e-commerce, vous découvrirez comment construire une suite de tests maintenable, rapide et capable de passer à l'échelle.
+Le succès de la mise en place des tests End-to-end repose sur un travail d'équipe. Nous verrons donc aussi comment l'équipe de développement peut s'organiser pour intégrer ces tests dans son processus de développement.
 
-Le succès de la mise en place des tests End-to-end repose sur un travail d'équipe. Nous verrons donc également comment l'équipe de développement peut s'organiser pour intégrer les tests E2E dans son processus de développement.
+Comme pour toutes nos formations, chaque session est limitée à [6 participants](https://www.humancoders.com/pages/manifeste#taille-humaine), ce qui permet au formateur d'adapter sa présentation et garantit un temps d'échange privilégié pour chacun.
 
 
-sources :
-https://www.perfecto.io/blog/cypress-testing#what-is-cypress-testing-automation
+## Les objectifs
+
+À l’issue de cette formation, le participant sera en mesure de :
+
+- Concevoir et automatiser des tests E2E avec Cypress (connaissance de l'outil et de l'API de développement)
+- Améliorer la maintenabilité des tests E2E
+- Optimiser le temps d'exécution des tests E2E
+
+## Pré-requis
+
+- Notions de base en programmation
+- connaissances de base en HTML et CSS
+- Ordinateur portable à apporter
+- Installation de Node.js (18.x)
+- Installation de Git
+- Compte github avec clé configurée sur l'ordinateur (assistance possible si besoin)
+
+Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaître le langage. Cela fait parti de la formation.
+
+## Programme de la formation
+
+### Jour 1 : Automatisation des tests
+
+- Écosytème cypress (CLI, Application, time travel, logs)
+- Principales commande de l'api développement
+- Identification des sélecteurs stables (sélecteurs CSS, sélecteurs dédiés)
+- Pattern Page Object
+
+- Mises en pratique :
+ - Initialisation d'un projet Cypress avec Typescript
+ - Ateliers d'écriture de critères d'acceptation sur les fonctionnalités d'un site e-commerce
+ - Automatisation des critères d'acceptation sur le comportement du panier
+ - Amélioration de la maintenabilité avec le pattern page object
+
+ 
+### Jour 2 : Gérer votre suite de test
+
+- Optimisation des tests en passant par les API
+- Qualités d'un bon test automatisé (isolé, répétable, rapide...)
+- Place des tests E2E dans la stratégie de test
+- Fonctionnalités avancées (debug, attentes implicites, retry-ability, variables and aliases...)
+
+- Mises en pratique :
+ - Automatisation de tests plus complexes sur la gestion des promotions
+ - Réécriture du setup des tests en appel API

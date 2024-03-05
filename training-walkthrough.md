@@ -486,6 +486,8 @@ How can we clear the basket ?
 - we can go the basket page and delete each basket entries
 - or we can call the api to clear the basket
 
+curl -X DELETE https://simplecommerce1nz5qlcr-sbc1.functions.fnc.fr-par.scw.cloud/api/basket -u "tom@test.com:tom@test.com"
+
 _The trainer shows how to use the `request` command._
 
 ```typescript
