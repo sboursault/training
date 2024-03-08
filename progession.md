@@ -142,13 +142,20 @@ The time is divided by 2. Et pourtant, c'est pas fou, ce qu'on a fait
 on a juste remplacé le login et l'ajout au panier.
 Imaginez sur un setup plus complexe, on peut avoir des tests qui s'exécutent 5 ou 10 fois plus vite.
 
+
+> Order amount:
+> Over 30€, the 7€ for delivery fees are offered.
+
+
 **20min**
 Theoretical part: Test strategy
 
 Test sur api direct
 
-> Over 30€, the 7€ for delivery fees are offered.
-
+> Order amount: Over 30€, the 7€ for delivery fees are offered.
+possible list :
++ with 23.99€ => shipping price is 7.00€
++ with 86.95€ => shipping price is 0.00€
 
 
 
