@@ -8,19 +8,24 @@ Cette formation s'adresse aussi bien aux développeurs qu'aux testeurs qui souha
 
 Si l'écriture des premiers tests E2E peut sembler triviale, de nombreuses difficultés apparaissent au fur et à mesure que la suite de tests grandit. L'analyse des retours prend de plus en plus de temps. Sans les bonnes pratiques, la suite n'est plus maintenable et finit par être abandonnée.
 
-Avec cet apprentissage, vous acquerrez les clés pour démarrer votre suite de tests E2E sur des bases saines. L'essentiel de l'apprentissage sera basé sur la pratique. En automatisant la vérification d'un site e-commerce, vous découvrirez comment construire une suite extensible, maintenable et rapide.
+~~Avec cet apprentissage, vous acquerrez les clés pour démarrer votre suite de tests E2E sur des bases saines et éviter ces ecueils.~~ L'essentiel de l'apprentissage sera basé sur la pratique. En automatisant la vérification d'un site e-commerce, vous découvrirez comment construire une suite extensible, maintenable et rapide.
 
-Le succès de la mise en place des tests End-to-end repose sur un travail d'équipe. Nous verrons donc aussi comment l'équipe de développement peut s'organiser pour intégrer ces tests dans son processus de développement.
+Le succès de la mise en place des tests End-to-end repose sur un travail d'équipe. Nous verrons donc aussi comment une équipe peut s'organiser pour inclure les tests E2E dans son processus de développement.
 
 Comme pour toutes nos formations, chaque session est limitée à [6 participants](https://www.humancoders.com/pages/manifeste#taille-humaine), ce qui permet au formateur d'adapter sa présentation et garantit un temps d'échange privilégié pour chacun.
 
 
-## Les objectifs
+## Les objectifs 
+
+> doivent être évaluables et cohérents avec les mises en pratique du plan
+> Exigences Qualiopi : évaluer chaque stagiaire sur chaque objectif pédagogique à la fin de la formation
 
 À l’issue de cette formation, le participant sera en mesure de :
 
 - Concevoir et automatiser des tests E2E avec Cypress (connaissance de l'outil et de l'API de développement)
-- Améliorer la maintenabilité des tests E2E
+- Rédiger des cas de tests (voir fiche ?)
+- Améliorer la stabilité des tests E2E (répétabilité et fiabilité)
+- Améliorer la maintenabilité des tests E2E (lisibilité et évolutivité)
 - Optimiser le temps d'exécution des tests E2E
 
 ## Pré-requis
