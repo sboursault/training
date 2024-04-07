@@ -4,6 +4,7 @@ Nombre de jours : 2
 Public visé : développeur·se, testeur·se
 Description courte : Automatisez vos tests de bout en bout avec Cypress
 
+
 ## Description
 
 Cette formation vous apprendra comment construire une suite de tests E2E **maintenable**, **extensible** et **rapide**, mais aussi comment intégrer ces tests dans votre processus de développement. 
@@ -15,6 +16,7 @@ Au cours de la session, nous verrons comment traduire un besoin en critères d'a
 Parce que c'est en forgeant qu'on devient forgeron, la formation est axée sur la pratique. En fil rouge, vous élaborerez une suite de tests qui vérifie les fonctionnalités d'un site e-commerce, comme par exemple la gestion du panier ou le déclenchement des promotions.
 
 Comme pour toutes nos formations, chaque session est limitée à [6 participants](https://www.humancoders.com/pages/manifeste#taille-humaine), ce qui permet au formateur d'adapter sa présentation et garantit un temps d'échange privilégié pour chacun.
+
 
 ## Objectifs Pédagogiques
 
