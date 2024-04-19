@@ -42,7 +42,7 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
 
 ### Jour 1 : Automatisation des tests
 
-- Écosytème Cypress (CLI, Application, time travel, logs)
+- Écosystème Cypress (CLI, Application, time travel, logs)
 - Principales commandes de l'api de développement
 - Identification des sélecteurs stables (sélecteurs CSS, sélecteurs dédiés)
 - Commandes custom
@@ -54,14 +54,38 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
  - Automatisation des critères d'acceptation sur le login et le comportement du panier
  - Réécriture avec des commandes custom et le pattern Page Object
  
-### Jour 2 : Gérer votre suite de test
+### Jour 2 : Gérer votre suite de tests
 
 - Qualités d'un bon test automatisé (isolé, répétable, rapide...)
 - Place des tests E2E dans la stratégie de test
 
 **Mises en pratique :**
  - Ateliers d'écriture de critères d'acceptation
- - Tests plus complexes sur le panier, optimisation de la phase de préparation graĉe aux appels API
+ - Tests plus complexes sur le panier, optimisation de la phase de préparation grâce aux appels API
  - Tests sur la gestion des promotions, avec génération du jeu de données
 
+
+
+## Profil
+
+### Avec quelles technologies préfères-tu travailler ?
+
+Cypress, Typescript, Python, Java
+
+### Bio
+
+Sébastien est un développeur curieux et touche-à-tout. Il est passé par tous les rôles d'une équipe de développement : Développeur, Testeur, Scrum Master et Product owner.
+
+Il travaille pour un éditeur dans une approche où les critères d'acceptation deviennent des tests automatisés qui pilotent le développement. Cette approche leur permet d'avancer vite et sereinement.
+
+Sébastien partage volontiers sa culture du clean code et de l'automatisation des tests, en particulier lors de ses formations, où il apprécie d'échanger avec des personnes d'horizons différents.
+
+### Articles
+
+- [(Not So Obvious) Tips To Write Better DTOs in Java](https://medium.com/javarevisited/not-so-obvious-tips-to-write-better-dtos-in-java-c6116895b180)
+
+### Lectures recommandées
+
+- [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://www.amazon.fr/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
+- [Agile Testing: A Practical Guide for Testers and Agile Teams](https://www.amazon.fr/Agile-Testing-Practical-Guide-Testers/dp/0321534468/)
 
