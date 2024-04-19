@@ -45,13 +45,14 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
 - Écosytème Cypress (CLI, Application, time travel, logs)
 - Principales commandes de l'api de développement
 - Identification des sélecteurs stables (sélecteurs CSS, sélecteurs dédiés)
+- Commandes custom
 - Pattern Page Object
 
 **Mises en pratique :**
  - Initialisation d'un projet Cypress avec Typescript
  - Atelier d'écriture de critères d'acceptation sur les fonctionnalités d'un site e-commerce
  - Automatisation des critères d'acceptation sur le login et le comportement du panier
- - Réécriture avec le pattern Page Object
+ - Réécriture avec des commandes custom et le pattern Page Object
  
 ### Jour 2 : Gérer votre suite de test
 
