@@ -69,11 +69,11 @@ https://revealjs-themes.dzello.com/sunblind.html#/
   <div class="badge fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
 </div>
 
-<img src="img/print/bdd-1.png" class="print"></img>
+<p class="print"><img src="img/print/bdd-1.png"></img></p>
 
-<div class="mt-2 flex-row">
+<div class="flex-row">
   <div class="flex-column tiny-gap">
-    <ul class="text-level-4 no-bullets">
+    <ul class="mt-2 text-level-4 no-bullets">
       <li class="fragment"><span class="emoji">❌</span>Different understanding
       <li class="fragment"><span class="emoji">❌</span>Regressions happen
       <li class="fragment"><span class="emoji">❌</span>Too many non regression tests to execute manually
@@ -406,21 +406,19 @@ Set-up and clean-up tasks serve to make tests reliable and repeatable, but they 
 
 <h2 class="slide-title screen">Agile testing quandrants</h2>
 
-<div class="flex-row">
+<div class="flex-row text-level-3">
 
   <img class="screen" src="img/agile-testing-quandrands.jpg" style="max-width:50%" >
 
   <div>
     <div class="">To succeed, you probably need tests from each quadrants!</div>
     <div class="mt-3 fragment">You can't automate everything</div>
-    <div class="text-level-3">
-      <p class="fragment mt-1 mb-none">So, focus on:</p>
-      <ul>
-        <li class="fragment">Critical paths (eg. registration)</li>
-        <li class="fragment">Risk areas (eg. payment)</li>
-        <li class="fragment">Parts that are hard to test manually</li>
-      </ul>
-    </div>
+    <p class="fragment">So, focus on:</p>
+    <ul>
+      <li class="fragment">Critical paths (eg. registration)</li>
+      <li class="fragment">Risk areas (eg. payment)</li>
+      <li class="fragment">Parts that are hard to test manually</li>
+    </ul>
   </div>
 </div>
 
@@ -443,11 +441,16 @@ Which ones are necessary to succeed?
 
 ---
 
+<h2 class="slide-title">3 amigos</h2>
+
+
+---
+
 <h2 class="slide-title">Who automates the tests?</h2>
 
 <p class="mt-5 fragment">Favour a <strong>whole team approach</strong></p>
 
-<p class="mb-none mt-3 text-level-2 fragment">Developers and testers work together to</p>
+<p class="mt-3 text-level-2 fragment">Developers and testers work together to</p>
 <ul class="text-level-2">
   <li class="fragment">Build and maintain the test infrastructure</li>
   <li class="fragment">Design testable code</li> <!-- Developers write more testable code -->

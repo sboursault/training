@@ -1,6 +1,22 @@
 # high level plan
 
 
+ajout au panier :
+- intro cypress et page object
+login
+- exo en solo sur les même notions
+comportement du panier
+- code en solo
+- réécriture du login en api pour l'exemple
+- le stagiaire réécrit l'ajout au panier en api
+promotions
+- code en solo à partir des api déjà créées
+- création d'un produit en api pour l'exemple
+- le stagiaire écrit l'ajout de user en api
+
+3 amigos !
+
+
 **20min**
 Création d'un projet github
 install cypress, config typescript
@@ -159,6 +175,15 @@ possible list :
 
 
 
+
+// ajout au panier et login: lisibilité et évolutivité avec page object
+// comportement du panier : rapidité
+// vérif des promos : indépendance et répétabilité
+//  - on crée notre produit pour être sûr de ne pas géner d'autres tests
+//  - tant qu'à faire on crée aussi l'utilisateur
+
+
+
 **10min**
 Theoretical part: Remontrer la 1ère partie parce que c'est important :)
 
@@ -172,3 +197,10 @@ Prévoir des pauses et temps d'échanges
 idée :
 - améliorer sélecteur sur le accountLink
 - précréer le compte de test
+
+
+
+- Fonctionnalités avancées (debug, attentes implicites, retry-ability, variables and aliases...)
+
+Ajouter une partie commande custom getByTestId avant le page object
+

@@ -115,7 +115,7 @@ et comment la vérification sera automatisée
 
 <p class="fragment">Illustrate rules with <strong>key examples</strong> and <strong>counter examples</strong>
 
-<p class="text-level-2 apart mb-none fragment">Howto:
+<p class="text-level-2 apart fragment">Howto:
 <ul>
 <li class="text-level-2 fragment">Prefer actual values over generalisations (unless the value is irrelevant to the rule)
 <li class="text-level-2 fragment">Use natural language (the given/when/then structure can come later)

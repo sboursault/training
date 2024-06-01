@@ -102,17 +102,17 @@ ul.no-bullets {
   margin: 0;
 }
 
-li {
+/*li {
   margin-top: 1e0px;
-}
+}*/
 
-li+li {
+ul:not(:first-child), li:not(:first-child) {
   margin-top: 1rem;
 }
 
 
-.reveal .mb-none {
-  margin-bottom: 10px !important;
+.reveal .apart {
+  margin-top: 50px;
 }
 
 .reveal .mt-0 {
@@ -120,11 +120,11 @@ li+li {
 }
 
 .reveal .mt-1 {
-  margin-top: .5em !important;
+  margin-top: 1em !important;
 }
 
 .reveal .mt-2 {
-  margin-top: 1em !important;
+  margin-top: 1.25em !important;
 }
 
 .reveal .mt-3 {
@@ -449,8 +449,4 @@ code:not(pre code) {
 
 .reveal .tiny {
   font-size: 0.4em;
-}
-
-.reveal .apart {
-  margin-top: 50px;
 }
