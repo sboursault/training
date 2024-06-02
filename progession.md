@@ -18,16 +18,20 @@ promotions
 
 
 **20min**
-Création d'un projet github
-install cypress, config typescript
 
-> cypress api (describe, it)
+</> Create a Cypress project
+- Create a github project
+- Install and configure cypress to run typescript test
+- Create a simplistic test:
+- The home page title contains "All products"
 
 **15min**
+
 Theoretical part: End to end tests in the development process
 
 
 **20min**
+
 workshop
 
 - _The mini basket always shows the number of products in basket_

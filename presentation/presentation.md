@@ -60,6 +60,11 @@ https://revealjs-themes.dzello.com/sunblind.html#/
     <ul>
       <li>Create a github project
       <li>Install and configure cypress to run typescript test
+      <li>Create a simplistic test:
+      <ul>
+      <li>
+      <span style="font-style:italic; font-size:90%">The home page title contains "All products"</span>
+      </ul>
     </ul>
     <p>What's new
     <ul>

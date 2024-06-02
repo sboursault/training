@@ -74,12 +74,6 @@ code .
 #### Install cypress
 
 
-> 📘 Userful links
-> - https://docs.cypress.io/guides/getting-started/installing-cypress
-> - https://docs.cypress.io/guides/getting-started/opening-the-app
-> - https://docs.cypress.io/guides/guides/command-line
-
-
 ```shell
 npm init
 npm install cypress --save-dev
