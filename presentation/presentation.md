@@ -2,16 +2,13 @@
 <!-- .slide: class="slide--presentation-title" -->
 
 <br>
-<br>
-<br>
-<br>
 
-<h1 style>End to End tests <br>with Cypress</h1>
+<h1 class="mt-3">End to End tests <br>with Cypress</h1>
 
 <br>
 <br>
 
-<p><small>Training course by Sébastien Boursault</small>
+<p class="text-center"><small>Training course by Sébastien Boursault</small>
 
 Notes:
 
@@ -28,6 +25,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 ## Table of content
 
 <ol class="presentation-toc block">
+  <li><a href="#/intro">Intro</a>
   <li><a href="#/e2e-tests-dev-process">End to end tests in the <br> development process</a>
   <li><a href="#/good-tests">Qualities of good E2E tests</a>
   <li><a href="#/cypress-tips">Cypress tips</a>
@@ -37,6 +35,49 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 </div>
 
 ---
+
+
+
+<!-- .slide: id="intro" class="slide--part-title slide--vcenter" -->
+
+<div class="flex-row">
+
+  <div class="part-title">
+    <h1 class="text-size-heading-2">Intro</h1>
+  </div>
+  
+  <div class="part-toc box fragment"></div>
+
+</div>
+
+---
+
+## &lt;/> Create a Cypress project
+
+<div class="flex-row tiny-gap">
+  <div class="text-level-3">
+    <p>Let's code
+    <ul>
+      <li>Create a github project
+      <li>Install and configure cypress to run typescript test
+    </ul>
+    <p>What's new
+    <ul>
+      <li>cypress api (describe, it)
+    </ul>
+    <p>Userful links
+    <ul style="font-size:75%">
+      <li>https://docs.cypress.io/guides/getting-started/installing-cypress
+      <li>https://docs.cypress.io/guides/getting-started/opening-the-app
+      <li>https://docs.cypress.io/guides/guides/command-line
+    </ul>
+  </div>
+  <img style="width:30%" src="img/coding.png"></img>
+</div>
+
+---
+
+
 
 <!-- .slide: id="e2e-tests-dev-process" class="slide--part-title slide--vcenter" -->
 
@@ -53,6 +94,7 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 
 ---
+
 
 <h2 class="slide-title" style="font-size: 3vw">What is Behaviour Driven Development?</h2>
 

@@ -55,7 +55,7 @@ Verifying the mini basket of an e-commerce website
 
 - create a github project
 
-- create ssh key to connect to github (required to push on ithub)
+- create ssh key to connect to github (required to push on github)
 
 ```shell
 ssh-keygen -t ed25519 -C "sboursault@protonmail.com"
