@@ -23,7 +23,7 @@
     --r-heading-font-weight: 600;
     --r-heading1-text-shadow: none;
     --r-code-font: monospace;
-    --r-link-color: #2a76dd;
+    --r-link-color: var(--r-main-color);
     --r-link-color-dark: #1a53a1;
     --r-link-color-hover: #6ca0e8;
     --r-selection-background-color: #98bdef;

@@ -39,7 +39,7 @@
   --r-main-font-size: var(--text-size-level-1);
   --r-heading1-size: 2.5em;
   --r-heading2-size: 1.6em;
-  --r-heading3-size: 1.1em;
+  --r-heading3-size: 1.25em;
   --r-heading4-size: 1em;
 }
 
@@ -80,6 +80,11 @@ section {
   margin-top: 0;
 }
 
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: underline;
+}
+
 .reveal p {
   margin: var(--r-block-margin) 0 0;
   line-height: 1.3;
@@ -105,21 +110,22 @@ section {
   line-height: 1.1em;
 }
 
-ul.no-bullets {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.reveal ul, .reveal ul ul {
-  margin: 0 0 0 .5em;
+.reveal ol, .reveal ul, .reveal ul ul {
+  margin-left: .5em;
 }
 
 ul:not(:first-child), li:not(:first-child) {
   margin-top: .5rem;
 }
 
+ul.no-bullets {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 0;
+}
 
+/*TODO remove*/
 .reveal .apart {
   margin-top: 50px;
 }
@@ -129,7 +135,7 @@ ul:not(:first-child), li:not(:first-child) {
 }
 
 .reveal .mt-1 {
-  margin-top: 1em !important;
+  margin-top: var(--r-block-margin) !important;
 }
 
 .reveal .mt-2 {
@@ -234,12 +240,18 @@ code:not(pre code) {
 }
 
 
+.slide--part-title .flex-row {
+  gap: 2em;
+}
+
+
 .slide--part-title .flex-row .part-title {
   flex-basis: 65%
 }
 
 .slide--part-title .flex-row .part-toc {
   flex-basis: 35%;
+  min-width: 400px;
 }
 
 .part-toc {
@@ -308,18 +320,7 @@ code:not(pre code) {
   border: solid 5px var(--color-dark-lemon-green-2);
 }
 
-
-.reveal .presentation-toc {
-  width: fit-content;
-  margin: auto;
-  text-align: left;
-}
-
-.reveal .presentation-toc li+li {
-  margin-top: .3em;
-}
-
-.reveal .presentation-toc li a {
+.reveal .presentation-toc a {
   color: inherit;
   text-decoration: inherit;
 }

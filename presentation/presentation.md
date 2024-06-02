@@ -52,6 +52,35 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 
 ---
 
+## About me
+
+<p class="text-size-heading-3"><b>Sébastien Boursault</b>
+
+<ul class="mt-1 no-bullets text-level-1">
+  <li>Developer (Java, Python, Js) and Tester
+  <li>With an experience as PO
+  <li>Trainer (E2E testing)
+  <li>What do you expect from this course?
+  <li>Is there anything speciﬁc you want to talk about?
+</ul>
+
+sboursault@proton.me
+
+---
+
+## Tell us a little about yourself
+
+<ul class="mt-2 text-level-1">
+  <li>Who are you?
+  <li>What technologies (languages, tool, etc.) do you use?
+  <li>What projects are you currently working on?
+  <li>What is your experience with E2E testing?
+  <li>What do you expect from this course?
+  <li>Is there anything speciﬁc you want to talk about?
+</ul>
+
+---
+
 ## &lt;/> Create a Cypress project
 
 <div class="flex-row tiny-gap">
