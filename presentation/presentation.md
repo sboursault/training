@@ -83,30 +83,27 @@ sboursault@proton.me
 
 ## &lt;/> Create a Cypress project
 
-<div class="flex-row tiny-gap">
-  <div class="text-level-3">
-    <p>Let's code
-    <ul>
-      <li>Create a github project
-      <li>Install and configure cypress to run typescript test
-      <li>Create a simplistic test:
+<div class="block--exercice text-level-3">
+  <p>Let's code
+  <ul>
+    <li>Create a github project
+    <li>Install and configure cypress to run typescript test
+    <li>Create a simplistic test:
       <ul>
       <li>
       <span style="font-style:italic; font-size:90%">The home page title contains "All products"</span>
       </ul>
-    </ul>
-    <p>What's new
-    <ul>
-      <li>cypress api (describe, it)
-    </ul>
-    <p>Userful links
-    <ul style="font-size:75%">
-      <li>https://docs.cypress.io/guides/getting-started/installing-cypress
-      <li>https://docs.cypress.io/guides/getting-started/opening-the-app
-      <li>https://docs.cypress.io/guides/guides/command-line
-    </ul>
-  </div>
-  <img style="width:30%" src="img/coding.png"></img>
+  </ul>
+  <p>What's new
+  <ul>
+    <li>cypress api (describe, it)
+  </ul>
+  <p>Userful links
+  <ul style="font-size:75%">
+    <li>https://docs.cypress.io/guides/getting-started/installing-cypress
+    <li>https://docs.cypress.io/guides/getting-started/opening-the-app
+    <li>https://docs.cypress.io/guides/guides/command-line
+  </ul>
 </div>
 
 ---

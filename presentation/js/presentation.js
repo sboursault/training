@@ -12,9 +12,37 @@ export function fillTocs() {
           tocContent += tocEntry
         sibling = getSiblingUnlessPartTileSlide(sibling)
       }
-      
+
       tocElement.innerHTML = '<h2>Content:</h2><ul>' + tocContent + '</ul>'
     }
+  })
+}
+
+export function wrapExercice() {
+  document.querySelectorAll('.block--exercice').forEach(source => {
+
+    const parent = source.parentNode
+
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("flex-row", "tiny-gap");
+
+    const left = document.createElement("div");
+    newDiv.appendChild(left)
+
+    const img = document.createElement('img')
+    img.setAttribute("style", "width:25%");
+    img.setAttribute("src", "img/coding.png");
+    newDiv.appendChild(img)
+
+    left.innerHTML = source.innerHTML
+
+    left.classList.add(
+      source.className.split(' ').filter(c => c !== 'block--exercice')
+    )
+
+    parent.removeChild(source)
+    parent.appendChild(newDiv)
+
   })
 }
 
@@ -33,8 +61,7 @@ function getSiblingUnlessPartTileSlide(element) {
   let sibling = element.nextElementSibling
   if (sibling == null)
     return null
-  while(sibling && sibling.querySelector('h1') == null && sibling.querySelector('h2') == null) {
-    console.log(sibling.innerHTML)
+  while (sibling && sibling.querySelector('h1') == null && sibling.querySelector('h2') == null) {
     sibling = sibling.nextElementSibling
   }
   if (sibling && sibling.classList && sibling.classList.contains('slide--part-title')) {
@@ -63,8 +90,8 @@ function drawArrows() {
         const from = array[0] ? section.querySelector('#' + array[0]) : elt;
         const to = array[1] ? section.querySelector('#' + array[1]) : elt;
         drawArrow(from, to, { path: 'fluid' });
-      })  
-  })
+      })
+    })
 }
 function eraseArrows() {
   const elts = document.getElementsByClassName('leader-line')
@@ -73,7 +100,7 @@ function eraseArrows() {
 
 
 export function init() {
-      
+
   Reveal.initialize({
     width: 1200,
     height: 750,
@@ -87,6 +114,7 @@ export function init() {
   });
   Reveal.on('ready', event => {
     fillTocs()
+    wrapExercice()
     // addBreadcrumbs()
     setTimeout(
       () => {
