@@ -139,7 +139,7 @@ sboursault@proton.me
   <div class="badge fragment" data-arrow="->task-test" id="task-dev" data-fragment-index="3">Development<br>(Developer)</div>
   <div class="badge overlay-anchor fragment" data-arrow="->task-prod" id="task-test" data-fragment-index="4">Manual tests<br>(Tester)
     <div class="overlay overlay--friction fragment">
-      🤬
+      <i class="emo emo-64 emoji-face_with_symbols_on_mouth"></i>
     </div>
   </div>
   <div class="badge fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
@@ -150,17 +150,17 @@ sboursault@proton.me
 <div class="flex-row">
   <div class="flex-column tiny-gap">
     <ul class="mt-2 text-level-4 no-bullets">
-      <li class="fragment"><span class="emoji">❌</span>Different understanding
-      <li class="fragment"><span class="emoji">❌</span>Regressions happen
-      <li class="fragment"><span class="emoji">❌</span>Too many non regression tests to execute manually
+      <li class="fragment"><i class="emo emoji-x"></i>Different understanding
+      <li class="fragment"><i class="emo emoji-x"></i>Regressions happen
+      <li class="fragment"><i class="emo emoji-x"></i>Too many non regression tests to execute manually
     </ul>
     <div class="sticky fragment">
       Not very satisfying &nbsp; :(
     </div>
   </div>
-  <div class="bubble bubble-bottom-left flex-row tiny-gap fragment">
-    <span class="icon">🤓</span>
-    <span>Maybe we should automize end to end tests...</span>
+  <div class="bubble bubble-bottom-left flex-row fragment">
+    <i class="emo emo-36 emoji-nerd_face"></i>
+    <span class="bubble__text">Maybe we should automize <br> end to end tests...</span>
   </div>
 </div>
     
@@ -175,7 +175,7 @@ sboursault@proton.me
   <div class="badge fragment" id="task-dev" data-arrow="->task-test" data-fragment-index="3">Development<br>(Developer)</div>
   <div class="badge overlay-anchor fragment" id="task-test" data-arrow="->task-prod" data-fragment-index="4">Test automation<br>(Tester & Developer)
     <div class="overlay overlay--friction fragment">
-      🤬
+      <i class="emo emo-64 emoji-face_with_symbols_on_mouth"></i>
     </div>
   </div>
   <div class="badge fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
@@ -186,17 +186,17 @@ sboursault@proton.me
 <div class="mt-3 flex-row">
   <div class="flex-column gap-10">
     <ul class="text-level-4 no-bullets">
-      <li class="fragment"><span class="emoji">❌</span>Different understanding
-      <li class="fragment"><span class="emoji">👍</span>Fewer regressions
-      <li class="fragment"><span class="emoji">❌</span>Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
+      <li class="fragment"><i class="emo emoji-x"></i>Different understanding
+      <li class="fragment"><i class="emo emoji-thumbup"></i>Fewer regressions
+      <li class="fragment"><i class="emo emoji-x"></i>Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
     </ul>
     <div class="sticky fragment">
       Better quality, but not efficient... <div class="fragment">and we intruced new difficulties&nbsp; :(</div>
     </div>
   </div>
-  <div class="bubble bubble-bottom-left flex-row tiny-gap fragment">
-    <span class="icon">🧐</span>
-    <span>So... What's the solution?</span>
+  <div class="bubble bubble-bottom-left flex-row fragment">
+    <i class="emo emo-36 emoji-face_with_monocle"></i>
+    <span class="bubble__text">So...<br>What's the solution?</span>
   </div>
 </div>
 
@@ -223,9 +223,9 @@ sboursault@proton.me
 <p class="apart text-level-3 fragment">For each story, we agree on a set of concrete <strong>key examples</strong>
 
 <ul class="text-level-3 no-bullets fragment">
-  <li class="fragment"><span class="emoji">👍</span>The team discover unknown unknowns earlier
-  <li class="fragment"><span class="emoji">👍</span>Shared understanding
-  <li class="fragment"><span class="emoji">👍</span>We get the <strong>Scenarios to automate</strong> out of the process
+  <li class="fragment"><i class="emo emoji-thumbup"></i>The team discover unknown unknowns earlier
+  <li class="fragment"><i class="emo emoji-thumbup"></i>Shared understanding
+  <li class="fragment"><i class="emo emoji-thumbup"></i>We get the <strong>Scenarios to automate</strong> out of the process
 </ul>
 
 

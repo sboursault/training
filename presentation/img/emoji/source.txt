@@ -1,0 +1,2 @@
+Emojis where downloaded from https://emoji.aranja.com/.
+Using normal emojis don't render well on pdf files.
