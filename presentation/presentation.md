@@ -90,8 +90,7 @@ sboursault@proton.me
     <li>Install and configure cypress to run typescript test
     <li>Create a simplistic test:
       <ul>
-      <li>
-      <span style="font-style:italic; font-size:90%">The home page title contains "All products"</span>
+        <li><i>The home page title contains "All products"</i>
       </ul>
   </ul>
   <p>What's new

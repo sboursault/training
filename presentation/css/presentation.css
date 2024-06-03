@@ -114,15 +114,23 @@ section {
   margin-left: .5em;
 }
 
-ul:not(:first-child), li:not(:first-child) {
+.reveal ol:not(:first-child), 
+.reveal ul:not(:first-child),
+.reveal li:not(:first-child),
+.reveal li > ol,
+.reveal li > ul {
   margin-top: .5rem;
 }
 
-ul.no-bullets {
+.reveal ul.no-bullets {
   list-style-type: none;
   padding: 0;
   margin: 0;
   margin-left: 0;
+}
+
+.reveal li li {
+  font-size: 90%
 }
 
 /*TODO remove*/

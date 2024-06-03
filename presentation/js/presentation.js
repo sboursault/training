@@ -30,7 +30,7 @@ export function wrapExercice() {
     newDiv.appendChild(left)
 
     const img = document.createElement('img')
-    img.setAttribute("style", "width:25%");
+    img.setAttribute("style", "width:25%;padding-bottom:80px;");
     img.setAttribute("src", "img/coding.png");
     newDiv.appendChild(img)
 
