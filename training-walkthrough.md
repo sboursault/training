@@ -176,9 +176,7 @@ describe('home', () => {
 
 ### Acceptance criterias workshop
 
-_The trainer takes the role of the Product Owner, the participants are the testers. They must suggest acceptance criterias to the PO._
-_The PO can show mockups or wireframes_
-_The PO can kindly reject some criterias if he thinks they are not required right now. Example : displaying discounts..._
+
 
 **User story**
 
@@ -186,31 +184,12 @@ _The PO can kindly reject some criterias if he thinks they are not required righ
 > I want to see my basket content in the mini-basket,
 > so that I always know the basket's content and amount.
 
-**Workshop:** What could be the acceptance criterias for this story ?
-
-
-_Possible list:_
-
-- _The mini basket always shows the number of products in basket_
-- _It contains basket entries (with prodcut name, quantity and price)_
-- _When empty, it doesn't show the number of products in basket_
-- _When empty, it informs the basket is empty_
 
 
 <br>
 
 ### Automize verification with cypress
 
-_The trainer writes and explains the tests for:_
-
-- _The mini-basket always shows the number of products in basket_
-- _When empty, it doesn't show the number of products in basket_
-
-_The spec file can be created from the Cypress dashboard._
-
-> 📘 Userful links
-> - https://cheatography.com/aiqbal/cheat-sheets/cypress-io/
-> - https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe
 
 
 ```typescript

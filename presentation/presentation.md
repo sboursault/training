@@ -225,6 +225,64 @@ sboursault@proton.me
 </ul>
 
 
+---
+
+## &lt;/> Acceptance criterias workshop
+
+<div class="block--exercice mt-5">
+  <p>The Product Owner presents a new story:
+  <ul>
+    <li class="text-level-3"><i> As a shopper,<br>
+    I want to see my basket content in the mini-basket,<br>
+    so that I always know the basket's content and amount.</i>
+  </ul>
+  <p class="mt-2">As a team, define acceptance criterias for this story
+
+</div>
+
+Note:
+
+_The trainer takes the role of the Product Owner, the participants are the testers. They must suggest acceptance criterias to the PO._
+_The PO can show mockups or wireframes_
+_The PO can kindly reject some criterias if he thinks they are not required right now. Example : displaying discounts.
+
+
+_Possible list:_
+
+- _The mini basket always shows the number of products in basket_
+- _It contains basket entries (with prodcut name, quantity and price)_
+- _When empty, it doesn't show the number of products in basket_
+- _When empty, it informs the basket is empty_
+
+
+---
+
+## &lt;/> Automize verification with cypress
+
+<div class="block--exercice">
+  <p>In the last workshop, we identifed some acceptance criteria.
+
+  <p>Let's code
+  <ul>
+    <li>Automize the verification of these criteria
+  </ul>
+  <p>Userful links
+    <ul style="font-size:75%">
+      <li>https://cheatography.com/aiqbal/cheat-sheets/cypress-io/
+      <li>https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe
+    </ul>
+</div>
+
+Note:
+
+_The trainer writes and explains the tests for:_
+
+- _The mini-basket always shows the number of products in basket_
+- _When empty, it doesn't show the number of products in basket_
+
+_The spec file can be created from the Cypress dashboard._
+
+
 
 ---
 

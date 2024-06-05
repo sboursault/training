@@ -36,8 +36,8 @@ export function wrapExercice() {
 
     left.innerHTML = source.innerHTML
 
-    left.classList.add(
-      source.className.split(' ').filter(c => c !== 'block--exercice')
+    newDiv.classList.add(
+      ...source.className.split(' ').filter(c => c !== 'block--exercice')
     )
 
     parent.removeChild(source)
