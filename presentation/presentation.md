@@ -96,9 +96,9 @@ sboursault@proton.me
   </ul>
   <p>Userful links
   <ul style="font-size:75%">
-    <li>https://docs.cypress.io/guides/getting-started/installing-cypress
-    <li>https://docs.cypress.io/guides/getting-started/opening-the-app
-    <li>https://docs.cypress.io/guides/guides/command-line
+    <li class="url-link">https://docs.cypress.io/guides/getting-started/installing-cypress
+    <li class="url-link">https://docs.cypress.io/guides/getting-started/opening-the-app
+    <li class="url-link">https://docs.cypress.io/guides/guides/command-line
   </ul>
 </div>
 
@@ -260,18 +260,21 @@ _Possible list:_
 
 ## &lt;/> Automize verification with cypress
 
-<div class="block--exercice">
+<div class="block--exercice text-level-3">
   <p>In the last workshop, we identifed some acceptance criteria.
-
   <p>Let's code
   <ul>
     <li>Automize the verification of these criteria
   </ul>
+  <p>Cypress commands that may help
+  <ul class="text-level-4">
+    <li><code>visit</code>, <code>get</code>, <code>contains</code>, <code>click</code>, <code>should</code>
+  </ul>
   <p>Userful links
-    <ul style="font-size:75%">
-      <li>https://cheatography.com/aiqbal/cheat-sheets/cypress-io/
-      <li>https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe
-    </ul>
+  <ul style="font-size:75%">
+    <li class="url-link">https://docs.cypress.io/api/table-of-contents
+    <li class="url-link">https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe
+  </ul>
 </div>
 
 Note:

@@ -316,4 +316,5 @@ Use the ‘shaded figs’ to find alternative path to verify
 - https://cucumber.io/blog/bdd/aslaks-view-of-bdd/
 - https://www.altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices/
 
+- image from https://techbootcamps.utexas.edu/blog/how-to-become-a-programmer/
 </div>

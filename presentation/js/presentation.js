@@ -46,6 +46,15 @@ export function wrapExercice() {
   })
 }
 
+export function wrapLinks() {
+  document.querySelectorAll('.url-link').forEach(source => {
+    const url = source.innerHTML.replaceAll(/\s/g, '')
+    const linkHtml = `<a href="${url}">${url}</a>`
+    debugger;
+    source.innerHTML = linkHtml
+  })
+}
+
 export function addBreadcrumbs() {
   document.querySelectorAll('.slide--part-title').forEach(partTitleSlide => {
     const partName = partTitleSlide.querySelector('h1').innerHTML
@@ -115,6 +124,7 @@ export function init() {
   Reveal.on('ready', event => {
     fillTocs()
     wrapExercice()
+    wrapLinks()
     // addBreadcrumbs()
     setTimeout(
       () => {
