@@ -56,12 +56,12 @@ objectifs
 
 🧩 **PRIMARY OBJECTIVE**
 
-- Know what acceptance criterias are, and how they fit in the development process
+- Know what acceptance criteria are, and how they fit in the development process
 - Know how to automize tests with Cypress
 - Know how to find info in the cypress doc
 - Know how to improve maintanabitly with the Page Object pattern
 
-- Know what acceptance criterias are, and how they fit in the development process
+- Know what acceptance criteria are, and how they fit in the development process
 - Know how to automize tests with Cypress
 - Know how to find info in the cypress doc
 - Know how to improve maintanabitly with the Page Object pattern
@@ -119,7 +119,7 @@ objectifs
 
 - Know how to write api tests with Cypress
 - Know how to use aliases
-- Know how to add examples to explicit acceptance criterias
+- Know how to add examples to explicit acceptance criteria
 
 👌 **WHAT WE'VE LEARNED**
 

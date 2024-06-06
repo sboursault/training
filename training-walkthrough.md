@@ -41,7 +41,7 @@ Verifying the mini basket of an e-commerce website
 🧩 **PRIMARY OBJECTIVE**
 
 - Know how to configure a cypress project with typescript
-- Know what acceptance criterias are, and how they fit in the development process
+- Know what acceptance criteria are, and how they fit in the development process
 - Know how to write tests with Cypress
 - Know how to find info in the cypress doc
 - Know how to improve maintanabitly with the Page Object pattern
@@ -174,7 +174,7 @@ describe('home', () => {
 <br>
 
 
-### Acceptance criterias workshop
+### Acceptance criteria workshop
 
 
 
@@ -375,7 +375,7 @@ _To make this part more entertaining, we can start with a quick brainstorm on wh
 > I want to recover the basket from my previous session
 > so that I can prepare my order and validate in several times.
 
-**Workshop:** What could be the acceptance criterias for this story ?
+**Workshop:** What could be the acceptance criteria for this story ?
 
 Possible list:
 
@@ -603,7 +603,7 @@ Verifying the order amount
 
 - Know how to write api tests with Cypress
 - Know how to use aliases
-- Know how to add examples to explicit acceptance criterias
+- Know how to add examples to explicit acceptance criteria
 
 ---
 
@@ -614,7 +614,7 @@ Verifying the order amount
 > Order amount:
 > Over 30€, the 7€ for delivery fees are offered.
 
-**Workshop:** What could be the acceptance criterias for this item ?
+**Workshop:** What could be the acceptance criteria for this item ?
 
 Possible list:
 

@@ -41,16 +41,13 @@ https://revealjs-themes.dzello.com/sunblind.html#/
 <!-- .slide: id="intro" class="slide--part-title slide--vcenter" -->
 
 <div class="flex-row">
-
   <div class="part-title">
-    <h1 class="text-size-heading-2">Intro</h1>
+    <h1>Intro</h1>
   </div>
-  
-  <div class="part-toc box fragment"></div>
-
 </div>
 
 ---
+
 
 ## About me
 
@@ -227,7 +224,11 @@ sboursault@proton.me
 
 ---
 
-## &lt;/> Acceptance criterias workshop
+A few words about specification by examples and 3 amigos ?
+
+---
+
+## &lt;/> Specification workshop
 
 <div class="block--exercice mt-5">
   <p>The Product Owner presents a new story:
@@ -236,13 +237,13 @@ sboursault@proton.me
     I want to see my basket content in the mini-basket,<br>
     so that I always know the basket's content and amount.</i>
   </ul>
-  <p class="mt-2">As a team, define acceptance criterias for this story
+  <p class="mt-2">As a team, define acceptance criteria for this story
 
 </div>
 
 Note:
 
-_The trainer takes the role of the Product Owner, the participants are the testers. They must suggest acceptance criterias to the PO._
+_The trainer takes the role of the Product Owner, the participants are the testers. They must suggest acceptance criteria to the PO._
 _The PO can show mockups or wireframes_
 _The PO can kindly reject some criterias if he thinks they are not required right now. Example : displaying discounts.
 

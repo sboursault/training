@@ -15,7 +15,7 @@ so that I always know the basket's content and amount.
 
 
 
-## Acceptance criterias
+## Acceptance criteria
 
 The **number of products** is always visible (not the number of entries).
 

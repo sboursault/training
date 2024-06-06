@@ -13,7 +13,7 @@
 
 ---
 
-<h2 class="slide-title">Acceptance criterias</h2>
+<h2 class="slide-title">Acceptance criteria</h2>
 
 A user story is composed of...
 
@@ -32,7 +32,7 @@ A user story is composed of...
 
   <div class="flex-row mt-4 fragment">
     <div class="box text-level-4" style="text-align:center; width:15%;">
-       and its <br> acceptance criterias
+       and its <br> acceptance criteria
     </div>
     <ul class="fragment" style="margin: 0; width:80%">
       <li class="text-level-5">The search field is placed on the top bar
@@ -48,7 +48,7 @@ A user story is composed of...
 
 ---
 
-<p class="apart fragment">Acceptance tests comes out of acceptance criterias
+<p class="apart fragment">Acceptance tests comes out of acceptance criteria
 
 <div class="apart fragment">
 <!--Thinking about tests before development is more efficient <br>  and favors a <strong>whole team approach</strong> on E2E testing-->
@@ -87,9 +87,9 @@ Dans les tp, proposer des règles de gestion floues, qui pourront être affinée
 Surtout expliquer qu'on se réunit avant de démarrer le développement pour comprendre le périmètre de la story,
 et comment la vérification sera automatisée
 
-<p class="mt-4 fragment">A programmer, a tester and the PO have a conversation <br> to clarify the acceptance criterias of a user story
+<p class="mt-4 fragment">A programmer, a tester and the PO have a conversation <br> to clarify the acceptance criteria of a user story
 
-<p class="fragment">The acceptance criterias are illustrated with examples
+<p class="fragment">The acceptance criteria are illustrated with examples
 
   <!--- Participants
     - A programmer, who thinks about how to make things, says what is feasable, suggests simpler paths
@@ -111,7 +111,7 @@ et comment la vérification sera automatisée
 
 
 
-<h2 class="slide-title">Acceptance criterias</h2>
+<h2 class="slide-title">Acceptance criteria</h2>
 
 <p class="fragment">Illustrate rules with <strong>key examples</strong> and <strong>counter examples</strong>
 
@@ -152,7 +152,7 @@ et comment la vérification sera automatisée
   <p class="box__title">Sprint</p>
   <div class="flex-row">
     <div class="badge" id="box-1">User story</div>
-    <div class="badge fragment" id="box-2">Acceptance criterias</div>
+    <div class="badge fragment" id="box-2">Acceptance criteria</div>
     <div class="badge fragment" id="box-3">Automated tests</div>
     <div class="badge fragment" id="box-4">Validates the <br> new feature</div>
   </div>
@@ -166,7 +166,7 @@ et comment la vérification sera automatisée
 </div>
 
 Notes:
-The Acceptance tests comes out of acceptance criterias.
+The Acceptance tests comes out of acceptance criteria.
 Thinking about tests before development is more efficient:
  - the developer and the tester are aligned on the scope of the change
  - the developer writes testable code

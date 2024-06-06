@@ -17,7 +17,7 @@ https://christianlydemann.com/the-most-common-cypress-mistakes/
 Knowledge of git, and understanding a language programming will help
 This training is for you if you want to discover how E2E tests can fit in development workflow.
 
-You'll learn to how to write acceptance criterias, and how to verify these acceptance criterias with automized tests using Cypress.
+You'll learn to how to write acceptance criteria, and how to verify these acceptance criteria with automized tests using Cypress.
 You'll also learn how to write a maintanable tests suite, how reduce flakyness (must be defined), and how to keep a fast test suite.
 
 <br>

@@ -15,7 +15,7 @@ so that I always know the basket's content and amount.
 
 
 
-## Acceptance criterias
+## Acceptance criteria
 
 Click on the Basket button shows the mini basket.
 
