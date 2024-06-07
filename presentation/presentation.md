@@ -16,23 +16,6 @@ Presentation examples : https://github.com/dzello/revealjs-themes
 https://revealjs-themes.dzello.com/robot-lung.html#/
 https://revealjs-themes.dzello.com/sunblind.html#/
 
----
-
-<!-- .slide: id="toc" class="slide--vcenter" -->
-
-<div>
-
-## Table of content
-
-<ol class="presentation-toc block">
-  <li><a href="#/intro">Intro</a>
-  <li><a href="#/e2e-tests-dev-process">End to end tests in the <br> development process</a>
-  <li><a href="#/good-tests">Qualities of good E2E tests</a>
-  <li><a href="#/cypress-tips">Cypress tips</a>
-  <li><a href="#/test-strategy">Test strategy</a>
-</ol>
-
-</div>
 
 ---
 
@@ -75,6 +58,32 @@ sboursault@proton.me
   <li>What do you expect from this course?
   <li>Is there anything speciﬁc you want to talk about?
 </ul>
+
+---
+
+Intent of this course
+
+- understanding good practices to include E2E tests in your development process
+- practice with cypress api and tools
+- be at ease to search more info on the cypress website
+- understand practices to write more maintanable, performant and stable tests
+
+---
+
+<!-- .slide: id="toc" class="slide--vcenter" -->
+
+<div>
+
+## Table of content
+
+<ol class="presentation-toc block">
+  <li><a href="#/e2e-tests-dev-process">End to end tests in the <br> development process</a>
+  <li><a href="#/good-tests">Qualities of good E2E tests</a>
+  <li><a href="#/cypress-tips">Cypress tips</a>
+  <li><a href="#/test-strategy">Test strategy</a>
+</ol>
+
+</div>
 
 ---
 
@@ -287,6 +296,120 @@ _The trainer writes and explains the tests for:_
 _The spec file can be created from the Cypress dashboard._
 
 
+---
+
+
+<!-- .slide: id="improve-maintanability" class="slide--part-title slide--vcenter" -->
+
+<div class="flex-row">
+
+  <div class="part-title">
+    <h1>Improve maintanability</h1>
+  </div>
+  
+  <div class="part-toc box fragment"></div>
+
+</div>
+
+Note:
+
+
+Simplify code with dedicated selectors, custom command and page object
+
+---
+
+A SDET can spend more than half of his time on test maintenance.
+
+---
+
+<h2 class="slide-title">Dedicated selectors</h2>
+
+<p class="mt-5 fragment">Add <code>data-*</code> attributes to select html elements</p>
+
+```html
+<input type="email" id="email" name="email"
+  class="form-control" data-testid="register-form__email-input"/>
+```
+
+<!-- .element: class="fragment" -->
+
+<p class="text-level-2 apart fragment">Selectors based on <code>data-testid</code> are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
+
+
+Note:
+
+The data-cy attribute will not change from CSS style or JS behavioral changes, meaning it's not coupled to the behavior or styling of an element.
+Don't test it if it's not testable
+
+
+---
+
+<h2 class="slide-title">Custom command</h2>
+
+Simplify your code with custom commands
+
+```typescript
+cy.getByTestid(`my-component`)
+// instead of
+cy.get(`[data-testid=my-component]`)
+```
+
+```typescript
+cy.login('tom', 'secret')
+// instead of 
+cy.visit('/login')
+cy.get('input[name="login"]').type('tom')
+cy.get('input[name="password"]').type('secret')
+cy.get('button').click()
+```
+
+Custom commands work well for behavior that's desirable across all of your tests.
+
+
+
+
+---
+
+## &lt;/> Creating a custom command
+
+
+<div class="block--exercice text-level-3">
+  <p>Let's code
+  <ul>
+    <li>Create the custom command <code>cy.getByTestid()</code> and refactor the test code to use it.
+  </ul>
+  <p>Hints
+  <ul class="text-level-4">
+    <li>Define the command in <code>cypress/support/commands.js</code>
+  </ul>
+  <p>Userful links
+  <ul style="font-size:75%">
+    <li class="url-link">https://docs.cypress.io/api/cypress-api/custom-commands
+    <li class="url-link">https://docs.cypress.io/guides/tooling/typescript-support#Types-for-Custom-Commands
+  </ul>
+</div>
+
+---
+
+<h2 class="slide-title">Page object pattern</h2>
+
+<p class="mt-4 fragment">Page objects abstract away the technical interactions from the decision code</p>
+
+```typescript
+cy.get(".basket-mini .dropdown-toggle").click(); // this is about HTML
+
+cataloguePage.displayMiniBasket();               // this is about the
+                                                 // application
+```
+
+<!-- .element: class="fragment" -->
+
+<p class="text-level-2 apart fragment">Tests get <strong>easier to read</strong> and <strong>easier to maintain</strong>
+
+
+
+
+
 
 ---
 
@@ -407,44 +530,6 @@ originaly: Simple and Self-Verifying
   <div class="part-toc box fragment"></div>
 
 </div>
-
----
-
-<h2 class="slide-title">Page object pattern</h2>
-
-<p class="mt-4 fragment">Page objects abstract away the technical interactions from the decision code</p>
-
-```typescript
-cy.get(".basket-mini .dropdown-toggle").click(); // this is about HTML
-
-cataloguePage.displayMiniBasket();               // this is about the
-                                                 // application
-```
-
-<!-- .element: class="fragment" -->
-
-<p class="text-level-2 apart fragment">Tests get <strong>easier to read</strong> and <strong>easier to maintain</strong>
-
----
-
-<h2 class="slide-title">Dedicated selectors</h2>
-
-<p class="mt-5 fragment">Add <code>data-*</code> attributes to select html elements</p>
-
-```html
-<input type="email" id="email" name="email"
-  class="form-control" data-testid="register-form__email-input"/>
-```
-
-<!-- .element: class="fragment" -->
-
-<p class="text-level-2 apart fragment">Selectors based on <code>data-testid</code> are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
-
-
-Note:
-
-The data-cy attribute will not change from CSS style or JS behavioral changes, meaning it's not coupled to the behavior or styling of an element.
-Don't test it if it's not testable
 
 ---
 
