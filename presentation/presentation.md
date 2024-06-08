@@ -233,11 +233,13 @@ Intent of this course
 
 ---
 
+## Specification by example
+
 A few words about specification by examples and 3 amigos ?
 
 ---
 
-## &lt;/> Specification workshop
+## &lt;/> Define acceptance criteria
 
 <div class="block--exercice mt-5">
   <p>The Product Owner presents a new story:
@@ -318,22 +320,36 @@ Simplify code with dedicated selectors, custom command and page object
 
 ---
 
-A SDET can spend more than half of his time on test maintenance.
+## Why investing in maintainability?
+
+<p class="fragment">We spend much more time reading code, than writing it.<br/>
+So the code should optimize for reading.
+
+<p class="mt-2 fragment">An E2E test have many reasons to fail
+<ul class="fragment">
+  <li>the application may not have been designed to be tested
+  <li>the UI can change frequently
+  <li>asynchronous nature of the browser
+</ul>
+<p class="fragment">As a result, a SDET can spend more than half of his time on test maintenance.
+
+Note:
+SDET: automaticien
 
 ---
 
 <h2 class="slide-title">Dedicated selectors</h2>
 
-<p class="mt-5 fragment">Add <code>data-*</code> attributes to select html elements</p>
+<p class="mt-5 fragment">Add a<code>data-testid</code> attribute to query your html elements</p>
 
 ```html
 <input type="email" id="email" name="email"
   class="form-control" data-testid="register-form__email-input"/>
 ```
 
-<!-- .element: class="fragment" -->
+<!-- .element: class="fragment mt-3" -->
 
-<p class="text-level-2 apart fragment">Selectors based on <code>data-testid</code> are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
+<p class="mt-5 fragment">Selectors based on a dedicated attribute are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
 
 
 Note:
@@ -346,24 +362,24 @@ Don't test it if it's not testable
 
 <h2 class="slide-title">Custom command</h2>
 
-Simplify your code with custom commands
+<p class="fragment">Let's take an example
 
 ```typescript
-cy.getByTestid(`my-component`)
-// instead of
 cy.get(`[data-testid=my-component]`)
 ```
+<!-- .element: class="fragment" -->
 
-```typescript
-cy.login('tom', 'secret')
-// instead of 
-cy.visit('/login')
-cy.get('input[name="login"]').type('tom')
-cy.get('input[name="password"]').type('secret')
-cy.get('button').click()
+<div class="fragment mt-2">
+
+<p class="text-level-2">can be simplified with a custom command:
+
+```typescript 
+cy.getByTestid(`my-component`)
 ```
 
-Custom commands work well for behavior that's desirable across all of your tests.
+</div>
+
+<p class="fragment mt-3">Custom commands work well for behaviors that are desirable across many tests.
 
 
 
@@ -379,7 +395,7 @@ Custom commands work well for behavior that's desirable across all of your tests
     <li>Create the custom command <code>cy.getByTestid()</code> and refactor the test code to use it.
   </ul>
   <p>Hints
-  <ul class="text-level-4">
+  <ul>
     <li>Define the command in <code>cypress/support/commands.js</code>
   </ul>
   <p>Userful links
@@ -398,16 +414,109 @@ Custom commands work well for behavior that's desirable across all of your tests
 ```typescript
 cy.get(".basket-mini .dropdown-toggle").click(); // this is about HTML
 
+```
+<!-- .element: class="fragment" -->
+
+```typescript
 cataloguePage.displayMiniBasket();               // this is about the
                                                  // application
 ```
 
 <!-- .element: class="fragment" -->
 
-<p class="text-level-2 apart fragment">Tests get <strong>easier to read</strong> and <strong>easier to maintain</strong>
+<p class="mt-3 fragment">Tests with Page Objects are <strong>easier to read</strong> and <strong>easier to maintain</strong>
 
 
 
+---
+
+## &lt;/> Test with Page Objects
+
+
+<div class="block--exercice text-level-3">
+  <p>Let's code
+  <ul>
+    <li>Refactor your tests to use a page object reprensenting the catalog page.
+  </ul>
+  <p>Hints
+  <ul>
+    <li>Create the <code>CatalogPage</code> in <nobr><code>cypress/support/page-objects/catalog-page.ts</code></nobr>
+    <li>Add the methods
+      <ul>
+        <li><code>miniBasketLink()</code> to obtain the mini basket link
+        <li><code>showMiniBasket()</code>
+        <li><code>addProductToBasket(produtId: number)</code>
+      </ul>
+  </ul>
+</div>
+
+
+
+---
+
+## Let's practice on the login
+
+Let's have the same exercice to verify the login
+
+---
+
+## &lt;/> Define acceptance criteria
+
+<div class="block--exercice mt-5">
+  <p>The Product Owner presents a new story:
+  <ul>
+    <li class="text-level-3"><i> As a shopper,<br>
+    I want to see my basket content in the mini-basket,<br>
+    so that I always know the basket's content and amount.</i>
+  </ul>
+  <p class="mt-2">As a team, define acceptance criteria for this story
+
+</div>
+
+Note:
+
+_The trainer takes the role of the Product Owner, the participants are the testers. They must suggest acceptance criteria to the PO._
+_The PO can show mockups or wireframes_
+_The PO can kindly reject some criterias if he thinks they are not required right now. Example : displaying discounts.
+
+
+_Possible list:_
+
+- _The mini basket always shows the number of products in basket_
+- _It contains basket entries (with prodcut name, quantity and price)_
+- _When empty, it doesn't show the number of products in basket_
+- _When empty, it informs the basket is empty_
+
+
+---
+
+## &lt;/> Automize verification with cypress
+
+<div class="block--exercice text-level-3">
+  <p>In the last workshop, we identifed some acceptance criteria.
+  <p>Let's code
+  <ul>
+    <li>Automize the verification of these criteria
+  </ul>
+  <p>Cypress commands that may help
+  <ul class="text-level-4">
+    <li><code>visit</code>, <code>get</code>, <code>contains</code>, <code>click</code>, <code>should</code>
+  </ul>
+  <p>Userful links
+  <ul style="font-size:75%">
+    <li class="url-link">https://docs.cypress.io/api/table-of-contents
+    <li class="url-link">https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe
+  </ul>
+</div>
+
+Note:
+
+_The trainer writes and explains the tests for:_
+
+- _The mini-basket always shows the number of products in basket_
+- _When empty, it doesn't show the number of products in basket_
+
+_The spec file can be created from the Cypress dashboard._
 
 
 
@@ -530,6 +639,10 @@ originaly: Simple and Self-Verifying
   <div class="part-toc box fragment"></div>
 
 </div>
+
+---
+
+debugger...
 
 ---
 

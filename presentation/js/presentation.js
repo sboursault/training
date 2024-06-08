@@ -50,7 +50,6 @@ export function wrapLinks() {
   document.querySelectorAll('.url-link').forEach(source => {
     const url = source.innerHTML.replaceAll(/\s/g, '')
     const linkHtml = `<a href="${url}">${url}</a>`
-    debugger;
     source.innerHTML = linkHtml
   })
 }
