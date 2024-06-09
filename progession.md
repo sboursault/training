@@ -32,12 +32,8 @@ Theoretical part: End to end tests in the development process
 
 **20min**
 
-workshop
+specification workshop on the mini basket
 
-- _The mini basket always shows the number of products in basket_
-- _It contains basket entries (with prodcut name, quantity and price)_
-- _When empty, it doesn't show the number of products in basket_
-- _When empty, it informs the basket is empty_
 
 **45min**
 The professor automizes the 2 tests on the mini basket always shown info,
@@ -58,7 +54,6 @@ commit
 
 **45min**
 The professor refactors the tests with beforeEach and page objects (CataloguePage).
-Distinguish components (miniBasketLink) from behaviours (showMiniBasket, addProductToBasket)
 
 > typescript and page objects
 
@@ -68,19 +63,13 @@ The trainee repeats.
 ------------------- mid-day break -------------------
 
 
-
 **15min**
 workshop to identify test to verify login
 (successful login + failed login)
 
 **60min**
 The trainee automize the test, using what he has learned so far (page object and hooks)
-He needs to create a user manually for the first time.
-possible list :
-- the login accepts valid credentials
-- shows an error on invalid password
 
-> cypress api (type)
 
 **20min**
 Theoretical part: Cypress tips

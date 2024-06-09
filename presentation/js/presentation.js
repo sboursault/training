@@ -8,7 +8,9 @@ export function fillTocs() {
       while (sibling != null) {
         const h2Element = sibling.querySelector('h2')
         const tocEntry = `<li>${h2Element.innerHTML}</li>`
-        if (h2Element && !tocContent.includes(tocEntry))  // keep only 1 entry when 2 slides have the same title
+        if (h2Element
+          && !tocContent.includes(tocEntry)   // keep only 1 entry when 2 slides have the same title
+          && tocEntry.indexOf("&lt;/") === -1)   // this is not an exercice slide
           tocContent += tocEntry
         sibling = getSiblingUnlessPartTileSlide(sibling)
       }
@@ -30,7 +32,7 @@ export function wrapExercice() {
     newDiv.appendChild(left)
 
     const img = document.createElement('img')
-    img.setAttribute("style", "width:25%;padding-bottom:80px;");
+    img.setAttribute("style", "width:25%;padding-bottom:2em;");
     img.setAttribute("src", "img/coding.png");
     newDiv.appendChild(img)
 

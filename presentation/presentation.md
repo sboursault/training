@@ -40,8 +40,6 @@ https://revealjs-themes.dzello.com/sunblind.html#/
   <li>Developer (Java, Python, Js) and Tester
   <li>With an experience as PO
   <li>Trainer (E2E testing)
-  <li>What do you expect from this course?
-  <li>Is there anything speciﬁc you want to talk about?
 </ul>
 
 sboursault@proton.me
@@ -65,7 +63,7 @@ Intent of this course
 
 - understanding good practices to include E2E tests in your development process
 - practice with cypress api and tools
-- be at ease to search more info on the cypress website
+- be at ease to search more info in the cypress documentation
 - understand practices to write more maintanable, performant and stable tests
 
 ---
@@ -103,6 +101,10 @@ Intent of this course
   <ul>
     <li>cypress api (describe, it)
   </ul>
+  <p>Cypress commands that may help
+  <ul class="text-level-4">
+    <li><code>visit</code>, <code>title</code>, <code>should</code>
+  </ul>
   <p>Userful links
   <ul style="font-size:75%">
     <li class="url-link">https://docs.cypress.io/guides/getting-started/installing-cypress
@@ -110,6 +112,17 @@ Intent of this course
     <li class="url-link">https://docs.cypress.io/guides/guides/command-line
   </ul>
 </div>
+
+Note:
+
+```typescript
+describe('home-page', () => {
+  specify('the home page title contains "All products"', () => {
+      cy.visit('/')
+      cy.title().should('equals', 'All products | Simple commerce')
+  })
+})
+```
 
 ---
 
@@ -122,6 +135,8 @@ Intent of this course
   <div class="part-title">
     <span class="text-level-3">Part 1</span>
     <h1 class="text-size-heading-2">End to end tests in the devevelopment process</h1>
+
+    mal nommé : getting started ?
   </div>
   
   <div class="part-toc box fragment"></div>
@@ -151,7 +166,7 @@ Intent of this course
 
 <div class="flex-row">
   <div class="flex-column tiny-gap">
-    <ul class="mt-2 text-level-4 no-bullets">
+    <ul class="mt-2 text-level-3 no-bullets">
       <li class="fragment"><i class="emo emoji-x"></i>Different understanding
       <li class="fragment"><i class="emo emoji-x"></i>Regressions happen
       <li class="fragment"><i class="emo emoji-x"></i>Too many non regression tests to execute manually
@@ -187,7 +202,7 @@ Intent of this course
 
 <div class="mt-3 flex-row">
   <div class="flex-column gap-10">
-    <ul class="text-level-4 no-bullets">
+    <ul class="text-level-3 no-bullets">
       <li class="fragment"><i class="emo emoji-x"></i>Different understanding
       <li class="fragment"><i class="emo emoji-thumbup"></i>Fewer regressions
       <li class="fragment"><i class="emo emoji-x"></i>Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
@@ -284,6 +299,7 @@ _Possible list:_
   <p>Userful links
   <ul style="font-size:75%">
     <li class="url-link">https://docs.cypress.io/api/table-of-contents
+    <li class="url-link">https://www.w3schools.com/cssref/css_selectors.php
     <li class="url-link">https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe
   </ul>
 </div>
@@ -306,6 +322,7 @@ _The spec file can be created from the Cypress dashboard._
 <div class="flex-row">
 
   <div class="part-title">
+    <span class="text-level-3">Part 2</span>
     <h1>Improve maintanability</h1>
   </div>
   
@@ -360,7 +377,44 @@ Don't test it if it's not testable
 
 ---
 
-<h2 class="slide-title">Custom command</h2>
+## Hooks
+
+Hooks are helpful to set conditions that run before or after a set of tests.
+
+```typescript
+describe('My feature', () => {
+  before(() => {
+    // runs once before all tests
+  })
+
+  beforeEach(() => {
+    // runs before each test
+  })
+
+  it('works as intended') {
+    // some verifications...
+  }
+
+  afterEach(() => {
+    // runs after each test
+  })
+
+  after(() => {
+    // runs once after all tests
+  })
+})
+
+```
+<!-- .element: style="font-size:37%" -->
+
+
+---
+
+## &lt;/> Add hooks
+
+---
+
+## Custom command
 
 <p class="fragment">Let's take an example
 
@@ -380,8 +434,6 @@ cy.getByTestid(`my-component`)
 </div>
 
 <p class="fragment mt-3">Custom commands work well for behaviors that are desirable across many tests.
-
-
 
 
 ---
@@ -441,11 +493,11 @@ cataloguePage.displayMiniBasket();               // this is about the
   <p>Hints
   <ul>
     <li>Create the <code>CatalogPage</code> in <nobr><code>cypress/support/page-objects/catalog-page.ts</code></nobr>
-    <li>Add the methods
+    <li>Add a commponent getter: <code>CatalogPage.miniBasketLink()</code>
+    <li>And behaviors:
       <ul>
-        <li><code>miniBasketLink()</code> to obtain the mini basket link
-        <li><code>showMiniBasket()</code>
-        <li><code>addProductToBasket(produtId: number)</code>
+        <li><code>CatalogPage.showMiniBasket()</code>
+        <li><code>CatalogPage.addProductToBasket(produtId: number)</code>
       </ul>
   </ul>
 </div>
@@ -460,37 +512,31 @@ Let's have the same exercice to verify the login
 
 ---
 
-## &lt;/> Define acceptance criteria
+## &lt;/> Acceptance criteria for the login
 
 <div class="block--exercice mt-5">
   <p>The Product Owner presents a new story:
   <ul>
     <li class="text-level-3"><i> As a shopper,<br>
-    I want to see my basket content in the mini-basket,<br>
-    so that I always know the basket's content and amount.</i>
+    I want to login,<br>
+    so that I can verify my last order</i>
   </ul>
   <p class="mt-2">As a team, define acceptance criteria for this story
-
 </div>
 
 Note:
 
-_The trainer takes the role of the Product Owner, the participants are the testers. They must suggest acceptance criteria to the PO._
-_The PO can show mockups or wireframes_
-_The PO can kindly reject some criterias if he thinks they are not required right now. Example : displaying discounts.
-
-
 _Possible list:_
 
-- _The mini basket always shows the number of products in basket_
-- _It contains basket entries (with prodcut name, quantity and price)_
-- _When empty, it doesn't show the number of products in basket_
-- _When empty, it informs the basket is empty_
+- the login accepts valid credentials
+- shows an error on invalid password
 
+
+The user can be created manually.
 
 ---
 
-## &lt;/> Automize verification with cypress
+## &lt;/> Automize the login verification
 
 <div class="block--exercice text-level-3">
   <p>In the last workshop, we identifed some acceptance criteria.
@@ -500,12 +546,11 @@ _Possible list:_
   </ul>
   <p>Cypress commands that may help
   <ul class="text-level-4">
-    <li><code>visit</code>, <code>get</code>, <code>contains</code>, <code>click</code>, <code>should</code>
+    <li><code>type</code>
   </ul>
   <p>Userful links
   <ul style="font-size:75%">
     <li class="url-link">https://docs.cypress.io/api/table-of-contents
-    <li class="url-link">https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe
   </ul>
 </div>
 
