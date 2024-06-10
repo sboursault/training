@@ -69,13 +69,3 @@ Even when tests need to execute through the UI, minimise the part of the test th
 
 Set-up and clean-up tasks serve to make tests reliable and repeatable, but they do not actually deal with the user interface risk (or, more precisely, they should not – if a set-up task is testing things, it should be broken into several tests).
 
----
-
-<h2 class="slide-title">Never ignore failing tests</h2>
-
-<p class="mt-6 fragment">Fix flaky tests as soon as possible
-
-<p class="fragment">If not fixed within a given time frame,<br> <strong>quarantine</strong> or <strong>delete</strong> the flaky test
-
-<p class="fragment">Don't let flaky tests attack your confidence!
-

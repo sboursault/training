@@ -105,3 +105,13 @@ Note:
 On a shared environment, tests can fail for external reasons.
 you must have clear control over the environment in which the tests run.
 
+---
+
+<h2 class="slide-title">Never ignore failing tests</h2>
+
+<p class="mt-6 fragment">Fix flaky tests as soon as possible
+
+<p class="fragment">If not fixed within a given time frame,<br> <strong>quarantine</strong> or <strong>delete</strong> the flaky test
+
+<p class="fragment">Don't let flaky tests attack your confidence!
+

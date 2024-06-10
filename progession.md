@@ -64,11 +64,10 @@ The trainee repeats.
 
 
 **15min**
-workshop to identify test to verify login
-(successful login + failed login)
+login spectification workshop
 
 **60min**
-The trainee automize the test, using what he has learned so far (page object and hooks)
+The trainee codes the test on the login
 
 
 **20min**

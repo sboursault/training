@@ -188,7 +188,7 @@ cataloguePage.displayMiniBasket();               // this is about the
 
 ---
 
-<h2 data-toc-label="Let's practice">&lt;/> Acceptance criteria for the login
+<h2 data-toc-label="Let's practice">&lt;/> Acceptance criteria for the login</h2>
 
 <div class="block--exercice mt-5">
   <p>The Product Owner presents a new story:
@@ -214,14 +214,14 @@ The user can be created manually.
 
 ## &lt;/> Automize the login verification
 
-<div class="block--exercice text-level-3">
-  <p>In the last workshop, we identifed some acceptance criteria.
+<div class="block--exercice text-level-1">
   <p>Let's code
   <ul>
-    <li>Automize the verification of these criteria
+    <li>Automize the verification of the login acceptance criteria
+    <li>Simplify the code with hooks, custom commands and page objects
   </ul>
   <p>Cypress commands that may help
-  <ul class="text-level-4">
+  <ul>
     <li><code>type</code>
   </ul>
   <p>Userful links
@@ -229,14 +229,3 @@ The user can be created manually.
     <li class="url-link">https://docs.cypress.io/api/table-of-contents
   </ul>
 </div>
-
-Note:
-
-_The trainer writes and explains the tests for:_
-
-- _The mini-basket always shows the number of products in basket_
-- _When empty, it doesn't show the number of products in basket_
-
-_The spec file can be created from the Cypress dashboard._
-
-
