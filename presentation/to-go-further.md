@@ -84,21 +84,6 @@ Dans les tp, proposer des règles de gestion floues, qui pourront être affinée
 ## Specification workshop
 
 
-Surtout expliquer qu'on se réunit avant de démarrer le développement pour comprendre le périmètre de la story,
-et comment la vérification sera automatisée
-
-<p class="mt-200 fragment">A programmer, a tester and the PO have a conversation <br> to clarify the acceptance criteria of a user story
-
-<p class="fragment">The acceptance criteria are illustrated with examples
-
-  <!--- Participants
-    - A programmer, who thinks about how to make things, says what is feasable, suggests simpler paths
-    - A tester, who thinks about how to break things, and come up with lots of scenarios, sometimes covering obscure edge cases, and sometimes covery very important ones 
-    - The product owner, who cares about scope
-    - Anybody relevant to the story being discussed (operations, UX designer...)-->
-
----
-
 
 <p class="mt-300">Tips to make it work:
 <ul>

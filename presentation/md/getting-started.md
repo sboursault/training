@@ -54,9 +54,8 @@ describe('home-page', () => {
 
 ---
 
-
-<h2 class="text-size-heading-3">Behaviour Driven Development</h2>
-
+## The problem with a conventional dev process
+<!-- .element: class="text-size-heading-3" -->
 
 <p class="fragment" data-fragment-index="1">When I started on my last project...
 
@@ -94,7 +93,7 @@ describe('home-page', () => {
 
 ---
 
-<p class="fragment " data-fragment-index="1">So, let's automate end to end tests...
+So, let's automate end to end tests...
 
 <div class="box flex-row mt-100 screen fragment" style="padding:40px;" data-fragment-index="2">
   <div class="badge" data-arrow="->task-dev">Specifications</div>
@@ -129,6 +128,34 @@ describe('home-page', () => {
 
 ---
 
+## Behaviour driven development
+
+Before the development, a programmer, a tester and the PO have a conversation to clarify the acceptance criteria for a user story
+<!-- .element: class="fragment" -->
+
+We call it a **Specification workshop** (aka **3 amigos** or **Discovery workshop**)
+<!-- .element: class="fragment" -->
+
+During the workshop, the participants agree on concrete **key examples** that illustrate how the feature should work
+<!-- .element: class="fragment" -->
+
+These examples becomes the acceptance criteria for the story: they'll be automated and verified with E2E tests
+<!-- .element: class="fragment" -->
+
+
+Note:
+
+Surtout expliquer qu'on se réunit avant de démarrer le développement pour comprendre le périmètre de la story,
+et comment la vérification sera automatisée
+
+Participants
+- A programmer, who thinks about how to make things, says what is feasable, suggests simpler paths
+- A tester, who thinks about how to break things, and come up with lots of scenarios, sometimes covering obscure edge cases, and sometimes covery very important ones 
+- The product owner, who cares about scope
+- Anybody relevant to the story being discussed (operations, UX designer...)-->
+
+---
+
 <p class="fragment">The <strong>Behaviour Driven Development</strong> approach
 
 <div class="box flex-row screen fragment mt-100" style="padding:30px;">
@@ -155,18 +182,13 @@ describe('home-page', () => {
 </ul>
 
 
----
-
-## Specification by example
-
-A few words about specification by examples and 3 amigos ?
 
 ---
 
 ## &lt;/> Define acceptance criteria
 <!-- .element: data-toc-icon="code" data-toc-label="Verify the mini-basket" -->
 
-<div class="block--exercice mt-5">
+<div class="block--exercice mt-250">
   <p>The Product Owner presents a new story:
   <ul>
     <li class="text-level-3"><i> As a shopper,<br>

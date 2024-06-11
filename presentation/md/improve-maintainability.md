@@ -31,7 +31,7 @@ So the code should optimize for reading.
   <li>the UI can change frequently
   <li>asynchronous nature of the browser
 </ul>
-<p class="fragment">As a result, a SDET can spend more than half of his time on test maintenance.
+<p class="fragment">As a result, a SDET can spend more than half of her time on test maintenance.
 
 Note:
 SDET: automaticien
