@@ -1,13 +1,4 @@
 
-<!-- .slide: id="intro" class="slide--part-title slide--vcenter" -->
-
-<div class="flex-row">
-  <div class="part-title">
-    <h1>Intro</h1>
-  </div>
-</div>
-
----
 
 
 ## About me
@@ -54,6 +45,8 @@ Intent of this course
 
 <ol class="presentation-toc block">
   <li><a href="#/e2e-tests-dev-process">Getting started</a>
+  <li><a href="#/improve-maintainability">Improve maintainability</a>
+  <li><a href="#/lets-practice-login">Let's practice: Verify the login</a>
   <li><a href="#/good-tests">Qualities of good E2E tests</a>
   <li><a href="#/cypress-tips">Cypress tips</a>
   <li><a href="#/test-strategy">Test strategy</a>

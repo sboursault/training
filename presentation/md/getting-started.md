@@ -54,7 +54,8 @@ describe('home-page', () => {
 ---
 
 
-<h2 class="slide-title" style="font-size: 3vw">What is Behaviour Driven Development?</h2>
+<h2 class="text-size-heading-3">Behaviour Driven Development</h2>
+
 
 <p class="fragment" data-fragment-index="1">When I started on my last project...
 
@@ -129,7 +130,7 @@ describe('home-page', () => {
 
 <p class="fragment">The <strong>Behaviour Driven Development</strong> approach
 
-<div class="box flex-row screen fragment" style="padding:30px;">
+<div class="box flex-row screen fragment mt-1" style="padding:30px;">
   <div class="badge" data-arrow="->task-example">Specifications</div>
   <div class="badge fragment" id="task-example" data-arrow="->task-dev,->task-test">Example workshop</div>
   <div class="flex-column">
@@ -161,7 +162,8 @@ A few words about specification by examples and 3 amigos ?
 
 ---
 
-<h2 data-toc-label="Let's practice">&lt;/> Define acceptance criteria</h2>
+## &lt;/> Define acceptance criteria
+<!-- .element: data-toc-level="2" data-toc-label="Specification workshop" -->
 
 <div class="block--exercice mt-5">
   <p>The Product Owner presents a new story:

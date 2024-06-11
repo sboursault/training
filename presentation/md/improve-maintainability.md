@@ -1,12 +1,12 @@
 
 
-<!-- .slide: id="improve-maintanability" class="slide--part-title slide--vcenter" -->
+<!-- .slide: id="improve-maintainability" class="slide--part-title slide--vcenter" -->
 
 <div class="flex-row">
 
   <div class="part-title">
     <span class="text-level-3">Part 2</span>
-    <h1>Improve maintanability</h1>
+    <h1>Improve maintainability</h1>
   </div>
   
   <div class="part-toc box fragment"></div>
@@ -94,6 +94,7 @@ describe('My feature', () => {
 ---
 
 ## &lt;/> Add hooks
+<!-- .element: data-toc-level="2" data-toc-label="Let's code" -->
 
 ---
 
@@ -122,6 +123,7 @@ cy.getByTestid(`my-component`)
 ---
 
 ## &lt;/> Creating a custom command
+<!-- .element: data-toc-level="2" data-toc-label="Let's code" -->
 
 
 <div class="block--exercice text-level-3">
@@ -165,7 +167,8 @@ cataloguePage.displayMiniBasket();               // this is about the
 
 ---
 
-## &lt;/> Test with Page Objects
+## &lt;/> Test with Page Objects
+<!-- .element: data-toc-level="2" data-toc-label="Let's code" -->
 
 
 <div class="block--exercice text-level-3">
@@ -185,47 +188,3 @@ cataloguePage.displayMiniBasket();               // this is about the
   </ul>
 </div>
 
-
----
-
-<h2 data-toc-label="Let's practice">&lt;/> Acceptance criteria for the login</h2>
-
-<div class="block--exercice mt-5">
-  <p>The Product Owner presents a new story:
-  <ul>
-    <li class="text-level-3"><i> As a shopper,<br>
-    I want to login,<br>
-    so that I can verify my last order</i>
-  </ul>
-  <p class="mt-2">As a team, define acceptance criteria for this story
-</div>
-
-Note:
-
-_Possible list:_
-
-- the login accepts valid credentials
-- shows an error on invalid password
-
-
-The user can be created manually.
-
----
-
-## &lt;/> Automize the login verification
-
-<div class="block--exercice text-level-1">
-  <p>Let's code
-  <ul>
-    <li>Automize the verification of the login acceptance criteria
-    <li>Simplify the code with hooks, custom commands and page objects
-  </ul>
-  <p>Cypress commands that may help
-  <ul>
-    <li><code>type</code>
-  </ul>
-  <p>Userful links
-  <ul style="font-size:75%">
-    <li class="url-link">https://docs.cypress.io/api/table-of-contents
-  </ul>
-</div>

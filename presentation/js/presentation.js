@@ -1,22 +1,30 @@
+import { createChild, createNode } from './dom.js';
+    
 
 export function fillTocs() {
+  const slides = document.querySelectorAll('.slides > section')
   document.querySelectorAll('.slide--part-title').forEach(partTitleSlide => {
-    const tocElement = partTitleSlide.querySelector('.part-toc')
-    if (tocElement) {
-      let tocContent = ''
+    const toc = partTitleSlide.querySelector('.part-toc')
+    if (toc) {
+      createChild(toc, 'h2', {}, 'Content:')
+      const tocUl = createChild(toc, 'ul')
       let sibling = getSiblingUnlessPartTileSlide(partTitleSlide)
-      while (sibling != null) {
+      while (sibling != null) {               
+        var slideIndex = [].indexOf.call(slides, sibling);
         const h2Element = sibling.querySelector('h2')
-        const tocLabel = h2Element.getAttribute('data-toc-label') || h2Element.innerHTML
-        const tocEntry = `<li>${tocLabel}</li>`
-        if (h2Element
-          && !tocContent.includes(tocEntry)   // keep only 1 entry when 2 slides have the same title
-          && tocEntry.indexOf("&lt;/") === -1)   // this is not an exercice slide
-          tocContent += tocEntry
+        const tocLabel = h2Element.getAttribute('data-toc-label') || h2Element.innerText
+        const tocLink = createNode('a', {href: `/#/${slideIndex}`}, tocLabel)
+        const tocLevel = h2Element.getAttribute('data-toc-level') || "1"
+
+        if (tocLevel==='1') {
+          createChild(tocUl, 'li', {}, tocLink)
+        } else {
+          // createChild(tocUl, 'div', {style: 'font-size:80%'}, tocLink)
+          createChild(tocUl, 'ul', {}, createNode('li', {}, tocLink))
+        }
+
         sibling = getSiblingUnlessPartTileSlide(sibling)
       }
-
-      tocElement.innerHTML = '<h2>Content:</h2><ul>' + tocContent + '</ul>'
     }
   })
 }

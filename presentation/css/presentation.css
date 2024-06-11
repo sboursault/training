@@ -216,7 +216,7 @@ code:not(pre code) {
 }
 
 .reveal .slide--vcenter {
-  height: 70vh;
+  height: 700px; /* a little less than the slide height (see Reveal.initialize(...) */
   display: flex !important;
   justify-content: center;
   align-items: center;
@@ -227,6 +227,7 @@ code:not(pre code) {
   justify-content: space-between;
   gap: 2em;
   align-items: center;
+  z-index: inherit; /* with auto, the links within are not clickable*/
 }
 
 .reveal .flex-column {
@@ -263,11 +264,11 @@ code:not(pre code) {
   min-width: 400px;
 }
 
-.part-toc {
+.reveal .part-toc {
   text-align: left;
 }
 
-.part-toc h2 {
+.reveal .part-toc h2 {
   margin: auto;
   font-size: inherit;
   color: inherit;
@@ -275,8 +276,13 @@ code:not(pre code) {
   font-weight: bold;
 }
 
-.part-toc ul {
+.reveal .part-toc ul {
   margin: .3em 0 0;
+}
+
+.reveal .part-toc a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 @media print {
