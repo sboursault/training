@@ -10,7 +10,7 @@
 
 ## Good automated tests are F.I.R.S.T
 
-<div class="mt-5 fragment">
+<div class="mt-250 fragment">
 
 - Fast
 - Isolated
@@ -52,7 +52,7 @@ This is the one thing the learner should memorize.
 
   <p class="fragment">Repeatable tests don't depend on the state of the environment in which they run
 
-  <p class="fragment apart">Without isolation and repeatability, you often get false positive. The biggest risk is too <strong>loose confidence in your tests</strong>.
+  <p class="fragment mt-125">Without isolation and repeatability, you often get false positive. The biggest risk is too <strong>loose confidence in your tests</strong>.
 
 </div>
 
@@ -88,7 +88,7 @@ originaly: Simple and Self-Verifying
 
   <p class="fragment">Try to automate tests before development
 
-  <div class="apart text-level-2">
+  <div class="mt-125 text-level-2">
   <!--When written before development / Benefits -->
   <ul>
     <li class="fragment">Production code is crafted so it's <strong>testable</strong>
@@ -96,7 +96,7 @@ originaly: Simple and Self-Verifying
   </ul>
   </div>
 
-  <p class="apart text-level-2 fragment">Testing before development is more fun,<br> more beneficial, more productive, and less frustrating
+  <p class="mt-125 text-level-2 fragment">Testing before development is more fun,<br> more beneficial, more productive, and less frustrating
 
 </div>
 

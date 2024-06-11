@@ -21,14 +21,14 @@ Simplify code with dedicated selectors, custom command and page object
 ## &lt;/> Specification workshop for the login
 <!-- .element: data-toc-icon="code" data-toc-label="Verify the login" -->
 
-<div class="block--exercice mt-5">
+<div class="block--exercice mt-250">
   <p>The Product Owner presents a new story:
   <ul>
     <li class="text-level-3"><i> As a shopper,<br>
     I want to login,<br>
     so that I can verify my last order</i>
   </ul>
-  <p class="mt-2">As a team, define acceptance criteria for this story
+  <p class="mt-125">As a team, define acceptance criteria for this story
 </div>
 
 Note:

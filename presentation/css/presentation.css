@@ -134,42 +134,44 @@ section {
   font-size: 90%
 }
 
-.reveal .part-toc ul ul, #complete-toc ul ul {
+.reveal .part-toc ul ul, #toc ul ul {
   /* the previous rule should be enough, but the tocs are not consitent on sub lists */
   font-size: 90%
-}
-
-
-/*TODO remove*/
-.reveal .apart {
-  margin-top: 50px;
 }
 
 .reveal .mt-0 {
   margin-top: .0em !important;
 }
 
-.reveal .mt-1 {
+.reveal .mt-025 {
+  margin-top: .25em !important;
+}
+
+.reveal .mt-050 {
+  margin-top: .5em !important;
+}
+
+.reveal .mt-100 {
   margin-top: var(--r-block-margin) !important;
 }
 
-.reveal .mt-2 {
+.reveal .mt-125 {
   margin-top: 1.25em !important;
 }
 
-.reveal .mt-3 {
+.reveal .mt-150 {
   margin-top: 1.5em !important;
 }
 
-.reveal .mt-4 {
+.reveal .mt-200 {
   margin-top: 2em !important;
 }
 
-.reveal .mt-5 {
+.reveal .mt-250 {
   margin-top: 2.5em !important;
 }
 
-.reveal .mt-6 {
+.reveal .mt-300 {
   margin-top: 3em !important;
 }
 
@@ -286,21 +288,25 @@ code:not(pre code) {
   margin: .3em 0 0;
 }
 
-.reveal .part-toc a, #complete-toc li a {
+.reveal .part-toc a, #toc li a {
   color: inherit;
   text-decoration: inherit;
 }
 
+#toc ol {
+  margin: 0
+}
 
-#complete-toc ul {
+
+#toc ul {
   margin-left: 0
 }
 
-#complete-toc ol > li:not(:first-child) {
+#toc ol > li:not(:first-child) {
   margin-top: 1em;
 }
 
-#complete-toc ol > li:nth-child(3) {
+#toc ol > li:nth-child(3) {
   /*margin-bottom: 6em;*/
 }
 

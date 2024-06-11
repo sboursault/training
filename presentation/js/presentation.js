@@ -2,8 +2,8 @@ import { createChild, createNode, addText } from './dom.js';
     
 
 export function fillCompleteToc() {
-  const tocSlide = document.querySelector('#complete-toc')
-  const ulLevel1 = createChild(tocSlide, 'ol', {class: 'text-level-4', style: "column-count: 2;"});
+  const tocSlide = document.querySelector('#toc')
+  const ulLevel1 = createChild(tocSlide, 'ol', {class: 'text-level-5', style: "column-count: 2;"});
   document.querySelectorAll('.slide--part-title:not(.slide-background)').forEach(partTitleSlide => {
       const partTitle = partTitleSlide.querySelector('h1')
       const li = createChild(ulLevel1, 'li')
@@ -37,7 +37,7 @@ function fillPartToc(ul, partTitleSlide) {
       const tocLabel = h2Element.getAttribute('data-toc-label') || h2Element.innerText
       const icon = h2Element.getAttribute('data-toc-icon')
       const tocLink = createNode('a', {href: `/#/${slideIndex}`})
-      if (icon === 'code') createChild(tocLink,'span', {style:'font-family:monospace; font-size: 85%; margin-right: 0.4rem; letter-spacing: -1px;'}, '</>')
+      if (icon === 'code') createChild(tocLink,'span', {style:'font-family:monospace; font-size: 85%; margin-right: 0.4rem; letter-spacing: -1px;'}, '<∕>')
       addText(tocLink, tocLabel)
       const tocLevel = h2Element.getAttribute('data-toc-level') || "1"
       if (tocLevel==='1') {

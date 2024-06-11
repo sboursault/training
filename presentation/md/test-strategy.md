@@ -31,7 +31,7 @@
 
   <div>
     <div class="">To succeed, you probably need tests from each quadrants!</div>
-    <div class="mt-3 fragment">You can't automate everything</div>
+    <div class="mt-150 fragment">You can't automate everything</div>
     <p class="fragment">So, focus on:</p>
     <ul>
       <li class="fragment">Critical paths (eg. registration)</li>
@@ -67,9 +67,9 @@ Which ones are necessary to succeed?
 
 ## Who automates the tests?
 
-<p class="mt-5 fragment">Favour a <strong>whole team approach</strong></p>
+<p class="mt-250 fragment">Favour a <strong>whole team approach</strong></p>
 
-<p class="mt-3 text-level-2 fragment">Developers and testers work together to</p>
+<p class="mt-150 text-level-2 fragment">Developers and testers work together to</p>
 <ul class="text-level-2">
   <li class="fragment">Build and maintain the test infrastructure</li>
   <li class="fragment">Design testable code</li> <!-- Developers write more testable code -->
@@ -90,7 +90,7 @@ Everyone should feel responsible for the automated tests
 
 ## Continuous Integration <br> / Continuous Delivery
 
-<h3 class="mt-4 fragment">Run automated tests on each release</h3>
+<h3 class="mt-200 fragment">Run automated tests on each release</h3>
 
 <p class="text-level-2 fragment">as part of your CI/CD pipeline
 
@@ -104,11 +104,9 @@ you must have clear control over the environment in which the tests run.
 
 ---
 
-REMOVE slide-title class !!!!!!!!!
+## Never ignore failing tests
 
-<h2 class="slide-title">Never ignore failing tests</h2>
-
-<p class="mt-6 fragment">Fix flaky tests as soon as possible
+<p class="mt-300 fragment">Fix flaky tests as soon as possible
 
 <p class="fragment">If not fixed within a given time frame,<br> <strong>quarantine</strong> or <strong>delete</strong> the flaky test
 

@@ -8,6 +8,17 @@
 
 ---
 
+
+## What is tests isolation?
+
+Isolated tests can run in any order
+
+
+---
+
+
+---
+
 ## Verify the free delivery on a created product
 
 

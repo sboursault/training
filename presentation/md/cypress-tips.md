@@ -17,9 +17,12 @@
 
 ## debugger...
 
+- From the time travel, inspect requests and responses
+- and also debugger with dev tools open
+
 ---
 
-<h2 class="slide-title">Wait for events, not time</h2>
+## Wait for events, not time
 
 
 <h3 class="fragment">When can I verify the result of async operations?</h3>
@@ -39,7 +42,7 @@ cy.wait('@addProductToBasket')  // wait for a http response
 
 <!-- .element: class="fragment" -->
 
-<p class="text-level-2 apart fragment">Wait for events to avoid <strong>long</strong> and <strong>flaky</strong> tests</p>
+<p class="text-level-2 mt-125 fragment">Wait for events to avoid <strong>long</strong> and <strong>flaky</strong> tests</p>
 
 <small class="fragment">More on cypress implicit waits: <a href="https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting">https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</a></small>
 
@@ -51,14 +54,14 @@ Testing offten involves asynchronous behaviours.
 
 ---
 
-<h2 class="slide-title">Minimize UI interactions</h2>
+## Minimize UI interactions
 
 
-<p class="mt-5 fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests <br> not dealing with <strong>UI-specific risks</strong>
+<p class="mt-250 fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests <br> not dealing with <strong>UI-specific risks</strong>
 
-<p class="mt-2 fragment">Setup your tests through <strong>api</strong>, <strong>db access</strong>...
+<p class="mt-125 fragment">Setup your tests through <strong>api</strong>, <strong>db access</strong>...
 
-<p class="mt-5 fragment">No UI set-up is <strong>faster</strong> and <strong>easier to maintain</strong>
+<p class="mt-250 fragment">No UI set-up is <strong>faster</strong> and <strong>easier to maintain</strong>
 
 Note:
 

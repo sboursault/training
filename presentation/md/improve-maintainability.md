@@ -25,7 +25,7 @@ Simplify code with dedicated selectors, custom command and page object
 <p class="fragment">We spend much more time reading code, than writing it.<br/>
 So the code should optimize for reading.
 
-<p class="mt-2 fragment">An E2E test have many reasons to fail
+<p class="mt-125 fragment">An E2E test have many reasons to fail
 <ul class="fragment">
   <li>the application may not have been designed to be tested
   <li>the UI can change frequently
@@ -38,18 +38,18 @@ SDET: automaticien
 
 ---
 
-<h2 class="slide-title">Dedicated selectors</h2>
+## Dedicated selectors
 
-<p class="mt-5 fragment">Add a<code>data-testid</code> attribute to query your html elements</p>
+<p class="mt-250 fragment">Add a<code>data-testid</code> attribute to query your html elements</p>
 
 ```html
 <input type="email" id="email" name="email"
   class="form-control" data-testid="register-form__email-input"/>
 ```
 
-<!-- .element: class="fragment mt-3" -->
+<!-- .element: class="fragment mt-150" -->
 
-<p class="mt-5 fragment">Selectors based on a dedicated attribute are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
+<p class="mt-250 fragment">Selectors based on a dedicated attribute are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
 
 
 Note:
@@ -101,7 +101,7 @@ cy.get(`[data-testid=my-component]`)
 ```
 <!-- .element: class="fragment" -->
 
-<div class="fragment mt-2">
+<div class="fragment mt-125">
 
 <p class="text-level-2">can be simplified with a custom command:
 
@@ -111,14 +111,14 @@ cy.getByTestid(`my-component`)
 
 </div>
 
-<p class="fragment mt-3">Custom commands work well for behaviors that are desirable across many tests.
+<p class="fragment mt-150">Custom commands work well for behaviors that are desirable across many tests.
 
 
 ---
 
-<h2 class="slide-title">Page object pattern</h2>
+## Page object pattern
 
-<p class="mt-4 fragment">Page objects abstract away the technical interactions from the decision code</p>
+<p class="mt-200 fragment">Page objects abstract away the technical interactions from the decision code</p>
 
 ```typescript
 cy.get(".basket-mini .dropdown-toggle").click(); // this is about HTML
@@ -133,7 +133,7 @@ cataloguePage.displayMiniBasket();               // this is about the
 
 <!-- .element: class="fragment" -->
 
-<p class="mt-3 fragment">Tests with Page Objects are <strong>easier to read</strong> and <strong>easier to maintain</strong>
+<p class="mt-150 fragment">Tests with Page Objects are <strong>easier to read</strong> and <strong>easier to maintain</strong>
 
 
 ---

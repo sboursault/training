@@ -60,7 +60,7 @@ describe('home-page', () => {
 
 <p class="fragment" data-fragment-index="1">When I started on my last project...
 
-<div class="box flex-row apart screen fragment" style="padding:40px;" data-fragment-index="2">
+<div class="box flex-row mt-100 screen fragment" style="padding:40px;" data-fragment-index="2">
   <div class="badge" data-arrow="->task-dev">Specifications</div>
   <div class="badge fragment" data-arrow="->task-test" id="task-dev" data-fragment-index="3">Development<br>(Developer)</div>
   <div class="badge overlay-anchor fragment" data-arrow="->task-prod" id="task-test" data-fragment-index="4">Manual tests<br>(Tester)
@@ -75,7 +75,7 @@ describe('home-page', () => {
 
 <div class="flex-row">
   <div class="flex-column tiny-gap">
-    <ul class="mt-2 text-level-3 no-bullets">
+    <ul class="mt-100 text-level-3 no-bullets">
       <li class="fragment"><i class="emo emoji-x"></i>Different understanding
       <li class="fragment"><i class="emo emoji-x"></i>Regressions happen
       <li class="fragment"><i class="emo emoji-x"></i>Too many non regression tests to execute manually
@@ -96,7 +96,7 @@ describe('home-page', () => {
 
 <p class="fragment " data-fragment-index="1">So, let's automate end to end tests...
 
-<div class="box flex-row apart screen fragment" style="padding:40px;" data-fragment-index="2">
+<div class="box flex-row mt-100 screen fragment" style="padding:40px;" data-fragment-index="2">
   <div class="badge" data-arrow="->task-dev">Specifications</div>
   <div class="badge fragment" id="task-dev" data-arrow="->task-test" data-fragment-index="3">Development<br>(Developer)</div>
   <div class="badge overlay-anchor fragment" id="task-test" data-arrow="->task-prod" data-fragment-index="4">Test automation<br>(Tester & Developer)
@@ -109,7 +109,7 @@ describe('home-page', () => {
 
 <img src="img/print/bdd-2.png" class="print"></img>
 
-<div class="mt-3 flex-row">
+<div class="mt-150 flex-row">
   <div class="flex-column gap-10">
     <ul class="text-level-3 no-bullets">
       <li class="fragment"><i class="emo emoji-x"></i>Different understanding
@@ -131,7 +131,7 @@ describe('home-page', () => {
 
 <p class="fragment">The <strong>Behaviour Driven Development</strong> approach
 
-<div class="box flex-row screen fragment mt-1" style="padding:30px;">
+<div class="box flex-row screen fragment mt-100" style="padding:30px;">
   <div class="badge" data-arrow="->task-example">Specifications</div>
   <div class="badge fragment" id="task-example" data-arrow="->task-dev,->task-test">Example workshop</div>
   <div class="flex-column">
@@ -146,7 +146,7 @@ describe('home-page', () => {
 
 <img src="img/print/bdd-3.png" class="print"></img>
 
-<p class="apart text-level-3 fragment">For each story, we agree on a set of concrete <strong>key examples</strong>
+<p class="mt-125 text-level-3 fragment">For each story, we agree on a set of concrete <strong>key examples</strong>
 
 <ul class="text-level-3 no-bullets fragment">
   <li class="fragment"><i class="emo emoji-thumbup"></i>The team discover unknown unknowns earlier
@@ -173,7 +173,7 @@ A few words about specification by examples and 3 amigos ?
     I want to see my basket content in the mini-basket,<br>
     so that I always know the basket's content and amount.</i>
   </ul>
-  <p class="mt-2">As a team, define acceptance criteria for this story
+  <p class="mt-125">As a team, define acceptance criteria for this story
 
 </div>
 
@@ -195,7 +195,7 @@ _Possible list:_
 ---
 
 ## &lt;/> automate the verification with cypress
-<!-- .element: data-toc-exclude -->
+<!-- .element: data-toc-exclude class="text-size-heading-3"-->
 
 <div class="block--exercice text-level-3">
   <p>During the specification workshop, we identifed some acceptance criteria.

@@ -8,4 +8,9 @@
 
 ---
 
-## tests on the basket recovery with clear basket by api
+## Verify the basket recovery
+
+---
+
+## make it REPEATABLE by clearing the basket by API, need DEBUG, cy.request
+
