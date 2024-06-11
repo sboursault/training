@@ -4,10 +4,9 @@
 <!-- .slide: id="lets-practice-login" class="slide--part-title slide--vcenter" -->
 
 
-
   <div class="part-title">
     <span class="text-level-3">Part 3</span>
-    <h1>Let's practice: <br/> Verify the login</h1>
+    <h1>👩‍💻 Let's practice: <br/> Verify the login </h1>
   </div>
 
 
@@ -20,7 +19,7 @@ Simplify code with dedicated selectors, custom command and page object
 ---
 
 ## &lt;/> Specification workshop for the login
-<!-- .element: data-toc-level="2" data-toc-label="Specification workshop" -->
+<!-- .element: data-toc-icon="code" data-toc-label="Verify the login" -->
 
 <div class="block--exercice mt-5">
   <p>The Product Owner presents a new story:
@@ -44,13 +43,13 @@ The user can be created manually.
 
 ---
 
-## &lt;/> Automize the login verification
-<!-- .element: data-toc-level="2" data-toc-label="Let's code" -->
+## </> Automate the login verification
+<!-- .element: data-toc-exclude -->
 
 <div class="block--exercice text-level-1">
   <p>Let's code
   <ul>
-    <li>Automize the verification of the login acceptance criteria
+    <li>Automate the verification of the login acceptance criteria
     <li>Simplify the code with hooks, custom commands and page objects
   </ul>
   <p>Cypress commands that may help

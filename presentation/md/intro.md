@@ -28,7 +28,7 @@ sboursault@proton.me
 
 ---
 
-Intent of this course
+## Intent of this course
 
 - understanding good practices to include E2E tests in your development process
 - practice with cypress api and tools
@@ -53,3 +53,7 @@ Intent of this course
 </ol>
 
 </div>
+
+---
+
+<!-- .slide: id="complete-toc" class="slide--vcenter" -->

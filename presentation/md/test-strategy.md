@@ -14,19 +14,16 @@
 
 ---
 
-
-
-
-
 <!-- .slide: data-auto-animate -->
-<h2 class="slide-title">Agile testing quandrants</h2>
+## Agile testing quandrants
 
 <img class="mt-0 fragment" src="img/agile-testing-quandrands.jpg" style="max-width:60%" >
 
 ---
 <!-- .slide: data-auto-animate -->
 
-<h2 class="slide-title screen">Agile testing quandrants</h2>
+## Agile testing quandrants
+<!-- .element: data-toc-exclude -->
 
 <div class="flex-row text-level-3">
 
@@ -63,12 +60,12 @@ Which ones are necessary to succeed?
 
 ---
 
-<h2 class="slide-title">3 amigos</h2>
+## 3 amigos?
 
 
 ---
 
-<h2 class="slide-title">Who automates the tests?</h2>
+## Who automates the tests?
 
 <p class="mt-5 fragment">Favour a <strong>whole team approach</strong></p>
 
@@ -91,7 +88,7 @@ Everyone should feel responsible for the automated tests
 
 ---
 
-<h2 class="slide-title">Continuous Integration <br> / Continuous Delivery</h2>
+## Continuous Integration <br> / Continuous Delivery
 
 <h3 class="mt-4 fragment">Run automated tests on each release</h3>
 
@@ -106,6 +103,8 @@ On a shared environment, tests can fail for external reasons.
 you must have clear control over the environment in which the tests run.
 
 ---
+
+REMOVE slide-title class !!!!!!!!!
 
 <h2 class="slide-title">Never ignore failing tests</h2>
 

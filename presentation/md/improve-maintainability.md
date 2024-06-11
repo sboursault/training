@@ -90,12 +90,6 @@ describe('My feature', () => {
 ```
 <!-- .element: style="font-size:37%" -->
 
-
----
-
-## &lt;/> Add hooks
-<!-- .element: data-toc-level="2" data-toc-label="Let's code" -->
-
 ---
 
 ## Custom command
@@ -122,28 +116,6 @@ cy.getByTestid(`my-component`)
 
 ---
 
-## &lt;/> Creating a custom command
-<!-- .element: data-toc-level="2" data-toc-label="Let's code" -->
-
-
-<div class="block--exercice text-level-3">
-  <p>Let's code
-  <ul>
-    <li>Create the custom command <code>cy.getByTestid()</code> and refactor the test code to use it.
-  </ul>
-  <p>Hints
-  <ul>
-    <li>Define the command in <code>cypress/support/commands.js</code>
-  </ul>
-  <p>Userful links
-  <ul style="font-size:75%">
-    <li class="url-link">https://docs.cypress.io/api/cypress-api/custom-commands
-    <li class="url-link">https://docs.cypress.io/guides/tooling/typescript-support#Types-for-Custom-Commands
-  </ul>
-</div>
-
----
-
 <h2 class="slide-title">Page object pattern</h2>
 
 <p class="mt-4 fragment">Page objects abstract away the technical interactions from the decision code</p>
@@ -164,11 +136,34 @@ cataloguePage.displayMiniBasket();               // this is about the
 <p class="mt-3 fragment">Tests with Page Objects are <strong>easier to read</strong> and <strong>easier to maintain</strong>
 
 
+---
+
+## &lt;/> Creating a custom command
+<!-- .element: data-toc-label="Simplify the mini-basket tests" data-toc-icon="code" -->
+
+
+<div class="block--exercice text-level-3">
+  <p>Let's code
+  <ul>
+    <li>Create the custom command <code>cy.getByTestid()</code> and refactor the test code to use it.
+  </ul>
+  <p>Hints
+  <ul>
+    <li>Define the command in <code>cypress/support/commands.js</code>
+  </ul>
+  <p>Userful links
+  <ul style="font-size:75%">
+    <li class="url-link">https://docs.cypress.io/api/cypress-api/custom-commands
+    <li class="url-link">https://docs.cypress.io/guides/tooling/typescript-support#Types-for-Custom-Commands
+  </ul>
+</div>
+
+
 
 ---
 
 ## &lt;/> Test with Page Objects
-<!-- .element: data-toc-level="2" data-toc-label="Let's code" -->
+<!-- .element: data-toc-exclude -->
 
 
 <div class="block--exercice text-level-3">

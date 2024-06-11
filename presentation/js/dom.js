@@ -18,3 +18,8 @@ export function createNode(type, attributes, content) {
   else if (content && typeof content === 'object') newElement.appendChild(content)
   return newElement
 }
+
+export function addText(parent, text) {
+  const newtext = document.createTextNode(text);
+  parent.appendChild(newtext);
+}

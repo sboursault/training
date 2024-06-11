@@ -36,7 +36,7 @@ specification workshop on the mini basket
 
 
 **45min**
-The professor automizes the 2 tests on the mini basket always shown info,
+The professor automates the 2 tests on the mini basket always shown info,
 the trainee repeats.
 
 > work with css selectors
@@ -44,7 +44,7 @@ the trainee repeats.
 > cypress time travel
 
 **45min**
-The professor automize the 2 tests on the mini basket detail.
+The professor automates the 2 tests on the mini basket detail.
 We use a more precise selector for the product to use.
 The trainee repeats.
 
@@ -74,7 +74,7 @@ The trainee codes the test on the login
 Theoretical part: Cypress tips
 
 
-Now let's speak about repeatability and speed
+Now let's speak about **repeatability and speed**
 
 **20min**
 basket recovery workshop

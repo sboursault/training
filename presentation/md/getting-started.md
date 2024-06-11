@@ -16,7 +16,8 @@
 
 ---
 
-<h2 data-toc-label="Create and configure a Cypress project" class="text-size-heading-3">&lt;/> Create and configure a Cypress project</h2>
+## &lt;/> Create and configure a Cypress project
+<!-- .element: class="text-size-heading-3"  data-toc-label="Create and configure a Cypress project" data-toc-icon="code" -->
 
 <div class="block--exercice text-level-3">
   <p>Let's code
@@ -85,7 +86,7 @@ describe('home-page', () => {
   </div>
   <div class="bubble bubble-bottom-left flex-row fragment">
     <i class="emo emo-36 emoji-nerd_face"></i>
-    <span class="bubble__text">Maybe we should automize <br> end to end tests...</span>
+    <span class="bubble__text">Maybe we should automate <br> end to end tests...</span>
   </div>
 </div>
     
@@ -93,7 +94,7 @@ describe('home-page', () => {
 
 ---
 
-<p class="fragment " data-fragment-index="1">So, let's automize end to end tests...
+<p class="fragment " data-fragment-index="1">So, let's automate end to end tests...
 
 <div class="box flex-row apart screen fragment" style="padding:40px;" data-fragment-index="2">
   <div class="badge" data-arrow="->task-dev">Specifications</div>
@@ -163,7 +164,7 @@ A few words about specification by examples and 3 amigos ?
 ---
 
 ## &lt;/> Define acceptance criteria
-<!-- .element: data-toc-level="2" data-toc-label="Specification workshop" -->
+<!-- .element: data-toc-icon="code" data-toc-label="Verify the mini-basket" -->
 
 <div class="block--exercice mt-5">
   <p>The Product Owner presents a new story:
@@ -193,13 +194,14 @@ _Possible list:_
 
 ---
 
-## &lt;/> Automize verification with cypress
+## &lt;/> automate the verification with cypress
+<!-- .element: data-toc-exclude -->
 
 <div class="block--exercice text-level-3">
   <p>During the specification workshop, we identifed some acceptance criteria.
   <p>Let's code
   <ul>
-    <li>Automize the verification of the acceptance criteria
+    <li>Automate the verification of the acceptance criteria
   </ul>
   <p>Cypress commands that may help
   <ul class="text-level-4">
