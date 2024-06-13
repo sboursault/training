@@ -43,3 +43,7 @@ sboursault@proton.me
 
 ## Course outline
 <!-- .element: class="text-size-heading-3 mt-025" -->
+
+<ol class="text-level-6" style="column-count: 2;">
+</ol>
+

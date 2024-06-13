@@ -15,10 +15,17 @@
 
 ---
 
-## debugger...
+## Debug tests
 
-- From the time travel, inspect requests and responses
-- and also debugger with dev tools open
+<ul class="mt-300">
+  <li class="fragment"><code>cy.pause()</code>
+  <li class="fragment"><code>cy.then(() => debugger)</code> (with the dev tools open)
+  <li class="fragment">From the time travel, click on a request to inspect its response
+</ul>
+
+
+
+<small class="fragment mt-300">Cypress debugging guide: <a href="https://docs.cypress.io/guides/guides/debugging">https://docs.cypress.io/guides/guides/debugging</a></small>
 
 ---
 
