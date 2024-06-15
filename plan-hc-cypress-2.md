@@ -11,7 +11,7 @@ Cette formation vous apprendra comment construire une suite de tests E2E **maint
 
 Cet apprentissage s'adresse aussi bien aux développeurs qu'aux testeurs qui souhaitent se former à l'automatisation des tests E2E avec Cypress.
 
-Au cours de la session, nous verrons comment traduire un besoin en critères d'acceptation, et comment automatiser leur vérification. Vous apprendrez comment construire une suite de tests en partant de zéro. Vous vous approprierez l'API Cypress et son écosytème, tout en découvrant les bonnes pratiques de cette discipline. Vous comprendrez comment améliorer la lisibilité et la maintenabilité des tests avec le pattern **Page Object**, et comment les fiabiliser en les rendant **indépendants** et **répétables**. Enfin, nous verrons comment optimiser l'exécution des tests en préférant des appels API pour la préparation des données.
+Au cours de la session, nous verrons comment traduire un besoin en critères d'acceptation, et comment automatiser leur vérification. Vous apprendrez comment construire une suite de tests en partant de zéro. Vous vous approprierez l'API Cypress et son écosytème, tout en découvrant les bonnes pratiques de cette discipline. Vous comprendrez comment améliorer la lisibilité et la maintenabilité des tests avec le pattern **Page Object**, et comment les fiabiliser en les rendant **isolés** et **répétables**. Enfin, nous verrons comment optimiser l'exécution des tests en préférant des appels API pour la préparation des données.
 
 Parce que c'est en forgeant qu'on devient forgeron, la formation est axée sur la pratique. En fil rouge, vous élaborerez une suite de tests qui vérifie les fonctionnalités d'un site e-commerce, comme par exemple la gestion du panier ou le déclenchement des promotions.
 
@@ -23,9 +23,10 @@ Comme pour toutes nos formations, chaque session est limitée à [6 participants
 - Concevoir des tests E2E
 - Automatiser ces tests avec Cypress
 - Améliorer la lisibilité et l'évolutivité des tests E2E
-- Écrire des tests E2E robustes (des tests indépendants et répétables)
+- Écrire des tests E2E robustes (des tests isolés et répétables)
 - Optimiser leur temps d'exécution
 
+A REVOIR
 
 ## Pré-requis
 
@@ -42,27 +43,66 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
 
 ### Jour 1 : Automatisation des tests
 
+#### Démmarrer avec Cypress
+
 - Écosystème Cypress (CLI, Application, time travel, logs)
 - Principales commandes de l'api de développement
+  - `visit`
+  - `get`
+  - `contains`
+  - `click`
+  - `type`
+  - `should`
+
+**Mises en pratique :**
+ - Initialisation d'un projet Cypress avec Typescript
+ - Atelier de spécification sur le comportement du mini-panier d'un site e-commerce
+ - Automatisation des critères d'acceptation
+ - Réécriture avec des commandes custom et le pattern Page Object
+
+#### Améliorer la maintenabilité
 - Identification des sélecteurs stables (sélecteurs CSS, sélecteurs dédiés)
+- Hooks
 - Commandes custom
 - Pattern Page Object
 
 **Mises en pratique :**
- - Initialisation d'un projet Cypress avec Typescript
- - Atelier d'écriture de critères d'acceptation sur les fonctionnalités d'un site e-commerce
- - Automatisation des critères d'acceptation sur le login et le comportement du panier
+ - Atelier de spécification sur le login
+ - Automatisation des critères d'acceptation
  - Réécriture avec des commandes custom et le pattern Page Object
  
 ### Jour 2 : Gérer votre suite de tests
 
-- Qualités d'un bon test automatisé (isolé, répétable, rapide...)
-- Place des tests E2E dans la stratégie de test
+
+#### Stratégie de test
+- Place des tests E2E dans la stratégie de test (Agile testing quadrants)
+- Qui automatise les tests
+- Tips CI/CD
 
 **Mises en pratique :**
- - Ateliers d'écriture de critères d'acceptation
- - Tests plus complexes sur le panier, optimisation de la phase de préparation grâce aux appels API
- - Tests sur la gestion des promotions, avec génération du jeu de données
+ - Gérer les variables d'environnment
+
+
+#### Écrire des tests rapides et répétables
+
+- Écrire des tests répétables
+- Optimisation du temps d'exécution de la suite
+- Debugger les tests Cypress
+- Commande Cypress `request`
+
+**Mises en pratique :**
+ - Atelier de spécification et automatisation des tests sur la récupération du panier
+ - Nettoyage des données dans la phase de préparation du test
+ - Optimisation de la phase de préparation grâce aux appels API
+
+
+### Écrire des tests isolés
+
+- Génération d'un jeu de données spécifique pour un test
+
+**Mises en pratique :**
+ - Atelier de spécification sur les frais de livraison
+ - Dans la phase de préparation et via api, création des produits pertinents pour vérifier les critères d'acceptation
 
 
 
@@ -76,7 +116,7 @@ Cypress, Typescript, Python, Java
 
 Sébastien est un développeur curieux et touche-à-tout. Il est passé par tous les rôles d'une équipe de développement : Développeur, Testeur, Scrum Master et Product owner.
 
-Il travaille pour un éditeur dans une approche où les critères d'acceptation deviennent des tests automatisés qui pilotent le développement. Cette approche leur permet d'avancer vite et sereinement.
+Il travaille pour un éditeur dans une approche où les critères d'acceptation deviennent les tests automatisés qui pilotent le développement. Cette approche leur permet d'avancer vite et sereinement.
 
 Sébastien partage volontiers sa culture du clean code et de l'automatisation des tests, en particulier lors de ses formations, où il apprécie d'échanger avec des personnes d'horizons différents.
 
