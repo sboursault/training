@@ -90,7 +90,7 @@ Everyone should feel responsible for the automated tests
 
 ## Continuous Integration <br> / Continuous Delivery
 
-<h3 class="mt-200 fragment">Run automated tests on each release</h3>
+<h3 class="fragment">Run automated tests on each release</h3>
 
 <p class="text-level-2 fragment">as part of your CI/CD pipeline
 
@@ -101,6 +101,22 @@ Everyone should feel responsible for the automated tests
 Note:
 On a shared environment, tests can fail for external reasons.
 you must have clear control over the environment in which the tests run.
+
+---
+
+## </> Variables d'environnement
+
+extraire les variables d'environnement dans un fichier .env
+https://glebbahmutov.com/blog/load-cypress-env-settings/
+https://docs.cypress.io/api/cypress-api/env
+
+peut-être ça aussi :
+https://stackoverflow.com/a/72991731
+
+créer une commande pour exécuter sur un environnement précis
+
+override environment variables:
+https://docs.cypress.io/guides/guides/environment-variables
 
 ---
 

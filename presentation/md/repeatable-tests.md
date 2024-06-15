@@ -77,7 +77,7 @@ curl -X DELETE https://.../api/basket -u "tom@test.com:tom@test.com"
 ---
 
 ## </> Make the tests repeatable
-<!-- .element: data-toc-exclude class="text-size-heading-3" -->
+<!-- .element: class="text-size-heading-3" -->
 
 <div class="block--exercice text-level-1">
   <p>Let's code

@@ -13,9 +13,11 @@
 
 Isolated tests can run in any order
 
+Ultimately, they can even run in parallel :)
 
 ---
 
+en bonus: utiliser des comptes différents pour chaque fichier de spec
 
 ---
 
