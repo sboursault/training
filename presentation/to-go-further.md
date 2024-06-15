@@ -13,7 +13,7 @@
 
 ---
 
-<h2 class="slide-title">Acceptance criteria</h2>
+## Acceptance criteria
 
 A user story is composed of...
 
@@ -30,7 +30,7 @@ A user story is composed of...
     </div>
   </div>
 
-  <div class="flex-row mt-4 fragment">
+  <div class="flex-row mt-200 fragment">
     <div class="box text-level-4" style="text-align:center; width:15%;">
        and its <br> acceptance criteria
     </div>
@@ -48,9 +48,9 @@ A user story is composed of...
 
 ---
 
-<p class="apart fragment">Acceptance tests comes out of acceptance criteria
+<p class="mt-125 fragment">Acceptance tests comes out of acceptance criteria
 
-<div class="apart fragment">
+<div class="mt-125 fragment">
 <!--Thinking about tests before development is more efficient <br>  and favors a <strong>whole team approach</strong> on E2E testing-->
 Plutôt qu'une personne qui vérifie les critères d'acceptation
 </div>
@@ -67,7 +67,7 @@ Overly complex examples, or too many examples, are often a sign that some import
 
 ---
 
-<h2 class="slide-title">How to make it work</h2>
+## How to make it work
 
 
 - Start with the simplest key example 
@@ -81,26 +81,11 @@ Dans les tp, proposer des règles de gestion floues, qui pourront être affinée
 
 ---
 
-<h2 class="slide-title">Specification workshop</h2>
+## Specification workshop
 
 
-Surtout expliquer qu'on se réunit avant de démarrer le développement pour comprendre le périmètre de la story,
-et comment la vérification sera automatisée
 
-<p class="mt-4 fragment">A programmer, a tester and the PO have a conversation <br> to clarify the acceptance criteria of a user story
-
-<p class="fragment">The acceptance criteria are illustrated with examples
-
-  <!--- Participants
-    - A programmer, who thinks about how to make things, says what is feasable, suggests simpler paths
-    - A tester, who thinks about how to break things, and come up with lots of scenarios, sometimes covering obscure edge cases, and sometimes covery very important ones 
-    - The product owner, who cares about scope
-    - Anybody relevant to the story being discussed (operations, UX designer...)-->
-
----
-
-
-<p class="mt-6">Tips to make it work:
+<p class="mt-300">Tips to make it work:
 <ul>
 <li class="text-level-2 fragment">Invite whoever is relevant (operations, UX designer...)
 <li class="text-level-2 fragment">Keep Discovery Workshops short and frequent (15 min. per story, every other day)
@@ -111,11 +96,11 @@ et comment la vérification sera automatisée
 
 
 
-<h2 class="slide-title">Acceptance criteria</h2>
+## Acceptance criteria
 
 <p class="fragment">Illustrate rules with <strong>key examples</strong> and <strong>counter examples</strong>
 
-<p class="text-level-2 apart fragment">Howto:
+<p class="text-level-2 mt-125 fragment">Howto:
 <ul>
 <li class="text-level-2 fragment">Prefer actual values over generalisations (unless the value is irrelevant to the rule)
 <li class="text-level-2 fragment">Use natural language (the given/when/then structure can come later)
@@ -124,7 +109,7 @@ et comment la vérification sera automatisée
 <li class="text-level-2 fragment">Group rules when there are too many
 </ul>
 
-<p class="text-level-2 apart fragment">Too many examples for a rule (more than 5)? look for hidden concepts
+<p class="text-level-2 mt-125 fragment">Too many examples for a rule (more than 5)? look for hidden concepts
 
 
 
@@ -146,7 +131,7 @@ et comment la vérification sera automatisée
 
 ---
 
-<h2 class="slide-title">Automated tests in the dev process</h2>
+## Automated tests in the dev process
 
 <div class="box fragment">
   <p class="box__title">Sprint</p>
@@ -184,7 +169,7 @@ We need to balance completeness, clarity and speed.
 
 ---
 
-<h2 class="slide-title">Test you apis</h2>
+## Test you apis
 
 ---
 
@@ -208,9 +193,7 @@ See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to 
 
 ---
 
-<h2 class="slide-title">Test you apis</h2>
-
-
+## Test you apis
 
 ---
 
@@ -232,7 +215,7 @@ See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to 
 <!-- .slide: id="shaded-figs" -->
 
 
-<h2 class="slide-title">Find alternative paths</h2>
+## Find alternative paths
 
 Use the ‘shaded figs’ to find alternative path to verify
 <br/><span class="text-level-5">from [50 quick ideas to improve your tests](https://leanpub.com/50quickideas-tests/read)</span>
@@ -261,7 +244,7 @@ Use the ‘shaded figs’ to find alternative path to verify
 
 
 
-<table class="mt-3 text-level-4">
+<table class="mt-150 text-level-4">
 
 <tr class="fragment">
 <td style="text-align: center; text-wrap: nowrap;">Embarrassing<br/>💩 🤦‍♂️<td>

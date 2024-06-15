@@ -1,21 +1,54 @@
+import { createChild, createNode, addText } from './dom.js';
+    
 
-export function fillTocs() {
+export function fillCompleteToc() {
+  const ulLevel1 = document.querySelector('#toc ol')
+  document.querySelectorAll('.slide--part-title:not(.slide-background)').forEach(partTitleSlide => {
+      const partTitle = partTitleSlide.querySelector('h1')
+      const li = createChild(ulLevel1, 'li')
+      const tocLink = createNode('a', {href: getSlideUrl(partTitleSlide)}, partTitle.textContent)
+      createChild(li, 'strong', {}, tocLink)
+      const ulLevel2 = createChild(li, 'ul', {})
+      fillPartToc(ulLevel2, partTitleSlide)
+    }
+  )
+}
+
+export function fillPartTocs() {
   document.querySelectorAll('.slide--part-title').forEach(partTitleSlide => {
-    const tocElement = partTitleSlide.querySelector('.part-toc')
-    if (tocElement) {
-      let tocContent = ''
-      let sibling = getSiblingUnlessPartTileSlide(partTitleSlide)
-      while (sibling != null) {
-        const h2Element = sibling.querySelector('h2')
-        const tocEntry = `<li>${h2Element.innerHTML}</li>`
-        if (h2Element && !tocContent.includes(tocEntry))  // keep only 1 entry when 2 slides have the same title
-          tocContent += tocEntry
-        sibling = getSiblingUnlessPartTileSlide(sibling)
-      }
-
-      tocElement.innerHTML = '<h2>Content:</h2><ul>' + tocContent + '</ul>'
+    const toc = partTitleSlide.querySelector('.part-toc')
+    if (toc) {
+      createChild(toc, 'h2', {}, 'Content:')
+      const ul = createChild(toc, 'ul')
+      fillPartToc(ul, partTitleSlide)
     }
   })
+}
+
+function fillPartToc(ul, partTitleSlide) {
+  let slide = getSiblingUnlessPartTileSlide(partTitleSlide)
+  while (slide != null) {               
+    const h2Element = slide.querySelector('h2')
+    const exclude = h2Element.getAttribute('data-toc-exclude')
+    if (exclude === null) {
+      const tocLabel = h2Element.getAttribute('data-toc-label') || h2Element.innerText
+      const icon = h2Element.getAttribute('data-toc-icon')
+      const tocLink = createNode('a', {href: getSlideUrl(slide)})
+      if (icon === 'code') createChild(tocLink,'span', {style:'font-family:monospace; font-size: 85%; margin-right: 0.4rem; letter-spacing: -1px;'}, '<∕>')
+      addText(tocLink, tocLabel)
+      createChild(ul, 'li', {}, tocLink)
+    }
+    slide = getSiblingUnlessPartTileSlide(slide)
+  }
+}
+
+let allSlides;
+
+function getSlideUrl(slide) {
+  if (!allSlides)
+    allSlides = document.querySelectorAll('.slides > section')
+  const slideIndex = [].indexOf.call(allSlides, slide)
+  return `/#/${slideIndex}`
 }
 
 export function wrapExercice() {
@@ -30,7 +63,7 @@ export function wrapExercice() {
     newDiv.appendChild(left)
 
     const img = document.createElement('img')
-    img.setAttribute("style", "width:25%;padding-bottom:80px;");
+    img.setAttribute("style", "width:25%;padding-bottom:2em;");
     img.setAttribute("src", "img/coding.png");
     newDiv.appendChild(img)
 
@@ -118,12 +151,16 @@ export function init() {
     margin: 0.04,
     center: false,
     hash: true, // adds # in urls to allow url navigation
+    //view: 'scroll',
+    //scrollProgress: 'auto',
+    navigationMode: 'linear',
     plugins: [RevealMarkdown, RevealNotes, RevealHighlight]
   });
   Reveal.on('ready', event => {
-    fillTocs()
+    fillPartTocs()
     wrapExercice()
     wrapLinks()
+    fillCompleteToc()
     // addBreadcrumbs()
     setTimeout(
       () => {

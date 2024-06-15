@@ -1,9 +1,9 @@
 import { JSDOM } from 'jsdom';
 import { strictEqual } from 'assert';
-import { fillTocs, addBreadcrumbs } from '../js/presentation.js';
+import { fillPartTocs, addBreadcrumbs } from '../js/presentation.js';
 
 
-describe('fillTocs', function () {
+describe('fillPartTocs', function () {
   it('fills elements with a `part-toc` class', function () {
 
     // given
@@ -32,7 +32,7 @@ describe('fillTocs', function () {
     global.document = dom.window.document
 
     // when
-    fillTocs()
+    fillPartTocs()
 
     // then
     strictEqual(

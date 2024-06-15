@@ -188,7 +188,7 @@ describe('home', () => {
 
 <br>
 
-### Automize verification with cypress
+### Automate verification with cypress
 
 
 

@@ -32,15 +32,11 @@ Theoretical part: End to end tests in the development process
 
 **20min**
 
-workshop
+specification workshop on the mini basket
 
-- _The mini basket always shows the number of products in basket_
-- _It contains basket entries (with prodcut name, quantity and price)_
-- _When empty, it doesn't show the number of products in basket_
-- _When empty, it informs the basket is empty_
 
 **45min**
-The professor automizes the 2 tests on the mini basket always shown info,
+The professor automates the 2 tests on the mini basket always shown info,
 the trainee repeats.
 
 > work with css selectors
@@ -48,7 +44,7 @@ the trainee repeats.
 > cypress time travel
 
 **45min**
-The professor automize the 2 tests on the mini basket detail.
+The professor automates the 2 tests on the mini basket detail.
 We use a more precise selector for the product to use.
 The trainee repeats.
 
@@ -58,7 +54,6 @@ commit
 
 **45min**
 The professor refactors the tests with beforeEach and page objects (CataloguePage).
-Distinguish components (miniBasketLink) from behaviours (showMiniBasket, addProductToBasket)
 
 > typescript and page objects
 
@@ -68,33 +63,21 @@ The trainee repeats.
 ------------------- mid-day break -------------------
 
 
-
 **15min**
-workshop to identify test to verify login
-(successful login + failed login)
+login spectification workshop
 
 **60min**
-The trainee automize the test, using what he has learned so far (page object and hooks)
-He needs to create a user manually for the first time.
-possible list :
-- the login accepts valid credentials
-- shows an error on invalid password
+The trainee codes the test on the login
 
-> cypress api (type)
 
 **20min**
 Theoretical part: Cypress tips
 
 
-Now let's speak about repeatability and speed
+Now let's speak about **repeatability and speed**
 
 **20min**
 basket recovery workshop
-
-//- After login, the mini basket contains the items from my last session
-//- After logout, the mini basket is empty
-//- After login, the product also contain the items I added as an anonymous user
-//- After login, the mini basket contains both the items from my last session and those from my current basket
 
 **15min**
 The teacher starts a simple and valuable scenario
