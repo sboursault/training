@@ -64,13 +64,22 @@ Testing offten involves asynchronous behaviours.
 ## Minimize UI interactions
 
 
-<p class="mt-250 fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests <br> not dealing with <strong>UI-specific risks</strong>
+<p class="fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests <br> not dealing with <strong>UI-specific risks</strong>
 
-<p class="mt-125 fragment">Setup your tests through <strong>api</strong>, <strong>db access</strong>...
+<p class="fragment">Setup your tests through <strong>api</strong>, <strong>db access</strong>...
 
-<p class="mt-250 fragment">No UI set-up is <strong>faster</strong> and <strong>easier to maintain</strong>
+<p class="fragment">No UI set-up is <strong>faster</strong> and <strong>easier to maintain</strong>
+
+
+A better option is to clear the basket through api
+- api change less offten than ui
+- the api call easier to develop
+- the api call runs faster
+- api are (offten) synchronous
 
 Note:
+
+
 
 From 50 quick ideas...
 By avoiding the UI layer where it is not actually relevant for the purpose of the test, teams can save a lot of troubleshooting time and speed up feedback, while still keeping the same level of risk coverage.

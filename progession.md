@@ -79,11 +79,6 @@ Now let's speak about **repeatability and speed**
 **20min**
 basket recovery workshop
 
-//- After login, the mini basket contains the items from my last session
-//- After logout, the mini basket is empty
-//- After login, the product also contain the items I added as an anonymous user
-//- After login, the mini basket contains both the items from my last session and those from my current basket
-
 **15min**
 The teacher starts a simple and valuable scenario
 - After login, the mini basket contains the items from my last session

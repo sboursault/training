@@ -25,6 +25,8 @@
   --color-orange-3: #ff3300;
   --color-orange-4: #cc3300;
 
+/* Un peu bizarre du em ici... */
+
   --text-size-level-1: 42px;
   --text-size-level-2: .85em;
   --text-size-level-3: .82em;
@@ -124,19 +126,11 @@ section {
 
 .reveal ul.no-bullets {
   list-style-type: none;
-  /*padding: 0;
-  margin: 0;*/
   padding-left: 0;
-  /*margin-left: 0;*/
 }
 
 .reveal li {
-  font-size: 90%
-}
-
-.reveal .part-toc ul ul, #toc ul ul {
-  /* the previous rule should be enough, but the tocs are not consitent on sub lists */
-  font-size: 90%
+  font-size: .9em; /* using a relative size, `.reveal li li` are sized .9*.9 :)  */
 }
 
 .reveal .mt-0 {
@@ -197,16 +191,10 @@ strong {
   margin-top: 60px;
 }
 
-
-pre code.hljs {
-  padding-right: 0;
-  /* this is to avoid the unnecessary scroll bar */
-}
-
 code:not(pre code) {
   background: var(--code-background-color);
   border: 2px solid var(--code-border-color);
-  font-size: 75%;
+  font-size: .75em;
   border-radius: 5px;
   padding: 5px 8px;
   margin: 0 5px;
@@ -405,7 +393,7 @@ code:not(pre code) {
   margin: 1em;
   position: relative;
   font-family: sans-serif;
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 24px;
   background: var(--bubble-background-color);
   border-radius: 40px;
@@ -438,14 +426,9 @@ code:not(pre code) {
   }
 }
 
-.bubble .icon {
-  font-size: 1.7em;
-}
-
 .bubble__text {
   margin: 0 1rem 0 1.5rem;
 }
-
 
 .reveal .text-size-heading-1 {
   font-size: var(--r-heading1-size);

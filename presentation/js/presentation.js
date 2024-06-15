@@ -6,7 +6,8 @@ export function fillCompleteToc() {
   document.querySelectorAll('.slide--part-title:not(.slide-background)').forEach(partTitleSlide => {
       const partTitle = partTitleSlide.querySelector('h1')
       const li = createChild(ulLevel1, 'li')
-      createChild(li, 'strong', {}, partTitle.textContent)
+      const tocLink = createNode('a', {href: getSlideUrl(partTitleSlide)}, partTitle.textContent)
+      createChild(li, 'strong', {}, tocLink)
       const ulLevel2 = createChild(li, 'ul', {})
       fillPartToc(ulLevel2, partTitleSlide)
     }
@@ -25,22 +26,29 @@ export function fillPartTocs() {
 }
 
 function fillPartToc(ul, partTitleSlide) {
-  const slides = document.querySelectorAll('.slides > section')
-  let sibling = getSiblingUnlessPartTileSlide(partTitleSlide)
-  while (sibling != null) {               
-    var slideIndex = [].indexOf.call(slides, sibling);
-    const h2Element = sibling.querySelector('h2')
+  let slide = getSiblingUnlessPartTileSlide(partTitleSlide)
+  while (slide != null) {               
+    const h2Element = slide.querySelector('h2')
     const exclude = h2Element.getAttribute('data-toc-exclude')
     if (exclude === null) {
       const tocLabel = h2Element.getAttribute('data-toc-label') || h2Element.innerText
       const icon = h2Element.getAttribute('data-toc-icon')
-      const tocLink = createNode('a', {href: `/#/${slideIndex}`})
+      const tocLink = createNode('a', {href: getSlideUrl(slide)})
       if (icon === 'code') createChild(tocLink,'span', {style:'font-family:monospace; font-size: 85%; margin-right: 0.4rem; letter-spacing: -1px;'}, '<∕>')
       addText(tocLink, tocLabel)
       createChild(ul, 'li', {}, tocLink)
     }
-    sibling = getSiblingUnlessPartTileSlide(sibling)
+    slide = getSiblingUnlessPartTileSlide(slide)
   }
+}
+
+let allSlides;
+
+function getSlideUrl(slide) {
+  if (!allSlides)
+    allSlides = document.querySelectorAll('.slides > section')
+  const slideIndex = [].indexOf.call(allSlides, slide)
+  return `/#/${slideIndex}`
 }
 
 export function wrapExercice() {
