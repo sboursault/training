@@ -7,9 +7,9 @@ Description courte : Automatisez vos tests de bout en bout avec Cypress
 
 ## Description
 
-Cette formation vous apprendra comment construire une suite de tests E2E **maintenable**, **extensible** et **rapide**, mais aussi comment intégrer ces tests dans votre processus de développement. 
-
-Cet apprentissage s'adresse aussi bien aux développeurs qu'aux testeurs qui souhaitent se former à l'automatisation des tests E2E avec Cypress.
+Cette formation vous apprendra comment automatiser votre suite de tests de bout en bout (End-to-end - E2E) avec Cypress. Vous découvrirez comment contruire une suite **maintenable**, **extensible** et **rapide**, mais aussi comment intégrer ces tests dans votre processus de développement. 
+ 
+Cet apprentissage s'adresse aussi bien aux développeurs qu'aux testeurs qui souhaitent se former à l'automatisation des tests de bout en bout.
 
 Au cours de la session, nous verrons comment traduire un besoin en critères d'acceptation, et comment automatiser leur vérification. Vous apprendrez comment construire une suite de tests en partant de zéro. Vous vous approprierez l'API Cypress et son écosytème, tout en découvrant les bonnes pratiques de cette discipline. Vous comprendrez comment améliorer la lisibilité et la maintenabilité des tests avec le pattern **Page Object**, et comment les fiabiliser en les rendant **isolés** et **répétables**. Enfin, nous verrons comment optimiser l'exécution des tests en préférant des appels API pour la préparation des données.
 
@@ -20,11 +20,10 @@ Comme pour toutes nos formations, chaque session est limitée à [6 participants
 
 ## Objectifs Pédagogiques
 
-- Concevoir des tests E2E
+- Concevoir des tests bout en bout (E2E)
 - Automatiser ces tests avec Cypress
 - Améliorer la lisibilité et l'évolutivité des tests E2E
-- Écrire des tests E2E robustes (des tests isolés et répétables)
-- Optimiser leur temps d'exécution
+- Créer une suite de tests rapides et extensibles (basée sur des tests isolés et répétables)
 
 
 ## Pré-requis
@@ -35,7 +34,7 @@ Comme pour toutes nos formations, chaque session est limitée à [6 participants
 - Installation de Git et Node.js (18.x)
 - Compte github avec clé configurée sur l'ordinateur (assistance possible si besoin)
 
-Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaître le langage. Cela fait parti de la formation.
+Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaître le langage. Cela fait partie de la formation.
 
 
 ## Programme de la formation
@@ -44,61 +43,47 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
 
 #### Démmarrer avec Cypress
 
-- Écosystème Cypress (CLI, Application, time travel, logs)
-- Principales commandes de l'api de développement
-  - `visit`
-  - `get`
-  - `contains`
-  - `click`
-  - `type`
-  - `should`
-
-**Mises en pratique :**
- - Initialisation d'un projet Cypress avec Typescript
- - Atelier de spécification sur le mini-panier d'un site e-commerce
- - Automatisation des critères d'acceptation
- - Réécriture avec des commandes custom et le pattern Page Object
-
-#### Améliorer la maintenabilité
-- Identification des sélecteurs stables (sélecteurs CSS, sélecteurs dédiés)
+- Écosystème Cypress
+  - Cypress CLI
+  - Application Cypress
+  - Documentation en ligne
+- Principales commandes de l'api de développement (`cy.visit()`, `cy.get()`, `cy.click()`, etc.)
 - Hooks
-- Commandes custom
+- Mise en place de sélecteurs dédiés (basé sur un attribut `data-testid`)
+- Création de commandes personnalisées (commandes custom)
 - Pattern Page Object
 
 **Mises en pratique :**
- - Atelier de spécification sur le login
+ - Initialisation d'un projet Cypress avec Typescript
+ - Atelier de spécification sur le mini-panier d'un site e-commerce, puis sur le login
  - Automatisation des critères d'acceptation
- - Réécriture avec des commandes custom et le pattern Page Object
+ - Simplification des tests à l'aide de commandes personnalisées et du pattern Page Object
+
  
 ### Jour 2 : Gérer votre suite de tests
 
 #### Stratégie de test
-- Place des tests E2E dans la stratégie de test (Agile testing quadrants)
-- Qui automatise les tests
+- Complémentatrité des différents types de tests (Agile testing quadrants)
 - Behaviour Driven development
+- Qui automatise les tests ?
 - Tips CI/CD
 
 **Mises en pratique :**
  - Gérer les variables d'environnment
 
-#### Écrire des tests rapides et répétables
-- Écrire des tests répétables
+#### Une suite de test rapide et extensible
+- Écrire des tests répétables et isolés
 - Optimisation du temps d'exécution de la suite
 - Debugger les tests Cypress
-- La commande `request`
+- La commande `cy.request()`
+- Génération d'un jeu de données spécifique pour un test
 
 **Mises en pratique :**
- - Atelier de spécification et automatisation des tests sur la récupération du panier
- - Nettoyage des données dans la phase de préparation du test (setup)
- - Optimisation de la phase de préparation à l'aide d'appels API
-
-
-### Écrire des tests isolés
-- Génération d'un jeu de données spécifique pour un test, afin d'éviter tout impact sur les autres tests
-
-**Mises en pratique :**
- - Atelier de spécification et automatisation des tests sur les frais de livraison
- - Dans la phase de préparation, création des produits pertinents pour vérifier les critères d'acceptation
+ - Atelier de spécification et automatisation des tests sur la récupération du panier et sur les frais de livraison
+ - Travail sur la phase de préparation du test (setup) :
+   - Nettoyage des données
+   - Création des produits pertinents pour vérifier les critères d'acceptation
+   - Optimisation à l'aide d'appels API
 
 
 ## Profil
