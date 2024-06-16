@@ -26,7 +26,6 @@ Comme pour toutes nos formations, chaque session est limitée à [6 participants
 - Écrire des tests E2E robustes (des tests isolés et répétables)
 - Optimiser leur temps d'exécution
 
-A REVOIR
 
 ## Pré-requis
 
@@ -56,7 +55,7 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
 
 **Mises en pratique :**
  - Initialisation d'un projet Cypress avec Typescript
- - Atelier de spécification sur le comportement du mini-panier d'un site e-commerce
+ - Atelier de spécification sur le mini-panier d'un site e-commerce
  - Automatisation des critères d'acceptation
  - Réécriture avec des commandes custom et le pattern Page Object
 
@@ -73,37 +72,33 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
  
 ### Jour 2 : Gérer votre suite de tests
 
-
 #### Stratégie de test
 - Place des tests E2E dans la stratégie de test (Agile testing quadrants)
 - Qui automatise les tests
+- Behaviour Driven development
 - Tips CI/CD
 
 **Mises en pratique :**
  - Gérer les variables d'environnment
 
-
 #### Écrire des tests rapides et répétables
-
 - Écrire des tests répétables
 - Optimisation du temps d'exécution de la suite
 - Debugger les tests Cypress
-- Commande Cypress `request`
+- La commande `request`
 
 **Mises en pratique :**
  - Atelier de spécification et automatisation des tests sur la récupération du panier
- - Nettoyage des données dans la phase de préparation du test
- - Optimisation de la phase de préparation grâce aux appels API
+ - Nettoyage des données dans la phase de préparation du test (setup)
+ - Optimisation de la phase de préparation à l'aide d'appels API
 
 
 ### Écrire des tests isolés
-
-- Génération d'un jeu de données spécifique pour un test
+- Génération d'un jeu de données spécifique pour un test, afin d'éviter tout impact sur les autres tests
 
 **Mises en pratique :**
- - Atelier de spécification sur les frais de livraison
- - Dans la phase de préparation et via api, création des produits pertinents pour vérifier les critères d'acceptation
-
+ - Atelier de spécification et automatisation des tests sur les frais de livraison
+ - Dans la phase de préparation, création des produits pertinents pour vérifier les critères d'acceptation
 
 
 ## Profil
