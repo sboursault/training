@@ -42,7 +42,7 @@ sboursault@proton.me
 <!-- .slide: id="toc" -->
 
 ## Course outline
-<!-- .element: class="text-size-heading-3 mt-025" -->
+<!-- .element: class="text-size-heading-3 mt-25" -->
 
 <ol class="text-level-6" style="column-count: 2;">
 </ol>

@@ -128,39 +128,12 @@ So, let's automate end to end tests...
 
 ---
 
-## Behaviour driven development
-
-Before the development, a programmer, a tester and the PO have a conversation to clarify the acceptance criteria for a user story
-<!-- .element: class="fragment" -->
-
-We call it a **Specification workshop** (aka **3 amigos** or **Discovery workshop**)
-<!-- .element: class="fragment" -->
-
-During the workshop, the participants agree on concrete **key examples** that illustrate how the feature should work
-<!-- .element: class="fragment" -->
-
-These examples becomes the acceptance criteria for the story: they'll be automated and verified with E2E tests
-<!-- .element: class="fragment" -->
-
-
-Note:
-
-Surtout expliquer qu'on se réunit avant de démarrer le développement pour comprendre le périmètre de la story,
-et comment la vérification sera automatisée
-
-Participants
-- A programmer, who thinks about how to make things, says what is feasable, suggests simpler paths
-- A tester, who thinks about how to break things, and come up with lots of scenarios, sometimes covering obscure edge cases, and sometimes covery very important ones 
-- The product owner, who cares about scope
-- Anybody relevant to the story being discussed (operations, UX designer...)-->
-
----
-
-<p class="fragment">The <strong>Behaviour Driven Development</strong> approach
+## The Behaviour Driven Development approach
+<!-- .element: class="text-size-heading-3" -->
 
 <div class="box flex-row screen fragment mt-100" style="padding:30px;">
-  <div class="badge" data-arrow="->task-example">Specifications</div>
-  <div class="badge fragment" id="task-example" data-arrow="->task-dev,->task-test">Example workshop</div>
+  <div class="badge" data-arrow="->task-example">Problem to solve</div>
+  <div class="badge fragment" id="task-example" data-arrow="->task-dev,->task-test">Specification <br>workshop</div>
   <div class="flex-column">
     <div class="badge fragment" id="task-dev" data-arrow="->task-prod">Development<br>(Developer)</div>
     <div class="badge fragment" id="task-test">
@@ -173,15 +146,13 @@ Participants
 
 <img src="img/print/bdd-3.png" class="print"></img>
 
-<p class="mt-125 text-level-3 fragment">For each story, we agree on a set of concrete <strong>key examples</strong>
+<p class="text-level-3 fragment">For each story, and before the development, we agree on a set of concrete <strong>key examples</strong> that illustrate how the feature should work
 
-<ul class="text-level-3 no-bullets fragment">
+<ul class="mt-50 text-level-3 no-bullets">
   <li class="fragment"><i class="emo emoji-thumbup"></i>The team discover unknown unknowns earlier
   <li class="fragment"><i class="emo emoji-thumbup"></i>Shared understanding
   <li class="fragment"><i class="emo emoji-thumbup"></i>We get the <strong>Scenarios to automate</strong> out of the process
 </ul>
-
-
 
 ---
 
