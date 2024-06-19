@@ -63,8 +63,7 @@ export function wrapExercice() {
     newDiv.appendChild(left)
 
     const img = document.createElement('img')
-    img.setAttribute("style", "width:25%;padding-bottom:2em;");
-    img.setAttribute("src", "img/coding.png");
+    img.classList.add("exercice__image");
     newDiv.appendChild(img)
 
     left.innerHTML = source.innerHTML
