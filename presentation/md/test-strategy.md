@@ -127,19 +127,28 @@ you must have clear control over the environment in which the tests run.
 
 ---
 
-## </> Variables d'environnement
+## &lt;/> Define env variables
+<!-- .element: class="text-size-heading-3" data-toc-label="Define env variables" data-toc-icon="code" -->
 
-extraire les variables d'environnement dans un fichier .env
-https://glebbahmutov.com/blog/load-cypress-env-settings/
-https://docs.cypress.io/api/cypress-api/env
+<div class="block--exercice text-level-3">
 
-peut-être ça aussi :
-https://stackoverflow.com/a/72991731
+  <p>Let's code
+  <ul>
+    <li>Create Cypress env variables for the user's login and password 
+    <li>Define these variables in a file named <code>env.staging.json</code>, near your <code>cypress.config.ts</code>
+    <li>Create the npm script <code>cy:open:staging</code> in your <code>package.json</code> to use this specific file
+  </ul>
+  <p>Useful links
+  <ul style="font-size:75%">
+    <li class="url-link">https://gist.github.com/sboursault/192026364072fa43c99d2b7f9f52ce16
+    <li class="url-link">https://docs.cypress.io/guides/references/configuration#setupNodeEvents
+    <li class="url-link">https://docs.cypress.io/guides/guides/environment-variables
+  </ul>
 
-créer une commande pour exécuter sur un environnement précis
 
-override environment variables:
-https://docs.cypress.io/guides/guides/environment-variables
+</div>
+
+
 
 ---
 

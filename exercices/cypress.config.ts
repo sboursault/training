@@ -1,11 +1,24 @@
 import { defineConfig } from "cypress";
 
+import localConfig from './env.local.json'
+import stagingConfig from './env.staging.json'
+
+
 export default defineConfig({
   
   watchForFileChanges : false,
 
   e2e: {
-    baseUrl: "https://simplecommerce1nz5qlcr-sbc1.functions.fnc.fr-par.scw.cloud",
-    //baseUrl: "http://127.0.0.1:8000/",
+    setupNodeEvents(on, config) {
+      const targetEnv = config.env.target || 'local'
+      const envConfig = targetEnv === 'local' ? localConfig : stagingConfig
+      config.baseUrl = envConfig.baseUrl
+      config.env = {
+        ...envConfig.env, // picks values from env.*.json,
+        ...config.env     // overriden by values from CYPRESS_* variables and --env argument
+      }
+      return config
+    },
   },
+
 });

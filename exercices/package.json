@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy:open": "npx cypress open --e2e --browser chromium"
+    "cy:open": "npx cypress open --e2e --browser chromium",
+    "cy:open:local": "npx cypress open --e2e --browser chromium --env target=local",
+    "cy:open:staging": "npx cypress open --e2e --browser chromium --env target=staging"
   },
   "author": "",
   "license": "ISC",

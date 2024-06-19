@@ -4,8 +4,11 @@ import simpleCommerceApp from "../../support/page-object/simple-commerce.app"
 
 describe('Basket recovery', () => {
 
+  const login = Cypress.env('user_login')
+  const passwd = Cypress.env('user_passwd')
+
   beforeEach(() => {
-    simpleCommerceApp.login('tom@test.com', 'tom@test.com')
+    simpleCommerceApp.login(login, passwd)
     basketApi.clearBasket()
     simpleCommerceApp.logout()
   })
