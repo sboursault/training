@@ -1,22 +1,25 @@
 {
   "scripts": {
     "test": "mocha test/dom-test.js",
-    "sass": "sass --watch src/css/presentation.scss:build/css/presentation.css",
-    "start": "npm run sass & http-server -c-1 -p 8081 -o /",
+    "sass:watch": "sass --watch src/css/presentation.scss:build/css/presentation.css",
+    "start": "npm run sass:watch & npx browser-sync start --server --watch --browser=chromium /",
+    "build": "sass src/css/presentation.scss:build/css/presentation.css",
+    "serve": "http-server -c-1 -p 8081 -o /",
     "test-open": "http-server -c-1 -p 8082 -o /test"
   },
   "type": "module",
   "devDependencies": {
+    "browser-sync": "^3.0.2",
     "chai": "^4.3.7",
     "jsdom": "^22.1.0",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "sass": "^1.77.6"
   },
   "dependencies": {
     "decktape": "^3.12.0",
     "http-server": "^14.1.1",
     "leader-line": "^1.0.7",
     "reveal.js": "^5.1.0",
-    "sass": "^1.77.6",
     "typescript": "^5.0.3"
   }
 }
