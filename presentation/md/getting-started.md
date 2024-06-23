@@ -144,13 +144,16 @@ So, let's automate end to end tests...
   <div class="badge fragment" id="task-prod">Production <br> deployment</div>
 </div>
 
+!!!!!!?????
+Should we have a design workshop in the process ?
+
 <img src="img/print/bdd-3.png" class="print"></img>
 
 <p class="text-level-3 fragment">For each story, and before the development, we agree on a set of concrete <strong>key examples</strong> that illustrate how the feature should work
 
 <ul class="mt-50 text-level-3 no-bullets">
-  <li class="fragment"><i class="emo emoji-thumbup"></i>The team discover unknown unknowns earlier
   <li class="fragment"><i class="emo emoji-thumbup"></i>Shared understanding
+  <li class="fragment"><i class="emo emoji-thumbup"></i>The team discover unknown unknowns earlier
   <li class="fragment"><i class="emo emoji-thumbup"></i>We get the <strong>Scenarios to automate</strong> out of the process
 </ul>
 

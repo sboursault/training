@@ -1,4 +1,5 @@
 import basketApi from "../../support/api/basket.api"
+import userApi from "../../support/api/user.api"
 import cataloguePage from "../../support/page-object/catalogue.page"
 import simpleCommerceApp from "../../support/page-object/simple-commerce.app"
 
@@ -8,6 +9,7 @@ describe('Basket recovery', () => {
   const passwd = Cypress.env('user_passwd')
 
   beforeEach(() => {
+    userApi.registerIfNotExists(login, passwd)
     simpleCommerceApp.login(login, passwd)
     basketApi.clearBasket()
     simpleCommerceApp.logout()

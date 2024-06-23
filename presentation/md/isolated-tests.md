@@ -24,3 +24,8 @@ en bonus: utiliser des comptes différents pour chaque fichier de spec
 ## Verify the free delivery on a created product
 
 
+- basket amount bellow 30€ -> delivery fees are charged 7€
+- basket amount equals 30€ -> delivery fees are charged 7€
+- basket amount over 30€   -> delivery fees offered
+
+http://localhost:8000/api/register/
