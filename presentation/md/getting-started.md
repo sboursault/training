@@ -29,9 +29,9 @@
         <li><i>The home page title contains "All products"</i>
       </ul>
   </ul>
-  <p>Cypress commands that may help
+  <p>Commands that may help
   <ul class="text-level-4">
-    <li><code>visit</code>, <code>title</code>, <code>should</code>
+    <li><code>cy.visit()</code>, <code>cy.title()</code>, <code>cy.should()</code>
   </ul>
   <p>Userful links
   <ul style="font-size:75%">
@@ -83,7 +83,7 @@ describe('home-page', () => {
       Not very satisfying &nbsp; :(
     </div>
   </div>
-  <div class="bubble bubble-bottom-left flex-row fragment">
+  <div class="bubble bubble-bottom-left fragment">
     <i class="emo emo-36 emoji-nerd_face"></i>
     <span class="bubble__text">Maybe we should automate <br> end to end tests...</span>
   </div>
@@ -119,7 +119,7 @@ So, let's automate end to end tests...
       Better quality, but not efficient... <div class="fragment">and we intruced new difficulties&nbsp; :(</div>
     </div>
   </div>
-  <div class="bubble bubble-bottom-left flex-row fragment">
+  <div class="bubble bubble-bottom-left fragment">
     <i class="emo emo-36 emoji-face_with_monocle"></i>
     <span class="bubble__text">So...<br>What's the solution?</span>
   </div>
@@ -144,9 +144,6 @@ So, let's automate end to end tests...
   <div class="badge fragment" id="task-prod">Production <br> deployment</div>
 </div>
 
-!!!!!!?????
-Should we have a design workshop in the process ?
-
 <img src="img/print/bdd-3.png" class="print"></img>
 
 <p class="text-level-3 fragment">For each story, and before the development, we agree on a set of concrete <strong>key examples</strong> that illustrate how the feature should work
@@ -156,6 +153,9 @@ Should we have a design workshop in the process ?
   <li class="fragment"><i class="emo emoji-thumbup"></i>The team discover unknown unknowns earlier
   <li class="fragment"><i class="emo emoji-thumbup"></i>We get the <strong>Scenarios to automate</strong> out of the process
 </ul>
+
+Note:
+We can add a design workshop in the process to prevent non testable code.
 
 ---
 
@@ -199,9 +199,9 @@ _Possible list:_
   <ul>
     <li>Automate the verification of the acceptance criteria
   </ul>
-  <p>Cypress commands that may help
+  <p>Commands that may help
   <ul class="text-level-4">
-    <li><code>visit</code>, <code>get</code>, <code>contains</code>, <code>click</code>, <code>should</code>
+    <li><code>cy.visit()</code>, <code>cy.get()</code>, <code>cy.contains()</code>, <code>cy.click()</code>, <code>cy.should()</code>
   </ul>
   <p>Userful links
   <ul style="font-size:75%">

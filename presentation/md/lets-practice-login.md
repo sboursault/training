@@ -52,9 +52,9 @@ The user can be created manually.
     <li>Automate the verification of the login acceptance criteria
     <li>Simplify the code with hooks, custom commands and page objects
   </ul>
-  <p>Cypress commands that may help
+  <p>Commands that may help
   <ul>
-    <li><code>type</code>
+    <li><code>cy.type()</code>
   </ul>
   <p>Userful links
   <ul style="font-size:75%">

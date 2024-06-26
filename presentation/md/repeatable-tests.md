@@ -45,9 +45,9 @@ The user can be created manually.
   <ul>
     <li>Automate the verification of the login acceptance criteria
   </ul>
-  <p>Cypress commands that may help
+  <p>Commands that may help
   <ul>
-    <li><code>type</code>
+    <li><code>cy.type()</code>
   </ul>
   <p>Userful links
   <ul style="font-size:75%">
@@ -88,9 +88,9 @@ curl -X DELETE https://.../api/basket -u "tom@test.com:tom@test.com"
     -u "tom@test.com:tom@test.com"</code>
     </pre>
   </ul>
-  <p>Cypress commands that may help
+  <p>Commands that may help
   <ul>
-    <li><code>request</code>
+    <li><code>cy.request()</code>, <code>debugger</code>
   </ul>
   <p>Userful links
   <ul style="font-size:75%">
