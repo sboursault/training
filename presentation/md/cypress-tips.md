@@ -13,13 +13,41 @@
 
 </div>
 
+
+---
+
+## Using variables
+
+<div class="fragment">
+  <p class="mt-150 text-level-2">Commands are enqueued and run asynchronously
+
+  ```typescript
+  const button = cy.get('button')  //
+  button.click();                  // this won't work
+  ```
+</div>
+
+<div class="fragment">
+  <p class="mt-150  text-level-2">Use <code>.then()</code> to access what a Cypress command yields
+
+  ```typescript
+  cy.get('button').then(button => {
+    button.click()
+  })
+  ```
+</div>
+
+
+<small class="fragment mt-200">Cypress guide on varibles and aliases: <a href="https://docs.cypress.io/guides/guides/debugging">https://docs.cypress.io/guides/core-concepts/variables-and-aliases</a></small>
+
+
 ---
 
 ## Debug tests
 
 <ul class="mt-300">
   <li class="fragment"><code>cy.pause()</code>
-  <li class="fragment"><code>cy.then(() => debugger)</code> (with the dev tools open)
+  <li class="fragment"><code>cy.request('/some-url').then(response => debugger)</code> (with the dev tools open)
   <li class="fragment">From the time travel, click on a request to inspect its response
 </ul>
 
@@ -31,8 +59,9 @@
 
 ## Wait for events, not time
 
+<p class="text-level-2 fragment">Your browser is asynchronous!
 
-<h3 class="fragment">When can I verify the result of async operations?</h3>
+<p class="text-level-2 fragment">When can I verify the result of async operations?
 
 ```typescript
 // bad
@@ -47,11 +76,11 @@ cy.get('button').contains('Add to basket').click()
 cy.wait('@addProductToBasket')  // wait for a http response
 ```
 
-<!-- .element: class="fragment" -->
+<!-- .element: class="mt-50 fragment" -->
 
-<p class="text-level-2 mt-125 fragment">Wait for events to avoid <strong>long</strong> and <strong>flaky</strong> tests</p>
+<p class="text-level-2 fragment">Wait for <strong>events</strong> to avoid long and flaky tests
 
-<small class="fragment">More on cypress implicit waits: <a href="https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting">https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</a></small>
+<p class="fragment fragment mt-50"><small>More on cypress implicit waits: <a href="https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting">https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</a></small>
 
 Note:
 Testing offten involves asynchronous behaviours.

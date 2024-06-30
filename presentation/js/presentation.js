@@ -25,6 +25,18 @@ export function fillPartTocs() {
   })
 }
 
+function rewriteSlideTitles(ul, partTitleSlide) {
+  document.querySelectorAll('h2').forEach(element => {
+    const text = element.innerText;
+    if (text.indexOf('</>') !== -1) {
+      element.innerText = ''
+      createChild(element, 'span', {style:'font-family:monospace; font-size: .9em; margin-right: .75rem; letter-spacing: -.03em;'}, '</>')
+      addText(element, text.replace('</>', '').trim())
+    }
+  })
+}
+
+
 function fillPartToc(ul, partTitleSlide) {
   let slide = getSiblingUnlessPartTileSlide(partTitleSlide)
   while (slide != null) {               
@@ -32,10 +44,10 @@ function fillPartToc(ul, partTitleSlide) {
     const exclude = h2Element.getAttribute('data-toc-exclude')
     if (exclude === null) {
       const tocLabel = h2Element.getAttribute('data-toc-label') || h2Element.innerText
-      const icon = h2Element.getAttribute('data-toc-icon')
       const tocLink = createNode('a', {href: getSlideUrl(slide)})
-      if (icon === 'code') createChild(tocLink,'span', {style:'font-family:monospace; font-size: 85%; margin-right: 0.4rem; letter-spacing: -1px;'}, '<∕>')
-      addText(tocLink, tocLabel)
+      if (tocLabel.indexOf('</>') !== -1)
+        createChild(tocLink,'span', {style:'font-family:monospace; font-size: .9em; margin-right: 0.4rem; letter-spacing: -.03em;'}, '</>')
+      addText(tocLink, tocLabel.replace('</>', '').trim())
       createChild(ul, 'li', {}, tocLink)
     }
     slide = getSiblingUnlessPartTileSlide(slide)
@@ -57,9 +69,10 @@ export function wrapExercice() {
     const parent = source.parentNode
 
     const newDiv = document.createElement("div");
-    newDiv.classList.add("flex-row", "tiny-gap");
+    newDiv.classList.add("block--exercice", "flex-row", "tiny-gap");
 
     const left = document.createElement("div");
+    left.classList.add("exercice__content");
     newDiv.appendChild(left)
 
     const img = document.createElement('img')
@@ -156,6 +169,7 @@ export function init() {
     plugins: [RevealMarkdown, RevealNotes, RevealHighlight]
   });
   Reveal.on('ready', event => {
+    rewriteSlideTitles()
     fillPartTocs()
     wrapExercice()
     wrapLinks()

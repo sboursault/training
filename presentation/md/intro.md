@@ -5,7 +5,7 @@
 
 <p class="text-size-heading-3"><b>Sébastien Boursault</b>
 
-<ul class="mt-100 no-bullets text-level-1">
+<ul class="mt-100 no-bullets">
   <li>Developer (Java, Python, Js) and Tester
   <li>With an experience as PO
   <li>Trainer (E2E testing)
@@ -17,7 +17,7 @@ sboursault@proton.me
 
 ## Tell us a little about yourself
 
-<ul class="mt-125 text-level-1">
+<ul class="mt-125">
   <li>Who are you?
   <li>What technologies (languages, tool, etc.) do you use?
   <li>What projects are you currently working on?

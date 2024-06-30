@@ -139,7 +139,7 @@ cataloguePage.displayMiniBasket();               // this is about the
 ---
 
 ## &lt;/> Creating a custom command
-<!-- .element: data-toc-label="Simplify the mini-basket tests" data-toc-icon="code" -->
+<!-- .element: data-toc-label="</> Simplify the mini-basket tests" -->
 
 
 <div class="block--exercice text-level-3">

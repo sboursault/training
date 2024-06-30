@@ -10,9 +10,9 @@
 
 
 ## &lt;/> Specification workshop for the basket recovery
-<!-- .element: data-toc-icon="code" data-toc-label="Verify the basket recovery" class="text-size-heading-3"-->
+<!-- .element: data-toc-label="</> Verify the basket recovery" class="text-size-heading-3"-->
 
-<div class="block--exercice mt-250">
+<div class="block--exercice">
   <p>The Product Owner presents a new story:
   <ul>
     <li class="text-level-3"><i> As a shopper,<br>
@@ -40,14 +40,14 @@ The user can be created manually.
 ## </> Automate the basket recovery verification
 <!-- .element: data-toc-exclude class="text-size-heading-3" -->
 
-<div class="block--exercice text-level-1">
+<div class="block--exercice mt-150">
   <p>Let's code
   <ul>
-    <li>Automate the verification of the login acceptance criteria
+    <li>Automate the most valuable acceptance criteria to verify the basket recovery
   </ul>
   <p>Commands that may help
   <ul>
-    <li><code>cy.type()</code>
+    <li>?
   </ul>
   <p>Userful links
   <ul style="font-size:75%">
@@ -57,18 +57,27 @@ The user can be created manually.
 
 Note:
 
-The teacher starts a simple and valuable scenario
+The teacher starts a <strong>simple</strong> and <strong>valuable</strong> scenario
 - After login, the mini basket contains the items from my last session
-add SimpleCommerceApp.login()
 
-problem : the test is not repeatable.
+add SimpleCommerceApp.login() ?
+
+problem : the test is not repeatable
+
+---
+
+<!-- .slide: class="slide--vcenter" -->
+
+<div class="bubble bubble-bottom-left">
+  <i class="emo emo-36 emoji-nerd_face"></i>
+  <span class="bubble__text">How can we make our tests repeatable?</span>
+</div>
+
+Note:
 We need to either pick a new user, or clear the basket between each test
 This can be done through the ui, but this is tricky to implement
 A better option is to clear the basket through api
-- api change less offten than ui
-- the api call easier to develop
-- the api call runs faster
-- api are (offten) synchronous
+
 A developer gives this trick :
 "call /api/basket/ to get the basket url and then delete it"
 curl -X GET https://.../api/basket/ -u "tom@test.com:tom@test.com"
@@ -76,10 +85,10 @@ curl -X DELETE https://.../api/basket -u "tom@test.com:tom@test.com"
 
 ---
 
-## </> Make the tests repeatable
+## </> Make the test repeatable
 <!-- .element: class="text-size-heading-3" -->
 
-<div class="block--exercice text-level-1">
+<div class="block--exercice">
   <p>Let's code
   <ul>
     <li>Clear the basket before each test<br/>
@@ -95,7 +104,8 @@ curl -X DELETE https://.../api/basket -u "tom@test.com:tom@test.com"
   <p>Userful links
   <ul style="font-size:75%">
     <li class="url-link">https://docs.cypress.io/api/table-of-contents
-    <li>LINK TO THE API DOC
+    <li class="url-link">https://docs.cypress.io/api/commands/request
+    <li class="url-link">http://&lt;simple-commerce-instance&gt;/api/basket/
   </ul>
 </div>
 
@@ -106,7 +116,15 @@ prepare the data before running the test, avoid reverting changes at the end of 
 - easier to understand the prerequesites of a test
 - when a test fails, better to keep the system as is to facilitate debug
 
+
 ---
 
-## make it REPEATABLE by clearing the basket by API, need DEBUG, cy.request, minimize ui interractions ?
+## </> Optional: Let's practice
+<!-- .element: class="text-size-heading-3" -->
 
+<div class="block--exercice">
+  <p class="">Let's code
+  <ul>
+    <li>Automate the other acceptance criteria on the basket recovery
+  </ul>
+</div>

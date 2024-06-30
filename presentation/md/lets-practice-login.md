@@ -19,9 +19,9 @@ Simplify code with dedicated selectors, custom command and page object
 ---
 
 ## &lt;/> Specification workshop for the login
-<!-- .element: data-toc-icon="code" data-toc-label="Verify the login" -->
+<!-- .element: data-toc-label="</> Verify the login" -->
 
-<div class="block--exercice mt-250">
+<div class="block--exercice">
   <p>The Product Owner presents a new story:
   <ul>
     <li class="text-level-3"><i> As a shopper,<br>
@@ -46,7 +46,7 @@ The user can be created manually.
 ## </> Automate the login verification
 <!-- .element: data-toc-exclude -->
 
-<div class="block--exercice text-level-1">
+<div class="block--exercice">
   <p>Let's code
   <ul>
     <li>Automate the verification of the login acceptance criteria

@@ -11,7 +11,6 @@
 
 <!-- .slide: class="slide--vcenter" -->
 
-
 <div class="bubble bubble-bottom-left">
   <i class="emo emo-36 emoji-nerd_face"></i>
   <span class="bubble__text">How can we make our tests run faster?</span>

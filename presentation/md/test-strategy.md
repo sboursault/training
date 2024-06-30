@@ -128,7 +128,7 @@ you must have clear control over the environment in which the tests run.
 ---
 
 ## &lt;/> Define env variables
-<!-- .element: class="text-size-heading-3" data-toc-label="Define env variables" data-toc-icon="code" -->
+<!-- .element: class="text-size-heading-3" -->
 
 <div class="block--exercice text-level-3">
 
