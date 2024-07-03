@@ -134,6 +134,7 @@
     margin-top: 0em !important;
   }
 
+  /* should be in rem */
   .mt-25 {
     margin-top: 0.25em !important;
   }
@@ -521,23 +522,28 @@
     background-image: url(/img/emoji/face_with_symbols_on_mouth.png);
   }
 
-  .block--exercice {
+
+
+  .exercice {
     min-height: 500px;
+
+    .exercice__content {
+      width: 70%;
+    }
+  
+    img.exercice__image {
+      position: fixed;
+      top: 270px;
+      left: 870px;
+      width: 25%;
+      min-width: 300px;
+      margin-bottom: 50px;
+      content: url(/img/coding.png);
+    }
+
   }
   
-  .exercice__content {
-    width: 70%;
-  }
-
-  img.exercice__image {
-    position: fixed;
-    top: 270px;
-    left: 870px;
-    width: 25%;
-    min-width: 300px;
-    margin-bottom: 50px;
-    content: url(/img/coding.png);
-  }
+  
 
 
 

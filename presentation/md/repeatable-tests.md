@@ -12,7 +12,7 @@
 ## &lt;/> Specification workshop for the basket recovery
 <!-- .element: data-toc-label="</> Verify the basket recovery" class="text-size-heading-3"-->
 
-<div class="block--exercice">
+<div class="exercice">
   <p>The Product Owner presents a new story:
   <ul>
     <li class="text-level-3"><i> As a shopper,<br>
@@ -40,7 +40,7 @@ The user can be created manually.
 ## </> Automate the basket recovery verification
 <!-- .element: data-toc-exclude class="text-size-heading-3" -->
 
-<div class="block--exercice mt-150">
+<div class="exercice mt-150">
   <p>Let's code
   <ul>
     <li>Automate the most valuable acceptance criteria to verify the basket recovery
@@ -88,15 +88,16 @@ curl -X DELETE https://.../api/basket -u "tom@test.com:tom@test.com"
 ## </> Make the test repeatable
 <!-- .element: class="text-size-heading-3" -->
 
-<div class="block--exercice">
+<div class="exercice">
   <p>Let's code
   <ul>
-    <li>Clear the basket before each test<br/>
-    <pre style="width:auto;">
-      <code>curl -X DELETE https://.../api/basket \
-    -u "tom@test.com:tom@test.com"</code>
-    </pre>
+    <li>Clear the basket before each test
   </ul>
+  <pre class="mt-50">
+    <code>curl -X DELETE https://.../api/basket \
+  -u "tom@test.com:tom@test.com"</code>
+  </pre>
+  
   <p>Commands that may help
   <ul>
     <li><code>cy.request()</code>, <code>debugger</code>
@@ -122,7 +123,7 @@ prepare the data before running the test, avoid reverting changes at the end of 
 ## </> Optional: Let's practice
 <!-- .element: class="text-size-heading-3" -->
 
-<div class="block--exercice">
+<div class="exercice">
   <p class="">Let's code
   <ul>
     <li>Automate the other acceptance criteria on the basket recovery

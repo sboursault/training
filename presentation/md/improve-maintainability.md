@@ -142,7 +142,7 @@ cataloguePage.displayMiniBasket();               // this is about the
 <!-- .element: data-toc-label="</> Simplify the mini-basket tests" -->
 
 
-<div class="block--exercice text-level-3">
+<div class="exercice text-level-3">
   <p>Let's code
   <ul>
     <li>Create the custom command <code>cy.getByTestid()</code> and refactor the test code to use it.
@@ -166,7 +166,7 @@ cataloguePage.displayMiniBasket();               // this is about the
 <!-- .element: data-toc-exclude -->
 
 
-<div class="block--exercice text-level-3">
+<div class="exercice text-level-3">
   <p>Let's code
   <ul>
     <li>Refactor your tests to use a page object reprensenting the catalog page.

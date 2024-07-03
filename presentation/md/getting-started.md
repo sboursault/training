@@ -19,7 +19,7 @@
 ## &lt;/> Create and configure a Cypress project
 <!-- .element: class="text-size-heading-3" -->
 
-<div class="block--exercice text-level-3">
+<div class="exercice text-level-3">
   <p>Let's code
   <ul>
     <li>Create a github project
@@ -162,7 +162,7 @@ We can add a design workshop in the process to prevent non testable code.
 ## &lt;/> Define acceptance criteria
 <!-- .element: data-toc-label="</> Verify the mini-basket" -->
 
-<div class="block--exercice">
+<div class="exercice">
   <p>The Product Owner presents a new story:
   <ul>
     <li class="text-level-3"><i> As a shopper,<br>
@@ -193,7 +193,7 @@ _Possible list:_
 ## &lt;/> automate the verification with cypress
 <!-- .element: data-toc-exclude class="text-size-heading-3"-->
 
-<div class="block--exercice text-level-3">
+<div class="exercice text-level-3">
   <p>During the specification workshop, we identifed some acceptance criteria.
   <p>Let's code
   <ul>

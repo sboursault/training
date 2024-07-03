@@ -64,12 +64,12 @@ function getSlideUrl(slide) {
 }
 
 export function wrapExercice() {
-  document.querySelectorAll('.block--exercice').forEach(source => {
+  document.querySelectorAll('.exercice').forEach(source => {
 
     const parent = source.parentNode
 
     const newDiv = document.createElement("div");
-    newDiv.classList.add("block--exercice", "flex-row", "tiny-gap");
+    newDiv.classList.add("exercice", "flex-row", "tiny-gap");
 
     const left = document.createElement("div");
     left.classList.add("exercice__content");
@@ -82,7 +82,7 @@ export function wrapExercice() {
     left.innerHTML = source.innerHTML
 
     newDiv.classList.add(
-      ...source.className.split(' ').filter(c => c !== 'block--exercice')
+      ...source.className.split(' ').filter(c => c !== 'exercice')
     )
 
     parent.removeChild(source)
