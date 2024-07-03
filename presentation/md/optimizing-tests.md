@@ -4,8 +4,24 @@
 
 <div class="part-title">
   <span class="text-level-3">Part 5</span>
-  <h1>Test optimization ?</h1>
+  <h1>Speed up E2E tests</h1>
 </div>
+
+---
+
+## Why optimizing test speed?
+
+<p class="fragment mt-500">The faster the tests, the more they are run
+
+<div class="fragment mt-200">
+  <p>Shorten the feedback loop
+  <ul>
+    <li>Ultimately, the developer should get feedback when he's still working on the issue
+  </ul>
+</div>
+
+Note:
+encourage the developers to run E2E tests on their machine before pushing their code
 
 ---
 
@@ -16,27 +32,31 @@
   <span class="bubble__text">How can we make our tests run faster?</span>
 </div>
 
+Note:
+
+The login can be verified once, and then for each test that require logging, this can be done through a direct call
+
 ---
 
 ## Minimize UI interactions
 
-
 <p class="fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests <br> not dealing with <strong>UI-specific risks</strong>
 
-<p class="fragment">Setup your tests through <strong>api</strong>, <strong>db access</strong>...
+<div class="fragment mt-100">
+  <p>Prefer <strong>api</strong> calls in the setup phase
+  <ul>
+    <li>Api change less offten than ui
+    <li>An api call is offten easier to develop
+    <li>Api calls runs faster
+    <li>Api are (offten) synchronous
+  </ul>
+</div>
 
-<p class="fragment">No UI set-up is <strong>faster</strong> and <strong>easier to maintain</strong>
+<p class="fragment">It's ok to develop missing apis for test needs
 
-
-A better option is to clear the basket through api
-- api change less offten than ui
-- the api call easier to develop
-- the api call runs faster
-- api are (offten) synchronous
+<p class="fragment">Sometimes, direct <strong>db access</strong> can be a second-best alternative
 
 Note:
-
-
 
 From 50 quick ideas...
 By avoiding the UI layer where it is not actually relevant for the purpose of the test, teams can save a lot of troubleshooting time and speed up feedback, while still keeping the same level of risk coverage.
