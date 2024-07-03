@@ -1,10 +1,10 @@
 
-<!-- .slide: id="test-strategy" class="slide--part-title slide--vcenter" -->
+<!-- .slide: class="slide--part-title slide--vcenter" -->
 
 <div class="flex-row">
 
   <div class="part-title">
-    <span class="text-level-3">Part 4</span>
+    <span class="text-level-3">Part 8</span>
     <h1>Test strategy</h1>
   </div>
   

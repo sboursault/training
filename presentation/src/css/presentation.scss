@@ -291,7 +291,10 @@ $block-margin: 30px;
     text-decoration: inherit;
   }
 
-  #toc ol {
+
+  #toc > ol {
+    column-count: 2;
+    width: 100%;
     margin: 0;
   }
 

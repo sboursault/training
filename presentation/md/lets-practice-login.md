@@ -6,7 +6,7 @@
 
   <div class="part-title">
     <span class="text-level-3">Part 3</span>
-    <h1>👩‍💻 Let's practice: <br/> Verify the login </h1>
+    <h1>Let's practice</h1>
   </div>
 
 

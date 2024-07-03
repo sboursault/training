@@ -17,7 +17,7 @@ sboursault@proton.me
 
 ## Tell us a little about yourself
 
-<ul class="mt-125">
+<ul class="mt-150">
   <li>Who are you?
   <li>What technologies (languages, tool, etc.) do you use?
   <li>What projects are you currently working on?
@@ -35,15 +35,14 @@ sboursault@proton.me
 - Be at ease to search more info in the cypress documentation
 - Understand practices to write more maintanable, performant and stable E2E tests, whatever the product you use
 
-<!-- .element: class="mt-125" -->
+<!-- .element: class="mt-200" -->
 
 ---
-
 <!-- .slide: id="toc" -->
 
 ## Course outline
 <!-- .element: class="text-size-heading-3 mt-25" -->
 
-<ol class="text-level-6" style="column-count: 2;">
+<ol class="text-level-5">
 </ol>
 

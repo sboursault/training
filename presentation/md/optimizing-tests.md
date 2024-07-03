@@ -3,7 +3,7 @@
 <!-- .slide: id="good-tests" class="slide--part-title slide--vcenter" -->
 
 <div class="part-title">
-  <span class="text-level-3">Part 5</span>
+  <span class="text-level-3">Part 6</span>
   <h1>Speed up E2E tests</h1>
 </div>
 
@@ -40,14 +40,15 @@ The login can be verified once, and then for each test that require logging, thi
 
 ## Minimize UI interactions
 
+<div class="text-level-2">
 <p class="fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests <br> not dealing with <strong>UI-specific risks</strong>
 
 <div class="fragment mt-100">
   <p>Prefer <strong>api</strong> calls in the setup phase
   <ul>
+    <li>Api calls runs faster
     <li>Api change less offten than ui
     <li>An api call is offten easier to develop
-    <li>Api calls runs faster
     <li>Api are (offten) synchronous
   </ul>
 </div>
@@ -55,19 +56,33 @@ The login can be verified once, and then for each test that require logging, thi
 <p class="fragment">It's ok to develop missing apis for test needs
 
 <p class="fragment">Sometimes, direct <strong>db access</strong> can be a second-best alternative
-
-Note:
-
-From 50 quick ideas...
-By avoiding the UI layer where it is not actually relevant for the purpose of the test, teams can save a lot of troubleshooting time and speed up feedback, while still keeping the same level of risk coverage.
-
-Even when tests need to execute through the UI, minimise the part of the test that actually simulates user actions. Evaluate which parts of the tests are actually dealing with UI-specific risks, and try to automate everything else by avoiding the UI.
-
-Set-up and clean-up tasks serve to make tests reliable and repeatable, but they do not actually deal with the user interface risk (or, more precisely, they should not – if a set-up task is testing things, it should be broken into several tests).
-
-
+</div>
 
 
 ---
 
-## optimize tests with a command/api to login and logout ?
+## </> Speed up your tests
+<!-- .element: class="text-size-heading-3" -->
+
+<div class="exercice text-level-2">
+  <p>Let's code
+  <ul>
+    <li>In the tests which requires a logged user, replace the UI login by a simple http request
+  </ul>
+  <pre class="mt-50">
+    <code>curl -X POST https://.../api/login \
+  -u "tom@test.com:tom@test.com"</code>
+  </pre>
+  <p>Commands that may help
+  <ul>
+    <li><code>cy.request()</code>, <code>debugger</code>
+  </ul>
+  <p>Userful links
+  <ul style="font-size:75%">
+    <li class="url-link">https://docs.cypress.io/api/table-of-contents
+    <li class="url-link">https://docs.cypress.io/api/commands/request
+    <li class="url-link">http://&lt;simple-commerce-instance&gt;/api/login/
+  </ul>
+</div>
+
+

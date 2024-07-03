@@ -5,7 +5,7 @@
 <div class="flex-row">
 
   <div class="part-title">
-    <span class="text-level-3">Part 3</span>
+    <span class="text-level-3">Part 4</span>
     <h1>Cypress tips</h1>
   </div>
   

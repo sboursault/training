@@ -2,7 +2,7 @@
 <!-- .slide: id="good-tests" class="slide--part-title slide--vcenter" -->
 
 <div class="part-title">
-  <span class="text-level-3">Part 5</span>
+  <span class="text-level-3">Part 7</span>
   <h1>Isolated tests</h1>
 </div>
 
