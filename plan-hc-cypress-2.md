@@ -7,13 +7,13 @@ Description courte : Automatisez vos tests de bout en bout avec Cypress
 
 ## Description
 
-Cette formation vous apprendra comment automatiser votre suite de tests de bout en bout (End-to-end - E2E) avec Cypress. Vous découvrirez comment contruire une suite **maintenable**, **extensible** et **rapide**, mais aussi comment intégrer ces tests dans votre processus de développement. 
+Cette formation vous apprendra comment automatiser vos tests de bout en bout (End-to-end - E2E) avec Cypress. Vous découvrirez comment construire une suite **maintenable**, **extensible** et **rapide**, mais aussi comment intégrer ces tests dans votre processus de développement. 
  
 Cet apprentissage s'adresse aussi bien aux développeurs qu'aux testeurs qui souhaitent se former à l'automatisation des tests de bout en bout.
 
-Au cours de la session, nous verrons comment traduire un besoin en critères d'acceptation, et comment automatiser leur vérification. Vous apprendrez comment construire une suite de tests en partant de zéro. Vous vous approprierez l'API Cypress et son écosytème, tout en découvrant les bonnes pratiques de cette discipline. Vous comprendrez comment améliorer la lisibilité et la maintenabilité des tests avec le pattern **Page Object**, et comment les fiabiliser en les rendant **isolés** et **répétables**. Enfin, nous verrons comment optimiser l'exécution des tests en préférant des appels API pour la préparation des données.
+Au cours de la session, nous verrons comment traduire un besoin en critères d'acceptation, et comment automatiser leur vérification. Vous apprendrez comment construire une suite de tests en partant de zéro. Vous vous approprierez l'API Cypress et son éscosytème, tout en découvrant les bonnes pratiques de cette discipline. Vous comprendrez comment améliorer la lisibilité et la maintenabilité des tests avec le pattern **Page Object**. Nous écrirons des tests robustes en travaillant sur leur **isolation** et leur **répétabilité**. Enfin, nous verrons comment optimiser l'exécution des tests en préférant des appels API pour la phase de préparation des données.
 
-Parce que c'est en forgeant qu'on devient forgeron, la formation est axée sur la pratique. En fil rouge, vous élaborerez une suite de tests qui vérifie les fonctionnalités d'un site e-commerce, comme par exemple la gestion du panier ou le déclenchement des promotions.
+Parce que c'est en forgeant qu'on devient forgeron, la formation est axée sur la pratique. En fil rouge, vous élaborerez une suite de tests qui vérifie les fonctionnalités d'un site e-commerce, comme la gestion du panier ou le déclenchement des promotions.
 
 Comme pour toutes nos formations, chaque session est limitée à [6 participants](https://www.humancoders.com/pages/manifeste#taille-humaine), ce qui permet au formateur d'adapter sa présentation et garantit un temps d'échange privilégié pour chacun.
 
@@ -64,7 +64,7 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
 
 #### Stratégie de test
 - Complémentatrité des différents types de tests (Agile testing quadrants)
-- Behaviour Driven development
+- Behaviour Driven Development
 - Qui automatise les tests ?
 - Tips CI/CD
 
@@ -79,7 +79,7 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
 - Génération d'un jeu de données spécifique pour un test
 
 **Mises en pratique :**
- - Atelier de spécification et automatisation des tests sur la récupération du panier et sur les frais de livraison
+ - Atelier de spécification et automatisation des tests sur la récupération du panier, puis sur les frais de livraison
  - Travail sur la phase de préparation du test (setup) :
    - Nettoyage des données
    - Création des produits pertinents pour vérifier les critères d'acceptation
