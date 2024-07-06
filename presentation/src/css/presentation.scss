@@ -111,7 +111,8 @@ $block-margin: 30px;
   }
 
   ol,
-  ul {
+  ul,
+  ul ul {
     margin-left: 0.25em;
   }
 
@@ -129,7 +130,7 @@ $block-margin: 30px;
   }
 
   li {
-    font-size: 0.87em; /* using a relative size, `li li` are sized .9*.9 :)  */
+    font-size: 0.85em; /* using a relative size, `li li` are sized .9*.9 :)  */
   }
 
   .mt-0 {
@@ -291,6 +292,9 @@ $block-margin: 30px;
     text-decoration: inherit;
   }
 
+  #toc h2 {
+    margin-bottom: $block-margin*.5;
+  }
 
   #toc > ol {
     column-count: 2;

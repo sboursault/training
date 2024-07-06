@@ -40,14 +40,14 @@ The login can be verified once, and then for each test that require logging, thi
 
 ## Minimize UI interactions
 
-<div class="text-level-2">
-<p class="fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests <br> not dealing with <strong>UI-specific risks</strong>
+<div class="text-level-1">
+<p class="fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests not dealing with <strong>UI-specific risks</strong>
 
 <div class="fragment mt-100">
   <p>Prefer <strong>api</strong> calls in the setup phase
   <ul>
     <li>Api calls runs faster
-    <li>Api change less offten than ui
+    <li>Api change less offten than UI
     <li>An api call is offten easier to develop
     <li>Api are (offten) synchronous
   </ul>
