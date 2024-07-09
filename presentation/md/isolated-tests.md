@@ -56,13 +56,32 @@ _Possible list:_
 Note:
 
 
+
 ---
 
 
-The initial data set contains no product sold exactly 30€.
+<!-- .slide: class="slide--vcenter" -->
 
-So, how can we verify the case where the basket is exactly 30€ ?
+<div>
+  <p>
 
+  <div class="flex-row flex-row--center">
+    <div class="bubble bubble-bottom-left">
+      <i class="emo emo-36 emoji-nerd_face"></i>
+      <span class="bubble__text">There's no product sold exactly 30€ <br> in the initial data set</span>
+    </div>
+  </div>
+
+  <div class="flex-row flex-row--center fragment mt-500">
+    <div class="bubble bubble-bottom-left">
+      <i class="emo emo-36 emoji-face_with_monocle"></i>
+      <span class="bubble__text">So…<br> how to verify the delivey fees when the basket is exactly 30€?</span>
+    </div>
+  </div>
+</div>
+
+
+Note:
 
 - We could go in the admin and change the price of a product
   - this is a manual task and must be done each time the data set is restored
@@ -74,6 +93,30 @@ So, how can we verify the case where the basket is exactly 30€ ?
   - risk to break some tests if they already use this product
 - create a product by api within the test, which costs exactly 30€ :)
   - This option makes the test more isolated from other tests
+
+
+---
+
+## </> Delivery fees when the basket is exactly 30€
+<!-- .element: class="text-size-heading-3" -->
+
+<div class="exercice">
+  <p>Let's code
+  <ul>
+    <li>Through the product api, create a new product sold 30€
+    <li>Verify the delivery fees with this product
+  </ul>
+  <pre class="mt-50">
+    <code>...</code>
+  </pre>
+  
+  <p>Userful links
+  <ul style="font-size:75%">
+    <li class="url-link">https://docs.cypress.io/api/table-of-contents
+    <li class="url-link">https://docs.cypress.io/api/commands/request
+    <li class="url-link">http://&lt;simple-commerce-instance&gt;/api/admin/products/
+  </ul>
+</div>
 
 ---
 

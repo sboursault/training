@@ -69,7 +69,7 @@ problem : the test is not repeatable
 <!-- .slide: class="slide--vcenter" -->
 
 <div class="bubble bubble-bottom-left">
-  <i class="emo emo-36 emoji-nerd_face"></i>
+  <i class="emo emo-36 emoji-face_with_monocle"></i>
   <span class="bubble__text">How can we make our tests repeatable?</span>
 </div>
 

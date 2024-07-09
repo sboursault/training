@@ -116,12 +116,12 @@ So, let's automate end to end tests...
       <li class="fragment"><i class="emo emoji-x"></i>Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
     </ul>
     <div class="sticky fragment">
-      Better quality, but not efficient... <div class="fragment">and we intruced new difficulties&nbsp; :(</div>
+      Better quality, but not efficient… <div class="fragment">and we intruced new difficulties&nbsp; :(</div>
     </div>
   </div>
   <div class="bubble bubble-bottom-left fragment">
     <i class="emo emo-36 emoji-face_with_monocle"></i>
-    <span class="bubble__text">So...<br>What's the solution?</span>
+    <span class="bubble__text">So…<br>What's the solution?</span>
   </div>
 </div>
 
