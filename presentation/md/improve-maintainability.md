@@ -62,7 +62,7 @@ Don't test it if it's not testable
 
 ## Hooks
 
-Hooks are helpful to set conditions that run before or after a set of tests.
+Hooks are helpful to set conditions that run before a set of tests.
 
 ```typescript
 describe('My feature', () => {
@@ -77,18 +77,29 @@ describe('My feature', () => {
   it('works as intended') {
     // some verifications...
   }
-
-  afterEach(() => {
-    // runs after each test
-  })
-
-  after(() => {
-    // runs once after all tests
-  })
 })
 
 ```
-<!-- .element: style="font-size:37%" -->
+
+---
+<!-- .element: data-toc-exclude -->
+
+## Hooks
+
+Avoid using `after()` and `afterEach()`.
+
+It’s far more practical to clean up environments in test set-ups, before each test executes
+
+- When a tests fails, clean-up code might remove important information, making it harder to investigate
+- Clean-up procedures after testing may not be executed
+- In test setup, you only need to prepare the data relevant for the current test
+
+
+Note: 
+It may sound logical that each test should clean up after itself, but...
+---
+
+skip and only
 
 ---
 
