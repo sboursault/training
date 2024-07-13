@@ -62,7 +62,7 @@ Don't test it if it's not testable
 
 ## Hooks
 
-Hooks are helpful to set conditions that run before a set of tests.
+Hooks are helpful to set conditions that run before a set of tests
 
 ```typescript
 describe('My feature', () => {
@@ -82,35 +82,53 @@ describe('My feature', () => {
 ```
 
 ---
-<!-- .element: data-toc-exclude -->
 
-## Hooks
+<p class="mt-500">Avoid using <code>after()</code> and <code>afterEach()</code>
 
-Avoid using `after()` and `afterEach()`.
 
-It’s far more practical to clean up environments in test set-ups, before each test executes
-
-- When a tests fails, clean-up code might remove important information, making it harder to investigate
-- Clean-up procedures after testing may not be executed
-- In test setup, you only need to prepare the data relevant for the current test
-
+<p class="mt-200">It’s far more practical to clean up environments in test set-ups, before each test executes
+<ul>
+  <li>When a tests fails, clean-up code might remove important information, making it harder to investigate
+  <li>Clean-up procedures after testing may not be executed
+  <li>In test setup, you only need to prepare the data relevant for the current test
+</ul>
 
 Note: 
 It may sound logical that each test should clean up after itself, but...
 ---
 
-skip and only
+## Tests in progress
 
+<p class="mt-150">Use <code>only()</code> and <code>skip()</code> to include or exclude some tests
+
+```typescript
+describe('My feature', () => {
+  it.skip('works as intended') {
+    // This test will be skipped 
+  }
+  it.only('works differently in alternative case') {
+    // This will exclude all other tests
+  }
+})
+
+```
+
+<ul class="mt-200 no-bullets">
+  <li><code>only()</code> serves when you want to run a single test on your machine
+  <li><code>skip()</code> can be added temporarily on broken tests (or not passing yet)
+</ul>
 ---
 
 ## Custom command
 
-<p class="fragment">Let's take an example
+<div class="fragment">
+<p>Let's take an example
 
 ```typescript
 cy.get(`[data-testid=my-component]`)
 ```
-<!-- .element: class="fragment" -->
+
+</div>
 
 <div class="fragment mt-125">
 
@@ -122,7 +140,7 @@ cy.getByTestid(`my-component`)
 
 </div>
 
-<p class="fragment mt-150">Custom commands work well for behaviors that are desirable across many tests.
+<p class="fragment mt-150">Custom commands work well for behaviors that are desirable across many tests
 
 
 ---
