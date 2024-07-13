@@ -145,9 +145,41 @@ you must have clear control over the environment in which the tests run.
     <li class="url-link">https://docs.cypress.io/guides/guides/environment-variables
   </ul>
 
+</div>
+
+
+---
+ 
+## Excluding and Including Tests
+
+<div class="text-level-3">
+<p>Sometimes you just want to run a subset of your test suite
+<ul>
+  <li>Some test may not run on all environments
+  <li>You may want to run only the test concerning a specific domain
+</ul>
+</div>
+
+<div class="fragment">
+
+```typescript
+it('sends an email to confirm email address',
+    { tags: ['sendsEmail'] },
+    () => {
+      // some verification that may not work on all environments
+    })
+```
+
+<!-- .element: class="mt-50" -->
+
+
+```sh
+npx cypress run --env grepTags=-sendsEmail  # runs all tests without the tag 'sendsEmail'
+```
 
 </div>
 
+<p class="fragment text-level-4">How to use <strong>@cypress/grep</strong>:<br><a href="https://github.com/cypress-io/cypress/tree/develop/npm/grep">https://github.com/cypress-io/cypress/tree/develop/npm/grep</a>
 
 
 ---
@@ -159,4 +191,3 @@ you must have clear control over the environment in which the tests run.
 <p class="fragment">If not fixed within a given time frame,<br> <strong>quarantine</strong> or <strong>delete</strong> the flaky test
 
 <p class="fragment">Don't let flaky tests attack your confidence!
-
