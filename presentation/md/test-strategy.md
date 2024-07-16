@@ -130,6 +130,8 @@ you must have clear control over the environment in which the tests run.
 ## &lt;/> Define env variables
 <!-- .element: class="text-size-heading-3" -->
 
+CECK THE DOT ENV PLUGIN
+
 <div class="exercice text-level-3">
 
   <p>Let's code
@@ -186,8 +188,11 @@ npx cypress run --env grepTags=-sendsEmail  # runs all tests without the tag 'se
 
 ## Never ignore failing tests
 
-<p class="mt-300 fragment">Fix flaky tests as soon as possible
+<div class="fragment custom highlight-bold mt-300">
+  <p class="fragment custom blink-then-stop text-center">Fix flaky tests as soon as possible
+</p>
+</div>
 
-<p class="fragment">If not fixed within a given time frame,<br> <strong>quarantine</strong> or <strong>delete</strong> the flaky test
+<p class="fragment mt-200">If not fixed within a given time frame, <strong>quarantine</strong> or <strong>delete</strong> the flaky test
 
 <p class="fragment">Don't let flaky tests attack your confidence!

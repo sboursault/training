@@ -62,7 +62,8 @@ Don't test it if it's not testable
 
 ## Hooks
 
-Hooks are helpful to set conditions that run before a set of tests
+<div class="text-level-3">
+<p>Hooks are helpful to set conditions that run before a set of tests
 
 ```typescript
 describe('My feature', () => {
@@ -81,17 +82,14 @@ describe('My feature', () => {
 
 ```
 
----
-
-<p class="mt-500">Avoid using <code>after()</code> and <code>afterEach()</code>
-
-
-<p class="mt-200">It’s far more practical to clean up environments in test set-ups, before each test executes
+<div class="fragment mt-100">
+<p>Avoid using <code>after()</code> and <code>afterEach()</code>
 <ul>
   <li>When a tests fails, clean-up code might remove important information, making it harder to investigate
-  <li>Clean-up procedures after testing may not be executed
-  <li>In test setup, you only need to prepare the data relevant for the current test
 </ul>
+</div>
+
+</div>
 
 Note: 
 It may sound logical that each test should clean up after itself, but...

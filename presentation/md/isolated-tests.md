@@ -60,28 +60,34 @@ Note:
 ---
 
 
-<!-- .slide: class="slide--vcenter" -->
+<!-- .slide: class="" -->
 
-<div>
-  <p>
-
-  <div class="flex-row flex-row--center">
-    <div class="bubble bubble-bottom-left">
-      <i class="emo emo-36 emoji-nerd_face"></i>
-      <span class="bubble__text">There's no product sold exactly 30€ <br> in the initial data set</span>
-    </div>
-  </div>
-
-  <div class="flex-row flex-row--center fragment mt-500">
-    <div class="bubble bubble-bottom-left">
-      <i class="emo emo-36 emoji-face_with_monocle"></i>
-      <span class="bubble__text">So…<br> how to verify the delivey fees when the basket is exactly 30€?</span>
+<div class="flex-row flex-row--center mt-300" >
+  <div class="bubble bubble-bottom-left">
+    <i class="emo emo-36 emoji-face_with_monocle"></i>
+    <div class="bubble__text">
+    <p>How to verify the delivey fees when the basket is <strong>exactly</strong> 30€?
+    <p>There's no product sold exactly 30€ in the initial data set
     </div>
   </div>
 </div>
 
 
+<div class="mt-400 text-level-3 fragment">
+
+In the **set-up of our test**, use the **product api** to create a new product sold 30€
+- It doesn't modify a product that may be used in another test
+- It avoids growing the initial data set
+- If there's a problem with this product in the future, anybody will be confident to fix it,
+ without fear of breaking another test
+
+
+</div>
+
 Note:
+
+
+
 
 - We could go in the admin and change the price of a product
   - this is a manual task and must be done each time the data set is restored
@@ -90,26 +96,34 @@ Note:
     - what about it's stock ?
     - knowing the test suites becomes necessary to manage the initial data set
 - change the price of a product using api
-  - risk to break some tests if they already use this product
+  
+  - Imagine your test suite is quite long,
+You're not sure which products are already used in existing tests.
+    - There's a risk to break some tests if they already use this product
+
 - create a product by api within the test, which costs exactly 30€ :)
   - This option makes the test more isolated from other tests
 
 
+
+
+
+
 ---
 
-## </> Delivery fees when the basket is exactly 30€
+## </div> Delivery fees when the basket is exactly 30€
 <!-- .element: class="text-size-heading-3" -->
 
 <div class="exercice">
   <p>Let's code
   <ul>
     <li>Through the product api, create a new product sold 30€
+    <pre class="mt-50">
+      <code>...</code>
+    </pre>
     <li>Verify the delivery fees with this product
-  </ul>
-  <pre class="mt-50">
-    <code>...</code>
-  </pre>
-  
+    <li>Rewrite so that the test shows the price of the new product
+  </ul> 
   <p>Userful links
   <ul style="font-size:75%">
     <li class="url-link">https://docs.cypress.io/api/table-of-contents
@@ -120,24 +134,64 @@ Note:
 
 ---
 
-
-## What is tests isolation?
+## What is test isolation?
 
 <div class="fragment mt-300">
-  <p>Isolated tests can run in any order
-  <p>Each test can run separately from the test suite
+
+<div class="fragment custom highlight-bold">
+  <p class="fragment custom blink-then-stop text-center">The result of a test should never depend 
+  <br>on the result of preceding tests
+</p>
 </div>
 
-<p class="fragment mt-300">Ultimately, they can even run in parallel :)
+</div>
+
+<div class="fragment mt-300">
+  <p> In practice
+  <ul>
+    <li>Isolated tests can run in any order
+    <li>Each test can run separately from the test suite
+  </ul>
+</div>
+
+<p class="fragment mt-200">Ultimately, tests can even run in parallel!
+
+Note:
+- In practice
+  - When an isolated test fails, you don't need to investigate on what happend before.
+The issue is either within the test or the verified code
 
 ---
 
-## Verify the free delivery on a created product
+## How to isolate tests?
 
+Before running, each test should set up the environment to a known state
 
+On the browser side, Cypress already cleans the context between each test  (DOM, cookies, local and session storage)
 
+On the server side, you may need
+ - create a dedicated user for the user
+ - create dedicated products, or verify their availability
+ - etc.
 
-http://localhost:8000/api/register/
+To verify if a test is independent, run it with <strong>.only()</strong>
+
+Note:
+To enforce test isolation...
+
+---
+
+## Benefits
+
+<p class="mt-200">It’s far more practical to clean up environments in test setups, before each test executes
+<ul>
+  <li>When a tests fails, clean-up code might remove important information, making it harder to investigate
+  <li>Clean-up procedures after testing may not be executed
+  <li>In test setup, you only need to prepare the data relevant for the current test
+  <li>When a bug causes a test failure, you will only need to investigate that single test, not 500 other false alarms
+  <li>You may parallelize your test run
+</ul>
+
 
 ---
 
