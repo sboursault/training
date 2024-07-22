@@ -181,6 +181,22 @@ $block-margin: 30px;
     margin-top: $block-margin*5 !important;
   }
 
+  .mb-0 {
+    margin-bottom: 0 !important;
+  }
+
+  .mb-25 {
+    margin-bottom: $block-margin*.25 !important;
+  }
+
+  .mb-50 {
+    margin-bottom: $block-margin*.5 !important;
+  }
+
+  .mb-100 {
+    margin-bottom: $block-margin !important;
+  }
+
   strong {
     color: var(--color-dark-lemon-green-2);
   }
@@ -205,6 +221,8 @@ $block-margin: 30px;
 
   pre {
     margin: var(--r-block-margin) auto 0;
+    width: 90%;
+    min-width: fit-content;
   }
 
   code:not(pre code) {
@@ -572,6 +590,11 @@ $block-margin: 30px;
       min-width: 300px;
       margin-bottom: 50px;
       content: url(/img/coding.png);
+    }
+
+    pre {
+      @extend .mt-25;
+      @extend .mb-50;
     }
 
   }

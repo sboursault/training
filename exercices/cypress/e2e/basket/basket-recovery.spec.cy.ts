@@ -5,8 +5,8 @@ import simpleCommerceApp from "../../support/page-object/simple-commerce.app"
 
 describe('Basket recovery', () => {
 
-  const login = Cypress.env('user_login')
-  const passwd = Cypress.env('user_passwd')
+  const login = Cypress.env('USER_LOGIN')
+  const passwd = Cypress.env('USER_PASSWD')
 
   beforeEach(() => {
     userApi.registerIfNotExists(login, passwd)

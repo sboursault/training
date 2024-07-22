@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy:open": "npx cypress open --e2e --browser chromium",
-    "cy:open:local": "npx cypress open --e2e --browser chromium --env target=local",
-    "cy:open:staging": "npx cypress open --e2e --browser chromium --env target=staging"
+    "cy:open": "dotenvx run -- npx cypress open --e2e --browser chromium",
+    "cy:open:e2e": "dotenvx run -f .env.e2e -- npx cypress open --e2e --browser chromium",
+    "cy:open:prod": "CYPRESS_BASE_URL=http://127.0.0.1:8003/ dotenvx run -f .env.prod -- npx cypress open --e2e --browser chromium"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.6.6",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.6.4"
   }
 }

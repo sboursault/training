@@ -127,28 +127,51 @@ you must have clear control over the environment in which the tests run.
 
 ---
 
-## &lt;/> Define env variables
+## &lt;/> Override env variables
 <!-- .element: class="text-size-heading-3" -->
 
-CECK THE DOT ENV PLUGIN
+<div class="exercice text-level-4">
 
-<div class="exercice text-level-3">
-
-  <p>Let's code
+  <p class="mt--25">Let's code
   <ul>
-    <li>Create Cypress env variables for the user's login and password 
-    <li>Define these variables in a file named <code>env.staging.json</code>, near your <code>cypress.config.ts</code>
-    <li>Create the npm script <code>cy:open:staging</code> in your <code>package.json</code> to use this specific file
+    <li>Install <strong>dotenvx</strong>
+
+```sh
+npm install @dotenvx/dotenvx
+```  
+
+<li>Create a file named <code>.env</code> with these variables
+
+```properties
+# .env
+CYPRESS_BASE_URL=http://127.0.0.1:8000/
+CYPRESS_ADMIN_LOGIN=tom@test.com
+CYPRESS_ADMIN_PASSWD=tom@test.com
+```
+
+<li>Update the scripts in <code>package.json</code>
+
+```json
+"scripts": {
+  "cy:open": "dotenvx run -f .env -- npx cypress open --e2e --browser chromium",
+},
+```
+
+<li>Use these variables in your tests with <code>cy.env()</code> and verify the tests pass
+
   </ul>
   <p>Useful links
   <ul style="font-size:75%">
-    <li class="url-link">https://gist.github.com/sboursault/192026364072fa43c99d2b7f9f52ce16
-    <li class="url-link">https://docs.cypress.io/guides/references/configuration#setupNodeEvents
     <li class="url-link">https://docs.cypress.io/guides/guides/environment-variables
+    <li class="url-link">https://github.com/dotenvx/dotenvx
   </ul>
 
 </div>
 
+---
+
+add a .env.e2e file
+override a variable at command level
 
 ---
  
@@ -196,3 +219,9 @@ npx cypress run --env grepTags=-sendsEmail  # runs all tests without the tag 'se
 <p class="fragment mt-200">If not fixed within a given time frame, <strong>quarantine</strong> or <strong>delete</strong> the flaky test
 
 <p class="fragment">Don't let flaky tests attack your confidence!
+
+
+
+---
+
+add slide to introduce tech design workshop
