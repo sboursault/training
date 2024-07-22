@@ -92,12 +92,13 @@ curl -X DELETE https://.../api/basket -u "tom@test.com:tom@test.com"
   <p>Let's code
   <ul>
     <li>Clear the basket before each test
-  </ul>
-  <pre class="mt-50">
-    <code>curl -X DELETE https://.../api/basket \
-  -u "tom@test.com:tom@test.com"</code>
-  </pre>
   
+```sh
+curl -X DELETE https://.../api/basket \
+  -u "tom@test.com:tom@test.com"
+```
+
+  </ul>
   <p>Commands that may help
   <ul>
     <li><code>cy.request()</code>, <code>debugger</code>

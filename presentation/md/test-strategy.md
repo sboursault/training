@@ -111,15 +111,19 @@ Everyone should feel responsible for the automated tests
 
 ---
 
-## Continuous Integration <br> / Continuous Delivery
+## Continuous Integration and Delivery
+<!-- .element: class="mt-50 text-size-heading-2" -->
 
-<h3 class="fragment">Run automated tests on each release</h3>
 
-<p class="text-level-2 fragment">as part of your CI/CD pipeline
+<p class="fragment mt-400">Run automated tests on each release, as part of your CI/CD pipeline
 
-<h3 class="fragment">Run E2E tests on a dedicated environment</h3>
-<p class="text-level-2 fragment">A shared environment is not predictible
-<p class="text-level-2 fragment">This environment is built as part of the CI/CD pipeline
+<div class="fragment mt-400">
+  <p>Run E2E tests on a <strong>dedicated environment</strong>
+  <ul>
+    <li>A shared environment is not predictible
+    <li>Try to build the environment as part of your CI/CD pipeline
+  </ul>
+</div>
 
 Note:
 On a shared environment, tests can fail for external reasons.
@@ -127,12 +131,12 @@ you must have clear control over the environment in which the tests run.
 
 ---
 
-## &lt;/> Override env variables
-<!-- .element: class="text-size-heading-3" -->
+## &lt;/> Env variables
+<!-- .element: class="mt-50 text-size-heading-3" -->
 
-<div class="exercice text-level-4">
+<div class="exercice text-level-5">
 
-  <p class="mt--25">Let's code
+  <p class="mt--50">Let's code
   <ul>
     <li>Install <strong>dotenvx</strong>
 
@@ -157,7 +161,45 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
 },
 ```
 
-<li>Use these variables in your tests with <code>cy.env()</code> and verify the tests pass
+<li>Rewrite tests to use the env variables and verify they still pass
+
+  </ul>
+  
+  <p class="mt-50">Commands
+  <ul>
+    <li><code>cy.env()</code>
+  </ul>
+
+  <p class="mt-75">Useful links
+  <ul style="font-size:75%">
+    <li class="url-link">https://docs.cypress.io/guides/guides/environment-variables
+    <li class="url-link">https://github.com/dotenvx/dotenvx
+  </ul>
+
+</div>
+
+---
+
+## &lt;/> Env variables
+<!-- .element: data-toc-exclude class="text-size-heading-3" -->
+
+<div class="exercice text-level-4">
+
+  <p class="mt-50">Let's code
+  <ul>
+    <li>Copy your <code>.env</code> file to a file named <code>.env.e2e</code>
+    <li>In <code>package.json</code>, add a script to target the e2e environment
+
+```json
+"scripts": {
+  "cy:open:e2e": "dotenvx run -f .env.e2e -- npx cypress open --e2e --browser chromium",
+},
+```
+
+<li>Change the value of <code>CYPRESS_BASE_URL</code> in <code>.env.e2e</code> and watch the test fail
+
+<li>Define a system env varibale named <code>CYPRESS_BASE_URL</code> with the right value and watch the test pass
+
 
   </ul>
   <p>Useful links
@@ -168,10 +210,6 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
 
 </div>
 
----
-
-add a .env.e2e file
-override a variable at command level
 
 ---
  
