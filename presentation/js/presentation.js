@@ -25,12 +25,12 @@ export function fillPartTocs() {
   })
 }
 
-function rewriteSlideTitles(ul, partTitleSlide) {
+function rewriteSlideTitles() {
   document.querySelectorAll('h2').forEach(element => {
     const text = element.innerText;
     if (text.indexOf('</>') !== -1) {
       element.innerText = ''
-      createChild(element, 'span', {style:'font-family:monospace; font-size: .9em; margin-right: .75rem; letter-spacing: -.03em;'}, '</>')
+      createChild(element, 'span', {class:'code-symbol code-symbol--white-on-green-small'}, '</>')
       addText(element, text.replace('</>', '').trim())
     }
   })

@@ -35,12 +35,12 @@ A user story is composed of...
        and its <br> acceptance criteria
     </div>
     <ul class="fragment" style="margin: 0; width:80%">
-      <li class="text-level-5">The search field is placed on the top bar
-      <li class="text-level-5">Search starts once the user clicks “Search”
-      <li class="text-level-5">The field contains a placeholder with a grey-colored text: “Where are you going?”
-      <li class="text-level-5">The placeholder disappears once the user starts typing
-      <li class="text-level-5">Search is performed if a user types in a city, hotel name, street, or all combined
-      <li class="text-level-5">...
+      <li>The search field is placed on the top bar
+      <li>Search starts once the user clicks “Search”
+      <li>The field contains a placeholder with a grey-colored text: “Where are you going?”
+      <li>The placeholder disappears once the user starts typing
+      <li>Search is performed if a user types in a city, hotel name, street, or all combined
+      <li>...
     </ul>
   </div>
 </div>

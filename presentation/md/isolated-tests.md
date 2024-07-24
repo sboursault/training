@@ -43,7 +43,7 @@ _Possible list:_
       <li>For baskets strictly over 30€, we offer delivery fees
     </ul>
   </ul>
-  <p>Commands that may help
+  <p>Commands
   <ul>
     <li>?
   </ul>
@@ -60,7 +60,7 @@ Note:
 ---
 
 
-<!-- .slide: class="" -->
+<!-- .slide: class="text-level-3" -->
 
 <div class="flex-row flex-row--center mt-300" >
   <div class="bubble bubble-bottom-left">
@@ -73,7 +73,9 @@ Note:
 </div>
 
 
-<div class="mt-400 text-level-3 fragment">
+<div class="mt-400 flex-row flex-row--center fragment">
+
+<div style="width:80%; padding-left:2em;">
 
 In the **set-up of our test**, use the **product api** to create a new product sold 30€
 - It doesn't modify a product that may be used in another test
@@ -81,13 +83,11 @@ In the **set-up of our test**, use the **product api** to create a new product s
 - If there's a problem with this product in the future, anybody will be confident to fix it,
  without fear of breaking another test
 
+</div>
 
 </div>
 
 Note:
-
-
-
 
 - We could go in the admin and change the price of a product
   - this is a manual task and must be done each time the data set is restored
@@ -103,10 +103,6 @@ You're not sure which products are already used in existing tests.
 
 - create a product by api within the test, which costs exactly 30€ :)
   - This option makes the test more isolated from other tests
-
-
-
-
 
 
 ---
@@ -138,8 +134,8 @@ You're not sure which products are already used in existing tests.
 
 <div class="fragment mt-300">
 
-<div class="fragment custom highlight-bold">
-  <p class="fragment custom blink-then-stop text-center">The result of a test should never depend 
+<div class="fragment custom highlight-bold text-center">
+  <p >The result of a test should never depend 
   <br>on the result of preceding tests
 </p>
 </div>
@@ -197,6 +193,7 @@ To enforce test isolation...
 
 ## Optional
 
+TODO
 
 utiliser des comptes différents pour chaque fichier de spec
 

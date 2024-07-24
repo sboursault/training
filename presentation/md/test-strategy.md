@@ -90,10 +90,10 @@ Participants
 
 ## Who automates the tests?
 
-<p class="mt-250 fragment">Favour a <strong>whole team approach</strong></p>
+<p class="mt-300 fragment">Favour a <strong>whole team approach</strong></p>
 
-<p class="mt-150 text-level-2 fragment">Developers and testers work together to</p>
-<ul class="text-level-2">
+<p class="mt-250 fragment">Developers and testers work together to</p>
+<ul>
   <li class="fragment">Build and maintain the test infrastructure</li>
   <li class="fragment">Design testable code</li> <!-- Developers write more testable code -->
   <li class="fragment">Write and maintain the automated tests</li>
@@ -131,10 +131,10 @@ you must have clear control over the environment in which the tests run.
 
 ---
 
-## &lt;/> Env variables
-<!-- .element: class="mt-50 text-size-heading-3" -->
+## &lt;/> Define environment variables
+<!-- .element: data-toc-label="</> Manage environment variables" class="mt-0 text-size-heading-3" -->
 
-<div class="exercice text-level-5">
+<div class="exercice text-level-3">
 
   <p class="mt--50">Let's code
   <ul>
@@ -166,12 +166,12 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
   </ul>
   
   <p class="mt-50">Commands
-  <ul>
+  <ul style="font-size:.9em">
     <li><code>cy.env()</code>
   </ul>
 
-  <p class="mt-75">Useful links
-  <ul style="font-size:75%">
+  <p class="mt-50">Useful links
+  <ul style="font-size:.75em">
     <li class="url-link">https://docs.cypress.io/guides/guides/environment-variables
     <li class="url-link">https://github.com/dotenvx/dotenvx
   </ul>
@@ -179,11 +179,10 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
 </div>
 
 ---
-
-## &lt;/> Env variables
+## &lt;/> Manage environment variables
 <!-- .element: data-toc-exclude class="text-size-heading-3" -->
 
-<div class="exercice text-level-4">
+<div class="exercice text-level-3">
 
   <p class="mt-50">Let's code
   <ul>
@@ -215,7 +214,7 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
  
 ## Excluding and Including Tests
 
-<div class="text-level-3">
+<div class="text-level-3 fragment">
 <p>Sometimes you just want to run a subset of your test suite
 <ul>
   <li>Some test may not run on all environments
@@ -249,16 +248,16 @@ npx cypress run --env grepTags=-sendsEmail  # runs all tests without the tag 'se
 
 ## Never ignore failing tests
 
+<div class="fragment">
 <div class="fragment custom highlight-bold mt-300">
   <p class="fragment custom blink-then-stop text-center">Fix flaky tests as soon as possible
 </p>
 </div>
+</div>
+
+<p class="fragment mt-300">Don't let flaky tests attack your confidence!
 
 <p class="fragment mt-200">If not fixed within a given time frame, <strong>quarantine</strong> or <strong>delete</strong> the flaky test
-
-<p class="fragment">Don't let flaky tests attack your confidence!
-
-
 
 ---
 

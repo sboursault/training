@@ -21,10 +21,10 @@ Simplify code with dedicated selectors, custom command and page object
 ## &lt;/> Specification workshop for the login
 <!-- .element: data-toc-label="</> Verify the login" -->
 
-<div class="exercice">
+<div class="exercice text-level-2">
   <p>The Product Owner presents a new story:
   <ul>
-    <li class="text-level-3"><i> As a shopper,<br>
+    <li><i> As a shopper,<br>
     I want to login,<br>
     so that I can verify my last order</i>
   </ul>
@@ -52,7 +52,7 @@ The user can be created manually.
     <li>Automate the verification of the login acceptance criteria
     <li>Simplify the code with hooks, custom commands and page objects
   </ul>
-  <p>Commands that may help
+  <p>Commands
   <ul>
     <li><code>cy.type()</code>
   </ul>

@@ -45,7 +45,7 @@ The user can be created manually.
   <ul>
     <li>Automate the most valuable acceptance criteria to verify the basket recovery
   </ul>
-  <p>Commands that may help
+  <p>Commands
   <ul>
     <li>?
   </ul>
@@ -99,7 +99,7 @@ curl -X DELETE https://.../api/basket \
 ```
 
   </ul>
-  <p>Commands that may help
+  <p>Commands
   <ul>
     <li><code>cy.request()</code>, <code>debugger</code>
   </ul>

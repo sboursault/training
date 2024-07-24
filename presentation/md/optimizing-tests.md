@@ -68,12 +68,13 @@ The login can be verified once, and then for each test that require logging, thi
   <p>Let's code
   <ul>
     <li>In the tests which requires a logged user, replace the UI login by a simple http request
-  </ul>
-  <pre class="mt-50">
+    <pre>
     <code>curl -X POST https://.../api/login \
   -u "tom@test.com:tom@test.com"</code>
-  </pre>
-  <p>Commands that may help
+    </pre>
+  </ul>
+
+  <p>Commands
   <ul>
     <li><code>cy.request()</code>, <code>debugger</code>
   </ul>

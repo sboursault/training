@@ -19,7 +19,7 @@
 ## &lt;/> Create and configure a Cypress project
 <!-- .element: class="text-size-heading-3" -->
 
-<div class="exercice text-level-3">
+<div class="exercice text-level-2">
   <p>Let's code
   <ul>
     <li>Create a github project
@@ -29,7 +29,7 @@
         <li><i>The home page title contains "All products"</i>
       </ul>
   </ul>
-  <p>Commands that may help
+  <p>Commands
   <ul class="text-level-4">
     <li><code>cy.visit()</code>, <code>cy.title()</code>, <code>cy.should()</code>
   </ul>
@@ -53,11 +53,12 @@ describe('home-page', () => {
 ```
 
 ---
+<!-- .element: class="text-level-2" -->
 
 ## The problem with a conventional dev process
 <!-- .element: class="text-size-heading-3" -->
 
-<p class="fragment" data-fragment-index="1">When I started on my last project...
+<p class="fragment mt-200" data-fragment-index="1">When I started on my last project...
 
 <div class="box flex-row mt-100 screen fragment" style="padding:40px;" data-fragment-index="2">
   <div class="badge" data-arrow="->task-dev">Specifications</div>
@@ -74,7 +75,7 @@ describe('home-page', () => {
 
 <div class="flex-row">
   <div class="flex-column tiny-gap">
-    <ul class="mt-100 text-level-3 no-bullets">
+    <ul class="mt-200 text-level-2 no-bullets">
       <li class="fragment"><i class="emo emoji-x"></i>Different understanding
       <li class="fragment"><i class="emo emoji-x"></i>Regressions happen
       <li class="fragment"><i class="emo emoji-x"></i>Too many non regression tests to execute manually
@@ -92,10 +93,11 @@ describe('home-page', () => {
 
 
 ---
+<!-- .element: class="text-level-2" -->
 
-So, let's automate end to end tests...
+<p class="mt-150">So, let's automate end to end tests...
 
-<div class="box flex-row mt-100 screen fragment" style="padding:40px;" data-fragment-index="2">
+<div class="box flex-row mt-150 screen fragment" style="padding:40px;" data-fragment-index="2">
   <div class="badge" data-arrow="->task-dev">Specifications</div>
   <div class="badge fragment" id="task-dev" data-arrow="->task-test" data-fragment-index="3">Development<br>(Developer)</div>
   <div class="badge overlay-anchor fragment" id="task-test" data-arrow="->task-prod" data-fragment-index="4">Test automation<br>(Tester & Developer)
@@ -108,9 +110,9 @@ So, let's automate end to end tests...
 
 <img src="img/print/bdd-2.png" class="print"></img>
 
-<div class="mt-150 flex-row">
+<div class="mt-200 flex-row">
   <div class="flex-column gap-10">
-    <ul class="text-level-3 no-bullets">
+    <ul class="no-bullets">
       <li class="fragment"><i class="emo emoji-x"></i>Different understanding
       <li class="fragment"><i class="emo emoji-thumbup"></i>Fewer regressions
       <li class="fragment"><i class="emo emoji-x"></i>Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
@@ -127,11 +129,12 @@ So, let's automate end to end tests...
 
 
 ---
+<!-- .element: class="text-level-2" -->
 
 ## The Behaviour Driven Development approach
 <!-- .element: class="text-size-heading-3" -->
 
-<div class="box flex-row screen fragment mt-100" style="padding:30px;">
+<div class="box flex-row screen fragment mt-125" style="padding:30px;">
   <div class="badge" data-arrow="->task-example">Problem to solve</div>
   <div class="badge fragment" id="task-example" data-arrow="->task-dev,->task-test">Specification <br>workshop</div>
   <div class="flex-column">
@@ -146,13 +149,15 @@ So, let's automate end to end tests...
 
 <img src="img/print/bdd-3.png" class="print"></img>
 
-<p class="text-level-3 fragment">For each story, and before the development, we agree on a set of concrete <strong>key examples</strong> that illustrate how the feature should work
+<p class="fragment mt-125">For each story, and before the development, we agree on a set of concrete <strong>key examples</strong> that illustrate how the feature should work
 
-<ul class="mt-50 text-level-3 no-bullets">
-  <li class="fragment"><i class="emo emoji-thumbup"></i>Shared understanding
-  <li class="fragment"><i class="emo emoji-thumbup"></i>The team discover unknown unknowns earlier
-  <li class="fragment"><i class="emo emoji-thumbup"></i>We get the <strong>Scenarios to automate</strong> out of the process
-</ul>
+<div class="flex-row flex-row--center">
+  <ul class="mt-100 no-bullets">
+    <li class="fragment"><i class="emo emoji-thumbup"></i>Shared understanding
+    <li class="fragment"><i class="emo emoji-thumbup"></i>The team discover unknown unknowns earlier
+    <li class="fragment"><i class="emo emoji-thumbup"></i>We get the <strong>Scenarios to automate</strong> out of the process
+  </ul>
+</div>
 
 Note:
 We can add a design workshop in the process to prevent non testable code.
@@ -190,18 +195,17 @@ _Possible list:_
 
 ---
 
-## &lt;/> automate the verification with cypress
+## &lt;/> Automate the verification with cypress
 <!-- .element: data-toc-exclude class="text-size-heading-3"-->
 
-<div class="exercice text-level-3">
-  <p>During the specification workshop, we identifed some acceptance criteria.
+<div class="exercice text-level-2">
   <p>Let's code
   <ul>
-    <li>Automate the verification of the acceptance criteria
+    <li>Automate the verification of the acceptance criteria identified during the specification workshop
   </ul>
-  <p>Commands that may help
-  <ul class="text-level-4">
-    <li><code>cy.visit()</code>, <code>cy.get()</code>, <code>cy.contains()</code>, <code>cy.click()</code>, <code>cy.should()</code>
+  <p>Commands
+  <ul>
+    <li class="text-level-4"><code>cy.visit()</code>, <code>cy.get()</code>, <code>cy.contains()</code>, <code>cy.click()</code>, <code>cy.should()</code>
   </ul>
   <p>Userful links
   <ul style="font-size:75%">

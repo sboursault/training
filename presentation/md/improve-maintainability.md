@@ -22,10 +22,10 @@ Simplify code with dedicated selectors, custom command and page object
 
 ## Why investing in maintainability?
 
-<p class="fragment">We spend much more time reading code, than writing it.<br/>
+<p class="mt-150 fragment">We spend much more time reading code, than writing it.<br/>
 So the code should optimize for reading.
 
-<p class="mt-125 fragment">An E2E test have many reasons to fail
+<p class="mt-150 fragment">An E2E test have many reasons to fail
 <ul class="fragment">
   <li>the application may not have been designed to be tested
   <li>the UI can change frequently
@@ -40,7 +40,7 @@ SDET: automaticien
 
 ## Dedicated selectors
 
-<p class="mt-250 fragment">Add a<code>data-testid</code> attribute to query your html elements</p>
+<p class="mt-250 fragment">Add a <code>data-testid</code> attribute to query your html elements</p>
 
 ```html
 <input type="email" id="email" name="email"
@@ -59,10 +59,9 @@ Don't test it if it's not testable
 
 
 ---
-
+<!-- .element: class="text-level-2" -->
 ## Hooks
 
-<div class="text-level-3">
 <p>Hooks are helpful to set conditions that run before a set of tests
 
 ```typescript
@@ -82,7 +81,7 @@ describe('My feature', () => {
 
 ```
 
-<div class="fragment mt-100">
+<div class="fragment mt-150">
 <p>Avoid using <code>after()</code> and <code>afterEach()</code>
 <ul>
   <li>When a tests fails, clean-up code might remove important information, making it harder to investigate
@@ -130,7 +129,7 @@ cy.get(`[data-testid=my-component]`)
 
 <div class="fragment mt-125">
 
-<p class="text-level-2">can be simplified with a custom command:
+<p>can be simplified with a custom command:
 
 ```typescript 
 cy.getByTestid(`my-component`)
@@ -138,7 +137,7 @@ cy.getByTestid(`my-component`)
 
 </div>
 
-<p class="fragment mt-150">Custom commands work well for behaviors that are desirable across many tests
+<p class="fragment mt-200">Custom commands work well for behaviors that are desirable across many tests
 
 
 ---
@@ -169,7 +168,7 @@ cataloguePage.displayMiniBasket();               // this is about the
 <!-- .element: data-toc-label="</> Simplify the mini-basket tests" -->
 
 
-<div class="exercice text-level-3">
+<div class="exercice text-level-2">
   <p>Let's code
   <ul>
     <li>Create the custom command <code>cy.getByTestid()</code> and refactor the test code to use it.
@@ -193,7 +192,7 @@ cataloguePage.displayMiniBasket();               // this is about the
 <!-- .element: data-toc-exclude -->
 
 
-<div class="exercice text-level-3">
+<div class="exercice text-level-2">
   <p>Let's code
   <ul>
     <li>Refactor your tests to use a page object reprensenting the catalog page.
