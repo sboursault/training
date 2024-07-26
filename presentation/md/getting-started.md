@@ -141,7 +141,7 @@ describe('home-page', () => {
     <div class="badge fragment" id="task-dev" data-arrow="->task-prod">Development<br>(Developer)</div>
     <div class="badge fragment" id="task-test">
       Test automation<br>(Tester & Developer)
-      <span class="fragment" data-arrow="task-test->task-dev"></span>
+      <span class="fragment" data-arrow="task-test->task-dev:validate"></span>
     </div>
   </div>
   <div class="badge fragment" id="task-prod">Production <br> deployment</div>

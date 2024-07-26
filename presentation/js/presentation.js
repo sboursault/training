@@ -27,11 +27,24 @@ export function fillPartTocs() {
 
 function rewriteSlideTitles() {
   document.querySelectorAll('h2').forEach(element => {
+    const tags = element.getAttribute('data-tags') || ''
+      
     const text = element.innerText;
-    if (text.indexOf('</>') !== -1) {
+    if (text.indexOf('</>') !== -1 || tags.indexOf('practice') !== -1) {
       element.innerText = ''
-      createChild(element, 'span', {class:'code-symbol code-symbol--white-on-green-small'}, '</>')
-      addText(element, text.replace('</>', '').trim())
+      //createChild(element, 'span', {class:'practice-badge'}, '<Practice/>')
+      //createChild(element, 'div', {class: 'mt--25'}, text.replace('</>', '').trim())
+      //element.classList.add('mt-0')
+
+      //createChild(element, 'div', {class: ''}, text.replace('</>', '').trim())
+      //createChild(element, 'div', {class:'mt--25'}, createNode('span', {class:'practice-badge'}, '<Practice/>'))
+      //element.classList.add('mt-50')
+
+      createChild(element, 'span', {class: ''}, text.replace('</>', '').trim())
+      createChild(element, 'span', {class:'tag tag--small ms-50'}, 'Practice')
+      
+      if (tags.indexOf('optional') !== -1)
+        createChild(element, 'span', {class:'tag tag--small tag--optional'}, 'Optional')
     }
   })
 }
@@ -43,11 +56,18 @@ function fillPartToc(ul, partTitleSlide) {
     const h2Element = slide.querySelector('h2')
     const exclude = h2Element.getAttribute('data-toc-exclude')
     if (exclude === null) {
-      const tocLabel = h2Element.getAttribute('data-toc-label') || h2Element.innerText
+      const tags = h2Element.getAttribute('data-tags') || ''
+      let tocLabel = h2Element.getAttribute('data-toc-label') || h2Element.innerText
+      if (tocLabel.endsWith('Optional'))
+        tocLabel = tocLabel.substring(0, tocLabel.length - 'Optional'.length)
+      if (tocLabel.endsWith('Practice'))  
+        tocLabel = tocLabel.substring(0, tocLabel.length - 'Practice'.length)
       const tocLink = createNode('a', {href: getSlideUrl(slide)})
-      if (tocLabel.indexOf('</>') !== -1)
-        createChild(tocLink,'span', {style:'font-family:monospace; font-size: .9em; margin-right: 0.4rem; letter-spacing: -.03em;'}, '</>')
       addText(tocLink, tocLabel.replace('</>', '').trim())
+      if (tocLabel.indexOf('</>') !== -1 || tags.indexOf('practice') !== -1) 
+        createChild(tocLink, 'span', {class:'tag'}, 'Practice')
+      if (tags.indexOf('optional') !== -1)
+        createChild(tocLink, 'span', {class:'tag tag--optional'}, 'Optional')      
       createChild(ul, 'li', {}, tocLink)
     }
     slide = getSiblingUnlessPartTileSlide(slide)
@@ -128,7 +148,7 @@ function isVisible(el) {
 }
 function drawArrow(elt1, elt2, options) {
   if (isVisible(elt1) && isVisible(elt2))
-    new LeaderLine(elt1, elt2, { color: 'var(--r-link-color)', size: 7, ...options || {} });
+    new LeaderLine(elt1, elt2, { color: 'var(--r-link-color)', size: 4, ...options || {} });
 }
 
 function drawArrows() {
@@ -139,10 +159,11 @@ function drawArrows() {
     .forEach(elt => {
       const arrowDefs = elt.getAttribute("data-arrow").split(',')
       Array.from(Array.from(arrowDefs)).forEach(arrowDef => {
-        const array = arrowDef.split('->');
+        const [arrow,label] = arrowDef.split(':');
+        const array = arrow.split('->');
         const from = array[0] ? section.querySelector('#' + array[0]) : elt;
         const to = array[1] ? section.querySelector('#' + array[1]) : elt;
-        drawArrow(from, to, { path: 'fluid' });
+        drawArrow(from, to, { path: 'fluid', endLabel: label });
       })
     })
 }

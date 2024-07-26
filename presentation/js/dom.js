@@ -1,6 +1,6 @@
 
-export function createChild(parent, type, attributes, text) {
-  const newElement = createNode(type, attributes, text)
+export function createChild(parent, type, attributes, content) {
+  const newElement = createNode(type, attributes, content)
   parent.appendChild(newElement)
   return newElement
 }

@@ -202,6 +202,10 @@ $block-margin: 32px;
     margin-bottom: $block-margin !important;
   }
 
+  .ms-50 {
+    margin-left: $block-margin*.5 !important;
+  }
+
   strong {
     color: var(--color-dark-lemon-green-2);
   }
@@ -647,7 +651,7 @@ $block-margin: 32px;
     font-size: .28em;
     letter-spacing: 0.1em;
     border-radius: 0.3em;
-    background-color: var(--color-dark-lemon-green-3);
+    background-color: var(--color-dark-gray-1);
     color: white;
     margin-right: 0.7em;
     vertical-align: .5em;
@@ -660,6 +664,33 @@ $block-margin: 32px;
     border: 3px solid var(--color-dark-gray-1);
     color: var(--color-dark-gray-1);
     margin-right: 0.8em;
+  }
+
+  .tag {
+    //  font-family: sans-serif;
+    vertical-align: middle;
+    font-weight: 700;
+    padding: .25em .55em;
+    font-size: .75em;
+    border-radius: 50rem;
+    background-color: var(--color-light-gray-4);
+    color: var(--color-dark-gray-2);
+    margin-left: .8em;
+    line-height: 1;
+    text-align: center;
+  }
+  
+  .tag + .tag {
+    margin-left: .5em;
+  }
+
+  .tag--optional {
+    background-color: var(--color-light-lemon-green-2);
+    color: var(--color-dark-gray-2);
+  }
+
+  .tag--small {
+    font-size: .35em;
   }
   
   @keyframes blinker {

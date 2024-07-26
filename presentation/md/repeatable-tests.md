@@ -121,8 +121,8 @@ prepare the data before running the test, avoid reverting changes at the end of 
 
 ---
 
-## </> Optional: Let's practice
-<!-- .element: class="text-size-heading-3" -->
+## Verify the basket recovery - part 2
+<!-- .element: data-tags="practice, optional" class="text-size-heading-3" -->
 
 <div class="exercice">
   <p class="">Let's code
