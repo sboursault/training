@@ -210,6 +210,10 @@ $block-margin: 32px;
     color: var(--color-dark-lemon-green-2);
   }
 
+  .no-wrap {
+    text-wrap: nowrap;
+  }
+  
   .block {
     width: fit-content;
     margin: auto;
@@ -703,5 +707,9 @@ $block-margin: 32px;
 
 .leader-line {
   z-index: 1000;
+
+  text {
+    font-family: var(--r-main-font);;
+  }
 }
 

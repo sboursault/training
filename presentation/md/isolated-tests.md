@@ -107,8 +107,8 @@ You're not sure which products are already used in existing tests.
 
 ---
 
-## </div> Delivery fees when the basket is exactly 30€
-<!-- .element: class="text-size-heading-3" -->
+## Delivery fees when the basket is exactly 30€
+<!-- .element: data-tags="practice" class="text-size-heading-3" -->
 
 <div class="exercice">
   <p>Let's code
@@ -191,9 +191,14 @@ To enforce test isolation...
 
 ---
 
-## Optional
+## Run tests with distinct user accounts
+<!-- .element: data-tags="practice, optional" class="text-size-heading-3" -->
 
-TODO
+<div class="exercice">
+  <p class="">Let's code
+  <ul>
+    <li>In the test set-up, create a dedicated user and use it throughout the test
+  </ul>
+</div>
 
-utiliser des comptes différents pour chaque fichier de spec
 

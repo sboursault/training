@@ -12,6 +12,13 @@
 
 </div>
 
+
+Note:
+- On va voir un ensemble de bonnes pratiques
+  - certaines peuvent ne pas être adaptées à votre contexte, ou pas faisable
+  - il n'est pas nécessaire de toutes les adopter
+
+
 ---
 
 <!-- .slide: data-auto-animate -->
@@ -85,6 +92,34 @@ Participants
 - A tester, who thinks about how to break things, and come up with lots of scenarios, sometimes covering obscure edge cases, and sometimes covery very important ones 
 - The product owner, who cares about scope
 - Anybody relevant to the story being discussed (operations, UX designer...)-->
+
+
+---
+<!-- .slide: class="text-level-1" -->
+
+## Technical design workshop
+
+<div class="mt-150 fragment">
+  <p>To ensure a new feature will be testable, have a <strong>technical design workshop</strong> and ask:
+  <p class="text-center"><b>How will we test this?</b>
+</div>
+
+<div class="mt-150 fragment">
+  <p>And more specifically
+  <ul>
+    <li>Do we need dedicated selectors?
+    <li>If there are asynchronous processes, how can we know when they are finished? 
+  </ul>
+</div>
+
+<p class="mt-150 fragment">It doesn't have to be a formal meeting, but at least, try to ask the question before the development starts
+
+Note: 
+
+Consider having a technical design workshop, where you ask this question:
+
+"How will we test this?"
+
 
 ---
 
@@ -211,10 +246,11 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
 
 
 ---
- 
+<!-- .slide: class="text-level-2" -->
+
 ## Excluding and Including Tests
 
-<div class="text-level-3 fragment">
+<div class="fragment mt-200">
 <p>Sometimes you just want to run a subset of your test suite
 <ul>
   <li>Some test may not run on all environments
@@ -258,7 +294,3 @@ npx cypress run --env grepTags=-sendsEmail  # runs all tests without the tag 'se
 <p class="fragment mt-300">Don't let flaky tests attack your confidence!
 
 <p class="fragment mt-200">If not fixed within a given time frame, <strong>quarantine</strong> or <strong>delete</strong> the flaky test
-
----
-
-add slide to introduce tech design workshop
