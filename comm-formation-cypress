@@ -1,0 +1,33 @@
+Bonjour Sarah,
+
+Je reviens d'une semaine en famille dans les Ardennes belges, c'était ressourçant !
+
+Super idée cette communication sur la formation Cypress, ce serait sous quelle forme ?
+
+Quels points faut-il mettre en avant ?
+
+En fait, quand on démarre sur les tests End-to-End avec Cypress
+(mais le schéma est le même avec un produit concurrent comme Playwright),
+on rencontre successivement 3 difficultés.
+
+La première est la plus évidente.
+Il faut s'approprier l'outil de test, ici Cypress.
+
+Une fois cette difficulté surmontée, on s'aperçoit que ce qu'on a gagné en qualité,  o l'a perdu en efficacité !
+La deuxième difficulté est d'intégrer efficacement l'automatisation des tests End-to-End dans le processus de développement.
+
+Enfin, lorsqu'on maîtrise l'outil et que le process est rodé, de nouveaux freins apparaissent :
+
+la suite de tests prend de plus en plus de temps, et des tests passent parfois en erreur,
+sans qu'il ait eu de changement sur le programme vérifié.
+Comment garder une suite de tests rapide, fiable et maintenable ?
+
+J'ai bâtit la formation autour de ces 3 axes (Je ne suis pas sûr que ça ressorte bien dans le plan de formation).
+Pour moi, on ne peut pas faire une formation sur les tests E2E sans aborder tous ces volets.
+
+En résumé, je pense que le plus de cette formation est de présenter Cypress,
+mais aussi les bonnes pratiques relatives aux tests End-to-end, quelles soient organisationnelles ou techniques.
+
+N'hésite pas si des points ne sont pas clairs.
+
+Merci Sarah !
