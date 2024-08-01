@@ -5,7 +5,7 @@
 
 <p class="text-size-heading-3"><b>Sébastien Boursault</b>
 
-<ul class="mt-100 no-bullets">
+<ul class="mt-50 no-bullets">
   <li>Developer (Java, Python, Js) and Tester
   <li>With an experience as PO
   <li>Trainer (E2E testing)
@@ -26,14 +26,33 @@ sboursault@proton.me
   <li>Is there anything speciﬁc you want to talk about?
 </ul>
 
+Note:
+- les horraires 
+  - 9:00-12:30
+  - 13:30-17:00
+- pause toutes les heures et demi ~
+- aménagement possible si besoin
+
+
 ---
 
-## Intent of this course
+## Intent of this course - WIP
 
 - Understanding good practices to include E2E tests in your development process
 - Practice with cypress api and tools
 - Be at ease to search more info in the cypress documentation
 - Understand practices to write more maintanable, performant and stable E2E tests, whatever the product you use
+
+
+- Concevoir des tests bout en bout (E2E)
+- Automatiser ces tests avec Cypress
+- Améliorer la lisibilité et l'évolutivité des tests E2E
+- Créer une suite de tests rapides et extensibles (basée sur des tests isolés et répétables)
+
+Note:
+- On va voir un ensemble de bonnes pratiques
+  - certaines peuvent ne pas être adaptées à votre contexte, ou pas faisable
+  - il n'est pas nécessaire de toutes les adopter
 
 <!-- .element: class="mt-200" -->
 
@@ -41,8 +60,7 @@ sboursault@proton.me
 <!-- .slide: id="toc" -->
 
 ## Course outline
-<!-- .element: class="text-size-heading-3 mt-25" -->
+<!-- .element: class="text-size-heading-3" -->
 
-<ol class="text-level-5">
+<ol class="text-level-4 mt-100">
 </ol>
-

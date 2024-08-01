@@ -1000,7 +1000,6 @@ This involves:
     - page objects adaptation and dependency injection ?
       - https://github.com/typestack/typedi
     - mobile or desktop specific tests
-  - add csrf verfication on apis ?
   - verify behaviours based on api calls (includes waiting for an api response)
     - amazon quick search shows product that match with my request
     - results are changed after a new search !! (this can one imply waiting for an api response)

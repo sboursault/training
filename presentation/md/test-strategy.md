@@ -143,6 +143,15 @@ While a team can have automation experts, it doesn't limit particular tasks to p
 Everyone should feel responsible for the automated tests
 **Without automated tests, we don't have a quality product.**
 
+---
+
+## Write small tests - WIP
+
+when they fail, easier to find what is broken
+
+Avoid automating all UI end-to-end journeys. 
+
+Write **atomic** scripts so that when they fail, you know why.
 
 ---
 

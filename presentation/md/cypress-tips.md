@@ -44,7 +44,7 @@
 
 ---
 
-## Debug tests
+## Debug tests - TO REVIEW
 
 <ul class="mt-300">
   <li class="fragment"><code>cy.pause()</code>
@@ -86,5 +86,12 @@ cy.wait('@addProductToBasket')  // wait for a http response
 Note:
 Testing offten involves asynchronous behaviours.
 
+---
 
+## Verify different origins TODO
 
+Within a test, you can't verify pages from different origins
+
+cy.origin()  // good for a login with an authentication provider
+
+ou alors appel api // good for integration tests
