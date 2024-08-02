@@ -88,10 +88,22 @@ Testing offten involves asynchronous behaviours.
 
 ---
 
-## Verify different origins TODO
+## Test accros multiple domains - WIP
 
-Within a test, you can't verify pages from different origins
+<p>Within a test, you can't verify pages from different <strong>origins</strong>
 
-cy.origin()  // good for a login with an authentication provider
+<p>e.g. an ecommerce site sends new orders to a logistics application. In a single test, you can't navigate your app to create the order, then navigate to the other app to verify the orders are correctly sent.
 
-ou alors appel api // good for integration tests
+The <code>cy.origin()</code> command allows to bypass this limitation
+- Useful if you need a quick action on another domain, like <a href="https://docs.cypress.io/guides/end-to-end-testing/social-authentication">social authentication</a>
+- But page objects won't work on the new origin
+
+A better option for integration tests is to call its apis through <code>cy.request()</code>
+
+
+
+---
+
+## cy.session TODO
+
+ajouter un mot sur cy.session() good second choice, if you can't log using api
