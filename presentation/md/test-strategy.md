@@ -201,7 +201,7 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
 
 ```json
 "scripts": {
-  "cy:open": "dotenvx run -f .env -- npx cypress open --e2e --browser chromium",
+  "cy:open": "dotenvx run -f .env -- npx cypress open --e2e --browser chromium"
 },
 ```
 

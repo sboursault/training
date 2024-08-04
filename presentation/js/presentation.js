@@ -32,17 +32,8 @@ function rewriteSlideTitles() {
     const text = element.innerText;
     if (text.indexOf('</>') !== -1 || tags.indexOf('practice') !== -1) {
       element.innerText = ''
-      //createChild(element, 'span', {class:'practice-badge'}, '<Practice/>')
-      //createChild(element, 'div', {class: 'mt--25'}, text.replace('</>', '').trim())
-      //element.classList.add('mt-0')
-
-      //createChild(element, 'div', {class: ''}, text.replace('</>', '').trim())
-      //createChild(element, 'div', {class:'mt--25'}, createNode('span', {class:'practice-badge'}, '<Practice/>'))
-      //element.classList.add('mt-50')
-
       createChild(element, 'span', {class: ''}, text.replace('</>', '').trim())
       createChild(element, 'span', {class:'tag tag--small ms-50'}, 'Practice')
-      
       if (tags.indexOf('optional') !== -1)
         createChild(element, 'span', {class:'tag tag--small tag--optional'}, 'Optional')
     }

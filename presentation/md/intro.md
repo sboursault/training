@@ -5,7 +5,7 @@
 
 <p class="text-size-heading-3"><b>Sébastien Boursault</b>
 
-<ul class="mt-50 no-bullets">
+<ul class="mt-50 no-bullets ms-0">
   <li>Developer (Java, Python, Js) and Tester
   <li>With an experience as PO
   <li>Trainer (E2E testing)

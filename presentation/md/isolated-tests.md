@@ -56,11 +56,9 @@ _Possible list:_
 Note:
 
 
-
 ---
 
-
-<!-- .slide: class="text-level-3" -->
+<!-- .slide: class="text-level-2" -->
 
 <div class="flex-row flex-row--center mt-300" >
   <div class="bubble bubble-bottom-left">
@@ -77,7 +75,7 @@ Note:
 
 <div style="width:80%; padding-left:2em;">
 
-In the **set-up of our test**, use the **product api** to create a new product sold 30€
+In the **setup of our test**, use the **product api** to create a new product sold 30€
 - It doesn't modify a product that may be used in another test
 - It avoids growing the initial data set
 - If there's a problem with this product in the future, anybody will be confident to fix it,
@@ -197,7 +195,7 @@ To enforce test isolation...
 <div class="exercice">
   <p class="">Let's code
   <ul>
-    <li>In the test set-up, create a dedicated user and use it throughout the test
+    <li>In the test setup, create a dedicated user and use it throughout the test
   </ul>
 </div>
 

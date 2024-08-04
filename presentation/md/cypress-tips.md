@@ -132,7 +132,7 @@ Testing offten involves asynchronous behaviours.
 
 <div class="mt-300 fragment">
   <p>The <code>cy.origin()</code> command allows to bypass this limitation
-  <ul class="no-bullets ms-50">
+  <ul class="no-bullets">
     <li><i class="emo emoji-thumbup"></i>Good for a quick action on another domain, like <a href="https://docs.cypress.io/guides/end-to-end-testing/social-authentication">social authentication</a>
     <li><i class="emo emoji-x"></i>Page objects don't work on the other origin
   </ul>
