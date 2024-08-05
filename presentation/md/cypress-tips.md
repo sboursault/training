@@ -88,7 +88,7 @@ Testing offten involves asynchronous behaviours.
 
 ---
 
-## Test accros multiple domains
+## Test accross multiple domains
 
 <!-- .slide: class="text-level-1" -->
 

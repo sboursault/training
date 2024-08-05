@@ -743,7 +743,7 @@ $block-margin: 32px;
     text-align: center;
 
     img {
-      content: url(/img/browser-window-icon-vector.png);
+      content: url(/img/pngtree-safari-browser-mockup-png-image_7111467-empty.png);
       margin: 0;
       position: absolute;
       left: 0;
@@ -752,23 +752,24 @@ $block-margin: 32px;
       height: 100%;
       max-width: initial;
       max-height: initial;
+      border: 1px solid #999;
+      border-radius: 5px;
     }
     
     p {
       position: absolute;
-      color: blue;
+      color: #00d;
       margin: 0;
       top: 55%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -70%);
       font-weight: 400;
       font-size: .8em;
     }
 
     p.browser-box_error {
       color: red;
-      margin-top: 1.8em;
-      font-weight: 700;
+      margin-top: 2em;
     }
   }
 
