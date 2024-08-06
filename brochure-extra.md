@@ -113,7 +113,7 @@ objectifs
 
 ## Qualities of a good automated test
 
-## Api tests: Order amount
+## API tests: Order amount
 
 🧩 **PRIMARY OBJECTIVE**
 

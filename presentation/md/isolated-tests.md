@@ -75,11 +75,13 @@ Note:
 
 <div style="width:80%; padding-left:2em;">
 
-In the **setup of our test**, use the **product api** to create a new product sold 30€
-- It doesn't modify a product that may be used in another test
-- It avoids growing the initial data set
-- If there's a problem with this product in the future, anybody will be confident to fix it,
- without fear of breaking another test
+<p>In the <strong>test setup</strong>, call the <strong>product api</strong> to create a new product sold 30€
+
+<ul class="no-bullets mt-0">
+  <li class="mt-50"><i class="emo emoji-thumbup"></i>No modification of a product that may be used in another test
+  <li class="mt-50"><i class="emo emoji-thumbup"></i>Keeps the initial data unchanged
+  <li class="mt-50"><i class="emo emoji-thumbup"></i>If there's a problem with this product in the future, anybody will be confident to fix it, without fear of breaking another test
+</ul>
 
 </div>
 

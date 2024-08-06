@@ -2,16 +2,12 @@
 
 <!-- .slide: id="improve-maintainability" class="slide--part-title slide--vcenter" -->
 
-<div class="flex-row">
-
-  <div class="part-title">
-    <span class="text-level-3">Part 2</span>
-    <h1>Improve maintainability</h1>
-  </div>
-  
-  <div class="part-toc box fragment"></div>
-
+<div class="part-title">
+  <span class="text-level-3">Part 2</span>
+  <h1 class="text-size-heading-1-smaller">Improve maintainability</h1>
 </div>
+
+<div class="part-toc box fragment"></div>
 
 Note:
 
@@ -94,7 +90,7 @@ Note:
 It may sound logical that each test should clean up after itself, but...
 ---
 
-## Tests in progress
+## Pending tests
 
 <p class="mt-150">Use <code>only()</code> and <code>skip()</code> to include or exclude some tests
 
@@ -142,30 +138,8 @@ cy.getByTestid(`my-component`)
 
 ---
 
-## Page object pattern
-
-<p class="mt-200 fragment">Page objects abstract away the technical interactions from the decision code</p>
-
-```typescript
-cy.get(".basket-mini .dropdown-toggle").click(); // this is about HTML
-
-```
-<!-- .element: class="fragment" -->
-
-```typescript
-cataloguePage.displayMiniBasket();               // this is about the
-                                                 // application
-```
-
-<!-- .element: class="fragment" -->
-
-<p class="mt-150 fragment">Tests with Page Objects are <strong>easier to read</strong> and <strong>easier to maintain</strong>
-
-
----
-
-## &lt;/> Creating a custom command
-<!-- .element: data-toc-label="</> Simplify the mini-basket tests" -->
+## Create a custom command
+<!-- .element: data-tags="practice, optional" -->
 
 
 <div class="exercice text-level-2">
@@ -188,9 +162,30 @@ cataloguePage.displayMiniBasket();               // this is about the
 
 ---
 
-## &lt;/> Test with Page Objects
-<!-- .element: data-toc-exclude -->
+## Page object pattern
 
+<p class="mt-200 fragment">Page objects abstract away the technical interactions from the decision code</p>
+
+```typescript
+cy.get(".basket-mini .dropdown-toggle").click(); // this is about HTML
+
+```
+<!-- .element: class="fragment" -->
+
+```typescript
+cataloguePage.displayMiniBasket();               // this is about the
+                                                 // application
+```
+
+<!-- .element: class="fragment" -->
+
+<p class="mt-150 fragment">Tests with Page Objects are <strong>easier to read</strong> and <strong>easier to maintain</strong>
+
+
+---
+
+## Rewrite tests with Page Objects
+<!-- .element: data-tags="practice" -->
 
 <div class="exercice text-level-2">
   <p>Let's code

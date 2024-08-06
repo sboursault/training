@@ -156,7 +156,6 @@ Write **atomic** scripts so that when they fail, you know why.
 ---
 
 ## Continuous Integration and Delivery
-<!-- .element: class="mt-50 text-size-heading-2" -->
 
 
 <p class="fragment mt-400">Run automated tests on each release, as part of your CI/CD pipeline
@@ -175,8 +174,8 @@ you must have clear control over the environment in which the tests run.
 
 ---
 
-## &lt;/> Define environment variables
-<!-- .element: data-toc-label="</> Manage environment variables" class="mt-0 text-size-heading-3" -->
+## Define environment variables
+<!-- .element: data-toc-label="Manage environment variables" data-tags="practice,optional" class="mt-0 text-size-heading-3" -->
 
 <div class="exercice text-level-3">
 
@@ -223,8 +222,8 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
 </div>
 
 ---
-## &lt;/> Manage environment variables
-<!-- .element: data-toc-exclude class="text-size-heading-3" -->
+## Manage environment variables
+<!-- .element: data-toc-exclude data-tags="practice,optional" class="text-size-heading-3" -->
 
 <div class="exercice text-level-3">
 

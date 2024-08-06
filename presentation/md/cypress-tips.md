@@ -1,17 +1,15 @@
 
 
-<!-- .slide: id="cypress-tips" class="slide--part-title slide--vcenter" -->
+<!-- .slide: class="slide--part-title slide--vcenter" -->
 
-<div class="flex-row">
 
-  <div class="part-title">
-    <span class="text-level-3">Part 4</span>
-    <h1>Cypress tips</h1>
-  </div>
-  
-  <div class="part-toc box fragment"></div>
-
+<div class="part-title">
+  <span class="text-level-3">Part 4</span>
+  <h1>Cypress tips</h1>
 </div>
+
+<div class="part-toc box fragment"></div>
+
 
 
 ---
@@ -92,11 +90,14 @@ Testing offten involves asynchronous behaviours.
 
 <!-- .slide: class="text-level-1" -->
 
+<p class="fragment mt--100">a.k.a. <strong>Integration tests</strong>
+
+
 <p class="fragment">Within a test, you can't verify pages from different <strong>origins</strong>
 
 <p class="fragment">Example:
   
-<div class="text-center text-level-2 mt-50 fragment">
+<div class="text-center text-level-2 fragment">
   <p class="">An ecommerce site sends new orders to a logistics application.<br>We want to verify the orders are correctly sent.
   <div class="box mt-50 fragment">
     <span class="box_label">Cypress test</span>
@@ -125,28 +126,20 @@ Testing offten involves asynchronous behaviours.
   <div class="bubble bubble-bottom-left">
     <i class="emo emo-36 emoji-face_with_monocle"></i>
     <span class="bubble__text">So how to verify my app works well within an ecosystem?
-    <br>
-    (a.k.a. <strong>Integration tests</strong>)</span>
   </div>
 </div>
 
 <div class="mt-300 fragment">
-  <p>The <code>cy.origin()</code> command allows to bypass this limitation
-  <ul class="no-bullets">
-    <li><i class="emo emoji-thumbup"></i>Good for a quick action on another domain, like <a href="https://docs.cypress.io/guides/end-to-end-testing/social-authentication">social authentication</a>
-    <li><i class="emo emoji-x"></i>Page objects don't work on the other origin
+  <p>The <code>cy.origin()</code> command allows to navigate on another domain
+  <ul class="no-bullets mt-0">
+    <li class="mt-50"><i class="emo emoji-thumbup"></i>Good for a quick action on another domain, like <a href="https://docs.cypress.io/guides/end-to-end-testing/social-authentication">social authentication</a>
+    <li class="mt-50"><i class="emo emoji-x"></i>Page objects don't work on the other origin
   </ul>
 </div>
 
 <div class="fragment">
-  <p class="mt-200">A better alternative for integration tests:
+  <p class="mt-200">A better alternative:
   <ul>
-    <li><!--Make direct calls to the other app <strong>api</strong> from your test, and check the created data--> Check the data created in the other app with <strong>direct calls</strong> to this other app <strong>api</strong> (see <code>cy.request()</code>)
+    <li class="mt-25"><!--Make direct calls to the other app <strong>api</strong> from your test, and check the created data--> Check the data created in the other app with <strong>direct calls</strong> to this other app <strong>api</strong> (see <code>cy.request()</code>)
   </ul>
 </div>
-
----
-
-## cy.session TODO
-
-ajouter un mot sur cy.session() good second choice, if you can't log using api

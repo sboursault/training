@@ -1,11 +1,14 @@
 
 
-<!-- .slide: id="good-tests" class="slide--part-title slide--vcenter" -->
+<!-- .slide: class="slide--part-title slide--vcenter" -->
 
 <div class="part-title">
   <span class="text-level-3">Part 6</span>
-  <h1>Speed up E2E tests</h1>
+  <h1 class="text-size-heading-1-smaller">Speed up E2E tests</h1>
 </div>
+
+<div class="part-toc box fragment"></div>
+
 
 ---
 
@@ -44,16 +47,15 @@ The login can be verified once, and then for each test that require logging, thi
 <p class="fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests not dealing with <strong>UI-specific risks</strong>
 
 <div class="fragment mt-100">
-  <p>Prefer <strong>api</strong> calls in the setup phase
+  <p>Prefer direct <strong>API</strong> calls in the setup phase
   <ul>
-    <li>Api calls runs faster
-    <li>Api change less offten than UI
-    <li>An api call is offten easier to develop
-    <li>Api are (offten) synchronous
+    <li>API calls runs faster
+    <li>APIs change less offten than UI
+    <li>API calls are easier to automate
   </ul>
 </div>
 
-<p class="fragment">It's ok to develop missing apis for test needs
+<p class="fragment">It's ok to develop missing APIs for test needs
 
 <p class="fragment">Sometimes, direct <strong>db access</strong> can be a second-best alternative
 </div>
@@ -61,8 +63,8 @@ The login can be verified once, and then for each test that require logging, thi
 
 ---
 
-## </> Speed up your tests
-<!-- .element: class="text-size-heading-3" -->
+## Speed up your tests
+<!-- .element: data-tags="practice" -->
 
 <div class="exercice text-level-2">
   <p>Let's code
@@ -78,6 +80,7 @@ The login can be verified once, and then for each test that require logging, thi
   <ul>
     <li><code>cy.request()</code>, <code>debugger</code>
   </ul>
+  
   <p>Userful links
   <ul style="font-size:75%">
     <li class="url-link">https://docs.cypress.io/api/table-of-contents
@@ -86,4 +89,17 @@ The login can be verified once, and then for each test that require logging, thi
   </ul>
 </div>
 
+
+---
+
+## Cypress session
+
+<p class="mt-400">To speed up the login, <code>cy.session()</code> can be a second-best alternative
+
+<ul class="no-bullets mt-0">
+  <li class="mt-50"><i class="emo emoji-thumbup"></i>Works when authencating with a direct HTTP call is not possible
+  <li class="mt-50"><i class="emo emoji-x"></i>Small or no benefit when you have dedicated accounts for each test
+</ul>
+
+<small class="mt-500">Using <code>cy.session()</code>: https://docs.cypress.io/api/commands/session</small>
 

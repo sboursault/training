@@ -592,7 +592,7 @@ _The test suite now takes only 9 seconds_
 
 <br>
 
-## Module3: Api tests
+## Module3: API tests
 
 Verifying the order amount
 

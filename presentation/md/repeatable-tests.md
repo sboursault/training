@@ -3,8 +3,10 @@
 
 <div class="part-title">
   <span class="text-level-3">Part 5</span>
-  <h1>Repeatable tests</h1>
+  <h1 class="text-size-heading-1-smaller">Repeatable tests</h1>
 </div>
+
+<div class="part-toc box fragment"></div>
 
 ---
 
@@ -85,8 +87,8 @@ curl -X DELETE https://.../api/basket -u "tom@test.com:tom@test.com"
 
 ---
 
-## </> Make the test repeatable
-<!-- .element: class="text-size-heading-3" -->
+## Make the test repeatable
+<!-- .element: data-tags="practice" class="text-size-heading-3" -->
 
 <div class="exercice">
   <p>Let's code
