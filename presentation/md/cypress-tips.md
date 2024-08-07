@@ -13,9 +13,9 @@
 
 
 ---
-<!-- .slide: class="text-level-2" -->
-
 ## Using variables
+
+<!-- .slide: class="text-level-2" -->
 
 <div class="fragment">
   <p class="mt-150">Commands are enqueued and run asynchronously
@@ -42,17 +42,48 @@
 
 ---
 
-## Debug tests - TO REVIEW
+## Debug tests
 
-<ul class="mt-300">
-  <li class="fragment"><code>cy.pause()</code>
-  <li class="fragment"><code>cy.request('/some-url').then(response => debugger)</code> (with the dev tools open)
-  <li class="fragment">From the time travel, click on a request to inspect its response
-</ul>
-
-
+<div class="mt-300 fragment">
+  <p>Inspect the <strong>page</strong> and <strong>any storage</strong> during the test
+  
+  ```typescript
+  cy.navigate('/some-page')
+  cy.pause()
+  // or
+  cy.navigate('/some-page')
+    .then(() => {
+      debugger  // works only with the dev tools open
+    })
+  ```
+  <!-- .element: class="mt-75" -->  <!-- à généraliser ? -->
+</div>
 
 <small class="fragment mt-300">Cypress debugging guide: <a href="https://docs.cypress.io/guides/guides/debugging">https://docs.cypress.io/guides/guides/debugging</a></small>
+
+
+---
+
+<!-- .slide: class="text-level-2" -->
+
+<p>Debug <strong>direct http calls</strong> made with <code>cy.request()</code>
+
+<ul class="mt-0">
+  <li class="fragment mt-50">With <code>debugger</code>
+
+```typescript
+cy.request('/some-url')
+  .then((response) => {
+    debugger  // works only with the dev tools open
+  })
+```
+<!-- .element: class="mt-50" -->
+
+<li class="mt-75 fragment">From the <strong>time travel panel</strong>, click on a <strong>request log</strong> to get the full request and response
+<br>
+<div class="text-center"><img class="mt-50" src="img/debug-request.png" height="450"></div>
+</li>
+
 
 ---
 <!-- .slide: class="text-level-2" -->
@@ -112,7 +143,7 @@ Testing offten involves asynchronous behaviours.
         <p class="browser-box_error no-wrap fragment">Cypress error!!
       </div>
     </div>
-    <p class="fragment mt-75">In a single test, you can't navigate on a first domain to create an order, <br>and then navigate to another domain
+    <p class="fragment mt-75">In a single test, you can't visit a first domain, and then visit another
   </div>
   
 </div>

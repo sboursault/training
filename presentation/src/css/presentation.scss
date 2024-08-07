@@ -781,18 +781,6 @@ $block-margin: 32px;
     }
   }
 
-
-  .font-size-adapt {
-    font-size: 1em;
-    container-name: sidebar
-  }
-  
-  @container font-size-adapt (min-width: 700px) {
-    .module h2 {
-      font-size: 2em;
-    }
-  }
-
 }
 
 .leader-line {
