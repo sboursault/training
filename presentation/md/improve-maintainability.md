@@ -34,19 +34,72 @@ SDET: automaticien
 
 ---
 
-## Dedicated selectors
+## Selectors
 
-<p class="mt-250 fragment">Add a <code>data-testid</code> attribute to query your html elements</p>
+<!-- .slide: class="text-level-1" -->
+
+<div class="fragment">
+<p class="mt-300 text-level-1"><strong>CSS selector</strong> examples:
+
+<ul>
+  <li><span class="url-link text-level-2">https://www.w3schools.com/cssref/css_selectors.php</span>
+</ul>
+</div>
+
+<div class="fragment">
+<p class="mt-300">Verify your selectors with <strong>css-and-xpath-checker</strong> (chrome plugin):
+<ul>
+  <li><span class="text-level-2"><a href="https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe">https://chromewebstore.google.com/detail/css-and-xpath-checker/...</a>
+</ul>
+</div>
+
+
+---
+
+<div class="mt-250">
+<p>Finding the right selector
+
+```typescript
+cy.get('#navbar > form > button')  // not good :(
+  .click()                         // breaks with slight changes in the DOM
+
+cy.get('button')                   // not good :(
+  .contains('Search')              // breaks when another button appears with 
+  .click()                         // the same text
+
+cy.get('#navbar button')           //
+  .contains('Search')              // quite good :)
+  .click()                         //
+
+```
+<!-- .element: class="mt-75" -->
+
+<p class="">Selectors must be specific enough to resist changes in the DOM
+
+</div>
+
+
+<p class="mt-200 fragment">Can we do better?
+
+---
+<!-- .slide: class="text-level-1" -->
+
+<p class="mt-250">Add a dedicated attribute on your html elements</p>
 
 ```html
-<input type="email" id="email" name="email"
-  class="form-control" data-testid="register-form__email-input"/>
+<button class="btn btn btn-secondary" type="submit"
+  data-testid="navbar-search-button">Search</button>
 ```
 
-<!-- .element: class="fragment mt-150" -->
+```typescript
+cy.get(`[data-testid=navbar-search-button]`)  // simple, more efficient
+  .click()                                    // and more robust to changes
+```
+<!-- .element: class="mt-150 fragment" -->
 
-<p class="mt-250 fragment">Selectors based on a dedicated attribute are <strong>more efficient</strong> and<br> <strong>more robust to changes</strong></p>
 
+
+<p class="mt-400 fragment">Another good solution is to use <strong>ARIA</strong> based selectors
 
 Note:
 
@@ -55,8 +108,10 @@ Don't test it if it's not testable
 
 
 ---
-<!-- .element: class="text-level-2" -->
+
 ## Hooks
+
+<!-- .slide: class="text-level-2" -->
 
 <p>Hooks are helpful to set conditions that run before a set of tests
 
@@ -106,7 +161,7 @@ describe('My feature', () => {
 
 ```
 
-<ul class="mt-200 no-bullets">
+<ul class="mt-200">
   <li><code>only()</code> serves when you want to run a single test on your machine
   <li><code>skip()</code> can be added temporarily on broken tests (or not passing yet)
 </ul>
