@@ -145,13 +145,14 @@ Everyone should feel responsible for the automated tests
 
 ---
 
-## Write small tests - WIP
+## Write small tests
 
-when they fail, easier to find what is broken
+<p class="mt-400 fragment">Prefer a set of <strong>small tests</strong> over a long script that verify many things
 
-Avoid automating all UI end-to-end journeys. 
+<p class="mt-200 fragment">When a small test fail, it's easier to find what is broken
+ 
+<p class="mt-200 fragment">Avoid automating all UI end-to-end journeys
 
-Write **atomic** scripts so that when they fail, you know why.
 
 ---
 
