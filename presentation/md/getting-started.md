@@ -187,10 +187,12 @@ _The PO can kindly reject some criterias if he thinks they are not required righ
 
 _Possible list:_
 
-- _The mini basket always shows the number of products in basket_
-- _It contains basket entries (with prodcut name, quantity and price)_
-- _When empty, it doesn't show the number of products in basket_
-- _When empty, it informs the basket is empty_
+- Toggle
+  - _The mini basket always shows the number of products in basket_
+  - _When empty, it doesn't show the number of products in basket_
+- Detail
+  - _It contains basket entries (with prodcut name, quantity and price)_
+  - _When empty, it informs the basket is empty_
 
 
 ---
@@ -217,10 +219,9 @@ _Possible list:_
 
 Note:
 
-_The trainer writes and explains the tests for:_
-
-- _The mini-basket always shows the number of products in basket_
-- _When empty, it doesn't show the number of products in basket_
+_The teacher shows how to automate the tests on the toggle, the trainee repeats and automaite the tests on the detail_
 
 _The spec file can be created from the Cypress dashboard._
+
+
 

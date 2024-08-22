@@ -99,8 +99,6 @@ cy.get(`[data-testid=navbar-search-button]`)  // simple, more efficient
 
 
 
-<p class="mt-400 fragment">Another good solution is to use <strong>ARIA</strong> based selectors
-
 Note:
 
 The data-cy attribute will not change from CSS style or JS behavioral changes, meaning it's not coupled to the behavior or styling of an element.

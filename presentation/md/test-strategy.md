@@ -1,16 +1,14 @@
 
 <!-- .slide: class="slide--part-title slide--vcenter" -->
 
-<div class="flex-row">
 
-  <div class="part-title">
-    <span class="text-level-3">Part 8</span>
-    <h1>Test strategy</h1>
-  </div>
-  
-  <div class="part-toc box fragment"></div>
-
+<div class="part-title">
+  <span class="text-level-3">Part 8</span>
+  <h1>Test strategy</h1>
 </div>
+
+<div class="part-toc box fragment"></div>
+
 
 
 Note:
@@ -226,7 +224,7 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
 ## Manage environment variables
 <!-- .element: data-toc-exclude data-tags="practice,optional" class="text-size-heading-3" -->
 
-<div class="exercice text-level-3">
+<div class="exercice text-level-2">
 
   <p class="mt-50">Let's code
   <ul>
@@ -255,11 +253,11 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
 
 
 ---
-<!-- .slide: class="text-level-2" -->
+<!-- .slide: class="text-level-1-5" -->
 
 ## Excluding and Including Tests
 
-<div class="fragment mt-200">
+<div class="fragment">
 <p>Sometimes you just want to run a subset of your test suite
 <ul>
   <li>Some test may not run on all environments
@@ -267,27 +265,187 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
 </ul>
 </div>
 
-<div class="fragment">
+<div class="fragment mt-100">
 
 ```typescript
-it('sends an email to confirm email address',
-    { tags: ['sendsEmail'] },
-    () => {
-      // some verification that may not work on all environments
-    })
+it('sends an email to confirm email address', { tags: ['sendsEmail'] }, () => {
+  // some verification that may not work on all environments
+})
 ```
-
-<!-- .element: class="mt-50" -->
 
 
 ```sh
 npx cypress run --env grepTags=-sendsEmail  # runs all tests without the tag 'sendsEmail'
 ```
+<!-- .element: class="mt-150" -->
 
 </div>
 
-<p class="fragment text-level-4">How to use <strong>@cypress/grep</strong>:<br><a href="https://github.com/cypress-io/cypress/tree/develop/npm/grep">https://github.com/cypress-io/cypress/tree/develop/npm/grep</a>
+<small class="fragment mt-150">
+How to use <strong>@cypress/grep</strong>:<br><a href="https://github.com/cypress-io/cypress/tree/develop/npm/grep">https://github.com/cypress-io/cypress/tree/develop/npm/grep</a>
+</small>
 
+
+---
+
+## Browsers and mobile devices
+
+
+<div class="mt-200 fragment">
+  <p>Consider running your tests on multiple browsers
+  <ul>
+    <li><a href="https://gs.statcounter.com/browser-market-share/all/europe">Browser Market Share</a>
+  </ul>
+</div>
+
+<div class="mt-200 fragment">
+  <p>Consider runnging your tests on mobile AND desktop
+  <ul>
+    <li><a href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/europe">Desktop vs Mobile vs Tablet Market Share</a>
+  </ul>
+</div>
+
+<div class="flex-row flex-row--center mt-200 fragment">
+  <div class="bubble bubble-bottom-left">
+    <i class="emo emo-36 emoji-face_with_monocle"></i>
+    <span class="bubble__text">Mobile rendering differs from desktop rendering...<br>How to deal with that in our tests?</span>
+  </div>
+</div>
+
+---
+
+<!-- .slide: class="text-level-2" -->
+
+<p class="text-level-1">A simple option : write <strong>extra tests</strong> for <strong>specific devices</strong> <span class="tag tag--small tag--optional">Optional</span>
+
+<div class="fragment">
+
+```typescript
+describe('Nav Menus', () => {
+  context('720p resolution', () => {
+    beforeEach(() => {
+      cy.viewport(1280, 720)
+    })
+    it('displays full header', () => {
+      cy.get('nav .desktop-menu').should('be.visible')
+      cy.get('nav .mobile-menu').should('not.be.visible')
+    })
+  })
+
+  context('iphone-5 resolution', () => {
+    beforeEach(() => {
+      cy.viewport('iphone-5')
+    })
+    it('displays mobile menu on click', () => {
+      cy.get('nav .desktop-menu').should('not.be.visible')
+      cy.get('nav .mobile-menu')
+        .should('be.visible')
+        .find('i.hamburger')
+        .click()
+      cy.get('ul.slideout-menu').should('be.visible')
+    })
+  })
+})
+```
+
+<small>Source : https://docs.cypress.io/api/commands/viewport#Organize-desktop-vs-mobile-tests-separately</small>
+
+</div>
+---
+
+<!-- .slide: class="text-level-2" -->
+
+<p class="text-level-1">A safer option : Run the <strong>entire suite</strong> with <strong>different viewports</strong><span class="tag tag--small tag--optional">Optional</span>
+
+<div class="mt-200 fragment">
+
+
+<p>Create a <code>.env</code> for a specific device and add the scripts for this device
+
+
+```ini
+# .env.mobile
+CYPRESS_VIEWPORT_WIDTH=375
+CYPRESS_VIEWPORT_HEIGHT=667
+```
+<!-- .element: style="width:100%" -->
+
+<pre class="mt-150 code-wrapper" style="width:100%">
+<code data-trim class="json" data-line-numbers="1,6">
+// package.json
+...
+"scripts": {
+  ...
+  "cy:open:e2e": "dotenvx run -f .env.e2e -- npx cypress open --e2e --browser chromium",
+  "cy:open:e2e:mobile": "dotenvx run -f .env.e2e -f .env.mobile -- npx cypress open --e2e --browser chromium",
+  ...
+},
+...</code>
+</pre>
+
+</div>
+
+<small class="fragment mt-200">
+More on configuring the <strong>viewport</strong>:<br><a href="https://docs.cypress.io/api/commands/viewport">https://docs.cypress.io/api/commands/viewport</a>
+</small>
+
+---
+
+<!-- .slide: class="text-level-2" -->
+
+<p class="text-level-1 mt-100">Some tests must be adapted for a specific device <span class="tag tag--small tag--optional">Optional</span>
+
+<div class="fragment">
+
+<p class="mt-150">Create an <code>isMobile()</code> function to execute different commands
+
+```typescript
+// cypress/support/utils.ts
+export const isMobile = () => {
+    return (
+      Cypress.config("viewportWidth") < 500
+    )
+  }
+```
+
+```typescript
+// cypress/e2e/feature.spec.ts
+import { isMobile } from './../../support/utils';
+
+// ...
+if (isMobile()) {
+  cy.get(".row").eq(2).realSwipe("toLeft");
+} else {
+  cy.get(".row button.delete").eq(2).click();
+}
+// ...
+```
+</div>
+
+<small class="mt-50 fragment"><code>realSwipe</code> comes with the plugin <strong>cypress-real-events</strong>: https://github.com/dmtrKovalenko/cypress-real-events</small>
+
+---
+
+<!-- .slide: class="text-level-1-5" -->
+
+<p class="text-level-1 mt-100">Some test may be irrelevant on some devices <span class="tag tag--small tag--optional">Optional</span>
+
+<div class="mt-400 fragment">
+
+Remember, <strong>tags</strong> may be used to include or exclude some tests 
+
+```typescript
+describe('A feature available on desktop only', () => {
+  it('does something', { tags: ['desktopOnly'] }, () => {
+    // ...
+  })
+})
+```
+</div>
+
+<small class="mt-400 fragment">
+How to use <strong>@cypress/grep</strong>:<br><a href="https://github.com/cypress-io/cypress/tree/develop/npm/grep">https://github.com/cypress-io/cypress/tree/develop/npm/grep</a>
+</small>
 
 ---
 

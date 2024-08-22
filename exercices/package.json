@@ -6,6 +6,7 @@
   "scripts": {
     "cy:open": "dotenvx run -- npx cypress open --e2e --browser chromium",
     "cy:open:e2e": "dotenvx run -f .env.e2e -- npx cypress open --e2e --browser chromium",
+    "cy:open:e2e:mobile": "dotenvx run -f .env.e2e -f .env.mobile -- npx cypress open --e2e --browser chromium",
     "cy:open:prod": "CYPRESS_BASE_URL=http://127.0.0.1:8003/ dotenvx run -f .env.prod -- npx cypress open --e2e --browser chromium"
   },
   "author": "",
