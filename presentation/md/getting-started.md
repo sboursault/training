@@ -30,7 +30,7 @@
       </ul>
   </ul>
   <p>Commands
-  <ul class="text-level-4">
+  <ul class="text-level-5">
     <li><code>cy.visit()</code>, <code>cy.title()</code>, <code>cy.should()</code>
   </ul>
   <p>Userful links
@@ -207,7 +207,7 @@ _Possible list:_
   </ul>
   <p>Commands
   <ul>
-    <li class="text-level-4"><code>cy.visit()</code>, <code>cy.get()</code>, <code>cy.contains()</code>, <code>cy.click()</code>, <code>cy.should()</code>
+    <li class="text-level-5"><code>cy.visit()</code>, <code>cy.get()</code>, <code>cy.contains()</code>, <code>cy.click()</code>, <code>cy.should()</code>
   </ul>
   <p>Userful links
   <ul style="font-size:75%">

@@ -143,17 +143,6 @@ Everyone should feel responsible for the automated tests
 
 ---
 
-## Write small tests
-
-<p class="mt-400 fragment">Prefer a set of <strong>small tests</strong> over a long script that verify many things
-
-<p class="mt-200 fragment">When a small test fail, it's easier to find what is broken
- 
-<p class="mt-200 fragment">Avoid automating all UI end-to-end journeys
-
-
----
-
 ## Continuous Integration and Delivery
 
 

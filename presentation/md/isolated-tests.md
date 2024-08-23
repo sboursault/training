@@ -108,7 +108,7 @@ You're not sure which products are already used in existing tests.
 ---
 
 ## Delivery fees when the basket is exactly 30€
-<!-- .element: data-tags="practice" class="text-size-heading-3" -->
+<!-- .element: data-tags="practice" class="text-size-heading-3" data-toc-label="...when the basket is exactly 30€" -->
 
 <div class="exercice">
   <p>Let's code

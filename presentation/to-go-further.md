@@ -20,7 +20,7 @@ A user story is composed of...
 <div class="block">
   
   <div class="flex-row fragment">
-    <div class="box text-level-4" style="text-align:center; width:15%;">
+    <div class="box text-level-5" style="text-align:center; width:15%;">
        a user story <br> template
     </div>
     <div class="text-level-3 fragment" style="width:80%">
@@ -31,7 +31,7 @@ A user story is composed of...
   </div>
 
   <div class="flex-row mt-200 fragment">
-    <div class="box text-level-4" style="text-align:center; width:15%;">
+    <div class="box text-level-5" style="text-align:center; width:15%;">
        and its <br> acceptance criteria
     </div>
     <ul class="fragment" style="margin: 0; width:80%">
@@ -218,9 +218,9 @@ See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to 
 ## Find alternative paths
 
 Use the ‘shaded figs’ to find alternative path to verify
-<br/><span class="text-level-5">from [50 quick ideas to improve your tests](https://leanpub.com/50quickideas-tests/read)</span>
+<br/><span class="text-level-6">from [50 quick ideas to improve your tests](https://leanpub.com/50quickideas-tests/read)</span>
 
-<table class="text-level-4">
+<table class="text-level-5">
 <tr class="fragment">
 <td style="text-align: center; text-wrap: nowrap;">Scary<br/>😱<td>
 <td>What would scare each stakeholder the most about this piece of functionality?</td>
@@ -244,7 +244,7 @@ Use the ‘shaded figs’ to find alternative path to verify
 
 
 
-<table class="mt-150 text-level-4">
+<table class="mt-150 text-level-5">
 
 <tr class="fragment">
 <td style="text-align: center; text-wrap: nowrap;">Embarrassing<br/>💩 🤦‍♂️<td>
@@ -286,7 +286,7 @@ Use the ‘shaded figs’ to find alternative path to verify
 
 ## Resources
 
-<div class="text-level-5">
+<div class="text-level-6">
 
 - https://christianlydemann.com/the-most-common-cypress-mistakes/
 - Joe C automation guide
