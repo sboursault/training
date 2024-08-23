@@ -213,7 +213,7 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
 ## Manage environment variables
 <!-- .element: data-toc-exclude data-tags="practice,optional" class="text-size-heading-3" -->
 
-<div class="exercice text-level-2">
+<div class="exercice text-level-3">
 
   <p class="mt-50">Let's code
   <ul>
@@ -242,7 +242,7 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
 
 
 ---
-<!-- .slide: class="text-level-1-5" -->
+<!-- .slide: class="text-level-2" -->
 
 ## Excluding and Including Tests
 
@@ -303,7 +303,7 @@ How to use <strong>@cypress/grep</strong>:<br><a href="https://github.com/cypres
 
 ---
 
-<!-- .slide: class="text-level-2" -->
+<!-- .slide: class="text-level-3" -->
 
 <p class="text-level-1">A simple option : write <strong>extra tests</strong> for <strong>specific devices</strong> <span class="tag tag--small tag--optional">Optional</span>
 
@@ -342,7 +342,7 @@ describe('Nav Menus', () => {
 </div>
 ---
 
-<!-- .slide: class="text-level-2" -->
+<!-- .slide: class="text-level-3" -->
 
 <p class="text-level-1">A safer option : Run the <strong>entire suite</strong> with <strong>different viewports</strong><span class="tag tag--small tag--optional">Optional</span>
 
@@ -380,7 +380,7 @@ More on configuring the <strong>viewport</strong>:<br><a href="https://docs.cypr
 
 ---
 
-<!-- .slide: class="text-level-2" -->
+<!-- .slide: class="text-level-3" -->
 
 <p class="text-level-1 mt-100">Some tests must be adapted for a specific device <span class="tag tag--small tag--optional">Optional</span>
 
@@ -415,7 +415,7 @@ if (isMobile()) {
 
 ---
 
-<!-- .slide: class="text-level-1-5" -->
+<!-- .slide: class="text-level-2" -->
 
 <p class="text-level-1 mt-100">Some test may be irrelevant on some devices <span class="tag tag--small tag--optional">Optional</span>
 

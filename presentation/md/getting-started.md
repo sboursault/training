@@ -19,7 +19,7 @@
 ## &lt;/> Create and configure a Cypress project
 <!-- .element: class="text-size-heading-3" -->
 
-<div class="exercice text-level-2">
+<div class="exercice text-level-3">
   <p>Let's code
   <ul>
     <li>Create a github project
@@ -53,7 +53,7 @@ describe('home-page', () => {
 ```
 
 ---
-<!-- .element: class="text-level-2" -->
+<!-- .element: class="text-level-3" -->
 
 ## The problem with a conventional dev process
 <!-- .element: class="text-size-heading-3" -->
@@ -75,7 +75,7 @@ describe('home-page', () => {
 
 <div class="flex-row">
   <div class="flex-column tiny-gap">
-    <ul class="mt-200 text-level-2 no-bullets">
+    <ul class="mt-200 text-level-3 no-bullets">
       <li class="fragment"><i class="emo emoji-x"></i>Different understanding
       <li class="fragment"><i class="emo emoji-x"></i>Regressions happen
       <li class="fragment"><i class="emo emoji-x"></i>Too many non regression tests to execute manually
@@ -93,7 +93,7 @@ describe('home-page', () => {
 
 
 ---
-<!-- .element: class="text-level-2" -->
+<!-- .element: class="text-level-3" -->
 
 <p class="mt-150">So, let's automate end to end tests...
 
@@ -129,7 +129,7 @@ describe('home-page', () => {
 
 
 ---
-<!-- .element: class="text-level-2" -->
+<!-- .element: class="text-level-3" -->
 
 ## The Behaviour Driven Development approach
 <!-- .element: class="text-size-heading-3" -->
@@ -200,7 +200,7 @@ _Possible list:_
 ## &lt;/> Automate the verification with cypress
 <!-- .element: data-toc-exclude class="text-size-heading-3"-->
 
-<div class="exercice text-level-2">
+<div class="exercice text-level-3">
   <p>Let's code
   <ul>
     <li>Automate the verification of the acceptance criteria identified during the specification workshop

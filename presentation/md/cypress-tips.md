@@ -25,7 +25,7 @@
 ---
 ## Using variables
 
-<!-- .slide: class="text-level-2" -->
+<!-- .slide: class="text-level-3" -->
 
 <div class="fragment">
   <p class="mt-150">Commands are enqueued and run asynchronously
@@ -74,7 +74,7 @@
 
 ---
 
-<!-- .slide: class="text-level-2" -->
+<!-- .slide: class="text-level-3" -->
 
 <p>Debug <strong>direct http calls</strong> made with <code>cy.request()</code>
 
@@ -96,7 +96,7 @@ cy.request('/some-url')
 
 
 ---
-<!-- .slide: class="text-level-2" -->
+<!-- .slide: class="text-level-3" -->
 ## Wait for events, not time
 
 <p class="fragment">Your browser is asynchronous!
@@ -138,7 +138,7 @@ Testing offten involves asynchronous behaviours.
 
 <p class="fragment">Example:
   
-<div class="text-center text-level-2 fragment">
+<div class="text-center text-level-3 fragment">
   <p class="">An ecommerce site sends new orders to a logistics application.<br>We want to verify the orders are correctly sent.
   <div class="box mt-50 fragment">
     <span class="box_label">Cypress test</span>
@@ -161,7 +161,7 @@ Testing offten involves asynchronous behaviours.
 
 ---
 
-<!-- .slide: class="text-level-2" -->
+<!-- .slide: class="text-level-3" -->
 
 <div class="flex-row flex-row--center mt-200">
   <div class="bubble bubble-bottom-left">

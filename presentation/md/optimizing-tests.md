@@ -66,7 +66,7 @@ The login can be verified once, and then for each test that require logging, thi
 ## Speed up your tests
 <!-- .element: data-tags="practice" -->
 
-<div class="exercice text-level-2">
+<div class="exercice text-level-3">
   <p>Let's code
   <ul>
     <li>In the tests which requires a logged user, replace the UI login by a simple http request

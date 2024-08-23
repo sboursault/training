@@ -88,7 +88,7 @@ originaly: Simple and Self-Verifying
 
   <p class="fragment">Try to automate tests before development
 
-  <div class="mt-125 text-level-2">
+  <div class="mt-125 text-level-3">
   <!--When written before development / Benefits -->
   <ul>
     <li class="fragment">Production code is crafted so it's <strong>testable</strong>
@@ -96,7 +96,7 @@ originaly: Simple and Self-Verifying
   </ul>
   </div>
 
-  <p class="mt-125 text-level-2 fragment">Testing before development is more fun,<br> more beneficial, more productive, and less frustrating
+  <p class="mt-125 text-level-3 fragment">Testing before development is more fun,<br> more beneficial, more productive, and less frustrating
 
 </div>
 

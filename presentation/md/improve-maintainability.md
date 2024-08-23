@@ -42,14 +42,14 @@ SDET: automaticien
 <p class="mt-300 text-level-1"><strong>CSS selector</strong> examples:
 
 <ul>
-  <li><span class="url-link text-level-2">https://www.w3schools.com/cssref/css_selectors.php</span>
+  <li><span class="url-link text-level-3">https://www.w3schools.com/cssref/css_selectors.php</span>
 </ul>
 </div>
 
 <div class="fragment">
 <p class="mt-300">Verify your selectors with <strong>css-and-xpath-checker</strong> (chrome plugin):
 <ul>
-  <li><span class="text-level-2"><a href="https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe">https://chromewebstore.google.com/detail/css-and-xpath-checker/...</a>
+  <li><span class="text-level-3"><a href="https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe">https://chromewebstore.google.com/detail/css-and-xpath-checker/...</a>
 </ul>
 </div>
 
@@ -109,7 +109,7 @@ Don't test it if it's not testable
 
 ## Hooks
 
-<!-- .slide: class="text-level-2" -->
+<!-- .slide: class="text-level-3" -->
 
 <p>Hooks are helpful to set conditions that run before a set of tests
 
@@ -195,7 +195,7 @@ cy.getByTestid(`my-component`)
 <!-- .element: data-tags="practice, optional" -->
 
 
-<div class="exercice text-level-2">
+<div class="exercice text-level-3">
   <p>Let's code
   <ul>
     <li>Create the custom command <code>cy.getByTestid()</code> and refactor the test code to use it.
@@ -240,7 +240,7 @@ cataloguePage.displayMiniBasket();               // this is about the
 ## Rewrite tests with Page Objects
 <!-- .element: data-tags="practice" -->
 
-<div class="exercice text-level-2">
+<div class="exercice text-level-3">
   <p>Let's code
   <ul>
     <li>Refactor your tests to use a page object reprensenting the catalog page.

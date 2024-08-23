@@ -87,9 +87,9 @@ Dans les tp, proposer des règles de gestion floues, qui pourront être affinée
 
 <p class="mt-300">Tips to make it work:
 <ul>
-<li class="text-level-2 fragment">Invite whoever is relevant (operations, UX designer...)
-<li class="text-level-2 fragment">Keep Discovery Workshops short and frequent (15 min. per story, every other day)
-<li class="text-level-2 fragment">Don't make it a big ceremony, just ask for examples
+<li class="text-level-3 fragment">Invite whoever is relevant (operations, UX designer...)
+<li class="text-level-3 fragment">Keep Discovery Workshops short and frequent (15 min. per story, every other day)
+<li class="text-level-3 fragment">Don't make it a big ceremony, just ask for examples
 </ul>
 
 ---
@@ -100,16 +100,16 @@ Dans les tp, proposer des règles de gestion floues, qui pourront être affinée
 
 <p class="fragment">Illustrate rules with <strong>key examples</strong> and <strong>counter examples</strong>
 
-<p class="text-level-2 mt-125 fragment">Howto:
+<p class="text-level-3 mt-125 fragment">Howto:
 <ul>
-<li class="text-level-2 fragment">Prefer actual values over generalisations (unless the value is irrelevant to the rule)
-<li class="text-level-2 fragment">Use natural language (the given/when/then structure can come later)
-<li class="text-level-2 fragment">Discover extra paths with the <a href="#/shaded-figs">shaded figs</a>
-<li class="text-level-2 fragment">Make a table when there are 3 or more examples
-<li class="text-level-2 fragment">Group rules when there are too many
+<li class="text-level-3 fragment">Prefer actual values over generalisations (unless the value is irrelevant to the rule)
+<li class="text-level-3 fragment">Use natural language (the given/when/then structure can come later)
+<li class="text-level-3 fragment">Discover extra paths with the <a href="#/shaded-figs">shaded figs</a>
+<li class="text-level-3 fragment">Make a table when there are 3 or more examples
+<li class="text-level-3 fragment">Group rules when there are too many
 </ul>
 
-<p class="text-level-2 mt-125 fragment">Too many examples for a rule (more than 5)? look for hidden concepts
+<p class="text-level-3 mt-125 fragment">Too many examples for a rule (more than 5)? look for hidden concepts
 
 
 
@@ -175,7 +175,7 @@ We need to balance completeness, clarity and speed.
 
 ### Make async APIs testable
 
-<p class="text-level-2">Ask "what happens instead?" to prove that something does not happen</p>
+<p class="text-level-3">Ask "what happens instead?" to prove that something does not happen</p>
 
 See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to an error topic...
 

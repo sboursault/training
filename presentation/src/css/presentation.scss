@@ -29,9 +29,8 @@ $block-margin: 32px;
 
 
   --text-size-level-1: 2.5rem;
-  --text-size-level-1-5: 2.25rem;
-  --text-size-level-2: 2rem;
-  --text-size-level-3: 1.75rem;
+  --text-size-level-2: 2.25rem;
+  --text-size-level-3: 2rem;
   --text-size-level-4: 1.75rem;
   --text-size-level-5: 1.5rem;
   --text-size-level-6: 1.25rem;
@@ -554,10 +553,6 @@ $block-margin: 32px;
 
   .text-level-1 {
     font-size: var(--text-size-level-1);
-  }
-
-    .text-level-1-5 {
-    font-size: var(--text-size-level-1-5);
   }
 
   .text-level-2 {

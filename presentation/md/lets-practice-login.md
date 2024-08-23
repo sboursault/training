@@ -21,7 +21,7 @@ Simplify code with dedicated selectors, custom command and page object
 ## &lt;/> Specification workshop for the login
 <!-- .element: data-toc-label="</> Verify the login" -->
 
-<div class="exercice text-level-2">
+<div class="exercice text-level-3">
   <p>The Product Owner presents a new story:
   <ul>
     <li><i> As a shopper,<br>

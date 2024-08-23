@@ -58,7 +58,7 @@ Note:
 
 ---
 
-<!-- .slide: class="text-level-2" -->
+<!-- .slide: class="text-level-3" -->
 
 <div class="flex-row flex-row--center mt-300" >
   <div class="bubble bubble-bottom-left">
