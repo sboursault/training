@@ -3,7 +3,7 @@
 
 
 <div class="part-title">
-  <span class="text-level-3">Part 8</span>
+  <span class="text-level-4">Part 8</span>
   <h1>Test strategy</h1>
 </div>
 
@@ -30,7 +30,7 @@ Note:
 ## Agile testing quandrants
 <!-- .element: data-toc-exclude -->
 
-<div class="flex-row text-level-3">
+<div class="flex-row text-level-4">
 
   <img class="screen" src="img/agile-testing-quandrands.jpg" style="max-width:50%" >
 
@@ -165,7 +165,7 @@ you must have clear control over the environment in which the tests run.
 ## Define environment variables
 <!-- .element: data-toc-label="Manage environment variables" data-tags="practice,optional" class="mt-0 text-size-heading-3" -->
 
-<div class="exercice text-level-3">
+<div class="exercice text-level-4">
 
   <p class="mt--50">Let's code
   <ul>

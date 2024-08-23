@@ -2,7 +2,7 @@
 <!-- .slide: id="good-tests" class="slide--part-title slide--vcenter" -->
 
 <div class="part-title">
-  <span class="text-level-3">Part 5</span>
+  <span class="text-level-4">Part 5</span>
   <h1 class="text-size-heading-1-smaller">Repeatable tests</h1>
 </div>
 
@@ -17,7 +17,7 @@
 <div class="exercice">
   <p>The Product Owner presents a new story:
   <ul>
-    <li class="text-level-3"><i> As a shopper,<br>
+    <li class="text-level-4"><i> As a shopper,<br>
     I want to recover my basket,<br>
     so that I don't have to fill it again when I come back</i>
   </ul>

@@ -4,7 +4,7 @@
 <div class="flex-row">
 
   <div class="part-title">
-    <span class="text-level-3">Part 9</span>
+    <span class="text-level-4">Part 9</span>
     <h1>Extra exercices</h1>
   </div>
   
@@ -19,7 +19,7 @@
 ## Handle CSRF protection WIP
 <!-- .element: data-tags="practice, optional" class="text-size-heading-3" -->
 
-<div class="exercice text-level-3">
+<div class="exercice text-level-4">
 
 
   <p>A CSRF protection was added on the APIs that relies on the user session and that modifies data

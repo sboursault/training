@@ -3,7 +3,7 @@
 <!-- .slide: id="improve-maintainability" class="slide--part-title slide--vcenter" -->
 
 <div class="part-title">
-  <span class="text-level-3">Part 2</span>
+  <span class="text-level-4">Part 2</span>
   <h1 class="text-size-heading-1-smaller">Improve maintainability</h1>
 </div>
 

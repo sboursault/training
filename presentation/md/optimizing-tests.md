@@ -3,7 +3,7 @@
 <!-- .slide: class="slide--part-title slide--vcenter" -->
 
 <div class="part-title">
-  <span class="text-level-3">Part 6</span>
+  <span class="text-level-4">Part 6</span>
   <h1 class="text-size-heading-1-smaller">Speed up E2E tests</h1>
 </div>
 

@@ -2,7 +2,7 @@
 <!-- .slide: id="good-tests" class="slide--part-title slide--vcenter" -->
 
 <div class="part-title">
-  <span class="text-level-3">Part 7</span>
+  <span class="text-level-4">Part 7</span>
   <h1>Isolated tests</h1>
 </div>
 
@@ -16,7 +16,7 @@
 <div class="exercice">
   <p>The Product Owner presents a new story:
   <ul>
-    <li class="text-level-3"><i>Delivery fees are free for orders over 30€</i>
+    <li class="text-level-4"><i>Delivery fees are free for orders over 30€</i>
   </ul>
   <p class="mt-125">As a team, define acceptance criteria for this story
 </div>

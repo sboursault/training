@@ -5,7 +5,7 @@
 <div class="flex-row">
 
   <div class="part-title">
-    <span class="text-level-3">Part 1</span>
+    <span class="text-level-4">Part 1</span>
     <h1 class="text-size-heading-2">Getting started</h1>
   </div>
   
@@ -170,7 +170,7 @@ We can add a design workshop in the process to prevent non testable code.
 <div class="exercice">
   <p>The Product Owner presents a new story:
   <ul>
-    <li class="text-level-3"><i> As a shopper,<br>
+    <li class="text-level-4"><i> As a shopper,<br>
     I want to see my basket content in the mini-basket,<br>
     so that I always know the basket's content and amount.</i>
   </ul>

@@ -23,7 +23,7 @@ A user story is composed of...
     <div class="box text-level-5" style="text-align:center; width:15%;">
        a user story <br> template
     </div>
-    <div class="text-level-3 fragment" style="width:80%">
+    <div class="text-level-4 fragment" style="width:80%">
       <i><strong>As a</strong> user,<br>
       <strong>I want to</strong> use a search field to type a city, name, or street,<br>
       <strong>so that</strong> I could find matching hotel options.</i>
@@ -187,7 +187,7 @@ See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to 
 <!-- .slide: id="extra-tips" class="slide--part-title slide--vcenter" -->
 
 <div class="part-title">
-  <span class="text-level-3">Part 5</span>
+  <span class="text-level-4">Part 5</span>
   <h1>Extra tips</h1>
 </div>
 
