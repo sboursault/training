@@ -132,6 +132,30 @@ $block-margin: 32px;
     margin-left: 0.5em;
   }
 
+  .mt-25r {
+    margin-top: .25em * .75 !important;
+  }
+
+  .mt-50r {
+    margin-top: .5em * .75 !important;
+  }
+
+  .mt-75r {
+    margin-top: .75em * .75 !important;
+  }
+
+  .mt-100r {
+    margin-top: 1em * .75 !important;
+  }
+
+  .mt-150r {
+    margin-top: 1.5em * .75 !important;
+  }
+
+  .mt-200r {
+    margin-top: 2em * .75 !important;
+  }
+
   .mt--100 {
     margin-top: $block-margin*-1 !important;
   }
@@ -363,7 +387,7 @@ $block-margin: 32px;
   }
 
   #toc h2 {
-    margin-bottom: $block-margin*.4;
+    margin-bottom: $block-margin*.6;
   }
 
   #toc > ol,

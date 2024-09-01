@@ -15,12 +15,14 @@
 
 ## Write small tests
 
-<p class="mt-400 fragment">Prefer a set of <strong>small tests</strong> over a long script that verify many things
+<p class="mt-400 fragment" data-fragment-index="1">Prefer a set of <strong>small tests</strong> over a long script that verify many things
 
-<p class="mt-200 fragment">When a small test fail, it's easier to find what is broken
+<p class="mt-200r fragment" data-fragment-index="2">When a small test fail, it's easier to find what is broken
  
-<p class="mt-200 fragment">Avoid automating all UI end-to-end journeys
-
+<p class="mt-200r fragment" data-fragment-index="3">Avoid automating all UI end-to-end journeys<span class="fragment" data-fragment-index="4">,</span>
+<div class="mt-25r fragment" data-fragment-index="4" style="text-align:right;margin-right: 2em">
+particularly on <strong>Single Page Applications</strong>
+</div>
 
 ---
 ## Using variables

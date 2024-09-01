@@ -47,10 +47,6 @@ The user can be created manually.
   <ul>
     <li>Automate the most valuable acceptance criteria to verify the basket recovery
   </ul>
-  <p>Commands
-  <ul>
-    <li>?
-  </ul>
   <p>Userful links
   <ul style="font-size:75%">
     <li class="url-link">https://docs.cypress.io/api/table-of-contents
@@ -71,8 +67,8 @@ problem : the test is not repeatable
 <!-- .slide: class="slide--vcenter" -->
 
 <div class="bubble bubble-bottom-left">
-  <i class="emo emo-36 emoji-face_with_monocle"></i>
-  <span class="bubble__text">How can we make our tests repeatable?</span>
+  <i class="emo emo-36 emoji-nerd_face"></i>
+  <span class="bubble__text">How to make this test repeatable?</span>
 </div>
 
 Note:
@@ -96,7 +92,7 @@ curl -X DELETE https://.../api/basket -u "tom@test.com:tom@test.com"
     <li>Clear the basket before each test
   
 ```sh
-curl -X DELETE https://.../api/basket \
+curl -X DELETE https://.../api/baskets/{id} \
   -u "tom@test.com:tom@test.com"
 ```
 
@@ -116,10 +112,19 @@ curl -X DELETE https://.../api/basket \
 
 Note:
 
+/api to get api documentation 
+GET /api/basket gives the id and url of the basket
+
+l'écriture est un peu compliqué (basic auth, btoa, double appel...), montrer l'exemple ??
+
 prepare the data before running the test, avoid reverting changes at the end of each tests.
 - easier to understand the prerequesites of a test
 - when a test fails, better to keep the system as is to facilitate debug
 
+
+---
+
+## WHY ?? - TODO
 
 ---
 

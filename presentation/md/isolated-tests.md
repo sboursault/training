@@ -37,7 +37,7 @@ _Possible list:_
 <div class="exercice mt-150">
   <p>Let's code
   <ul>
-    <li>Automate the most valuable acceptance criteria to verify the basket recovery
+    <li>Automate the most valuable acceptance criteria to verify the delivery fees
     <ul>
       <li>For baskets strictly bellow 30€, we charge 7€ delivery fees
       <li>For baskets strictly over 30€, we offer delivery fees
