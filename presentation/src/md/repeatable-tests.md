@@ -115,7 +115,7 @@ Note:
 /api to get api documentation 
 GET /api/basket gives the id and url of the basket
 
-l'écriture est un peu compliqué (basic auth, btoa, double appel...), montrer l'exemple ??
+l'écriture est un peu compliqué (basic auth, btoa, double appel...), montrer l'exemple !
 
 prepare the data before running the test, avoid reverting changes at the end of each tests.
 - easier to understand the prerequesites of a test
