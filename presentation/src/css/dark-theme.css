@@ -9,11 +9,11 @@
 
 
 :root {
-    --r-background-color: var(--color-black);
+    --r-background-color: var(--system-color-black);
     --r-main-font: Source Sans Pro, Helvetica, sans-serif;
-    --r-main-color: var(--color-light-gray-3);
+    --r-main-color: var(--system-color-lightGray3);
     --r-heading-font: Lato, Source Sans Pro, Helvetica, sans-serif;
-    --r-heading-color: var(--color-light-green-2);
+    --r-heading-color: var(--color-lightGreen2);
     --r-heading-line-height: 1.2;
     --r-heading-letter-spacing: normal;
     --r-heading-text-transform: none;
@@ -28,15 +28,15 @@
     --r-selection-color: #fff;
 
 
-    --r-gray-text-color: var(--color-light-gray-1);
+    --r-gray-text-color: var(--system-color-lightGray1);
     
-    --diagram-background-color: var(--color-dark-gray-2);
-    --diagram-border-color: var(--color-light-gray-1);
+    --diagram-background-color: var(--system-color-darkGray2);
+    --diagram-border-color: var(--system-color-lightGray1);
 
     --bubble-background-color: lightyellow;
 
-    --code-border-color: var(--color-dark-gray-1-5);
-    --code-background-color: var(--color-dark-gray-2);
+    --code-border-color: var(--system-color-darkGray1-5);
+    --code-background-color: var(--system-color-darkGray2);
   }
 
 

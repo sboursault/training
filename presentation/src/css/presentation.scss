@@ -1,31 +1,40 @@
 $block-margin: 32px;
 
 :root {
-  --color-dark: #2a2a2a;
-  --color-white: #eeeff0;
-  --color-black: #2a2a2a;
-  --color-light-gray-6: #f8f8f8;
-  --color-light-gray-5: #eee;
-  --color-light-gray-4: #dddddd;
-  --color-light-gray-3: #cccccc;
-  --color-light-gray-2: #b2b2b2;
-  --color-light-gray-1: #999;
-  --color-gray: #808080;
-  --color-dark-gray-1: #666;
-  --color-dark-gray-1-5: #4c4c4c;
-  --color-dark-gray-2: #333;
-  --color-light-green-2: #77bc65;
-  --color-light-lemon-green-3: #e8f2a1;
-  --color-light-lemon-green-2: #d4ea6b;
-  --color-light-lemon-green-1: #bbe33d;
-  --color-dark-lemon-green-1: #5eb91e;
-  --color-dark-lemon-green-2: #468a1a;
-  --color-dark-lemon-green-3: #395511;
-  --color-orange: #ff6600;
-  --color-orange-1: #ffcc00;
-  --color-orange-2: #ff9900;
-  --color-orange-3: #ff3300;
-  --color-orange-4: #cc3300;
+  --system-color-white: #eeeff0;
+  --system-color-black: #2a2a2a;
+  --system-color-lightGray6: #f8f8f8;
+  --system-color-lightGray5: #eee;
+  --system-color-lightGray4: #dddddd;
+  --system-color-lightGray3: #cccccc;
+  --system-color-lightGray2: #b2b2b2;
+  --system-color-lightGray1: #999;
+  --system-color-gray: #808080;
+  --system-color-darkGray1: #666;
+  --system-color-darkGray1-5: #4c4c4c;
+  --system-color-darkGray2: #333;
+  --system-color-lightGreen2: #77bc65;
+  --system-color-lightLemonGreen3: #e8f2a1;
+  --system-color-lightLemonGreen2: #d4ea6b;
+  --system-color-lightLemonGreen1: #bbe33d;
+  --system-color-darkLemonGreen1: #5eb91e;
+  --system-color-darkLemonGreen2: #468a1a;
+  --system-color-darkLemonGreen3: #395511;
+  --system-color-orange: #ff6600;
+  --system-color-orange1: #ffcc00;
+  --system-color-orange2: #ff9900;
+  --system-color-orange3: #ff3300;
+  --system-color-orange4: #cc3300;
+
+  --system-color-skyBlue: #00ccff;
+  --system-color-skyBlue1: #66ccff;
+  --system-color-skyBlue2: #3399ff;
+  --system-color-skyBlue3: #0066ff;
+  --system-color-skyBlue4: #0066cc;
+  --system-color-skyBlue5: #006699;
+  --system-color-skyBlue6: #000080;
+  --system-color-skyBlue6: #003366;
+  --system-color-skyBlue8: #336699;
 
 
   --text-size-level-1: 2.5rem;
@@ -42,6 +51,17 @@ $block-margin: 32px;
   --r-heading2-size: 4rem;
   --r-heading3-size: 3rem;
   --r-heading4-size: 2.5rem;
+
+  --system-color-strong: var(--system-color-darkLemonGreen2);
+
+
+  --diagram-background-color: var(--system-color-lightGray6);  // this is a contentBox, in contrast to diagramElement
+  --diagram-border-color: var(--system-color-lightGray1);
+
+  --bubble-background-color: #d0e9ff;
+
+  --code-border-color: var(--system-color-lightGray4);
+  --code-background-color: #fafafa;
 }
 
 @media screen {
@@ -241,7 +261,7 @@ $block-margin: 32px;
   }
 
   strong {
-    color: var(--color-dark-lemon-green-2);
+    color: var(--system-color-strong);
   }
 
   .no-wrap {
@@ -460,10 +480,10 @@ $block-margin: 32px;
     font-size: 1.25rem;
     text-align: center;
     padding: 15px 20px;
-    color: var(--color-black);
-    background: var(--color-light-lemon-green-3);
+    color: var(--system-color-black);
+    background: var(--system-color-lightLemonGreen3);
     border-radius: 50% 4% 50% 2% / 2% 50% 2% 50%;
-    border: solid 5px var(--color-dark-lemon-green-2);
+    border: solid 5px var(--system-color-darkLemonGreen2);
   }
 
   .presentation-toc a {
@@ -496,8 +516,8 @@ $block-margin: 32px;
   }
 
   .badge:has(> .overlay--friction.visible) {
-    background-color: var(--color-orange-1);
-    border-color: var(--color-orange);
+    background-color: var(--system-color-orange1);
+    border-color: var(--system-color-orange);
   }
 
   .overlay--friction {
@@ -703,7 +723,7 @@ $block-margin: 32px;
   }
 
   .code-symbol--gray {
-    color: var(--color-dark-gray-1);
+    color: var(--system-color-darkGray1);
   }
 
   // ET POURQUOI PAS UN SYMBOLE CODE EN ARRIERE PLAN...
@@ -713,7 +733,7 @@ $block-margin: 32px;
     font-size: .4em;
     letter-spacing: 0.1em;
     border-radius: 0.35rem;
-    background-color: var(--color-gray);
+    background-color: var(--system-color-gray);
     color: white;
     margin-right: 0.6em;
     vertical-align: .37em;
@@ -724,7 +744,7 @@ $block-margin: 32px;
     font-size: .4em;
     letter-spacing: 0.1em;
     border-radius: 0.35rem;
-    background-color: var(--color-dark-lemon-green-3);
+    background-color: var(--system-color-darkLemonGreen3);
     color: white;
     margin-right: 0.6em;
     vertical-align: .37em;
@@ -735,7 +755,7 @@ $block-margin: 32px;
     font-size: .28em;
     letter-spacing: 0.1em;
     border-radius: 0.3em;
-    background-color: var(--color-dark-gray-1);
+    background-color: var(--system-color-darkGray1);
     color: white;
     margin-right: 0.7em;
     vertical-align: .5em;
@@ -745,8 +765,8 @@ $block-margin: 32px;
     padding: 0.4em 0.2em;
     font-size: .5em;
     border-radius: 0.35rem;
-    border: 3px solid var(--color-dark-gray-1);
-    color: var(--color-dark-gray-1);
+    border: 3px solid var(--system-color-darkGray1);
+    color: var(--system-color-darkGray1);
     margin-right: 0.8em;
   }
 
@@ -757,8 +777,8 @@ $block-margin: 32px;
     padding: .25em .55em;
     font-size: .75em;
     border-radius: 50rem;
-    background-color: var(--color-light-gray-4);
-    color: var(--color-dark-gray-2);
+    background-color: var(--system-color-lightGray4);
+    color: var(--system-color-darkGray2);
     margin-left: .8em;
     line-height: 1;
     text-align: center;
@@ -769,8 +789,8 @@ $block-margin: 32px;
   }
 
   .tag--optional {
-    background-color: var(--color-light-lemon-green-2);
-    color: var(--color-dark-gray-2);
+    background-color: var(--system-color-lightLemonGreen2);
+    color: var(--system-color-darkGray2);
   }
 
   .tag--small {
