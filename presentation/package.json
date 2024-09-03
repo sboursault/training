@@ -1,8 +1,11 @@
 {
   "scripts": {
     "test": "mocha test/dom-test.js",
+    "build-and-watch": "npm run sass:watch & node src/app.js",
     "sass:watch": "sass --watch src/css/presentation.scss:build/css/presentation.css",
-    "start": "npx syncdir src build --watch & npm run sass:watch & npx browser-sync start --server build --watch --reload-delay 200 --browser=chromium /",
+    "browser-sync": "npx browser-sync start --server build --watch --reload-delay 200 --browser=chromium /",
+    "start:cy": "npm run build-and-watch cy & npm run browser-sync",
+    "start:pw": "npm run build-and-watch pw & npm run browser-sync",
     "build": "sass src/css/presentation.scss:bcuild/css/presentation.css",
     "serve": "http-server -c-1 -p 8081 -o /",
     "test-open": "http-server -c-1 -p 8082 -o /test"
@@ -11,13 +14,14 @@
   "devDependencies": {
     "browser-sync": "^3.0.2",
     "chai": "^4.3.7",
+    "chokidar": "^3.6.0",
     "jsdom": "^22.1.0",
     "mocha": "^10.2.0",
-    "sass": "^1.77.6",
-    "sync-directory": "^6.0.5"
+    "sass": "^1.77.6"
   },
   "dependencies": {
     "decktape": "^3.12.0",
+    "ejs": "^3.1.10",
     "http-server": "^14.1.1",
     "leader-line": "^1.0.7",
     "reveal.js": "^5.1.0",
