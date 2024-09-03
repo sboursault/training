@@ -53,15 +53,14 @@ $block-margin: 32px;
   --r-heading4-size: 2.5rem;
 
   --system-color-strong: var(--system-color-darkLemonGreen2);
+  --system-color-codeBorder: var(--system-color-lightGray4);
+  --system-color-codeBackground: #fafafa;
+  --system-color-contentBoxBackground: var(--system-color-lightGray6);
+  --system-color-contentBoxBorder: var(--system-color-lightGray1);
+  --system-color-diagramElementBackground: var(--system-color-lightLemonGreen3);
+  --system-color-diagramElementBorder: var(--system-color-darkLemonGreen2);
+  --system-color-bubbleBackground: #d0e9ff;
 
-
-  --diagram-background-color: var(--system-color-lightGray6);  // this is a contentBox, in contrast to diagramElement
-  --diagram-border-color: var(--system-color-lightGray1);
-
-  --bubble-background-color: #d0e9ff;
-
-  --code-border-color: var(--system-color-lightGray4);
-  --code-background-color: #fafafa;
 }
 
 @media screen {
@@ -305,8 +304,8 @@ $block-margin: 32px;
   }
 
   code:not(pre code) {
-    background: var(--code-background-color);
-    border: 2px solid var(--code-border-color);
+    background: var(--system-color-codeBackground);
+    border: 2px solid var(--system-color-codeBorder);
     font-size: 0.7em;
     border-radius: 5px;
     padding: 5px 8px;
@@ -455,9 +454,9 @@ $block-margin: 32px;
     padding: 20px;
     z-index: -1000;
     margin: auto;
-    background-color: var(--diagram-background-color);
+    background-color: var(--system-color-contentBoxBackground);
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    border: dashed 5px var(--diagram-border-color);
+    border: dashed 5px var(--system-color-contentBoxBorder);
     position: relative;
   }
 
@@ -481,10 +480,10 @@ $block-margin: 32px;
     text-align: center;
     padding: 15px 20px;
     color: var(--system-color-black);
-    background: var(--system-color-lightLemonGreen3);
     border-radius: 50% 4% 50% 2% / 2% 50% 2% 50%;
-    border: solid 5px var(--system-color-darkLemonGreen2);
-  }
+    background: var(--system-color-diagramElementBackground);
+    border: solid 5px var(--system-color-diagramElementBorder);  
+}
 
   .presentation-toc a {
     color: inherit;
@@ -535,7 +534,7 @@ $block-margin: 32px;
     font-family: sans-serif;
     font-size: 1.1rem;
     line-height: 1.6em;
-    background: var(--bubble-background-color);
+    background: var(--system-color-bubbleBackground);
     border-radius: 40px;
     padding: 16px 24px;
     text-align: center;
@@ -549,9 +548,9 @@ $block-margin: 32px;
     width: 0px;
     height: 0px;
     position: absolute;
-    border-left: 24px solid var(--bubble-background-color);
+    border-left: 24px solid var(--system-color-bubbleBackground);
     border-right: 12px solid transparent;
-    border-top: 12px solid var(--bubble-background-color);
+    border-top: 12px solid var(--system-color-bubbleBackground);
     border-bottom: 20px solid transparent;
     left: 32px;
     bottom: -24px;

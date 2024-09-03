@@ -2,11 +2,11 @@
   "scripts": {
     "test": "mocha test/dom-test.js",
     "build-and-watch": "npm run sass:watch & node src/app.js",
-    "sass:watch": "sass --watch src/css/presentation.scss:build/css/presentation.css",
+    "sass:watch": "sass --watch src/css:build/css",
     "browser-sync": "npx browser-sync start --server build --watch --reload-delay 200 --browser=chromium /",
     "start:cy": "npm run build-and-watch cy & npm run browser-sync",
     "start:pw": "npm run build-and-watch pw & npm run browser-sync",
-    "build": "sass src/css/presentation.scss:bcuild/css/presentation.css",
+    "build": "sass src/css:bcuild/css",
     "serve": "http-server -c-1 -p 8081 -o /",
     "test-open": "http-server -c-1 -p 8082 -o /test"
   },

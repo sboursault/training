@@ -30,13 +30,13 @@
 
     --r-gray-text-color: var(--system-color-lightGray1);
     
-    --diagram-background-color: var(--system-color-darkGray2);
-    --diagram-border-color: var(--system-color-lightGray1);
+    --system-color-contentBoxBackground: var(--system-color-darkGray2);
+    --system-color-contentBoxBorder: var(--system-color-lightGray1);
 
-    --bubble-background-color: lightyellow;
+    --system-color-bubbleBackground: lightyellow;
 
-    --code-border-color: var(--system-color-darkGray1-5);
-    --code-background-color: var(--system-color-darkGray2);
+    --system-color-codeBorder: var(--system-color-darkGray1-5);
+    --system-color-codeBackground: var(--system-color-darkGray2);
   }
 
 
