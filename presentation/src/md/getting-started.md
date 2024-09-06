@@ -61,14 +61,14 @@ describe('home-page', () => {
 <p class="fragment mt-200" data-fragment-index="1">When I started on my last project...
 
 <div class="box flex-row mt-100 screen fragment" style="padding:40px;" data-fragment-index="2">
-  <div class="badge" data-arrow="->task-dev">Specifications</div>
-  <div class="badge fragment" data-arrow="->task-test" id="task-dev" data-fragment-index="3">Development<br>(Developer)</div>
-  <div class="badge overlay-anchor fragment" data-arrow="->task-prod" id="task-test" data-fragment-index="4">Manual tests<br>(Tester)
+  <div class="rectangle" data-arrow="->task-dev">Specifications</div>
+  <div class="rectangle fragment" data-arrow="->task-test" id="task-dev" data-fragment-index="3">Development<br>(Developer)</div>
+  <div class="rectangle overlay-anchor fragment" data-arrow="->task-prod" id="task-test" data-fragment-index="4">Manual tests<br>(Tester)
     <div class="overlay overlay--friction fragment">
       <i class="emo emo-64 emoji-face_with_symbols_on_mouth"></i>
     </div>
   </div>
-  <div class="badge fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
+  <div class="rectangle fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
 </div>
 
 <p class="print"><img src="img/print/bdd-1.png"></img></p>
@@ -98,14 +98,14 @@ describe('home-page', () => {
 <p class="mt-150">So, let's automate end to end tests...
 
 <div class="box flex-row mt-150 screen fragment" style="padding:40px;" data-fragment-index="2">
-  <div class="badge" data-arrow="->task-dev">Specifications</div>
-  <div class="badge fragment" id="task-dev" data-arrow="->task-test" data-fragment-index="3">Development<br>(Developer)</div>
-  <div class="badge overlay-anchor fragment" id="task-test" data-arrow="->task-prod" data-fragment-index="4">Test automation<br>(Tester & Developer)
+  <div class="rectangle" data-arrow="->task-dev">Specifications</div>
+  <div class="rectangle fragment" id="task-dev" data-arrow="->task-test" data-fragment-index="3">Development<br>(Developer)</div>
+  <div class="rectangle overlay-anchor fragment" id="task-test" data-arrow="->task-prod" data-fragment-index="4">Test automation<br>(Tester & Developer)
     <div class="overlay overlay--friction fragment">
       <i class="emo emo-64 emoji-face_with_symbols_on_mouth"></i>
     </div>
   </div>
-  <div class="badge fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
+  <div class="rectangle fragment" id="task-prod" data-fragment-index="5">Production <br> deployment</div>
 </div>
 
 <img src="img/print/bdd-2.png" class="print"></img>
@@ -135,16 +135,16 @@ describe('home-page', () => {
 <!-- .element: class="text-size-heading-3" -->
 
 <div class="box flex-row screen fragment mt-125" style="padding:30px;">
-  <div class="badge" data-arrow="->task-example">Problem to solve</div>
-  <div class="badge fragment" id="task-example" data-arrow="->task-dev,->task-test">Specification <br>workshop</div>
+  <div class="rectangle" data-arrow="->task-example">Problem to solve</div>
+  <div class="rectangle fragment" id="task-example" data-arrow="->task-dev,->task-test">Specification <br>workshop</div>
   <div class="flex-column">
-    <div class="badge fragment" id="task-dev" data-arrow="->task-prod">Development<br>(Developer)</div>
-    <div class="badge fragment" id="task-test">
+    <div class="rectangle fragment" id="task-dev" data-arrow="->task-prod">Development<br>(Developer)</div>
+    <div class="rectangle fragment" id="task-test">
       Test automation<br>(Tester & Developer)
       <span class="fragment" data-arrow="task-test->task-dev:validate"></span>
     </div>
   </div>
-  <div class="badge fragment" id="task-prod">Production <br> deployment</div>
+  <div class="rectangle fragment" id="task-prod">Production <br> deployment</div>
 </div>
 
 <img src="img/print/bdd-3.png" class="print"></img>

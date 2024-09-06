@@ -30,8 +30,8 @@
 
     --r-gray-text-color: var(--system-color-lightGray1);
     
-    --system-color-contentBoxBackground: var(--system-color-darkGray2);
-    --system-color-contentBoxBorder: var(--system-color-lightGray1);
+    --system-color-boxBackground: var(--system-color-darkGray2);
+    --system-color-boxBorder: var(--system-color-lightGray1);
 
     --system-color-bubbleBackground: lightyellow;
 

@@ -9,6 +9,15 @@
 ---
 
 
+{% if(pw) { %}
+
+https://playwright.dev/docs/browser-contexts#how-playwright-achieves-test-isolation
+
+Playwright uses browser contexts to **achieve** Test Isolation. Each test has its own Browser Context. Running the test creates a new browser context each time.
+
+---
+
+{% } %}
 
 ## &lt;/> Specification workshop for the delivery fees
 <!-- .element: data-toc-label="</> Verify the delivery fees" class="text-size-heading-3"-->

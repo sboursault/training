@@ -3,7 +3,7 @@
 
 <br>
 
-<h1 class="mt-500">End to End tests <br>with {%= e2eTool.charAt(0).toUpperCase() + e2eTool.slice(1) %}</h1>
+<h1 class="mt-500">End to End tests <br>with {%= cy ? 'Cypress' : 'Playwright' %}</h1>
 
 <br>
 <br>

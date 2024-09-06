@@ -136,17 +136,17 @@ Dans les tp, proposer des règles de gestion floues, qui pourront être affinée
 <div class="box fragment">
   <p class="box__title">Sprint</p>
   <div class="flex-row">
-    <div class="badge" id="box-1">User story</div>
-    <div class="badge fragment" id="box-2">Acceptance criteria</div>
-    <div class="badge fragment" id="box-3">Automated tests</div>
-    <div class="badge fragment" id="box-4">Validates the <br> new feature</div>
+    <div class="rectangle" id="box-1">User story</div>
+    <div class="rectangle fragment" id="box-2">Acceptance criteria</div>
+    <div class="rectangle fragment" id="box-3">Automated tests</div>
+    <div class="rectangle fragment" id="box-4">Validates the <br> new feature</div>
   </div>
 </div>
 <div class="box fragment">
   <p class="box__title">Future sprints</p>
   <div class="flex-row">
-    <div class="badge" id="box-5">Regression tests</div>
-    <div class="badge fragment" id="box-6">Living documentation</div>
+    <div class="rectangle" id="box-5">Regression tests</div>
+    <div class="rectangle fragment" id="box-6">Living documentation</div>
   </div>
 </div>
 
