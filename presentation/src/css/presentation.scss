@@ -22,61 +22,24 @@ $block-margin: 32px;
   --r-link-color-hover: #6ca0e8;
   --r-selection-background-color: #98bdef;
   --r-selection-color: #fff;
-
-  
-  --system-color-white: #eeeff0;
-  --system-color-black: #2a2a2a;
-  --system-color-lightGray6: #f8f8f8;
-  --system-color-lightGray5: #eee;
-  --system-color-lightGray4: #dddddd;
-  --system-color-lightGray3: #cccccc;
-  --system-color-lightGray2: #b2b2b2;
-  --system-color-lightGray1: #999;
-  --system-color-gray: #808080;
-  --system-color-darkGray1: #666;
-  --system-color-darkGray1-5: #4c4c4c;
-  --system-color-darkGray2: #333;
-
-  --system-color-lightGreen2: #77bc65;
-  --system-color-lightLemonGreen3: #e8f2a1;
-  --system-color-lightLemonGreen2: #d4ea6b;
-  --system-color-lightLemonGreen1: #bbe33d;
-  --system-color-darkLemonGreen1: #5eb91e;
-  --system-color-darkLemonGreen2: #468a1a;
-  --system-color-darkLemonGreen3: #395511;
-
-
-  --system-color-orange: #ff6600;
-  --system-color-orange1: #ffcc00;
-  --system-color-orange2: #ff9900;
-  --system-color-orange3: #ff3300;
-  --system-color-orange4: #cc3300;
-
-
-  --text-size-level-1: 2.5rem;
-  --text-size-level-2: 2.25rem;
-  --text-size-level-3: 2rem;
-  --text-size-level-4: 1.75rem;
-  --text-size-level-5: 1.5rem;
-  --text-size-level-6: 1.25rem;
-
   --r-block-margin: #{$block-margin};
   --r-heading-margin: 24px 0 32px 0;
-  --r-main-font-size: var(--text-size-level-1);
+  --r-main-font-size: 2.5rem;;
   --r-heading1-size: 6rem;
   --r-heading2-size: 4rem;
   --r-heading3-size: 3rem;
   --r-heading4-size: 2.5rem;
 
 
-  --system-color-strong: #{$color-lightGreen-800};
-  --system-color-codeBorder: var(--system-color-lightGray4);
+  --system-color-strongText: #{$color-lightGreen-800};
+  --system-color-codeBorder: #dddddd;
   --system-color-codeBackground: #fafafa;
-  --system-color-boxBackground: var(--system-color-lightGray6);
-  --system-color-boxBorder: var(--system-color-lightGray1);
+  --system-color-boxBackground: #f8f8f8;
+  --system-color-boxBorder: #999;;
   --system-color-rectangleBackground: #{$color-lime-100};
   --system-color-rectangleBorder: #{$color-lightGreen-800};
   --system-color-bubbleBackground: #d0e9ff;
+  --system-color-tagOptionalBackground: #{$color-lime-200};
 }
 
 @media screen {
@@ -102,7 +65,6 @@ $block-margin: 32px;
   }
 }
 
-/* bases */
 .reveal {
   section {
     text-align: left;
@@ -157,7 +119,7 @@ $block-margin: 32px;
   }
 
   li {
-    font-size: 0.85em; /* using a relative size, `li li` are sized .9*.9 :)  */
+    font-size: 0.85em;
   }
 
   ul.no-bullets {
@@ -275,7 +237,7 @@ $block-margin: 32px;
   }
 
   strong {
-    color: var(--system-color-strong);
+    color: var(--system-color-strongText);
   }
 
   .no-wrap {
@@ -452,13 +414,6 @@ $block-margin: 32px;
     }
   }
 
-  .breadcrumb {
-    color: var(--r-gray-text-color);
-    text-align: left;
-    font-size: var(--text-size-level-6);
-    margin: 0 0 20px;
-  }
-
   .box + .box {
     margin-top: 70px;
   }
@@ -494,7 +449,7 @@ $block-margin: 32px;
     font-size: 1.25rem;
     text-align: center;
     padding: 15px 20px;
-    color: var(--system-color-black);
+    color: #2a2a2a;
     border-radius: 50% 4% 50% 2% / 2% 50% 2% 50%;
     background: var(--system-color-rectangleBackground);
     border: solid 5px var(--system-color-rectangleBorder);
@@ -516,7 +471,7 @@ $block-margin: 32px;
   }
 
   .sticky {
-    font-size: var(--text-size-level-6);
+    font-size: 1.25rem;
     font-style: italic;
     font-weight: bold;
     color: black;
@@ -530,8 +485,8 @@ $block-margin: 32px;
   }
 
   .rectangle:has(> .overlay--friction.visible) {
-    background-color: var(--system-color-orange1);
-    border-color: var(--system-color-orange);
+    background-color: #{$color-amber-200};
+    border-color: #{$color-orange-800};
   }
 
   .overlay--friction {
@@ -609,27 +564,27 @@ $block-margin: 32px;
   }
 
   .text-level-1 {
-    font-size: var(--text-size-level-1);
+    font-size: var(--r-main-font-size);
   }
 
   .text-level-2 {
-    font-size: var(--text-size-level-2);
+    font-size: 2.25rem;
   }
 
   .text-level-3 {
-    font-size: var(--text-size-level-3);
+    font-size: 2rem;
   }
 
   .text-level-4 {
-    font-size: var(--text-size-level-4);
+    font-size: 1.75rem;
   }
 
   .text-level-5 {
-    font-size: var(--text-size-level-5);
+    font-size: 1.5rem;
   }
 
   .text-level-6 {
-    font-size: var(--text-size-level-6);
+    font-size: 1.25rem;
   }
 
   .text-center {
@@ -730,8 +685,8 @@ $block-margin: 32px;
     padding: 0.25em 0.55em;
     font-size: 0.75em;
     border-radius: 50rem;
-    background-color: var(--system-color-lightGray4);
-    color: var(--system-color-darkGray2);
+    background-color: #dddddd;
+    color: #333;
     margin-left: 0.8em;
     line-height: 1;
     text-align: center;
@@ -742,8 +697,7 @@ $block-margin: 32px;
   }
 
   .tag--optional {
-    background-color: var(--system-color-lightLemonGreen2);
-    color: var(--system-color-darkGray2);
+    background-color: var(--system-color-tagOptionalBackground);
   }
 
   .tag--small {

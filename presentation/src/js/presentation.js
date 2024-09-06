@@ -110,17 +110,6 @@ export function wrapLinks() {
   })
 }
 
-export function addBreadcrumbs() {
-  document.querySelectorAll('.slide--part-title').forEach(partTitleSlide => {
-    const partName = partTitleSlide.querySelector('h1').innerHTML
-    let sibling = getSiblingUnlessPartTileSlide(partTitleSlide)
-    while (sibling != null) {
-      sibling.innerHTML = `<div class="breadcrumb">${partName} ›</div>${sibling.innerHTML}`
-      sibling = getSiblingUnlessPartTileSlide(sibling)
-    }
-  })
-}
-
 function getSiblingUnlessPartTileSlide(element) {
   let sibling = element.nextElementSibling
   if (sibling == null)
@@ -186,7 +175,6 @@ export function init() {
     wrapExercice()
     wrapLinks()
     fillCompleteToc()
-    // addBreadcrumbs()
     setTimeout(
       () => {
         drawArrows()

@@ -3,15 +3,11 @@
 
 @import url(./highlight/atom-one-dark.css);
 
-/*  #77bc65 vert clair 2 */
-/* #333 dark gray */ 
-/* eeeff0 light gray */
-
 
 :root {
-    --r-background-color: var(--system-color-black);
+    --r-background-color: #2a2a2a;
     --r-main-font: Source Sans Pro, Helvetica, sans-serif;
-    --r-main-color: var(--system-color-lightGray3);
+    --r-main-color: #cccccc;
     --r-heading-font: Lato, Source Sans Pro, Helvetica, sans-serif;
     --r-heading-color: var(--color-lightGreen2);
     --r-heading-line-height: 1.2;
@@ -28,15 +24,15 @@
     --r-selection-color: #fff;
 
 
-    --r-gray-text-color: var(--system-color-lightGray1);
+    --r-gray-text-color: #999;
     
-    --system-color-boxBackground: var(--system-color-darkGray2);
-    --system-color-boxBorder: var(--system-color-lightGray1);
+    --system-color-boxBackground: #333;
+    --system-color-boxBorder: #999;
 
     --system-color-bubbleBackground: lightyellow;
 
-    --system-color-codeBorder: var(--system-color-darkGray1-5);
-    --system-color-codeBackground: var(--system-color-darkGray2);
+    --system-color-codeBorder: #4c4c4c;
+    --system-color-codeBackground: #333;
   }
 
 

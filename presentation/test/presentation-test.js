@@ -1,6 +1,6 @@
 import { JSDOM } from 'jsdom';
 import { strictEqual } from 'assert';
-import { fillPartTocs, addBreadcrumbs } from '../js/presentation.js';
+import { fillPartTocs } from '../js/presentation.js';
 
 
 describe('fillPartTocs', function () {
@@ -42,45 +42,6 @@ describe('fillPartTocs', function () {
     strictEqual(
       document.querySelector('#s6 .part-toc').innerHTML,
       '<span>Content:</span><ul><li>2.1</li></ul>'
-    )
-  })
-})
-
-describe('addBreadcrumbs', function () {
-  it('adds breadcrumbs from the part title', function () {
-
-    // given
-    const dom = new JSDOM(
-      `<html>
-         <body>
-           <section id="s1"><h1>presentation title</h1></section>
-           <section id="s2" class="slide--part-title"><h1>The part one</h1></section>
-           <section id="s3"><p>hello</p></section>
-           <section id="s4"><p>hello again</p></section>
-           <section id="s5" class="slide--part-title"><h1>The part two</h1></section>
-           <section id="s6"><p>hello hello</p></section>
-         </body>
-       </html>`,
-      { url: 'http://localhost' },
-    );
-    global.window = dom.window
-    global.document = dom.window.document
-
-    // when
-    addBreadcrumbs()
-
-    // then
-    strictEqual(
-      document.querySelector('#s3').innerHTML,
-      `<div class="breadcrumb">The part one ›</div><p>hello</p>`,
-    )
-    strictEqual(
-      document.querySelector('#s4').innerHTML,
-      `<div class="breadcrumb">The part one ›</div><p>hello again</p>`,
-    )
-    strictEqual(
-      document.querySelector('#s6').innerHTML,
-      `<div class="breadcrumb">The part two ›</div><p>hello hello</p>`,
     )
   })
 })

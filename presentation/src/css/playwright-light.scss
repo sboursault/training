@@ -1,3 +1,8 @@
+@import "material_design_colors";
+
 :root {
-  --system-color-strong: var(--system-color-skyBlue4);
+  --r-heading-color: #{$color-lightBlue-800};
+  --system-color-strongText: #{$color-lightBlue-700};
+  --system-color-rectangleBackground: #{$color-lightBlue-50};
+  --system-color-rectangleBorder: #{$color-cyan-800};
 }
