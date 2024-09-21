@@ -5,6 +5,7 @@ test.describe('Login', () => {
   test('The login accepts valid credentials', async ({ page, loginPage, topNavBar }) => {
     await loginPage.goto()
     await loginPage.fill('tom@test.com', 'tom@test.com')
+    await page.pause()
     await loginPage.submit()
     await expect(page).toHaveURL(cataloguePageUrl);
     await expect(topNavBar.component).toContainText('tom@test.com')

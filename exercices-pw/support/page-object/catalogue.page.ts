@@ -21,7 +21,7 @@ export class CataloguePage {
   }
 
   async addProductToBasket(productId: number) {
-    await this.page.getByTestId(`product-pod-add-button-${productId}`).click()
+    await this.page.getByTestId(`product-pod-add-button-${productId}`).click(/*{ timeout:5000 }*/)
   }
 
   async openMiniBasket() {

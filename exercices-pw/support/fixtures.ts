@@ -3,9 +3,11 @@ import { CataloguePage } from './page-object/catalogue.page'
 import { LoginPage } from './page-object/login.page'
 import { TopNavBarComponent } from './page-object/top-nav-bar.component'
 import { BasketApi } from './api/basket.api'
+import { LoginApi } from './api/login.api'
 
 type MyFixtures = {
   basketApi: BasketApi
+  loginApi: LoginApi
   catalogPage: CataloguePage
   loginPage: LoginPage
   topNavBar: TopNavBarComponent
@@ -14,6 +16,9 @@ type MyFixtures = {
 export const test = base.extend<MyFixtures>({
   basketApi: async ({request}, use) => {
     await use(new BasketApi(request))
+  },
+  loginApi: async ({context}, use) => {
+    await use(new LoginApi(context))
   },
   catalogPage: async ({ page }, use) => {
     // Set up the fixture
