@@ -31,9 +31,11 @@ test.describe('Basket recovery', () => {
     await expect(catalogPage.miniBasketToggle).toContainText('(1)')
   })
 
-  test('After logout, the mini basket is empty', async ({ page, loginPage, catalogPage }) => {
-    await loginPage.goto()
-    await loginPage.login('tom@test.com', 'tom@test.com')
+  test('After logout, the mini basket is empty', async ({ page, loginApi, catalogPage }) => {
+    //await loginPage.goto()
+    //await loginPage.login('tom@test.com', 'tom@test.com')
+    await loginApi.login('tom@test.com', 'tom@test.com')
+    await catalogPage.goto()
     await catalogPage.addProductToBasket(209)
     await expect(catalogPage.miniBasketToggle).toContainText('(1)')
 
@@ -42,25 +44,29 @@ test.describe('Basket recovery', () => {
   })
 
   test('After login, the basket contains the items I added as an anonymous user', async ({
-    loginPage,
+    loginApi,
     catalogPage,
   }) => {
     await catalogPage.goto()
     await catalogPage.addProductToBasket(209)
     await expect(catalogPage.miniBasketToggle).toContainText('(1)')
 
-    await loginPage.goto()
-    await loginPage.login('tom@test.com', 'tom@test.com')
+    // await loginPage.goto()
+    // await loginPage.login('tom@test.com', 'tom@test.com')
+    await loginApi.login('tom@test.com', 'tom@test.com')
+    await catalogPage.goto()
     await expect(catalogPage.miniBasketToggle).toContainText('(1)')
   })
 
   test('After login, the basket contains both the items from my last session and those from my current basket', async ({
     page,
-    loginPage,
+    loginApi,
     catalogPage,
   }) => {
-    await loginPage.goto()
-    await loginPage.login('tom@test.com', 'tom@test.com')
+    // await loginPage.goto()
+    // await loginPage.login('tom@test.com', 'tom@test.com')
+    await loginApi.login('tom@test.com', 'tom@test.com')
+    await catalogPage.goto()
     await catalogPage.addProductToBasket(209)
     await expect(catalogPage.miniBasketToggle).toContainText('(1)')
 
@@ -70,8 +76,10 @@ test.describe('Basket recovery', () => {
     await catalogPage.addProductToBasket(208)
     await expect(catalogPage.miniBasketToggle).toContainText('(1)')
 
-    await loginPage.goto()
-    await loginPage.login('tom@test.com', 'tom@test.com')
+    // await loginPage.goto()
+    // await loginPage.login('tom@test.com', 'tom@test.com')
+    await loginApi.login('tom@test.com', 'tom@test.com')
+    await catalogPage.goto()
     await expect(catalogPage.miniBasketToggle).toContainText('(2)')
   })
 })
