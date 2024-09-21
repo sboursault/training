@@ -27,6 +27,8 @@ function renderTemplatedFiles() {
             closeDelimiter: '}',
             async: true,
           })
+          .then(html => html.replace(/(<code (class="[^"]*")?>)\s*/g, "$1"))     
+          .then(html => html.replace(/\s*(<\/code>)/g, "$1"))     
           .then((html) => fs.writeFile('build/' + file, html))
       )
     )

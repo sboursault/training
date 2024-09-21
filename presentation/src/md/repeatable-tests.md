@@ -28,10 +28,10 @@ Note:
 
 _Possible list:_
 
-- After login, the mini basket contains the items from my last session
+- After login, the basket contains the items from my last session
 - After logout, the mini basket is empty
-- After login, the product also contain the items I added as an anonymous user
-- After login, the mini basket contains both the items from my last session and those from my current basket
+- After login, the basket contains the items I added as an anonymous user
+- After login, the basket contains both the items from my last session and those from my current basket
 
 
 

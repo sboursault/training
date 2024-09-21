@@ -70,15 +70,19 @@ The login can be verified once, and then for each test that require logging, thi
   <p>Let's code
   <ul>
     <li>In the tests which requires a logged user, replace the UI login by a simple http request
-    <pre>
-    <code>curl -X POST https://.../api/login \
-  -u "tom@test.com:tom@test.com"</code>
-    </pre>
+    <pre><code class="sh">
+curl -i \
+  -X POST \
+  --header "Content-Type: application/json" \
+  --data '{"username":"tom@test.com","password":"tom@test.com"}' \
+  http://localhost:8000/api/login/  # ⚠️ don't forget the trailing "/"
+  </code></pre>
   </ul>
+
 
   <p>Commands
   <ul>
-    <li><code>cy.request()</code>, <code>debugger</code>
+    <li><code>cy.request()</code>
   </ul>
   
   <p>Userful links
@@ -88,6 +92,11 @@ The login can be verified once, and then for each test that require logging, thi
     <li class="url-link">http://&lt;simple-commerce-instance&gt;/api/login/
   </ul>
 </div>
+
+Note:
+- Here the trainee implements the request call alone.
+- I just have to show a curl example.
+- Wath the time before and after change.
 
 
 ---
