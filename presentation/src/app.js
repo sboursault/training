@@ -8,27 +8,31 @@ const context = {
   pw: process.argv[2] === 'pw',
 }
 
-
 await fs.mkdir('build/md', { recursive: true })
 
 const templates = ['index.html'].concat(
   (await fs.readdir('src/md'))
     .filter((file) => file.endsWith('.md'))
-    .map(file => 'md/' + file)
+    .map((file) => 'md/' + file)
 )
 
 function renderTemplatedFiles() {
   return fs.mkdir('build/md', { recursive: true }).then(() =>
     Promise.all(
       templates.map((file) =>
-        ejs
-          .renderFile('src/' + file, context, {
-            openDelimiter: '{',
-            closeDelimiter: '}',
-            async: true,
-          })
-          .then(html => html.replace(/(<code (class="[^"]*")?>)\s*/g, "$1"))     
-          .then(html => html.replace(/\s*(<\/code>)/g, "$1"))     
+        fs
+          .readFile('src/' + file, 'utf-8')
+          //.then((content) => content.replace(/{{/g, '<%'))
+          //.then((content) => content.replace(/}}/g, '%>'))
+          .then((content) =>
+            ejs.render(content, context, {
+              openDelimiter: '{',
+              closeDelimiter: '}',
+              async: true,
+            })
+          )
+          .then((html) => html.replace(/(<code (class="[^"]*")?>)\s*/g, '$1'))
+          .then((html) => html.replace(/\s*(<\/code>)/g, '$1'))
           .then((html) => fs.writeFile('build/' + file, html))
       )
     )
