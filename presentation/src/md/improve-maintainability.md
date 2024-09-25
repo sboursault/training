@@ -189,6 +189,8 @@ cy.getByTestid(`my-component`)
 <p class="fragment mt-200">Custom commands work well for behaviors that are desirable across many tests
 
 
+{% if(cy) { %}
+
 ---
 
 ## Create a custom command
@@ -211,6 +213,7 @@ cy.getByTestid(`my-component`)
   </ul>
 </div>
 
+{% } %}
 
 
 ---

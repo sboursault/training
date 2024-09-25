@@ -56,6 +56,16 @@ particularly on <strong>Single Page Applications</strong>
 
 ## Debug tests
 
+
+{% if(pw) { %}
+
+https://playwright.dev/docs/debug
+
+debug with vscode
+
+{% } %}
+
+
 <div class="mt-300 fragment">
   <p>Inspect the <strong>page</strong> and <strong>any storage</strong> during the test
   
@@ -127,6 +137,7 @@ cy.wait('@addProductToBasket')  // wait for a http response
 Note:
 Testing offten involves asynchronous behaviours.
 
+{% if(cy) { %}
 ---
 
 ## Test accross multiple domains
@@ -186,3 +197,5 @@ Testing offten involves asynchronous behaviours.
     <li class="mt-25"><!--Make direct calls to the other app <strong>api</strong> from your test, and check the created data--> Check the data created in the other app with <strong>direct calls</strong> to this other app <strong>api</strong> (see <code>cy.request()</code>)
   </ul>
 </div>
+
+{% } %}

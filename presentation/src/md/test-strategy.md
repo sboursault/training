@@ -450,3 +450,12 @@ How to use <strong>@cypress/grep</strong>:<br><a href="https://github.com/cypres
 <p class="fragment mt-300">Don't let flaky tests attack your confidence!
 
 <p class="fragment mt-200">If not fixed within a given time frame, <strong>quarantine</strong> or <strong>delete</strong> the flaky test
+
+
+{% if(pw) { %}
+
+---
+
+TODO TRACE VIEWER
+
+{% } %}

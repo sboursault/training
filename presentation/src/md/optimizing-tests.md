@@ -112,3 +112,17 @@ Note:
 
 <small class="mt-500">Using <code>cy.session()</code>: https://docs.cypress.io/api/commands/session</small>
 
+
+---
+
+## Speed up your tests - part&nbsp;2 - TO COMPLETE
+<!-- .element: data-tags="practice, optional" class="text-size-heading-3" -->
+
+<div class="exercice">
+  <p class="">Let's code
+  <ul>
+    <li>Use api calls to add a product to the basket
+  </ul>
+</div>
+
+

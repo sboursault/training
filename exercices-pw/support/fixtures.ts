@@ -4,6 +4,7 @@ import { LoginPage } from './page-object/login.page'
 import { TopNavBarComponent } from './page-object/top-nav-bar.component'
 import { BasketApi } from './api/basket.api'
 import { LoginApi } from './api/login.api'
+import { BasketPage } from './page-object/basket.page'
 
 type MyFixtures = {
   basketApi: BasketApi
@@ -11,6 +12,7 @@ type MyFixtures = {
   catalogPage: CataloguePage
   loginPage: LoginPage
   topNavBar: TopNavBarComponent
+  basketPage: BasketPage
 }
 
 export const test = base.extend<MyFixtures>({
@@ -34,6 +36,9 @@ export const test = base.extend<MyFixtures>({
   },
   topNavBar: async ({ page }, use) => {
     await use(new TopNavBarComponent(page))
+  },
+  basketPage: async ({ page }, use) => {
+    await use(new BasketPage(page))
   },
 })
 
