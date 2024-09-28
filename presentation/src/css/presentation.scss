@@ -236,6 +236,14 @@ $block-margin: 32px;
     margin-left: $block-margin * 0.5 !important;
   }
 
+  .ms-50r {
+    margin-left: .5em * 0.75 !important;
+  }
+
+  .ms-100r {
+    margin-left: 1em * 0.75 !important;
+  }
+  
   strong {
     color: var(--system-color-strongText);
   }

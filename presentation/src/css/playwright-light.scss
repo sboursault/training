@@ -1,8 +1,8 @@
-@import "material_design_colors";
+@import "flat_design_colors";
 
 :root {
-  --r-heading-color: #{$color-lightBlue-800};
-  --system-color-strongText: #{$color-lightBlue-700};
-  --system-color-rectangleBackground: #{$color-lightBlue-50};
-  --system-color-rectangleBorder: #{$color-cyan-800};
+  --r-heading-color: #{$color-belizeHole-600};
+  --system-color-strongText: #{$color-belizeHole-500};
+  --system-color-rectangleBackground: #{$color-belizeHole-50};
+  --system-color-rectangleBorder: #{$color-belizeHole-400};
 }
