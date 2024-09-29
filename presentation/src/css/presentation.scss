@@ -224,8 +224,12 @@ $block-margin: 32px;
     margin-bottom: $block-margin * 0.5 !important;
   }
 
-  .mb-100 {
-    margin-bottom: $block-margin !important;
+  .mb-100r {
+    margin-bottom: 1em * 0.75 !important;
+  }
+
+  .mb-200r {
+    margin-bottom: 2em * 0.75 !important;
   }
 
   .ms-0 {
