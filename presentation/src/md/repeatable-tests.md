@@ -90,16 +90,15 @@ curl -X DELETE https://.../api/basket -u "tom@test.com:tom@test.com"
   <p>Let's code
   <ul>
     <li>Clear the basket before each test
-  
-```sh
+    <pre><code class="sh">
 curl -X DELETE https://.../api/baskets/{id} \
-  -u "tom@test.com:tom@test.com"
-```
-
+  --header "Authorization: Basic c3VwZXJ1c..."
+    </code></pre>
   </ul>
   <p>Commands
   <ul>
-    <li><code>cy.request()</code>, <code>debugger</code>
+    <li><code>cy.request()</code>
+    <li><code>btoa('bob@test.com:my-passwd')</code> to encode credentials
   </ul>
   <p>Userful links
   <ul style="font-size:75%">

@@ -76,10 +76,8 @@ curl -i \
   --header "Content-Type: application/json" \
   --data '{"username":"tom@test.com","password":"tom@test.com"}' \
   http://localhost:8000/api/login/  # ⚠️ don't forget the trailing "/"
-  </code></pre>
+    </code></pre>
   </ul>
-
-
   <p>Commands
   <ul>
     <li><code>cy.request()</code>
@@ -98,7 +96,7 @@ Note:
 - I just have to show a curl example.
 - Wath the time before and after change.
 
-
+{% if(cy) { %}
 ---
 
 ## Cypress session
@@ -112,6 +110,8 @@ Note:
 
 <small class="mt-500">Using <code>cy.session()</code>: https://docs.cypress.io/api/commands/session</small>
 
+
+{% } %}
 
 ---
 
