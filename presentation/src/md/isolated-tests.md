@@ -119,22 +119,63 @@ You're not sure which products are already used in existing tests.
 ## Delivery fees when the basket is exactly 30€
 <!-- .element: data-tags="practice" class="text-size-heading-3" data-toc-label="...when the basket is exactly 30€" -->
 
-<div class="exercice">
+
+<div class="exercice text-level-2">
+
+
   <p>Let's code
   <ul>
     <li>Through the product api, create a new product sold 30€
-    <pre class="mt-50">
-      <code>...</code>
-    </pre>
     <li>Verify the delivery fees with this product
     <li>Rewrite so that the test shows the price of the new product
-  </ul> 
+  </ul>
+  <p>Commands
+  <ul>
+    <li><code>crypto.randomUUID()</code> to generate a random slug 
+    <li><code>btoa('superuser@example.com:testing')</code> to encode admin credentials
+  </ul>
+
   <p>Userful links
   <ul style="font-size:75%">
     <li class="url-link">https://docs.cypress.io/api/table-of-contents
     <li class="url-link">https://docs.cypress.io/api/commands/request
     <li class="url-link">http://&lt;simple-commerce-instance&gt;/api/admin/products/
   </ul>
+</div>
+
+
+
+---
+
+<!-- .slide: class="text-level-2" -->
+
+<p class="mt-100r">How to create a new product?
+
+<pre><code class="sh">
+curl -i \
+  -X POST \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Basic c3VwZXJ1c2VyQGV4YW1wbGUuY29tOnRlc3Rpbmc=" \
+  --data '
+  {
+    "slug": "aaaa",
+    "product_class": "book",
+    "stockrecords": [
+      {
+        "partner": "/api/admin/partners/3/",
+        "partner_sku": "aaaa",
+        "price_currency": "EUR",
+        "price": 15,
+        "num_in_stock": 100
+      }
+    ]
+  }' \
+  http://localhost:8000/api/admin/products/
+
+  # ⚠️ don't forget the trailing "/" at the end of the url
+  # ⚠️ `slug` and `stockrecords[].partner_sku` must be unique
+</code></pre>
+
 </div>
 
 ---
@@ -154,12 +195,12 @@ You're not sure which products are already used in existing tests.
 <div class="fragment mt-300">
   <p> In practice
   <ul>
-    <li>Isolated tests can run in any order
-    <li>Each test can run separately from the test suite
+    <li class="fragment">Isolated tests can run in <strong>any order</strong>
+    <li class="fragment">Each test can run <strong>separately from the test suite</strong>
+    <li class="fragment">Ultimately, tests can even run in <strong>parallel</strong>!
   </ul>
 </div>
 
-<p class="fragment mt-200">Ultimately, tests can even run in parallel!
 
 Note:
 - In practice
@@ -170,16 +211,18 @@ The issue is either within the test or the verified code
 
 ## How to isolate tests?
 
-Before running, each test should set up the environment to a known state
+<p class="fragment mt-150r">Before running, each test should set up the environment to a known state
 
-On the browser side, Cypress already cleans the context between each test  (DOM, cookies, local and session storage)
+<p class="fragment mt-150r">On the <strong>browser side</strong>, Cypress already cleans the context between each test  (DOM, cookies, local and session storage)
 
-On the server side, you may need
- - create a dedicated user for the user
- - create dedicated products, or verify their availability
- - etc.
-
-To verify if a test is independent, run it with <strong>.only()</strong>
+<div class="fragment mt-150r">
+  <p>On the <strong>server side</strong>, you may need to
+  <ul>
+    <li>create a dedicated user for the user
+    <li>create dedicated products, or verify their availability
+    <li>etc.
+  </ul>
+</div>
 
 Note:
 To enforce test isolation...

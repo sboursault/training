@@ -8,11 +8,9 @@ export class LoginApi {
   }
 
   async login(username: string, password: string) {
-    const response = await this.context.request.post('/api/login/', {
+    await this.context.request.post('/api/login/', {
       failOnStatusCode: true,
       data: { username, password },
     })
-    const body = await response.text
-    console.log(body)
   }
 }

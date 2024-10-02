@@ -1,8 +1,14 @@
 @import "flat_design_colors";
 
 :root {
-  --r-heading-color: #{$color-belizeHole-600};
-  --system-color-strongText: #{$color-belizeHole-500};
-  --system-color-rectangleBackground: #{$color-belizeHole-50};
-  --system-color-rectangleBorder: #{$color-belizeHole-400};
+//  --r-heading-color: #{$color-belizeHole-600};
+//  --system-color-strongText: #{$color-belizeHole-500};
+//  --system-color-rectangleBackground: #{$color-belizeHole-50};
+//  --system-color-rectangleBorder: #{$color-belizeHole-400};
+
+// palette: https://colors.muz.li/palette/45ba4b/308239/d7ffdb/afffb7/ffffff
+--r-heading-color: #308239;
+--system-color-strongText: #37953c;
+--system-color-rectangleBackground: #e5ffe8;
+--system-color-rectangleBorder: #30823b;
 }
