@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pw:test-ui": "npx playwright test --ui"
+    "pw:test-ui": "dotenvx run -f .env -- npx playwright test --ui",
+    "pw:test-ui:e2e": "dotenvx run -f .env.e2e -- npx playwright test --ui"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.46.0",
-    "@types/node": "^22.2.0"
+    "@types/node": "^22.7.4"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.14.2"
   }
 }

@@ -177,20 +177,40 @@ npm install @dotenvx/dotenvx
 
 <li>Create a file named <code>.env</code> with these variables
 
+{% if (pw) { %}
+```properties
+# .env
+BASE_URL=http://127.0.0.1:8000/
+ADMIN_LOGIN=superuser@example.com
+ADMIN_PASSWD=testing
+```
+{% } else { %}
 ```properties
 # .env
 CYPRESS_BASE_URL=http://127.0.0.1:8000/
-CYPRESS_ADMIN_LOGIN=tom@test.com
-CYPRESS_ADMIN_PASSWD=tom@test.com
+CYPRESS_ADMIN_LOGIN=superuser@example.com
+CYPRESS_ADMIN_PASSWD=testing
 ```
+{% } %}
 
 <li>Update the scripts in <code>package.json</code>
 
-```json
+
+{% if (pw) { %}
+<pre><code class="json" data-line-numbers="2">
+"scripts": {
+  "pw:test-ui": "dotenvx run -f .env -- npx playwright test --ui"
+},
+</code></pre>
+{% } else { %}
+<pre><code class="json" data-line-numbers="2">
 "scripts": {
   "cy:open": "dotenvx run -f .env -- npx cypress open --e2e --browser chromium"
 },
-```
+</code></pre>
+{% } %}
+
+
 
 <li>Rewrite tests to use the env variables and verify they still pass
 
@@ -220,16 +240,24 @@ CYPRESS_ADMIN_PASSWD=tom@test.com
     <li>Copy your <code>.env</code> file to a file named <code>.env.e2e</code>
     <li>In <code>package.json</code>, add a script to target the e2e environment
 
-```json
+{% if (pw) { %}
+<pre><code class="json" data-line-numbers="3">
 "scripts": {
+  "pw:test-ui": "dotenvx run -f .env -- npx playwright test --ui",
+  "pw:test-ui:e2e": "dotenvx run -f .env.e2e -- npx playwright test --ui"
+},
+</code></pre>
+{% } else { %}
+<pre><code class="json" data-line-numbers="3">
+"scripts": {
+  "cy:open": "dotenvx run -f .env -- npx cypress open --e2e --browser chromium"
   "cy:open:e2e": "dotenvx run -f .env.e2e -- npx cypress open --e2e --browser chromium",
 },
-```
+</code></pre>
+{% } %}
 
-<li>Change the value of <code>CYPRESS_BASE_URL</code> in <code>.env.e2e</code> and watch the test fail
 
-<li>Define a system env varibale named <code>CYPRESS_BASE_URL</code> with the right value and watch the test pass
-
+<li>Change the base url in <code>.env.e2e</code> and watch the test fail
 
   </ul>
   <p>Useful links
@@ -456,6 +484,6 @@ How to use <strong>@cypress/grep</strong>:<br><a href="https://github.com/cypres
 
 ---
 
-TODO TRACE VIEWER
+## TODO TRACE VIEWER
 
 {% } %}

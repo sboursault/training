@@ -3,7 +3,7 @@ import fs from 'fs/promises'
 import chokidar from 'chokidar'
 
 const context = {
-  e2eTool: process.argv[2] === 'pw' ? 'playwright' : 'cypress',
+  e2eTool: process.argv[2] === 'pw' ? 'Playwright' : 'Cypress',
   cy: process.argv[2] === 'cy',
   pw: process.argv[2] === 'pw',
 }
@@ -31,7 +31,7 @@ function renderTemplatedFiles() {
               async: true,
             })
           )
-          .then((html) => html.replace(/(<code (class="[^"]*")?>)\s*/g, '$1'))
+          .then((html) => html.replace(/(<code(?:\s+[\w-]+="[^"]*")*>)\s*/g, '$1'))
           .then((html) => html.replace(/\s*(<\/code>)/g, '$1'))
           .then((html) => fs.writeFile('build/' + file, html))
       )

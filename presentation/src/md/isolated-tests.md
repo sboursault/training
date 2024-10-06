@@ -131,7 +131,7 @@ You're not sure which products are already used in existing tests.
   </ul>
   <p>Commands
   <ul>
-    <li><code>crypto.randomUUID()</code> to generate a random slug 
+    <li><code>crypto.randomUUID()</code> to generate random identifiers 
     <li><code>btoa('superuser@example.com:testing')</code> to encode admin credentials
   </ul>
 

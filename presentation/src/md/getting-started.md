@@ -16,18 +16,34 @@
 
 ---
 
-## &lt;/> Create and configure a Cypress project
-<!-- .element: class="text-size-heading-3" -->
+## Create and configure a {%= e2eTool %} project TODO : split to have a separate slide for the test
+<!-- .element: class="text-size-heading-3" data-tags="practice" -->
 
-<div class="exercice text-level-3">
+<div class="exercice text-level-5">
   <p>Let's code
   <ul>
     <li>Create a github project
-    <li>Install and configure cypress to run typescript test
-    <li>Create a simplistic test:
-      <ul>
-        <li><i>The home page title contains "All products"</i>
-      </ul>
+    <li>Install and configure {%= e2eTool %} to run typescript test
+    {% if(pw) { %}
+  <li>Install node types
+    <pre><code class="sh">
+npm i --save-dev @types/node
+    </code></pre>
+  <li>create a `tsconfig.json` file to avoid compilation errors in Vscode on node types (e.g. process)
+    <pre><code class="json">
+{
+  "compilerOptions": {
+    "types": [
+      "node"
+    ]
+  }
+}
+      </code></pre>
+    {% } %}
+  <li>Create a simplistic test:
+    <ul>
+      <li><i>The home page title contains "All products"</i>
+    </ul>
   </ul>
   <p>Commands
   <ul class="text-level-5">
