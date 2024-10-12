@@ -20,18 +20,15 @@ function renderTemplatedFiles() {
   return fs.mkdir('build/md', { recursive: true }).then(() =>
     Promise.all(
       templates.map((file) =>
-        fs
-          .readFile('src/' + file, 'utf-8')
-          //.then((content) => content.replace(/{{/g, '<%'))
-          //.then((content) => content.replace(/}}/g, '%>'))
-          .then((content) =>
-            ejs.render(content, context, {
-              openDelimiter: '{',
-              closeDelimiter: '}',
-              async: true,
-            })
+        ejs
+          .renderFile('src/' + file, context, {
+            openDelimiter: '{',
+            closeDelimiter: '}',
+            async: true,
+          })
+          .then((html) =>
+            html.replace(/(<code(?:\s+[\w-]+="[^"]*")*>)\s*/g, '$1')
           )
-          .then((html) => html.replace(/(<code(?:\s+[\w-]+="[^"]*")*>)\s*/g, '$1'))
           .then((html) => html.replace(/\s*(<\/code>)/g, '$1'))
           .then((html) => fs.writeFile('build/' + file, html))
       )
