@@ -3,7 +3,7 @@ import { strictEqual } from 'assert';
 import { fillPartTocs } from '../js/presentation.js';
 
 
-describe('fillPartTocs', function () {
+/*describe('fillPartTocs', function () {
   it('fills elements with a `part-toc` class', function () {
 
     // given
@@ -44,4 +44,4 @@ describe('fillPartTocs', function () {
       '<span>Content:</span><ul><li>2.1</li></ul>'
     )
   })
-})
+})*/

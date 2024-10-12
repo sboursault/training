@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "mocha src/test/dom-test.js",
+    "test": "mocha src/test/*-test.js",
     "build-and-watch": "npm run sass:watch & node src/app.js",
     "sass:watch": "sass --watch src/css:build/css",
     "browser-sync": "npx browser-sync start --server build --watch --reload-delay 200 --browser=chromium /",

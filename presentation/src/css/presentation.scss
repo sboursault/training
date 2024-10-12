@@ -152,6 +152,10 @@ $block-margin: 32px;
     margin-top: 2em * 0.75 !important;
   }
 
+  .mt-300r {
+    margin-top: 3em * 0.75 !important;
+  }
+
   .mt--100 {
     margin-top: $block-margin * -1 !important;
   }
@@ -246,6 +250,10 @@ $block-margin: 32px;
 
   .ms-100r {
     margin-left: 1em * 0.75 !important;
+  }
+
+  .ms-200r {
+    margin-left: 2em * 0.75 !important;
   }
   
   strong {
