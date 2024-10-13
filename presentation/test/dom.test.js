@@ -1,11 +1,9 @@
-import { JSDOM } from 'jsdom';
-import { strictEqual } from 'assert';
-import { createChild, createNode } from '../js/dom.js';
-
+import { JSDOM } from 'jsdom'
+import { strictEqual } from 'assert'
+import { createChild, createNode } from '../src/js/dom.js'
 
 describe('dom', function () {
   it('creates child element with text', function () {
-
     // given
     const dom = new JSDOM(
       `<html>
@@ -13,18 +11,18 @@ describe('dom', function () {
            <div></div>
          </body>
        </html>`,
-      { url: 'http://localhost' },
-    );
+      { url: 'http://localhost' }
+    )
     global.window = dom.window
     global.document = dom.window.document
 
     // when
     const div = document.querySelector('div')
     const created = createChild(
-        div, 
-        'span', 
-        {class:'someClass', style: 'text-decoration:underline;'},
-        'underlined text'
+      div,
+      'span',
+      { class: 'someClass', style: 'text-decoration:underline;' },
+      'underlined text'
     )
 
     // then
@@ -32,13 +30,10 @@ describe('dom', function () {
       div.innerHTML,
       '<span class="someClass" style="text-decoration:underline;">underlined text</span>'
     )
-    strictEqual(
-        created.parentNode, div
-    )
+    strictEqual(created.parentNode, div)
   })
 
   it('creates child element with child', function () {
-
     // given
     const dom = new JSDOM(
       `<html>
@@ -46,18 +41,18 @@ describe('dom', function () {
            <div></div>
          </body>
        </html>`,
-      { url: 'http://localhost' },
-    );
+      { url: 'http://localhost' }
+    )
     global.window = dom.window
     global.document = dom.window.document
 
     // when
     const div = document.querySelector('div')
     const created = createChild(
-        div, 
-        'span', 
-        {class:'someClass'},
-        createNode('a', {href: '/'}, 'home')
+      div,
+      'span',
+      { class: 'someClass' },
+      createNode('a', { href: '/' }, 'home')
     )
 
     // then
@@ -65,8 +60,6 @@ describe('dom', function () {
       div.innerHTML,
       '<span class="someClass"><a href="/">home</a></span>'
     )
-    strictEqual(
-        created.parentNode, div
-    )
+    strictEqual(created.parentNode, div)
   })
 })

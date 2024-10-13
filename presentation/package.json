@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "mocha src/test/*-test.js",
+    "test": "mocha",
     "build-and-watch": "npm run sass:watch & node src/app.js",
     "sass:watch": "sass --watch src/css:build/css",
     "browser-sync": "npx browser-sync start --server build --watch --reload-delay 200 --browser=chromium /",
@@ -16,7 +16,7 @@
     "chai": "^4.3.7",
     "chokidar": "^3.6.0",
     "jsdom": "^22.1.0",
-    "mocha": "^10.2.0",
+    "mocha": "^10.7.3",
     "sass": "^1.77.6"
   },
   "dependencies": {

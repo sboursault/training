@@ -1,6 +1,6 @@
 import { JSDOM } from 'jsdom';
 import { strictEqual } from 'assert';
-import { fillPartTocs } from '../js/presentation.js';
+import { fillPartTocs } from '../src/js/presentation.js';
 
 
 /*describe('fillPartTocs', function () {

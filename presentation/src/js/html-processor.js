@@ -12,3 +12,11 @@ export function leftPadCode(html) {
     }
   )
 }
+
+export function removeFalsyIfs(html, e2eTool) {
+  const regEx =
+    e2eTool === 'pw'
+      ? /\s*<if-cy(?:\s+[\w-]+="[^"]*")*>[\s\S]*?<\/if-cy>/g
+      : /\s*<if-pw(?:\s+[\w-]+="[^"]*")*>[\s\S]*?<\/if-pw>/g
+  return html.replace(regEx, '')
+}
