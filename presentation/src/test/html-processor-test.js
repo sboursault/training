@@ -1,23 +1,6 @@
 import { strictEqual } from 'assert'
+import { leftPadCode } from '../js/html-processor.js'
 
-function trimCodeSnippets(html) {
-  //var repl = s.replace(/(foo-)(\w+)(-baz)/g,
-  //  (m, g1, g2, g3) => g1 + g2 + g2.replace(/r/g, "t") + g3);
-
-  return html.replace(
-    /(<code(?:\s+[\w-]+="[^"]*")*>)\n*([^<]*)(<\/code>)/g,
-    (_, opening, code, closing) => {
-      var arr = code.split('\n')
-      const leftPads = arr.map((line) => {
-        const firstChar = line.search(/\S/)
-        return firstChar
-      }).filter(value => value != -1)
-      const leftPad = Math.min(...leftPads)
-      const trimmed = arr.map((line) => line.substring(leftPad)).join('\n')
-      return opening + trimmed + closing
-    }
-  )
-}
 
 describe('html processor', function () {
   it('simplifies code snippet', function () {
@@ -29,12 +12,15 @@ describe('html processor', function () {
                my code with
                  indentation
              </code></pre>
+             <pre><code class="json" data-line-numbers="2">
+                  my 2nd code
+             </code></pre>
            </div>
          </body>
        </html>`
 
     // when
-    const result = trimCodeSnippets(html)
+    const result = leftPadCode(html)
 
     // then
     strictEqual(
@@ -44,6 +30,8 @@ describe('html processor', function () {
            <div>
              <pre><code class="json" data-line-numbers="2">my code with
   indentation
+</code></pre>
+             <pre><code class="json" data-line-numbers="2">my 2nd code
 </code></pre>
            </div>
          </body>

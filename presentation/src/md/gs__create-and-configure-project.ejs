@@ -1,0 +1,40 @@
+
+
+<h2 class="text-size-heading-3" data-tags="practice">
+  Create and configure a {%= e2eTool %} project
+</h2>
+
+<div class="exercice text-level-5">
+  <p>Let's code
+  <ul>
+    <li>Create a github project
+    <li>Install and configure {%= e2eTool %} to run typescript test
+    {% if(pw) { %}
+    <li>Install node types
+      <pre><code class="bash">
+        npm i --save-dev @types/node
+      </code></pre>
+    <li>create a `tsconfig.json` file to avoid compilation errors in Vscode on node types (e.g. process)
+      <pre><code class="json">
+        {
+          "compilerOptions": {
+            "types": [
+              "node"
+            ]
+          }
+        }
+      </code></pre>
+    {% } %}
+  </ul>
+  <p>Commands
+  <ul class="text-level-5">
+    <li><code>cy.visit()</code>, <code>cy.title()</code>, <code>cy.should()</code>
+  </ul>
+  <p>Userful links
+  <ul style="font-size:75%">
+    <li class="url-link">https://docs.cypress.io/guides/getting-started/installing-cypress
+    <li class="url-link">https://docs.cypress.io/guides/getting-started/opening-the-app
+    <li class="url-link">https://docs.cypress.io/guides/guides/command-line
+  </ul>
+</div>
+

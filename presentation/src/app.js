@@ -1,6 +1,7 @@
 import ejs from 'ejs'
 import fs from 'fs/promises'
 import chokidar from 'chokidar'
+import { leftPadCode } from './js/html-processor.js'
 
 const context = {
   e2eTool: process.argv[2] === 'pw' ? 'Playwright' : 'Cypress',
@@ -26,10 +27,7 @@ function renderTemplatedFiles() {
             closeDelimiter: '}',
             async: true,
           })
-          .then((html) =>
-            html.replace(/(<code(?:\s+[\w-]+="[^"]*")*>)\s*/g, '$1')
-          )
-          .then((html) => html.replace(/\s*(<\/code>)/g, '$1'))
+          .then((html) => leftPadCode(html))
           .then((html) => fs.writeFile('build/' + file, html))
       )
     )
