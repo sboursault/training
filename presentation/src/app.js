@@ -1,7 +1,7 @@
 import ejs from 'ejs'
 import fs from 'fs/promises'
 import chokidar from 'chokidar'
-import { leftPadCode } from './js/html-processor.js'
+import { leftPadCode, removeFalsyIfs } from './js/html-processor.js'
 
 const context = {
   e2eTool: process.argv[2] === 'pw' ? 'Playwright' : 'Cypress',
@@ -27,6 +27,7 @@ function renderTemplatedFiles() {
             closeDelimiter: '}',
             async: true,
           })
+          .then((html) => removeFalsyIfs(html, context.pw ? 'pw' : 'cy'))
           .then((html) => leftPadCode(html))
           .then((html) => fs.writeFile('build/' + file, html))
       )

@@ -1,0 +1,53 @@
+<section>
+  <h2 class="text-size-heading-2" data-tags="practice">
+    First test: verify page title
+  </h2>
+
+  <div class="exercice">
+    <p>Let's code</p>
+    <ul>
+      <li>
+        Implement a test to verify:
+        <div class="ms-100r mt-25r"><i>The home page title contains "All products"</i></div>
+      </li>
+    </ul>
+
+    <p>Functions</p>
+    <ul class="">
+      <li>
+        <if-pw>
+          <code>page.goto()</code>, <code>expect(page).toHaveTitle()</code>
+        </if-pw>
+        <if-cy>
+          <code>cy.visit()</code>, <code>cy.title()</code>,
+          <code>cy.should()</code>
+        </if-cy>
+      </li>
+    </ul>
+  </div>
+
+  <aside class="notes">
+    <if-pw>
+      <pre><code class="ts">
+        // home.spec.ts
+        import { test, expect } from '@playwright/test'
+        
+        test('The home page title contains "All products', async ({ page }) => {
+          await page.goto('/')
+          expect(page).toHaveTitle(/\s*Tous les produits\s*/) 
+        })
+      </code></pre>
+    </if-pw>
+    <if-cy>
+      <pre><code class="ts">
+        // home-page.spec.cy.ts
+        describe('home-page', () => {
+          specify('the home page title contains "All products"', () => {
+            cy.visit('/')
+            cy.title().should('equals', 'All products | Simple commerce')
+          })
+        })
+      </code></pre>
+    </if-cy>
+  </aside>
+</section>

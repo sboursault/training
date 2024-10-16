@@ -1,0 +1,54 @@
+<section>
+  <h2 class="text-size-heading-3" data-tags="practice">
+    Create and configure a {%= e2eTool %} project
+  </h2>
+
+  <div class="exercice text-level-4">
+    <p>Let's code</p>
+    <ul>
+      <li>Create a github project</li>
+      <li>
+        Install and configure {%= e2eTool %} to run typescript test
+        <if-pw>
+          <li>
+            Install node types
+            <pre><code class="bash">
+              npm i --save-dev @types/node
+            </code></pre>
+          </li>
+          <li>
+            create a `tsconfig.json` file to avoid compilation errors in Vscode
+            on node types (e.g. process)
+            <pre><code class="json">
+              {
+                "compilerOptions": {
+                  "types": [
+                    "node"
+                  ]
+                }
+              }
+            </code></pre>
+          </li>
+        </if-pw>
+      </li>
+    </ul>
+
+    <p>Userful links</p>
+    <ul>
+      <if-pw>
+        <li class="url-link">https://playwright.dev/docs/intro</li>
+      </if-pw>
+      <if-cy>
+        <li class="url-link">
+          https://docs.cypress.io/guides/getting-started/installing-cypress
+        </li>
+        <li class="url-link">
+          https://docs.cypress.io/guides/getting-started/opening-the-app
+        </li>
+        <li class="url-link">
+          https://docs.cypress.io/guides/guides/command-line
+        </li>
+      </if-cy>
+    </ul>
+  </div>
+</section>
