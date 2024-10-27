@@ -1,10 +1,10 @@
-@import "material_design_colors";
+@use 'browser-box';
+
+@import 'material_design_colors';
 
 $block-margin: 32px;
 
-
 :root {
-
   --r-background-color: white;
   --r-main-font: Source Sans Pro, Helvetica, sans-serif;
   --r-main-color: #444;
@@ -24,18 +24,17 @@ $block-margin: 32px;
   --r-selection-color: #fff;
   --r-block-margin: #{$block-margin};
   --r-heading-margin: 24px 0 32px 0;
-  --r-main-font-size: 2.5rem;;
+  --r-main-font-size: 2.5rem;
   --r-heading1-size: 6rem;
   --r-heading2-size: 4rem;
   --r-heading3-size: 3rem;
   --r-heading4-size: 2.5rem;
 
-
   --system-color-strongText: #{$color-lightGreen-800};
   --system-color-codeBorder: #dddddd;
   --system-color-codeBackground: #fafafa;
   --system-color-boxBackground: #f8f8f8;
-  --system-color-boxBorder: #999;;
+  --system-color-boxBorder: #999;
   --system-color-rectangleBackground: #{$color-lime-100};
   --system-color-rectangleBorder: #{$color-lightGreen-800};
   --system-color-bubbleBackground: #d0e9ff;
@@ -245,7 +244,7 @@ $block-margin: 32px;
   }
 
   .ms-50r {
-    margin-left: .5em * 0.75 !important;
+    margin-left: 0.5em * 0.75 !important;
   }
 
   .ms-100r {
@@ -255,7 +254,7 @@ $block-margin: 32px;
   .ms-200r {
     margin-left: 2em * 0.75 !important;
   }
-  
+
   strong {
     color: var(--system-color-strongText);
   }
@@ -607,6 +606,18 @@ $block-margin: 32px;
     font-size: 1.25rem;
   }
 
+  .fs-80p {
+    font-size: 0.8em;
+  }
+
+  .fs-75p {
+    font-size: 0.7em;
+  }
+
+  .fs-70p {
+    font-size: 0.7em;
+  }
+
   .text-center {
     text-align: center;
   }
@@ -697,7 +708,6 @@ $block-margin: 32px;
     animation: blinker 1s linear infinite;
   }
 
-
   .tag {
     //  font-family: sans-serif;
     vertical-align: middle;
@@ -740,41 +750,14 @@ $block-margin: 32px;
     }
   }
 
-  .browser-box {
-    height: 160px;
-    width: 250px;
-    position: relative;
-    text-align: center;
+  .indented {
+    @extend .fs-75p;
+    @extend .ms-200r;
+    @extend .mt-50r;
+  }
 
-    img {
-      content: url(/img/pngtree-safari-browser-mockup-png-image_7111467-empty.png);
-      margin: 0;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      max-width: initial;
-      max-height: initial;
-      border: 1px solid #999;
-      border-radius: 5px;
-    }
-
-    p {
-      position: absolute;
-      color: #00d;
-      margin: 0;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%, -70%);
-      font-weight: 400;
-      font-size: 0.8em;
-    }
-
-    p.browser-box_error {
-      color: red;
-      margin-top: 2em;
-    }
+  .italic {
+    font-style: italic;
   }
 }
 

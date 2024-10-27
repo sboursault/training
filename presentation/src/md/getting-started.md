@@ -115,11 +115,11 @@ We can add a design workshop in the process to prevent non testable code.
 
 <div class="exercice">
   <p>The Product Owner presents a new story:
-  <ul>
-    <li class="text-level-4"><i> As a shopper,<br>
+  <div class="indented italic">
+    As a shopper,<br>
     I want to see my basket content in the mini-basket,<br>
-    so that I always know the basket's content and amount.</i>
-  </ul>
+    so that I always know the basket's content and amount
+  </div>
   <p class="mt-125">As a team, define acceptance criteria for this story
 
 </div>

@@ -8,21 +8,24 @@
     <ul>
       <li>
         Implement a test to verify:
-        <div class="ms-100r mt-25r"><i>The home page title contains "All products"</i></div>
+        <div class="ms-100r mt-25r">
+          <i>The home page title contains "All products"</i>
+        </div>
       </li>
     </ul>
 
     <p>Functions</p>
-    <ul class="">
-      <li>
-        <if-pw>
-          <code>page.goto()</code>, <code>expect(page).toHaveTitle()</code>
-        </if-pw>
-        <if-cy>
+    <ul>
+      <if-pw>
+        <li><code>page.goto()</code></li>
+        <li><code>expect(page).toHaveTitle()</code></li>
+      </if-pw>
+      <if-cy>
+        <li>
           <code>cy.visit()</code>, <code>cy.title()</code>,
           <code>cy.should()</code>
-        </if-cy>
-      </li>
+        </li>
+      </if-cy>
     </ul>
   </div>
 
