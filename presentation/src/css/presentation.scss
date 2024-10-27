@@ -1,4 +1,6 @@
 @use 'browser-box';
+@use 'bubble';
+@use 'mixins' as m;
 
 @import 'material_design_colors';
 
@@ -327,11 +329,7 @@ $block-margin: 32px;
   }
 
   .flex-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 2em;
-    align-items: center;
-    z-index: inherit; /* with auto, the links within are not clickable*/
+    @include m.flex-row;
   }
 
   .flex-row--top {
@@ -511,55 +509,6 @@ $block-margin: 32px;
   .overlay--friction {
     margin-top: -4px;
     right: 8px;
-  }
-
-  .bubble {
-    @extend .flex-row;
-    /*display: inline-block;*/
-    gap: 0;
-    width: fit-content;
-    margin: 1em;
-    position: relative;
-    font-family: sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.6em;
-    background: var(--system-color-bubbleBackground);
-    border-radius: 40px;
-    padding: 16px 24px;
-    text-align: center;
-    color: #000;
-    font-family: monospace;
-  }
-
-  .bubble-bottom-left:before {
-    content: '';
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    border-left: 24px solid var(--system-color-bubbleBackground);
-    border-right: 12px solid transparent;
-    border-top: 12px solid var(--system-color-bubbleBackground);
-    border-bottom: 20px solid transparent;
-    left: 32px;
-    bottom: -24px;
-  }
-
-  @media print {
-    .bubble-bottom-left:before {
-      display: none !important;
-    }
-  }
-
-  .bubble__text {
-    margin: 0.5rem 1rem 0.5rem 1.5rem;
-  }
-
-  .bubble__text p:not(:first-child) {
-    margin-top: $block-margin * 0.75;
-  }
-
-  .bubble__text strong {
-    color: inherit;
   }
 
   .text-size-heading-1 {
