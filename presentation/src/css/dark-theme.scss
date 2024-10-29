@@ -3,6 +3,7 @@
 
 @import url(./highlight/atom-one-dark.css);
 
+@import 'material_design_colors';
 
 :root {
     --r-background-color: #2a2a2a;
@@ -29,7 +30,8 @@
     --system-color-boxBackground: #333;
     --system-color-boxBorder: #999;
 
-    --system-color-bubbleBackground: lightyellow;
+    --system-color-bubbleBackground: #{$color-cyan-900};
+    --system-color-bubbleText: #ddd;
 
     --system-color-codeBorder: #4c4c4c;
     --system-color-codeBackground: #333;

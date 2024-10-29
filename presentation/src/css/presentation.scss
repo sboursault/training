@@ -39,6 +39,7 @@ $block-margin: 32px;
   --system-color-rectangleBackground: #{$color-lime-100};
   --system-color-rectangleBorder: #{$color-lightGreen-800};
   --system-color-bubbleBackground: #d0e9ff;
+  --system-color-bubbleText: #000;
   --system-color-tagOptionalBackground: #{$color-lime-200};
 }
 
@@ -240,7 +241,7 @@ $block-margin: 32px;
     margin-left: 0 !important;
   }
 
-  //   TODO remove, and rename others without the r
+  // TODO remove, and rename others without the r
   .ms-50 {
     margin-left: $block-margin * 0.5 !important;
   }
