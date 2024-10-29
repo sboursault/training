@@ -12,22 +12,22 @@
     margin-left: 0.8em;
     line-height: 1;
     text-align: center;
-  }
 
-  .tag + .tag {
-    margin-left: 0.5em;
-  }
+    &.tag--optional {
+      background-color: var(--system-color-tagOptionalBackground);
+    }
 
-  .tag--optional {
-    background-color: var(--system-color-tagOptionalBackground);
-  }
+    &.tag--small {
+      font-size: 0.35em;
+    }
 
-  .tag--small {
-    font-size: 0.35em;
-  }
+    &.tag--medium {
+      font-size: 0.65em;
+    }
 
-  .tag--medium {
-    font-size: 0.65em;
+    +.tag {
+      margin-left: 0.5em;
+    }
   }
 
   .sticky {
