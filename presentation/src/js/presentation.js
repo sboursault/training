@@ -2,16 +2,24 @@ import { createChild, createNode, addText } from './dom.js';
     
 
 export function fillCompleteToc() {
-  const ulLevel1 = document.querySelector('#toc ol')
+  const toc = document.querySelector('#toc ol')
   document.querySelectorAll('.slide--part-title:not(.slide-background)').forEach(partTitleSlide => {
-      const partTitle = partTitleSlide.querySelector('h1')
-      const li = createChild(ulLevel1, 'li')
-      const tocLink = createNode('a', {href: getSlideUrl(partTitleSlide)}, partTitle.textContent)
-      createChild(li, 'strong', {}, tocLink)
+      const partTitle = partTitleSlide.querySelector('h1').textContent
+      const li = createChild(toc, 'li')
+      const level1Entry = createLevel1Entry(partTitleSlide, partTitle)
+      createChild(li, 'strong', {}, level1Entry)
       const ulLevel2 = createChild(li, 'ul', {})
       fillPartToc(ulLevel2, partTitleSlide)
     }
   )
+}
+
+function createLevel1Entry(partTitleSlide, text) {
+  const entry = createNode('a', {href: getSlideUrl(partTitleSlide)}, text.replace('Optional', ''))
+  if (text.indexOf('Optional') !== -1) {
+    createChild(entry, 'span', {class:'tag tag--optional'}, 'Optional')
+  }
+  return entry
 }
 
 export function fillPartTocs() {
@@ -48,7 +56,7 @@ function fillPartToc(ul, partTitleSlide) {
     const exclude = h2Element.getAttribute('data-toc-exclude')
     if (exclude === null) {
       const tags = h2Element.getAttribute('data-tags') || ''
-      let tocLabel = h2Element.getAttribute('data-toc-label') || h2Element.innerText
+      let tocLabel = h2Element.getAttribute('data-toc-label') || h2Element.textContent
       if (tocLabel.endsWith('Optional'))
         tocLabel = tocLabel.substring(0, tocLabel.length - 'Optional'.length)
       if (tocLabel.endsWith('Practice'))  

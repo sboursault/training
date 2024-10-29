@@ -1,33 +1,46 @@
-import { JSDOM } from 'jsdom';
-import { strictEqual } from 'assert';
-import { fillPartTocs } from '../src/js/presentation.js';
+import { JSDOM } from 'jsdom'
+import { strictEqual } from 'assert'
+import { fillPartTocs } from '../src/js/presentation.js'
 
-
-/*describe('fillPartTocs', function () {
+describe('fillPartTocs', function () {
   it('fills elements with a `part-toc` class', function () {
-
     // given
     const dom = new JSDOM(
       `<html>
          <body>
-           <section id="s1"><h1>presentation title</h1></section>
-           <section id="s2" class="slide--part-title">
+           <section id="presentation-title">
+             <h1>presentation title</h1>
+           </section>
+           <section id="part-1" class="slide--part-title">
              <h1>The part one</h1>
              <div class="part-toc"></div>
            </section>
-           <section id="s3"><h2>1.1</h2><p>hello</p></section>
-           <section>more content on 1.1</section>
-           <section id="s4"><h2>1.2</h2><p>hello again</p></section>
-           <section id="s6"><h2>1.2</h2><p>extra content</p></section>
-           <section id="s6" class="slide--part-title">
+           <section>
+             <h2>1.1</h2>
+             <p>hello</p>
+           </section>
+           <section>
+             more content on 1.1
+           </section>
+           <section>
+             <h2>1.2</h2>
+             <p>hello again</p>
+           </section>
+           <section>
+             <h2>1.2</h2>
+             <p>extra content</p>
+           </section>
+           <section id="part-2" class="slide--part-title">
              <h1>The part two</h1>
              <div class="part-toc"></div>
            </section>
-           <section id="s7"><h2>2.1</h2><p>hello hello</p></section>
+           <section>
+             <h2>2.1</h2><p>hello hello</p>
+           </section>
          </body>
        </html>`,
-      { url: 'http://localhost' },
-    );
+      { url: 'http://localhost' }
+    )
     global.window = dom.window
     global.document = dom.window.document
 
@@ -36,12 +49,12 @@ import { fillPartTocs } from '../src/js/presentation.js';
 
     // then
     strictEqual(
-      document.querySelector('#s2 .part-toc').innerHTML,
-      '<span>Content:</span><ul><li>1.1</li><li>1.2</li></ul>'
+      document.querySelector('#part-1 .part-toc').innerHTML,
+      '<h2>Content:</h2><ul><li><a href="/#/-1">1.1</a></li><li><a href="/#/-1">1.2</a></li><li><a href="/#/-1">1.2</a></li></ul>'
     )
     strictEqual(
-      document.querySelector('#s6 .part-toc').innerHTML,
-      '<span>Content:</span><ul><li>2.1</li></ul>'
+      document.querySelector('#part-2 .part-toc').innerHTML,
+      '<h2>Content:</h2><ul><li><a href="/#/-1">2.1</a></li></ul>'
     )
   })
-})*/
+})
