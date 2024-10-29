@@ -21,7 +21,7 @@ function createLevel1Entry(partTitleSlide, text) {
     text.replace('Optional', '')
   )
   if (text.indexOf('Optional') !== -1) {
-    createChild(entry, 'span', { class: 'tag tag--optional' }, 'Optional')
+    createChild(entry, 'span', { class: 'tag tag--optional tag--medium' }, 'Optional')
   }
   return entry
 }
