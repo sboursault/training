@@ -1,6 +1,7 @@
 import { JSDOM } from 'jsdom'
 import { strictEqual } from 'assert'
-import { fillPartTocs, fillCompleteToc } from '../src/js/presentation.js'
+import { fillPartTocs, fillCompleteToc } from '../src/js/tocs.js'
+
 describe('tocs', function () {
   describe('fillPartTocs', function () {
     it('fills elements with a `part-toc` class', function () {

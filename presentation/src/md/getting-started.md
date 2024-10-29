@@ -27,7 +27,9 @@
       <li class="fragment"><i class="emo emoji-x"></i>Too many non regression tests to execute manually
     </ul>
     <div class="sticky fragment">
-      Not very satisfying &nbsp; :(
+      <div class="sticky__content">
+        Not very satisfying &nbsp; :(
+      </div>
     </div>
   </div>
   <div class="bubble bubble-bottom-left fragment">
@@ -64,8 +66,10 @@
       <li class="fragment"><i class="emo emoji-x"></i>Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
     </ul>
     <div class="sticky fragment">
-      Better quality, but not efficient…
-      <div class="fragment">and we intruced new difficulties&nbsp; :(</div>
+        <div class="sticky__content">
+          Better quality, but not efficient…
+          <div class="fragment">and we intruced new difficulties&nbsp; :(</div>
+      </div>
     </div>
   </div>
   <div class="bubble bubble-bottom-left fragment">
