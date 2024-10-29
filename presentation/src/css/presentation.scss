@@ -1,5 +1,4 @@
-@use 'browser-box';
-@use 'bubble';
+@use 'components';
 @use 'mixins' as m;
 
 @import 'material_design_colors';
@@ -241,8 +240,13 @@ $block-margin: 32px;
     margin-left: 0 !important;
   }
 
+  // TODO remove, and rename others without the r
   .ms-50 {
     margin-left: $block-margin * 0.5 !important;
+  }
+
+  .ms-25r {
+    margin-left: 0.25em * 0.75 !important;
   }
 
   .ms-50r {
@@ -485,20 +489,6 @@ $block-margin: 32px;
     position: absolute;
     z-index: 9;
     transform: rotate(-0.5deg);
-  }
-
-  .sticky {
-    font-size: 1.25rem;
-    font-style: italic;
-    font-weight: bold;
-    color: black;
-    height: fit-content;
-    background: rgb(255, 178, 91);
-    z-index: 9;
-    padding: 0.8em;
-    line-height: 1.5em;
-    transform: rotate(-0.5deg);
-    margin: 0.2em 1em;
   }
 
   .rectangle:has(> .overlay--friction.visible) {
