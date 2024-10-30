@@ -241,7 +241,7 @@ $block-margin: 32px;
     margin-left: 0 !important;
   }
 
-  // TODO remove, and rename others without the r
+  //   TODO remove, and rename others without the r
   .ms-50 {
     margin-left: $block-margin * 0.5 !important;
   }
@@ -324,6 +324,10 @@ $block-margin: 32px;
   .part-title h1 {
     margin: 0;
     line-height: 1em;
+  }
+
+  part-number {
+    @extend .text-level-4;
   }
 
   .slide--vcenter {

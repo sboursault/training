@@ -1,22 +1,6 @@
 
 
 
-<!-- .slide: id="lets-practice-login" class="slide--part-title slide--vcenter" -->
-
-
-  <div class="part-title">
-    <span class="text-level-4">Part 3</span>
-    <h1>Let's practice</h1>
-  </div>
-
-
-Note:
-
-
-Simplify code with dedicated selectors, custom command and page object
-
-
----
 
 ## &lt;/> Specification workshop for the login
 <!-- .element: data-toc-label="</> Verify the login" -->

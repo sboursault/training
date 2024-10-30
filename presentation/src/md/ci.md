@@ -1,17 +1,4 @@
 
-<!-- .slide: class="slide--part-title slide--vcenter" -->
-
-
-<div class="part-title">
-  <span class="text-level-4">Part 9</span>
-  <h1>Continuous integration</h1>
-</div>
-
-<div class="part-toc box fragment"></div>
-
-
-
----
 <!-- .slide: class="text-level-2" -->
 
 ## Excluding and Including Tests

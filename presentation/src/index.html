@@ -3,8 +3,9 @@
 
 <head>
   <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
-
+  <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/white.css">
   <link rel="stylesheet" href="/css/presentation.css">
+  <!--link rel="stylesheet" href="/css/white-theme.css"-->
   <link rel="stylesheet" href="/css/dark-theme.css">
   <link rel="stylesheet" href="/css/{%= e2eTool.toLowerCase() %}-light.css">
   <script type="module" src="/js/presentation.js"></script>
@@ -22,29 +23,53 @@
       </section>
       <section data-markdown="md/intro.md">
       </section>
-      {%- await include('ejs/gs__title.ejs'); %}
+      {%- await include('ejs/slide--partTitle.ejs', {title: 'Getting started', optional: false, toc: true}); %}
       {%- await include('ejs/gs__create-and-configure-project.ejs'); %}
       {%- await include('ejs/gs__first-test.ejs'); %}
       <section data-markdown="md/getting-started.md">
       </section>
+
+      {%- await include('ejs/slide--partTitle.ejs', {title: 'Improve maintainability', optional: false, toc: true}); %}
       <section data-markdown="md/improve-maintainability.md">
       </section>
+
+      {%- await include('ejs/slide--partTitle.ejs', {title: 'Let\'s practice', optional: false, toc: true}); %}
       <section data-markdown="md/lets-practice-login.md">
       </section>
+
+      {%- await include('ejs/slide--partTitle.ejs', {title: 'Cypress tips', optional: false, toc: true}); %}
       <section data-markdown="md/cypress-tips.md">
       </section>
+
+      {%- await include('ejs/slide--partTitle.ejs', {title: 'Repeatable tests', optional: false, toc: true}); %}
       <section data-markdown="md/repeatable-tests.md">
       </section>
+
+      {%- await include('ejs/slide--partTitle.ejs', {title: 'Speed up E2E tests', optional: false, toc: true}); %}
       <section data-markdown="md/optimizing-tests.md">
       </section>
+
+      {%- await include('ejs/slide--partTitle.ejs', {title: 'Isolated tests', optional: false, toc: true}); %}
       <section data-markdown="md/isolated-tests.md">
       </section>
+
+      {%- await include('ejs/slide--partTitle.ejs', {title: 'Test strategy', optional: false, toc: true}); %}
+      <!--
+      Note:
+      - On va voir un ensemble de bonnes pratiques
+        - certaines peuvent ne pas être adaptées à votre contexte, ou pas faisable
+        - il n'est pas nécessaire de toutes les adopter
+      -->
       <section data-markdown="md/test-strategy.md">
       </section>
+
+      {%- await include('ejs/slide--partTitle.ejs', {title: 'Continuous integration', optional: false, toc: true}); %}
       <section data-markdown="md/ci.md">
       </section>
+
       {%- await include('ejs/slide--partTitle.ejs', {title: 'Mobile tests', optional: true, toc: false}); %}
       {%- await include('ejs/mobile.ejs'); %}
+      
       {%- await include('ejs/slide--partTitle.ejs', {title: 'Extra exercices', optional: true, toc: false}); %}
       <section data-markdown="md/extra.md">
       </section>

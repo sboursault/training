@@ -1,23 +1,4 @@
 
-<!-- .slide: class="slide--part-title slide--vcenter" -->
-
-
-<div class="part-title">
-  <span class="text-level-4">Part 8</span>
-  <h1>Test strategy</h1>
-</div>
-
-<div class="part-toc box fragment"></div>
-
-
-
-Note:
-- On va voir un ensemble de bonnes pratiques
-  - certaines peuvent ne pas être adaptées à votre contexte, ou pas faisable
-  - il n'est pas nécessaire de toutes les adopter
-
-
----
 
 <!-- .slide: data-auto-animate -->
 ## Agile testing quandrants

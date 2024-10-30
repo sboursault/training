@@ -1,15 +1,4 @@
 
-<!-- .slide: id="good-tests" class="slide--part-title slide--vcenter" -->
-
-<div class="part-title">
-  <span class="text-level-4">Part 5</span>
-  <h1 class="text-size-heading-1-smaller">Repeatable tests</h1>
-</div>
-
-<div class="part-toc box fragment"></div>
-
----
-
 
 ## &lt;/> Specification workshop for the basket recovery
 <!-- .element: data-toc-label="</> Verify the basket recovery" class="text-size-heading-3"-->

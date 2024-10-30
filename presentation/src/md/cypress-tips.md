@@ -1,18 +1,5 @@
 
 
-<!-- .slide: class="slide--part-title slide--vcenter" -->
-
-
-<div class="part-title">
-  <span class="text-level-4">Part 4</span>
-  <h1>Cypress tips</h1>
-</div>
-
-<div class="part-toc box fragment"></div>
-
-
----
-
 ## Write small tests
 
 <p class="mt-400 fragment" data-fragment-index="1">Prefer a set of <strong>small tests</strong> over a long script that verify many things

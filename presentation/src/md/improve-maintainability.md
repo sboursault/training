@@ -1,21 +1,4 @@
 
-
-<!-- .slide: id="improve-maintainability" class="slide--part-title slide--vcenter" -->
-
-<div class="part-title">
-  <span class="text-level-4">Part 2</span>
-  <h1 class="text-size-heading-1-smaller">Improve maintainability</h1>
-</div>
-
-<div class="part-toc box fragment"></div>
-
-Note:
-
-
-Simplify code with dedicated selectors, custom command and page object
-
----
-
 ## Why investing in maintainability?
 
 <p class="mt-150 fragment">We spend much more time reading code, than writing it.<br/>

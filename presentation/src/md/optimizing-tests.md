@@ -1,17 +1,4 @@
 
-
-<!-- .slide: class="slide--part-title slide--vcenter" -->
-
-<div class="part-title">
-  <span class="text-level-4">Part 6</span>
-  <h1 class="text-size-heading-1-smaller">Speed up E2E tests</h1>
-</div>
-
-<div class="part-toc box fragment"></div>
-
-
----
-
 ## Why optimizing test speed?
 
 <p class="fragment mt-500">The faster the tests, the more they are run
