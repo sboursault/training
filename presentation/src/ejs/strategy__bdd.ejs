@@ -1,0 +1,47 @@
+<section class="text-level-3">
+  <h2>Behaviour driven development</h2>
+
+  {%- await include('diagram/bdd-workflow.ejs'); %}
+
+  <p class="fragment mt-150">
+    <strong>Specification workshop</strong> (aka <strong>3 amigos</strong> or
+    <strong>Discovery workshop</strong>): <br />
+  </p>
+
+  <ul>
+    <li class="fragment">
+      Before development, a programmer, a tester and the PO have a
+      conversation to clarify a user story
+    </li>
+
+    <li class="fragment">
+      They agree on concrete <strong>key examples</strong> that
+      illustrate how the feature should work
+    </li>
+
+    <li class="fragment">
+      These examples becomes the <strong>acceptance criteria</strong> for the
+      story: they'll be verified and automated with E2E tests
+    </li>
+  </ul>
+
+  <aside class="notes">
+    <p>Participants for the discovery workshop</p>
+    <ul>
+      <li>
+        A programmer, who thinks about how to make things, says what is
+        feasable, suggests simpler paths
+      </li>
+      <li>
+        A tester, who thinks about how to break things, and come up with lots of
+        scenarios, sometimes covering obscure edge cases, and sometimes covery
+        very important ones
+      </li>
+      <li>The product owner, who cares about scope</li>
+      <li>
+        Anybody relevant to the story being discussed (operations, UX
+        designer...)
+      </li>
+    </ul>
+  </aside>
+</section>
