@@ -43,8 +43,9 @@
       </section>
       <section data-markdown="md/ci.md">
       </section>
-      {%- await include('ejs/mobile__title.ejs'); %}
+      {%- await include('ejs/slide--partTitle.ejs', {title: 'Mobile tests', optional: true, toc: false}); %}
       {%- await include('ejs/mobile.ejs'); %}
+      {%- await include('ejs/slide--partTitle.ejs', {title: 'Extra exercices', optional: true, toc: false}); %}
       <section data-markdown="md/extra.md">
       </section>
     </div>

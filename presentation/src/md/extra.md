@@ -1,23 +1,7 @@
 
-<!-- .slide: class="slide--part-title slide--vcenter" -->
-
-<div class="flex-row">
-
-  <div class="part-title">
-    <span class="text-level-4">Part 9</span>
-    <h1>Extra exercices</h1>
-  </div>
-  
-  <div class="part-toc box fragment"></div>
-
-</div>
-
-
----
-
 
 ## Handle CSRF protection WIP
-<!-- .element: data-tags="practice, optional" class="text-size-heading-3" -->
+<!-- .element: data-toc-exclude data-tags="practice, optional" class="text-size-heading-3" -->
 
 <div class="exercice text-level-4">
 

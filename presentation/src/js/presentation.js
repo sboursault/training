@@ -1,4 +1,4 @@
-import { createChild } from './dom.js';
+import { addText, createChild } from './dom.js';
 import { fillCompleteToc, fillPartTocs } from './tocs.js'
     
 
@@ -54,6 +54,13 @@ export function wrapLinks() {
 }
 
 
+export function computePartNumbers() {
+  let count = 1
+  document.querySelectorAll('part-number').forEach((element) => {
+    addText(element, 'Part ' + count++)
+  })
+}
+
 function isVisible(el) {
   return getComputedStyle(el).visibility !== 'hidden';
 }
@@ -105,7 +112,8 @@ export function init() {
     fillPartTocs()
     wrapExercice()
     wrapLinks()
-    fillCompleteToc()
+    fillCompleteToc(),
+    computePartNumbers(),
     setTimeout(
       () => {
         drawArrows()
