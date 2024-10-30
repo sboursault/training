@@ -23,11 +23,13 @@
       </section>
       <section data-markdown="md/intro.md">
       </section>
+
       {%- await include('ejs/slide--partTitle.ejs', {title: 'Getting started', optional: false, toc: true}); %}
       {%- await include('ejs/gs__create-and-configure-project.ejs'); %}
       {%- await include('ejs/gs__first-test.ejs'); %}
       <section data-markdown="md/getting-started.md">
       </section>
+      {%- await include('ejs/gs__exercice.ejs'); %}
 
       {%- await include('ejs/slide--partTitle.ejs', {title: 'Improve maintainability', optional: false, toc: true}); %}
       <section data-markdown="md/improve-maintainability.md">
