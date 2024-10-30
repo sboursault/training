@@ -1,0 +1,23 @@
+<div class="box flex-row screen fragment mt-125" style="padding: 30px">
+  <div class="rectangle" data-arrow="->task-example">Problem to solve</div>
+  <div
+    class="rectangle fragment"
+    id="task-example"
+    data-arrow="->task-dev,->task-test"
+  >
+    Specification <br />workshop
+  </div>
+  <div class="flex-column">
+    <div class="rectangle fragment" id="task-dev" data-arrow="->task-prod">
+      Development<br />(Developer)
+    </div>
+    <div class="rectangle fragment" id="task-test">
+      Test automation<br />(Tester & Developer)
+      <span class="fragment" data-arrow="task-test->task-dev:validate"></span>
+    </div>
+  </div>
+  <div class="rectangle fragment" id="task-prod">
+    Production <br />
+    deployment
+  </div>
+</div>
