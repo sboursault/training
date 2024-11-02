@@ -20,3 +20,10 @@ export function removeFalsyIfs(html, e2eTool) {
       : /\s*<if-pw(?:\s+[\w-]+="[^"]*")*>[\s\S]*?<\/if-pw>/g
   return html.replace(regEx, '')
 }
+
+export function processLinkTags(html) {
+  return html.replace(
+    /<app-link((?:\s+[\w-]+="[^"]*")*)>\s*([\s\S]*?)\s*<\/app-link>/g, 
+    '<a$1 href="$2">$2</a>'
+  )
+}

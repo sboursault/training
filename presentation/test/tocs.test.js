@@ -91,7 +91,7 @@ describe('tocs', function () {
       // then
       strictEqual(
         document.querySelector('#toc ol li strong a').innerHTML,
-        'The part one - <span class="tag tag--optional">Optional</span>'
+        'The part one - <span class="tag tag--optional tag--medium">Optional</span>'
       )
     })
   })

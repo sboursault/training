@@ -652,6 +652,14 @@ $block-margin: 32px;
     animation: blinker 1s linear infinite;
   }
 
+  .small {
+    font-size: 0.8em;
+  }
+  
+  .smaller {
+    font-size: 0.7em;
+  }
+
   small {
     font-size: 0.7em;
   }
@@ -669,7 +677,7 @@ $block-margin: 32px;
   }
 
   .indented {
-    @extend .fs-75p;
+    @extend .fs-80p;
     @extend .ms-200r;
     @extend .mt-50r;
   }

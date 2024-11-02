@@ -1,5 +1,5 @@
 import { strictEqual } from 'assert'
-import { leftPadCode, removeFalsyIfs } from '../src/js/html-processor.js'
+import { leftPadCode, removeFalsyIfs, processLinkTags } from '../src/js/html-processor.js'
 
 describe('html processor', function () {
   describe('leftPadCode', function () {
@@ -96,5 +96,33 @@ describe('html processor', function () {
        </html>`
       )
     })
+  })
+  describe('processLinkTags', function () {
+    it('replaces link tags by a tags with href', function () {
+      // given
+      const html = `<html>
+         <body>
+           <app-link>
+             http://zut.com/#test
+           </app-link>
+           <app-link class="blod">https://other.com/</app-link>
+         </body>
+       </html>`
+
+      // when
+      const result = processLinkTags(html)
+
+      // then
+      strictEqual(
+        result,
+        `<html>
+         <body>
+           <a href="http://zut.com/#test">http://zut.com/#test</a>
+           <a class="blod" href="https://other.com/">https://other.com/</a>
+         </body>
+       </html>`
+      )
+    })
+   
   })
 })

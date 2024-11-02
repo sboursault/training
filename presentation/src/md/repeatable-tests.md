@@ -85,12 +85,12 @@ curl -X DELETE https://.../api/baskets/{id} \
     </code></pre>
   </ul>
   <p>Commands
-  <ul>
+  <ul class="small">
     <li><code>cy.request()</code>
     <li><code>btoa('bob@test.com:my-passwd')</code> to encode credentials
   </ul>
   <p>Userful links
-  <ul style="font-size:75%">
+  <ul style="small">
     <li class="url-link">https://docs.cypress.io/api/table-of-contents
     <li class="url-link">https://docs.cypress.io/api/commands/request
     <li class="url-link">http://&lt;simple-commerce-instance&gt;/api/basket/

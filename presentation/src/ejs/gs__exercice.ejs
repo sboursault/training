@@ -48,7 +48,7 @@
   </h2>
 
   <div class="exercice text-level-3">
-    <p>Let's code</p>
+    <p>Exercice</p>
     <ul>
       <li>
         Automate the verification of the acceptance criteria identified during
@@ -58,7 +58,7 @@
 
     <p>Commands</p>
     <ul>
-      <li class="text-level-5">
+      <li class="small">
         <code>cy.visit()</code>, <code>cy.get()</code>,
         <code>cy.contains()</code>, <code>cy.click()</code>,
         <code>cy.should()</code>
@@ -66,13 +66,26 @@
     </ul>
 
     <p>Userful links</p>
-    <ul style="font-size: 75%">
-      <li class="url-link">https://docs.cypress.io/api/table-of-contents</li>
-      <li class="url-link">
-        https://www.w3schools.com/cssref/css_selectors.php
+    <ul class="small">
+      <if-pw>
+        <li>
+          <app-link>
+            https://playwright.dev/docs/api/class-page#methods
+          </app-link>
+        </li>
+      </if-pw>
+      <if-cy>
+        <li>
+          <app-link>https://docs.cypress.io/api/table-of-contents</app-link>
+        </li>
+      </if-cy>
+      <li>
+        <app-link>https://www.w3schools.com/cssref/css_selectors.php</app-link>
       </li>
-      <li class="url-link">
-        https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe
+      <li>
+        <app-link>
+          https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe
+        </app-link>
       </li>
     </ul>
   </div>
