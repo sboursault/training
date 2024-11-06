@@ -109,6 +109,7 @@ $block-margin: 32px;
   ul,
   ul ul {
     margin-left: 0.25em;
+    padding-inline-start: 1.1em;
   }
 
   ol:not(:first-child),
@@ -155,6 +156,22 @@ $block-margin: 32px;
 
   .mt-300r {
     margin-top: 3em * 0.75 !important;
+  }
+
+  .mt-350r {
+    margin-top: 3.5em * 0.75 !important;
+  }
+
+  .mt-400r {
+    margin-top: 4em * 0.75 !important;
+  }
+
+  .mt-500r {
+    margin-top: 5em * 0.75 !important;
+  }
+
+  .mt-600r {
+    margin-top: 6em * 0.75 !important;
   }
 
   .mt--100 {
@@ -640,6 +657,28 @@ $block-margin: 32px;
     }
   }
 
+  .exercice-2 {
+    @extend .flex-row;
+    @extend .tiny-gap;
+
+    .exercice__content {
+      width: 70%;
+    }
+
+    img.exercice__image {
+      width: 25%;
+      min-width: 300px;
+      margin: auto;
+      transform: translate(0, 12%);
+      content: url(/img/coding.png);
+    }
+
+    pre {
+      @extend .mt-25;
+      @extend .mb-50;
+    }
+  }
+
   .highlight-bold {
     visibility: inherit;
   }
@@ -655,7 +694,7 @@ $block-margin: 32px;
   .small {
     font-size: 0.8em;
   }
-  
+
   .smaller {
     font-size: 0.7em;
   }

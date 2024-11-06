@@ -110,7 +110,7 @@ export function init() {
   Reveal.on('ready', event => {
     rewriteSlideTitles()
     fillPartTocs()
-    wrapExercice()
+    //wrapExercice()
     wrapLinks()
     fillCompleteToc(),
     computePartNumbers(),

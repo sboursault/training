@@ -114,28 +114,79 @@ You're not sure which products are already used in existing tests.
 
 <div class="exercice text-level-2">
 
-
+<div class="fragment mt-100">
   <p>Let's code
   <ul>
     <li>Through the product api, create a new product sold 30€
     <li>Verify the delivery fees with this product
     <li>Rewrite so that the test shows the price of the new product
   </ul>
-  <p>Commands
-  <ul>
-    <li><code>crypto.randomUUID()</code> to generate random identifiers 
-    <li><code>btoa('superuser@example.com:testing')</code> to encode admin credentials
-  </ul>
-
-  <p>Userful links
-  <ul style="font-size:75%">
-    <li class="url-link">https://docs.cypress.io/api/table-of-contents
-    <li class="url-link">https://docs.cypress.io/api/commands/request
-    <li class="url-link">http://&lt;simple-commerce-instance&gt;/api/admin/products/
-  </ul>
 </div>
 
 
+</div>
+
+
+
+<div class="admonition help fragment mt-100">
+  <p class="title">Help</p>
+  <div class="content">
+    <div class="flex-row">
+      <div>
+        <p>Commands
+        <ul>
+          <li>Generate random identifiers: <code>crypto.randomUUID()</code> 
+          <li>Encode admin credentials: <code>btoa('superuser@example.com:testing')</code>
+        </ul>
+      </div>
+      <div>
+        <p>Links
+        <ul class="">
+          <li><app-link>https://docs.cypress.io/api/table-of-contents</app-link></li>
+          <li><app-link>https://docs.cypress.io/api/commands/request</app-link></li>
+          <li><app-link>http://&lt;simple-commerce-instance&gt;/api/admin/products/</app-link></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+
+<!-- .slide: class="text-level-2" -->
+
+## Delivery fees when the basket is exactly 30€
+<!-- .element: data-tags="practice" class="text-size-heading-3" data-toc-label="...when the basket is exactly 30€" -->
+
+
+<div class="exercice-2 mt-350r fragment">
+  <div class="exercice__content">
+    <p>Let's code
+    <ul>
+      <li>Through the product api, create a new product sold 30€
+      <li>Verify the delivery fees with this product
+      <li>Rewrite so that the test shows the price of the new product
+    </ul>
+  </div>
+  <img class="exercice__image">
+</div>
+
+<div class="admonition help fragment mt-600r">
+  <p class="admonition__title">Help</p>
+  <div class="admonition__content" style="columns: 2;">
+    <p>Commands
+    <ul>
+      <li>Generate random identifiers: <code>crypto.randomUUID()</code> 
+      <li>Encode admin credentials: <code>btoa('superuser@example.com:testing')</code>
+    </ul>
+    <p>Links
+    <ul>
+      <li><app-link>https://docs.cypress.io/api/table-of-contents</app-link></li>
+      <li><app-link>https://docs.cypress.io/api/commands/request</app-link></li>
+      <li><app-link>http://&lt;simple-commerce-instance&gt;/api/admin/products/</app-link></li>
+    </ul>
+  </div>
+</div>
 
 ---
 

@@ -5,9 +5,10 @@
   <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/white.css">
   <link rel="stylesheet" href="/css/presentation.css">
-  <!--link rel="stylesheet" href="/css/white-theme.css"-->
-  <link rel="stylesheet" href="/css/dark-theme.css">
+  <link rel="stylesheet" href="/css/white-theme.css">
+  <!--link rel="stylesheet" href="/css/dark-theme.css"-->
   <link rel="stylesheet" href="/css/{%= e2eTool.toLowerCase() %}-light.css">
+  <link rel="stylesheet" href="/css/admonition.css">
   <script type="module" src="/js/presentation.js"></script>
   <script src="/node_modules/reveal.js/dist/reveal.js"></script>
   <script src="/node_modules/reveal.js/plugin/markdown/markdown.js"></script>
@@ -23,6 +24,9 @@
       </section>
       <section data-markdown="md/intro.md">
       </section>
+
+      <!-- how to have default options ? -->
+      <!-- how to include notes ? -->
 
       {%- await include('ejs/slide--partTitle.ejs', {title: 'Getting started', optional: false, toc: true}); %}
       {%- await include('ejs/gs__create-and-configure-project.ejs'); %}
