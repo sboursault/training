@@ -27,3 +27,27 @@ export function processLinkTags(html) {
     '<a$1 href="$2">$2</a>'
   )
 }
+
+export function processLinks(html) {
+  return html.replace(
+    /<a((?:\s+[\w]+="[^"]*")*)>([\s\S]*?)<\/a>/g, 
+    (match, attributes, link) => {
+      if (attributes.indexOf('href="') !== -1) return match;
+      return '<a' + attributes + ' href="' + link + '">' + link + '</a>'
+    }
+  ).replace(/(<(?!a ).*?>\s*)(https?:\/\/\S*?)([\s<])/g, '$1<a href="$2">$2</a>$3')
+}
+
+export function processHelpTags(html) {
+  return html.replace(
+    /<app-help(?:\s+class="([^"]*)")*>([\s\S]*?)<\/app-help>/g, 
+    '<div class="admonition help $1"><p class="admonition__title">Help</p><div class="admonition__content">$2</div></div>'
+  )
+}
+
+export function processExerciseTags(html) {
+  return html.replace(
+    /<app-exercise(?:\s+class="([^"]*)")*>([\s\S]*?)<\/app-exercise>/g, 
+    '<div class="exercice-2 $1"><div class="exercice__content">$2</div><img class="exercice__image"></div>'
+  )
+}

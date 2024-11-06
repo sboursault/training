@@ -3,24 +3,23 @@
     Create and configure a {%= e2eTool %} project
   </h2>
 
-  <div class="exercice-2 mt-100r fragment">
-    <div class="exercice__content">
-      <p>Let's code</p>
-      <ul>
-        <li>Create a github project</li>
-        <li>
-          Install and configure {%= e2eTool %} to run typescript test
-          <if-pw>
-            <li>
-              Install node types
-              <pre><code class="bash">
+  <app-exercise class="mt-100r fragment">
+    <p>Let's code</p>
+    <ul>
+      <li>Create a github project</li>
+      <li>
+        Install and configure {%= e2eTool %} to run typescript test
+        <if-pw>
+          <li>
+            Install node types
+            <pre><code class="bash">
                 npm i --save-dev @types/node
               </code></pre>
-            </li>
-            <li>
-              Create a `tsconfig.json` file to avoid compilation errors in Vscode
-              on node types (e.g. process)
-              <pre><code class="json">
+          </li>
+          <li>
+            Create a `tsconfig.json` file to avoid compilation errors in Vscode
+            on node types (e.g. process)
+            <pre><code class="json">
                 {
                   "compilerOptions": {
                     "types": [
@@ -29,37 +28,25 @@
                   }
                 }
               </code></pre>
-            </li>
-          </if-pw>
-        </li>
-      </ul>
-    </div>
-    <img class="exercice__image">
-  </div>
-
-  <div class="admonition help fragment mt-200r">
-    <p class="admonition__title">Help</p>
-    <div class="admonition__content">
-      <p>Links</p>
-      <ul>
-        <if-pw>
-          <li class="url-link">https://playwright.dev/docs/intro</li>
+          </li>
         </if-pw>
-        <if-cy>
-          <li class="url-link">
-            https://docs.cypress.io/guides/getting-started/installing-cypress
-          </li>
-          <li class="url-link">
-            https://docs.cypress.io/guides/getting-started/opening-the-app
-          </li>
-          <li class="url-link">
-            https://docs.cypress.io/guides/guides/command-line
-          </li>
-        </if-cy>
-      </ul>
-    </div>
-  </div>
-  
+      </li>
+    </ul>
+  </app-exercise>
 
-
+  <app-help class="fragment mt-200r">
+    <p>Links</p>
+    <ul>
+      <if-pw>
+        <li>https://playwright.dev/docs/intro</li>
+      </if-pw>
+      <if-cy>
+        <li>
+          https://docs.cypress.io/guides/getting-started/installing-cypress
+        </li>
+        <li>https://docs.cypress.io/guides/getting-started/opening-the-app</li>
+        <li>https://docs.cypress.io/guides/guides/command-line</li>
+      </if-cy>
+    </ul>
+  </app-help>
 </section>

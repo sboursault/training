@@ -1,5 +1,12 @@
 import { strictEqual } from 'assert'
-import { leftPadCode, removeFalsyIfs, processLinkTags } from '../src/js/html-processor.js'
+import {
+  leftPadCode,
+  removeFalsyIfs,
+  processLinkTags,
+  processHelpTags,
+  processExerciseTags,
+  processLinks,
+} from '../src/js/html-processor.js'
 
 describe('html processor', function () {
   describe('leftPadCode', function () {
@@ -96,11 +103,11 @@ describe('html processor', function () {
        </html>`
       )
     })
-  })
-  describe('processLinkTags', function () {
-    it('replaces link tags by a tags with href', function () {
-      // given
-      const html = `<html>
+  }),
+    describe('processLinkTags', function () {
+      it('replaces link tags by a tags with href', function () {
+        // given
+        const html = `<html>
          <body>
            <app-link>
              http://zut.com/#test
@@ -109,8 +116,33 @@ describe('html processor', function () {
          </body>
        </html>`
 
+        // when
+        const result = processLinkTags(html)
+
+        // then
+        strictEqual(
+          result,
+          `<html>
+         <body>
+           <a href="http://zut.com/#test">http://zut.com/#test</a>
+           <a class="blod" href="https://other.com/">https://other.com/</a>
+         </body>
+       </html>`
+        )
+      })
+    })
+  describe('processLinks', function () {
+    it('adds href when missing', function () {
+      // given
+      const html = `<html>
+         <body>
+           <a>http://zut.com/#test</a>
+           <a href="http://truc" class="blod">https://other.com/</a>
+         </body>
+       </html>`
+
       // when
-      const result = processLinkTags(html)
+      const result = processLinks(html)
 
       // then
       strictEqual(
@@ -118,11 +150,137 @@ describe('html processor', function () {
         `<html>
          <body>
            <a href="http://zut.com/#test">http://zut.com/#test</a>
-           <a class="blod" href="https://other.com/">https://other.com/</a>
+           <a href="http://truc" class="blod">https://other.com/</a>
          </body>
        </html>`
       )
     })
-   
+    it('adds create a tags from links', function () {
+      // given
+      const html = `<html>
+         <body>
+           http://zut.com/#test
+           <a href="http://truc" class="blod">https://other.com/</a>
+         </body>
+       </html>`
+
+      // when
+      const result = processLinks(html)
+
+      // then
+      strictEqual(
+        result,
+        `<html>
+         <body>
+           <a href="http://zut.com/#test">http://zut.com/#test</a>
+           <a href="http://truc" class="blod">https://other.com/</a>
+         </body>
+       </html>`
+      )
+    })
+  })
+  describe('processHelpTags', function () {
+    it('replaces help tags', function () {
+      // given
+      const html = `<html>
+         <body>
+           <app-help>
+             http://zut.com/#test
+           </app-help>
+         </body>
+       </html>`
+
+      // when
+      const result = processHelpTags(html)
+
+      // then
+      strictEqual(
+        result,
+        `<html>
+         <body>
+           <div class="admonition help "><p class="admonition__title">Help</p><div class="admonition__content">
+             http://zut.com/#test
+           </div></div>
+         </body>
+       </html>`
+      )
+    })
+    it('keeps classes', function () {
+      // given
+      const html = `<html>
+         <body>
+           <app-help class="mt-100">
+             http://zut.com/#test
+           </app-help>
+         </body>
+       </html>`
+
+      // when
+      const result = processHelpTags(html)
+
+      // then
+      strictEqual(
+        result,
+        `<html>
+         <body>
+           <div class="admonition help mt-100"><p class="admonition__title">Help</p><div class="admonition__content">
+             http://zut.com/#test
+           </div></div>
+         </body>
+       </html>`
+      )
+    })
+  })
+  describe('processExerciseTags', function () {
+    it('replaces exercice tags', function () {
+      // given
+      const html = `<html>
+         <body>
+           <app-exercise>
+             http://zut.com/#test
+           </app-exercise>
+         </body>
+       </html>`
+
+      // when
+      const result = processExerciseTags(html)
+
+      // then
+      strictEqual(
+        result,
+        `<html>
+         <body>
+           <div class="exercice-2 "><div class="exercice__content">
+             http://zut.com/#test
+           </div><img class="exercice__image"></div>
+         </body>
+       </html>`
+      )
+    })
+    it('keeps classes', function () {
+      // given
+      const html = `<html>
+         <body>
+           <app-exercise class="mt-100">
+             http://zut.com/#test
+           </app-exercise>
+         </body>
+       </html>`
+
+      // when
+      const result = processExerciseTags(html)
+
+      // then
+      strictEqual(
+        result,
+        `<html>
+         <body>
+           <div class="exercice-2 mt-100"><div class="exercice__content">
+             http://zut.com/#test
+           </div><img class="exercice__image"></div>
+         </body>
+       </html>`
+      )
+    })
   })
 })
