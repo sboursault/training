@@ -3,19 +3,16 @@
     First test: verify page title
   </h2>
 
-  <div class="exercice">
-    <p>Exercise</p>
-    <ul>
-      <li>
-        Implement a test to verify:
-        <div class="ms-100r mt-25r">
-          <i>The home page title contains "All products"</i>
-        </div>
-      </li>
-    </ul>
+  <app-exercise class="mt-300r fragment">
+    <p>Implement a test to verify:</p>
+    <div class="indented italic">
+      <i>The home page title contains "All products"</i>
+    </div>
+  </app-exercise>
 
+  <app-help class="mt-600r fragment">
     <p>Functions</p>
-    <ul class="small">
+    <ul>
       <if-pw>
         <li><code>page.goto()</code></li>
         <li><code>expect(page).toHaveTitle()</code></li>
@@ -27,8 +24,8 @@
         </li>
       </if-cy>
     </ul>
-  </div>
-
+  </app-help>
+    
   <aside class="notes">
     <if-pw>
       <pre><code class="ts">

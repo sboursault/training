@@ -123,7 +123,7 @@ You're not sure which products are already used in existing tests.
 
 <app-help class="fragment mt-600r">
   <div style="columns: 2;">
-    <p>Commands
+    <p>Functions
     <ul>
       <li>Generate random identifiers: <code>crypto.randomUUID()</code> 
       <li>Encode admin credentials: <code>btoa('superuser@example.com:testing')</code>

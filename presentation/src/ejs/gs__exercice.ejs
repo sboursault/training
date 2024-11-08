@@ -3,15 +3,15 @@
     Define acceptance criteria
   </h2>
 
-  <div class="exercice">
+  <app-exercise class="mt-300r fragment">
     <p>The Product Owner presents a new story:</p>
     <div class="indented italic">
       As a shopper,<br />
       I want to see my basket content in the mini-basket,<br />
       so that I always know the basket's content and amount
     </div>
-    <p class="mt-125">As a team, define acceptance criteria for this story</p>
-  </div>
+    <p class="mt-200r">As a team, define acceptance criteria for this story</p>
+  </app-exercise>
 
   <aside class="notes">
     <p>
@@ -42,53 +42,46 @@
   </aside>
 </section>
 
-<section>
+<section class="text-level-2">
   <h2 data-toc-exclude data-tags="practice" class="text-size-heading-3">
     Automate the verification with {%= e2eTool %}
   </h2>
 
-  <div class="exercice text-level-3">
-    <p>Exercice</p>
+  <app-exercise class="mt-200r fragment">
+    <p>Let's code</p>
     <ul>
       <li>
         Automate the verification of the acceptance criteria identified during
         the specification workshop
       </li>
     </ul>
+  </app-exercise>
 
-    <p>Commands</p>
-    <ul>
-      <li class="small">
-        <code>cy.visit()</code>, <code>cy.get()</code>,
-        <code>cy.contains()</code>, <code>cy.click()</code>,
-        <code>cy.should()</code>
-      </li>
-    </ul>
-
-    <p>Userful links</p>
-    <ul class="small">
-      <if-pw>
+  <app-help class="mt-600r fragment">
+    <div style="columns: 2">
+      <p>Functions</p>
+      <ul>
+        <li><code>cy.visit()</code></li>
+        <li><code>cy.get()</code></li>
+        <li><code>cy.contains()</code></li>
+        <li><code>cy.click()</code></li>
+        <li><code>cy.should()</code></li>
+      </ul>
+      <p>Links</p>
+      <ul>
+        <if-pw>
+          <li>https://playwright.dev/docs/api/class-page#methods</li>
+        </if-pw>
+        <if-cy>
+          <li>https://docs.cypress.io/api/table-of-contents</li>
+        </if-cy>
+        <li>https://www.w3schools.com/cssref/css_selectors.php</li>
         <li>
-          <app-link>
-            https://playwright.dev/docs/api/class-page#methods
-          </app-link>
-        </li>
-      </if-pw>
-      <if-cy>
-        <li>
-          <app-link>https://docs.cypress.io/api/table-of-contents</app-link>
-        </li>
-      </if-cy>
-      <li>
-        <app-link>https://www.w3schools.com/cssref/css_selectors.php</app-link>
-      </li>
-      <li>
-        <app-link>
           https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe
-        </app-link>
-      </li>
-    </ul>
-  </div>
+        </li>
+      </ul>
+    </div>
+  </app-help>
 
   <aside class="notes">
     <p>
