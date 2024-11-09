@@ -32,9 +32,6 @@ test.describe('Mini-basket', () => {
   })
 })
 
-// installation
-// configure baseUrl: https://playwright.dev/docs/test-configuration
-
 // page objects and fixtures:
 // https://playwright.dev/docs/pom
 // https://playwright.dev/docs/test-fixtures

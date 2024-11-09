@@ -5,7 +5,7 @@
 
   <app-exercise class="mt-300r fragment">
     <p>The Product Owner presents a new story:</p>
-    <div class="indented italic">
+    <div class="indented italic bold">
       As a shopper,<br />
       I want to see my basket content in the mini-basket,<br />
       so that I always know the basket's content and amount
@@ -61,16 +61,26 @@
     <div style="columns: 2">
       <p>Functions</p>
       <ul>
-        <li><code>cy.visit()</code></li>
-        <li><code>cy.get()</code></li>
-        <li><code>cy.contains()</code></li>
-        <li><code>cy.click()</code></li>
-        <li><code>cy.should()</code></li>
+        <if-pw>
+          <li><code>page.goto()</code></li>
+          <li><code>page.getByTestId()</code></li>
+          <li><code>locator.click()</code></li>
+          <li><code>locator.toContainText()</code></li>
+          <li><code>locator.toHaveText()</code></li>
+        </if-pw>
+        <if-cy>
+          <li><code>cy.visit()</code></li>
+          <li><code>cy.get()</code></li>
+          <li><code>cy.contains()</code></li>
+          <li><code>cy.click()</code></li>
+          <li><code>cy.should()</code></li>
+        </if-cy>
       </ul>
       <p>Links</p>
       <ul>
         <if-pw>
           <li>https://playwright.dev/docs/api/class-page#methods</li>
+          <li>https://playwright.dev/docs/api/class-locatorassertions</li>
         </if-pw>
         <if-cy>
           <li>https://docs.cypress.io/api/table-of-contents</li>

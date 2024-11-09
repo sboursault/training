@@ -4,28 +4,44 @@
   </h2>
 
   <app-exercise class="mt-300r fragment">
-    <p>Implement a test to verify:</p>
-    <div class="indented italic">
-      <i>The home page title contains "All products"</i>
-    </div>
+    <p>Let's code</p>
+    <ul>
+      <li>
+        Implement a test to verify this rule:
+        <div class="indented italic bold">
+          The home page title contains "All products"
+        </div>
+      </li>
+    </ul>
   </app-exercise>
 
   <app-help class="mt-600r fragment">
-    <p>Functions</p>
-    <ul>
-      <if-pw>
-        <li><code>page.goto()</code></li>
-        <li><code>expect(page).toHaveTitle()</code></li>
-      </if-pw>
-      <if-cy>
-        <li>
-          <code>cy.visit()</code>, <code>cy.title()</code>,
-          <code>cy.should()</code>
-        </li>
-      </if-cy>
-    </ul>
+    <if-pw>
+      <div style="columns: 2">
+        <p>Functions</p>
+        <ul>
+          <li><code>page.goto()</code></li>
+          <li><code>expect(page).toHaveTitle()</code></li>
+        </ul>
+        <p>Config</p>
+        <ul>
+          <li>Define a baseUrl: <a>https://playwright.dev/docs/test-configuration</a>
+        </ul>
+      </div>
+    </if-pw>
+    <if-cy>
+      <p>Functions</p>
+      <li>
+        <code>cy.visit()</code>, <code>cy.title()</code>,
+        <code>cy.should()</code>
+      </li>
+      <p>Config</p>
+      <ul>
+        <li><span style="color:red">Define a baseUrl url ?</a></span
+      </ul>
+    </if-cy>
   </app-help>
-    
+
   <aside class="notes">
     <if-pw>
       <pre><code class="ts">

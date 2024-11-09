@@ -567,6 +567,10 @@ $block-margin: 32px;
     font-size: 1.25rem;
   }
 
+  .fs-90p {
+    font-size: 0.9em;
+  }
+
   .fs-80p {
     font-size: 0.8em;
   }
@@ -668,7 +672,7 @@ $block-margin: 32px;
     img.exercice__image {
       width: 25%;
       min-width: 300px;
-      margin: auto;
+      margin: auto 0 auto auto;
       transform: translate(0, 12%);
       content: url(/img/coding.png);
     }
@@ -716,13 +720,17 @@ $block-margin: 32px;
   }
 
   .indented {
-    @extend .fs-80p;
+    @extend .fs-90p;
     @extend .ms-200r;
-    @extend .mt-50r;
+    @extend .mt-25r;
   }
 
   .italic {
     font-style: italic;
+  }
+
+  .bold {
+    font-weight: bold;
   }
 }
 
