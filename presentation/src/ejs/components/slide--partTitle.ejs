@@ -4,13 +4,18 @@
       <part-number></part-number>
       <h1 class="text-size-heading-2" style="min-width: 700px">
         {%= title %}
-        {% if (optional) { %}
+        {% if (typeof(optional) !== 'undefined') { %}
           <span class="tag tag--small tag--optional">Optional</span>
         {% } %}
       </h1>
     </div>
-    {% if (toc !== false ) { %}
+    {% if (typeof(toc) === 'undefined' || toc !== false ) { %}
     <div class="part-toc box fragment"></div>
     {% } %}
   </div>
+  {% if (typeof(notes) !== 'undefined') { %}
+  <aside class="notes">
+    {%= notes %}
+  </aside>
+  {% } %}
 </section>
