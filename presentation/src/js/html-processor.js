@@ -35,7 +35,7 @@ export function processLinks(html) {
       if (attributes.indexOf('href="') !== -1) return match;
       return '<a' + attributes + ' href="' + link + '">' + link + '</a>'
     }
-  ).replace(/(<(?!a ).*?>\s*)(https?:\/\/\S*?)([\s<])/g, '$1<a href="$2">$2</a>$3')
+  ).replace(/(<(?!a )[^<]*?>\s*)(https?:\/\/\S*?)([\s<])/g, '$1<a href="$2">$2</a>$3')
 }
 
 export function processHelpTags(html) {

@@ -10,7 +10,7 @@ So the code should optimize for reading.
   <li>the UI can change frequently
   <li>asynchronous nature of the browser
 </ul>
-<p class="fragment">As a result, a SDET can spend more than half of her time on test maintenance.
+<p class="fragment">As a result, a SDET can spend more than half of her time on test maintenance
 
 Note:
 SDET: automaticien
@@ -22,18 +22,17 @@ SDET: automaticien
 <!-- .slide: class="text-level-1" -->
 
 <div class="fragment">
-<p class="mt-300 text-level-1"><strong>CSS selector</strong> examples:
-
-<ul>
-  <li><span class="url-link text-level-3">https://www.w3schools.com/cssref/css_selectors.php</span>
-</ul>
+  <p class="mt-300"><strong>CSS selector</strong> examples:
+  <ul>
+    <li>https://www.w3schools.com/cssref/css_selectors.php
+  </ul>
 </div>
 
 <div class="fragment">
-<p class="mt-300">Verify your selectors with <strong>css-and-xpath-checker</strong> (chrome plugin):
-<ul>
-  <li><span class="text-level-3"><a href="https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe">https://chromewebstore.google.com/detail/css-and-xpath-checker/...</a>
-</ul>
+  <p class="mt-300">Verify your selectors with <strong>css-and-xpath-checker</strong> (chrome plugin):
+  <ul>
+    <li><a href="https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe">https://chromewebstore.google.com/detail/css-and-xpath-checker/...</a>
+  </ul>
 </div>
 
 
@@ -60,7 +59,6 @@ cy.get('#navbar button')           //
 <p class="">Selectors must be specific enough to resist changes in the DOM
 
 </div>
-
 
 <p class="mt-200 fragment">Can we do better?
 
@@ -146,6 +144,9 @@ describe('My feature', () => {
   <li><code>only()</code> serves when you want to run a single test on your machine
   <li><code>skip()</code> can be added temporarily on broken tests (or not passing yet)
 </ul>
+
+{% if(cy) { %}
+
 ---
 
 ## Custom command
@@ -171,8 +172,6 @@ cy.getByTestid(`my-component`)
 
 <p class="fragment mt-200">Custom commands work well for behaviors that are desirable across many tests
 
-
-{% if(cy) { %}
 
 ---
 
@@ -221,25 +220,4 @@ cataloguePage.displayMiniBasket();               // this is about the
 <p class="mt-150 fragment">Tests with Page Objects are <strong>easier to read</strong> and <strong>easier to maintain</strong>
 
 
----
-
-## Rewrite tests with Page Objects
-<!-- .element: data-tags="practice" -->
-
-<div class="exercice text-level-3">
-  <p>Let's code
-  <ul>
-    <li>Refactor your tests to use a page object reprensenting the catalog page.
-  </ul>
-  <p>Hints
-  <ul>
-    <li>Create the <code>CatalogPage</code> in <nobr><code>cypress/support/page-objects/catalog-page.ts</code></nobr>
-    <li>Add a commponent getter: <code>CatalogPage.miniBasketLink()</code>
-    <li>And behaviors:
-      <ul>
-        <li><code>CatalogPage.showMiniBasket()</code>
-        <li><code>CatalogPage.addProductToBasket(produtId: number)</code>
-      </ul>
-  </ul>
-</div>
 

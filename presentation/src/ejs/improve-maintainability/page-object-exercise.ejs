@@ -1,0 +1,32 @@
+<section>
+  <h2 data-tags="practice">Rewrite tests with Page Objects</h2>
+
+  <app-exercise class="mt-300r fragment">
+    <p>Let's code</p>
+    <ul>
+      <li>
+        Refactor your tests to use a page object reprensenting the catalog page.
+      </li>
+    </ul>
+  </app-exercise>
+
+  <app-help class="mt-600r fragment">
+    <p>Hints</p>
+    <ul>
+      <li>
+        Create the <code>CatalogPage</code> in
+        <nobr><code>cypress/support/page-objects/catalog-page.ts</code></nobr>
+      </li>
+      <li>
+        Add a component getter: <code>CatalogPage.miniBasketLink()</code>
+      </li>
+      <li>
+        And behaviors:
+        <ul>
+          <li><code>CatalogPage.showMiniBasket()</code></li>
+          <li><code>CatalogPage.addProductToBasket(produtId: number)</code></li>
+        </ul>
+      </li>
+    </ul>
+  </app-help>
+</section>

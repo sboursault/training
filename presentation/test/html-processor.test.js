@@ -155,12 +155,13 @@ describe('html processor', function () {
        </html>`
       )
     })
-    it('adds create a tags from links', function () {
+    it('create a tags from links', function () {
       // given
       const html = `<html>
          <body>
            http://zut.com/#test
            <a href="http://truc" class="blod">https://other.com/</a>
+           <ul><a href="http://...">http://</a></ul>
          </body>
        </html>`
 
@@ -174,6 +175,7 @@ describe('html processor', function () {
          <body>
            <a href="http://zut.com/#test">http://zut.com/#test</a>
            <a href="http://truc" class="blod">https://other.com/</a>
+           <ul><a href="http://...">http://</a></ul>
          </body>
        </html>`
       )
