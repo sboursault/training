@@ -1,0 +1,99 @@
+<section>
+  <h2>Selectors</h2>
+
+  <div class="fragment">
+    <p class="mt-300"><strong>CSS selector</strong> examples:</p>
+    <ul>
+      <li>https://www.w3schools.com/cssref/css_selectors.php</li>
+    </ul>
+  </div>
+
+  <div class="fragment">
+    <p class="mt-300">
+      Verify your selectors with <strong>css-and-xpath-checker</strong> (chrome
+      plugin):
+    </p>
+    <ul>
+      <li>
+        <a
+          href="https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe"
+        >
+          https://chromewebstore.google.com/detail/css-and-xpath-checker/...
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <p class="mt-100r">Finding the right selector</p>
+
+  <if-pw>
+    <pre class="mt-100r"><code class="typescript">
+          page.locator(                 // not good :(
+            '#navbar > form > button'   // breaks with slight changes in the DOM
+          )                             //                                              
+  
+          page.locator(                 // not good :(
+            'button',                   // breaks when another button appears with 
+            {hasText: 'Search'}         // the same text
+          )                             //
+  
+          page.locator(                 //
+            '#navbar button'),          // quite good :)
+            {hasText: 'Search'}         //
+          )                             //
+        </code></pre>
+  </if-pw>
+  <if-cy>
+    <pre class="mt-100r"><code class="typescript">
+        cy.get('#navbar > form > button')  // not good :(
+          .click()                         // breaks with slight changes in the DOM
+
+        cy.get('button')                   // not good :(
+          .contains('Search')              // breaks when another button appears with 
+          .click()                         // the same text
+
+        cy.get('#navbar button')           //
+          .contains('Search')              // quite good :)
+          .click()                         //
+      </code></pre>
+  </if-cy>
+
+  <p class="mt-150r fragment">Selectors must be specific enough to resist DOM changes</p>
+
+  <p class="mt-200r fragment">Can we do better?</p>
+</section>
+
+<section>
+  <p class="mt-250">Add a dedicated attribute on your html elements</p>
+
+  <pre><code class="html">
+    &lt;button
+      type="submit"
+      class="btn btn btn-secondary"
+      data-testid="navbar-search-button"
+    >
+      Search
+    &lt;/button>
+  </code></pre>
+
+  <if-pw>
+    <pre class="mt-150 fragment"><code class="typescript">
+        page.getByTestId('navbar-search-button')  // simple, more efficient
+                                                  // and more robust to changes
+    </code></pre>
+  </if-pw>
+  <if-cy>
+    <pre class="mt-150 fragment"><code class="typescript">
+        cy.get(`[data-testid=navbar-search-button]`)  // simple, more efficient
+        .click()                                    // and more robust to changes
+    </code></pre>
+  </if-cy>
+
+  <aside class="notes">
+    The data-cy attribute will not change from CSS style or JS behavioral
+    changes, meaning it's not coupled to the behavior or styling of an element.
+    Don't test it if it's not testable
+  </aside>
+</section>

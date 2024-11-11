@@ -1,0 +1,63 @@
+<section>
+  <h2>Page object pattern</h2>
+
+  <p class="mt-200r fragment">
+    Page objects abstract away the technical interactions from the decision code
+  </p>
+
+  <if-pw>
+    <pre class="fragment"><code class="typescript">
+      await page.locator('.basket-mini .dropdown-toggle').click()  // this is about HTML
+    </code></pre>
+    <pre class="fragment"><code class="typescript">
+      await cataloguePage.displayMiniBasket();                     // this is about the
+                                                                   // application
+    </code></pre>
+  </if-pw>
+  <if-cy>
+    <pre class="fragment"><code class="typescript">
+      cy.get('.basket-mini .dropdown-toggle').click()  // this is about HTML
+    </code></pre>
+    <pre class="fragment"><code class="typescript">
+      cataloguePage.displayMiniBasket();               // this is about the
+                                                       // application
+    </code></pre>
+  </if-cy>
+
+
+  <p class="mt-150 fragment">
+    Tests with Page Objects are <strong>easier to read</strong> and
+    <strong>easier to maintain</strong>
+  </p>
+</section>
+
+<section>
+  <h2 data-tags="practice">Rewrite tests with Page Objects</h2>
+
+  <app-exercise class="mt-300r fragment">
+    <p>Let's code</p>
+    <ul>
+      <li>
+        Refactor your tests to use a page object reprensenting the catalog page.
+      </li>
+    </ul>
+  </app-exercise>
+
+  <app-help class="mt-600r fragment">
+    <p>Hints</p>
+    <ul>
+      <li>
+        Create the <code>CatalogPage</code> in
+        <nobr><code>cypress/support/page-objects/catalog-page.ts</code></nobr>
+      </li>
+      <li>Add a component getter: <code>CatalogPage.miniBasketLink()</code></li>
+      <li>
+        And behaviors:
+        <ul>
+          <li><code>CatalogPage.showMiniBasket()</code></li>
+          <li><code>CatalogPage.addProductToBasket(produtId: number)</code></li>
+        </ul>
+      </li>
+    </ul>
+  </app-help>
+</section>
