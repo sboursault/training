@@ -1,0 +1,56 @@
+{% if(cy) { %}
+<section>
+  <h2>Custom commands</h2>
+
+  <div class="fragment">
+    <p>Let's take an example</p>
+
+    <pre><code class="typescript">
+        cy.get(`[data-testid=my-component]`)
+      </code></pre>
+  </div>
+
+  <div class="fragment mt-125">
+    <p>can be simplified with a custom command:</p>
+
+    <pre><code class="typescript">
+        cy.getByTestid(`my-component`)
+      </code></pre>
+  </div>
+
+  <p class="fragment mt-200">
+    Custom commands work well for behaviors that are desirable across many tests
+  </p>
+</section>
+
+<section class="text-level-3">
+  <h2 data-tags="practice, optional">Create a custom command</h2>
+
+  <app-exercise class="mt-200r fragment">
+    <p>Let's code</p>
+    <ul>
+      <li>
+        Create the custom command <code>cy.getByTestid()</code> and refactor the
+        test code to use it.
+      </li>
+    </ul>
+  </app-exercise>
+
+  <app-help class="mt-600r fragment">
+    <div style="columns: 2">
+      <p>Hints</p>
+      <ul>
+        <li>Define the command in <code>cypress/support/commands.js</code></li>
+      </ul>
+
+      <p>Links</p>
+      <ul>
+        <li>https://docs.cypress.io/api/cypress-api/custom-commands</li>
+        <li>
+          https://docs.cypress.io/guides/tooling/typescript-support#Types-for-Custom-Commands
+        </li>
+      </ul>
+    </div>
+  </app-help>
+</section>
+{% } %}

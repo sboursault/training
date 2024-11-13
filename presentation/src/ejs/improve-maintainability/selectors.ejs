@@ -30,19 +30,19 @@
 
   <if-pw>
     <pre class="mt-100r"><code class="typescript">
-          page.locator(                 // not good :(
-            '#navbar > form > button'   // breaks with slight changes in the DOM
-          )                             //                                              
+          page.locator(                   // not good :(
+            '#navbar > form > button'     // breaks with slight changes in the DOM
+          )                               //                                              
   
-          page.locator(                 // not good :(
-            'button',                   // breaks when another button appears with 
-            {hasText: 'Search'}         // the same text
-          )                             //
+          page.locator(                   // not good :(
+            'button',                     // breaks when another button appears
+            {hasText: 'Search'}           // with the same text
+          )                               //
   
-          page.locator(                 //
-            '#navbar button'),          // quite good :)
-            {hasText: 'Search'}         //
-          )                             //
+          page.locator(                   //
+            '#navbar button'),            // quite good :)
+            {hasText: 'Search'}           //
+          )                               //
         </code></pre>
   </if-pw>
   <if-cy>
@@ -51,8 +51,8 @@
           .click()                         // breaks with slight changes in the DOM
 
         cy.get('button')                   // not good :(
-          .contains('Search')              // breaks when another button appears with 
-          .click()                         // the same text
+          .contains('Search')              // breaks when another button appears
+          .click()                         // with the same text
 
         cy.get('#navbar button')           //
           .contains('Search')              // quite good :)
@@ -66,7 +66,7 @@
 </section>
 
 <section>
-  <p class="mt-250">Add a dedicated attribute on your html elements</p>
+  <p class="mt-300r">Add a dedicated attribute on your html elements</p>
 
   <pre><code class="html">
     &lt;button

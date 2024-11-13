@@ -1,0 +1,59 @@
+<section class="text-level-2">
+  <h2>Hooks</h2>
+
+  <p>Use hooks to set conditions that run before a set of tests</p>
+
+  <if-pw>
+    <pre><code class="typescript">
+      test.describe('My feature', () => {
+        test.beforeAll(async () => {
+            // runs once before all tests
+        })
+    
+        test.beforeEach(async ({ page }) => {
+            // runs before each test
+        })
+    
+        test('it does does something', async ({ page }) => {
+            // some verifications...
+        });
+      })
+    </code></pre>
+  </if-pw>
+  <if-cy>
+    <pre><code class="typescript">
+      describe('My feature', () => {
+        before(() => {
+            // runs once before all tests
+        })
+    
+        beforeEach(() => {
+            // runs before each test
+        })
+    
+        it('works as intended') {
+            // some verifications...
+        }
+      })
+    </code></pre>
+  </if-cy>
+
+  <div class="fragment mt-150">
+    <if-pw>
+      <p>Avoid using <code>test.afterAll()</code> and <code>test.afterEach()</code></p>
+    </if-pw>
+    <if-cy>
+      <p>Avoid using <code>after()</code> and <code>afterEach()</code></p>
+    </if-cy>
+    <ul>
+      <li>
+        When a tests fails, clean-up code might remove important information,
+        making it harder to investigate
+      </li>
+    </ul>
+  </div>
+
+  <aside class="notes">
+    It may sound logical that each test should clean up after itself, but...
+  </aside>
+</section>

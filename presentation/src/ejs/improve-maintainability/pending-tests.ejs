@@ -1,0 +1,62 @@
+<section>
+  <h2>Pending tests</h2>
+
+  <if-pw>
+    <div class="fragment">
+      <p class="mt-150r">
+        Use <code>test.fixme()</code> or <code>test.skip()</code> to exclude
+        some tests
+      </p>
+
+      <pre><code class="typescript">
+        test.describe('My feature', () => {
+          test.fixme('test 1') {
+            // ...
+          }
+          test.skip('test 2') {
+            // ...
+          }
+        })
+      </code></pre>
+    </div>
+
+    <ul class="mt-200r">
+      <li class="fragment">
+        Temporarily add <code>test.fixme()</code> on broken tests
+      </li>
+      <li class="fragment">
+        <code>test.skip()</code> can be added on new tests that don't pass yet
+      </li>
+    </ul>
+  </if-pw>
+
+  <if-cy>
+    <div class="fragment">
+      <p class="mt-150r">
+        Use <code>only()</code> and <code>skip()</code> to include or exclude
+        some tests
+      </p>
+      <pre><code class="typescript">
+        describe('My feature', () => {
+          it.skip('works as intended') {
+            // This test will be skipped 
+          }
+          it.only('works differently in alternative case') {
+            // This will exclude all other tests
+          }
+        })
+      </code></pre>
+    </div>
+
+    <ul class="mt-200r">
+      <li class="fragment">
+        <code>only()</code> serves when you want to run a single test on your
+        machine
+      </li>
+      <li class="fragment">
+        <code>skip()</code> can be added temporarily on broken tests (or not
+        passing yet)
+      </li>
+    </ul>
+  </if-cy>
+</section>
