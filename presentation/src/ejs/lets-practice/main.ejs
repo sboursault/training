@@ -1,0 +1,65 @@
+{%- await include('../components/slide--partTitle.ejs', {title: 'Let\'s practice'}); %}
+
+<section>
+  <h2 data-tags="practice" data-toc-label="Verify the login">
+    Specification workshop for the login
+  </h2>
+
+  <app-exercise class="mt-300r">
+    <p>The Product Owner presents a new story:</p>
+
+    <div class="indented italic bold">
+      As a shopper,<br />
+      I want to login,<br />
+      so that I can check the status of an order
+    </div>
+
+    <p class="mt-200r">As a team, define acceptance criteria for this story</p>
+  </app-exercise>
+
+  <aside class="notes">
+    Possible list:
+    <ul>
+      <li>A shopper can login with valid credentials</li>
+      <li>A shopper can't login with invalid credentials</li>
+      <li>An error is shown on invalid password</li>
+    </ul>
+  </aside>
+</section>
+<section>
+  <h2 data-tags="practice" data-toc-exclude>Automate the login verification</h2>
+
+  <app-exercise class="mt-200r">
+    <p>Let's code</p>
+    <ul>
+      <li>Automate the verification of the login acceptance criteria</li>
+      <li>Simplify the code with hooks and page objects</li>
+    </ul>
+  </app-exercise>
+
+  <app-help class="mt-600r">
+    <div style="columns: 2">
+      <if-pw>
+        <p>Functions</p>
+        <ul>
+          <li><code>locator.fill()</code></li>
+        </ul>
+        <p>Links</p>
+        <ul>
+          <li>https://playwright.dev/docs/api/class-locator#locator-fill</li>
+          <li>https://playwright.dev/docs/api/class-locatorassertions</li>
+        </ul>
+      </if-pw>
+      <if-cy>
+        <p>Functions</p>
+        <ul>
+          <li><code>cy.type()</code></li>
+        </ul>
+        <p>Links</p>
+        <ul>
+          <li>https://docs.cypress.io/api/table-of-contents</li>
+        </ul>
+      </if-cy>
+    </div>
+  </app-help>
+</section>
