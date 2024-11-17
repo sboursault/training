@@ -24,7 +24,6 @@
     </code></pre>
   </if-cy>
 
-
   <p class="mt-150 fragment">
     Tests with Page Objects are <strong>easier to read</strong> and
     <strong>easier to maintain</strong>
@@ -38,26 +37,59 @@
     <p>Let's code</p>
     <ul>
       <li>
-        Refactor your tests to use a page object reprensenting the catalog page.
+        Refactor your tests to use a page object reprensenting the catalog page
       </li>
+      <if-pw>
+        <li>Create a fixture of this object</li>
+      </if-pw>
     </ul>
   </app-exercise>
 
   <app-help class="mt-600r fragment">
-    <p>Hints</p>
-    <ul>
-      <li>
-        Create the <code>CatalogPage</code> in
-        <nobr><code>cypress/support/page-objects/catalog-page.ts</code></nobr>
-      </li>
-      <li>Add a component getter: <code>CatalogPage.miniBasketLink()</code></li>
-      <li>
-        And behaviors:
+    <if-pw>
+      <div style="columns: 2">
+        <p>Hints</p>
         <ul>
-          <li><code>CatalogPage.showMiniBasket()</code></li>
-          <li><code>CatalogPage.addProductToBasket(produtId: number)</code></li>
+          <li>
+            Create the <code>CatalogPage</code> object in
+            <nobr><code>support/page-objects/catalog.page.ts</code></nobr>
+            with behavioral methods
+            <ul>
+              <li><code>showMiniBasket()</code></li>
+              <li>
+                <code>addProductToBasket(produtId: number)</code>
+              </li>
+            </ul>
+          </li>
+          <li>Define fixtures in <nobr><code>support/fixtures.ts</code></nobr></li>
         </ul>
-      </li>
-    </ul>
+        <p>Links</p>
+        <ul>
+          <li>https://playwright.dev/docs/pom</li>
+          <li>https://playwright.dev/docs/test-fixtures</li>
+        </ul>
+      </div>
+    </if-pw>
+    <if-cy>
+      <p>Hints</p>
+      <ul>
+        <li>
+          Create the <code>CatalogPage</code> in
+          <nobr><code>cypress/support/page-objects/catalog-page.ts</code></nobr>
+        </li>
+        <li>
+          Add a component getter: <code>CatalogPage.miniBasketLink()</code>
+        </li>
+        <li>
+          And behaviors:
+          <ul>
+            <li><code>CatalogPage.showMiniBasket()</code></li>
+            <li>
+              <code>CatalogPage.addProductToBasket(produtId: number)</code>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </if-cy>
   </app-help>
 </section>
