@@ -29,37 +29,12 @@
       {%- await include('ejs/lets-practice/main.ejs'); %}
       {%- await include('ejs/tips/main.ejs'); %}
       {%- await include('ejs/repeatable-tests/main.ejs'); %}
-
-
-
-      {%- await include('ejs/components/slide--partTitle.ejs', {title: 'Speed up E2E tests'}); %}
-      <section data-markdown="md/optimizing-tests.md">
-      </section>
-
-      {%- await include('ejs/components/slide--partTitle.ejs', {title: 'Isolated tests'}); %}
-      <section data-markdown="md/isolated-tests.md">
-      </section>
-
-      {%- await include('ejs/components/slide--partTitle.ejs', {title: 'Test strategy', notes: `
-        On va voir un ensemble de bonnes pratiques,
-        certaines peuvent ne pas être adaptées à votre contexte,
-        il n'est pas nécessaire de toutes les adopter
-      `}); %}
-      {%- await include('ejs/strategy__testing-quadrants.ejs'); %}
-      {%- await include('ejs/strategy__bdd.ejs'); %}
-      <section data-markdown="md/test-strategy.md">
-      </section>
-
-      {%- await include('ejs/components/slide--partTitle.ejs', {title: 'Continuous integration'}); %}
-      <section data-markdown="md/ci.md">
-      </section>
-
-      {%- await include('ejs/components/slide--partTitle.ejs', {title: 'Mobile tests', optional: true, toc: false}); %}
-      {%- await include('ejs/mobile.ejs'); %}
-      
-      {%- await include('ejs/components/slide--partTitle.ejs', {title: 'Extra exercices', optional: true, toc: false}); %}
-      <section data-markdown="md/extra.md">
-      </section>
+      {%- await include('ejs/optimizing-tests/main.ejs'); %}
+      {%- await include('ejs/isolated-tests/main.ejs'); %}
+      {%- await include('ejs/test-strategy/main.ejs'); %}
+      {%- await include('ejs/ci/main.ejs'); %}
+      {%- await include('ejs/mobile/main.ejs'); %}
+      {%- await include('ejs/extra/main.ejs'); %}
     </div>
   </div>
   <script type="module">

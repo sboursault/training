@@ -1,0 +1,10 @@
+
+{%- await include('../components/slide--partTitle.ejs', {title: 'Test strategy', notes: `
+On va voir un ensemble de bonnes pratiques,
+certaines peuvent ne pas être adaptées à votre contexte,
+il n'est pas nécessaire de toutes les adopter
+`}); %}
+{%- await include('strategy__testing-quadrants.ejs'); %}
+{%- await include('strategy__bdd.ejs'); %}
+<section data-markdown="md/test-strategy.md">
+</section>
