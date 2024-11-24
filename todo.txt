@@ -1,0 +1,11 @@
+verify/audit accessibility
+https://playwright.dev/docs/accessibility-testing
+
+AI ?
+
+copilot ?
+probably not good for beginners
+
+faut-il faire une page sur les assertions ?
+
+<!-- vérifier rendu en impression -->

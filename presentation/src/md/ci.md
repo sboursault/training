@@ -97,8 +97,8 @@ CYPRESS_ADMIN_PASSWD=testing
 
   <p class="mt-50">Useful links
   <ul style="font-size:.75em">
-    <li class="url-link">https://docs.cypress.io/guides/guides/environment-variables
-    <li class="url-link">https://github.com/dotenvx/dotenvx
+    <li>https://docs.cypress.io/guides/guides/environment-variables
+    <li>https://github.com/dotenvx/dotenvx
   </ul>
 
 </div>
@@ -136,8 +136,8 @@ CYPRESS_ADMIN_PASSWD=testing
   </ul>
   <p>Useful links
   <ul style="font-size:75%">
-    <li class="url-link">https://docs.cypress.io/guides/guides/environment-variables
-    <li class="url-link">https://github.com/dotenvx/dotenvx
+    <li>https://docs.cypress.io/guides/guides/environment-variables
+    <li>https://github.com/dotenvx/dotenvx
   </ul>
 
 </div>

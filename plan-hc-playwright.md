@@ -1,3 +1,7 @@
+
+
+
+
 # Tests End-to-End avec Playwright
 
 Nombre de jours : 2
@@ -5,30 +9,36 @@ Public visé : développeur·se
 Description courte : Automatisez vos tests de bout en bout avec Playwirght
 
 
-## Description
+### Description
 
 Cette formation vous apprendra comment automatiser vos tests de bout en bout (End-to-end - E2E) avec Playwright. Vous découvrirez comment construire une suite **maintenable**, **extensible** et **rapide**, mais aussi comment intégrer ces tests dans votre processus de développement. 
 
-> Good !
-
-Cet apprentissage s'adresse aussi bien aux développeurs qu'aux testeurs qui souhaitent se former à l'automatisation des tests de bout en bout.
-
-Au cours de la session, nous verrons comment traduire un besoin en critères d'acceptation, et comment automatiser leur vérification. Vous apprendrez comment construire une suite de tests en partant de zéro. Vous vous approprierez l'API Cypress et son éscosytème, tout en découvrant les bonnes pratiques de cette discipline. Vous comprendrez comment améliorer la lisibilité et la maintenabilité des tests avec le pattern **Page Object**. Nous écrirons des tests robustes en travaillant sur leur **isolation** et leur **répétabilité**. Enfin, nous verrons comment optimiser l'exécution des tests en préférant des appels API pour la phase de préparation des données.
-
-Parce que c'est en forgeant qu'on devient forgeron, la formation est axée sur la pratique. En fil rouge, vous élaborerez une suite de tests qui vérifie les fonctionnalités d'un site e-commerce, comme la gestion du panier ou le déclenchement des promotions.
-
-Comme pour toutes nos formations, chaque session est limitée à [6 participants](https://www.humancoders.com/pages/manifeste#taille-humaine), ce qui permet au formateur d'adapter sa présentation et garantit un temps d'échange privilégié pour chacun.
+Cet apprentissage s'adresse aux développeurs qui souhaitent se former à l'automatisation des tests de bout en bout.
 
 
-## Objectifs Pédagogiques
+
+Au cours de la formation, vous apprendrez :
+- comment traduire un besoin en critères d'acceptation, et comment automatiser leur vérification,
+- comment construire une suite de tests en partant de zéro,
+- comment écrire des tests lisibles et la maintenables avec le pattern Page Object, et comment les fiabiliser en les rendant indépendants et répétables.
+- comment optimiser l'exécution des tests en préférant des appels API pour la préparation des données.
+
+Enfin , vous vous approprierez les bases de Playwright **, tout en découvrant les bonnes pratiques de cette discipline**. 
+debug ?
+
+
+La formation est axée sur la pratique. En fil rouge, vous élaborerez une suite de tests qui vérifie les fonctionnalités d'un site e-commerce, comme la gestion du panier ou le déclenchement des promotions.
+
+
+### Objectifs
 
 - Concevoir des tests bout en bout (E2E)
-- Automatiser ces tests avec Cypress
-- Améliorer la lisibilité et l'évolutivité des tests E2E
+- Automatiser ces tests avec Playwright
+- Améliorer la lisibilité et la maintenabilité des tests E2E
 - Créer une suite de tests rapides et extensibles (basée sur des tests isolés et répétables)
 
 
-## Pré-requis
+### Pré-requis
 
 - Notions de base en programmation
 - Connaissances de base en HTML et CSS
@@ -39,52 +49,52 @@ Comme pour toutes nos formations, chaque session est limitée à [6 participants
 Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaître le langage. Cela fait partie de la formation.
 
 
-## Programme de la formation
+### Programme
 
-### Jour 1 : Automatisation des tests
+#### Jour 1 : Automatisation des tests
 
-#### Démmarrer avec Cypress
+##### Démmarrer avec Cypress
 
-- Écosystème Cypress
-  - Cypress CLI
-  - Application Cypress
+- Écosystème Playwright
+  - Playwright CLI
+  - Playwright UI
   - Documentation en ligne
-- Principales commandes de l'api de développement (`cy.visit()`, `cy.get()`, `cy.click()`, etc.)
+- Principales fonctions de l'API Playwright (`page.goto()`, `page.locator()`, `locator.click()`, etc.)
+- Assertions
 - Hooks
-- Mise en place de sélecteurs dédiés (basé sur un attribut `data-testid`)
-- Création de commandes personnalisées (commandes custom)
-- Pattern Page Object
+- Locators
+- Page Objects et Fixtures
 
 **Mises en pratique :**
- - Initialisation d'un projet Cypress avec Typescript
+ - Initialisation d'un projet Playwright avec Typescript
  - Atelier de spécification sur le mini-panier d'un site e-commerce, puis sur le login
  - Automatisation des critères d'acceptation
- - Simplification des tests à l'aide de commandes personnalisées et du pattern Page Object
+ - Simplification des tests à l'aide du pattern Page Object et de Fixtures
 
  
-### Jour 2 : Gérer votre suite de tests
+#### Jour 2 : Gérer votre suite de tests
 
-#### Stratégie de test
+##### Stratégie de test
 - Complémentatrité des différents types de tests (Agile testing quadrants)
 - Behaviour Driven Development
 - Qui automatise les tests ?
 - Tips CI/CD
 
-**Mises en pratique :**
+**Mise en pratique :**
  - Gérer les variables d'environnment
 
-#### Une suite de test rapide et extensible
-- Écrire des tests répétables et isolés
+##### Une suite de test rapide et extensible
+- Écrire des tests répétables et indépendants
 - Optimisation du temps d'exécution de la suite
-- Debugger les tests Cypress
-- La commande `cy.request()`
+- Debugger les tests Playwright
+- L'objet `Request`
 - Génération d'un jeu de données spécifique pour un test
 
 **Mises en pratique :**
  - Atelier de spécification et automatisation des tests sur la récupération du panier, puis sur les frais de livraison
  - Travail sur la phase de préparation du test (setup) :
    - Nettoyage des données
-   - Création des produits pertinents pour vérifier les critères d'acceptation
+   - Adaptation du jeu de données initial
    - Optimisation à l'aide d'appels API
 
 
@@ -92,7 +102,7 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
 
 ### Avec quelles technologies préfères-tu travailler ?
 
-Cypress, Typescript, Python, Java
+Playwight, Cypress, Typescript, Python, Java
 
 ### Bio
 

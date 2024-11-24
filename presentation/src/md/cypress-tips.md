@@ -11,6 +11,7 @@
 particularly on <strong>Single Page Applications</strong>
 </div>
 
+<if-cy>
 ---
 ## Using variables
 
@@ -38,6 +39,7 @@ particularly on <strong>Single Page Applications</strong>
 
 <small class="fragment mt-200">Cypress guide on varibles and aliases: <a href="https://docs.cypress.io/guides/guides/debugging">https://docs.cypress.io/guides/core-concepts/variables-and-aliases</a></small>
 
+</if-cy>
 
 ---
 

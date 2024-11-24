@@ -12,7 +12,6 @@
   {% } %}
 </div>
 
-<!-- vérifier rendu en impression, ajouter logo cypress -->
 
 <br>
 

@@ -91,9 +91,9 @@ curl -X DELETE https://.../api/baskets/{id} \
   </ul>
   <p>Userful links
   <ul style="small">
-    <li class="url-link">https://docs.cypress.io/api/table-of-contents
-    <li class="url-link">https://docs.cypress.io/api/commands/request
-    <li class="url-link">http://&lt;simple-commerce-instance&gt;/api/basket/
+    <li>https://docs.cypress.io/api/table-of-contents
+    <li>https://docs.cypress.io/api/commands/request
+    <li>http://&lt;simple-commerce-instance&gt;/api/basket/
   </ul>
 </div>
 
