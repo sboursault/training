@@ -1,7 +1,4 @@
 
-
-
-
 # Tests End-to-End avec Playwright
 
 Nombre de jours : 2
@@ -13,19 +10,13 @@ Description courte : Automatisez vos tests de bout en bout avec Playwirght
 
 Cette formation vous apprendra comment automatiser vos tests de bout en bout (End-to-end - E2E) avec Playwright. Vous découvrirez comment construire une suite **maintenable**, **extensible** et **rapide**, mais aussi comment intégrer ces tests dans votre processus de développement. 
 
-Cet apprentissage s'adresse aux développeurs qui souhaitent se former à l'automatisation des tests de bout en bout.
-
-
+Cet apprentissage s'adresse aux développeur·se·s qui souhaitent se former à l'automatisation des tests de bout en bout.
 
 Au cours de la formation, vous apprendrez :
 - comment traduire un besoin en critères d'acceptation, et comment automatiser leur vérification,
-- comment construire une suite de tests en partant de zéro,
+- comment construire une suite de tests avec Playwright, en partant de zéro,
 - comment écrire des tests lisibles et la maintenables avec le pattern Page Object, et comment les fiabiliser en les rendant indépendants et répétables.
 - comment optimiser l'exécution des tests en préférant des appels API pour la préparation des données.
-
-Enfin , vous vous approprierez les bases de Playwright **, tout en découvrant les bonnes pratiques de cette discipline**. 
-debug ?
-
 
 La formation est axée sur la pratique. En fil rouge, vous élaborerez une suite de tests qui vérifie les fonctionnalités d'un site e-commerce, comme la gestion du panier ou le déclenchement des promotions.
 
@@ -53,7 +44,7 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
 
 #### Jour 1 : Automatisation des tests
 
-##### Démmarrer avec Cypress
+##### Démmarrer avec Playwright
 
 - Écosystème Playwright
   - Playwright CLI
@@ -63,7 +54,7 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
 - Assertions
 - Hooks
 - Locators
-- Page Objects et Fixtures
+- Page Object et Fixtures
 
 **Mises en pratique :**
  - Initialisation d'un projet Playwright avec Typescript
@@ -81,7 +72,7 @@ Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaî
 - Tips CI/CD
 
 **Mise en pratique :**
- - Gérer les variables d'environnment
+ - Adapter votre suite de tests pour vérifier différents environnements (local, e2e, preprod...)
 
 ##### Une suite de test rapide et extensible
 - Écrire des tests répétables et indépendants
@@ -106,9 +97,9 @@ Playwight, Cypress, Typescript, Python, Java
 
 ### Bio
 
-Sébastien est un développeur curieux et touche-à-tout. Il est passé par tous les rôles d'une équipe de développement : Développeur, Testeur, Scrum Master et Product owner.
+Sébastien dévellope des applications depuis plus de 15 ans. Il est passé par tous les rôles d'une équipe de dév : Développeur, Testeur, Scrum Master et Product owner.
 
-Il travaille pour un éditeur dans une approche où les critères d'acceptation deviennent les tests automatisés qui pilotent le développement. Cette approche leur permet d'avancer vite et sereinement.
+Il travaille chez un éditeur, dans une approche où les critères d'acceptation deviennent les tests automatisés qui pilotent le développement. Cette approche leur permet d'avancer vite et sereinement.
 
 Sébastien partage volontiers sa culture du clean code et de l'automatisation des tests, en particulier lors de ses formations, où il apprécie d'échanger avec des personnes d'horizons différents.
 
