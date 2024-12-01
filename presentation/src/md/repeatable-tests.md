@@ -1,24 +1,5 @@
 
 
-<!-- .slide: class="slide--vcenter" -->
-
-<div class="bubble bubble-bottom-left">
-  <i class="emo emo-36 emoji-nerd_face"></i>
-  <span class="bubble__text">How to make this test repeatable?</span>
-</div>
-
-Note:
-We need to either pick a new user, or clear the basket between each test
-This can be done through the ui, but this is tricky to implement
-A better option is to clear the basket through api
-
-A developer gives this trick :
-"call /api/basket/ to get the basket url and then delete it"
-curl -X GET https://.../api/basket/ -u "tom@test.com:tom@test.com"
-curl -X DELETE https://.../api/basket -u "tom@test.com:tom@test.com"
-
----
-
 ## Make the test repeatable
 <!-- .element: data-tags="practice" class="text-size-heading-3" -->
 
