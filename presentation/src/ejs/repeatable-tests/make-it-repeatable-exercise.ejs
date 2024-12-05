@@ -1,0 +1,58 @@
+<section>
+  <h2 data-tags="practice">
+    Make the test repeatable
+  </h2>
+
+  <app-exercise class="mt-200r">
+    <p>Let's code</p>
+    <ul>
+      <li>
+        Clear the basket before each test
+        <pre><code class="sh">
+          curl -X DELETE https://.../api/baskets/{id} \
+            --header "Authorization: Basic c3VwZXJ1c..."
+        </code></pre>
+      </li>
+    </ul>
+  </app-exercise>
+
+  <app-help class="mt-600r">
+    <div style="columns: 2">
+      <p>Commands</p>
+      <ul>
+        <li><code>cy.request()</code></li>
+        <li>
+          <code>btoa('bob@test.com:my-passwd')</code> to encode credentials
+        </li>
+      </ul>
+
+      <p>Links</p>
+      <ul>
+        <li>https://docs.cypress.io/api/table-of-contents</li>
+        <li>https://docs.cypress.io/api/commands/request</li>
+        <li>http://&lt;simple-commerce-instance&gt;/api/basket/</li>
+      </ul>
+    </div>
+  </app-help>
+
+  <aside class="notes">
+    /api to get api documentation GET /api/basket gives the id and url of the
+    basket
+
+    <p>
+      l'écriture est un peu compliqué (basic auth, btoa, double appel...),
+      montrer l'exemple !
+    </p>
+
+    <p>
+      prepare the data before running the test, avoid reverting changes at the
+      end of each tests.
+    </p>
+    <ul>
+      <li>easier to understand the prerequesites of a test</li>
+      <li>
+        when a test fails, better to keep the system as is to facilitate debug
+      </li>
+    </ul>
+  </aside>
+</section>
