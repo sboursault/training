@@ -90,7 +90,7 @@ CYPRESS_ADMIN_PASSWD=testing
 
   </ul>
   
-  <p class="mt-50">Commands
+  <p class="mt-50">Functions
   <ul style="font-size:.9em">
     <li><code>cy.env()</code>
   </ul>

@@ -1,4 +1,43 @@
 
 {%- await include('../components/slide--partTitle.ejs', {title: 'Speed up E2E tests'}); %}
-<section data-markdown="md/optimizing-tests.md">
+
+
+<section>
+<h2>Why optimizing test speed?</h2>
+
+<p class="fragment mt-500">The faster the tests, the more they are run
+
+<div class="fragment mt-200">
+  <p>Shorten the feedback loop
+  <ul>
+    <li>Ultimately, the developer should get feedback when he's still working on the issue
+  </ul>
+</div>
+
+<aside class="notes">
+encourage the developers to run E2E tests on their machine before pushing their code
+</aside>
 </section>
+
+<section class="slide--vcenter">
+
+
+
+<div class="bubble bubble-bottom-left">
+  <i class="emo emo-36 emoji-nerd_face"></i>
+  <span class="bubble__text">How can we make our tests run faster?</span>
+</div>
+
+<aside class="notes">
+
+The login can be verified once, and then for each test that require logging, this can be done through a direct call
+</aside>
+</section>
+
+
+{%- await include('minimize-ui-interractions.ejs'); %}
+{%- await include('speed-up-exercise-1.ejs'); %}
+{% if(cy) { %}
+  {%- await include('cypress-session.ejs'); %}
+{% } %}
+{%- await include('speed-up-exercise-2.ejs'); %}

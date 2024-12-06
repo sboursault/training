@@ -36,7 +36,7 @@ The user can be created manually.
     <li>Automate the verification of the login acceptance criteria
     <li>Simplify the code with hooks, custom commands and page objects
   </ul>
-  <p>Commands
+  <p>Functions
   <ul>
     <li><code>cy.type()</code>
   </ul>

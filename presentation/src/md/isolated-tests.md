@@ -44,7 +44,7 @@ _Possible list:_
       <li>For baskets strictly over 30€, we offer delivery fees
     </ul>
   </ul>
-  <p>Commands
+  <p>Functions
   <ul>
     <li>?
   </ul>

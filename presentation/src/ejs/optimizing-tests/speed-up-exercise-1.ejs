@@ -1,0 +1,44 @@
+<section class="text-level-3">
+
+    <h2 data-tags="practice">Speed up your tests</h2>
+
+
+    <app-exercise class="mt-200r">
+        <p>Let's code
+        <ul>
+            <li>In the tests which requires a logged user, replace the UI login by a simple http request
+                <pre><code class="sh">
+                    curl -i \
+                    -X POST \
+                    --header "Content-Type: application/json" \
+                    --data '{"username":"tom@test.com","password":"tom@test.com"}' \
+                    http://localhost:8000/api/login/  # ⚠️ don't forget the trailing "/"
+                </code></pre>
+        </ul>
+
+    </app-exercise>
+
+    <app-help class="mt-400r">
+        <div style="columns: 2">
+
+            <p>Functions
+            <ul>
+                <li><code>cy.request()</code>
+            </ul>
+
+            <p>Links
+            <ul>
+                <li>https://docs.cypress.io/api/table-of-contents
+                <li>https://docs.cypress.io/api/commands/request
+                <li>http://&lt;simple-commerce-instance&gt;/api/login/
+            </ul>
+        </div>
+    </app-help>
+    <aside class="notes">
+        <ul>
+            <li>Here the trainee implements the request call alone.</li>
+            <li>I just have to show a curl example.</li>
+            <li>Wath the time before and after change.</li>
+        </ul>
+    </aside>
+</section>

@@ -1,0 +1,22 @@
+<section>
+    <h2> Minimize UI interactions</h2>
+
+    <div class="text-level-1">
+        <p class="fragment">Try to <strong>avoid the UI</strong> for all the parts of the tests not dealing with
+            <strong>UI-specific risks</strong>
+
+        <div class="fragment mt-100">
+            <p>Prefer direct <strong>API</strong> calls in the setup phase
+            <ul>
+                <li>API calls runs faster
+                <li>APIs change less offten than UI
+                <li>API calls are easier to automate
+            </ul>
+        </div>
+
+        <p class="fragment">It's ok to develop missing APIs for test needs
+
+        <p class="fragment">Sometimes, direct <strong>db access</strong> can be a second-best alternative
+    </div>
+
+</section>
