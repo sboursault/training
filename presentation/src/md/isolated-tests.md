@@ -1,64 +1,6 @@
 
 
 
-{% if(pw) { %}
-
-https://playwright.dev/docs/browser-contexts#how-playwright-achieves-test-isolation
-
-Playwright uses browser contexts to **achieve** Test Isolation. Each test has its own Browser Context. Running the test creates a new browser context each time.
-
----
-
-{% } %}
-
-## &lt;/> Specification workshop for the delivery fees
-<!-- .element: data-toc-label="</> Verify the delivery fees" class="text-size-heading-3"-->
-
-<div class="exercice">
-  <p>The Product Owner presents a new story:
-  <ul>
-    <li class="text-level-4"><i>Delivery fees are free for orders over 30€</i>
-  </ul>
-  <p class="mt-125">As a team, define acceptance criteria for this story
-</div>
-
-Note:
-
-_Possible list:_
-- basket amount bellow 30€ -> delivery fees are charged 7€
-- basket amount equals 30€ -> delivery fees are charged 7€
-- basket amount over 30€   -> delivery fees offered
-
-
----
-
-## </> Automate the delivery fees verification
-<!-- .element: data-toc-exclude class="text-size-heading-3" -->
-
-<div class="exercice mt-150">
-  <p>Let's code
-  <ul>
-    <li>Automate the most valuable acceptance criteria to verify the delivery fees
-    <ul>
-      <li>For baskets strictly bellow 30€, we charge 7€ delivery fees
-      <li>For baskets strictly over 30€, we offer delivery fees
-    </ul>
-  </ul>
-  <p>Functions
-  <ul>
-    <li>?
-  </ul>
-  <p>Userful links
-  <ul style="font-size:75%">
-    <li class="url-link">https://docs.cypress.io/api/table-of-contents
-  </ul>
-</div>
-
-Note:
-
-
----
-
 <!-- .slide: class="text-level-3" -->
 
 <div class="flex-row flex-row--center mt-300" >
@@ -231,18 +173,4 @@ To enforce test isolation...
   <li>When a bug causes a test failure, you will only need to investigate that single test, not 500 other false alarms
   <li>You may parallelize your test run
 </ul>
-
-
----
-
-## Run tests with distinct user accounts
-<!-- .element: data-tags="practice, optional" class="text-size-heading-3" -->
-
-<div class="exercice">
-  <p class="">Let's code
-  <ul>
-    <li>In the test setup, create a dedicated user and use it throughout the test
-  </ul>
-</div>
-
 
