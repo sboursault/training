@@ -1,0 +1,139 @@
+<section class="text-level-3">
+
+
+<div class="flex-row flex-row--center mt-300" >
+    <div class="bubble bubble-bottom-left">
+      <i class="emo emo-36 emoji-face_with_monocle"></i>
+      <div class="bubble__text">
+      <p>How to verify the delivey fees when the basket is <strong>exactly</strong> 30€?
+      <p>There's no product sold exactly 30€ in the initial data set
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="mt-400 flex-row flex-row--center fragment">
+  
+  <div style="width:80%; padding-left:2em;">
+  
+  <p>In the <strong>test setup</strong>, call the <strong>product api</strong> to create a new product sold 30€
+  
+  <ul class="no-bullets mt-0">
+    <li class="mt-50"><i class="emo emoji-thumbup"></i>No modification of a product that may be used in another test
+    <li class="mt-50"><i class="emo emoji-thumbup"></i>Keeps the initial data unchanged
+    <li class="mt-50"><i class="emo emoji-thumbup"></i>If there's a problem with this product in the future, anybody will be confident to fix it, without fear of breaking another test
+  </ul>
+  
+  </div>
+  
+  </div>
+
+  <aside class="notes">
+  
+  <ul>
+
+    <li>We could go in the admin and change the price of a product
+        <ul>
+            <li>
+                this is a manual task and must be done each time the data set is restored
+            </li>
+        </ul>
+    </li>
+
+    <li>ask a developer to include a product of 30€ in the initial data set
+        <ul>
+            <li>
+                what about it's stock ?
+            </li>
+            <li>
+                knowing the test suites becomes necessary to manage the initial data set
+            </li>
+        </ul>
+    </li>
+
+    <li>change the price of a product using api
+        <ul>
+            <li>
+                Imagine your test suite is quite long,
+                You're not sure which products are already used in existing tests.
+                There's a risk to break some tests if they already use this product
+            </li>
+        </ul>
+    </li>
+
+    <li>create a product by api within the test, which costs exactly 30€ :)
+        <ul>
+            <li>
+                This option makes the test more isolated from other tests
+            </li>
+        </ul>
+    </li>
+  </ul>
+
+</aside>
+</section>
+
+<section class="text-level-2">
+  
+<h2 data-tags="practice" class="text-size-heading-3" data-toc-label="...when the basket is exactly 30€">
+     Delivery fees when the basket is exactly 30€</h2>
+  
+  <app-exercise class="mt-350r fragment">
+    <p>Let's code
+    <ul>
+      <li>Through the product api, create a new product sold 30€
+      <li>Verify the delivery fees with this product
+      <li>Rewrite so that the test shows the price of the new product
+    </ul>
+  </app-exercise>
+  
+  <app-help class="fragment mt-600r">
+    <div style="columns: 2;">
+      <p>Functions
+      <ul>
+        <li>Generate random identifiers: <code>crypto.randomUUID()</code> 
+        <li>Encode admin credentials: <code>btoa('superuser@example.com:testing')</code>
+      </ul>
+      <p>Links
+      <ul>
+        <li>https://docs.cypress.io/api/table-of-contents</li>
+        <li>https://docs.cypress.io/api/commands/request</li>
+        <li>http://&lt;simple-commerce-instance&gt;/api/admin/products/</li>
+      </ul>
+    </div>
+  </app-help>
+  
+</section>
+
+<section class="text-level-2">
+  
+  
+  <p class="mt-100r">How to create a new product?
+  
+  <pre><code class="sh">
+  curl -i \
+    -X POST \
+    --header "Content-Type: application/json" \
+    --header "Authorization: Basic c3VwZXJ1c2VyQGV4YW1wbGUuY29tOnRlc3Rpbmc=" \
+    --data '
+    {
+      "slug": "aaaa",
+      "product_class": "book",
+      "stockrecords": [
+        {
+          "partner": "/api/admin/partners/3/",
+          "partner_sku": "aaaa",
+          "price_currency": "EUR",
+          "price": 15,
+          "num_in_stock": 100
+        }
+      ]
+    }' \
+    http://localhost:8000/api/admin/products/
+  
+    # ⚠️ don't forget the trailing "/" at the end of the url
+    # ⚠️ `slug` and `stockrecords[].partner_sku` must be unique
+  </code></pre>
+  
+  
+</section>

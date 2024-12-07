@@ -1,23 +1,11 @@
 {%- await include('../components/slide--partTitle.ejs', {title: 'Isolated tests'}); %}
-
-
-
 {% if(pw) { %}
-
 <section>
-https://playwright.dev/docs/browser-contexts#how-playwright-achieves-test-isolation
-
-Playwright uses browser contexts to **achieve** Test Isolation. Each test has its own Browser Context. Running the test creates a new browser context each time.
+    https://playwright.dev/docs/browser-contexts#how-playwright-achieves-test-isolation
+    Playwright uses browser contexts to **achieve** Test Isolation. Each test has its own Browser Context. Running the test creates a new browser context each time.
 </section>
-
-
 {% } %}
-
 {%- await include('isolated-tests-exercise-1.ejs'); %}
-
 {%- await include('isolated-tests-exercise-2.ejs'); %}
-
-<section data-markdown="md/isolated-tests.md">
-</section>
-
+{%- await include('isolated-tests-theory.ejs'); %}
 {%- await include('isolated-tests-exercise-extra.ejs'); %}
