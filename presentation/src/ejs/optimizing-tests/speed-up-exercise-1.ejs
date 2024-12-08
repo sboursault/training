@@ -18,22 +18,41 @@
 
     </app-exercise>
 
-    <app-help class="mt-400r">
+
+    <app-help class="mt-400r fragment">
         <div style="columns: 2">
-
-            <p>Functions
-            <ul>
-                <li><code>cy.request()</code>
-            </ul>
-
-            <p>Links
-            <ul>
-                <li>https://docs.cypress.io/api/table-of-contents
-                <li>https://docs.cypress.io/api/commands/request
-                <li>http://&lt;simple-commerce-instance&gt;/api/login/
-            </ul>
+          <p>Functions</p>
+          <ul>
+    
+            <if-pw>
+              <li><code>request.post()</code></li>
+            </if-pw>
+            <if-cy>
+              <li><code>cy.request()</code></li>
+            </if-cy>
+            <li>
+              <code>btoa('bob@test.com:my-passwd')</code> to encode credentials
+            </li>
+          </ul>
+    
+          <p>Links</p>
+          <ul>
+            <if-pw>
+              <li>https://playwright.dev/docs/api/class-apirequestcontext</li>
+            </if-pw>
+            <if-cy>
+              <li>https://docs.cypress.io/api/table-of-contents</li>
+              <li>https://docs.cypress.io/api/commands/request</li>
+            </if-cy>
+            <li>http://&lt;simple-commerce-instance&gt;/api/login/</li>
+          </ul>
         </div>
-    </app-help>
+      </app-help>
+    
+
+
+
+
     <aside class="notes">
         <ul>
             <li>Here the trainee implements the request call alone.</li>

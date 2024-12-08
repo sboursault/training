@@ -16,11 +16,19 @@
     </ul>
   </app-exercise>
 
-  <app-help class="mt-600r">
+  <app-help class="mt-600r fragment">
     <div style="columns: 2">
       <p>Functions</p>
       <ul>
-        <li><code>cy.request()</code></li>
+
+        <if-pw>
+          <li><code>request.get()</code></li>
+          <li><code>request.delete()</code></li>
+          <li><code>response.json()</code></li>
+        </if-pw>
+        <if-cy>
+          <li><code>cy.request()</code></li>
+        </if-cy>
         <li>
           <code>btoa('bob@test.com:my-passwd')</code> to encode credentials
         </li>
@@ -28,8 +36,14 @@
 
       <p>Links</p>
       <ul>
-        <li>https://docs.cypress.io/api/table-of-contents</li>
-        <li>https://docs.cypress.io/api/commands/request</li>
+        <if-pw>
+          <li>https://playwright.dev/docs/api/class-apirequestcontext</li>
+          <li>https://playwright.dev/docs/api/class-apiresponse</li>
+        </if-pw>
+        <if-cy>
+          <li>https://docs.cypress.io/api/table-of-contents</li>
+          <li>https://docs.cypress.io/api/commands/request</li>
+        </if-cy>
         <li>http://&lt;simple-commerce-instance&gt;/api/basket/</li>
       </ul>
     </div>
