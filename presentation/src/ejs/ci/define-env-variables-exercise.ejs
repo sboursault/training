@@ -1,0 +1,78 @@
+<section class="text-level-4">
+
+    <h2 data-toc-label="Manage environment variables" data-tags="practice,optional" class="mt-0 text-size-heading-3">
+        Define environment variables
+    </h2>
+
+
+    <app-exercise>
+
+        <p class="mt--50">Let's code
+        <ul>
+            <li>Install <strong>dotenvx</strong>
+                <pre><code class="sh">
+                    npm install @dotenvx/dotenvx
+                </code></pre>
+
+            <li>Create a file named <code>.env</code> with these variables
+
+                <if-pw>
+                    <pre><code class="properties">
+                        # .env
+                        BASE_URL=http://127.0.0.1:8000/
+                        ADMIN_LOGIN=superuser@example.com
+                        ADMIN_PASSWD=testing
+                    </code></pre>
+                </if-pw>
+                <if-cy>
+                    <pre><code class="properties">
+                        # .env
+                        CYPRESS_BASE_URL=http://127.0.0.1:8000/
+                        CYPRESS_ADMIN_LOGIN=superuser@example.com
+                        CYPRESS_ADMIN_PASSWD=testing
+                    </code></pre>
+                </if-cy>
+
+            <li>Update the scripts in <code>package.json</code>
+
+                <if-pw>
+                    <pre><code class="json" data-line-numbers="2">
+                        "scripts": {
+                          "pw:test-ui": "dotenvx run -f .env -- npx playwright test --ui"
+                        },
+                    </code></pre>
+                </if-pw>
+                <if-cy>
+                    <pre><code class="json" data-line-numbers="2">
+                        "scripts": {
+                          "cy:open": "dotenvx run -f .env -- npx cypress open --e2e --browser chromium"
+                        },
+                    </code></pre>
+                </if-cy>
+
+
+
+            <li>Rewrite tests to use the env variables and verify they still pass</li>
+
+        </ul>
+
+    </app-exercise>
+
+    <app-help class="mt-200r">
+        <div style="columns: 2">
+
+        <p>Functions</p>
+        <ul>
+            <li><code>cy.env()</code>
+        </ul>
+    
+        <p class="mt-50">Useful links</p>
+        <ul>
+            <li>https://docs.cypress.io/guides/guides/environment-variables
+            <li>https://github.com/dotenvx/dotenvx
+        </ul>
+    </div>
+    </app-help>
+    
+
+</section>

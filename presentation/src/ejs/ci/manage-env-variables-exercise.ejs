@@ -1,0 +1,51 @@
+<section>
+
+    <h2 data-toc-exclude data-tags="practice,optional" class="text-size-heading-3">
+        Manage environment variables
+    </h2>
+
+
+    <app-exercise class="text-level-3 mt-200r">
+
+        <p>Let's code</p>
+        <ul>
+            <li>Copy your <code>.env</code> file to a file named <code>.env.e2e</code>
+            <li>In <code>package.json</code>, add a script to target the e2e environment
+
+                <if-pw>
+
+                    <pre><code class="json" data-line-numbers="3">
+                        "scripts": {
+                          "pw:test-ui": "dotenvx run -f .env -- npx playwright test --ui",
+                          "pw:test-ui:e2e": "dotenvx run -f .env.e2e -- npx playwright test --ui"
+                        },
+                    </code></pre>
+                </if-pw>
+                <if-cy>
+                    <pre><code class="json" data-line-numbers="3">
+                        "scripts": {
+                          "cy:open": "dotenvx run -f .env -- npx cypress open --e2e --browser chromium"
+                          "cy:open:e2e": "dotenvx run -f .env.e2e -- npx cypress open --e2e --browser chromium",
+                        },
+                    </code></pre>
+                </if-cy>
+
+
+            <li>Change the base url in <code>.env.e2e</code> and watch the test fail
+
+        </ul>
+    </app-exercise>
+
+    <app-help class="mt-600r">
+
+        <p>Links</p>
+        <ul>
+            <li>https://docs.cypress.io/guides/guides/environment-variables</li>
+            <li>https://github.com/dotenvx/dotenvx</li>
+        </ul>
+
+    </app-help>
+
+
+
+</section>
