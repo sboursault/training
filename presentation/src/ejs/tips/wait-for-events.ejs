@@ -1,0 +1,36 @@
+<section class="text-level-3">
+  <h2>Wait for events, not time</h2>
+
+  <p class="fragment">Your browser is asynchronous!</p>
+
+  <p class="fragment">When can I verify the result of async operations?</p>
+
+  <pre class="mt-50 fragment"><code class="typescript">
+    // bad
+    cy.wait(2000)  // wait for 2 seconds
+
+    // Good
+    cy.contains('Welcome')  // wait for the page to contain "welcome"
+
+    // Good
+    cy.intercept('POST', '/api/basket/add-product').as('addProductToBasket')
+    cy.get('button').contains('Add to basket').click()
+    cy.wait('@addProductToBasket')  // wait for a http response
+  </code></pre>
+
+  <p class="fragment mt-150">
+    Wait for <strong>events</strong> to avoid long and flaky tests
+  </p>
+
+  <p class="fragment mt-200">
+    <small
+      >More on cypress implicit waits:
+      <a
+        href="https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting"
+        >https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</a
+      ></small
+    >
+  </p>
+
+  <aside class="notes">Testing offten involves asynchronous behaviours</aside>
+</section>

@@ -1,0 +1,57 @@
+<section>
+  <h2>Debug tests ADAPT TO PW</h2>
+
+  {% if(pw) { %} https://playwright.dev/docs/debug debug with vscode {% } %}
+
+  <div class="mt-300 fragment">
+    <p>
+      Inspect the <strong>page</strong> and <strong>any storage</strong> during
+      the test
+    </p>
+
+    <pre class="mt-75"><code class="typescript">
+  cy.navigate('/some-page')
+  cy.pause()
+  // or
+  cy.navigate('/some-page')
+    .then(() => {
+      debugger  // works only with the dev tools open
+    })
+</code></pre>
+  </div>
+
+  <small class="fragment mt-300">
+    Cypress debugging guide:
+    <a href="https://docs.cypress.io/guides/guides/debugging"
+      >https://docs.cypress.io/guides/guides/debugging</a
+    >
+  </small>
+</section>
+
+<section class="text-level-3">
+  <p>
+    Debug <strong>direct http calls</strong> made with <code>cy.request()</code>
+  </p>
+
+  <ul class="mt-0">
+    <li class="fragment mt-50">
+      With <code>debugger</code>
+
+      <pre class="mt-50"><code class="typescript">
+        cy.request('/some-url')
+        .then((response) => {
+            debugger  // works only with the dev tools open
+        })
+    </code></pre>
+    </li>
+
+    <li class="mt-75 fragment">
+      From the <strong>time travel panel</strong>, click on a
+      <strong>request log</strong> to get the full request and response
+      <br />
+      <div class="text-center">
+        <img class="mt-50" src="img/debug-request.png" height="450" />
+      </div>
+    </li>
+  </ul>
+</section>

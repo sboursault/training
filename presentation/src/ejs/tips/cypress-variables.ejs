@@ -1,0 +1,31 @@
+<section class="text-level-3">
+  <h2>Using variables</h2>
+
+  <div class="fragment">
+    <p class="mt-150">Commands are enqueued and run asynchronously</p>
+
+    <pre><code class="typescript">
+        const button = cy.get('button')  //
+        button.click();                  // this won't work
+    </code></pre>
+  </div>
+
+  <div class="fragment">
+    <p class="mt-150">
+      Use <code>.then()</code> to access what a Cypress command yields
+    </p>
+
+    <pre><code class="typescript">
+        cy.get('button').then(button => {
+            button.click()
+        })
+    </code></pre>
+  </div>
+
+  <small class="fragment mt-200"
+    >Cypress guide on varibles and aliases:
+    <a href="https://docs.cypress.io/guides/guides/debugging"
+      >https://docs.cypress.io/guides/core-concepts/variables-and-aliases</a
+    ></small
+  >
+</section>

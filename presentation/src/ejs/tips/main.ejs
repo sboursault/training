@@ -1,3 +1,18 @@
 {%- await include('../components/slide--partTitle.ejs', {title: 'Tips and tricks'}); %}
-<section data-markdown="md/cypress-tips.md">
-</section>
+
+{%- await include('small-tests.ejs'); %}
+
+
+
+
+{% if(cy) { %}
+
+{%- await include('cypress-variables.ejs'); %}
+
+{% } %}
+
+{%- await include('debug.ejs'); %}
+{%- await include('wait-for-events.ejs'); %}
+{% if(cy) { %}
+{%- await include('multiple-domains.ejs'); %}
+{% } %}

@@ -1,0 +1,60 @@
+<section>
+    <h2> Test accross multiple domains</h2>
+
+
+
+<p class="fragment mt--100">a.k.a. <strong>Integration tests</strong></p>
+
+
+<p class="fragment">Within a test, you can't verify pages from different <strong>origins</strong></p>
+
+<p class="fragment">Example:</p>
+  
+<div class="text-center text-level-3 fragment">
+  <p class="">An ecommerce site sends new orders to a logistics application.<br>We want to verify the orders are correctly sent.
+  <div class="box mt-50 fragment">
+    <span class="box_label">Cypress test</span>
+    <div class="flex-row flex-row--center mt-50 mb-50">
+      <div class="browser-box" data-arrow="->browser-logistics">
+        <img>
+        <p>//www.mystore.com
+      </div>
+      <div class="browser-box" id="browser-logistics">
+        <img>
+        <p>//logistics.mystore
+        <p class="browser-box_error no-wrap fragment">Cypress error!!
+      </div>
+    </div>
+    <p class="fragment mt-75">In a single test, you can't visit a first domain, and then visit another
+  </div>
+  
+</div>
+
+
+</section>
+
+<section class="text-level-3">
+
+<div class="flex-row flex-row--center mt-200">
+  <div class="bubble bubble-bottom-left">
+    <i class="emo emo-36 emoji-face_with_monocle"></i>
+    <span class="bubble__text">So how to verify my app works well within an ecosystem?
+  </div>
+</div>
+
+<div class="mt-300 fragment">
+  <p>The <code>cy.origin()</code> command allows to navigate on another domain
+  <ul class="no-bullets mt-0">
+    <li class="mt-50"><i class="emo emoji-thumbup"></i>Good for a quick action on another domain, like <a href="https://docs.cypress.io/guides/end-to-end-testing/social-authentication">social authentication</a>
+    <li class="mt-50"><i class="emo emoji-x"></i>Page objects don't work on the other origin
+  </ul>
+</div>
+
+<div class="fragment">
+  <p class="mt-200">A better alternative:
+  <ul>
+    <li class="mt-25"><!--Make direct calls to the other app <strong>api</strong> from your test, and check the created data--> Check the data created in the other app with <strong>direct calls</strong> to this other app <strong>api</strong> (see <code>cy.request()</code>)
+  </ul>
+</div>
+
+</section>
