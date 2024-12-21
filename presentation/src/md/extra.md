@@ -14,7 +14,7 @@
   </ul>
   <p>Useful links
   <ul style="font-size:75%">
-    <li class="url-link"> COOKIES
+    <li> COOKIES
   </ul>
 
 </div>

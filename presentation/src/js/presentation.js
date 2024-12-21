@@ -17,43 +17,6 @@ function rewriteSlideTitles() {
   })
 }
 
-export function wrapExercice() {
-  document.querySelectorAll('.exercice').forEach(source => {
-
-    const parent = source.parentNode
-
-    const newDiv = document.createElement("div");
-    newDiv.classList.add("exercice", "flex-row", "tiny-gap");
-
-    const left = document.createElement("div");
-    left.classList.add("exercice__content");
-    newDiv.appendChild(left)
-
-    const img = document.createElement('img')
-    img.classList.add("exercice__image");
-    newDiv.appendChild(img)
-
-    left.innerHTML = source.innerHTML
-
-    newDiv.classList.add(
-      ...source.className.split(' ').filter(c => c !== 'exercice')
-    )
-
-    parent.removeChild(source)
-    parent.appendChild(newDiv)
-
-  })
-}
-
-export function wrapLinks() {
-  document.querySelectorAll('.url-link').forEach(source => {
-    const url = source.innerHTML.replaceAll(/\s/g, '')
-    const linkHtml = `<a href="${url}">${url}</a>`
-    source.innerHTML = linkHtml
-  })
-}
-
-
 export function computePartNumbers() {
   let count = 1
   document.querySelectorAll('part-number').forEach((element) => {
@@ -110,8 +73,6 @@ export function init() {
   Reveal.on('ready', event => {
     rewriteSlideTitles()
     fillPartTocs()
-    //wrapExercice()
-    wrapLinks()
     fillCompleteToc(),
     computePartNumbers(),
     setTimeout(
@@ -142,6 +103,6 @@ export function init() {
       }, 300 // wait for the element to be visible
     )
   });
-  Reveal.on('overviewshown', event => { eraseArrows() });
-  Reveal.on('overviewhidden', event => { drawArrows() });
+  Reveal.on('overviewshown', eraseArrows);
+  Reveal.on('overviewhidden', drawArrows);
 }
