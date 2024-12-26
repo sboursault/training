@@ -1,50 +1,11 @@
-
 {%- await include('../components/slide--partTitle.ejs', {title: 'Continuous integration'}); %}
 
-
-<section class="text-level-2">
-
-    <h2>Excluding and Including Tests</h2>
-
-    <div class="fragment">
-    <p>Sometimes you just want to run a subset of your test suite
-    <ul>
-    <li>Some test may not run on all environments
-    <li>You may want to run only the test concerning a specific domain
-    </ul>
-    </div>
-
-    <div class="fragment mt-100">
-
-    <pre><code class="typescript">
-        it('sends an email to confirm email address', { tags: ['sendsEmail'] }, () => {
-            // some verification that may not work on all environments
-        })
-    </code></pre> 
-
-    <pre><code class="sh mt-150r">
-        npx cypress run --env grepTags=-sendsEmail  # runs all tests without the tag 'sendsEmail'
-        </code></pre> 
-
-    </div>
-
-    <small class="fragment mt-200r">
-    How to use <strong>@cypress/grep</strong>:<br>
-    <span>https://github.com/cypress-io/cypress/tree/develop/npm/grep</span>
-    </small>
-
-</section>
-
+{%- await include('excluding-tests.ejs'); %}
 {%- await include('define-env-variables-exercise.ejs'); %}
 {%- await include('manage-env-variables-exercise.ejs'); %}
 
-
-
 {% if(pw) { %}
-
 <section>
-
-<h2>TODO TRACE VIEWER</h2>
-
+  <h2>TODO TRACE VIEWER</h2>
 </section>
 {% } %}

@@ -1,0 +1,49 @@
+<section class="text-level-2">
+  <h2>Excluding tests</h2>
+
+  <p class="fragment">
+    Sometimes you just want to run a subset of your test suite
+  </p>
+  <ul>
+    <li class="fragment">
+      Some tests may not run on all environments (yet)
+      <ul>
+        <li>Tests that send emails, tests that require a specific back-end</li>
+        <li>Tests that verify a feature under development</li>
+      </ul>
+    </li>
+    <li class="fragment">
+      You may want to run only the tests related to a specific domain
+    </li>
+  </ul>
+
+  <div class="fragment mt-100">
+    <if-pw>
+        <pre><code class="typescript">
+          test('sends an email to confirm email address',
+            { tag: ['@sendsEmail'] },
+            async ({ page }) => {
+              // some verification that may not work on all environments
+            });
+        </code></pre>
+        <pre><code class="sh mt-150r">
+          npx playwright test --grep-invert @sendsEmail  # runs the tests without the tag 'sendsEmail'
+        </code></pre>
+      </if-pw>
+    <if-cy>
+      <pre><code class="typescript">
+        it('sends an email to confirm email address', { tags: ['@sendsEmail'] }, () => {
+            // some verification that may not work on all environments
+        })
+      </code></pre>
+      <pre><code class="sh mt-150r">
+        npx cypress run --env grepTags=-@sendsEmail  # runs the tests without the tag '@sendsEmail'
+      </code></pre>
+    </if-cy>
+  </div>
+
+  <small class="fragment mt-200r">
+    How to use <strong>@cypress/grep</strong>:<br />
+    <span>https://github.com/cypress-io/cypress/tree/develop/npm/grep</span>
+  </small>
+</section>

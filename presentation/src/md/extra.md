@@ -12,7 +12,7 @@
   <ul>
     <li>On the calls that don't pass anymore, add a <code>X-CSRFToken</code> header with the value from the <code>csrftoken</code> cookie.
   </ul>
-  <p>Useful links
+  <p>Links
   <ul style="font-size:75%">
     <li> COOKIES
   </ul>
