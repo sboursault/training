@@ -1,0 +1,78 @@
+<section class="text-level-3">
+  <p class="text-level-1">
+    A simple option: write <strong>extra tests</strong> for
+    <strong>specific devices</strong>
+  </p>
+
+  <div class="fragment">
+    <if-pw>
+        <pre><code class="typescript">
+          import { devices } from '@playwright/test';
+          
+          test.describe('Nav Menus', () => {
+            
+            test.describe('720p desktop resolution', () => {
+              test.use({ 
+                viewport: { width: 1280, height: 720 },
+              });
+              test('Display full header', async ({ page }) => {
+                await expect(page.locator('nav .desktop-menu')).toBeVisible();
+                await expect(page.locator('nav .mobile-menu')).toBeHidden();
+              })
+            })
+            
+            test.describe('iphone-13 resolution', () => {
+              test.use({ 
+                ...devices['iPhone 13']
+              });
+              test('Display mobile menu on click', async ({ page }) => {
+                await expect(page.locator('nav .desktop-menu')).toBeHidden();
+                await expect(page.locator('nav .mobile-menu')).toBeVisible();
+                await page.locator('nav .mobile-menu i.hamburger').click();
+                await expect(page.locator('ul.slideout-menu')).toBeVisible();
+              })
+            })
+          })
+        </code></pre>
+    
+        <small class="mt-100r">
+          Adapted from:
+          <span>https://docs.cypress.io/api/commands/viewport#Organize-desktop-vs-mobile-tests-separately</span>
+        </small>
+      </if-pw>
+    <if-cy>
+      <pre><code class="typescript">
+        describe('Nav Menus', () => {
+          context('720p desktop resolution', () => {
+            beforeEach(() => {
+              cy.viewport(1280, 720)
+            })
+            it('displays full header', () => {
+              cy.get('nav .desktop-menu').should('be.visible')
+              cy.get('nav .mobile-menu').should('not.be.visible')
+            })
+          })
+        
+          context('iphone-5 resolution', () => {
+            beforeEach(() => {
+              cy.viewport('iphone-5')
+            })
+            it('displays mobile menu on click', () => {
+              cy.get('nav .desktop-menu').should('not.be.visible')
+              cy.get('nav .mobile-menu')
+                .should('be.visible')
+                .find('i.hamburger')
+                .click()
+              cy.get('ul.slideout-menu').should('be.visible')
+            })
+          })
+        })
+      </code></pre>
+  
+      <small class="mt-100r">
+        Source:
+        <span>https://docs.cypress.io/api/commands/viewport#Organize-desktop-vs-mobile-tests-separately</span>
+      </small>
+    </if-cy>
+  </div>
+</section>
