@@ -1,0 +1,69 @@
+<section class="text-level-3">
+  <p class="text-level-1">
+    A safer option : Run the <strong>entire suite</strong> with
+    <strong>different viewports</strong>
+  </p>
+
+  <div class="mt-200 fragment">
+    <p>
+      Create a <code>.env</code> file for a specific device and add the scripts for
+      this device
+    </p>
+
+    <if-pw>
+      <pre><code class="ini">
+          # .env.mobile
+          DEVICE=iPhone 6
+      </code></pre>
+
+      playwright simplifie la parallelisation des tests...
+      donc faire un launcher specific mobile semble moyen
+      il vaut mieux utiliser la parallelisation native
+      ? ou tout simplement passer le projet en paramètre avec --project ?
+
+      à quoi ressemle les rapports si je lance sur plusieurs projets ?
+
+      https://playwright.dev/docs/test-projects
+
+      <pre class="mt-150" style="width: 100%">
+        <code data-trim class="json" data-line-numbers="1,6">
+          // package.json
+          ...
+          "scripts": {
+          ...
+          "cy:open:e2e": "dotenvx run -f .env.e2e -- npx cypress open --e2e --browser chromium",
+          "cy:open:e2e:mobile": "dotenvx run -f .env.e2e -f .env.mobile -- npx cypress open --e2e --browser chromium",
+          ...
+          },
+          ...
+        </code>
+      </pre>
+    </if-pw>
+    <if-cy>
+      <pre><code class="ini">
+        # .env.mobile
+        CYPRESS_VIEWPORT_WIDTH=375
+        CYPRESS_VIEWPORT_HEIGHT=667
+      </code></pre>
+  
+      <pre class="mt-150" style="width: 100%">
+        <code data-trim class="json" data-line-numbers="1,6">
+          // package.json
+          ...
+          "scripts": {
+          ...
+          "cy:open:e2e": "dotenvx run -f .env.e2e -- npx cypress open --e2e --browser chromium",
+          "cy:open:e2e:mobile": "dotenvx run -f .env.e2e -f .env.mobile -- npx cypress open --e2e --browser chromium",
+          ...
+          },
+          ...
+        </code>
+      </pre>
+    </if-cy>
+  </div>
+
+  <small class="fragment mt-200">
+    More on configuring the <strong>viewport</strong>:<br />
+    <span> https://docs.cypress.io/api/commands/viewport </span>
+  </small>
+</section>
