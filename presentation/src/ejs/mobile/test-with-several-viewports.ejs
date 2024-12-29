@@ -73,55 +73,73 @@
   </if-cy>
 </section>
 
-<section class="text-level-3">
-  <p class="text-level-1 mt-100">
+<section class="text-level-2">
+  <p class="text-level-1">
     Some tests must be adapted for a specific device
   </p>
-
-  <div class="fragment">
-    <p class="mt-150">
-      Create an <code>isMobile()</code> function to execute different commands
+  <if-pw>
+    <p class="mt-100">
+      Inject <code>isMobile</code> so you can adapt your test
     </p>
+    <pre class="fragment"><code class="ts">
+      test('MyTest', async ({ page, isMobile }) => {
+        // ...
+        if (isMobile) {
+          await page.swipe(".row:nth-child(2)", { direction: 'left' });
+        } else {
+          await page.locator(".row:nth-child(2) button.delete").click();
+        }
+        // ...
+      })
+    </code></pre>
+
+    <small class="mt-300r fragment">
+      <code>swipe()</code> is still experimental, but can be replaced by mouse events
+      <ul>
+        <li>https://www.restack.io/p/playwright-answer-mobile-testing-guide</li>
+        <li>https://playwright.dev/docs/api/class-androidinput#android-input-swipe</li>
+        <li>https://dpnkr.in/blog/swipe-playwright-testing</li>
+      </ul>
+    </small>
+
+  </if-pw>
 
 
+  <if-cy>
+    <div class="fragment">
+      <p class="mt-100">
+        Create an <code>isMobile()</code> function to execute different commands
+      </p>
+      <pre class="mt-50"><code class="ts">
+        // cypress/support/utils.ts
+        export const isMobile = () => {
+            return (
+              Cypress.config("viewportWidth") &lt; 500
+            )
+          } 
+      </code></pre>
 
+      <pre><code class="ts">
+        // cypress/e2e/feature.spec.ts
+        import { isMobile } from './../../support/utils';
+        
+        // ...
+        if (isMobile()) {
+          cy.get(".row").eq(2).realSwipe("toLeft");
+        } else {
+          cy.get(".row button.delete").eq(2).click();
+        }
+        // ...
+      </code></pre>
+    </div>
 
-test('MyTest', async ({ page, isMobile }) => {
-  
-  
-    <pre><code class="ts">
-  // cypress/support/utils.ts
-  export const isMobile = () => {
-      return (
-        Cypress.config("viewportWidth") &lt; 500
-      )
-    } 
-  </code></pre>
+    <small class="mt-150r fragment">
+      <code>realSwipe()</code> comes with the plugin
+      <strong>cypress-real-events</strong>:
+      <span>
+        https://github.com/dmtrKovalenko/cypress-real-events
+      </span>
+    </small>
 
-  
-
-    <pre><code class="ts">
-  // cypress/e2e/feature.spec.ts
-  import { isMobile } from './../../support/utils';
-  
-  // ...
-  if (isMobile()) {
-    cy.get(".row").eq(2).realSwipe("toLeft");
-  } else {
-    cy.get(".row button.delete").eq(2).click();
-  }
-  // ...
-  </code></pre>
-  </div>
-
-  <small class="mt-300r fragment">
-    <code>realSwipe()</code> comes with the plugin
-    <strong>cypress-real-events</strong>:
-    <a
-      class="ms-25r"
-      href="https://github.com/dmtrKovalenko/cypress-real-events"
-    >
-      https://github.com/dmtrKovalenko/cypress-real-events
-    </a>
-  </small>
+  </if-cy>
 </section>
