@@ -17,51 +17,6 @@
 
   
   
-  <section class="text-level-3">
-    <p class="text-level-1 mt-100">
-      Some tests must be adapted for a specific device
-    </p>
-  
-    <div class="fragment">
-      <p class="mt-150">
-        Create an <code>isMobile()</code> function to execute different commands
-      </p>
-  
-      <pre><code class="ts">
-  // cypress/support/utils.ts
-  export const isMobile = () => {
-      return (
-        Cypress.config("viewportWidth") &lt; 500
-      )
-    } 
-  </code></pre>
-  
-      <pre><code class="ts">
-  // cypress/e2e/feature.spec.ts
-  import { isMobile } from './../../support/utils';
-  
-  // ...
-  if (isMobile()) {
-    cy.get(".row").eq(2).realSwipe("toLeft");
-  } else {
-    cy.get(".row button.delete").eq(2).click();
-  }
-  // ...
-  </code></pre>
-    </div>
-  
-    <small class="mt-300r fragment">
-      <code>realSwipe()</code> comes with the plugin
-      <strong>cypress-real-events</strong>:
-      <a
-        class="ms-25r"
-        href="https://github.com/dmtrKovalenko/cypress-real-events"
-      >
-        https://github.com/dmtrKovalenko/cypress-real-events
-      </a>
-    </small>
-  </section>
-  
   <section class="text-level-2">
     <p class="text-level-1 mt-100">
       Some test may be irrelevant on some devices

@@ -4,40 +4,37 @@
     <strong>different viewports</strong>
   </p>
 
-  <div class="mt-200 fragment">
+  <div class="mt-100 fragment">
     <p>
-      Create a <code>.env</code> file for a specific device and add the scripts for
-      this device
+      In <code>playwright.config.ts</code>, uncomment the projects for the
+      phones you want to verify
     </p>
 
     <if-pw>
-      <pre><code class="ini">
-          # .env.mobile
-          DEVICE=iPhone 6
+      <pre class="mt-50"><code class="typescript">
+        import { defineConfig, devices } from '@playwright/test';
+
+        export default defineConfig({
+          projects: [
+            {
+              name: 'chromium',
+              use: { ...devices['Desktop Chrome'] },
+            },
+            {
+              name: 'firefox',
+              use: { ...devices['Desktop Firefox'] },
+            },
+            {
+              name: 'Mobile Chrome',
+              use: { ...devices['Pixel 5'] },
+            },
+            {
+              name: 'Mobile Safari',
+              use: { ...devices['iPhone 12'] },
+            },
+          ],
+        });
       </code></pre>
-
-      playwright simplifie la parallelisation des tests...
-      donc faire un launcher specific mobile semble moyen
-      il vaut mieux utiliser la parallelisation native
-      ? ou tout simplement passer le projet en paramètre avec --project ?
-
-      à quoi ressemle les rapports si je lance sur plusieurs projets ?
-
-      https://playwright.dev/docs/test-projects
-
-      <pre class="mt-150" style="width: 100%">
-        <code data-trim class="json" data-line-numbers="1,6">
-          // package.json
-          ...
-          "scripts": {
-          ...
-          "cy:open:e2e": "dotenvx run -f .env.e2e -- npx cypress open --e2e --browser chromium",
-          "cy:open:e2e:mobile": "dotenvx run -f .env.e2e -f .env.mobile -- npx cypress open --e2e --browser chromium",
-          ...
-          },
-          ...
-        </code>
-      </pre>
     </if-pw>
     <if-cy>
       <pre><code class="ini">
@@ -45,7 +42,7 @@
         CYPRESS_VIEWPORT_WIDTH=375
         CYPRESS_VIEWPORT_HEIGHT=667
       </code></pre>
-  
+
       <pre class="mt-150" style="width: 100%">
         <code data-trim class="json" data-line-numbers="1,6">
           // package.json
@@ -62,8 +59,69 @@
     </if-cy>
   </div>
 
-  <small class="fragment mt-200">
-    More on configuring the <strong>viewport</strong>:<br />
-    <span> https://docs.cypress.io/api/commands/viewport </span>
+  <if-pw>
+    <small class="fragment mt-100">
+      More on configuring <strong>projects</strong>:<br />
+      <span>https://playwright.dev/docs/test-projects</span>
+    </small>
+  </if-pw>
+  <if-cy>
+    <small class="fragment mt-200">
+      More on configuring the <strong>viewport</strong>:<br />
+      <span> https://docs.cypress.io/api/commands/viewport </span>
+    </small>
+  </if-cy>
+</section>
+
+<section class="text-level-3">
+  <p class="text-level-1 mt-100">
+    Some tests must be adapted for a specific device
+  </p>
+
+  <div class="fragment">
+    <p class="mt-150">
+      Create an <code>isMobile()</code> function to execute different commands
+    </p>
+
+
+
+
+test('MyTest', async ({ page, isMobile }) => {
+  
+  
+    <pre><code class="ts">
+  // cypress/support/utils.ts
+  export const isMobile = () => {
+      return (
+        Cypress.config("viewportWidth") &lt; 500
+      )
+    } 
+  </code></pre>
+
+  
+
+    <pre><code class="ts">
+  // cypress/e2e/feature.spec.ts
+  import { isMobile } from './../../support/utils';
+  
+  // ...
+  if (isMobile()) {
+    cy.get(".row").eq(2).realSwipe("toLeft");
+  } else {
+    cy.get(".row button.delete").eq(2).click();
+  }
+  // ...
+  </code></pre>
+  </div>
+
+  <small class="mt-300r fragment">
+    <code>realSwipe()</code> comes with the plugin
+    <strong>cypress-real-events</strong>:
+    <a
+      class="ms-25r"
+      href="https://github.com/dmtrKovalenko/cypress-real-events"
+    >
+      https://github.com/dmtrKovalenko/cypress-real-events
+    </a>
   </small>
 </section>
