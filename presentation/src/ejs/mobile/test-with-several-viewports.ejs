@@ -74,9 +74,7 @@
 </section>
 
 <section class="text-level-2">
-  <p class="text-level-1">
-    Some tests must be adapted for a specific device
-  </p>
+  <p class="text-level-1">Some tests must be adapted for a specific device</p>
   <if-pw>
     <p class="mt-100">
       Inject <code>isMobile</code> so you can adapt your test
@@ -94,16 +92,17 @@
     </code></pre>
 
     <small class="mt-300r fragment">
-      <code>swipe()</code> is still experimental, but can be replaced by mouse events
+      <code>swipe()</code> is still experimental, but can be replaced by mouse
+      events
       <ul>
         <li>https://www.restack.io/p/playwright-answer-mobile-testing-guide</li>
-        <li>https://playwright.dev/docs/api/class-androidinput#android-input-swipe</li>
+        <li>
+          https://playwright.dev/docs/api/class-androidinput#android-input-swipe
+        </li>
         <li>https://dpnkr.in/blog/swipe-playwright-testing</li>
       </ul>
     </small>
-
   </if-pw>
-
 
   <if-cy>
     <div class="fragment">
@@ -136,10 +135,75 @@
     <small class="mt-150r fragment">
       <code>realSwipe()</code> comes with the plugin
       <strong>cypress-real-events</strong>:
-      <span>
-        https://github.com/dmtrKovalenko/cypress-real-events
-      </span>
+      <span> https://github.com/dmtrKovalenko/cypress-real-events </span>
     </small>
+  </if-cy>
+</section>
 
+<section class="text-level-3">
+  <p class="text-level-1">Some test may be irrelevant on some devices</p>
+
+  <div class="mt-100r fragment">
+    <p>Remember, <strong>tags</strong> can be used to include or exclude some tests</p>
+
+    <if-pw>
+      <pre class="mt-25r" >
+        <code class="ts">
+          test('A feature available only available on desktop', { tag: ['@desktopOnly']},
+            async ({ page }) => {
+              // ...
+            }
+          )
+        </code>
+      </pre>
+
+      <div class="fragment">
+        <p class="mt-75r" >Specific exclusions can be set by projects in <code>playwright.config.ts</code></p>
+  
+        <pre class="mt-50r"><code class="typescript">
+          import { defineConfig, devices } from '@playwright/test';
+  
+          export default defineConfig({
+            projects: [
+              {
+                name: 'chromium',
+                use: { ...devices['Desktop Chrome'] },
+              },
+              {
+                name: 'Mobile Chrome',
+                use: { ...devices['Pixel 5'] },
+                grepInvert: [/@mobileOnly/]
+              },
+            ],
+          });
+        </code></pre>
+      </div>
+    </if-pw>
+
+    <if-cy>
+      <pre>
+        <code class="ts">
+          describe('A feature available on desktop only', () => {
+            it('does something', { tags: ['desktopOnly'] }, () => {
+              // ...
+            })
+          })
+        </code>
+      </pre>
+    </if-cy>
+  </div>
+
+  <if-pw>
+    <small class="mt-150r fragment">
+      More on <strong>test project</strong> config: 
+      <span>https://playwright.dev/docs/api/class-testproject</span>
+    </small>
+  </if-pw>
+
+  <if-cy>
+    <small class="mt-400 fragment">
+      How to use <strong>@cypress/grep</strong>:<br />
+      <span>https://github.com/cypress-io/cypress/tree/develop/npm/grep</span>
+    </small>
   </if-cy>
 </section>
