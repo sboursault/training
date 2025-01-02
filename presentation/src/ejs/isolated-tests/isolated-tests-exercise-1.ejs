@@ -1,57 +1,45 @@
 <section>
+  <h2
+    data-tags="practice"
+    data-toc-label="Verify the delivery fees"
+    class="text-size-heading-3"
+  >
+    Specification workshop for the delivery fees
+  </h2>
 
-<h2 data-tags="practice" data-toc-label="Verify the delivery fees" class="text-size-heading-3">Specification workshop for the delivery fees</h2>
+  <app-exercise class="mt-500r">
+    <p>The Product Owner presents a new story:</p>
+    <div class="indented italic bold">
+      Delivery fees are free for orders over 30€
+    </div>
+    <p class="mt-200r">As a team, define acceptance criteria for this story</p>
+  </app-exercise>
 
-
-<app-exercise class="mt-500r">
-  <p>The Product Owner presents a new story:</p>
-  <div class="indented italic bold">
-    Delivery fees are free for orders over 30€
-  </div>
-  <p class="mt-200r">As a team, define acceptance criteria for this story</p>
-
-</app-exercise>
-
-<aside class="notes">
+  <aside class="notes">
     <u>Possible list:</u>
     <ul>
-        <li>basket amount bellow 30€ -> delivery fees are charged 7€
-        <li>basket amount equals 30€ -> delivery fees are charged 7€
-        <li>basket amount over 30€   -> delivery fees offered
+      <li>basket amount bellow 30€ -> delivery fees are charged 7€</li>
+      <li>basket amount equals 30€ -> delivery fees are charged 7€</li>
+      <li>basket amount over 30€ -> delivery fees offered</li>
     </ul>
-</aside>
-
-
+  </aside>
 </section>
 <section>
+  <h2 data-tags="practice" data-toc-exclude class="text-size-heading-3">
+    Automate the delivery fees verification
+  </h2>
 
-    <h2 data-tags="practice" data-toc-exclude class="text-size-heading-3">
-Automate the delivery fees verification
-
-</h2>
-
-<app-exercise class="mt-150">
-  <p>Let's code
-  <ul>
-    <li>Automate the most valuable acceptance criteria to verify the delivery fees
+  <app-exercise class="mt-500r">
+    <p>Let's code</p>
     <ul>
-      <li>For baskets strictly bellow 30€, we charge 7€ delivery fees
-      <li>For baskets strictly over 30€, we offer delivery fees
+      <li>
+        Automate the most valuable acceptance criteria to verify the delivery
+        fees
+        <ul>
+          <li>For baskets strictly bellow 30€, we charge 7€ delivery fees</li>
+          <li>For baskets strictly over 30€, we offer delivery fees</li>
+        </ul>
+      </li>
     </ul>
-  </ul>
-</app-exercise>
-
-<app-help class="mt-600r">
-  <div style="columns: 2">
-  <p>Functions</p>
-  <ul>
-    <li>?
-  </ul>
-  <p>Links</p>
-  <ul>
-    <li>https://docs.cypress.io/api/table-of-contents</li>
-  </ul>
-</div> 
-</app-help>
-
+  </app-exercise>
 </section>

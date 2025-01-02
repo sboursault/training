@@ -81,8 +81,8 @@
   <app-exercise class="mt-350r fragment">
     <p>Let's code
     <ul>
-      <li>Through the product api, create a new product sold 30€
-      <li>Verify the delivery fees with this product
+      <li>Through the product api, create a 30€ product 
+      <li>Verify the delivery fees for this product
       <li>Rewrite so that the test shows the price of the new product
     </ul>
   </app-exercise>
@@ -96,8 +96,10 @@
       </ul>
       <p>Links
       <ul>
-        <li>https://docs.cypress.io/api/table-of-contents</li>
-        <li>https://docs.cypress.io/api/commands/request</li>
+        <if-cy>
+          <li>https://docs.cypress.io/api/table-of-contents</li>
+          <li>https://docs.cypress.io/api/commands/request</li>
+        </if-cy>
         <li>http://&lt;simple-commerce-instance&gt;/api/admin/products/</li>
       </ul>
     </div>
