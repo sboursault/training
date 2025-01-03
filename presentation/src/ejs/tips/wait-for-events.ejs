@@ -1,36 +1,60 @@
 <section class="text-level-3">
   <h2>Wait for events, not time</h2>
 
-  <p class="fragment">Your browser is asynchronous!</p>
+  <p class="mt-0 fragment">The browser is asynchronous!</p>
 
-  <p class="fragment">When can I verify the result of async operations?</p>
+  <p class="mt-0 fragment"
+  style="margin-left: 3em">...So when can we verify the result of async operations?</p>
+  
+  <if-pw>
+    <pre class="mt-50 fragment"><code class="typescript">
+      // bad
+      await page.waitForTimeout(2000); // waits for 2 seconds
+    
+      // good
+      await expect(page.getByText('welcome')).toBeVisible();
+    
+      // bad
+      expect(await page.getByText('welcome').isVisible()).toBe(true);
+      
+      // good
+      // Start waiting for request before goto. Note no await.
+      const requestPromise = page.waitForRequest('**/*logo*.png');
+      await page.goto('https://wikipedia.org');
+      const request = await requestPromise;
+    </code></pre>
+  </if-pw>
+  <if-cy>
+    <pre class="mt-50 fragment"><code class="typescript">
+      // bad
+      cy.wait(2000)  // wait for 2 seconds
+  
+      // Good
+      cy.contains('Welcome')  // wait for the page to contain "welcome"
+  
+      // Good
+      cy.intercept('POST', '/api/basket/add-product').as('addProductToBasket')
+      cy.get('button').contains('Add to basket').click()
+      cy.wait('@addProductToBasket')  // wait for a http response
+    </code></pre>
+  </if-cy>
 
-  <pre class="mt-50 fragment"><code class="typescript">
-    // bad
-    cy.wait(2000)  // wait for 2 seconds
-
-    // Good
-    cy.contains('Welcome')  // wait for the page to contain "welcome"
-
-    // Good
-    cy.intercept('POST', '/api/basket/add-product').as('addProductToBasket')
-    cy.get('button').contains('Add to basket').click()
-    cy.wait('@addProductToBasket')  // wait for a http response
-  </code></pre>
-
-  <p class="fragment mt-150">
+  <p class="fragment mt-100">
     Wait for <strong>events</strong> to avoid long and flaky tests
   </p>
 
-  <p class="fragment mt-200">
-    <small
-      >More on cypress implicit waits:
-      <a
-        href="https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting"
-        >https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</a
-      ></small
-    >
-  </p>
+  <small class="mt-50 fragment">
+    <p>More on implicit waits:</p>
+    <if-pw>
+      <ul>
+        <li>https://playwright.dev/java/docs/actionability</li>
+        <li>https://playwright.dev/docs/events</li>
+      </ul>
+    </if-pw>
+    <if-cy>
+      <span>https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</span>
+    </if-cy>
+  </small>
 
   <aside class="notes">Testing offten involves asynchronous behaviours</aside>
 </section>
