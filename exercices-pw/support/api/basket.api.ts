@@ -3,7 +3,7 @@ import { APIRequestContext } from '@playwright/test'
 export class BasketApi {
   readonly request: APIRequestContext
 
-  constructor(request) {
+  constructor(request: APIRequestContext) {
     this.request = request
   }
 

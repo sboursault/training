@@ -1,0 +1,103 @@
+<section class="text-level-3">
+  <h2>Type checking and linting</h2>
+
+  <p>Playwright run tests even if there are TypeScript compilation errors</p>
+
+  <div class="fragment">
+    <p class="mt-100r">
+      To add <strong>type checking</strong>, configure <code>typescript</code>
+    </p>
+
+    <pre><code class="sh">
+          # install `typescript` as devDependency
+          npm install --save-dev typescript
+
+          # create a tsconfig.json
+          npx tsc --init   
+      </code></pre>
+
+    <p>...and run <code>tsc --noEmit</code> before your tests</p>
+
+    <pre><code class="json">
+          // package.json
+          {
+            ...
+            "scripts": {
+              "pretest": "tsc --noEmit",
+              "pw:test-ui": "npm run pretest && npx playwright test --ui"
+            },
+            ...
+          }
+      </code></pre>
+  </div>
+</section>
+
+<section class="text-level-1">
+
+  <p class="mt-300r">A common error is to miss an <code>await</code>,</p>
+  <p class="mt-25r fragment" style="margin-left: 2em;">...which can lead to unpredictable behavior</p>
+
+  <p class="mt-200r fragment"><strong>Linting</strong> can detect these errors immediately</p>
+
+  <div class="fragment">
+    <p class="mt-200r">
+      Install <code>eslint</code> as devDependency
+    </p>
+    <pre><code class="sh">
+      npm install --save-dev eslint @eslint/js typescript typescript-eslint
+    </code></pre>
+  </div>
+
+</section>
+<section class="text-level-2">
+
+  <p class="mt-100r">Configure ESLint with a <code>eslint.config.mjs</code> file</p>
+
+  <pre><code class="ts">
+        import eslint from '@eslint/js'
+        import tseslint from 'typescript-eslint'
+        
+        export default tseslint.config(
+          eslint.configs.recommended,
+          tseslint.configs.recommended,
+          {
+            // parserOptions is required by the rules that use type information
+            languageOptions: {
+              parserOptions: {
+                project: true,
+                tsconfigRootDir: './tsconfig.json',
+              },
+            },
+            rules: {
+              '@typescript-eslint/no-floating-promises': 'error',
+              '@typescript-eslint/await-thenable': 'error',
+            },
+          },
+          {
+            ignores: ['eslint.config.mjs'],
+          }
+        )
+      </code></pre>
+</section>
+
+<section>
+  <p class="mt-400r">And now you can run the <strong>type checking</strong> and <strong>linting</strong> before your tests</p>
+  <pre><code class="json">
+          // package.json
+          {
+            ...
+            "scripts": {
+              "pretest": "tsc --noEmit && npx eslint",
+              "pw:test-ui": "npm run pretest && npx playwright test --ui"
+            },
+            ...
+          }
+      </code></pre>
+
+  <small class="mt-800r">
+    Source:
+    <span
+      >https://www.checklyhq.com/blog/playwright-type-checking-and-linting/</span
+    >
+  </small>
+</section>

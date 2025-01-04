@@ -3,7 +3,7 @@ import { BrowserContext } from '@playwright/test'
 export class LoginApi {
   readonly context: BrowserContext
 
-  constructor(context) {
+  constructor(context: BrowserContext) {
     this.context = context
   }
 
