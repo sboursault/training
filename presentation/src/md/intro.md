@@ -36,18 +36,22 @@ Note:
 
 ---
 
-## Intent of this course - WIP
-
-- Understanding good practices to include E2E tests in your development process
-- Practice with cypress api and tools
-- Be at ease to search more info in the cypress documentation
-- Understand practices to write more maintanable, performant and stable E2E tests, whatever the product you use
+<h2>Intent of this course</h2>
 
 
-- Concevoir des tests bout en bout (E2E)
-- Automatiser ces tests avec Cypress
-- Améliorer la lisibilité et l'évolutivité des tests E2E
-- Créer une suite de tests rapides et extensibles (basée sur des tests isolés et répétables)
+<ul class="fragment">
+  <li>Design End-to-End tests</li>
+  <li>Automize tests with {%= e2eTool %}</li>
+  <li>Improve their maintainability</li>
+  <li>Make the test suite fast and extensible (using isolation and repeatability)</li>
+</ul>
+
+<p class="fragment">And also...</p>
+<ul>
+  <li class="fragment">Discover {%= e2eTool %} documentation</li>
+  <li class="fragment">Include E2E tests in your development process</li>
+</ul>
+
 
 Note:
 - On va voir un ensemble de bonnes pratiques
