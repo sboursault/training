@@ -1,5 +1,62 @@
+{% if(pw) { %}
+<section class="text-level-3">
+  <h2>Locators that resist changes</h2>
+
+  <p class="fragment">Locators are used to find element(s) on the page</p>
+
+  <div class="mt-100r fragment">
+    <p>Playwright's recommanded locators</p>
+    <ul class="text-level-5">
+      <li>
+        <code>page.getByRole()</code> to locate by explicit and implicit
+        accessibility attributes
+      </li>
+      <li><code>page.getByText()</code> to locate by text content</li>
+      <li>
+        <code>page.getByLabel()</code> to locate a form control by associated
+        label's text
+      </li>
+      <li>
+        <code>page.getByPlaceholder()</code> to locate an input by placeholder
+      </li>
+      <li>
+        <code>page.getByAltText()</code> to locate an element, usually image, by
+        its text alternative
+      </li>
+      <li>
+        <code>page.getByTitle()</code> to locate an element by its title
+        attribute
+      </li>
+      <li>
+        <code>page.getByTestId()</code> to locate an element based on its
+        data-testid attribute (other attributes can be configured)
+      </li>
+    </ul>
+  </div>
+
+  <div class="mt-100r fragment">
+    <p>Example</p>
+    <pre class="mt-50r">
+      <code class="ts">
+        await page.getByLabel('User Name').fill('John');
+        await page.getByLabel('Password').fill('secret-password');
+        await page.getByRole('button', { name: 'Sign in' }).click();
+        await expect(page.getByText('Welcome, John!')).toBeVisible();
+      </code>
+    </pre>
+  </div>
+
+  <small class="fragment mt-200r">
+    More on using these locators:
+    <span> https://playwright.dev/docs/locators </span>
+  </small>
+</section>
+{% } %}
+
 <section>
-  <h2>Selectors</h2>
+  {% if(cy) { %}
+  <h2>Locators that resist changes</h2>
+  {% } %}
 
   <div class="fragment">
     <p class="mt-300"><strong>CSS selector</strong> examples:</p>
@@ -60,7 +117,9 @@
       </code></pre>
   </if-cy>
 
-  <p class="mt-150r fragment">Selectors must be specific enough to resist DOM changes</p>
+  <p class="mt-150r fragment">
+    Selectors must be specific enough to resist DOM changes
+  </p>
 
   <p class="mt-200r fragment">Can we do better?</p>
 </section>
