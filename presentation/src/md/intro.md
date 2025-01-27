@@ -39,17 +39,18 @@ Note:
 <h2>Intent of this course</h2>
 
 
-<ul class="fragment">
+<ul class="mt-150r fragment">
   <li>Design End-to-End tests</li>
   <li>Automize tests with {%= e2eTool %}</li>
   <li>Improve their maintainability</li>
   <li>Make the test suite fast and extensible (using isolation and repeatability)</li>
 </ul>
 
-<p class="fragment">And also...</p>
+<div class="mt-200r fragment">
+<p class="">And also...</p>
 <ul>
-  <li class="fragment">Discover {%= e2eTool %} documentation</li>
-  <li class="fragment">Include E2E tests in your development process</li>
+  <li>Discover {%= e2eTool %} documentation</li>
+  <li>Include E2E tests in your development process</li>
 </ul>
 
 

@@ -2,7 +2,7 @@
 
 {%- await include('small-tests.ejs'); %}
 
-
+<!-- Adapt all this to pw -->
 
 
 {% if(cy) { %}
@@ -16,3 +16,8 @@
 {% if(cy) { %}
 {%- await include('multiple-domains.ejs'); %}
 {% } %}
+
+{% if(pw) { %}
+{%- await include('type-cheking-and-linting.ejs'); %}
+{% } %}
+
