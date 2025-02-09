@@ -1,4 +1,5 @@
 verify/audit accessibility
+
 https://playwright.dev/docs/accessibility-testing
 
 AI ?
@@ -9,3 +10,12 @@ probably not good for beginners
 faut-il faire une page sur les assertions ?
 
 <!-- vérifier rendu en impression -->
+
+revoir Wait for events, not time
+pour faire davantage participer l'apprenant
+
+
+https://playwright.dev/docs/screenshots
+
+
+Speed up your tests - part 2 - not finished

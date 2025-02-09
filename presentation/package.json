@@ -6,7 +6,7 @@
     "browser-sync": "npx browser-sync start --server build --watch --reload-delay 200 --browser=chromium /",
     "start:cy": "npm run build-and-watch cy & npm run browser-sync",
     "start:pw": "npm run build-and-watch pw & npm run browser-sync",
-    "build": "sass src/css:bcuild/css",
+    "build": "sass src/css:build/css",
     "serve": "http-server -c-1 -p 8081 -o /",
     "test-open": "http-server -c-1 -p 8082 -o /test"
   },

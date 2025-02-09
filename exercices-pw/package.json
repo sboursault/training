@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pw:test": "dotenvx run -f .env -- npx playwright test",
     "pw:test-ui": "dotenvx run -f .env -- npx playwright test --ui",
     "pw:test-ui:e2e": "dotenvx run -f .env.e2e -- npx playwright test --ui"
   },

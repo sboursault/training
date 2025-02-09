@@ -58,35 +58,15 @@
   <h2>Locators that resist changes</h2>
   {% } %}
 
-  <h3 class="mt-50r no-bullet">CSS selectors</h3>
 
-  <div class="fragment">
-    <p class="mt-300"><strong>CSS selector</strong> examples:</p>
-    <ul>
-      <li>https://www.w3schools.com/cssref/css_selectors.php</li>
-    </ul>
-  </div>
-
-  <div class="fragment">
-    <p class="mt-300">
-      Verify your selectors with <strong>css-and-xpath-checker</strong> (chrome
-      plugin):
-    </p>
-    <ul>
-      <li>
-        <a
-          href="https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe"
-        >
-          https://chromewebstore.google.com/detail/css-and-xpath-checker/...
-        </a>
-      </li>
-    </ul>
-  </div>
 </section>
 
-<section>
-  <p class="mt-50r bold">Let's evaluate these locators</p>
-
+<section class="text-level-">
+  <h3>Let's evaluate these locators</h3>
+ 
+  <p class="fragment">
+    Selectors must be <strong>specific enough</strong> to resist DOM changes
+  </p>
   <if-pw>
     <table class="mt-50r no-border" style="width: max-content;">
       <tr class="fragment">
@@ -168,18 +148,14 @@
       </tr>
     </table>
   </if-pw>
- 
-  <p class="fragment text-center">
-    Selectors must be <strong>specific enough</strong> to resist DOM changes
-  </p>
-
-  <p class="mt-200r fragment">Can we do better?</p>
 </section>
 
 <section>
-  <p class="mt-300r">Add a <strong>test id</strong> on your html elements</p>
+  <h3>Consider using test ids</h3>
 
-  <pre><code class="html">
+  <p class="fragment">Add a <code>data-testid</code> attribute on your html elements</p>
+
+  <pre class="fragment"><code class="html">
     &lt;button
       type="submit"
       class="btn btn btn-secondary"
@@ -191,16 +167,19 @@
 
   <if-pw>
     <pre class="mt-150 fragment"><code class="typescript">
-        page.getByTestId('navbar-search-button')  // simple, more efficient
-                                                  // and more robust to changes
+      page.getByTestId('navbar-search-button')
     </code></pre>
   </if-pw>
   <if-cy>
     <pre class="mt-150 fragment"><code class="typescript">
-        cy.get(`[data-testid=navbar-search-button]`)  // simple, more efficient
-        .click()                                    // and more robust to changes
+      cy.get(`[data-testid=navbar-search-button]`)
+        .click()                        
     </code></pre>
   </if-cy>
+
+  <p class="mt-200r text-center fragment">
+    Locators based on <strong>test ids</strong> are simple, efficient and robust to changes
+  </p>
 
   <aside class="notes">
     The data-cy attribute will not change from CSS style or JS behavioral

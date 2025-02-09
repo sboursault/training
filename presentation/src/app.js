@@ -46,7 +46,6 @@ function renderTemplatedFiles() {
         )
       )
     )
-    .then(() => console.log('renderTemplatedFiles finished'))
 }
 
 function copyAssets() {

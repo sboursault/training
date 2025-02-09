@@ -71,8 +71,6 @@ $block-margin: 32px;
     text-align: left;
   }
 
-  
-
   a {
     color: var(--r-link-color);
     text-decoration: underline;
@@ -95,17 +93,20 @@ $block-margin: 32px;
         width: 100%;
       }
     }
+    
     &:not(.no-border) tr:not(.fragment) + tr:not(.fragment) td {
       border-top: 1px solid;
     }
+
     &:not(.no-border) tr.fragment.visible + tr.fragment.visible td {
       border-top: 1px solid;
     }
 
-    
+    &.vspace-half td {
+      padding-top: 0.25em;
+      padding-bottom: 0.25em;
+    }
   }
-
-
 
   .slide--presentation-title h1 {
     line-height: 1.1em;
@@ -466,7 +467,7 @@ $block-margin: 32px;
     margin-bottom: 6em;
   }
   */
-  
+
   @media print {
     .part-toc {
       margin-top: 3em !important;

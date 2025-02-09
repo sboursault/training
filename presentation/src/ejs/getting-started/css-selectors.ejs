@@ -1,0 +1,115 @@
+<section class="text-level-4">
+  <h2>CSS selectors for the automation engineer</h2>
+
+  <p class="mt--50 fragment">
+    We use <strong>CSS selectors</strong> to pick a specific html element in the
+    page
+  </p>
+
+  <div class="mt-100r fragment">
+    <div class="flex-row" style="gap: 1em">
+      <pre style="width: unset">
+        <code class="html" data-trim data-line-numbers="11-13" style="padding-right:2em;">
+          &lt;html>
+            &lt;body>
+              &lt;main class="container">
+                &lt;h1>
+                  CSS selectors
+                &lt;/h1>
+                &lt;article>  
+                  &lt;h2>
+                    Hello
+                  &lt;/h2>
+                  &lt;p class="box info" id="message">
+                    Select me!
+                  &lt;/p>
+                &lt;/article>
+              &lt;/main>
+            &lt;/body>
+          &lt;/html>
+        </code>
+      </pre>
+      <div class="fragment" style="flex-basis: 55%">
+        <p>How can we select the <code>p</code> tag ?</p>
+        <table
+          class="mt-50r no-border vspace-half"
+          style="width: 100%; font-size: 0.9em"
+        >
+          <tr class="fragment">
+            <td width="50%">‣ With an <b>Element selector</b></td>
+            <td>
+              <code>p</code>
+            </td>
+          </tr>
+          <tr class="fragment">
+            <td>‣ With an <b>Class selector</b></td>
+            <td>
+              <code>.info</code>
+            </td>
+          </tr>
+          <tr class="fragment">
+            <td>‣ With an <b>Id selector</b></td>
+            <td>
+              <code>#message</code>
+            </td>
+          </tr>
+          <tr class="fragment">
+            <td>‣ Or by combining selectors</td>
+            <td>
+              <code>.container&nbsp;p.box.info</code>
+            </td>
+          </tr>
+        </table>
+        <p class="fragment">Or with advanced combinators</p>
+        <table
+          class="mt-50r no-border vspace-half"
+          style="width: 100%; font-size: 0.9em"
+        >
+          <tr class="fragment">
+            <td width="50%">‣ Immediate child</td>
+            <td>
+              <code>article&nbsp;>&nbsp;p</code>
+            </td>
+          </tr>
+          <tr class="fragment">
+            <td>‣ General sibling</td>
+            <td>
+              <code>h2&nbsp;~&nbsp;p</code>
+            </td>
+          </tr>
+          <tr class="fragment">
+            <td>‣ Adjacent sibling</td>
+            <td>
+              <code>h2&nbsp;+&nbsp;p</code>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="fragment">
+    <p class="mt-75r">Verify your selectors</p>
+    <ul>
+      <li class="fragment">
+        With <strong>css-and-xpath-checker</strong>:
+        <a
+          href="https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe"
+        >
+          https://chromewebstore.google.com/detail/css-and-xpath-checker/...
+        </a>
+      </li>
+      <li class="fragment">
+        Or with <code>$$('')</code> in the browser's console
+      </li>
+    </ul>
+  </div>
+
+  <!--
+  now we can combine them
+  .modal p.message.warning
+  
+  Advanced combinators immediate child: header > h1 general
+  sibling: h1 ~ p Adjacent sibling: h1 + p then try to add a html fragment here
+  -->
+</section>
