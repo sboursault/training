@@ -15,7 +15,5 @@ revoir Wait for events, not time
 pour faire davantage participer l'apprenant
 
 
-https://playwright.dev/docs/screenshots
-
 
 Speed up your tests - part 2 - not finished

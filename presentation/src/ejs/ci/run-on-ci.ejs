@@ -1,0 +1,70 @@
+<section class="text-level-3">
+    <h2>Run tests as part of your CI</h2>
+  
+    <div class="fragment">
+      <p class="mt-200r">
+        When running on a CI/CD pipeline, set a <code>CI</code> env variable
+      </p>
+      <pre><code class="sh">
+        export CI=true;
+      </code></pre>
+    </div>
+  
+    <div class="flex-row tiny-gap mt-200r fragment">
+      <div>
+        <p>By default, with the <code>CI</code> variable</p>
+        <ul>
+          <li>Failing tests are retried twice</li>
+          <li>
+            An html report is generated in
+            <code>&lt;your-project>/playwright-report</code>
+          </li>
+          <li>
+            A <code>traces.zip</code> file is generated for each test on the first
+            retry in <code>&lt;your-project>/test-results</code>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <pre><code class="ts" data-line-numbers="6,8,12">
+          // playwright.config.ts
+          import { defineConfig } from '@playwright/test';
+      
+          export default defineConfig({
+            // ...
+            retries: process.env.CI ? 2 : 0,
+            // ...
+            reporter: 'html',
+            // ...
+            use: {
+              // ...
+              trace: 'on-first-retry',
+              // ...
+            },
+          });
+        </code></pre>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <h2>Inspect traces</h2>
+    <p class="mt-200r">
+      When a tests fails on CI, the console output is offten insufficiant to fix
+      the issue
+    </p>
+    <p class="mt-200r"><strong>Trace files</strong> give much more information</p>
+  
+    <div class="mt-200r fragment">
+      <p>Inspect traces with</p>
+      <ul>
+        <li>
+          <code>npx playwright show-trace path/to/trace.zip</code>
+        </li>
+        <li class="fragment">
+          Or with the online trace viewer:
+          <span>https://playwright.dev/docs/trace-viewer</span>
+        </li>
+      </ul>
+    </div>
+  </section>

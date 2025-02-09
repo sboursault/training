@@ -1,11 +1,7 @@
 {%- await include('../components/slide--partTitle.ejs', {title: 'Continuous integration'}); %}
-
+{% if(pw) { %}
+{%- await include('run-on-ci.ejs'); %}
+{% } %}
 {%- await include('excluding-tests.ejs'); %}
 {%- await include('define-env-variables-exercise.ejs'); %}
 {%- await include('manage-env-variables-exercise.ejs'); %}
-
-{% if(pw) { %}
-<section>
-  <h2>TODO TRACE VIEWER</h2>
-</section>
-{% } %}

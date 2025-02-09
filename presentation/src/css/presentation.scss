@@ -317,13 +317,15 @@ $block-margin: 32px;
   }
 
   pre {
-    &:first-child {
-      margin-top: 0;
-    }
+    
 
     margin: var(--r-block-margin) auto 0;
     width: 90%;
     min-width: fit-content;
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     code.hljs {
       max-height: unset;
@@ -345,6 +347,7 @@ $block-margin: 32px;
     border-radius: 5px;
     padding: 5px 8px;
     margin: 0 0.1em;
+    white-space: nowrap;
   }
 
   .part-title {
