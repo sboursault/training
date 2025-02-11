@@ -218,7 +218,7 @@ See "Ask 'what happens instead?'" in 50 quick ideas. Maybe you can subscribe to 
 ## Find alternative paths
 
 Use the ‘shaded figs’ to find alternative path to verify
-<br/><span class="text-level-6">from [50 quick ideas to improve your tests](https://leanpub.com/50quickideas-tests/read)</span>
+<br/><span class="text-size-6">from [50 quick ideas to improve your tests](https://leanpub.com/50quickideas-tests/read)</span>
 
 <table class="text-level-5">
 <tr class="fragment">
@@ -286,7 +286,7 @@ Use the ‘shaded figs’ to find alternative path to verify
 
 ## Resources
 
-<div class="text-level-6">
+<div class="text-size-6">
 
 - https://christianlydemann.com/the-most-common-cypress-mistakes/
 - Joe C automation guide

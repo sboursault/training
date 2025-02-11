@@ -1,28 +1,61 @@
-<section class="text-level-3">
+<section class="text-level-5">
   <h2 class="mb-50">Wait for events, not time</h2>
 
   <p class="mt-0 fragment">The browser is asynchronous!</p>
 
-  <p class="mt-0 fragment"
-  style="margin-left: 3em">...So when can we verify the result of async operations?</p>
-  
+  <p class="mt-0 fragment" style="margin-left: 3em">
+    ...So when can we verify the result of async operations?
+  </p>
+
   <if-pw>
-    <pre class="mt-50 fragment"><code class="typescript">
-      // bad
-      await page.waitForTimeout(2000); // waits for 2 seconds
-    
-      // good
-      await expect(page.getByText('welcome')).toBeVisible();
-    
-      // bad
-      expect(await page.getByText('welcome').isVisible()).toBe(true);
-      
-      // good
-      // Start waiting for request before goto. Note no await.
-      const requestPromise = page.waitForRequest('**/*logo*.png');
-      await page.goto('https://wikipedia.org');
-      const request = await requestPromise;
-    </code></pre>
+    <table class="no-border">
+      <tr class="fragment">
+        <td width="25%">
+          <pre class="text-size-7"><code class="ts" data-trim>
+            await page.waitForTimeout(2000)
+          </code></pre>
+        </td>
+        <td width="25%">Wait for 2s</td>
+        <td width="" class="flex">
+          <i class="emo emoji-slightly_frowning_face"></i>
+          Avoid waiting for fixed delay!<br />
+          May be used for debugging...
+        </td>
+      </tr>
+      <tr class="fragment">
+        <td>
+          <pre class="text-size-7"><code class="ts" data-trim>
+            await expect(page.getByText('welcome'))
+              .toBeVisible();                      
+          </code></pre>
+        </td>
+        <td>Implicit wait</td>
+        <td class=""><i class="emo emoji-thumbup"></i>Great!</td>
+      </tr>
+      <tr class="fragment">
+        <td>
+          <pre class="text-size-7"><code class="ts" data-trim>
+            expect(
+              await page.getByText('welcome').isVisible()
+            ).toBe(true);                    
+          </code></pre>
+        </td>
+        <td>No wait</td>
+        <td class=""><i class="emo emoji-x"></i>Bad!</td>
+      </tr>
+      <tr class="fragment">
+        <td>
+          <pre class="text-size-7"><code class="ts" data-trim>
+            const requestPromise =
+              page.waitForRequest('**/*logo*.png');
+            await page.goto('https://wikipedia.org');
+            const request = await requestPromise;
+          </code></pre>
+        </td>
+        <td>Start waiting for request before <code>goto()</code>.<br>Note no <code>await</code></td>
+        <td class=""><i class="emo emoji-thumbup"></i>Good</td>
+      </tr>
+    </table>
   </if-pw>
   <if-cy>
     <pre class="mt-50 fragment"><code class="typescript">
@@ -39,10 +72,6 @@
     </code></pre>
   </if-cy>
 
-  <p class="fragment mt-100">
-    Wait for <strong>events</strong> to avoid long and flaky tests
-  </p>
-
   <small class="mt-50 fragment">
     <p>More on implicit waits:</p>
     <if-pw>
@@ -52,9 +81,9 @@
       </ul>
     </if-pw>
     <if-cy>
-      <span>https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</span>
+      <span
+        >https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</span
+      >
     </if-cy>
   </small>
-
-  <aside class="notes">Testing offten involves asynchronous behaviours</aside>
 </section>

@@ -1,7 +1,6 @@
 @mixin flex-row {
   display: flex;
   justify-content: space-between;
-  gap: 2em;
   align-items: center;
   z-index: inherit; /* with auto, the links within are not clickable*/
 }
