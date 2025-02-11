@@ -8,52 +8,52 @@
   </p>
 
   <if-pw>
-    <table class="no-border">
-      <tr class="fragment">
-        <td width="25%">
+    <table class="mt-50r no-border">
+      <tr>
+        <td class="fragment" width="25%">
           <pre class="text-size-7"><code class="ts" data-trim>
             await page.waitForTimeout(2000)
           </code></pre>
         </td>
-        <td width="25%">Wait for 2s</td>
-        <td width="" class="flex">
+        <td class="fragment" width="25%">Wait for 2s</td>
+        <td width="" class="flex fragment">
           <i class="emo emoji-slightly_frowning_face"></i>
           Avoid waiting for fixed delay!<br />
           May be used for debugging...
         </td>
       </tr>
-      <tr class="fragment">
-        <td>
+      <tr>
+        <td class="fragment">
           <pre class="text-size-7"><code class="ts" data-trim>
             await expect(page.getByText('welcome'))
-              .toBeVisible();                      
+              .toBeVisible()
           </code></pre>
         </td>
-        <td>Implicit wait</td>
-        <td class=""><i class="emo emoji-thumbup"></i>Great!</td>
+        <td class="fragment">Implicit wait</td>
+        <td class="fragment"><i class="emo emoji-thumbup"></i>Great!</td>
       </tr>
       <tr class="fragment">
-        <td>
+        <td class="fragment">
           <pre class="text-size-7"><code class="ts" data-trim>
             expect(
               await page.getByText('welcome').isVisible()
-            ).toBe(true);                    
+            ).toBe(true)
           </code></pre>
         </td>
-        <td>No wait</td>
-        <td class=""><i class="emo emoji-x"></i>Bad!</td>
+        <td class="fragment">No wait</td>
+        <td class="fragment"><i class="emo emoji-x"></i>Bad!</td>
       </tr>
-      <tr class="fragment">
-        <td>
+      <tr>
+        <td class="fragment">
           <pre class="text-size-7"><code class="ts" data-trim>
             const requestPromise =
-              page.waitForRequest('**/*logo*.png');
-            await page.goto('https://wikipedia.org');
-            const request = await requestPromise;
+              page.waitForRequest('**/*logo*.png')
+            await page.goto('https://wikipedia.org')
+            const request = await requestPromise
           </code></pre>
         </td>
-        <td>Start waiting for request before <code>goto()</code>.<br>Note no <code>await</code></td>
-        <td class=""><i class="emo emoji-thumbup"></i>Good</td>
+        <td class="fragment">Start waiting for request before <code>goto()</code>.<br>Note no <code>await</code></td>
+        <td class="fragment"><i class="emo emoji-thumbup"></i>Good</td>
       </tr>
     </table>
   </if-pw>
