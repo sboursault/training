@@ -21,7 +21,11 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: 1 /*undefined*/,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+    ['list'],
+    ['json', {  outputFile: 'test-results.json' }],
+    ["allure-playwright"]
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   timeout:10000,
   use: {
@@ -47,10 +51,10 @@ export default defineConfig({
       use: { ...devices['Desktop Firefox'] },
     },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {

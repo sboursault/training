@@ -72,14 +72,14 @@
       <tr class="fragment">
         <td>
           <if-pw>
-            <pre class=""><code class="typescript">
+            <pre><code class="typescript">
               page.locator(                   
                 '#navbar > form > button'
               )   
             </code></pre>
           </if-pw>
           <if-cy>
-            <pre class=""><code class="typescript">
+            <pre><code class="typescript">
               cy.get('#navbar > form > button')
                 .click()                       
             </code></pre>
@@ -87,8 +87,8 @@
         </td>
         <td>
           <ul class="no-bullets">
-            <li class="fragment">
-              <i class="emo emoji-x"></i>breaks with slight changes in the DOM
+            <li class="flex-row fragment">
+              <i class="emo emoji-x"></i>Breaks with slight changes in the DOM
             </li>
           </ul>
         </td>
@@ -96,7 +96,7 @@
       <tr class="fragment">
         <td>
           <if-pw>
-            <pre class=""><code class="typescript">
+            <pre><code class="typescript">
               page.locator(                   
                 'button',       
                 {hasText: 'Search'}   
@@ -104,7 +104,7 @@
             </code></pre>
           </if-pw>
           <if-cy>
-            <pre class=""><code class="typescript">
+            <pre><code class="typescript">
               cy.get('button')
                 .contains('Search')
                 .click()
@@ -113,8 +113,8 @@
         </td>
         <td>
           <ul class="no-bullets">
-            <li class="fragment">
-              <i class="emo emoji-x"></i>breaks when another button appears <br> with
+            <li class="flex-row fragment">
+              <i class="emo emoji-x"></i>Breaks when another button appears <br> with
               the same text
             </li>
           </ul>
@@ -123,7 +123,7 @@
       <tr class="fragment">
         <td>
           <if-pw>
-            <pre class=""><code class="typescript">
+            <pre><code class="typescript">
               page.locator(           
                 '#navbar button'),
                 {hasText: 'Search'}
@@ -131,7 +131,7 @@
             </code></pre>
           </if-pw>
           <if-cy>
-            <pre class=""><code class="typescript">
+            <pre><code class="typescript">
               cy.get('#navbar button') 
                 .contains('Search')    
                 .click()  
@@ -140,8 +140,8 @@
         </td>
         <td>
           <ul class="no-bullets">
-            <li class="fragment">
-              <i class="emo emoji-thumbup"></i>Quite good :)
+            <li class="flex-row fragment">
+              <i class="emo emoji-thumbup"></i>Quite good
             </li>
           </ul>
         </td>

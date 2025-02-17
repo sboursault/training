@@ -1,4 +1,4 @@
-import { expect, type Locator, type Page } from '@playwright/test'
+import test, { expect, type Locator, type Page } from '@playwright/test'
 import { url as catalogPageUrl } from './catalogue.page'
 
 export class LoginPage {
@@ -17,7 +17,9 @@ export class LoginPage {
   }
 
   async goto() {
-    await this.page.goto('/accounts/login/')
+    await test.step('go to login page', async () => {
+      await this.page.goto('/accounts/login/')
+    })
   }
 
   async fill(username: string, password: string) {
