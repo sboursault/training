@@ -1,50 +1,60 @@
 <section class="text-level-5">
   <h2 class="mb-50">Wait for events, not time</h2>
 
-  <p class="mt-0 fragment">The browser is asynchronous!</p>
+  <p class="mt-0 fragment" data-fragment-index="1">
+    The browser is asynchronous!
+  </p>
 
-  <p class="mt-0 fragment" style="margin-left: 3em">
+  <p class="mt-0 fragment" style="margin-left: 3em" data-fragment-index="2">
     ...So when can we verify the result of async operations?
   </p>
 
   <if-pw>
     <table class="mt-50r no-border">
       <tr>
-        <td class="fragment" width="25%">
+        <td class="fragment" width="25%" data-fragment-index="3">
           <pre class="text-size-7"><code class="ts" data-trim>
             await page.waitForTimeout(2000)
           </code></pre>
         </td>
-        <td class="fragment" width="25%">Wait for 2s</td>
-        <td width="" class="flex fragment">
+        <td class="fragment text-center" width="25%" data-fragment-index="4">
+          Wait for 2s
+        </td>
+        <td width="" class="flex fragment text-center" data-fragment-index="4">
           <i class="emo emoji-slightly_frowning_face"></i>
           Avoid waiting for fixed delay!<br />
           May be used for debugging...
         </td>
       </tr>
       <tr>
-        <td class="fragment">
+        <td class="fragment" data-fragment-index="5">
           <pre class="text-size-7"><code class="ts" data-trim>
             await expect(page.getByText('welcome'))
               .toBeVisible()
           </code></pre>
         </td>
-        <td class="fragment">Implicit wait</td>
-        <td class="fragment"><i class="emo emoji-thumbup"></i>Great!</td>
+        <td class="fragment text-center" data-fragment-index="6">
+          Implicit wait
+        </td>
+        <td class="fragment text-center" data-fragment-index="6">
+          <i class="emo emoji-thumbup"></i>Good
+        </td>
       </tr>
-      <tr class="fragment">
-        <td class="fragment">
+      <tr>
+        <td class="fragment" data-fragment-index="7">
           <pre class="text-size-7"><code class="ts" data-trim>
             expect(
               await page.getByText('welcome').isVisible()
             ).toBe(true)
           </code></pre>
         </td>
-        <td class="fragment">No wait</td>
-        <td class="fragment"><i class="emo emoji-x"></i>Bad!</td>
+        <td class="fragment text-center" data-fragment-index="8">No wait</td>
+        <td class="fragment text-center" data-fragment-index="8">
+          <i class="emo emoji-x"></i>Bad!
+        </td>
       </tr>
       <tr>
-        <td class="fragment">
+        <td class="fragment" data-fragment-index="9">
           <pre class="text-size-7"><code class="ts" data-trim>
             const requestPromise =
               page.waitForRequest('**/*logo*.png')
@@ -52,8 +62,13 @@
             const request = await requestPromise
           </code></pre>
         </td>
-        <td class="fragment">Start waiting for request before <code>goto()</code>.<br>Note no <code>await</code></td>
-        <td class="fragment"><i class="emo emoji-thumbup"></i>Good</td>
+        <td class="fragment text-center" data-fragment-index="10">
+          Start waiting for request before <code>goto()</code>.<br />Note no
+          <code>await</code>
+        </td>
+        <td class="fragment text-center" data-fragment-index="10">
+          <i class="emo emoji-thumbup"></i>Good
+        </td>
       </tr>
     </table>
   </if-pw>
