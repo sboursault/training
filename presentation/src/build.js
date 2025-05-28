@@ -24,7 +24,7 @@ const templates = ['index.html'].concat(
     .map((file) => 'md/' + file)
 )
 
-function renderTemplatedFiles() {
+export function renderTemplatedFiles() {
   return fs
     .mkdir('build/md', { recursive: true })
     .then(() =>
@@ -71,5 +71,3 @@ console.log(templates)
 
 await copyAssets()
 await renderTemplatedFiles()
-
-chokidar.watch('src').on('all', () => renderTemplatedFiles())
