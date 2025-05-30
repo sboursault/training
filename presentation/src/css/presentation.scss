@@ -651,27 +651,27 @@ $block-margin: 32px;
   }
 
   .emoji-x {
-    background-image: url(/img/emoji/x.png);
+    background-image: url(../img/emoji/x.png);
   }
 
   .emoji-thumbup {
-    background-image: url(/img/emoji/+1.png);
+    background-image: url(../img/emoji/+1.png);
   }
 
   .emoji-face_with_monocle {
-    background-image: url(/img/emoji/face_with_monocle.png);
+    background-image: url(../img/emoji/face_with_monocle.png);
   }
 
   .emoji-nerd_face {
-    background-image: url(/img/emoji/nerd_face.png);
+    background-image: url(../img/emoji/nerd_face.png);
   }
 
   .emoji-face_with_symbols_on_mouth {
-    background-image: url(/img/emoji/face_with_symbols_on_mouth.png);
+    background-image: url(../img/emoji/face_with_symbols_on_mouth.png);
   }
 
   .emoji-slightly_frowning_face {
-    background-image: url(/img/emoji/slightly_frowning_face.png);
+    background-image: url(../img/emoji/slightly_frowning_face.png);
   }
 
   .exercice {
@@ -688,7 +688,7 @@ $block-margin: 32px;
       width: 25%;
       min-width: 300px;
       margin-bottom: 50px;
-      content: url(/img/coding.png);
+      content: url(../img/coding.png);
     }
 
     pre {
@@ -710,7 +710,7 @@ $block-margin: 32px;
       min-width: 300px;
       margin: auto 0 auto auto;
       transform: translate(0, 12%);
-      content: url(/img/coding.png);
+      content: url(../img/coding.png);
     }
 
     pre {
