@@ -64,6 +64,7 @@
       <li class="fragment"><i class="emo emoji-x"></i>Different understanding
       <li class="fragment"><i class="emo emoji-thumbup"></i>Fewer regressions
       <li class="fragment"><i class="emo emoji-x"></i>Tests are difficult to write and to maintain <br> (the program wasn't designed with the tests in mind)
+      <li class="fragment"><i class="emo emoji-x"></i>Longer process
     </ul>
     <div class="sticky fragment">
         <div class="sticky__content">
