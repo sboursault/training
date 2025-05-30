@@ -68,9 +68,9 @@ describe('html processor', function () {
         result,
         `<html>
          <body>
-           <if-pw>
+           
              <span>hello</hello>
-           </if-pw>
+           
          </body>
        </html>`
       )
@@ -96,9 +96,9 @@ describe('html processor', function () {
         result,
         `<html>
          <body>
-           <if-cy>
+           
              <span>hello</hello>
-           </if-cy>
+           
          </body>
        </html>`
       )
