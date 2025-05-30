@@ -30,25 +30,25 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: playwright/package-lock.json
+        cache-dependency-path: presentation/package-lock.json
     
     - name: Install dependencies
       run: |
-        cd playwright
+        cd presentation
         npm install
 
     - name: Run tests
       run: |
-        cd playwright
+        cd presentation
         npm test
 
     - name: Generate static site
       run: |
-        cd playwright
+        cd presentation
         npm run build-pw
         cd ..
         mkdir _site
-        mv playwright/build _site/playwright
+        mv presentation/build _site/playwright
 
     - name: Setup Pages
       id: pages
