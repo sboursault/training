@@ -1,14 +1,14 @@
 {
   "scripts": {
-    "test": "mocha",
-    "build-and-watch": "npm run sass:watch & node src/build.js & node src/watch-templates.js",
+    "watch": "npm run sass:watch & node src/watch-templates.js",
     "sass:watch": "sass --watch src/css:build/css",
     "browser-sync": "npx browser-sync start --server build --watch --reload-delay 200 --browser=chromium /",
-    "cy": "npm run build-and-watch cy & npm run browser-sync",
-    "pw": "npm run build-and-watch pw & npm run browser-sync",
+    "cy": "npm run watch cy & npm run browser-sync",
+    "pw": "npm run watch pw & npm run browser-sync",
     "build-pw": "npm run sass && node src/build.js pw",
     "sass": "sass src/css:build/css",
     "serve": "http-server build -p 8081 -o /",
+    "test": "mocha",
     "test-open": "http-server -c-1 -p 8082 -o /test"
   },
   "type": "module",
