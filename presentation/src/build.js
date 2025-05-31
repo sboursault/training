@@ -1,6 +1,5 @@
 import ejs from 'ejs'
 import fs from 'fs/promises'
-import chokidar from 'chokidar'
 import {
   leftPadCode,
   processLinkTags,
@@ -25,30 +24,28 @@ const templates = ['index.html'].concat(
 )
 
 export function renderTemplatedFiles() {
-  return fs
-    .mkdir('build/md', { recursive: true })
-    .then(() =>
-      Promise.all(
-        templates.map((file) =>
-          ejs
-            .renderFile('src/' + file, context, {
-              openDelimiter: '{',
-              closeDelimiter: '}',
-              async: true,
-            })
-            .then((html) => removeFalsyIfs(html, context.pw ? 'pw' : 'cy'))
-            .then(leftPadCode)
-            .then(processLinkTags)
-            .then(processExerciseTags)
-            .then(processLinks)
-            .then(processHelpTags)
-            .then((html) => fs.writeFile('build/' + file, html))
-        )
+  return fs.mkdir('build/md', { recursive: true }).then(() =>
+    Promise.all(
+      templates.map((file) =>
+        ejs
+          .renderFile('src/' + file, context, {
+            openDelimiter: '{',
+            closeDelimiter: '}',
+            async: true,
+          })
+          .then((html) => removeFalsyIfs(html, context.pw ? 'pw' : 'cy'))
+          .then(leftPadCode)
+          .then(processLinkTags)
+          .then(processExerciseTags)
+          .then(processLinks)
+          .then(processHelpTags)
+          .then((html) => fs.writeFile('build/' + file, html))
       )
     )
+  )
 }
 
-function copyAssets() {
+export function copyAssets() {
   return Promise.all(
     ['css', 'img', 'js'].map((dir) =>
       fs.cp('src/' + dir, 'build/' + dir, { recursive: true })
