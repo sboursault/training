@@ -42,7 +42,7 @@ export function renderTemplatedFiles() {
           .then((html) => fs.writeFile('build/' + file, html))
       )
     )
-  )
+  ).then(() => console.log('Templates rendered'))
 }
 
 export function copyAssets() {
@@ -58,7 +58,7 @@ export function copyAssets() {
         })
       )
     )
-    .then(() => console.log('copyAssets finished'))
+    .then(() => console.log('Assets copied'))
 }
 
 console.log('Template context:')
