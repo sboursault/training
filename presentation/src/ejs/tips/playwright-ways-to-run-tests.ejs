@@ -1,0 +1,48 @@
+<section class="text-level-3">
+  <h2>Several ways to run tests</h2>
+
+  <ul>
+    <li class="fragment">
+      Headless (no browser window will be opened)
+      <pre class="mt-75r"><code class="sh">
+                npx playwright test
+            </code></pre>
+
+      <ul class="mt-75r">
+        <li>Best for continous integration</li>
+      </ul>
+      <p class="fs-60p">
+        More info:
+        <span>https://playwright.dev/docs/test-cli</span>
+      </p>
+    </li>
+    <li class="mt-200r fragment">
+      With UI
+      <pre class="mt-75r"><code class="sh">
+                npx playwright test --ui
+            </code></pre>
+
+      <ul class="mt-75r">
+        <li>To run test suites on your local machine</li>
+        <li>
+          To inspect what happened before, during, and after each step of your
+          tests
+        </li>
+      </ul>
+      <p class="fs-60p">
+        More info:
+        <span>https://playwright.dev/docs/test-ui-mode</span>
+      </p>
+    </li>
+    <li class="mt-200r fragment">
+      With VS Code
+      <ul class="mt-75r">
+        <li>The most convenient, especially to debug tests</li>
+      </ul>
+      <p class="fs-60p">
+        More info:
+        <span>https://playwright.dev/docs/getting-started-vscode</span>
+      </p>
+    </li>
+  </ul>
+</section>

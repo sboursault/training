@@ -2,8 +2,6 @@
 
 {%- await include('small-tests.ejs'); %}
 
-<!-- Adapt all this to pw -->
-
 
 {% if(cy) { %}
 
@@ -11,11 +9,17 @@
 
 {% } %}
 
-{%- await include('debug.ejs'); %}
 {%- await include('wait-for-events.ejs'); %}
+
 {% if(cy) { %}
 {%- await include('multiple-domains.ejs'); %}
+{%- await include('debug.ejs'); %}
 {% } %}
+
+{% if(pw) { %}
+{%- await include('playwright-ways-to-run-tests.ejs'); %}
+{% } %}
+
 
 {% if(pw) { %}
 {%- await include('type-cheking-and-linting.ejs'); %}
