@@ -38,10 +38,10 @@
     <p>Example</p>
     <pre class="mt-50r">
       <code class="ts">
-        await page.getByLabel('User Name').fill('John');
+        await page.getByLabel('Email address').fill('John');
         await page.getByLabel('Password').fill('secret-password');
-        await page.getByRole('button', { name: 'Sign in' }).click();
-        await expect(page.getByText('Welcome, John!')).toBeVisible();
+        await page.getByRole('button', { name: 'Log in' }).click();
+        await expect(page.getByText('Welcome back')).toBeVisible();
       </code>
     </pre>
   </div>
@@ -53,20 +53,15 @@
 </section>
 {% } %}
 
+{% if(cy) { %}
 <section>
-  {% if(cy) { %}
-  <h2>Locators that resist changes</h2>
-  {% } %}
-
-
+  <h2>Locators that resist changes - TODO</h2>
 </section>
+{% } %}
 
 <section class="text-level-">
   <h3>Let's evaluate these locators</h3>
  
-  <p class="fragment">
-    Selectors must be <strong>specific enough</strong> to resist DOM changes
-  </p>
   <if-pw>
     <table class="mt-50r no-border" style="width: max-content;">
       <tr class="fragment">
@@ -148,6 +143,9 @@
       </tr>
     </table>
   </if-pw>
+  <p class="fragment">
+    Selectors must be <strong>specific enough</strong> to resist DOM changes
+  </p>
 </section>
 
 <section>
