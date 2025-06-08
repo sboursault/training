@@ -42,6 +42,7 @@
         await page.getByLabel('Password').fill('secret-password');
         await page.getByRole('button', { name: 'Log in' }).click();
         await expect(page.getByText('Welcome back')).toBeVisible();
+        // lol c'est la solution de l'exo sur le login
       </code>
     </pre>
   </div>
@@ -51,19 +52,17 @@
     <span> https://playwright.dev/docs/locators </span>
   </small>
 </section>
-{% } %}
-
-{% if(cy) { %}
+{% } %} {% if(cy) { %}
 <section>
   <h2>Locators that resist changes - TODO</h2>
 </section>
 {% } %}
 
-<section class="text-level-">
+<section class="text-level-3">
   <h3>Let's evaluate these locators</h3>
- 
+
   <if-pw>
-    <table class="mt-50r no-border" style="width: max-content;">
+    <table class="mt-50r no-border" style="width: max-content">
       <tr class="fragment">
         <td>
           <if-pw>
@@ -109,38 +108,66 @@
         <td>
           <ul class="no-bullets">
             <li class="flex-row fragment">
-              <i class="emo emoji-x"></i>Breaks when another button appears <br> with
-              the same text
+              <i class="emo emoji-x"></i>Breaks when another button appears
+              <br />
+              with the same text
             </li>
           </ul>
         </td>
       </tr>
-      <tr class="fragment">
-        <td>
-          <if-pw>
+      <if-pw>
+        <tr class="fragment">
+          <td>
             <pre><code class="typescript">
               page.locator(           
                 '#navbar button'),
                 {hasText: 'Search'}
               )    
             </code></pre>
-          </if-pw>
-          <if-cy>
+          </td>
+          <td>
+            <ul class="no-bullets">
+              <li class="flex-row fragment">
+                <i class="emo emoji-thumbup"></i>Very good
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="fragment">
+          <td>
+            <pre><code class="typescript">
+              page
+                .locator('#navbar)
+                .getByRole('button', { name: 'Search' })         
+            </code></pre>
+          </td>
+          <td>
+            <ul class="no-bullets">
+              <li class="flex-row fragment">
+                <i class="emo emoji-thumbup"></i>Very good
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </if-pw>
+      <if-cy>
+        <tr class="fragment">
+          <td>
             <pre><code class="typescript">
               cy.get('#navbar button') 
                 .contains('Search')    
                 .click()  
             </code></pre>
-          </if-cy>
-        </td>
-        <td>
-          <ul class="no-bullets">
-            <li class="flex-row fragment">
-              <i class="emo emoji-thumbup"></i>Quite good
-            </li>
-          </ul>
-        </td>
-      </tr>
+          </td>
+          <td>
+            <ul class="no-bullets">
+              <li class="flex-row fragment">
+                <i class="emo emoji-thumbup"></i>Quite good
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </if-cy>
     </table>
   </if-pw>
   <p class="fragment">
@@ -151,7 +178,9 @@
 <section>
   <h3>Consider using test ids</h3>
 
-  <p class="fragment">Add a <code>data-testid</code> attribute on your html elements</p>
+  <p class="fragment">
+    Add a <code>data-testid</code> attribute on your html elements
+  </p>
 
   <pre class="fragment"><code class="html">
     &lt;button
@@ -176,7 +205,8 @@
   </if-cy>
 
   <p class="mt-200r text-center fragment">
-    Locators based on <strong>test ids</strong> are simple, efficient and robust to changes
+    Locators based on <strong>test ids</strong> are simple, efficient and robust
+    to changes
   </p>
 
   <aside class="notes">
