@@ -2,6 +2,7 @@
 {% if(pw) { %}
 {%- await include('run-on-ci.ejs'); %}
 {% } %}
+{%- await include('pending-tests.ejs'); %}
 {%- await include('excluding-tests.ejs'); %}
 {%- await include('define-env-variables-exercise.ejs'); %}
 {%- await include('manage-env-variables-exercise.ejs'); %}
