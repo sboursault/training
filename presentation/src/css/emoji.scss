@@ -1,0 +1,58 @@
+
+.emo {
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat; /* make the background image appear only once */
+    background-position: 0px 0px; /* equivalent to 'top left' */
+    vertical-align: middle; /* align the text vertically centered */
+    background-size: 28px;
+    display: inline-block;
+    width: 1.1em;
+    height: 28px;
+    padding: 0 12px 0 0;
+    margin-top: -4px;
+  }
+
+  .bubble .emo {
+    margin-left: 8px;
+    margin-right: 0;
+  }
+
+  .emo-36 {
+    background-size: 36px;
+    width: 40px;
+    height: 36px;
+  }
+
+  .emo-64 {
+    background-size: 64px;
+    width: 72px;
+    height: 64px;
+  }
+
+  .emoji-x {
+    background-image: url(../img/emoji/x.png);
+  }
+
+  .emoji-check {
+    background-image: url(../img/emoji/white_check_mark.png);
+  }
+
+  .emoji-thumbup {
+    background-image: url(../img/emoji/+1.png);
+  }
+
+  .emoji-face_with_monocle {
+    background-image: url(../img/emoji/face_with_monocle.png);
+  }
+
+  .emoji-nerd_face {
+    background-image: url(../img/emoji/nerd_face.png);
+  }
+
+  .emoji-face_with_symbols_on_mouth {
+    background-image: url(../img/emoji/face_with_symbols_on_mouth.png);
+  }
+
+  .emoji-slightly_frowning_face {
+    background-image: url(../img/emoji/slightly_frowning_face.png);
+  }

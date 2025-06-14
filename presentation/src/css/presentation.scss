@@ -86,7 +86,6 @@ $block-margin: 32px;
   }
 
   table {
-
     td {
       border: none;
       padding: 0.5em 0.5em 0.5em 0.5em;
@@ -95,7 +94,7 @@ $block-margin: 32px;
         width: 100%;
       }
     }
-    
+
     &:not(.no-border) tr:not(.fragment) + tr:not(.fragment) td {
       border-top: 1px solid;
     }
@@ -327,7 +326,6 @@ $block-margin: 32px;
   }
 
   pre {
-    
     margin: var(--r-block-margin) auto 0;
     width: 90%;
     min-width: fit-content;
@@ -391,6 +389,10 @@ $block-margin: 32px;
 
   .flex-row--center {
     justify-content: center;
+  }
+
+  .justify-content-flex-start {
+    justify-content: flex-start;
   }
 
   .flex-column {
@@ -572,23 +574,28 @@ $block-margin: 32px;
     font-size: var(--r-heading4-size);
   }
 
-  .text-level-1, .text-size-1 {
+  .text-level-1,
+  .text-size-1 {
     font-size: var(--r-main-font-size);
   }
 
-  .text-level-2, .text-size-2 {
+  .text-level-2,
+  .text-size-2 {
     font-size: 2.25rem;
   }
 
-  .text-level-3, .text-size-3 {
+  .text-level-3,
+  .text-size-3 {
     font-size: 2rem;
   }
 
-  .text-level-4, .text-size-4 {
+  .text-level-4,
+  .text-size-4 {
     font-size: 1.75rem;
   }
 
-  .text-level-5, .text-size-5 {
+  .text-level-5,
+  .text-size-5 {
     font-size: 1.5rem;
   }
 
@@ -627,68 +634,13 @@ $block-margin: 32px;
   .text-center {
     text-align: center;
   }
-  
+
   .text-justify-left {
     text-align: left;
   }
 
-
   .text-justify-right {
     text-align: right;
-  }
-
-  .emo {
-    background-color: transparent; /* make the button transparent */
-    background-repeat: no-repeat; /* make the background image appear only once */
-    background-position: 0px 0px; /* equivalent to 'top left' */
-    vertical-align: middle; /* align the text vertically centered */
-    background-size: 28px;
-    display: inline-block;
-    width: 1.1em;
-    height: 28px;
-    padding: 0 12px 0 0;
-    margin-top: -4px;
-  }
-
-  .bubble .emo {
-    margin-left: 8px;
-    margin-right: 0;
-  }
-
-  .emo-36 {
-    background-size: 36px;
-    width: 40px;
-    height: 36px;
-  }
-
-  .emo-64 {
-    background-size: 64px;
-    width: 72px;
-    height: 64px;
-  }
-
-  .emoji-x {
-    background-image: url(../img/emoji/x.png);
-  }
-
-  .emoji-thumbup {
-    background-image: url(../img/emoji/+1.png);
-  }
-
-  .emoji-face_with_monocle {
-    background-image: url(../img/emoji/face_with_monocle.png);
-  }
-
-  .emoji-nerd_face {
-    background-image: url(../img/emoji/nerd_face.png);
-  }
-
-  .emoji-face_with_symbols_on_mouth {
-    background-image: url(../img/emoji/face_with_symbols_on_mouth.png);
-  }
-
-  .emoji-slightly_frowning_face {
-    background-image: url(../img/emoji/slightly_frowning_face.png);
   }
 
   .exercice {

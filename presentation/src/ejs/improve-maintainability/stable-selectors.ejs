@@ -67,9 +67,7 @@
         <td>
           <if-pw>
             <pre><code class="typescript">
-              page.locator(                   
-                '#navbar > form > button'
-              )   
+              page.locator('#navbar > form > button')   
             </code></pre>
           </if-pw>
           <if-cy>
@@ -91,10 +89,7 @@
         <td>
           <if-pw>
             <pre><code class="typescript">
-              page.locator(                   
-                'button',       
-                {hasText: 'Search'}   
-              ) 
+              page.locator('button', {hasText: 'Search'}) 
             </code></pre>
           </if-pw>
           <if-cy>
@@ -107,10 +102,36 @@
         </td>
         <td>
           <ul class="no-bullets">
-            <li class="flex-row fragment">
-              <i class="emo emoji-x"></i>Breaks when another button appears
-              <br />
-              with the same text
+            <li class="fragment">
+              <div class="flex-row justify-content-flex-start">
+              <i class="emo emoji-check"></i>
+                Good...
+                <br />
+              </div>
+              <small class="fragment ms-200r">
+                ... but breaks when another button appears with the same text
+              </small>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr class="fragment">
+        <td>
+          <pre><code class="typescript">
+            page.getByRole('button', { name: 'Search' })
+          </code></pre>
+        </td>
+        <td>
+          <ul class="no-bullets">
+            <li class="fragment">
+              <div class="flex-row justify-content-flex-start">
+              <i class="emo emoji-check"></i>
+                Good...
+                <br />
+              </div>
+              <small class="fragment ms-200r">
+                ... but breaks when another button appears with the same text
+              </small>
             </li>
           </ul>
         </td>
@@ -137,8 +158,8 @@
           <td>
             <pre><code class="typescript">
               page
-                .locator('#navbar)
-                .getByRole('button', { name: 'Search' })         
+                .locator('#navbar')
+                .getByRole('button', { name: 'Search' })
             </code></pre>
           </td>
           <td>
