@@ -149,7 +149,7 @@ describe('html processor', function () {
         result,
         `<html>
          <body>
-           <a href="http://zut.com/#test">http://zut.com/#test</a>
+           <a href="http://zut.com/#test" target="_blank">http://zut.com/#test</a>
            <a href="http://truc" class="blod">https://other.com/</a>
          </body>
        </html>`
@@ -173,7 +173,7 @@ describe('html processor', function () {
         result,
         `<html>
          <body>
-           <a href="http://zut.com/#test">http://zut.com/#test</a>
+           <a href="http://zut.com/#test" target="_blank">http://zut.com/#test</a>
            <a href="http://truc" class="blod">https://other.com/</a>
            <ul><a href="http://...">http://</a></ul>
          </body>

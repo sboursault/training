@@ -37,12 +37,12 @@ export function processLinks(html) {
       /<a((?:\s+[\w]+="[^"]*")*)>([\s\S]*?)<\/a>/g,
       (match, attributes, link) => {
         if (attributes.indexOf('href="') !== -1) return match
-        return '<a' + attributes + ' href="' + link + '">' + link + '</a>'
+        return '<a' + attributes + ' href="' + link + '" target="_blank">' + link + '</a>'
       }
     )
     .replace(
       /(<(?!a )[^<]*?>\s*)(https?:\/\/\S*?)([\s<])/g,
-      '$1<a href="$2">$2</a>$3'
+      '$1<a href="$2" target="_blank">$2</a>$3'
     )
 }
 
