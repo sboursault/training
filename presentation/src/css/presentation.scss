@@ -391,8 +391,12 @@ $block-margin: 32px;
     justify-content: center;
   }
 
-  .justify-content-flex-start {
+  .justify-content--flex-start {
     justify-content: flex-start;
+  }
+
+  .justify-content--flex-end {
+    justify-content: flex-end;
   }
 
   .flex-column {
