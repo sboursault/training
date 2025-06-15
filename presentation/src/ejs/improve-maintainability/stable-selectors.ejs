@@ -42,7 +42,6 @@
         await page.getByLabel('Password').fill('secret-password');
         await page.getByRole('button', { name: 'Log in' }).click();
         await expect(page.getByText('Welcome back')).toBeVisible();
-        // lol c'est la solution de l'exo sur le login
       </code>
     </pre>
   </div>
@@ -62,7 +61,7 @@
   <h3>Let's evaluate these locators</h3>
 
   <if-pw>
-    <table class="mt-50r no-border" style="width: max-content">
+    <table class="mt--50 no-border" style="width: max-content">
       <tr class="fragment">
         <td>
           <if-pw>
@@ -118,7 +117,7 @@
       <tr class="fragment">
         <td>
           <pre><code class="typescript">
-            page.getByRole('button', { name: 'Search' })
+            page.getByRole('button', {name: 'Search'})
           </code></pre>
         </td>
         <td>
@@ -157,9 +156,9 @@
         <tr class="fragment">
           <td>
             <pre><code class="typescript">
-              page
+              page 
                 .locator('#navbar')
-                .getByRole('button', { name: 'Search' })
+                .getByRole('button', {name: 'Search'})
             </code></pre>
           </td>
           <td>
@@ -191,7 +190,7 @@
       </if-cy>
     </table>
   </if-pw>
-  <p class="fragment">
+  <p class="fragment mt-75r">
     Selectors must be <strong>specific enough</strong> to resist DOM changes
   </p>
 </section>
