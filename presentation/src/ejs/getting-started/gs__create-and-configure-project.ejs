@@ -1,40 +1,23 @@
-<section class="text-level-4">
+<section class="text-size-3">
   <h2 class="text-size-heading-3" data-tags="practice">
     Create and configure a {%= e2eTool %} project
   </h2>
 
-  <app-exercise class="mt-100r fragment">
+  <app-exercise class="mt-400r fragment">
     <p>Let's code</p>
     <ul>
       <li>Create a github project</li>
       <li>
         Install and configure {%= e2eTool %} to run typescript test
         <if-pw>
-          <li>
-            Install node types
-            <pre><code class="bash">
-                npm i --save-dev @types/node
-              </code></pre>
-          </li>
-          <li>
-            Create a `tsconfig.json` file to avoid compilation errors in Vscode
-            on node types (e.g. process)
-            <pre><code class="json">
-                {
-                  "compilerOptions": {
-                    "types": [
-                      "node"
-                    ]
-                  }
-                }
-            </code></pre>
-          </li>
+          <li>Run the tests with pw cli</li>
+          <li>Run the tests with vscode</li>
         </if-pw>
       </li>
     </ul>
   </app-exercise>
 
-  <app-help class="fragment mt-200r">
+  <app-help class="fragment mt-600r">
     <p>Links</p>
     <ul>
       <if-pw>
