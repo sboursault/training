@@ -1,70 +1,90 @@
 <section>
-    <h2>What is test isolation?</h2>
+  <h2>What is test isolation?</h2>
 
-    <div class="fragment mt-300">
-
-        <div class="fragment custom highlight-bold text-center">
-            <p>The result of a test should never depend
-                <br>on the result of preceding tests
-            </p>
-        </div>
-
+  <div class="fragment mt-300">
+    <div class="fragment custom highlight-bold text-center">
+      <p>
+        The result of a test should never depend <br />on the result of
+        preceding tests
+      </p>
     </div>
+  </div>
 
-    <div class="fragment mt-300">
-        <p> In practice
-        <ul>
-            <li class="fragment">Isolated tests can run in <strong>any order</strong>
-            <li class="fragment">Each test can run <strong>separately from the test suite</strong>
-            <li class="fragment">Ultimately, tests can even run in <strong>parallel</strong>!
-        </ul>
-    </div>
-
-    <aside class="notes">
-
-        In practice, when an isolated test fails, you don't need to investigate on what happend before.
-        The issue is either within the test or the verified code
-
-    </aside>
-
-
-</section>
-
-<section>
-
-    <h2>How to isolate tests?</h2>
-
-    <p class="fragment mt-150r">Before running, each test should set up the environment to a known state
-
-    <p class="fragment mt-150r">On the <strong>browser side</strong>, Cypress already cleans the context between each
-        test (DOM, cookies, local and session storage)
-
-    <div class="fragment mt-150r">
-        <p>On the <strong>server side</strong>, you may
-        <ul>
-            <li>create a dedicated user for each test
-            <li>create dedicated products, or verify their availability
-            <li>etc.
-        </ul>
-    </div>
-
-    <aside class="notes">
-        To enforce test isolation...
-    </aside>
-</section>
-
-<section>
-
-    <h2>Benefits</h2>
-
-    <p class="mt-200">It’s far more practical to clean up environments in test setups, before each test executes
+  <div class="fragment mt-300">
+    <p>In practice</p>
     <ul>
-        <li>When a tests fails, clean-up code might remove important information, making it harder to investigate
-        <li>Clean-up procedures after testing may not be executed
-        <li>In test setup, you only need to prepare the data relevant for the current test
-        <li>When a bug causes a test failure, you will only need to investigate that single test, not 500 other false
-            alarms
-        <li>You may parallelize your test run
+      <li class="fragment">
+        Isolated tests can run in <strong>any order</strong>
+      </li>
+      <li class="fragment">
+        Each test can run <strong>separately from the test suite</strong>
+      </li>
+      <li class="fragment">
+        Ultimately, tests can even run in <strong>parallel</strong>!
+      </li>
     </ul>
+  </div>
 
+  <aside class="notes">
+    In practice, when an isolated test fails, you don't need to investigate on
+    what happend before. The issue is either within the test or the verified
+    code
+  </aside>
+</section>
+
+<section class="text-size-2">
+  <h2>How to isolate tests?</h2>
+
+  <p class="fragment mt-200r">
+    Before running, each test should set up the environment to a <strong>known state</strong>
+
+    <if-cy>
+      <p class="fragment mt-200r">
+        On the <strong>browser side</strong>, Cypress HAHA already cleans the
+        context between each test (DOM, cookies, local and session storage)
+      </p>
+    </if-cy>
+
+    <if-pw>
+      <div class="fragment">
+        <p class="mt-200r">
+          On the <strong>browser side</strong>, Playwright runs each test in a
+          new browser context
+        </p>
+        <small class="mt-50r">
+          <span>
+            https://playwright.dev/docs/browser-contexts#how-playwright-achieves-test-isolation
+          </span>
+        </small>
+      </div>
+    </if-pw>
+  </p>
+
+  <div class="fragment mt-200r">
+    <p>On the <strong>server side</strong>, you may</p>
+    <ul>
+      <li>create a dedicated user for each test</li>
+      <li>create dedicated products, or verify their availability</li>
+      <li>etc.</li>
+    </ul>
+  </div>
+
+  <aside class="notes">To enforce test isolation...</aside>
+</section>
+
+<section>
+  <h2>Benefits</h2>
+
+  <p class="mt-200">
+    It’s far more practical to clean up environments in test setups, before each
+    test executes
+  </p>
+  <ul>
+    <li>
+      In test setup, you only need to prepare the data relevant for the current
+      test
+    </li>
+    <li>When a test fails, you only need to investigate that single test</li>
+    <li>You may parallelize your test run</li>
+  </ul>
 </section>
