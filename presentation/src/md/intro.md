@@ -67,5 +67,5 @@ Note:
 ## Course outline
 <!-- .element: class="text-size-heading-3" -->
 
-<ol class="text-level-5">
+<ol class="text-size-5 mt--25">
 </ol>
