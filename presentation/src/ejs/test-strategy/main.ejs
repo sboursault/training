@@ -1,8 +1,10 @@
-{%- await include('../components/slide--partTitle.ejs', {title: 'Test strategy',
-notes: ` On va voir un ensemble de bonnes pratiques, certaines peuvent ne pas
-être adaptées à votre contexte, il n'est pas nécessaire de toutes les adopter
-`}); %} {%- await include('strategy__testing-quadrants.ejs'); %} {%- await
-include('strategy__bdd.ejs'); %}
+{%- await include('../components/slide--partTitle.ejs', {title: 'Test strategy', notes: `
+On va voir un ensemble de bonnes pratiques,
+certaines peuvent ne pas être adaptées à votre contexte,
+il n'est pas nécessaire de toutes les adopter
+`}); %}
+{%- await include('strategy__testing-quadrants.ejs'); %}
+{%- await include('strategy__bdd.ejs'); %}
 
 <section class="text-level-1">
   <h2>Technical design workshop</h2>
@@ -42,7 +44,7 @@ include('strategy__bdd.ejs'); %}
 </section>
 
 <section>
-  <h2>End-to-End tests should be FIRST</h2>
+  <h2 data-toc-label="E2E tests should be FIRST">End-to-End tests should be FIRST</h2>
 
   <div class="flex-row flex-row--center">
     <div>

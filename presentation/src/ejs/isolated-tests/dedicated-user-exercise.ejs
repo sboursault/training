@@ -1,0 +1,45 @@
+<section class="text-size-3">
+  <h2 data-tags="practice, optional" class="text-size-heading-3">
+    Run tests with distinct user accounts
+  </h2>
+
+  remove tthe worker limitation 
+
+  <app-exercise class="mt-100r">
+    <p>Let's code</p>
+    <ul>
+      <li>
+        Before each test that involves a user account, create a dedicated user and use it throughout the
+        test
+        <pre><code class="sh">
+            curl -i \
+              -X POST \
+              --header "Content-Type: application/json" \
+              --data '
+              {
+                  "email": "user@my-domain.com",
+                  "password1": "hellohell0",
+                  "password2": "hellohell0"
+              }' \
+              https://.../api/register/
+              # ⚠️ don't forget the trailing "/" at the end of the url
+            </code></pre>
+      </li>
+      <li>Randomize the login</li>
+    </ul>
+  </app-exercise>
+
+  <app-help class="mt-300r fragment">
+    <div style="columns: 2">
+      <p>
+        Create the class <code>RegisterApi</code> to handle the registration.<br />e.g.
+        <code>registerApi.register('user@my-domain.com', 'hellohell0')</code>
+      </p>
+
+      <p>Functions</p>
+      <ul>
+        <li>Generate random identifiers: <code>crypto.randomUUID()</code></li>
+      </ul>
+    </div>
+  </app-help>
+</section>
