@@ -1,12 +1,12 @@
 <section class="text-level-4">
   <h2>CSS selectors for the automation engineer</h2>
 
-  <p class="mt--50 fragment">
+  <p class="fragment">
     We use <strong>CSS selectors</strong> to pick a specific html element in the
     page
   </p>
 
-  <div class="mt-100r fragment">
+  <div class="mt-200r fragment">
     <div class="flex-row" style="gap: 1em">
       <pre style="width: unset">
         <code class="html" data-trim data-line-numbers="11-13" style="padding-right:2em;">
@@ -60,7 +60,7 @@
             </td>
           </tr>
         </table>
-        <p class="fragment">Or with advanced combinators</p>
+        <p class="mt-200r fragment">Or with advanced combinators</p>
         <table
           class="mt-50r no-border vspace-half"
           style="width: 100%; font-size: 0.9em"
@@ -87,29 +87,25 @@
       </div>
     </div>
   </div>
+</section>
 
-  <div class="fragment">
-    <p class="mt-75r">Verify your selectors</p>
-    <ul>
-      <li class="fragment">
-        With <strong>css-and-xpath-checker</strong>:
-        <a
-          href="https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe"
-        >
-          https://chromewebstore.google.com/detail/css-and-xpath-checker/...
-        </a>
-      </li>
-      <li class="fragment">
-        Or with <code>$$('')</code> in the browser's console
-      </li>
-    </ul>
-  </div>
-
-  <!--
-  now we can combine them
-  .modal p.message.warning
-  
-  Advanced combinators immediate child: header > h1 general
-  sibling: h1 ~ p Adjacent sibling: h1 + p then try to add a html fragment here
-  -->
+<section class="text-level-2">
+  <p class="mt-400r">Verify your selectors</p>
+  <ul>
+    <li class="fragment">
+      With <strong>css-and-xpath-checker</strong>:
+      <a
+        href="https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe"
+      >
+        https://chromewebstore.google.com/detail/css-and-xpath-checker/...
+      </a>
+    </li>
+    <li class="fragment">
+      Or with <code>$$('')</code> in the browser's console
+    </li>
+  </ul>
+  <p class="mt-500r fragment">
+    And have fun with with
+    <a href="https://flukeout.github.io/" target="_blank">CSS Diner</a>!
+  </p>
 </section>
