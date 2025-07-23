@@ -95,6 +95,13 @@ $block-margin: 32px;
       }
     }
 
+    &.cell-px-quarter {
+      td {
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+      }
+    }
+
     &:not(.no-border) tr:not(.fragment) + tr:not(.fragment) td {
       border-top: 1px solid;
     }

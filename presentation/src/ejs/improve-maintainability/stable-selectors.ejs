@@ -1,67 +1,38 @@
-{% if(pw) { %}
-<section class="text-level-3">
-  <h2>Locators that resist changes</h2>
 
-  <p class="fragment">Locators are used to find element(s) on the page</p>
 
-  <div class="mt-100r fragment">
-    <p>Playwright's recommanded locators</p>
-    <ul class="text-level-5">
-      <li>
-        <code>page.getByRole()</code> to locate by explicit and implicit
-        accessibility attributes
-      </li>
-      <li><code>page.getByText()</code> to locate by text content</li>
-      <li>
-        <code>page.getByLabel()</code> to locate a form control by associated
-        label's text
-      </li>
-      <li>
-        <code>page.getByPlaceholder()</code> to locate an input by placeholder
-      </li>
-      <li>
-        <code>page.getByAltText()</code> to locate an element, usually image, by
-        its text alternative
-      </li>
-      <li>
-        <code>page.getByTitle()</code> to locate an element by its title
-        attribute
-      </li>
-      <li>
-        <code>page.getByTestId()</code> to locate an element based on its
-        data-testid attribute (other attributes can be configured)
-      </li>
-    </ul>
-  </div>
+<section class="text-size-4">
+  <h2>Robust locators</h2>
 
-  <div class="mt-100r fragment">
-    <p>Example</p>
-    <pre class="mt-50r">
-      <code class="ts">
-        await page.getByLabel('Email address').fill('John');
-        await page.getByLabel('Password').fill('secret-password');
-        await page.getByRole('button', { name: 'Log in' }).click();
-        await expect(page.getByText('Welcome back')).toBeVisible();
+  <p class="mt--50 fragment">
+    Selectors must be <strong>specific enough</strong> to resist DOM changes
+  </p>
+  <p class="italic bold small fragment">Let's evaluate these locators!</p>
+
+  <div class="flex-row is-gap-8 fragment">
+    <pre style="width: unset">
+      <code class="html" data-trim data-line-numbers="9-11" style="padding-right:2em;">
+        &lt;html>
+          &lt;body>
+            &lt;nav id="navbar">
+              &lt;h1>
+                CSS selectors
+              &lt;/h1>
+              &lt;form>  
+                &lt;input name="query">
+                &lt;button type="submit">
+                  Search
+                &lt;/button>
+              &lt;/form>
+            &lt;/nav>
+            &lt;main class="container">
+              ...
+            &lt;/main>
+          &lt;/body>
+        &lt;/html>
       </code>
     </pre>
-  </div>
 
-  <small class="fragment mt-200r">
-    More on using these locators:
-    <span> https://playwright.dev/docs/locators </span>
-  </small>
-</section>
-{% } %} {% if(cy) { %}
-<section>
-  <h2>Locators that resist changes - TODO</h2>
-</section>
-{% } %}
-
-<section class="text-level-3">
-  <h3>Let's evaluate these locators</h3>
-
-  <if-pw>
-    <table class="mt--50 no-border" style="width: max-content">
+    <table class="no-border cell-px-quarter">
       <tr class="fragment">
         <td>
           <if-pw>
@@ -77,9 +48,9 @@
           </if-cy>
         </td>
         <td>
-          <ul class="no-bullets">
-            <li class="flex-row fragment">
-              <i class="emo emoji-x"></i>Breaks with slight changes in the DOM
+          <ul class="no-bullets fragment">
+            <li class="flex-row justify-content--flex-start">
+              <i class="emo emoji-x"></i> Breaks with slight changes in the DOM
             </li>
           </ul>
         </td>
@@ -142,7 +113,7 @@
               page.locator(           
                 '#navbar button'),
                 {hasText: 'Search'}
-              )    
+              )
             </code></pre>
           </td>
           <td>
@@ -189,10 +160,9 @@
         </tr>
       </if-cy>
     </table>
-  </if-pw>
-  <p class="fragment mt-75r">
-    Selectors must be <strong>specific enough</strong> to resist DOM changes
-  </p>
+  </div>
+
+
 </section>
 
 <section>

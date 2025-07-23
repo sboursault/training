@@ -26,6 +26,9 @@
       <section data-markdown="md/intro.md">
       </section>
       {%- await include('ejs/getting-started/main.ejs'); %}
+      {% if(pw) { %}
+        {%- await include('ejs/pw-basics/main.ejs'); %}
+      {% } %}
       {%- await include('ejs/improve-maintainability/main.ejs'); %}
       {%- await include('ejs/lets-practice/main.ejs'); %}
       {%- await include('ejs/tips/main.ejs'); %}
