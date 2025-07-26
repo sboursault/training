@@ -10,18 +10,20 @@
 
   <div class="flex-row is-gap-8 fragment">
     <pre style="width: unset">
-      <code class="html" data-trim data-line-numbers="9-11" style="padding-right:2em;">
+      <code class="html" data-trim data-line-numbers="10-12" style="padding-right:2em;">
         &lt;html>
           &lt;body>
             &lt;nav id="navbar">
               &lt;h1>
                 CSS selectors
               &lt;/h1>
-              &lt;form>  
+              &lt;form class="search-form">  
                 &lt;input name="query">
-                &lt;button type="submit">
-                  Search
-                &lt;/button>
+                &lt;div class="form-buttons">
+                  &lt;button type="submit">
+                    Search
+                  &lt;/button>
+                &lt;/div>
               &lt;/form>
             &lt;/nav>
             &lt;main class="container">
@@ -37,12 +39,14 @@
         <td>
           <if-pw>
             <pre><code class="typescript">
-              page.locator('#navbar > form > button')   
+              page.locator(
+                '#navbar form div.form-buttons button'
+              )   
             </code></pre>
           </if-pw>
           <if-cy>
             <pre><code class="typescript">
-              cy.get('#navbar > form > button')
+              cy.get('#navbar form div.form-buttons button')
                 .click()                       
             </code></pre>
           </if-cy>
@@ -111,7 +115,7 @@
           <td>
             <pre><code class="typescript">
               page.locator(           
-                '#navbar button'),
+                '#navbar button',
                 {hasText: 'Search'}
               )
             </code></pre>
