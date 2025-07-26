@@ -1,10 +1,31 @@
-<section class="text-level-4">
-  <h2>CSS selectors for the automation engineer</h2>
+<section class="text-size-2">
+  <h2>Finding elements by CSS selector</h2>
 
-  <p class="fragment">
-    We use <strong>CSS selectors</strong> to pick a specific html element in the
-    page
-  </p>
+  <div class="mt-600r fragment">
+    <p>
+      Use <code>page.locator()</code> to find elements with
+      <strong>CSS selectors</strong>
+    </p>
+    <pre style="width: fit-content">
+      <code class="ts" data-trim>
+        page.locator('button', {hasText: 'Search'}) 
+      </code>
+    </pre>
+  </div>
+
+  <div class="ms-200r mt-200r flex-row flex-row--center">
+    <div class="sticky fragment">
+      <u>Use with caution:</u>
+      <div class="sticky__content">
+        The DOM can often change, <br />
+        making these locators more brittle
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="text-size-5">
+  <h3>CSS selectors for the automation engineer</h3>
 
   <div class="mt-200r fragment">
     <div class="flex-row" style="gap: 1em">
@@ -87,25 +108,23 @@
       </div>
     </div>
   </div>
-</section>
 
-<section class="text-level-2">
-  <p class="mt-400r">Verify your selectors</p>
-  <ul>
-    <li class="fragment">
-      With <strong>css-and-xpath-checker</strong>:
-      <a
-        href="https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe"
-      >
-        https://chromewebstore.google.com/detail/css-and-xpath-checker/...
-      </a>
-    </li>
-    <li class="fragment">
-      Or with <code>$$('')</code> in the browser's console
-    </li>
-  </ul>
-  <p class="mt-500r fragment">
-    And have fun with with
-    <a href="https://flukeout.github.io/" target="_blank">CSS Diner</a>!
-  </p>
+  <div class="mt-200r fragment">
+    <p>Verify your selectors</p>
+    <ul>
+      <li>
+        With <strong>css-and-xpath-checker</strong>:
+        <a
+          href="https://chromewebstore.google.com/detail/css-and-xpath-checker/aoinfihhckpkkcpholfhmkeplbhddipe"
+        >
+          https://chromewebstore.google.com/detail/css-and-xpath-checker/...
+        </a>
+      </li>
+      <li>Or with <code>$$('')</code> in the browser's console</li>
+    </ul>
+    <p class="mt-200r fragment">
+      And learn more with
+      <a href="https://flukeout.github.io/" target="_blank">CSS Diner</a>!
+    </p>
+  </div>
 </section>
