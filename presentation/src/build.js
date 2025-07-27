@@ -10,9 +10,11 @@ import {
 } from './js/html-processor.js'
 
 const context = {
-  e2eTool: process.argv[2] === 'pw' ? 'Playwright' : 'Cypress',
+  e2eTool: process.argv[2] === 'pw' || process.argv[2] === 'pw2' ? 'Playwright' : 'Cypress',
   cy: process.argv[2] === 'cy',
-  pw: process.argv[2] === 'pw',
+  pw: process.argv[2] === 'pw' || process.argv[2] === 'pw2',
+  unit1: process.argv[2] === 'pw',
+  unit2: process.argv[2] === 'pw2',
 }
 
 await fs.mkdir('build/md', { recursive: true })

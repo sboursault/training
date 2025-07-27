@@ -5,6 +5,7 @@
     "browser-sync": "npx browser-sync start --server build --watch --reload-delay 200 --browser=chromium /",
     "cy": "npm run watch cy & npm run browser-sync",
     "pw": "npm run watch pw & npm run browser-sync",
+    "pw2": "npm run watch pw2 & npm run browser-sync",
     "build-pw": "npm run sass && node src/build.js pw",
     "sass": "sass src/css:build/css",
     "serve": "http-server build -p 8081 -o /",
