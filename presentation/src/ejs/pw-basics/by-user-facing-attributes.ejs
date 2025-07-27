@@ -1,0 +1,30 @@
+<section class="text-size-">
+  <h2>Finding elements by user-facing attributes</h2>
+
+  <div class="mt-200r fragment">
+    <p>
+      Playwright recommends prioritizing locators based on
+      <strong>user-facing attributes</strong>
+    </p>
+    <div class="fragment">
+      <ul class="mt-100r">
+        <li>
+          <code>page.getByRole()</code> to locate interactive elements like
+          <code>button</code>, <code>a</code>, <code>input</code>, etc.
+        </li>
+        <li><code>page.getByLabel()</code> to locate form fields</li>
+        <li>
+          <code>page.getByPlaceholder()</code> to locate form fields that do not
+          have labels but do have placeholder texts
+        </li>
+        <li>
+          <code>page.getByText()</code> to find non interactive elements like
+          <code>div</code>, <code>span</code>, <code>p</code>, etc.
+        </li>
+      </ul>
+      <p class="mt-200r smaller">
+        See examples: <a>https://playwright.dev/docs/locators</a>
+      </p>
+    </div>
+  </div>
+</section>

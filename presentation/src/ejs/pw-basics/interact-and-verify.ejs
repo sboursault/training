@@ -1,0 +1,39 @@
+<section class="">
+    <h2>Interactions and Verifications</h2>
+  
+    <p class="fragment">
+      We use <strong>locators</strong> to find element(s) on the page
+    </p>
+  
+    <ul class="mt-125r">
+      <li class="fragment">
+        <p>To interact with elements</p>
+        <pre class="mt-75r fragment">
+          <code class="ts">
+            // await  &lt; Locator >                                   .&lt; interaction >
+               await  page.getByLabel('Email address')              .fill('John')
+               await  page.getByLabel('Password')                   .fill('secret-password')
+               await  page.getByRole('button', { name: 'Log in' })  .click()
+          </code>
+        </pre>
+        <p class="smaller fragment">
+          List of available interactions:
+          <a>https://playwright.dev/docs/api/class-locator</a>
+        </p>
+      </li>
+      <li class="mt-125r fragment">
+        <p>For verifications</p>
+        <pre class="mt-50r fragment">
+          <code class="ts">
+            // await expect(  &lt;Locator>                 ).&lt; verifiction >
+               await expect(  page.getByRole('status')  ).toBeVisible()
+               await expect(  page.getByRole('status')  ).toHaveText('Bienvenue')
+          </code>
+        </pre>
+        <p class="smaller fragment">
+          List of available verifications:
+          <a>https://playwright.dev/docs/api/class-locatorassertions</a>
+        </p>
+      </li>
+    </ul>
+  </section>
