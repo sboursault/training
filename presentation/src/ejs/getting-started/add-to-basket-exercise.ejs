@@ -1,0 +1,79 @@
+<section>
+  <h2 class="text-size-heading-2" data-tags="practice">
+    First test: Add to basket
+  </h2>
+
+  <app-exercise class="mt-125r fragment">
+    <p>Implement this test case</p>
+
+    <div class="indented">
+      <p class="italic bold mt-75r">
+        Add a product to basket on product detail page
+      </p>
+
+      <p class="small mt-150r">Steps and verifications</p>
+      <ul class="no-bullets indented italic bold mt-50r">
+        <li>— Navigate to a product detail page</li>
+        <li>➤ The basket should be empty</li>
+        <li>— Click on the 'Add to basket' button</li>
+        <li>➤ The basket should contain one product</li>
+      </ul>
+    </div>
+  </app-exercise>
+
+  <app-help class="mt-400r fragment">
+    <if-pw>
+      <div style="columns: 2">
+        <p>Functions</p>
+        <ul>
+          <li><code>page.goto()</code></li>
+          <li><code>locator.click()</code></li>
+          <li><code>expect(locator).toHaveText(...)</code></li>
+        </ul>
+        <p>Config</p>
+        <ul>
+          <li>
+            Define a baseUrl and limit to 1 worker:<br />
+            <a>https://playwright.dev/docs/test-configuration</a>
+          </li>
+        </ul>
+      </div>
+    </if-pw>
+    <if-cy>
+      <p>Functions</p>
+      <li>
+        <code>cy.visit()</code>, <code>cy.title()</code>,
+        <code>cy.should()</code>
+      </li>
+      <p>Config</p>
+      <ul>
+        <li><span style="color: red">Define a baseUrl url ?</span></li>
+      </ul>
+    </if-cy>
+  </app-help>
+
+  <aside class="notes">
+    <if-pw>
+      <pre><code class="ts">
+        // home.spec.ts
+        import { test, expect } from '@playwright/test'
+        
+        test('The home page title contains "All products', async ({ page }) => {
+          await page.goto('/')
+          expect(page).toHaveTitle(/\s*Tous les produits\s*/) 
+        })
+      </code></pre>
+    </if-pw>
+    <if-cy>
+      <pre><code class="ts">
+        // home-page.spec.cy.ts
+        describe('home-page', () => {
+          specify('the home page title contains "All products"', () => {
+            cy.visit('/')
+            cy.title().should('equals', 'All products | Simple commerce')
+          })
+        })
+      </code></pre>
+    </if-cy>
+  </aside>
+</section>
