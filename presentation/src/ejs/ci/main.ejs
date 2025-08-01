@@ -1,4 +1,4 @@
-{%- await include('../components/slide--partTitle.ejs', {title: 'Continuous integration'}); %}
+{%- await include('../components/slide--partTitle.ejs', {title: 'Continuous integration', optional: true}); %}
 {% if(pw) { %}
 {%- await include('run-on-ci.ejs'); %}
 {% } %}
