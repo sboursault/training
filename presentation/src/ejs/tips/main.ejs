@@ -1,27 +1,17 @@
 {%- await include('../components/slide--partTitle.ejs', {title: 'Tips and tricks'}); %}
-
 {%- await include('small-tests.ejs'); %}
-
-
+{%- await include('stable-selectors.ejs'); %}
 {% if(cy) { %}
-
 {%- await include('cypress-variables.ejs'); %}
-
 {% } %}
-
 {%- await include('wait-for-events.ejs'); %}
-
 {% if(cy) { %}
 {%- await include('multiple-domains.ejs'); %}
 {%- await include('debug.ejs'); %}
 {% } %}
-
 {% if(pw) { %}
 {%- await include('playwright-ways-to-run-tests.ejs'); %}
 {% } %}
-
-
 {% if(pw) { %}
 {%- await include('type-cheking-and-linting.ejs'); %}
 {% } %}
-
