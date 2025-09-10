@@ -14,6 +14,23 @@
                                                                    // application
     </code></pre>
   </if-pw>
+  <!--
+  "divide business-oriented decisions, workflows and technical interactions into separate layers."
+
+
+  |  test layer   |  worfklow component        | technical interaction layer |
+  |  - decisions  |  - manipulate page ojects  | -                           |
+  |               |                            |
+
+
+
+business decision layer:     | test 1 | test 2 | test 3 | ...                  |
+worflow layer:               | worflow component 1 | worflow component 2 | ... |
+technical interaction layer: | page object 1 | page object 2 | ... | Api client | Api client | ...| 
+application:                 | UI                                  | API       |                   |
+
+maybe mermaid's block diagram can help, or simply flex boxes...
+-->
   <if-cy>
     <pre class="fragment"><code class="typescript">
       cy.get('.basket-mini .dropdown-toggle').click()  // this is about HTML
@@ -61,7 +78,9 @@
               </li>
             </ul>
           </li>
-          <li>Define fixtures in <nobr><code>support/fixtures.ts</code></nobr></li>
+          <li>
+            Define fixtures in <nobr><code>support/fixtures.ts</code></nobr>
+          </li>
         </ul>
         <p>Links</p>
         <ul>
