@@ -1,5 +1,5 @@
 <section>
-  <h2>What is test isolation?</h2>
+  <h2 data-toc-label="What, why and how?">What is test isolation?</h2>
 
   <div class="fragment mt-300">
     <div class="fragment custom highlight-bold text-center">
@@ -32,8 +32,25 @@
   </aside>
 </section>
 
+<section>
+  <h2 data-toc-exclude>Benefits</h2>
+
+  <p class="mt-200">
+    It’s far more practical to clean up environments in test setups, before each
+    test executes
+  </p>
+  <ul>
+    <li>
+      In test setup, you only need to prepare the data relevant for the current
+      test
+    </li>
+    <li>When a test fails, you only need to investigate that single test</li>
+    <li>You may parallelize your test run</li>
+  </ul>
+</section>
+
 <section class="text-size-2">
-  <h2>How to isolate tests?</h2>
+  <h2 data-toc-exclude>How to isolate tests?</h2>
 
   <p class="fragment mt-200r">
     Before running, each test should set up the environment to a <strong>known state</strong>
@@ -72,19 +89,3 @@
   <aside class="notes">To enforce test isolation...</aside>
 </section>
 
-<section>
-  <h2>Benefits</h2>
-
-  <p class="mt-200">
-    It’s far more practical to clean up environments in test setups, before each
-    test executes
-  </p>
-  <ul>
-    <li>
-      In test setup, you only need to prepare the data relevant for the current
-      test
-    </li>
-    <li>When a test fails, you only need to investigate that single test</li>
-    <li>You may parallelize your test run</li>
-  </ul>
-</section>
