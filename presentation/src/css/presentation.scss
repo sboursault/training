@@ -752,6 +752,18 @@ $block-margin: 32px;
   .bold {
     font-weight: bold;
   }
+
+  #a11y-result {
+    td:not(:first-child) {
+      color: red;
+    }
+    [data-line-number="1"]:not(:first-child) {
+      color: unset;
+    }
+    [data-line-number="3"]:not(:first-child), [data-line-number="6"]:not(:first-child) {
+      color: green;
+    }
+  }
 }
 
 .leader-line {
@@ -761,3 +773,5 @@ $block-margin: 32px;
     font-family: var(--r-main-font);
   }
 }
+
+

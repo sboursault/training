@@ -1,0 +1,132 @@
+{%- await include('../components/slide--partTitle.ejs', {title: 'Accessibility',
+optional: true, toc: false}); %}
+
+<section>
+  <h2 data-toc-exclude>European Accessibility Act</h2>
+
+  <p class="mt-400r">
+    The European Accessibility Act mandates that websites and mobile apps comply
+    with <strong>accessibility requirements</strong> for persons with
+    <strong>disabilities</strong>
+  </p>
+
+  <p class="mt-200r">Came into effect on 28 June 2025</p>
+</section>
+
+<section class="text-size-3">
+  <h2 data-toc-exclude>Verify accessibility</h2>
+
+  <p class="mt-300r fragment">
+    Use the <code>AxeBuilder</code> from <code>@axe-core/playwright</code>
+  </p>
+  <pre class="mt-300r fragment">
+    <code class="ts">
+      import { test, expect } from '@playwright/test'
+      import AxeBuilder from '@axe-core/playwright'
+
+      test('verify a11y', async ({ page }) => {
+        await page.goto('/')
+
+        await page.locator('#some-content')  // waits for an element
+          .waitFor()                         // to be visible
+      
+        const a11yScan = await new AxeBuilder({ page })
+          .include('#some-content')          // element to verify
+          .analyze()
+      
+          expect(a11yScan.violations).toHaveLength(0)
+      })
+    </code>
+  </pre>
+</section>
+<section class="text-size-4">
+  <p class="mt-150r">Failure example</p>
+  <pre class="mt-100r fragment">
+  <code id="a11y-result" class="text" data-trim data-line-numbers="1-9, 17-25">
+Error: expect(received).toEqual(expected) // deep equality
+
+- Expected  -  1
++ Received  + 85
+
+- Array []
++ Array [
++   Object {
++     "description": "Ensure select element has an accessible name",
++     "help": "Select element must have an accessible name",
++     "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/select-name?application=playwright",
++     "id": "select-name",
++     "impact": "critical",
++     "nodes": Array [
++       Object {
++         ...
++         "failureSummary": "Fix any of the following:
++   Element does not have an implicit (wrapped) &lt;label>
++   Element does not have an explicit &lt;label>
++   aria-label attribute does not exist or is empty
++   aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
++   Element has no title attribute
++   Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
++         "html": "&lt;select name=\"language\" class=\"form-control\" onchange=\"this.form.submit()\">",
++         "impact": "critical",
++         ...
++       },
++     ],
++     "tags": Array [
++       ...
++     ],
++   },
++ ]
+</code></pre>
+</section>
+<section class="text-size-3">
+  <h2 data-toc-exclude>How to suppress known violations?</h2>
+
+  <p class="mt-200r fragment">
+    You can limit the scope and depth of verifications
+  </p>
+
+  <pre class="mt-200r fragment">
+    <code class="ts">
+        const a11yScan = await new AxeBuilder({ page })
+          .withTags([
+            'wcag2a',
+            'wcag2aa',                       // axe tags to include
+            'wcag21a',
+            'wcag21aa',
+            'best-practice',
+          ])
+          .include(['#some-content'])       // elements to verify
+          .exclude(['#some-messy-content']) // elements to ignore
+          .disableRules(['duplicate-id'])   // rules to ignore
+          .analyze()
+    </code>
+  </pre>
+
+  <ul class="no-bullets mt-100r text-size-5 fragment">
+    <li>
+      Tag list:<br />
+      <a
+        >https://www.deque.com/axe/core-documentation/api-documentation/#axecore-tags</a
+      >
+    </li>
+    <li>
+      Rules:<br />
+      <a
+        >https://github.com/dequelabs/axe-core/blob/master/doc/rule-descriptions.md</a
+      >
+    </li>
+  </ul>
+
+  <p class="text-size-5 mt-200r fragment">
+    An exemple to create a fixture for common axe configuration:<br />
+    <a
+      >https://playwright.dev/docs/accessibility-testing#using-a-test-fixture-for-common-axe-configuration</a
+    >
+  </p>
+
+  <!--
+-> essayer un scan sur le site, ou bien sur une sous-partie partie.
+- combien de violations par défaut ?
+- et en réduisant les éxigences ?
+-> créer une fixture makeStrictAxeBuilder et makeWcagaAxeBuilder
+--></section>
