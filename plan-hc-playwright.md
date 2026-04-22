@@ -1,114 +1,65 @@
+Formation Playwright
 
-# Tests End-to-End avec Playwright
+Maîtrisez l'automatisation des tests E2E avec Playwright en 2 jours : développez des suites maintenables, rapides et intégrées à votre workflow !
 
-Nombre de jours : 2
-Public visé : développeur·se
-Description courte : Automatisez vos tests de bout en bout avec Playwirght
+Formation Playwright
 
+Description
 
-### Description
+Cette formation vous donnera les clés pour construire une suite de tests solide, rapide et extensible, mais aussi pour intégrer ces tests dans votre processus de développement.
 
-Cette formation vous apprendra comment automatiser vos tests de bout en bout (End-to-end - E2E) avec Playwright. Vous découvrirez comment construire une suite **maintenable**, **extensible** et **rapide**, mais aussi comment intégrer ces tests dans votre processus de développement. 
+Pendant 2 jours, vous apprendrez à :
 
-Cet apprentissage s'adresse aux développeur·se·s qui souhaitent se former à l'automatisation des tests de bout en bout.
+    traduire un besoin en critères d'acceptation, et comment automatiser leur vérification,
+    construire une suite de tests avec Playwright, en partant de zéro,
+    fiabiliser les tests, en se basant sur des Locators solides, et sur les notions de répétabilité et d'indépendance,
+    gagner en lisibilité et maintenabilité avec le pattern Page Object,
+    optimiser les tests à l'aide d'appels API pour une exécution plus rapide.
 
-Au cours de la formation, vous apprendrez :
-- comment traduire un besoin en critères d'acceptation, et comment automatiser leur vérification,
-- comment construire une suite de tests avec Playwright, en partant de zéro,
-- comment écrire des tests lisibles et la maintenables avec le pattern Page Object, et comment les fiabiliser en les rendant indépendants et répétables.
-- comment optimiser l'exécution des tests en préférant des appels API pour la préparation des données.
+La formation est axée sur la pratique. En fil rouge, vous automatiserez une suite de tests qui vérifie les fonctionnalités d'un site e-commerce, comme la gestion du panier ou le déclenchement des promotions.
 
-La formation est axée sur la pratique. En fil rouge, vous élaborerez une suite de tests qui vérifie les fonctionnalités d'un site e-commerce, comme la gestion du panier ou le déclenchement des promotions.
+Les tests seront codés en Typescript, mais il n'est pas nécessaire de connaître le langage. Cela fait partie de la formation.
 
+Public
 
-### Objectifs
+Cet apprentissage s'adresse aux testeur·se·s — avec ou sans expérience en programmation — ainsi qu'aux développeur·se·s qui souhaitent se former à l'automatisation des tests de bout en bout.
 
-- Concevoir des tests bout en bout (E2E)
-- Automatiser ces tests avec Playwright
-- Améliorer la lisibilité et la maintenabilité des tests E2E
-- Créer une suite de tests rapides et extensibles (basée sur des tests isolés et répétables)
+Les objectifs
 
+    Concevoir des tests bout en bout (E2E)
+    Automatiser ces tests avec Playwright
+    Améliorer la lisibilité et la maintenabilité des tests E2E
+    Créer une suite de tests solide et extensible
+    Optimiser les tests pour une exécution plus rapide
 
-### Pré-requis
+Pré-requis
 
-- Notions de base en programmation
-- Connaissances de base en HTML et CSS
-- Ordinateur portable à apporter
-- Installation de Git et Node.js (18.x)
-- Compte github avec clé configurée sur l'ordinateur (assistance possible si besoin)
+    Installation de Git et Node.js (18.x)
+    Compte github avec clé configurée sur l'ordinateur (assistance possible si besoin)
+    Ordinateur portable à apporter
 
-Les tests seront écrits en typescript, mais il n'est pas nécessaire de connaître le langage. Cela fait partie de la formation.
+Le programme de la formation Playwright
+Jour 1 : Démarrer avec Playwright
 
+    Découverte de l'écosystème Playwright (CLI, application et documentation en ligne)
+    Interagir avec une page web, et vérifier son contenu avec la fixture page
+    Choisir des Locators solides, basés sur des propriétés utilisateurs, sélecteurs CSS ou sur un contrat (test-id)
+    Les Hooks
+    Améliorer la lisibilité et la maintenabilité avec le pattern Page Object et les Custom Fixtures
+    Playwright tips
 
-### Programme
+Mises en pratique :
+- Initialisation d'un projet Playwright avec Typescript
+- Conception et automatisation de la vérifiation des fonctionnalités d'un site e-commerce : le login et l'ajout au panier
 
-#### Jour 1 : Automatisation des tests
+Jour 2 : Gérer votre suite de tests
 
-##### Démmarrer avec Playwright
+    Une suite solide et extensible avec des tests répétables et d'indépendants
+    Appeler des api REST avec la fixture request
+    Optimiser le temps d'exécution de sa suite à l'aide d'appels API
+    Debugger les tests Playwright
+    Intégrer les tests dans un pipeline CI/CD
 
-- Écosystème Playwright
-  - Playwright CLI
-  - Playwright UI
-  - Documentation en ligne
-- Principales fonctions de l'API Playwright (`page.goto()`, `page.locator()`, `locator.click()`, etc.)
-- Assertions
-- Hooks
-- Locators
-- Page Object et Fixtures
+Mise en pratique :
 
-**Mises en pratique :**
- - Initialisation d'un projet Playwright avec Typescript
- - Atelier de spécification sur le mini-panier d'un site e-commerce, puis sur le login
- - Automatisation des critères d'acceptation
- - Simplification des tests à l'aide du pattern Page Object et de Fixtures
-
- 
-#### Jour 2 : Gérer votre suite de tests
-
-##### Stratégie de test
-- Complémentatrité des différents types de tests (Agile testing quadrants)
-- Behaviour Driven Development
-- Qui automatise les tests ?
-- Tips CI/CD
-
-**Mise en pratique :**
- - Adapter votre suite de tests pour vérifier différents environnements (local, e2e, preprod...)
-
-##### Une suite de test rapide et extensible
-- Écrire des tests répétables et indépendants
-- Optimisation du temps d'exécution de la suite
-- Debugger les tests Playwright
-- L'objet `Request`
-- Génération d'un jeu de données spécifique pour un test
-
-**Mises en pratique :**
- - Atelier de spécification et automatisation des tests sur la récupération du panier, puis sur les frais de livraison
- - Travail sur la phase de préparation du test (setup) :
-   - Nettoyage des données
-   - Adaptation du jeu de données initial
-   - Optimisation à l'aide d'appels API
-
-
-## Profil
-
-### Avec quelles technologies préfères-tu travailler ?
-
-Playwight, Cypress, Typescript, Python, Java
-
-### Bio
-
-Sébastien dévellope des applications depuis plus de 15 ans. Il est passé par tous les rôles d'une équipe de dév : Développeur, Testeur, Scrum Master et Product owner.
-
-Il travaille chez un éditeur, dans une approche où les critères d'acceptation deviennent les tests automatisés qui pilotent le développement. Cette approche leur permet d'avancer vite et sereinement.
-
-Sébastien partage volontiers sa culture du clean code et de l'automatisation des tests, en particulier lors de ses formations, où il apprécie d'échanger avec des personnes d'horizons différents.
-
-### Articles
-
-- [(Not So Obvious) Tips To Write Better DTOs in Java](https://medium.com/javarevisited/not-so-obvious-tips-to-write-better-dtos-in-java-c6116895b180)
-
-### Lectures recommandées
-
-- [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://www.amazon.fr/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
-- [Agile Testing: A Practical Guide for Testers and Agile Teams](https://www.amazon.fr/Agile-Testing-Practical-Guide-Testers/dp/0321534468/)
-
+    Automatisation de tests sur la récupération du panier et le déclenchement des promotions
