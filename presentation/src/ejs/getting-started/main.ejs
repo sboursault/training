@@ -1,5 +1,8 @@
 {%- await include('../components/slide--partTitle.ejs', {title: 'Getting started'}); %}
 {%- await include('gs__create-and-configure-project.ejs'); %}
+<if-pw>
+{%- await include('vscode-setup.ejs'); %}
+</if-pw>
 {%- await include('conventional-process.ejs'); %}
 {%- await include('gs__bdd_approach.ejs'); %}
 {%- await include('add-to-basket-exercise.ejs'); %}
