@@ -64,8 +64,8 @@ Note:
 ---
 <!-- .slide: id="toc" -->
 
-## Course outline
-<!-- .element: class="text-size-heading-3" -->
+
+<h2 class="text-size-heading-3 mt-0">Course outline</h2>
 
 <ol class="text-size-5 mt--25">
 </ol>

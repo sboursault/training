@@ -38,6 +38,9 @@
       {%- await include('ejs/ci/main.ejs'); %}
       {%- await include('ejs/mobile/main.ejs'); %}
       {%- await include('ejs/accessibility/main.ejs'); %}
+      {% if(pw) { %}
+        {%- await include('ejs/ia-agents/main.ejs'); %}
+      {% } %}
       {%- await include('ejs/end/thanks.ejs'); %}
     </div>
   </div>
