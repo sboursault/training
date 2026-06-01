@@ -31,6 +31,15 @@ Note:
 - pause toutes les heures et demi ~
 - aménagement possible si besoin
 
+---
+<!-- .slide: class="slide--vcenter" -->
+
+<img src="img/hc1.png"></img>
+
+---
+<!-- .slide: class="slide--vcenter" -->
+
+<img src="img/hc2.png"></img>
 
 ---
 
