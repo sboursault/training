@@ -30,6 +30,9 @@ Note:
   - 13:30-17:00
 - pause toutes les heures et demi ~
 - aménagement possible si besoin
+- n'hésitez pas à m'interrompre
+- webcam on, micro coupé, on allume si besoin
+- on démarre comme ça, on changera peut-être en cours de session
 
 ---
 <!-- .slide: class="slide--vcenter" -->

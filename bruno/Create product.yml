@@ -1,0 +1,38 @@
+info:
+  name: Create product
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/admin/products/"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Basic c3VwZXJ1c2VyQGV4YW1wbGUuY29tOnRlc3Rpbmc=
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Livre à 30€",
+        "name": "Livre à 30€",
+        "slug": "aaab",
+        "product_class": "book",
+        "stockrecords": [
+          {
+            "partner": "/api/admin/partners/1/",
+            "partner_sku": "aaad",
+            "price_currency": "EUR",
+            "price": 30,
+            "num_in_stock": 100
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

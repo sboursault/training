@@ -1,0 +1,18 @@
+info:
+  name: Delete basket
+  type: http
+  seq: 1
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/api/basket/"
+  auth:
+    type: basic
+    username: tom@test.test
+    password: tom@test.test
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

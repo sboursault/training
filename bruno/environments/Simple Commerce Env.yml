@@ -1,0 +1,4 @@
+name: Simple Commerce Env
+variables:
+  - name: baseUrl
+    value: https://simplecommerce1nz5qlcr-formateur.functions.fnc.fr-par.scw.cloud
