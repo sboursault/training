@@ -1,24 +1,32 @@
-<section class="text-level-3">
+<section class="text-size-5">
   <h2>Type checking and linting</h2>
 
-  <p>Playwright run tests even if there are TypeScript compilation errors</p>
+  <p>Playwright run tests even if there are TypeScript compilation errors <i class="emo emoji-slightly_frowning_face"></i></p>
 
   <div class="fragment">
     <p class="mt-100r">
-      To add <strong>type checking</strong>, configure <code>typescript</code>
+      To add <strong>type checking</strong>, add <code>typescript</code> as devDependency
     </p>
 
-    <pre><code class="sh">
-          # install `typescript` as devDependency
-          npm install --save-dev typescript
+    <pre class="mt-100r"><code class="sh">
+      npm install --save-dev typescript
+    </code></pre>
 
-          # create a tsconfig.json
-          npx tsc --init   
-      </code></pre>
+    <p>create <code>tsconfig.json</code> at the root of your project</p>
+
+    <pre class="mt-100r"><code class="json">
+     {
+        "compilerOptions": {
+          "module": "nodenext",
+          "target": "es2025",
+          "types": ["node"],
+        }
+      }
+    </code></pre>
 
     <p>...and run <code>tsc --noEmit</code> before your tests</p>
 
-    <pre><code class="json">
+    <pre class="mt-100r"><code class="json">
           // package.json
           {
             ...
