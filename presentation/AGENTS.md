@@ -1,0 +1,80 @@
+# AGENTS.md
+
+Guidance for AI coding agents (e.g. Mistral Vibe) working in this repository.
+
+## Project
+
+This repo generates a slide deck (reveal.js) used to support a Playwright/Cypress
+end-to-end testing training. A single source tree renders into two variants:
+Playwright (`pw` / `pw2`) and Cypress (`cy`), selected at build time.
+
+## Build & dev commands
+
+- `npm run pw` — dev: watch `src/`, rebuild into `build/`, serve via browser-sync (Playwright variant). Use this for live preview.
+- `npm run cy` — same, Cypress variant.
+- `npm run pw2` — same, Playwright `unit2` variant.
+- `npm run build-pw` — one-shot build of the Playwright variant into `build/`.
+- `npm test` — mocha suite (jsdom) covering build helpers in `src/js/`. Run this for any change to `src/js/`.
+- PDF export (run while a dev server is up):
+  `decktape --chrome-path /snap/bin/chromium reveal http://localhost:3000 presentation.pdf`
+
+## Variant
+
+The deck renders into variants: Playwright (`pw` / `pw2`) and Cypress (`cy`).
+The `build.js` context is: `e2eTool`, `cy`, `pw`, `unit1` (= `pw`), `unit2` (= `pw2`).
+
+**If the user does not specify a variant, ask every time.** Offer the choices:
+`pw`, `pw2`, `cy`, or all. Do not default to one without asking. When a change
+touches `<if-pw>` / `<if-cy>` / `{% if(pw) %}` / `{% if(cy) %}` conditionals, the
+same source renders both — verify the relevant variants aren't broken.
+
+## Language
+
+Write new slide content in **English**. Match the existing style of surrounding slides.
+
+## Architecture
+
+- `src/index.html` — master layout. It is the ordered manifest of training parts
+  (the `{%- await include('ejs/<part>/main.ejs') %}` order is the slide order).
+  Reorder parts here; add/remove parts here.
+- `src/ejs/<part>/` — one folder per training part. Each has a `main.ejs` that lists
+  the part's slides in order. Add a slide by creating a partial `.ejs` and including
+  it in the part's `main.ejs`.
+- `src/ejs/components/` — reusable slide scaffolding (`slide--partTitle.ejs`,
+  `bdd-workflow.ejs`, …). Prefer these over hand-writing section structure.
+- `src/md/` — markdown slides loaded by `data-markdown` from `index.html`.
+- `src/css/` — SCSS themes. `presentation.scss`, `playwright-light.scss`,
+  `cypress-light.scss`, `dark-theme.scss`, etc. Sass compiles to `build/css`.
+- `src/js/` — build helpers (`html-processor.js`, `dom.js`, …) and presentation
+  runtime. Tested by `test/` (mocha + jsdom).
+- `src/build.js` — renders EJS templates → `build/`. Applies the post-processing
+  pipeline in `src/js/html-processor.js` (`removeFalsyIfs`, `leftPadCode`,
+  `processLinkTags`, `processExerciseTags`, `processLinks`, `processHelpTags`).
+- `src/watch-templates.js` — rebuilds templates on `src/` change.
+- `build/` — gitignored, regenerated. Never hand-edit.
+- `node_modules/` — gitignored.
+
+## EJS conventions
+
+Delimiters are custom: `{` and `}` (see `build.js`), not the EJS default `<% %>`.
+So conditionals look like `{% if(pw) { %}` and includes `{%- await include(...) %}`.
+Use the established `<if-pw>` / `<if-cy>` and `{%- if pw %}` patterns already in
+the templates; do not introduce the default EJS delimiters.
+
+Slides are reveal.js `<section>` elements. Use `fragment` classes for reveal steps,
+`app-exercise` for practice blocks, `data-tags` on headings for categorization,
+and `<aside class="notes">` for speaker notes (see `slide--partTitle.ejs`).
+
+## Ask when unclear
+
+When a prompt is not specific enough, **do not suppose — ask clarifying questions.**
+Prefer one focused question over guessing. This applies to the variant, the target
+slide/part, the scope of the change, and anything else ambiguous.
+
+## Testing & verification
+
+- For changes to `src/js/`: run `npm test`.
+- For SCSS / EJS / slide-content changes: there is no automated render test.
+  Run `npm run pw` (or the relevant variant) so the user can visually check in the
+  browser — this is faster for them than a one-shot build. Do not claim a render is
+  correct without building.
