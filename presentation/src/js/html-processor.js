@@ -13,15 +13,24 @@ export function leftPadCode(html) {
   )
 }
 
-export function removeFalsyIfs(html, e2eTool) {
-  if (e2eTool === 'pw')
-    return html
-      .replace(/\s*<if-cy(?:\s+[\w-]+="[^"]*")*>[\s\S]*?<\/if-cy>/g, '')
-      .replace(/<\/?if-pw>/g, '')
-  else
-    return html
-      .replace(/\s*<if-pw(?:\s+[\w-]+="[^"]*")*>[\s\S]*?<\/if-pw>/g, '')
-      .replace(/<\/?if-cy>/g, '')
+export function removeFalsyIfs(html, variant) {
+  const tagsByVariant = {
+    nodepw: ['pw', 'nodepw'],
+    pypw: ['pw', 'pypw'],
+    cy: ['cy'],
+  }
+  const keep = tagsByVariant[variant] || []
+  const all = ['pw', 'nodepw', 'pypw', 'cy']
+  const remove = all.filter((tag) => !keep.includes(tag))
+  let result = html
+  for (const tag of remove)
+    result = result.replace(
+      new RegExp('\\s*<if-' + tag + '(?:\\s+[\\w-]+="[^"]*")*>[\\s\\S]*?<\\/if-' + tag + '>', 'g'),
+      ''
+    )
+  for (const tag of keep)
+    result = result.replace(new RegExp('</?if-' + tag + '>', 'g'), '')
+  return result
 }
 
 export function processLinkTags(html) {

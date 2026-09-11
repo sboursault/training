@@ -9,10 +9,16 @@ import {
   removeFalsyIfs,
 } from './js/html-processor.js'
 
+const variant = ['nodepw', 'pypw', 'cy'].includes(process.argv[2])
+  ? process.argv[2]
+  : 'cy'
+
 const context = {
-  e2eTool: process.argv[2] === 'pw' ? 'Playwright' : 'Cypress',
-  cy: process.argv[2] === 'cy',
-  pw: process.argv[2] === 'pw',
+  e2eTool: variant === 'cy' ? 'Cypress' : 'Playwright',
+  cy: variant === 'cy',
+  pw: variant === 'nodepw' || variant === 'pypw',
+  nodepw: variant === 'nodepw',
+  pypw: variant === 'pypw',
 }
 
 await fs.mkdir('build/md', { recursive: true })
@@ -33,7 +39,7 @@ export function renderTemplatedFiles() {
             closeDelimiter: '}',
             async: true,
           })
-          .then((html) => removeFalsyIfs(html, context.pw ? 'pw' : 'cy'))
+          .then((html) => removeFalsyIfs(html, variant))
           .then(leftPadCode)
           .then(processLinkTags)
           .then(processExerciseTags)

@@ -5,27 +5,35 @@ Guidance for AI coding agents (e.g. Mistral Vibe) working in this repository.
 ## Project
 
 This repo generates a slide deck (reveal.js) used to support a Playwright/Cypress
-end-to-end testing training. A single source tree renders into two variants:
-Playwright (`pw`) and Cypress (`cy`), selected at build time.
+end-to-end testing training. A single source tree renders into three variants:
+Playwright Node (`nodepw`), Playwright Python (`pypw`), and Cypress (`cy`),
+selected at build time.
 
 ## Build & dev commands
 
-- `npm run pw` — dev: watch `src/`, rebuild into `build/`, serve via browser-sync (Playwright variant). Use this for live preview.
+- `npm run nodepw` — dev: watch `src/`, rebuild into `build/`, serve via browser-sync (Playwright Node variant). Use this for live preview.
+- `npm run pypw` — same, Playwright Python variant.
 - `npm run cy` — same, Cypress variant.
-- `npm run build-pw` — one-shot build of the Playwright variant into `build/`.
+- `npm run build-nodepw` — one-shot build of the Playwright Node variant into `build/`.
+- `npm run build-pypw` — one-shot build of the Playwright Python variant into `build/`.
 - `npm test` — mocha suite (jsdom) covering build helpers in `src/js/`. Run this for any change to `src/js/`.
 - PDF export (run while a dev server is up):
   `decktape --chrome-path /snap/bin/chromium reveal http://localhost:3000 presentation.pdf`
 
 ## Variant
 
-The deck renders into variants: Playwright (`pw`) and Cypress (`cy`).
-The `build.js` context is: `e2eTool`, `cy`, `pw`.
+The deck renders into variants: Playwright Node (`nodepw`), Playwright Python
+(`pypw`), and Cypress (`cy`). The `build.js` context is: `e2eTool`, `cy`, `pw`,
+`nodepw`, `pypw`. The `pw` flag is shared — it is true for both `nodepw` and
+`pypw`, so `<if-pw>` / `{% if(pw) %}` content is shown for all Playwright
+variants. Variant-specific content uses `<if-nodepw>` / `{% if(nodepw) %}` or
+`<if-pypw>` / `{% if(pypw) %}`.
 
 **If the user does not specify a variant, ask every time.** Offer the choices:
-`pw`, `cy`, or all. Do not default to one without asking. When a change
-touches `<if-pw>` / `<if-cy>` / `{% if(pw) %}` / `{% if(cy) %}` conditionals, the
-same source renders both — verify the relevant variants aren't broken.
+`nodepw`, `pypw`, `cy`, or all. Do not default to one without asking. When a
+change touches `<if-pw>` / `<if-cy>` / `<if-nodepw>` / `<if-pypw>` / `{% if(pw) %}`
+/ `{% if(cy) %}` / `{% if(nodepw) %}` / `{% if(pypw) %}` conditionals, the same
+source renders multiple variants — verify the relevant variants aren't broken.
 
 ## Language
 
@@ -57,8 +65,9 @@ Write new slide content in **English**. Match the existing style of surrounding 
 
 Delimiters are custom: `{` and `}` (see `build.js`), not the EJS default `<% %>`.
 So conditionals look like `{% if(pw) { %}` and includes `{%- await include(...) %}`.
-Use the established `<if-pw>` / `<if-cy>` and `{%- if pw %}` patterns already in
-the templates; do not introduce the default EJS delimiters.
+Use the established `<if-pw>` / `<if-cy>` / `<if-nodepw>` / `<if-pypw>` and
+`{% if(pw) %}` / `{% if(cy) %}` / `{% if(nodepw) %}` / `{% if(pypw) %}` patterns
+already in the templates; do not introduce the default EJS delimiters.
 
 Slides are reveal.js `<section>` elements. Use `fragment` classes for reveal steps,
 `app-exercise` for practice blocks, `data-tags` on headings for categorization,

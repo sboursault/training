@@ -47,21 +47,27 @@ describe('html processor', function () {
     })
   })
   describe('removeFalsyIfs', function () {
-    it('removes falsy cypress blocks', function () {
+    it('keeps pw and nodepw blocks, removes cy and pypw blocks (nodepw variant)', function () {
       // given
       const html = `<html>
          <body>
            <if-pw>
-             <span>hello</hello>
+             <span>shared</span>
            </if-pw>
            <if-cy>
-             <span>hello</hello>
+             <span>cy</span>
            </if-cy>
+           <if-nodepw>
+             <span>node</span>
+           </if-nodepw>
+           <if-pypw>
+             <span>py</span>
+           </if-pypw>
          </body>
        </html>`
 
       // when
-      const result = removeFalsyIfs(html, 'pw')
+      const result = removeFalsyIfs(html, 'nodepw')
 
       // then
       strictEqual(
@@ -69,13 +75,53 @@ describe('html processor', function () {
         `<html>
          <body>
            
-             <span>hello</hello>
+             <span>shared</span>
+           
+           
+             <span>node</span>
            
          </body>
        </html>`
       )
     })
-    it('removes falsy playwright blocks', function () {
+    it('keeps pw and pypw blocks, removes cy and nodepw blocks (pypw variant)', function () {
+      // given
+      const html = `<html>
+         <body>
+           <if-pw>
+             <span>shared</span>
+           </if-pw>
+           <if-cy>
+             <span>cy</span>
+           </if-cy>
+           <if-nodepw>
+             <span>node</span>
+           </if-nodepw>
+           <if-pypw>
+             <span>py</span>
+           </if-pypw>
+         </body>
+       </html>`
+
+      // when
+      const result = removeFalsyIfs(html, 'pypw')
+
+      // then
+      strictEqual(
+        result,
+        `<html>
+         <body>
+           
+             <span>shared</span>
+           
+           
+             <span>py</span>
+           
+         </body>
+       </html>`
+      )
+    })
+    it('removes playwright blocks (cy variant)', function () {
       // given
       const html = `<html>
          <body>
