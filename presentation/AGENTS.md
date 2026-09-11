@@ -6,13 +6,12 @@ Guidance for AI coding agents (e.g. Mistral Vibe) working in this repository.
 
 This repo generates a slide deck (reveal.js) used to support a Playwright/Cypress
 end-to-end testing training. A single source tree renders into two variants:
-Playwright (`pw` / `pw2`) and Cypress (`cy`), selected at build time.
+Playwright (`pw`) and Cypress (`cy`), selected at build time.
 
 ## Build & dev commands
 
 - `npm run pw` — dev: watch `src/`, rebuild into `build/`, serve via browser-sync (Playwright variant). Use this for live preview.
 - `npm run cy` — same, Cypress variant.
-- `npm run pw2` — same, Playwright `unit2` variant.
 - `npm run build-pw` — one-shot build of the Playwright variant into `build/`.
 - `npm test` — mocha suite (jsdom) covering build helpers in `src/js/`. Run this for any change to `src/js/`.
 - PDF export (run while a dev server is up):
@@ -20,11 +19,11 @@ Playwright (`pw` / `pw2`) and Cypress (`cy`), selected at build time.
 
 ## Variant
 
-The deck renders into variants: Playwright (`pw` / `pw2`) and Cypress (`cy`).
-The `build.js` context is: `e2eTool`, `cy`, `pw`, `unit1` (= `pw`), `unit2` (= `pw2`).
+The deck renders into variants: Playwright (`pw`) and Cypress (`cy`).
+The `build.js` context is: `e2eTool`, `cy`, `pw`.
 
 **If the user does not specify a variant, ask every time.** Offer the choices:
-`pw`, `pw2`, `cy`, or all. Do not default to one without asking. When a change
+`pw`, `cy`, or all. Do not default to one without asking. When a change
 touches `<if-pw>` / `<if-cy>` / `{% if(pw) %}` / `{% if(cy) %}` conditionals, the
 same source renders both — verify the relevant variants aren't broken.
 
@@ -75,6 +74,7 @@ slide/part, the scope of the change, and anything else ambiguous.
 
 - For changes to `src/js/`: run `npm test`.
 - For SCSS / EJS / slide-content changes: there is no automated render test.
-  Run `npm run pw` (or the relevant variant) so the user can visually check in the
-  browser — this is faster for them than a one-shot build. Do not claim a render is
-  correct without building.
+  Do **not** run build/dev commands (`npm run pw`, `npm run build-pw`, etc.) —
+  the user runs these themselves to visually check the result. After a change,
+  tell the user to run `npm run pw` (or the relevant variant) and check in the
+  browser. Do not claim a render is correct without the user confirming it.
