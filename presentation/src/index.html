@@ -21,8 +21,7 @@
 <body>
   <div class="reveal">
     <div class="slides">
-      <section data-markdown="md/head.md">
-      </section>
+      {%- await include('ejs/head.ejs'); %}
       <section data-markdown="md/intro.md">
       </section>
       {%- await include('ejs/getting-started/main.ejs'); %}
@@ -38,7 +37,7 @@
       {%- await include('ejs/ci/main.ejs'); %}
       {%- await include('ejs/mobile/main.ejs'); %}
       {%- await include('ejs/accessibility/main.ejs'); %}
-      {% if(pw) { %}
+      {% if(false) { %}
         {%- await include('ejs/ia-agents/main.ejs'); %}
       {% } %}
       {%- await include('ejs/end/thanks.ejs'); %}
