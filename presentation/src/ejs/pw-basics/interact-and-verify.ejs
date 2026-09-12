@@ -8,14 +8,26 @@
     <ul class="mt-125r">
       <li class="fragment">
         <p>To interact with elements</p>
-        <pre class="mt-75r fragment">
-          <code class="ts">
-            // await  &lt; Locator >                                   .&lt; interaction >
-               await  page.getByLabel('Email address')              .fill('John')
-               await  page.getByLabel('Password')                   .fill('secret-password')
-               await  page.getByRole('button', { name: 'Log in' })  .click()
-          </code>
-        </pre>
+        <if-nodepw>
+          <pre class="mt-75r fragment">
+            <code class="ts">
+              // await  &lt; Locator >                                   .&lt; interaction >
+                await  page.getByLabel('Email address')              .fill('John')
+                await  page.getByLabel('Password')                   .fill('secret-password')
+                await  page.getByRole('button', { name: 'Log in' })  .click()
+            </code>
+          </pre>
+        </if-nodepw>
+        <if-pypw>
+          <pre class="mt-75r fragment">
+            <code class="py">
+              #  &lt; Locator >                              &lt; interaction >
+              page.get_by_label('Email address')         .fill('John')
+              page.get_by_label('Password')              .fill('secret-password')
+              page.get_by_role('button', name='Log in')  .click()
+            </code>
+          </pre>
+        </if-pypw>
         <p class="smaller fragment">
           List of available interactions:
           <a>https://playwright.dev/docs/api/class-locator</a>
@@ -23,6 +35,7 @@
       </li>
       <li class="mt-125r fragment">
         <p>For verifications</p>
+        <if-nodepw>
         <pre class="mt-50r fragment">
           <code class="ts">
             // await expect(  &lt;Locator>                 ).&lt; verifiction >
@@ -30,6 +43,16 @@
                await expect(  page.getByRole('status')  ).toHaveText('Bienvenue')
           </code>
         </pre>
+        </if-nodepw>
+        <if-pypw>
+        <pre class="mt-50r fragment">
+          <code class="py">
+            #        &lt;Locator>                     &lt; verifiction >
+            expect(  page.get_by_role('status')  ).to_be_visible()
+            expect(  page.get_by_role('status')  ).to_have_text('Bienvenue')
+          </code>
+        </pre>
+        </if-pypw>
         <p class="smaller fragment">
           List of available verifications:
           <a>https://playwright.dev/docs/api/class-locatorassertions</a>
