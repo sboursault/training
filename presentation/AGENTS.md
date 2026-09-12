@@ -39,6 +39,12 @@ source renders multiple variants — verify the relevant variants aren't broken.
 
 Write new slide content in **English**. Match the existing style of surrounding slides.
 
+## Code snippets
+
+For the `pypw` variant, always use the **Python Playwright sync API**
+(`from playwright.sync_api import sync_playwright`,
+`with sync_playwright() as p:`). Do not use the async API in snippets.
+
 ## Architecture
 
 - `src/index.html` — master layout. It is the ordered manifest of training parts
