@@ -1,34 +1,12 @@
-<section>
+<section class="text-size-3">
   <h2>Page object pattern</h2>
 
-  <p class="mt-200r fragment">
+  <p class="fragment" data-fragment-index="1">
     Page objects abstract away the technical interactions from the decision code
   </p>
 
-  <if-pw>
-    <pre class="fragment"><code class="typescript">
-      await page.locator('.basket-mini .dropdown-toggle').click()  // this is about HTML
-    </code></pre>
-    <pre class="fragment"><code class="typescript">
-      await cataloguePage.displayMiniBasket();                     // this is about the
-                                                                   // application
-    </code></pre>
-  </if-pw>
 
-
-  <if-cy>
-    <pre class="fragment"><code class="typescript">
-      cy.get('.basket-mini .dropdown-toggle').click()  // this is about HTML
-    </code></pre>
-    <pre class="fragment"><code class="typescript">
-      cataloguePage.displayMiniBasket();               // this is about the
-                                                       // application
-    </code></pre>
-  </if-cy>
-
-</section>
-
-<!--
+  <!--
   "divide business-oriented decisions, workflows and technical interactions into separate layers."
 
 
@@ -46,51 +24,82 @@ application:                 | UI                                  | API       |
 maybe mermaid's block diagram can help, or simply flex boxes...
 -->
 
-<section>
+  <div class="flex-row fragment" data-fragment-index="2">
 
-  <table class="mt-200r" style="border-collapse: collapse; width: 50%;">
-    <tr>
-      <td
-        style="border: none; width: 250px; text-align: right; font-weight: 600; font-size: 1.3rem; vertical-align: middle;">
-        Business decision layer</td>
-      <td style="border: none; width: 100px; padding: 1em .5em;">
-        <div class="flex-row justify-content--flex-start gap-05">
-          <div class="rectangle no-wrap"
-            data-arrow="->page-object-1:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
-            <u>Test 1:</u><br> Verify login
+    <table class="mt-100" style="border-collapse: collapse; font-size: 1.2rem; width: 500px;">
+      <tr>
+        <td class="bold" style="text-align: center;  vertical-align: middle;">
+          Business decision layer</td>
+        <td style="padding: 1.5em .5em;">
+          <div class="flex-row justify-content--flex-start gap-15">
+            <div class="rectangle no-wrap"
+              data-arrow="->page-object-1:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
+              <u>Test 1:</u><br> Verify login
+            </div>
+            <div class="rectangle no-wrap fragment" style="border-style: dashed;"
+              data-arrow="->page-object-1:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'};->page-object-2:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'}"
+              data-fragment-index="5">
+              <u>Test 2:</u><br> Verify add to basket
+            </div>
           </div>
-          <div class="rectangle no-wrap fragment" style="border-style: dashed;"
-            data-arrow="->page-object-1:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'};->page-object-2:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'}"
-            data-fragment-index="2">
-            <u>Test 2:</u><br> Verify add to basket
+        </td>
+      </tr>
+      <tr class="box" style="border-left: none; border-right: none;">
+        <td class="bold" style="text-align: center; font-size: 1.3rem; vertical-align: middle;">
+          Interaction layer</td>
+        <td style="padding: 1.5em .5em; text-align: center;">
+          <div class="flex-row gap-15" style="justify-content: center;">
+            <div class="rectangle" id="page-object-1"
+              data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
+              loginPage</div>
+            <div class="rectangle fragment" id="page-object-2" style="border-style: dashed;"
+              data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'}"
+              data-fragment-index="5">
+              productPage
+            </div>
           </div>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td style="border: none; text-align: right; font-weight: 600; font-size: 1.3rem; vertical-align: middle;">
-        Interaction layer</td>
-      <td style="border: none; padding: 1em .5em; text-align: center;">
-        <div class="flex-row gap-05" style="justify-content: center;">
-          <div class="rectangle" id="page-object-1"
-            data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
-            loginPage</div>
-          <div class="rectangle fragment" id="page-object-2" style="border-style: dashed;"
-            data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'}"
-            data-fragment-index="2">
-            productPage
-          </div>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td style="border: none; text-align: right; font-weight: 600; font-size: 1.3rem; vertical-align: middle;">
-        Application</td>
-      <td style="border: none; padding: 1em .5em; text-align: center;">
-        <img src="img/flaticon_com__webpage_5681787_cropped.png" width="105" style="margin: 0;" id="web-page">
-      </td>
-    </tr>
-  </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="bold" style="text-align: center; font-size: 1.3rem; vertical-align: middle;">
+          Application</td>
+        <td style="padding: 1.5em .5em; text-align: center;">
+          <img src="img/flaticon_com__webpage_5681787_cropped.png" width="105" style="margin: 0;" id="web-page">
+        </td>
+      </tr>
+    </table>
+
+    <div style="font-size:80%">
+
+
+      <if-pw>
+        <pre class="fragment" data-fragment-index="3"><code class="typescript">
+          await page                                  //
+            .locator('.basket-mini .dropdown-toggle') // this is about HTML
+            .click()                                  // 
+        </code></pre>
+        <pre class="fragment" data-fragment-index="4"><code class="typescript">
+          await cataloguePage.displayMiniBasket();    // this is about the
+                                                      // application
+        </code></pre>
+      </if-pw>
+
+
+      <if-cy>
+        <pre class="fragment"><code class="typescript">
+      cy.get('.basket-mini .dropdown-toggle').click()  // this is about HTML
+    </code></pre>
+        <pre class="fragment"><code class="typescript">
+      cataloguePage.displayMiniBasket();               // this is about the
+                                                       // application
+    </code></pre>
+      </if-cy>
+
+    </div>
+
+  </div>
+
+
 
   <p class="mt-150 fragment">
     Tests with Page Objects are <strong>easier to read</strong> and

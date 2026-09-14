@@ -27,8 +27,9 @@ export function computePartNumbers() {
 function isVisible(el) {
   return getComputedStyle(el).visibility !== 'hidden';
 }
-function drawArrow(elt1, elt2, options) {
-  if (isVisible(elt1) && isVisible(elt2))
+function drawArrow(elt1, elt2, options, condition) {
+  if (isVisible(elt1) && isVisible(elt2)
+    && (!condition || isVisible(condition)))
     new LeaderLine(elt1, elt2, { color: 'var(--r-link-color)', size: 4, ...options || {} });
 }
 
@@ -40,13 +41,15 @@ function drawArrows() {
     .forEach(elt => {
       const arrowDefs = elt.getAttribute("data-arrow").split(';')
       Array.from(Array.from(arrowDefs)).forEach(arrowDef => {
-        const separtorIndex = arrowDef.indexOf(":");
-        const arrow = separtorIndex == -1 ? arrowDef : arrowDef.substring(0, separtorIndex);
-        const options = separtorIndex == -1 ? '{}' : arrowDef.substring(separtorIndex + 1);
+        const arr = /([^:\[]+)(:[^\[]+)?(\[.+\])?/.exec(arrowDef)
+        const arrow = arr[1];
+        const options = arr[2] ? arr[2].substring(1) : undefined;
+        const condition = arr[3] ? arr[3].substring(1, arr[3].length -1) : undefined;
+        const conditionElt = condition ? section.querySelector(condition) : null
         const array = arrow.split('->');
         const from = array[0] ? section.querySelector('#' + array[0]) : elt;
         const to = array[1] ? section.querySelector('#' + array[1]) : elt;
-        drawArrow(from, to, { path: 'fluid', ...JSON.parse(options.replaceAll('\'', '"')) });
+        drawArrow(from, to, { path: 'fluid', ...JSON.parse(options.replaceAll('\'', '"')) }, conditionElt);
       })
     })
 }
