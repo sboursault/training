@@ -168,11 +168,11 @@
               {
                 name: 'chromium',
                 use: { ...devices['Desktop Chrome'] },
+                grepInvert: [/@mobileOnly/]
               },
               {
                 name: 'Mobile Chrome',
                 use: { ...devices['Pixel 5'] },
-                grepInvert: [/@mobileOnly/]
               },
             ],
           });

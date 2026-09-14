@@ -336,11 +336,11 @@ $block-margin: 32px;
     text-align: left;
   }
 
-  h3 {
+  h3, h4, h5, h6 {
     color: var(--r-main-color);
   }
 
-  h3:not(:first-child) {
+  h3:not(:first-child), h4:not(:first-child) {
     margin-top: 60px;
   }
 
