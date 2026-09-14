@@ -28,7 +28,7 @@
 
 </section>
 
-  <!--
+<!--
   "divide business-oriented decisions, workflows and technical interactions into separate layers."
 
 
@@ -48,33 +48,38 @@ maybe mermaid's block diagram can help, or simply flex boxes...
 
 <section>
 
-  <table class="fragment mt-200r" style="border-collapse: collapse; width: 50%;">
+  <table class="mt-200r" style="border-collapse: collapse; width: 50%;">
     <tr>
       <td
         style="border: none; width: 250px; text-align: right; font-weight: 600; font-size: 1.3rem; vertical-align: middle;">
         Business decision layer</td>
       <td style="border: none; width: 100px; padding: 1em .5em;">
         <div class="flex-row justify-content--flex-start gap-05">
-          <div class="rectangle"
-            data-arrow="->page-object-1:{'path':'straight','startSocket':'bottom','endSocket':'top'};->page-object-2:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
-            test 1</div>
-          <div class="rectangle">test 2</div>
-          <div class="rectangle">test 3</div>
-          <div class="rectangle">…</div>
+          <div class="rectangle no-wrap"
+            data-arrow="->page-object-1:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
+            <u>Test 1:</u><br> Verify login
+          </div>
+          <div class="rectangle no-wrap fragment" style="border-style: dashed;"
+            data-arrow="->page-object-1:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'};->page-object-2:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'}"
+            data-fragment-index="2">
+            <u>Test 2:</u><br> Verify add to basket
+          </div>
         </div>
       </td>
     </tr>
     <tr>
       <td style="border: none; text-align: right; font-weight: 600; font-size: 1.3rem; vertical-align: middle;">
         Interaction layer</td>
-      <td style="border: none; padding: 1em .5em;">
-        <div class="flex-row justify-content--flex-start gap-05">
+      <td style="border: none; padding: 1em .5em; text-align: center;">
+        <div class="flex-row gap-05" style="justify-content: center;">
           <div class="rectangle" id="page-object-1"
             data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
             loginPage</div>
-          <div class="rectangle" id="page-object-2"
-            data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top'}">productPage</div>
-          <div class="rectangle">…</div>
+          <div class="rectangle fragment" id="page-object-2" style="border-style: dashed;"
+            data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'}"
+            data-fragment-index="2">
+            productPage
+          </div>
         </div>
       </td>
     </tr>
@@ -91,4 +96,6 @@ maybe mermaid's block diagram can help, or simply flex boxes...
     Tests with Page Objects are <strong>easier to read</strong> and
     <strong>easier to maintain</strong>
   </p>
+
+
 </section>
