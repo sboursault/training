@@ -1,18 +1,18 @@
 import { addText, createChild } from './dom.js';
 import { fillCompleteToc, fillPartTocs } from './tocs.js'
-    
+
 
 function rewriteSlideTitles() {
   document.querySelectorAll('h2').forEach(element => {
     const tags = element.getAttribute('data-tags') || ''
-      
+
     const text = element.innerText;
     if (text.indexOf('</>') !== -1 || tags.indexOf('practice') !== -1) {
       element.innerText = ''
-      createChild(element, 'span', {class: ''}, text.replace('</>', '').trim())
-      createChild(element, 'span', {class:'tag tag--small ms-50'}, 'Practice')
+      createChild(element, 'span', { class: '' }, text.replace('</>', '').trim())
+      createChild(element, 'span', { class: 'tag tag--small ms-50' }, 'Practice')
       if (tags.indexOf('optional') !== -1)
-        createChild(element, 'span', {class:'tag tag--small tag--optional'}, 'Optional')
+        createChild(element, 'span', { class: 'tag tag--small tag--optional' }, 'Optional')
     }
   })
 }
@@ -38,13 +38,15 @@ function drawArrows() {
   Array.from(elements)
     .filter(elt => getComputedStyle(elt).visibility !== 'hidden')
     .forEach(elt => {
-      const arrowDefs = elt.getAttribute("data-arrow").split(',')
+      const arrowDefs = elt.getAttribute("data-arrow").split(';')
       Array.from(Array.from(arrowDefs)).forEach(arrowDef => {
-        const [arrow,label] = arrowDef.split(':');
+        const separtorIndex = arrowDef.indexOf(":");
+        const arrow = separtorIndex == -1 ? arrowDef : arrowDef.substring(0, separtorIndex);
+        const options = separtorIndex == -1 ? '{}' : arrowDef.substring(separtorIndex + 1);
         const array = arrow.split('->');
         const from = array[0] ? section.querySelector('#' + array[0]) : elt;
         const to = array[1] ? section.querySelector('#' + array[1]) : elt;
-        drawArrow(from, to, { path: 'fluid', endLabel: label });
+        drawArrow(from, to, { path: 'fluid', ...JSON.parse(options.replaceAll('\'', '"')) });
       })
     })
 }
@@ -74,12 +76,12 @@ export function init() {
     rewriteSlideTitles()
     fillPartTocs()
     fillCompleteToc(),
-    computePartNumbers(),
-    setTimeout(
-      () => {
-        drawArrows()
-      }, 200 // without this timeout, the arrow isn't well positionned
-    )
+      computePartNumbers(),
+      setTimeout(
+        () => {
+          drawArrows()
+        }, 200 // without this timeout, the arrow isn't well positionned
+      )
   });
   Reveal.on('slidetransitionend', event => {
     drawArrows()

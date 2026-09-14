@@ -6,7 +6,7 @@
   <div
     class="rectangle fragment"
     id="task-example"
-    data-arrow="->task-dev,->task-test"
+    data-arrow="->task-dev;->task-test"
   >
     Specification <br />workshop
   </div>
@@ -16,7 +16,7 @@
     </div>
     <div class="rectangle fragment" id="task-test">
       E2E Test automation<br />(Tester & Developer)
-      <span class="fragment" data-arrow="task-test->task-dev:verify"></span>
+      <span class="fragment" data-arrow="task-test->task-dev:{'endLabel':'verify'}"></span>
     </div>
   </div>
   <div class="rectangle fragment" id="task-prod">
