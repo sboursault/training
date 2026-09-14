@@ -11,9 +11,9 @@ selected at build time.
 
 ## Build & dev commands
 
-- `npm run nodepw` — dev: watch `src/`, rebuild into `build/`, serve via browser-sync (Playwright Node variant). Use this for live preview.
-- `npm run pypw` — same, Playwright Python variant.
-- `npm run cy` — same, Cypress variant.
+- `npm run start:nodepw` — dev: watch `src/`, rebuild into `build/`, serve via browser-sync (Playwright Node variant). Use this for live preview.
+- `npm run start:pypw` — same, Playwright Python variant.
+- `npm run start:cy` — same, Cypress variant.
 - `npm run build-nodepw` — one-shot build of the Playwright Node variant into `build/`.
 - `npm run build-pypw` — one-shot build of the Playwright Python variant into `build/`.
 - `npm test` — mocha suite (jsdom) covering build helpers in `src/js/`. Run this for any change to `src/js/`.
@@ -89,7 +89,8 @@ slide/part, the scope of the change, and anything else ambiguous.
 
 - For changes to `src/js/`: run `npm test`.
 - For SCSS / EJS / slide-content changes: there is no automated render test.
-  Do **not** run build/dev commands (`npm run pw`, `npm run build-pw`, etc.) —
-  the user runs these themselves to visually check the result. After a change,
-  tell the user to run `npm run pw` (or the relevant variant) and check in the
-  browser. Do not claim a render is correct without the user confirming it.
+  Do **not** run build/dev commands (`npm run start:nodepw`, `npm run build-nodepw`,
+  etc.) — the user runs these themselves to visually check the result. After a
+  change, tell the user to run `npm run start:nodepw` (or the relevant variant)
+  and check in the browser. Do not claim a render is correct without the user
+  confirming it.
