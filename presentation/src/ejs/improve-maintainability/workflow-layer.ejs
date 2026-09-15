@@ -1,0 +1,77 @@
+<section class="text-size-3">
+  <h2>Workflow layer</h2>
+
+  <p class="fragment" data-fragment-index="0">
+    Consider adding a <strong>workflow layer</strong> for higher level process
+  </p>
+
+
+  <table class="mt-100 no-border fragment" data-fragment-index="1" style="font-size: 1.2rem; width: 500px;">
+    <tr>
+      <td class="bold" style="text-align: center;  vertical-align: middle;">
+        Business decision layer</td>
+      <td style="padding: 1.5em .5em;">
+        <div class="flex-row gap-15" style="justify-content: center;">
+          <div class="rectangle no-wrap"
+            data-arrow="->page-object-1:{'path':'straight','startSocket':'bottom','endSocket':'top'};->page-object-2:{'path':'straight','startSocket':'bottom','endSocket':'top'}[#no-workflow];->page-object-3:{'path':'straight','startSocket':'bottom','endSocket':'top'}[#no-workflow];->page-object-4:{'path':'straight','startSocket':'bottom','endSocket':'top'}[#no-workflow];->workflow:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'}">
+            <u>Test 1:</u><br> Verify basket recovery
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr class="" style="background-color: var(--system-color-boxBackground);">
+      <td class="bold" style="text-align: center; font-size: 1.3rem; vertical-align: middle;">
+        Workflow layer</td>
+      <td style="padding: 1.5em .5em;">
+        <div class="flex-row gap-15" style="justify-content: center;">
+          <div style="width: 25%;"></div>
+          <div class="rectangle fragment" style="border-style: dashed;" id="workflow"
+            data-arrow="->page-object-2:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'};->page-object-3:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'};->page-object-4:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'}"
+            data-fragment-index="2">
+            worfklow</div>
+        </div>
+      </td>
+    </tr>
+    <tr class="" style="">
+      <td class="bold" style="text-align: center; font-size: 1.3rem; vertical-align: middle;">
+        Interaction layer</td>
+      <td style="padding: 1.5em .5em;">
+        <div class="flex-row gap-10" style="justify-content: center;">
+          <div class="rectangle" id="page-object-1"
+            data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
+            cataloguePage</div>
+          <div class="rectangle" id="page-object-2"
+            data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
+            loginPage
+          </div>
+          <div class="rectangle" id="page-object-3"
+            data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
+            registrationPage
+          </div>
+          <div class="rectangle" id="page-object-4"
+            data-arrow="->web-mail:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
+            mailClient
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="bold" style="text-align: center; font-size: 1.3rem; vertical-align: middle;">
+        Application</td>
+      <td style="padding: 1.5em .5em; text-align: center;">
+        <div class="flex-row gap-15" style="justify-content: space-evenly">
+          <div></div>
+          <img src="img/flaticon/webpage_cropped.png" width="105" style="margin: 0;" id="web-page">
+          <div></div>
+          <img src="img/flaticon/webmail.png" width="90" style="margin: 0;" id="web-mail">
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <span class="fragment fade-out" id="no-workflow" data-fragment-index="2"></span>
+
+
+
+
+</section>

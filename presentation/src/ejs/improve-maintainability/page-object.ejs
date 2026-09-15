@@ -1,32 +1,38 @@
 <section class="text-size-3">
   <h2>Page object pattern</h2>
 
-  <p class="fragment" data-fragment-index="1">
+  <p class="fragment" data-fragment-index="0">
     Page objects abstract away the technical interactions from the decision code
   </p>
 
 
-  <!--
-  "divide business-oriented decisions, workflows and technical interactions into separate layers."
 
+  <div class="flex-row">
 
-  |  test layer   |  worfklow component        | technical interaction layer |
-  |  - decisions  |  - manipulate page ojects  | -                           |
-  |               |                            |
+    <div style="font-size:80%">
+      <if-pw>
+        <pre class="fragment" data-fragment-index="1"><code class="typescript">
+          await page                                  //
+            .locator('.basket-mini .dropdown-toggle') // this is
+            .click()                                  //  about HTML
+        </code></pre>
+        <pre class="fragment" data-fragment-index="2"><code class="typescript">
+          await cataloguePage.displayMiniBasket(); // this is about the
+                                                   //  application
+        </code></pre>
+      </if-pw>
+      <if-cy>
+        <pre class="fragment"><code class="typescript">
+          cy.get('.basket-mini .dropdown-toggle').click()  // this is about HTML
+        </code></pre>
+        <pre class="fragment"><code class="typescript">
+          cataloguePage.displayMiniBasket();               // this is about the
+                                                          // application
+        </code></pre>
+      </if-cy>
+    </div>
 
-
-
-business decision layer:     | test 1 | test 2 | test 3 | ...                  |
-worflow layer:               | worflow component 1 | worflow component 2 | ... |
-technical interaction layer: | page object 1 | page object 2 | ... | Api client | Api client | ...| 
-application:                 | UI                                  | API       |                   |
-
-maybe mermaid's block diagram can help, or simply flex boxes...
--->
-
-  <div class="flex-row fragment" data-fragment-index="2">
-
-    <table class="mt-100" style="border-collapse: collapse; font-size: 1.2rem; width: 500px;">
+    <table class="mt-100 no-border fragment" data-fragment-index="3" style="font-size: 1.2rem; width: 500px;">
       <tr>
         <td class="bold" style="text-align: center;  vertical-align: middle;">
           Business decision layer</td>
@@ -34,28 +40,28 @@ maybe mermaid's block diagram can help, or simply flex boxes...
           <div class="flex-row justify-content--flex-start gap-15">
             <div class="rectangle no-wrap"
               data-arrow="->page-object-1:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
-              <u>Test 1:</u><br> Verify login
+              <u>Test 1:</u><br> Verify add to basket
             </div>
             <div class="rectangle no-wrap fragment" style="border-style: dashed;"
               data-arrow="->page-object-1:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'};->page-object-2:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'}"
               data-fragment-index="5">
-              <u>Test 2:</u><br> Verify add to basket
+              <u>Test 2:</u><br> Verify basket recovery
             </div>
           </div>
         </td>
       </tr>
-      <tr class="box" style="border-left: none; border-right: none;">
+      <tr class="" style="background-color: var(--system-color-boxBackground);">
         <td class="bold" style="text-align: center; font-size: 1.3rem; vertical-align: middle;">
           Interaction layer</td>
-        <td style="padding: 1.5em .5em; text-align: center;">
+        <td style="padding: 1.5em .5em;">
           <div class="flex-row gap-15" style="justify-content: center;">
             <div class="rectangle" id="page-object-1"
               data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
-              loginPage</div>
+              cataloguePage</div>
             <div class="rectangle fragment" id="page-object-2" style="border-style: dashed;"
               data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'}"
               data-fragment-index="5">
-              productPage
+              loginPage
             </div>
           </div>
         </td>
@@ -64,38 +70,10 @@ maybe mermaid's block diagram can help, or simply flex boxes...
         <td class="bold" style="text-align: center; font-size: 1.3rem; vertical-align: middle;">
           Application</td>
         <td style="padding: 1.5em .5em; text-align: center;">
-          <img src="img/flaticon_com__webpage_5681787_cropped.png" width="105" style="margin: 0;" id="web-page">
+          <img src="img/flaticon/webpage_cropped.png" width="105" style="margin: 0;" id="web-page">
         </td>
       </tr>
     </table>
-
-    <div style="font-size:80%">
-
-
-      <if-pw>
-        <pre class="fragment" data-fragment-index="3"><code class="typescript">
-          await page                                  //
-            .locator('.basket-mini .dropdown-toggle') // this is about HTML
-            .click()                                  // 
-        </code></pre>
-        <pre class="fragment" data-fragment-index="4"><code class="typescript">
-          await cataloguePage.displayMiniBasket();    // this is about the
-                                                      // application
-        </code></pre>
-      </if-pw>
-
-
-      <if-cy>
-        <pre class="fragment"><code class="typescript">
-      cy.get('.basket-mini .dropdown-toggle').click()  // this is about HTML
-    </code></pre>
-        <pre class="fragment"><code class="typescript">
-      cataloguePage.displayMiniBasket();               // this is about the
-                                                       // application
-    </code></pre>
-      </if-cy>
-
-    </div>
 
   </div>
 
