@@ -43,13 +43,13 @@ function drawArrows() {
       Array.from(Array.from(arrowDefs)).forEach(arrowDef => {
         const arr = /([^:\[]+)(:[^\[]+)?(\[.+\])?/.exec(arrowDef)
         const arrow = arr[1];
-        const options = arr[2] ? arr[2].substring(1) : undefined;
+        const options = arr[2] ? arr[2].substring(1).replaceAll('\'', '"') : '{}';
         const condition = arr[3] ? arr[3].substring(1, arr[3].length -1) : undefined;
         const conditionElt = condition ? section.querySelector(condition) : null
         const array = arrow.split('->');
         const from = array[0] ? section.querySelector('#' + array[0]) : elt;
         const to = array[1] ? section.querySelector('#' + array[1]) : elt;
-        drawArrow(from, to, { path: 'fluid', ...JSON.parse(options.replaceAll('\'', '"')) }, conditionElt);
+        drawArrow(from, to, { path: 'fluid', ...JSON.parse(options) }, conditionElt);
       })
     })
 }
