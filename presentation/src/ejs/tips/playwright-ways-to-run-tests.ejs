@@ -1,10 +1,10 @@
-<section class="text-level-3">
+<section class="text-level-4">
   <h2>Several ways to run tests</h2>
 
-  <ul>
+  <ul class="mt--50">
     <li class="fragment">
       Headless (no browser window will be opened)
-      <pre class="mt-75r"><code class="sh">
+      <pre class="mt-50r"><code class="sh">
                 npx playwright test
             </code></pre>
 
@@ -16,11 +16,11 @@
         <span>https://playwright.dev/docs/test-cli</span>
       </p>
     </li>
-    <li class="mt-200r fragment">
+    <li class="mt-150r fragment">
       With UI
-      <pre class="mt-75r"><code class="sh">
-                npx playwright test --ui
-            </code></pre>
+      <pre class="mt-50r"><code class="sh">
+        npx playwright test --ui
+      </code></pre>
 
       <ul class="mt-75r">
         <li>To run test suites on your local machine</li>
@@ -34,10 +34,25 @@
         <span>https://playwright.dev/docs/test-ui-mode</span>
       </p>
     </li>
-    <li class="mt-200r fragment">
+    <li class="mt-150r fragment">
       With VS Code
-      <ul class="mt-75r">
-        <li>The most convenient, especially to debug tests</li>
+      <ul class="mt-25r">
+        <li>The most convenient to implement and debug tests</li>
+      </ul>
+      <p class="fs-60p">
+        More info:
+        <span>https://playwright.dev/docs/getting-started-vscode</span>
+      </p>
+    </li>
+    <li class="mt-150r fragment">
+      Headed with CLI
+      <pre class="mt-50r"><code class="sh">
+        npx playwright test --headed --debug tests/some-feature.test.ts:6
+        # --headed opens a browser with a UI
+        # --debug keeps the browser open at the end of the test
+      </code></pre>
+      <ul class="mt-25r">
+        <li>To use when you don't have VScode...</li>
       </ul>
       <p class="fs-60p">
         More info:
