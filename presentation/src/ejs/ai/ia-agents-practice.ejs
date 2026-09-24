@@ -6,8 +6,8 @@
   <app-exercise class="mt-400r">
     <p class="fragment">Let's prompt</p>
     <ul>
-      <li class="fragment">Generate a test plan for the customer feedback</li>
-      <li class="fragment">Automize the most critical scenearios from the plan</li>
+      <li class="fragment">Ask your favorite Coding Agent to generate a <code>AGENTS.md</code></li>
+      <li class="fragment">Prompt to create a new test on adding a product to a wishlist</li>
     </ul>
   </app-exercise>
 
@@ -17,4 +17,18 @@
       <li>https://playwright.dev/docs/test-agents</li>
     </ul>
   </app-help>
+
+  <aside class="notes">
+    <p>Example</p>
+    <pre>
+      create a new test named "Add product to wishlist", with these steps :
+      - the user register
+      - she navigates to a product page
+      - she adds the product to her default wishlist
+      - she goes to the user's wishlist in his account details
+        -> the default wishlist should contain 1 product
+      - she opens the default wishlist
+        -> it contains the added product
+      </pre>
+  </aside>
 </section>
