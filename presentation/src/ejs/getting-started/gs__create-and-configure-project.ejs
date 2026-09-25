@@ -1,36 +1,74 @@
-<section class="text-size-3">
+<section class="text-size-4">
   <h2 class="text-size-heading-3" data-tags="practice">
     Create and configure a {%= e2eTool %} project
   </h2>
 
-  <app-exercise class="mt-400r ">
-    <div class="fragment">
-    <p>Let's code</p>
-    <ul>
-      <li>Create a github project</li>
-      <li>
-        Install and configure {%= e2eTool %} to run typescript test
-      </li>
-      <if-pw>
-      <li>Run the tests with Playwright CLI</li>
-      </if-pw>
-    </ul>
-    </div>
-  </app-exercise>
+  <if-nodepw>
+    <app-exercise class="mt-500r text-size-3">
+      <div class="fragment">
+        <p>Let's code</p>
+        <ul>
+          <li>Create a github project</li>
+          <li>
+            Install and configure Playwright to run typescript test
+          </li>
+          <li>Run the tests with Playwright CLI</li>
+        </ul>
+      </div>
+    </app-exercise>
+  </if-nodepw>
 
-  <app-help class="fragment mt-800r">
-    <p>Links</p>
-    <ul>
-      <if-pw>
-        <li>https://playwright.dev/docs/intro</li>
-      </if-pw>
-      <if-cy>
-        <li>
-          https://docs.cypress.io/guides/getting-started/installing-cypress
-        </li>
-        <li>https://docs.cypress.io/guides/getting-started/opening-the-app</li>
-        <li>https://docs.cypress.io/guides/guides/command-line</li>
-      </if-cy>
-    </ul>
-  </app-help>
+  <if-pypw>
+    <app-exercise class="mt-200r text-size-4">
+      <div class="fragment">
+        <p>Let's code</p>
+        <ul>
+          <li>Create a github project</li>
+          <li>
+            Setup your Playwright project
+            <pre><code class="sh">
+              cd pw-training
+              
+              # download python and create a virtual environment
+              uv init .   
+              
+              # install dependencies
+              uv add pytest-playwright     
+              uv add pytest-rerunfailures # to rerun failing tests on CI
+              uv add pytest-xdist         # to parallelize test execution on CI
+              uv run playwright install   # install test browsers
+            </code></pre>
+          </li>
+          <li>Create and a run a sample test 
+            <pre><code class="sh">
+              uv run pytest
+            </code></pre>
+          </li>
+        </ul>
+      </div>
+    </app-exercise>
+  </if-pypw>
+
+  <div class="admonition help fragment" style="position: absolute; top: 600px; left:2%; width: 90%; min-width: 500px;">
+    <p class="admonition__title">Help</p>
+    <div class="admonition__content">
+      <p>Links</p>
+      <ul>
+        <if-nodepw>
+          <li>https://playwright.dev/docs/intro</li>
+        </if-nodepw>
+        <if-pypw>
+          <li>https://playwright.dev/python/docs/intro</li>
+        </if-pypw>
+        <if-cy>
+          <li>
+            https://docs.cypress.io/guides/getting-started/installing-cypress
+          </li>
+          <li>https://docs.cypress.io/guides/getting-started/opening-the-app</li>
+          <li>https://docs.cypress.io/guides/guides/command-line</li>
+        </if-cy>
+      </ul>
+    </div>
+  </div>
+
 </section>

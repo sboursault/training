@@ -3,16 +3,31 @@
     Visual Studio Code setup
   </h2>
 
-  <app-exercise class="mt-400r">
-    <div class="fragment">
-      <p>Install VS Code plugins</p>
-      <ul>
-        <li>Playwright Test for VSCode</li>
-        <li>Playwright Test Snippets</li>
-        <li>ESLint</li>
-        <li>Prettier - Code formatter</li>
-      </ul>
-    </div>
-    <p class="mt-200r fragment">Run the tests with VS Code</p>
-  </app-exercise>
+  <if-nodepw>
+    <app-exercise class="mt-400r">
+      <div class="fragment">
+        <p>Install VS Code plugin</p>
+        <ul>
+          <li>Playwright Test for VSCode</li>
+          <li>Playwright Test Snippets</li>
+          <li>ESLint</li>
+          <li>Prettier - Code formatter</li>
+        </ul>
+      </div>
+      <p class="mt-200r fragment">Run the tests with VS Code</p>
+    </app-exercise>
+  </if-nodepw>
+
+  <if-pypw>
+    <app-exercise class="mt-600r">
+      <div class="fragment">
+        <p>Install VS Code plugin</p>
+        <ul>
+          <li>Python</li>
+        </ul>
+      </div>
+      <p class="mt-200r fragment">Run the tests with VS Code</p>
+    </app-exercise>
+  </if-pypw>
+
 </section>
