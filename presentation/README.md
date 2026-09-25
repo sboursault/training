@@ -1,8 +1,14 @@
 # End to end training course
 
-To run the Playwright version
+To run the Playwright Node version
 ```
-npm run pw
+npm run nodepw
+```
+
+
+To run the Playwright Python version
+```
+npm run pypw
 ```
 
 
@@ -14,5 +20,5 @@ npm run cy
 ## Print to pdf
 
 ```sh
-decktape --chrome-path /snap/bin/chromium reveal http://localhost:3000 presentation.pdf
+npx decktape --chrome-path /snap/bin/chromium reveal http://localhost:3000 presentation.pdf
 ```

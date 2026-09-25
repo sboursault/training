@@ -35,16 +35,17 @@ Note:
 - on démarre comme ça, on changera peut-être en cours de session
 
 ---
-<!-- .slide: class="slide--vcenter" -->
 
-<img src="img/hc1.png"></img>
+<section class="slide--vcenter">
+  <img src="img/hc1.png"></img>
+</section>
 
----
-<!-- .slide: class="slide--vcenter" -->
 
-<img src="img/hc2.png"></img>
+<section class="slide--vcenter">
+  <img src="img/hc2.png"></img>
+</section>
 
----
+<section>
 
 <h2>Intent of this course</h2>
 
@@ -69,13 +70,15 @@ Note:
   - certaines peuvent ne pas être adaptées à votre contexte, ou pas faisable
   - il n'est pas nécessaire de toutes les adopter
 
-<!-- .element: class="mt-200" -->
 
----
-<!-- .slide: id="toc" -->
+</section>
+
+<section id="toc">
 
 
 <h2 class="text-size-heading-3 mt-0">Course outline</h2>
 
 <ol class="text-size-5 mt--25">
 </ol>
+
+</section>
