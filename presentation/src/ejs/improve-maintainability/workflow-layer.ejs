@@ -13,7 +13,7 @@
       <td style="padding: 1.5em .5em;">
         <div class="flex-row gap-15" style="justify-content: center;">
           <div class="rectangle no-wrap"
-            data-arrow="->page-object-1:{'path':'straight','startSocket':'bottom','endSocket':'top'};->page-object-2:{'path':'straight','startSocket':'bottom','endSocket':'top'}[#no-workflow];->page-object-3:{'path':'straight','startSocket':'bottom','endSocket':'top'}[#no-workflow];->page-object-4:{'path':'straight','startSocket':'bottom','endSocket':'top'}[#no-workflow];->workflow:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray'}">
+            data-arrow="->page-object-1:{'path':'straight','startSocket':'bottom','endSocket':'top'};->page-object-2:{'path':'straight','startSocket':'bottom','endSocket':'top','middleLabel':'login'}[#no-workflow];->page-object-3:{'path':'straight','startSocket':'bottom','endSocket':'top','middleLabel':'register'}[#no-workflow];->page-object-4:{'path':'straight','startSocket':'bottom','endSocket':'top','middleLabel':'confirm email'}[#no-workflow];->workflow:{'path':'straight','startSocket':'bottom','endSocket':'top','dash':true,'color':'gray','middleLabel':'register and login'}">
             <u>Test 1:</u><br> Verify basket recovery
           </div>
         </div>
@@ -48,22 +48,21 @@
             data-arrow="->web-page:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
             registrationPage
           </div>
-          <div class="rectangle" id="page-object-4"
+          <div class="rectangle" id="page-object-4" style="margin-left: 2em;"
             data-arrow="->web-mail:{'path':'straight','startSocket':'bottom','endSocket':'top'}">
-            mailClient
+            emailClient
           </div>
         </div>
       </td>
     </tr>
     <tr>
-      <td class="bold" style="text-align: center; font-size: 1.3rem; vertical-align: middle;">
+      <td class="bold" style="padding: 2em .5em 0; text-align: center; font-size: 1.3rem; vertical-align: middle;">
         Application</td>
-      <td style="padding: 1.5em .5em; text-align: center;">
-        <div class="flex-row gap-15" style="justify-content: space-evenly">
-          <div></div>
-          <img src="img/flaticon/webpage_cropped.png" width="105" style="margin: 0;" id="web-page">
-          <div></div>
-          <img src="img/flaticon/webmail.png" width="90" style="margin: 0;" id="web-mail">
+      <td style="padding: 2em .5em 0; text-align: center;">
+        <div class="flex-row gap-15" style="justify-content: space-between;">
+          <img style="margin-left: 10.5em;" src="img/flaticon/webpage_cropped.png" width="105" style="margin: 0;"
+            id="web-page">
+          <img style="margin-right: 2em;" src="img/flaticon/webmail.png" width="90" style="margin: 0;" id="web-mail">
         </div>
       </td>
     </tr>
