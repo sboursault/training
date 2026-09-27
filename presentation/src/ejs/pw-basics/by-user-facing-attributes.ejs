@@ -9,21 +9,31 @@
     <div class="fragment">
       <ul class="mt-100r">
         <li>
-          <code>page.getByRole()</code> to locate interactive elements like
+          <if-nodepw><code>page.getByRole()</code></if-nodepw>
+          <if-pypw><code>page.get_by_role()</code></if-pypw>
+          to locate interactive elements like
           <code>button</code>, <code>a</code>, <code>input</code>, etc.
         </li>
-        <li><code>page.getByLabel()</code> to locate form fields</li>
         <li>
-          <code>page.getByPlaceholder()</code> to locate form fields that do not
-          have labels but do have placeholder texts
+          <if-nodepw><code>page.getByLabel()</code></if-nodepw>
+          <if-pypw><code>page.get_by_label()</code></if-pypw>
+          to locate form fields</li>
+        <li>
+          <if-nodepw><code>page.getByPlaceholder()</code></if-nodepw>
+          <if-pypw><code>page.get_by_placeholder()</code></if-pypw>
+          to locate form fields without a label and having a placeholder text
         </li>
         <li>
-          <code>page.getByText()</code> to find non interactive elements like
+          <if-nodepw><code>page.getByText()</code></if-nodepw>
+          <if-pypw><code>page.get_by_text()</code></if-pypw>
+          to find non interactive elements like
           <code>div</code>, <code>span</code>, <code>p</code>, etc.
         </li>
       </ul>
       <p class="mt-200r smaller">
-        See examples: <a>https://playwright.dev/docs/locators</a>
+        See examples:
+        <if-nodepw><a>https://playwright.dev/docs/locators</a></if-nodepw>
+        <if-pypw><a>https://playwright.dev/python/docs/locators</a></if-pypw>
       </p>
     </div>
   </div>

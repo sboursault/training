@@ -38,7 +38,7 @@
 
   <app-help class="mt-600r fragment">
     <div style="columns: 2">
-      <if-pw>
+      <if-nodepw>
         <p>Functions</p>
         <ul>
           <li><code>locator.fill()</code></li>
@@ -48,7 +48,20 @@
           <li>https://playwright.dev/docs/api/class-locator#locator-fill</li>
           <li>https://playwright.dev/docs/api/class-locatorassertions</li>
         </ul>
-      </if-pw>
+      </if-nodepw>
+
+      <if-pypw>
+        <p>Functions</p>
+        <ul>
+          <li><code>locator.fill()</code></li>
+        </ul>
+        <p>Links</p>
+        <ul>
+          <li>https://playwright.dev/python/docs/api/class-locator#locator-fill</li>
+          <li>https://playwright.dev/python/docs/api/class-locatorassertions</li>
+        </ul>
+      </if-pypw>
+
       <if-cy>
         <p>Functions</p>
         <ul>
