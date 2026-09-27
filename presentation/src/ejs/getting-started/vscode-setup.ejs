@@ -1,9 +1,10 @@
 <section class="text-size-3">
-  <h2 class="text-size-heading-3" data-tags="practice">
-    Visual Studio Code setup
-  </h2>
+
 
   <if-nodepw>
+    <h2 class="text-size-heading-3" data-tags="practice">
+      Visual Studio Code
+    </h2>
     <app-exercise class="mt-400r">
       <div class="fragment">
         <p>Install VS Code plugin</p>
@@ -19,15 +20,37 @@
   </if-nodepw>
 
   <if-pypw>
-    <app-exercise class="mt-600r">
+    <h2 class="text-size-heading-3" data-tags="practice">
+      VSCode and debug setup
+    </h2>
+    <app-exercise class="mt-100r">
       <div class="fragment">
-        <p>Install VS Code plugin</p>
-        <ul>
-          <li>Python</li>
-        </ul>
+        <p>Install VS Code Python plugin</p>
       </div>
-      <p class="mt-200r fragment">Run the tests with VS Code</p>
+      <div class="mt-100 fragment">
+        <p>Create <code>pytest.ini</code> at the root of your project</p>
+        <pre><code class="ini">
+          # pytest.ini
+          [pytest]
+          addopts = 
+              --headed
+              --browser chromium 
+              --base-url https://simple-commerce-dev.cloud
+              --slowmo 0
+              --pdb
+        </code></pre>
+      </div>
+      <p class="mt-100r fragment">Run tests with VS Code</p>
     </app-exercise>
+
+
+    <app-help class="mt-300r fragment">
+      <p>Links</p>
+      <ul>
+        <li>https://playwright.dev/python/docs/test-runners#cli-arguments</li>
+      </ul>
+    </app-help>
+
   </if-pypw>
 
 </section>
