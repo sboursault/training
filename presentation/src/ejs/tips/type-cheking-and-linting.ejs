@@ -24,15 +24,14 @@
       }
     </code></pre>
 
-    <p>...and run <code>tsc --noEmit</code> before your tests</p>
+    <p>...and run <code>npx tsc --noEmit</code> before your tests</p>
 
     <pre class="mt-100r"><code class="json">
           // package.json
           {
             ...
             "scripts": {
-              "pretest": "tsc --noEmit",
-              "pw:test-ui": "npm run pretest && npx playwright test --ui"
+              "test": "npx tsc --noEmit && npx playwright test"
             },
             ...
           }
@@ -100,8 +99,7 @@
           {
             ...
             "scripts": {
-              "pretest": "tsc --noEmit && npx eslint",
-              "pw:test-ui": "npm run pretest && npx playwright test --ui"
+              "test": "npx tsc --noEmit && npx eslint && npx playwright test"
             },
             ...
           }
