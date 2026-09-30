@@ -35,7 +35,7 @@ Note:
 - on démarre comme ça, on changera peut-être en cours de session
 
 ---
-
+<!--
 <section class="slide--vcenter">
   <img src="img/hc1.png"></img>
 </section>
@@ -44,7 +44,7 @@ Note:
 <section class="slide--vcenter">
   <img src="img/hc2.png"></img>
 </section>
-
+-->
 <section>
 
 <h2>Intent of this course</h2>

@@ -67,7 +67,7 @@ let allSlides
 function getSlideUrl(slide) {
   if (!allSlides) allSlides = document.querySelectorAll('.slides > section')
   const slideIndex = [].indexOf.call(allSlides, slide)
-  return `/#/${slideIndex}`
+  return window.location.href.substring(0, window.location.href.indexOf('#')) + `#/${slideIndex}`
 }
 
 function getSiblingUnlessPartTileSlide(element) {
