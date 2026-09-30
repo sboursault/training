@@ -36,17 +36,32 @@
             Define a baseUrl and limit to 1 worker:<br />
             <a>https://playwright.dev/docs/test-configuration</a>
           </li>
+          <li>
+            Set the browser's preferred language<br />
+            <a>https://playwright.dev/docs/emulation#locale--timezone</a>
+          </li>
         </ul>
       </div>
     </if-nodepw>
     <if-pypw>
-      <div style="margin-left: 1em;">
+      <div style="columns: 2">
         <p>Functions</p>
         <ul>
           <li><code>page.goto()</code></li>
           <li><code>page.pause()</code></li>
           <li><code>page.get_by_role(...).click()</code></li>
           <li><code>expect(locator).to_contain_text(...)</code></li>
+        </ul>
+         <p>Config</p>
+        <ul>
+          <li>
+            Define a baseUrl and limit to 1 worker:<br />
+            <a>https://playwright.dev/docs/test-configuration</a>  TODO à vérifier
+          </li>
+          <li>
+            Set the browser's preferred language<br />
+            <a>https://playwright.dev/python/docs/emulation#locale--timezone</a>  TODO à vérifier
+          </li>
         </ul>
       </div>
     </if-pypw>

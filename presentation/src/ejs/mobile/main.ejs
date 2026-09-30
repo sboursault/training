@@ -1,6 +1,7 @@
+
+{% if(nodepw) { %} 
 {%- await include('../components/slide--partTitle.ejs', {title: 'Mobile tests', optional: true, toc: false}); %}
 
-<!-- to adapt -->
 
 <section class="slide--vcenter">
   <div class="bubble bubble-bottom-left">
@@ -14,6 +15,6 @@
   
 {%- await include('mobile-specific-tests.ejs'); %}
 {%- await include('test-with-several-viewports.ejs'); %}
+ 
+{% } %}
 
-  
-  
