@@ -34,27 +34,41 @@
           </code></pre>
         </td>
         <td class="fragment text-center" data-fragment-index="6">
-          Implicit wait
+          Implicit wait with default timeout
         </td>
         <td class="fragment text-center" data-fragment-index="6">
           <i class="emo emoji-thumbup"></i>Good
         </td>
       </tr>
-      <tr>
+       <tr>
         <td class="fragment" data-fragment-index="7">
+          <pre class="text-size-7"><code class="ts" data-trim>
+            await expect(page.getByText('welcome'))
+              .toBeVisible({timeout: 10_000})
+          </code></pre>
+        </td>
+        <td class="fragment text-center" data-fragment-index="8">
+          Implicit wait with specific timeout
+        </td>
+        <td class="fragment text-center" data-fragment-index="8">
+          <i class="emo emoji-thumbup"></i>Good
+        </td>
+      </tr>
+      <tr>
+        <td class="fragment" data-fragment-index="9">
           <pre class="text-size-7"><code class="ts" data-trim>
             expect(
               await page.getByText('welcome').isVisible()
             ).toBe(true)
           </code></pre>
         </td>
-        <td class="fragment text-center" data-fragment-index="8">No wait</td>
-        <td class="fragment text-center" data-fragment-index="8">
+        <td class="fragment text-center" data-fragment-index="10">No wait</td>
+        <td class="fragment text-center" data-fragment-index="10">
           <i class="emo emoji-x"></i>Bad!
         </td>
       </tr>
       <tr>
-        <td class="fragment" data-fragment-index="9">
+        <td class="fragment" data-fragment-index="11">
           <pre class="text-size-7"><code class="ts" data-trim>
             const requestPromise =
               page.waitForRequest('**/*logo*.png')
@@ -62,11 +76,11 @@
             const request = await requestPromise
           </code></pre>
         </td>
-        <td class="fragment text-center" data-fragment-index="10">
+        <td class="fragment text-center" data-fragment-index="12">
           Start waiting for request before <code>goto()</code>.<br />Note no
           <code>await</code>
         </td>
-        <td class="fragment text-center" data-fragment-index="10">
+        <td class="fragment text-center" data-fragment-index="12">
           <i class="emo emoji-thumbup"></i>Good
         </td>
       </tr>
