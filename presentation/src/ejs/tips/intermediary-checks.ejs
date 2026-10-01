@@ -1,9 +1,23 @@
-<section class="text-level-5">
+<section class="text-level-3">
   <h2 class="">Add Intermediary cheks</h2>
 
-  <ul>
-    <li>toast is displayed</li>
-    <li>dialog is closed</li>
-    <li>welcome message is visible</li>
-  </ul>
+  <p class="mt-200r fragment">
+    Before proceeding to the next step, <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add <strong>intermediary checks</strong> to verify that the application is in the expected state
+  </p>
+  
+  <pre class="fragment "><code class="ts mt-300r">
+    // a notification is displayed
+    await expect(
+      page.getByRole('status').filter({ hasText: "Message sent" })
+    ).toBeVisible();
+  </code></pre>
+
+  <pre class="fragment"><code class="ts mt-300r">
+    // a dialog is closed after updating a profile
+    await expect(
+      page.getByRole('dialog', { name: 'Update profile' })
+    ).not.toBeVisible();
+  </code></pre>
+  
 </section>
