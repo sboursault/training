@@ -2,15 +2,12 @@
     <h2>Run tests as part of your CI</h2>
   
     <div class="fragment">
-      <p class="mt-200r">
-        When running on a CI/CD pipeline, set a <code>CI</code> env variable
+      <p class="mt-100r">
+        When running on a CI/CD pipeline, the <code>CI</code> env variable should be set to <code>true</code>
       </p>
-      <pre><code class="sh">
-        export CI=true;
-      </code></pre>
     </div>
   
-    <div class="flex-row tiny-gap mt-200r fragment">
+    <div class="flex-row tiny-gap mt-100r fragment">
       <div>
         <p>By default, with the <code>CI</code> variable</p>
         <ul>
@@ -18,10 +15,8 @@
           <li>
             An html report is generated in
             <code>&lt;your-project>/playwright-report</code>
-          </li>
-          <li>
-            A <code>traces.zip</code> file is generated for each test on the first
-            retry in <code>&lt;your-project>/test-results</code>
+            <br>
+            It contains a <code>traces.zip</code> file for the the retried tests 
           </li>
         </ul>
       </div>
@@ -45,7 +40,22 @@
         </code></pre>
       </div>
     </div>
-        Tip : export this right folder containing the html report and the traces.zip to a web server.
+
+    <div class="flex-row flex-row--center mt-50r fragment" >
+      <div class="bubble bubble-bottom-left" style="width: 780px;">
+        <i class="emo emo-36 emoji-point-right"></i>
+        <div class="bubble__text">
+          <p class="text-justify-left">
+            Export the <code>playwright-report</code> folder to a web server, in a folder named from the execution time<br />
+          </p>
+          <p class="text-justify-left mt-25" style="font-size: 90%;">
+            Example:<br>
+            http://test-reports.internal/my-product/playwright-2026-06-12_15-30-00<br />
+          </p>
+        </div>
+      </div>
+    </div>
+
 
   </section>
   
