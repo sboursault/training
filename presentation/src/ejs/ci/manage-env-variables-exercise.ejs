@@ -11,16 +11,16 @@
     <p>Let's code</p>
     <ul>
       <li>
-        Copy your <code>.env</code> file to a file named <code>.env.e2e</code>
+        Copy your <code>.env</code> file to a file named <code>.env.local</code>
       </li>
       <li>
-        In <code>package.json</code>, add a script to target the e2e environment
+        In <code>package.json</code>, add a script to target the local environment
 
         <if-pw>
           <pre><code class="json" data-line-numbers="3">
             "scripts": {
-              "pw:test-ui": "dotenvx run -f .env -- npx playwright test --ui",
-              "pw:test-ui:e2e": "dotenvx run -f .env.e2e -- npx playwright test --ui"
+              "test": "dotenvx run -f .env -- npx playwright test",
+              "test:local": "dotenvx run -f .env.local -- npx playwright test"
             },
           </code></pre>
         </if-pw>
@@ -28,14 +28,14 @@
           <pre><code class="json" data-line-numbers="3">
             "scripts": {
                 "cy:open": "dotenvx run -f .env -- npx cypress open --e2e --browser chromium"
-                "cy:open:e2e": "dotenvx run -f .env.e2e -- npx cypress open --e2e --browser chromium",
+                "cy:open:local": "dotenvx run -f .env.local -- npx cypress open --e2e --browser chromium",
             },
           </code></pre>
         </if-cy>
       </li>
 
       <li>
-        Change the base url in <code>.env.e2e</code> and watch the test fail
+        Change the base url in <code>.env.local</code> and watch the test fail
       </li>
     </ul>
   </app-exercise>
