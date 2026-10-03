@@ -72,9 +72,9 @@
         <td class="fragment" data-fragment-index="11">
           <pre class="text-size-7"><code class="ts" data-trim>
             const requestPromise =
-              page.waitForRequest('**/*logo*.png')
-            await page.goto('https://wikipedia.org')
-            const request = await requestPromise
+              page.waitForRequest('**/GetAsyncData')
+            await page.goto('https://www.google.com/')
+            await requestPromise
           </code></pre>
         </td>
         <td class="fragment text-center" data-fragment-index="12">
