@@ -14,9 +14,16 @@
     <table class="mt-50r no-border">
       <tr>
         <td class="fragment" width="25%" data-fragment-index="3">
-          <pre class="text-size-7"><code class="ts" data-trim>
-            await page.waitForTimeout(2000)
-          </code></pre>
+          <if-nodepw>
+            <pre class="text-size-7"><code class="ts" data-trim>
+              await page.waitForTimeout(2000)
+            </code></pre>
+          </if-nodepw>
+          <if-pypw>
+            <pre style="font-size: 70%;"><code class="ts" data-trim>
+              page.wait_for_timeout(2000)
+            </code></pre>
+          </if-pypw>
         </td>
         <td class="fragment text-center" width="25%" data-fragment-index="4">
           Wait for 2s
@@ -29,10 +36,19 @@
       </tr>
       <tr>
         <td class="fragment" data-fragment-index="5">
-          <pre class="text-size-7"><code class="ts" data-trim>
-            await expect(page.getByText('welcome'))
-              .toBeVisible()
-          </code></pre>
+          <if-nodepw>
+            <pre class="text-size-7"><code class="ts" data-trim>
+              await expect(page.getByText('welcome'))
+                .toBeVisible()
+            </code></pre>
+          </if-nodepw>
+          <if-pypw>
+            <pre style="font-size: 70%;"><code class="ts" data-trim>
+              expect(
+                page.get_by_text("welcome")
+              ).to_be_visible()
+            </code></pre>
+          </if-pypw>
         </td>
         <td class="fragment text-center" data-fragment-index="6">
           Implicit wait with default timeout
@@ -43,10 +59,19 @@
       </tr>
        <tr>
         <td class="fragment" data-fragment-index="7">
-          <pre class="text-size-7"><code class="ts" data-trim>
-            await expect(page.getByText('welcome'))
-              .toBeVisible({timeout: 10_000})
-          </code></pre>
+          <if-nodepw>
+            <pre class="text-size-7"><code class="ts" data-trim>
+              await expect(page.getByText('welcome'))
+                .toBeVisible({timeout: 10_000})
+            </code></pre>
+          </if-nodepw>
+          <if-pypw>
+            <pre style="font-size: 70%;"><code class="ts" data-trim>
+              expect(
+                page.get_by_text("welcome")
+              ).to_be_visible(timeout=10_000)
+            </code></pre>
+          </if-pypw>
         </td>
         <td class="fragment text-center" data-fragment-index="8">
           Implicit wait with specific timeout
@@ -55,27 +80,38 @@
           <i class="emo emoji-thumbup"></i>Good
         </td>
       </tr>
-      <tr>
-        <td class="fragment" data-fragment-index="9">
-          <pre class="text-size-7"><code class="ts" data-trim>
-            expect(
-              await page.getByText('welcome').isVisible()
-            ).toBe(true)
-          </code></pre>
-        </td>
-        <td class="fragment text-center" data-fragment-index="10">No wait</td>
-        <td class="fragment text-center" data-fragment-index="10">
-          <i class="emo emoji-x"></i>Bad!
-        </td>
-      </tr>
+      <if-nodepw>
+        <tr>
+          <td class="fragment" data-fragment-index="9">
+            <pre class="text-size-7"><code class="ts" data-trim>
+              expect(
+                await page.getByText('welcome').isVisible()
+              ).toBe(true)
+            </code></pre>
+          </td>
+          <td class="fragment text-center" data-fragment-index="10">No wait</td>
+          <td class="fragment text-center" data-fragment-index="10">
+            <i class="emo emoji-x"></i>Bad!
+          </td>
+        </tr>
+      </if-nodepw>
       <tr>
         <td class="fragment" data-fragment-index="11">
-          <pre class="text-size-7"><code class="ts" data-trim>
-            const requestPromise =
-              page.waitForRequest('**/GetAsyncData')
-            await page.goto('https://www.google.com/')
-            await requestPromise
-          </code></pre>
+
+          <if-nodepw>
+            <pre class="text-size-7"><code class="ts" data-trim>
+              const requestPromise =
+                page.waitForRequest('**/GetAsyncData')
+              await page.goto('https://www.google.com/')
+              await requestPromise
+            </code></pre>
+          </if-nodepw>
+          <if-pypw>
+            <pre style="font-size: 70%;"><code class="ts" data-trim>
+              with page.expect_request('**/GetAsyncData'):
+                page.goto('https://www.google.com/')
+            </code></pre>
+          </if-pypw>
         </td>
         <td class="fragment text-center" data-fragment-index="12">
           Start waiting for request before <code>goto()</code>.<br />Note no
@@ -104,12 +140,12 @@
 
   <small class="mt-50 fragment">
     <p>More on implicit waits:</p>
-    <if-pw>
-      <ul>
-        <li>https://playwright.dev/java/docs/actionability</li>
-        <li>https://playwright.dev/docs/events</li>
-      </ul>
-    </if-pw>
+    <if-nodepw>
+        <span>https://playwright.dev/docs/events</span>
+    </if-nodepw>
+    <if-pypw>
+        <span>https://playwright.dev/python/docs/events</span>
+    </if-pypw>
     <if-cy>
       <span
         >https://docs.cypress.io/guides/references/best-practices#Unnecessary-Waiting</span

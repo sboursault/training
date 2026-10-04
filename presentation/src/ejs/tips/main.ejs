@@ -10,9 +10,7 @@
 {%- await include('multiple-domains.ejs'); %}
 {%- await include('debug.ejs'); %}
 {% } %}
-{% if(pw) { %}
+{% if(nodepw) { %}
 {%- await include('playwright-ways-to-run-tests.ejs'); %}
-{% } %}
-{% if(pw) { %}
 {%- await include('type-cheking-and-linting.ejs'); %}
 {% } %}
