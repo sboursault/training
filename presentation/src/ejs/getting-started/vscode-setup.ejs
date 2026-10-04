@@ -1,7 +1,5 @@
-<section class="text-size-3">
-
-
-  <if-nodepw>
+<if-nodepw>
+  <section class="text-size-3">
     <h2 class="text-size-heading-3" data-tags="practice">
       Visual Studio Code
     </h2>
@@ -17,40 +15,111 @@
       </div>
       <p class="mt-200r fragment">Run the tests with VS Code</p>
     </app-exercise>
-  </if-nodepw>
+  </section>
+</if-nodepw>
 
-  <if-pypw>
+<if-pypw>
+  <section class="text-size-6">
+    <h2 class="text-size-heading-3" data-toc-exclude data-tags="practice">
+      Playwright configuration
+    </h2>
+
+    <div class="flex-row" style="justify-content:space-evenly; align-items: baseline;">
+      <div>
+        <p class="mt-0">Create <code>conftest.py</code> at the root of your project</p>
+        <pre class="mt-50"><code class="py">
+          import pytest
+          from playwright.sync_api import APIRequestContext, Page, Playwright, expect
+
+          # Playwrigth settings and base fixtures
+
+
+          @pytest.fixture(scope="session")
+          def browser_context_args(browser_context_args: dict):
+              """
+              Override browser locale
+              """
+              return {**browser_context_args, "locale": "fr-FR"}
+
+
+          @pytest.fixture
+          def page(page: Page):
+              """
+              Override default timeout for navigation, actions and verifications
+              """
+              page.set_default_navigation_timeout(10_000)
+              page.set_default_timeout(5_000)
+              expect.set_options(timeout=5_000)
+              return page
+
+
+          @pytest.fixture
+          def api_request(playwright: Playwright, base_url: str):
+              """
+              Define the api_request fixture:
+              an isolated APIRequestContext instance to make http request
+              """
+              ctx = playwright.request.new_context(base_url=base_url)
+              yield ctx
+              ctx.dispose()
+
+
+          # Api fixtures
+
+          # Workflow fixtures
+
+          # Page object fixtures
+        </code></pre>
+      </div>
+      <div>
+        <p class="mt-0">And <code>pytest.ini</code></p>
+        <pre class="mt-50"><code class="ini">
+          [pytest]
+          addopts = 
+              --browser chromium 
+              --base-url https://simple-commerce-dev.cloud
+              --slowmo 0
+        </code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-size-4">
     <h2 class="text-size-heading-3" data-tags="practice">
       VSCode and debug setup
     </h2>
     <app-exercise class="mt-100r">
       <div class="fragment">
-        <p>Install VS Code Python plugin</p>
+        <p>Install VSCode plugins</p>
+        <ul>
+          <li>Python</li>
+          <li>isort</li>
+          <li>Ruff</li>
+        </ul>
       </div>
       <div class="mt-100 fragment">
-        <p>Create <code>pytest.ini</code> at the root of your project</p>
-        <pre><code class="ini">
-          # pytest.ini
-          [pytest]
-          addopts = 
-              --headed
-              --browser chromium 
-              --base-url https://simple-commerce-dev.cloud
-              --slowmo 0
-              --pdb
+        <p>Save VSCode settings in <code>.vscode/settings.json</code></p>
+        <pre><code class="json">
+          {
+              "[python]": {
+                  "editor.formatOnSave": true,
+                  "editor.codeActionsOnSave": {
+                      "source.organizeImports": "always"
+                  },
+              },
+              "python.analysis.typeCheckingMode": "standard",
+              "python.testing.pytestArgs": [
+                  "tests", // path to the test folder
+                  "--headed", // show browser window when running tests
+                  "--pdb", // keeps the page open when a test fails (except in debug mode)
+              ],
+              "python.testing.pytestEnabled": true,
+              "python.testing.unittestEnabled": false,
+          }
         </code></pre>
       </div>
       <p class="mt-100r fragment">Run tests with VS Code</p>
     </app-exercise>
 
-
-    <app-help class="mt-300r fragment">
-      <p>Links</p>
-      <ul>
-        <li>https://playwright.dev/python/docs/test-runners#cli-arguments</li>
-      </ul>
-    </app-help>
-
-  </if-pypw>
-
-</section>
+  </section>
+</if-pypw>
