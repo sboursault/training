@@ -16,11 +16,16 @@
     &lt;/button>
   </code></pre>
 
-  <if-pw>
+  <if-nodepw>
     <pre class="mt-150 fragment"><code class="typescript">
       page.getByTestId('navbar-search-button')
     </code></pre>
-  </if-pw>
+  </if-nodepw>
+  <if-pypw>
+    <pre class="mt-150 fragment"><code class="typescript">
+      page.get_by_test_id('navbar-search-button')
+    </code></pre>
+  </if-pypw>
   <if-cy>
     <pre class="mt-150 fragment"><code class="typescript">
       cy.get(`[data-testid=navbar-search-button]`)

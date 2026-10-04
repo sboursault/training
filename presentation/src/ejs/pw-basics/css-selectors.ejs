@@ -6,11 +6,20 @@
       Use <code>page.locator()</code> to find elements with
       <strong>CSS selectors</strong>
     </p>
-    <pre style="width: fit-content">
-      <code class="ts" data-trim>
-        page.locator('button', {hasText: 'Search'}) 
-      </code>
-    </pre>
+    <if-nodepw>
+      <pre style="width: fit-content">
+        <code class="ts" data-trim>
+          page.locator('button', {hasText: 'Search'}) 
+        </code>
+      </pre>
+    </if-nodepw>
+    <if-pypw>
+      <pre style="width: fit-content">
+        <code class="ts" data-trim>
+          page.locator('button', has_text='Search') 
+        </code>
+      </pre>
+    </if-pypw>
   </div>
 
   <div class="ms-200r mt-200r flex-row flex-row--center">
