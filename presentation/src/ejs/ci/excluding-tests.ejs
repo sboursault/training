@@ -20,24 +20,37 @@
       </code></pre>
     </if-nodepw>
     <if-pypw>
+      <ul>
+        <li>
+          List custom markers
+          <pre><code class="ini">
+            # pytest.ini
+            [pytest]
+            markers =
+                smoke: marks test that verify critical features
+          </code></pre>
+        </li>
+        <li class="mt-100">
+          Mark your test with an annotation
+          <pre><code class="python">
+            import pytest
 
-      <pre><code class="ini">
-        # pytest.ini
-        [pytest]
-        markers =
-            smoke: marks test that verify critical features
-      </code></pre>
+            @pytest.mark.smoke
+            def test_critical_feature():
+                # some verification  
+          </code></pre>
+        </li>
+        <li class="mt-100">
+          Specify the marker on the command line
+           <pre><code class="sh">
+              uv run pytest -m smoke  # runs only the smoke tests
+           </code></pre>
+        </li>
+      </ul>
+      
 
-      <pre><code class="python">
-        import pytest
-
-        @pytest.mark.smoke
-        def test_send_http():
-            # some verification  
-      </code></pre>
-      <pre><code class="sh mt-200r">
-        uv run pytest -m smoke  # runs only the smoke tests
-      </code></pre>
+      
+     
     </if-pypw>
     <if-cy>
       <pre><code class="typescript">
