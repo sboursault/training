@@ -6,18 +6,36 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add <strong>intermediary checks</strong> to verify that the application is in the expected state
   </p>
   
-  <pre class="fragment "><code class="ts mt-300r">
-    // a notification is displayed
-    await expect(
-      page.getByRole('status').filter({ hasText: "Message sent" })
-    ).toBeVisible();
-  </code></pre>
+  <if-nodepw>
+    <pre class="fragment "><code class="ts mt-300r">
+      // a notification is displayed
+      await expect(
+        page.getByRole('status').filter({ hasText: "Message sent" })
+      ).toBeVisible();
+    </code></pre>
 
-  <pre class="fragment"><code class="ts mt-300r">
-    // a dialog is closed after updating a profile
-    await expect(
-      page.getByRole('dialog', { name: 'Update profile' })
-    ).not.toBeVisible();
-  </code></pre>
+    <pre class="fragment"><code class="ts mt-300r">
+      // a dialog is closed after updating a profile
+      await expect(
+        page.getByRole('dialog', { name: 'Update profile' })
+      ).not.toBeVisible();
+    </code></pre>
+  </if-nodepw>
+
+  <if-pypw>
+    <pre class="fragment "><code class="python mt-300r">
+      // a notification is displayed
+      expect(
+        page.get_by_role('status').filter(has_text="Message sent")
+      ).to_be_visible();
+    </code></pre>
+
+    <pre class="fragment"><code class="python mt-300r">
+      // a dialog is closed after updating a profile
+      expect(
+        page.get_by_role('dialog', name='Update profile')
+      ).not_to_be_visible();
+    </code></pre>
+  </if-pypw>
   
 </section>
