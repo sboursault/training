@@ -1,35 +1,44 @@
 <section class="text-level-2">
-  <h2>Excluding tests</h2>
+  <h2>Test subsets</h2>
 
   <p class="fragment">
     Sometimes you just want to run a subset of your test suite
   </p>
-  <ul>
-    <li class="fragment">
-      Some tests may not run on all environments (yet)
-      <ul>
-        <li>Tests that send emails, tests that require a specific back-end</li>
-        <li>Tests that verify a feature under development</li>
-      </ul>
-    </li>
-    <li class="fragment">
-      You may want to run only the tests related to a specific domain
-    </li>
-  </ul>
 
   <div class="fragment mt-100">
-    <if-pw>
-        <pre><code class="typescript">
-          test('sends an email to confirm email address',
-            { tag: ['@sendsEmail'] },
-            async ({ page }) => {
-              // some verification that may not work on all environments
-            });
-        </code></pre>
-        <pre><code class="sh mt-150r">
-          npx playwright test --grep-invert @sendsEmail  # runs the tests without the tag 'sendsEmail'
-        </code></pre>
-      </if-pw>
+    <if-nodepw>
+      <pre><code class="typescript">
+        test(
+          'verify a critical feature',
+          { tag: ['@smokeTest'] },
+          async ({ page }) => {
+            // some verification  
+          });
+      </code></pre>
+      <pre><code class="sh mt-200r">
+        npx playwright test --grep @smokeTest  # runs only the smoke tests
+      </code></pre>
+    </if-nodepw>
+    <if-pypw>
+
+      <pre><code class="ini">
+        # pytest.ini
+        [pytest]
+        markers =
+            smoke: marks test that verify critical features
+      </code></pre>
+
+      <pre><code class="python">
+        import pytest
+
+        @pytest.mark.smoke
+        def test_send_http():
+            # some verification  
+      </code></pre>
+      <pre><code class="sh mt-200r">
+        uv run pytest -m smoke  # runs only the smoke tests
+      </code></pre>
+    </if-pypw>
     <if-cy>
       <pre><code class="typescript">
         it('sends an email to confirm email address', { tags: ['@sendsEmail'] }, () => {
@@ -42,13 +51,19 @@
     </if-cy>
   </div>
 
-  <if-pw>
-    <small class="fragment mt-200r">
+  <if-nodepw>
+    <small class="fragment mt-500r">
       <span>https://playwright.dev/docs/test-annotations#tag-tests</span>
     </small>
-  </if-pw>
-  <if-cy>
+  </if-nodepw>
+  <if-pypw>
     <small class="fragment mt-200r">
+      <span>https://docs.pytest.org/en/7.1.x/how-to/mark.html</span><br>
+      <span>https://docs.pytest.org/en/7.1.x/example/markers.html</span>
+    </small>
+  </if-pypw>
+  <if-cy>
+    <small class="fragment mt-500r">
       How to use <strong>@cypress/grep</strong>:<br />
       <span>https://github.com/cypress-io/cypress/tree/develop/npm/grep</span>
     </small>
