@@ -4,5 +4,11 @@
 {% } %}
 {%- await include('pending-tests.ejs'); %}
 {%- await include('excluding-tests.ejs'); %}
+{% if(nodepw || cy) { %}
 {%- await include('define-env-variables-exercise.ejs'); %}
 {%- await include('manage-env-variables-exercise.ejs'); %}
+{% } %}
+{% if(pypw) { %}
+{%- await include('uv-env-variables.ejs'); %}
+{% } %}
+

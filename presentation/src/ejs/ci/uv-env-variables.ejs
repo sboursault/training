@@ -1,0 +1,36 @@
+<section class="text-level-4">
+  <h2 data-toc-label="Manage environment variables" class="mt-0 text-size-heading-3">
+    Verify several environments
+  </h2>
+    
+    <ul>
+      <li>
+        Define the variables that change depending on the environment in <code>.env</code>
+        <pre><code class="properties">
+          # .env
+          BASE_URL=http://127.0.0.1:8000/
+          ADMIN_LOGIN=superuser@example.com
+          ADMIN_PASSWD=testing
+        </code></pre>
+
+      </li>
+
+       <li class="mt-200">
+        Use env variables in your scripts
+
+        <pre><code class="python">
+          page.get_by_role("textbox", name="Mot de passe *").fill(
+            os.getenv("ADMIN_PASSWD")
+          )
+        </code></pre>
+
+      </li>
+
+      <li class="mt-200">
+        Tell which env file to use in the command line
+        <pre><code class="sh">
+          uv run pytest --env-file .env
+        </code></pre>
+      </li>
+    </ul>
+</section>
