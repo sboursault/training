@@ -28,11 +28,18 @@
       <div>
         <p class="mt-0">Create <code>conftest.py</code> at the root of your project</p>
         <pre class="mt-50"><code class="py">
+          import os
           import pytest
           from playwright.sync_api import APIRequestContext, Page, Playwright, expect
 
           # Playwrigth settings and base fixtures
 
+          @pytest.fixture(scope="session")
+          def base_url():
+              """
+              Override the --base-url option: base url comes from the env file
+              """
+              return os.environ["BASE_URL"]
 
           @pytest.fixture(scope="session")
           def browser_context_args(browser_context_args: dict):
@@ -40,7 +47,6 @@
               Override browser locale
               """
               return {**browser_context_args, "locale": "fr-FR"}
-
 
           @pytest.fixture
           def page(page: Page):
@@ -52,7 +58,6 @@
               expect.set_options(timeout=5_000)
               return page
 
-
           @pytest.fixture
           def api_request(playwright: Playwright, base_url: str):
               """
@@ -63,7 +68,6 @@
               yield ctx
               ctx.dispose()
 
-
           # Api fixtures
 
           # Workflow fixtures
@@ -72,13 +76,22 @@
         </code></pre>
       </div>
       <div>
-        <p class="mt-0">And <code>pytest.ini</code></p>
+        <p class="mt-0"><code>pytest.ini</code></p>
         <pre class="mt-50"><code class="ini">
           [pytest]
           addopts = 
               --browser chromium 
               --base-url https://simple-commerce-dev.cloud
               --slowmo 0
+              --capture=no
+          env_files = 
+              .env
+          env_files_skip_if_set = true
+        </code></pre>
+
+        <p class="mt-200">And <code>.env</code></p>
+        <pre class="mt-50"><code class="ini">
+          BASE_URL=...
         </code></pre>
       </div>
     </div>
