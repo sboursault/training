@@ -5,22 +5,26 @@
     Sometimes you just want to run a subset of your test suite
   </p>
 
-  <div class="fragment mt-100">
-    <if-nodepw>
+
+  <if-nodepw>
+    <div class="fragment mt-100">
       <pre><code class="typescript">
-        test(
-          'verify a critical feature',
-          { tag: ['@smokeTest'] },
-          async ({ page }) => {
-            // some verification  
-          });
-      </code></pre>
+          test(
+            'verify a critical feature',
+            { tag: ['@smokeTest'] },
+            async ({ page }) => {
+              // some verification  
+            });
+        </code></pre>
       <pre><code class="sh mt-200r">
-        npx playwright test --grep @smokeTest  # runs only the smoke tests
-      </code></pre>
-    </if-nodepw>
-    <if-pypw>
-      <ul>
+          npx playwright test --grep @smokeTest  # runs only the smoke tests
+        </code></pre>
+    </div>
+  </if-nodepw>
+
+  <if-pypw>
+    <div>
+      <ul class="fragment mt-50">
         <li>
           List custom markers
           <pre><code class="ini">
@@ -42,17 +46,18 @@
         </li>
         <li class="mt-100">
           Specify the marker on the command line
-           <pre><code class="sh">
+          <pre><code class="sh">
               uv run pytest -m smoke  # runs only the smoke tests
            </code></pre>
         </li>
       </ul>
-      
+    </div>
+  </if-pypw>
 
-      
-     
-    </if-pypw>
-    <if-cy>
+
+
+  <if-cy>
+    <div class="fragment mt-100">
       <pre><code class="typescript">
         it('sends an email to confirm email address', { tags: ['@sendsEmail'] }, () => {
             // some verification that may not work on all environments
@@ -61,8 +66,9 @@
       <pre><code class="sh mt-150r">
         npx cypress run --env grepTags=-@sendsEmail  # runs the tests without the tag '@sendsEmail'
       </code></pre>
-    </if-cy>
-  </div>
+    </div>
+  </if-cy>
+
 
   <if-nodepw>
     <small class="fragment mt-500r">
@@ -70,8 +76,8 @@
     </small>
   </if-nodepw>
   <if-pypw>
-    <small class="fragment mt-200r">
-      <span>https://docs.pytest.org/en/7.1.x/how-to/mark.html</span><br>
+    <small class="fragment mt-100r" style="font-size: 60%;">
+      <span>https://docs.pytest.org/en/7.1.x/how-to/mark.html</span>, 
       <span>https://docs.pytest.org/en/7.1.x/example/markers.html</span>
     </small>
   </if-pypw>

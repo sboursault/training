@@ -1,7 +1,7 @@
 <section>
   <h2>Pending tests</h2>
 
-  <if-pw>
+  <if-nodepw>
     <div class="fragment">
       <p class="mt-150r">
         Use <code>test.fixme()</code> or <code>test.skip()</code> to exclude
@@ -28,7 +28,23 @@
         <code>test.skip()</code> can be added on new tests that don't pass yet
       </li>
     </ul>
-  </if-pw>
+  </if-nodepw>
+
+  <if-pypw>
+    <div class="fragment">
+      <p class="mt-150r">
+        You can temporaryly <strong>skip</strong> some tests with this mark 
+      </p>
+
+      <pre><code class="python">
+        import pytest
+        
+        @pytest.mark.skip
+        def test_to_skip():
+          # test steps...
+      </code></pre>
+    </div>
+  </if-pypw>
 
   <if-cy>
     <div class="fragment">
