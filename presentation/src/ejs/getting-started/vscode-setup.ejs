@@ -37,9 +37,9 @@
           @pytest.fixture(scope="session")
           def base_url():
               """
-              Override the --base-url option: base url comes from the env file
+              Override the --base-url option: base url must be set in the .env file
               """
-              return os.environ["BASE_URL"]
+              return os.getenv("BASE_URL")
 
           @pytest.fixture(scope="session")
           def browser_context_args(browser_context_args: dict):
@@ -81,9 +81,8 @@
           [pytest]
           addopts = 
               --browser chromium 
-              --base-url https://simple-commerce-dev.cloud
               --slowmo 0
-              --capture=no
+              --capture no
           env_files = 
               .env
           env_files_skip_if_set = true
