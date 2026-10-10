@@ -1,12 +1,13 @@
 <section class="text-level-3">
-    <h2>Run tests as part of your CI</h2>
-  
+  <h2>Run tests as part of your CI</h2>
+
+  <if-nodepw>
     <div class="fragment">
       <p class="mt-100r">
         When running on a CI/CD pipeline, the <code>CI</code> env variable should be set to <code>true</code>
       </p>
     </div>
-  
+
     <div class="flex-row tiny-gap mt-100r fragment">
       <div>
         <p>By default, with the <code>CI</code> variable</p>
@@ -16,7 +17,7 @@
             An html report is generated in
             <code>&lt;your-project>/playwright-report</code>
             <br>
-            It contains a <code>traces.zip</code> file for the the retried tests 
+            It contains a <code>traces.zip</code> file for the the retried tests
           </li>
         </ul>
       </div>
@@ -41,7 +42,7 @@
       </div>
     </div>
 
-    <div class="flex-row flex-row--center mt-50r fragment" >
+    <div class="flex-row flex-row--center mt-50r fragment">
       <div class="bubble bubble-bottom-left" style="width: 780px;">
         <i class="emo emo-36 emoji-point-right"></i>
         <div class="bubble__text">
@@ -57,27 +58,81 @@
       </div>
     </div>
 
+  </if-nodepw>
 
-  </section>
-  
-  <section>
-    <h2>Inspect traces</h2>
-    <p class="mt-200r">
-      When a tests fails on CI, the console output is offten insufficiant to fix
-      the issue
-    </p>
-    <p class="mt-200r"><strong>Trace files</strong> give much more information</p>
-  
-    <div class="mt-200r fragment">
-      <p>Inspect traces with</p>
-      <ul>
-        <li>
-          <code>npx playwright show-trace path/to/trace.zip</code>
-        </li>
-        <li class="fragment">
-          Or with the online trace viewer:
-          <span>https://playwright.dev/docs/trace-viewer</span>
-        </li>
-      </ul>
+  <if-pypw>
+
+    Define your CI pytest config in <code>pytest.ci.ini</code>
+
+    <div class="flex-row mt-50">
+      <pre style="width: auto;"><code class="ini">
+        [pytest]
+        addopts = 
+            --browser chromium
+            --reruns 2
+            --numprocesses 3
+            --tracing retain-on-failure
+            --alluredir allure-results
+        env_files_skip_if_set = true
+        env_files = 
+          .env
+      </code></pre>
+      <div style="font-size:55%">
+        <p><code>--browser</code></p>
+        <p class="indented">The browser (<code>chromium</code>, <code>firefox</code>, or <code>webkit</code>), it can be
+          specified multiple times.<br>
+          <span>https://playwright.dev/python/docs/test-runners</span>
+        </p>
+        <p><code>--reruns</code></p>
+        <p class="indented">Maximum number of times you'd like the failing tests to run<br>
+          <span>https://github.com/pytest-dev/pytest-rerunfailures</span>
+        </p>
+        <p><code>--numprocesses</code></p>
+        <p class="indented">Run the tests on multiple CPU<br>
+          <span>https://pytest-xdist.readthedocs.io/en/latest/distribution.html</span>
+        </p>
+        <p><code>--tracing</code></p>
+        <p class="indented">Whether to record a trace for each test<br>
+          <span>https://playwright.dev/python/docs/test-runners</span>
+        </p>
+        <p><code>--allure</code></p>
+        <p class="indented">Path for the test results directory<br>
+          <span>https://allurereport.org/docs/pytest/</span>
+        </p>
+      </div>
     </div>
-  </section>
+
+    <p>And tell pytest to use this config file</p>
+
+    <pre><code class="sh">
+      uv run pytest -c pytest.ci.ini
+    </code></pre>
+
+
+
+  </if-pypw>
+
+
+</section>
+
+<section>
+  <h2>Inspect traces</h2>
+  <p class="mt-200r">
+    When a tests fails on CI, the console output is offten insufficiant to fix
+    the issue
+  </p>
+  <p class="mt-200r"><strong>Trace files</strong> give much more information</p>
+
+  <div class="mt-200r fragment">
+    <p>Inspect traces with</p>
+    <ul>
+      <li>
+        <code>npx playwright show-trace path/to/trace.zip</code>
+      </li>
+      <li class="fragment">
+        Or with the online trace viewer:
+        <span>https://playwright.dev/docs/trace-viewer</span>
+      </li>
+    </ul>
+  </div>
+</section>
