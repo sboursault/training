@@ -108,7 +108,6 @@
       uv run pytest -c pytest.ci.ini
     </code></pre>
 
-    
   </if-pypw>
 
 
@@ -118,22 +117,22 @@
 <if-pypw>
 
   <section>
-    <h2>Generate Allure report</h2>
+    <h2>Test report</h2>
     <p class="mt-200r">
-      
+
     </p>
-    <p class="mt-300r">Generate the <strong>Allure</strong> rapport after test execution</p>
+    <p class="mt-300r">Generate the <strong>Allure report</strong> after test execution</p>
 
     <pre style="width: auto;"><code class="shell">
       uv run allure generate ./allure-results --output ./allure-report
     </code></pre>
 
     <div class="flex-row flex-row--center mt-150r">
-      <div class="bubble bubble-bottom-left" >
+      <div class="bubble bubble-bottom-left">
         <i class="emo emo-36 emoji-point-right"></i>
         <div class="bubble__text">
           <p class="text-justify-left">
-            The report can show the test execution history, 
+            The report can show the test execution history,
             <br>if <code>./allure-report</code> is stored on persistant storage.
           </p>
         </div>
@@ -141,7 +140,7 @@
     </div>
 
     <p class="mt-400r">
-      To publish the report, copy the <code>./allure-report</code> folder to an http server
+      To <strong>publish the report</strong>, copy the <code>./allure-report</code> folder to an http server
     </p>
 
   </section>
@@ -157,14 +156,17 @@
 
   <div class="mt-200r fragment">
     <p>Inspect traces with</p>
-    <ul>
-      <li>
-        <code>npx playwright show-trace path/to/trace.zip</code>
-      </li>
-      <li class="fragment">
+      
+        <if-nodepw><code>npx playwright show-trace path/to/trace.zip</code></if-nodepw>
+        <if-pypw>
+          <pre class="mt-50r"><code class="ts">
+            uv run playwright show-trace path/to/trace.zip
+          </code></pre>
+        </if-pypw>
+      
+      <p class="fragment">
         Or with the online trace viewer:
         <span>https://playwright.dev/docs/trace-viewer</span>
-      </li>
-    </ul>
+      </p>
   </div>
 </section>
