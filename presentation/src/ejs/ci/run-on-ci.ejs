@@ -108,12 +108,44 @@
       uv run pytest -c pytest.ci.ini
     </code></pre>
 
-
-
+    
   </if-pypw>
 
 
 </section>
+
+
+<if-pypw>
+
+  <section>
+    <h2>Generate Allure report</h2>
+    <p class="mt-200r">
+      
+    </p>
+    <p class="mt-300r">Generate the <strong>Allure</strong> rapport after test execution</p>
+
+    <pre style="width: auto;"><code class="shell">
+      uv run allure generate ./allure-results --output ./allure-report
+    </code></pre>
+
+    <div class="flex-row flex-row--center mt-150r">
+      <div class="bubble bubble-bottom-left" >
+        <i class="emo emo-36 emoji-point-right"></i>
+        <div class="bubble__text">
+          <p class="text-justify-left">
+            The report can show the test execution history, 
+            <br>if <code>./allure-report</code> is stored on persistant storage.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-400r">
+      To publish the report, copy the <code>./allure-report</code> folder to an http server
+    </p>
+
+  </section>
+</if-pypw>
 
 <section>
   <h2>Inspect traces</h2>
