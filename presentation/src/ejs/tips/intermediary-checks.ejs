@@ -24,14 +24,14 @@
 
   <if-pypw>
     <pre class="fragment "><code class="python mt-300r">
-      // a notification is displayed
+      # a notification is displayed
       expect(
         page.get_by_role('status').filter(has_text="Message sent")
       ).to_be_visible();
     </code></pre>
 
     <pre class="fragment"><code class="python mt-300r">
-      // a dialog is closed after updating a profile
+      # a dialog is closed after updating a profile
       expect(
         page.get_by_role('dialog', name='Update profile')
       ).not_to_be_visible();
