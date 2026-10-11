@@ -148,25 +148,34 @@
 
 <section>
   <h2>Inspect traces</h2>
-  <p class="mt-200r">
+  <p>
     When a tests fails on CI, the console output is offten insufficiant to fix
     the issue
   </p>
-  <p class="mt-200r"><strong>Trace files</strong> give much more information</p>
+  <p class=""><strong>Trace files</strong> give much more information</p>
 
-  <div class="mt-200r fragment">
-    <p>Inspect traces with</p>
-      
-        <if-nodepw><code>npx playwright show-trace path/to/trace.zip</code></if-nodepw>
-        <if-pypw>
-          <pre class="mt-50r"><code class="ts">
-            uv run playwright show-trace path/to/trace.zip
-          </code></pre>
-        </if-pypw>
-      
+  <if-nodepw>
+    <div class="mt-200r fragment">
+      <p>Inspect traces with</p>
+      <code>npx playwright show-trace path/to/trace.zip</code>
       <p class="fragment">
         Or with the online trace viewer:
         <span>https://playwright.dev/docs/trace-viewer</span>
       </p>
-  </div>
+    </div>
+  </if-nodepw>
+  <if-pypw>
+    <div class="mt-200r fragment">
+      <p>Trace files are stored in <code>./test-results</code>, so mark this folder as a <strong>build artifact</strong> to make its content available</p>
+      
+      <p>Once downloaded, inspect the traces with</p>
+      <pre class="mt-50r"><code class="sh">
+        uv run playwright show-trace path/to/trace.zip
+      </code></pre>
+      <p class="fragment mt-150r" style="font-size: 80%;">
+        Or with the online <strong>trace viewer</strong>:
+        <span>https://playwright.dev/docs/trace-viewer</span>
+      </p>
+    </div>
+  </if-pypw>
 </section>
